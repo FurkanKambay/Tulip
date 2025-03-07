@@ -1,12 +1,5 @@
 fileFormatVersion: 2
 guid: 684d4d47a018ed14080e15f4c99b8e86
-AssetOrigin:
-  serializedVersion: 1
-  productId: 161631
-  packageName: FMOD for Unity
-  packageVersion: 2.02.22
-  assetPath: Packages/com.firelight.fmod-for-unity/FMOD/platforms/win/lib/x86_64/fmodstudio.dll
-  uploadId: 677734
 PluginImporter:
   externalObjects: {}
   serializedVersion: 3

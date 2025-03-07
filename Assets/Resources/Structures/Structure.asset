@@ -16,7 +16,7 @@ MonoBehaviour:
     name: Structure
     dimensions: {x: 20, y: 10}
     walls:
-      m_keys:
+      _keys:
       - {x: 0, y: 0}
       - {x: 1, y: 0}
       - {x: 2, y: 0}
@@ -217,7 +217,7 @@ MonoBehaviour:
       - {x: 17, y: 9}
       - {x: 18, y: 9}
       - {x: 19, y: 9}
-      m_values:
+      _values:
       - {fileID: 11400000, guid: 0491a0de59d86f9408b7f2902c563f0e, type: 2}
       - {fileID: 11400000, guid: 0491a0de59d86f9408b7f2902c563f0e, type: 2}
       - {fileID: 11400000, guid: 0491a0de59d86f9408b7f2902c563f0e, type: 2}
@@ -419,7 +419,7 @@ MonoBehaviour:
       - {fileID: 11400000, guid: 0491a0de59d86f9408b7f2902c563f0e, type: 2}
       - {fileID: 11400000, guid: 0491a0de59d86f9408b7f2902c563f0e, type: 2}
     blocks:
-      m_keys:
+      _keys:
       - {x: 0, y: 0}
       - {x: 1, y: 0}
       - {x: 2, y: 0}
@@ -620,7 +620,7 @@ MonoBehaviour:
       - {x: 17, y: 9}
       - {x: 18, y: 9}
       - {x: 19, y: 9}
-      m_values:
+      _values:
       - {fileID: 11400000, guid: f38d0fc5a331ed44ba37a427dd625605, type: 2}
       - {fileID: 11400000, guid: f38d0fc5a331ed44ba37a427dd625605, type: 2}
       - {fileID: 11400000, guid: f38d0fc5a331ed44ba37a427dd625605, type: 2}
@@ -822,7 +822,7 @@ MonoBehaviour:
       - {fileID: 11400000, guid: f38d0fc5a331ed44ba37a427dd625605, type: 2}
       - {fileID: 11400000, guid: f38d0fc5a331ed44ba37a427dd625605, type: 2}
     curtains:
-      m_keys:
+      _keys:
       - {x: 0, y: 0}
       - {x: 1, y: 0}
       - {x: 2, y: 0}
@@ -1023,7 +1023,7 @@ MonoBehaviour:
       - {x: 17, y: 9}
       - {x: 18, y: 9}
       - {x: 19, y: 9}
-      m_values:
+      _values:
       - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}

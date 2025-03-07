@@ -5,10 +5,3 @@ TextScriptImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 161631
-  packageName: FMOD for Unity
-  packageVersion: 2.02.22
-  assetPath: Packages/com.firelight.fmod-for-unity/FMOD/README.txt
-  uploadId: 677734

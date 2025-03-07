@@ -1,4 +1,5 @@
 using System;
+using SaintsField;
 using SaintsField.Playa;
 using Tulip.Core;
 using Tulip.Data;
@@ -7,7 +8,7 @@ using UnityEngine;
 namespace Tulip.GameWorld
 {
     [Serializable]
-    public class WorldSaveDictionary : SerializableDictionary<string, WorldData>
+    public class WorldSaveDictionary : SaintsDictionary<string, WorldData>
     {
     }
 

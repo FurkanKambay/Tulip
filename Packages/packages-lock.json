@@ -1,12 +1,5 @@
 {
   "dependencies": {
-    "com.azixmcaze.unityserializabledictionary": {
-      "version": "1.2.0",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://package.openupm.com"
-    },
     "com.firelight.fmod-for-unity": {
       "version": "file:com.firelight.fmod-for-unity",
       "depth": 0,
@@ -21,7 +14,7 @@
       "hash": "58c8883d28066467898fbfd4f5c64f136af31175"
     },
     "com.unity.2d.aseprite": {
-      "version": "1.1.6",
+      "version": "1.1.8",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -241,7 +234,7 @@
       }
     },
     "today.comes.saintsfield": {
-      "version": "3.4.10",
+      "version": "3.33.2",
       "depth": 0,
       "source": "registry",
       "dependencies": {},

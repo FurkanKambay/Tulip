@@ -53,10 +53,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 161631
-  packageName: FMOD for Unity
-  packageVersion: 2.02.22
-  assetPath: Packages/com.firelight.fmod-for-unity/FMOD/images/SnapshotIcon.png
-  uploadId: 677734

@@ -1,8 +1,7 @@
 {
   "dependencies": {
-    "com.azixmcaze.unityserializabledictionary": "1.2.0",
     "com.tayx.graphy": "https://github.com/FurkanKambay/graphy.git",
-    "com.unity.2d.aseprite": "1.1.6",
+    "com.unity.2d.aseprite": "1.1.8",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.2d.tilemap.extras": "4.0.2",
@@ -11,7 +10,7 @@
     "com.unity.inputsystem": "1.11.2",
     "com.unity.render-pipelines.universal": "17.0.3",
     "com.unity.visualeffectgraph": "17.0.3",
-    "today.comes.saintsfield": "3.4.10",
+    "today.comes.saintsfield": "3.33.2",
     "com.unity.modules.animation": "1.0.0",
     "com.unity.modules.jsonserialize": "1.0.0",
     "com.unity.modules.particlesystem": "1.0.0",
@@ -25,7 +24,6 @@
       "name": "package.openupm.com",
       "url": "https://package.openupm.com",
       "scopes": [
-        "com.azixmcaze.unityserializabledictionary",
         "com.tayx.graphy",
         "today.comes.saintsfield"
       ]

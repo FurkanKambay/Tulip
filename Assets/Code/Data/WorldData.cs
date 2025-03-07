@@ -1,11 +1,12 @@
 using System;
+using SaintsField;
 using Tulip.Data.Items;
 using UnityEngine;
 
 namespace Tulip.Data
 {
     [Serializable]
-    public class TileDictionary : SerializableDictionary<Vector2Int, PlaceableData>
+    public class TileDictionary : SaintsDictionary<Vector2Int, PlaceableData>
     {
     }
 

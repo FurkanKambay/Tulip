@@ -16,7 +16,7 @@ MonoBehaviour:
     name: Playground
     dimensions: {x: 80, y: 15}
     walls:
-      m_keys:
+      _keys:
       - {x: 0, y: 0}
       - {x: 1, y: 0}
       - {x: 2, y: 0}
@@ -1217,7 +1217,7 @@ MonoBehaviour:
       - {x: 77, y: 14}
       - {x: 78, y: 14}
       - {x: 79, y: 14}
-      m_values:
+      _values:
       - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}
@@ -2419,7 +2419,7 @@ MonoBehaviour:
       - {fileID: 0}
       - {fileID: 0}
     blocks:
-      m_keys:
+      _keys:
       - {x: 0, y: 0}
       - {x: 1, y: 0}
       - {x: 2, y: 0}
@@ -3620,7 +3620,7 @@ MonoBehaviour:
       - {x: 77, y: 14}
       - {x: 78, y: 14}
       - {x: 79, y: 14}
-      m_values:
+      _values:
       - {fileID: 11400000, guid: 6b98d82ba77a4344a946251215359108, type: 2}
       - {fileID: 11400000, guid: 6b98d82ba77a4344a946251215359108, type: 2}
       - {fileID: 11400000, guid: 6b98d82ba77a4344a946251215359108, type: 2}
@@ -4822,7 +4822,7 @@ MonoBehaviour:
       - {fileID: 11400000, guid: 6b98d82ba77a4344a946251215359108, type: 2}
       - {fileID: 11400000, guid: 6b98d82ba77a4344a946251215359108, type: 2}
     curtains:
-      m_keys:
+      _keys:
       - {x: 0, y: 0}
       - {x: 1, y: 0}
       - {x: 2, y: 0}
@@ -6023,7 +6023,7 @@ MonoBehaviour:
       - {x: 77, y: 14}
       - {x: 78, y: 14}
       - {x: 79, y: 14}
-      m_values:
+      _values:
       - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}
