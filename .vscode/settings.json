@@ -42,15 +42,23 @@
         "WEBGL"
     ],
     "conventionalCommits.scopes": [
+        "ai",
         "art",
         "audio",
         "balance",
         "content",
         "core",
+        "economy",
         "gameplay",
+        "graphics",
         "juice",
+        "level",
+        "narrative",
+        "shader",
+        "system",
         "tool",
-        "ui"
+        "ui",
+        "vfx"
     ],
     "conventionalCommits.gitmoji": false,
     "conventionalCommits.promptFooter": false,
