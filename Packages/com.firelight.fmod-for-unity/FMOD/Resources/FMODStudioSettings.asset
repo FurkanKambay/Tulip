@@ -161,8 +161,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: FMODAssets/Tulip.fspro
-  sourceBankPath: FMODAssets/Build
+  sourceProjectPath: FMODProject/Tulip.fspro
+  sourceBankPath: FMODProject/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 1
   ShowBankRefreshWindow: 0

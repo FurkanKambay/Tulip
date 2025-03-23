@@ -39,9 +39,9 @@
 !.vscode/*.code-snippets
 
 # FMOD Studio
-/FMODAssets/.cache/
-/FMODAssets/.user/
-/FMODAssets/.unsaved/
+/FMODProject/.cache/
+/FMODProject/.user/
+/FMODProject/.unsaved/
 
 # Optionally ignore bank files
 # *.bank

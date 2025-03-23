@@ -4,7 +4,7 @@
         "**/*.meta": true,
         "UIElementsSchema/": true,
         "Assets/Plugins": true,
-        "FMODAssets/": true
+        "FMODProject/": true
     },
     "files.readonlyInclude": {
         // "**/*.asset": true,
@@ -13,7 +13,7 @@
         // "**/*.unity": true,
         "Packages/packages-lock.json": true,
         "Packages/com.firelight.fmod-for-unity": true,
-        "FMODAssets/**": true
+        "FMODProject/**": true
     },
     "cSpell.words": [
         "borderless",
