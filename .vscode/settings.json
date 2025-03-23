@@ -2,17 +2,13 @@
     "explorer.excludeGitIgnore": true,
     "files.exclude": {
         "**/*.meta": true,
-        "UIElementsSchema/": true,
-        "Assets/Plugins": true,
-        "FMODProject/": true
+        "UIElementsSchema/": true
     },
     "files.readonlyInclude": {
-        // "**/*.asset": true,
-        // "**/*.meta": true,
-        // "**/*.prefab": true,
-        // "**/*.unity": true,
+        "**/*.meta": true,
         "Packages/packages-lock.json": true,
         "Packages/com.firelight.fmod-for-unity": true,
+        "UIElementsSchema/**": true,
         "FMODProject/**": true
     },
     "cSpell.words": [
