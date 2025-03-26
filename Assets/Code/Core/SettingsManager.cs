@@ -33,7 +33,7 @@ namespace Tulip.Core
                 Settings storedSettings = JsonUtility.FromJson<Settings>(json);
                 Settings.SetInstance(storedSettings ?? new Settings());
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 // replace invalid file with default settings
                 SaveToFile();

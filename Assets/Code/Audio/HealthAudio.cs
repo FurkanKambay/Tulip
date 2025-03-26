@@ -31,7 +31,7 @@ namespace Tulip.Audio
         private void HandleHurt(HealthChangeEventArgs damage)
         {
             EventInstance hurtSfx = RuntimeManager.CreateInstance(hurtEvent);
-            RuntimeManager.AttachInstanceToGameObject(hurtSfx, transform);
+            RuntimeManager.AttachInstanceToGameObject(hurtSfx, transform.gameObject);
 
             hurtSfx.setParameterByID(paramAliveness.id, damage.Target.IsAlive.GetHashCode());
 
