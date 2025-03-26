@@ -27,6 +27,6 @@ MonoBehaviour:
   tileType: 1
   material: 4
   isUnsafe: 0
-  isUnbreakable: 0
+  isUnbreakable: 1
   hardness: 10
   oreData: {fileID: 0}
