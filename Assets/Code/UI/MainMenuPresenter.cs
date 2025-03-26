@@ -59,7 +59,7 @@ namespace Tulip.UI
             continueButton.SetEnabled(worldExists);
         }
 
-        private async void NewButton_Clicked(ClickEvent _)
+        private void NewButton_Clicked(ClickEvent _)
         {
             DisableButtons();
             newButton.text = "Generating World";
@@ -67,7 +67,7 @@ namespace Tulip.UI
             RuntimeManager.CoreSystem.mixerSuspend();
 
             worldManager.DeleteWorld();
-            await worldManager.CreateNewWorld();
+            worldManager.CreateNewWorld();
             worldManager.LoadWorld();
 
             RuntimeManager.CoreSystem.mixerResume();

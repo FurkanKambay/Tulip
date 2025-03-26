@@ -17,7 +17,6 @@ namespace Tulip.GameWorld
         public event IWorldProvider.ProvideWorldEvent OnProvideWorld;
 
         [Header("References")]
-        [SerializeField] WorldGenerator worldGenerator;
         [SerializeField] StructureData playgroundStructure;
 
         public WorldData World => loadedWorld ?? playgroundStructure.WorldData;
@@ -32,9 +31,10 @@ namespace Tulip.GameWorld
         [Button]
         public void ReturnToMainMenu()
         {
-            if (loadedWorld == null || loadedWorld == playgroundStructure.WorldData)
+            if (loadedWorld == null)
                 return;
 
+            // TODO: reload the scene with the authored world instead
             loadedWorld = playgroundStructure.WorldData;
             OnProvideWorld?.Invoke(loadedWorld);
 
@@ -42,14 +42,13 @@ namespace Tulip.GameWorld
         }
 
         [Button]
-        public async Awaitable CreateNewWorld(string worldName = onlyWorldName)
+        public void CreateNewWorld(string worldName = onlyWorldName)
         {
             if (!CanSaveWorld(worldName))
                 return;
 
-            WorldData generatedWorld = await worldGenerator.GenerateWorldAsync(worldName);
-            worldSaves[worldName] = generatedWorld;
-            // TODO: save generated data
+            worldSaves[worldName] = playgroundStructure.WorldData;
+            // TODO: save world data (store only the delta from authored world)
         }
 
         [Button]

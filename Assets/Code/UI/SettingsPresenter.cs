@@ -1,4 +1,3 @@
-using System;
 using FMOD.Studio;
 using FMODUnity;
 using SaintsField;
