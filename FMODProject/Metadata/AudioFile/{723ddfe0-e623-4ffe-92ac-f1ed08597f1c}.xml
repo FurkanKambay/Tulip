@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{723ddfe0-e623-4ffe-92ac-f1ed08597f1c}">
 		<property name="assetPath">
 			<value>SFX/Footsteps/FootstepsStoneDirt4.ogg</value>

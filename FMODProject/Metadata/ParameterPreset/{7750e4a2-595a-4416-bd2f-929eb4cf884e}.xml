@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="ParameterPreset" id="{7750e4a2-595a-4416-bd2f-929eb4cf884e}">
 		<property name="name">
 			<value>Biome</value>

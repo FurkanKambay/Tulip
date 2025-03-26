@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{3e7e0e93-01ce-4e20-b53a-2b98d6741262}">
 		<property name="assetPath">
 			<value>SFX/Impact/DesignedPunch3.ogg</value>

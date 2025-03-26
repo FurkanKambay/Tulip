@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="EncodableAsset" id="{7786e641-2be6-4217-9588-ca18a139ce54}">
 		<property name="assetPath">
 			<value>UI/</value>

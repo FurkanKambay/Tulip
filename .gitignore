@@ -49,10 +49,10 @@
 # FMOD for Unity
 
 # Never ignore DLLs in the FMOD subfolder.
-!/[Pp]ackages/com.firelight.fmod-for-unity/FMOD/**/lib/*
+!/[Aa]ssets/[Pp]lugins/FMOD/**/lib/*
 
 # Ignore the Cache folder since it is updated locally.
-/[Pp]ackages/com.firelight.fmod-for-unity/FMOD/Cache/*
+/[Aa]ssets/[Pp]lugins/FMOD/Cache/*
 
 # Don't ignore images and gizmos used by FMOD in the Unity Editor.
 !/[Aa]ssets/Gizmos/FMOD/*

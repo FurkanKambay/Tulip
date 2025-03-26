@@ -1,11 +1,5 @@
 {
   "dependencies": {
-    "com.firelight.fmod-for-unity": {
-      "version": "file:com.firelight.fmod-for-unity",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
-    },
     "com.tayx.graphy": {
       "version": "https://github.com/FurkanKambay/graphy.git",
       "depth": 0,

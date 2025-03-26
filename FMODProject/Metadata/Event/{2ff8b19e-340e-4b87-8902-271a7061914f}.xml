@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{2ff8b19e-340e-4b87-8902-271a7061914f}">
 		<property name="name">
 			<value>Tree Hurt</value>
@@ -45,8 +45,8 @@
 			<destination>{8a444530-c27b-4fee-84ef-becc619d09e0}</destination>
 		</relationship>
 		<relationship name="modules">
-			<destination>{506feed4-3123-4e4f-bef3-035147b96571}</destination>
 			<destination>{d78c056a-1f02-4232-aa28-ec0e9ce8093d}</destination>
+			<destination>{506feed4-3123-4e4f-bef3-035147b96571}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{92ca58e1-80cf-4ff2-9992-c53ab67c8241}</destination>
@@ -76,8 +76,8 @@
 	</object>
 	<object class="ParameterProxy" id="{cc3e1f45-5107-43b0-9411-0c119976ccee}">
 		<relationship name="modules">
-			<destination>{506feed4-3123-4e4f-bef3-035147b96571}</destination>
 			<destination>{d78c056a-1f02-4232-aa28-ec0e9ce8093d}</destination>
+			<destination>{506feed4-3123-4e4f-bef3-035147b96571}</destination>
 		</relationship>
 		<relationship name="preset">
 			<destination>{ddc48d5b-77b3-4220-82cf-6b1a07ee901f}</destination>
@@ -99,17 +99,17 @@
 			<destination>{73c4f771-d085-4bd6-8ff1-c7f2590343da}</destination>
 		</relationship>
 	</object>
+	<object class="SingleSound" id="{d78c056a-1f02-4232-aa28-ec0e9ce8093d}">
+		<relationship name="audioFile">
+			<destination>{d264d3e2-4eab-4539-8881-8e5b199eea62}</destination>
+		</relationship>
+	</object>
 	<object class="SingleSound" id="{506feed4-3123-4e4f-bef3-035147b96571}">
 		<property name="start">
 			<value>1</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{988eb546-b5bb-4d9f-b118-2b8e1d14bfbc}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{d78c056a-1f02-4232-aa28-ec0e9ce8093d}">
-		<relationship name="audioFile">
-			<destination>{d264d3e2-4eab-4539-8881-8e5b199eea62}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{c8b84398-59ca-47e7-9ae3-4d9d431d873b}">

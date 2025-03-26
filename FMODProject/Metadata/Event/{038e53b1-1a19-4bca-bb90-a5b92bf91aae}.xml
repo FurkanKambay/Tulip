@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{038e53b1-1a19-4bca-bb90-a5b92bf91aae}">
 		<property name="name">
 			<value>Damage Tile</value>
@@ -46,8 +46,8 @@
 			<destination>{905774d6-94bb-47af-bbc6-0a6dfdc4ae9c}</destination>
 		</relationship>
 		<relationship name="modules">
-			<destination>{895681ae-1abf-49ed-a645-e4c8ae4f7f5f}</destination>
 			<destination>{8bbab0f7-d5a5-4feb-b9e9-dcc78c34b07a}</destination>
+			<destination>{895681ae-1abf-49ed-a645-e4c8ae4f7f5f}</destination>
 			<destination>{40923895-2d36-4048-b4c0-4b2cbe39bf1b}</destination>
 			<destination>{166b03d4-d93f-4b9f-b686-f61949b8ddc4}</destination>
 			<destination>{d1ae8574-34f3-49cc-a151-42b6ad7a579f}</destination>
@@ -77,8 +77,8 @@
 	</object>
 	<object class="ParameterProxy" id="{4a8678e3-d097-4908-81db-585a7c57dc6f}">
 		<relationship name="modules">
-			<destination>{895681ae-1abf-49ed-a645-e4c8ae4f7f5f}</destination>
 			<destination>{8bbab0f7-d5a5-4feb-b9e9-dcc78c34b07a}</destination>
+			<destination>{895681ae-1abf-49ed-a645-e4c8ae4f7f5f}</destination>
 			<destination>{40923895-2d36-4048-b4c0-4b2cbe39bf1b}</destination>
 			<destination>{166b03d4-d93f-4b9f-b686-f61949b8ddc4}</destination>
 			<destination>{d1ae8574-34f3-49cc-a151-42b6ad7a579f}</destination>
@@ -112,17 +112,17 @@
 			<destination>{840fe4d7-d347-4e47-8307-8a9caeb0a565}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{895681ae-1abf-49ed-a645-e4c8ae4f7f5f}">
+	<object class="SingleSound" id="{8bbab0f7-d5a5-4feb-b9e9-dcc78c34b07a}">
 		<property name="start">
-			<value>6</value>
+			<value>5</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{d8d984bd-00f9-4912-aee2-8839c26884b1}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{8bbab0f7-d5a5-4feb-b9e9-dcc78c34b07a}">
+	<object class="SingleSound" id="{895681ae-1abf-49ed-a645-e4c8ae4f7f5f}">
 		<property name="start">
-			<value>5</value>
+			<value>6</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{d8d984bd-00f9-4912-aee2-8839c26884b1}</destination>

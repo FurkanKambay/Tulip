@@ -7,7 +7,7 @@
     "files.readonlyInclude": {
         "**/*.meta": true,
         "Packages/packages-lock.json": true,
-        "Packages/com.firelight.fmod-for-unity": true,
+        "Assets/Plugins/": true,
         "UIElementsSchema/**": true,
         "FMODProject/**": true
     },

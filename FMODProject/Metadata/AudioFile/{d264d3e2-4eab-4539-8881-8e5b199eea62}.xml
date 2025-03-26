@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{d264d3e2-4eab-4539-8881-8e5b199eea62}">
 		<property name="assetPath">
 			<value>SFX/Impact/DesignedAxe4.ogg</value>
