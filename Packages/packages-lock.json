@@ -98,7 +98,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.22",
+      "version": "2.0.23",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -227,8 +227,15 @@
         "com.unity.render-pipelines.core": "17.0.3"
       }
     },
+    "com.wooshii.hierarchydecorator": {
+      "version": "0.10.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
     "today.comes.saintsfield": {
-      "version": "3.36.8",
+      "version": "4.0.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
