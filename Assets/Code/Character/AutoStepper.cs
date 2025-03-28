@@ -59,7 +59,7 @@ namespace Tulip.Character
         {
             float velocity = movement.DesiredVelocity.x;
 
-            if (entity.World.IsNull() || Mathf.Abs(velocity) < velocityThreshold)
+            if (entity.World.Missing() || Mathf.Abs(velocity) < velocityThreshold)
                 return AutoStepDirection.None;
 
             Vector2 direction = Vector2.right * Math.Sign(velocity);

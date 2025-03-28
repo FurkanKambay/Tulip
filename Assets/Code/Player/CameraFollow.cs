@@ -30,7 +30,7 @@ namespace Tulip.Player
         private void Awake()
         {
             brain = subject.GetComponentInChildren<IPlayerBrain>();
-            Assert.IsTrue(brain.IsAlive());
+            Assert.IsNotNull(brain);
 
             initialPosition = transform.position;
             trackingConfig.Target = initialPosition;

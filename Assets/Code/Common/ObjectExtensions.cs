@@ -3,60 +3,63 @@ using UnityEngine;
 
 namespace Furkan.Common
 {
+    // ReSharper disable MemberCanBePrivate.Global
     public static class ObjectExtensions
     {
-        // TODO: Why does NotNullWhen(true) not work
+        // TODO: Why does NotNullWhen(bool) not work?
 
         /// <summary>
-        /// Safe <c>is</c> operator with Unity lifetime check
+        /// Safe <c>is</c> operator with Unity lifetime check.
         /// </summary>
-        public static bool Is<TObject>(this Object self, [MaybeNull] out TObject target) where TObject : Object
+        public static bool Is<TSelf, TTarget>(this TSelf self, [MaybeNull, NotNullWhen(true)] out TTarget target)
+            where TSelf : class
+            where TTarget : Object
         {
-            target = (bool)self ? self as TObject : null;
+            if (self.Missing())
+            {
+                target = null;
+                return false;
+            }
+
+            target = self as TTarget;
             return (bool)target;
         }
 
         /// <summary>
-        /// Safe <c>is not</c> operator with Unity lifetime check
+        /// Safe <c>is not</c> operator with Unity lifetime check.
         /// </summary>
-        public static bool IsNot<TObject>(this Object self, [MaybeNull] out TObject target) where TObject : Object =>
-            !self.Is(out target);
-
-        /// <summary>
-        /// Safe <c>is</c> operator with Unity lifetime check
-        /// </summary>
-        public static bool Is<TInterface, TObject>(this TInterface self, [MaybeNull] out TObject target)
-            where TInterface : class
-            where TObject : Object
+        public static bool IsNot<TSelf, TTarget>(this TSelf self, [MaybeNull, NotNullWhen(false)] out TTarget target)
+            where TSelf : class
+            where TTarget : Object
         {
-            target = self.IsAlive() ? self as TObject : null;
-            return (bool)target;
+            return !self.Is(out target);
         }
 
         /// <summary>
-        /// Safe <c>is not</c> operator with Unity lifetime check
+        /// Unity lifetime check (<c>self != null</c>).
         /// </summary>
-        public static bool IsNot<TInterface, TObject>(this TInterface self, [MaybeNull] out TObject target)
-            where TInterface : class
-            where TObject : Object =>
-            !self.Is(out target);
+        public static bool Exists<TSelf>(this TSelf self)
+            where TSelf : class
+        {
+            return (bool)(self as Object);
+        }
 
         /// <summary>
-        /// Unity lifetime check for interfaces (<c>self != null</c>)
+        /// Unity lifetime check (<c>self == null</c>).
         /// </summary>
-        public static bool IsAlive<TInterface>(this TInterface self) where TInterface : class =>
-            (bool)(self as Object);
+        public static bool Missing<TSelf>(this TSelf self)
+            where TSelf : class
+        {
+            return !self.Exists();
+        }
 
         /// <summary>
-        /// Unity lifetime check for interfaces (<c>self == null</c>)
+        /// Safe <c>??</c> operator with Unity lifetime check.
         /// </summary>
-        public static bool IsNull<TInterface>(this TInterface self) where TInterface : class =>
-            !IsAlive(self);
-
-        /// <summary>
-        /// Safe <c>??</c> operator with Unity lifetime check
-        /// </summary>
-        public static T Or<T>(this T self, T alternative) where T : Object =>
-            self ? self : alternative;
+        public static TSelf Or<TSelf>(this TSelf self, TSelf alternative)
+            where TSelf : Object
+        {
+            return self ? self : alternative;
+        }
     }
 }
