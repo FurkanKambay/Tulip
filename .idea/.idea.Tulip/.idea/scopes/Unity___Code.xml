@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Unity - Code" pattern="file:Assets/Code//*&amp;&amp;!file:*.meta&amp;&amp;!file:*.g.cs&amp;&amp;!file:*.asmdef" />
+</component>

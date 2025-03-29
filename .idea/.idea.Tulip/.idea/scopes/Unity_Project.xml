@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Unity Project" pattern="file:ProjectSettings//*||file:Packages/*||file:*.md" />
+</component>

@@ -22,8 +22,22 @@
 # Gradle cache
 .gradle/
 
-# JetBrains Rider, Visual Studio
-.idea/
+# JetBrains Rider
+
+# Non-sensitive but unwanted files
+.idea/**/vcs.xml
+.idea/**/indexLayout.xml
+.idea/**/projectSettingsUpdater.xml
+
+# User-specific or generated stuff
+.idea/**/dictionaries/
+.idea/**/shelf/
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/workspace.xml
+.idea/**/contentModel.xml
+
+# Visual Studio, .NET, C#
 .vs/
 *.csproj
 *.sln

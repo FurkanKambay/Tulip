@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SharedFileColors">
+    <fileColor scope="Unity Project" color="Violet" />
+    <fileColor scope="Unity - Code" color="152e16" />
+    <fileColor scope="Unity - Assets" color="Gray" />
+    <fileColor scope="FMOD Project" color="Blue" />
+    <fileColor scope="Non-Project Files" color="Yellow" />
+  </component>
+</project>

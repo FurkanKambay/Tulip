@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Unity - Assets" pattern="file:Assets//*&amp;&amp;!file:*.meta&amp;&amp;!file:Assets/Code//*&amp;&amp;!file:Assets/StreamingAssets//*&amp;&amp;!file:Assets/Plugins//*&amp;&amp;!file:Assets/WebGLTemplates//*" />
+</component>

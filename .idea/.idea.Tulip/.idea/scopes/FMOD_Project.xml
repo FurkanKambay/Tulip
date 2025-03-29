@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="FMOD Project" pattern="file:FMODProject//*&amp;&amp;!file:FMODProject/.cache//*&amp;&amp;!file:FMODProject/.unsaved//*&amp;&amp;!file:FMODProject/.user//*&amp;&amp;!file:*.bank" />
+</component>

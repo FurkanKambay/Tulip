@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Unity - Plugins" pattern="file:Assets/Plugins//*&amp;&amp;!file:*.meta" />
+</component>
