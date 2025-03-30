@@ -1,28 +1,43 @@
-[![Play on itch.io!](https://img.shields.io/badge/play_on_itch.io!-fa5c5c?style=for-the-badge&logo=itchdotio&logoColor=fff)](https://furkankambay.itch.io/tulip)
-
 # Project Tulip
+
+[![Play on itch.io](https://img.shields.io/badge/play_on_itch.io-fa5c5c?style=for-the-badge&logo=itchdotio&logoColor=fff)](https://furkankambay.itch.io/tulip)
 
 [<img src="https://img.itch.zone/aW1hZ2UvMjgyOTg2OS8xNzI4NjkzMS5naWY=/347x500/3zsHza.gif" width=400 alt="combat in Project Tulip">](https://furkankambay.itch.io/tulip)
 [<img src="https://img.itch.zone/aW1hZ2UvMjgyOTg2OS8xNzI4Njk3My5naWY=/347x500/UrMrAz.gif" width=400 alt="mining in Project Tulip">](https://furkankambay.itch.io/tulip)
 
-_Project Tulip_ ([play on itch.io!](https://furkankambay.itch.io/tulip)) is an open-world 2D platformer game I'm developing in my free time. It's mainly inspired by Terraria, as well as other games I've played. It's very much work-in-progress and only serves as a portfolio piece for now.
+> [!TIP]
+> Play it on itch.io! 💚 [furkankambay.itch.io/tulip](https://furkankambay.itch.io/tulip)
 
-In its current state, the game is just a few mechanics put together and doesn't have an actual game loop (yet). I'm working on making it an actual game slowly but surely...
+**Project Tulip** is a platformer game, and it's still a work in progress and mainly a portfolio piece for now. I plan for it to have a compelling and immersive hand-crafted world and unique gameplay mechanics, and I'm very excited about all of it.
 
-## (Some) Features
+## Features
 
-- **Systems**: Item swing motions, Entity spawn conditions
-- **Enemies**: Basic red guy, flying skull, mimic treant (static)
-- **Items**: Spear, Pickaxe, Axe, Wood block, Copper ore
-- **Naturally occuring tiles**: Grass, sand, snow, stone, copper vein blocks + default stone walls
-- Audio with FMOD (project source included)
+- **Systems**: Melee combat, tool/weapon swing config, spawn constraints for entities, health status effects, inventory/hotbar, basic enemy AI
+- **Enemies**: Treant mimic, flying skull, generic walker
+- **Items**: Spear, pickaxe, axe, wood, ore
+- **World Tiles**: Grass, sand, snow, stone, copper vein blocks + default stone walls
+- **FMOD** Adaptive Audio (source included)
+- **Rain VFX** (not available on WebGL)
+- Portal to another realm (shader, implemented but not used)
 
-## Design
+<details><summary><h3>Plans</h3></summary>
 
-I have a lot of ideas on the game design, systems, mechanics, quests, and more that I hope I'll be able to implement. I'm keeping the code architecture clean and extensible since I want to be able to extend the game easily. I have lots of private notes on the game that I might make into a public roadmap some day.
+- hand-crafted world
+- ranged weapon
+- rain mechanic
+- a couple more enemies
+- better enemy AI
+- NPCs
+</details>
 
-Planned: decent world generation, (better) enemy AI, quests, world structures, puzzles, bosses
+## Inspirations
 
-## Art
+Project Tulip was originally inspired by Terraria, but I'm moving away from the procedurally generated sandbox idea in favor of a hand-crafted world after I had some exciting ideas for worldbuilding. Games like Hollow Knight, Ori and the Blind Forest, V Rising, Divinity: Original Sin 2, Core Keeper, Wall World, SteamWorld Dig, and Fallout *(even though I haven't played it—shout out Tim Cain)*, are some of the biggest inspirations for it. I can't say for certain that the final game will be inspired by these games in any way, but I'm sure the inspirations will show themselves once the game reaches a certain point in development. I'm aiming for compelling worldbuilding, satisfying combat, and interesting characters.
 
-The art direction is not finalized. I'm using placeholder assets that seem to go well enough together for the time being. Same with sounds and music. I made or modified some art assets myself using LibreSprite. I bought a MIDI keyboard which may not have been a smart investment, but surely I'll make some progress one day.
+## Game Design
+
+I have a lot of notes on different design aspects like narrative, system mechanics, NPCs, quests, enemies/bosses, and more. I might share the plans in more detail once I've made good progress on something.
+
+## Art & Sound
+
+The art direction/style is not finalized. I'm using placeholder assets that seem to go well enough together for the time being. Same with music and sound effects. I made some placeholder art and paid for some others (see [ATTRIBUTIONS](./ATTRIBUTIONS.md)), but the paid assets aren't available on GitHub because I can't share the source files. The itch.io builds use the paid assets as expected, though! I bought a MIDI keyboard to learn music, which may not have been the smartest investment, but surely I'll make some progress one day.
