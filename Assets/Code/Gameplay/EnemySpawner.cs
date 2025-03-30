@@ -130,7 +130,6 @@ namespace Tulip.Gameplay
             }
         }
 
-#if UNITY_EDITOR
 
         [Button, LayoutEnd]
         private void DestroyAllSpawns()
@@ -140,6 +139,8 @@ namespace Tulip.Gameplay
 
             world.ClearEntities();
         }
+
+#if UNITY_EDITOR
 
         private void OnDrawGizmosSelected()
         {
