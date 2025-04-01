@@ -28,11 +28,12 @@
 - a couple more enemies
 - better enemy AI
 - NPCs
+
 </details>
 
 ## Inspirations
 
-Project Tulip was originally inspired by Terraria, but I'm moving away from the procedurally generated sandbox idea in favor of a hand-crafted world after I had some exciting ideas for worldbuilding. Games like Hollow Knight, Ori and the Blind Forest, V Rising, Divinity: Original Sin 2, Core Keeper, Wall World, SteamWorld Dig, and Fallout *(even though I haven't played it—shout out Tim Cain)*, are some of the biggest inspirations for it. I can't say for certain that the final game will be inspired by these games in any way, but I'm sure the inspirations will show themselves once the game reaches a certain point in development. I'm aiming for compelling worldbuilding, satisfying combat, and interesting characters.
+Project Tulip was originally inspired by Terraria, but I'm moving away from the procedurally generated sandbox idea in favor of a hand-crafted world after I had some exciting ideas for worldbuilding. Games like Hollow Knight, Ori and the Blind Forest, V Rising, Divinity: Original Sin 2, Core Keeper, Wall World, Laika: Aged Through Blood, SteamWorld Dig, and Fallout *(even though I haven't played it—shout out Tim Cain)*, are some of the biggest inspirations for it. I can't say for certain that the final game will be inspired by these games in any way, but I'm sure the inspirations will show themselves once the game reaches a certain point in development. I'm aiming for compelling worldbuilding, satisfying combat, and interesting characters.
 
 ## Game Design
 
