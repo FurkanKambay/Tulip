@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Furkan.Common
@@ -6,11 +7,12 @@ namespace Furkan.Common
     // ReSharper disable MemberCanBePrivate.Global
     public static class ObjectExtensions
     {
-        // TODO: Why does NotNullWhen(bool) not work?
+        // TODO: Figure out why `NotNullWhen(bool)` doesn't work
 
         /// <summary>
         /// Safe <c>is</c> operator with Unity lifetime check.
         /// </summary>
+        [ContractAnnotation("self:null => false, target:null")]
         public static bool Is<TSelf, TTarget>(this TSelf self, [MaybeNull, NotNullWhen(true)] out TTarget target)
             where TSelf : class
             where TTarget : Object
@@ -28,6 +30,7 @@ namespace Furkan.Common
         /// <summary>
         /// Safe <c>is not</c> operator with Unity lifetime check.
         /// </summary>
+        [ContractAnnotation("self:null => true, target:null")]
         public static bool IsNot<TSelf, TTarget>(this TSelf self, [MaybeNull, NotNullWhen(false)] out TTarget target)
             where TSelf : class
             where TTarget : Object
@@ -38,6 +41,7 @@ namespace Furkan.Common
         /// <summary>
         /// Unity lifetime check (<c>self != null</c>).
         /// </summary>
+        [ContractAnnotation("null => false")]
         public static bool Exists<TSelf>(this TSelf self)
             where TSelf : class
         {
@@ -47,6 +51,7 @@ namespace Furkan.Common
         /// <summary>
         /// Unity lifetime check (<c>self == null</c>).
         /// </summary>
+        [ContractAnnotation("null => true")]
         public static bool Missing<TSelf>(this TSelf self)
             where TSelf : class
         {
