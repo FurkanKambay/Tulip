@@ -1,6 +1,6 @@
 # Project Tulip
 
-[![Play on itch.io](https://img.shields.io/badge/play_on_itch.io-fa5c5c?style=for-the-badge&logo=itchdotio&logoColor=fff)](https://furkankambay.itch.io/tulip)
+[<img src="https://static.itch.io/images/badge-color.svg" height="48px"></img>](https://furkankambay.itch.io/tulip)
 
 [<img src="https://img.itch.zone/aW1hZ2UvMjgyOTg2OS8xNzI4NjkzMS5naWY=/347x500/3zsHza.gif" width=400 alt="combat in Project Tulip">](https://furkankambay.itch.io/tulip)
 [<img src="https://img.itch.zone/aW1hZ2UvMjgyOTg2OS8xNzI4Njk3My5naWY=/347x500/UrMrAz.gif" width=400 alt="mining in Project Tulip">](https://furkankambay.itch.io/tulip)
