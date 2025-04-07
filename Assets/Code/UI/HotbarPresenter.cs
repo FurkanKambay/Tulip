@@ -109,9 +109,9 @@ namespace Tulip.UI
             SelectSlot(index);
         }
 
-        private void HandleGameStateChange(GameState oldState, GameState newState)
+        private void HandleGameStateChange(GameStateEventArgs args)
         {
-            document.enabled = newState is GameState.Playing;
+            document.enabled = args.NewState is GameState.Playing;
 
             if (document.enabled)
             {

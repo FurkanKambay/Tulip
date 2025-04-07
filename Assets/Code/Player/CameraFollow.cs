@@ -108,7 +108,7 @@ namespace Tulip.Player
             subject.position = targetPosition;
         }
 
-        private void GameManager_StateChanged(GameState _, GameState newState) => cameraMode = newState switch
+        private void GameManager_StateChanged(GameStateEventArgs args) => cameraMode = args.NewState switch
         {
             GameState.MainMenu => CameraMode.MainMenuPlayground,
             _ => CameraMode.FollowPlayer

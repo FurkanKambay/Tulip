@@ -57,6 +57,7 @@ namespace Tulip.UI
             root = document.rootVisualElement.ElementAt(0);
             newButton = root.Q<Button>("NewButton");
             continueButton = root.Q<Button>("ContinueButton");
+
             newButton.RegisterCallback<ClickEvent>(NewButton_Clicked);
             continueButton.RegisterCallback<ClickEvent>(ContinueButton_Clicked);
 
@@ -91,7 +92,7 @@ namespace Tulip.UI
             continueButton.SetEnabled(false);
         }
 
-        private void GameManager_StateChanged(GameState oldState, GameState newState) =>
-            UpdateCallbacks(newState);
+        private void GameManager_StateChanged(GameStateEventArgs args) =>
+            UpdateCallbacks(args.NewState);
     }
 }

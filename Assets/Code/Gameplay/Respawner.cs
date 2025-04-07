@@ -43,11 +43,11 @@ namespace Tulip.Gameplay
             health.OnDie -= Health_Die;
         }
 
-        private void GameState_Change(GameState oldState, GameState newState)
+        private void GameState_Change(GameStateEventArgs args)
         {
-            bool startedPlaying = newState is GameState.Playing && oldState is not GameState.Paused;
+            bool startedPlaying = args.NewState is GameState.Playing && args.OldState is not GameState.Paused;
 
-            if (newState == GameState.MainMenu || startedPlaying)
+            if (args.NewState == GameState.MainMenu || startedPlaying)
                 TryRespawn();
         }
 

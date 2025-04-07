@@ -58,9 +58,9 @@ namespace Tulip.Gameplay
                 timeSinceLastSpawn = 0;
         }
 
-        private void Game_StateChanged(GameState oldState, GameState newState)
+        private void Game_StateChanged(GameStateEventArgs args)
         {
-            isActive = newState != GameState.MainMenu;
+            isActive = args.NewState != GameState.MainMenu;
 
             if (!isActive)
                 DestroyAllSpawns();

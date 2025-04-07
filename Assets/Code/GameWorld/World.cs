@@ -174,8 +174,8 @@ namespace Tulip.GameWorld
             OnRefresh?.Invoke(newWorldData);
         }
 
-        private void HandleGameStateChange(GameState oldState, GameState newState) =>
-            isReadonly = newState == GameState.MainMenu;
+        private void HandleGameStateChange(GameStateEventArgs args) =>
+            isReadonly = args.NewState == GameState.MainMenu;
 
         private Dictionary<Vector2Int, int> GetDamageMap(TileType tileType) => tileType switch
         {

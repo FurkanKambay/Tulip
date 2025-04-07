@@ -13,7 +13,7 @@ namespace Tulip.Core
 
     public class GameManager : MonoBehaviour
     {
-        public delegate void GameStateChangeEvent(GameState oldState, GameState newState);
+        public delegate void GameStateChangeEvent(GameStateEventArgs args);
 
         public static event GameStateChangeEvent OnGameStateChange;
 
@@ -35,7 +35,7 @@ namespace Tulip.Core
 
             UpdateTimeScale();
             UpdateInputs();
-            OnGameStateChange?.Invoke(oldState, newState);
+            OnGameStateChange?.Invoke(new GameStateEventArgs(oldState, newState));
         }
 
         public static void SetPaused(bool shouldPause) => SwitchTo(

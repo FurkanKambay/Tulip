@@ -137,9 +137,9 @@ namespace Tulip.UI
             sfx.release();
         }
 
-        private void HandleGameStateChange(GameState oldState, GameState newState)
+        private void HandleGameStateChange(GameStateEventArgs args)
         {
-            root.visible = newState != GameState.Playing;
+            root.visible = args.NewState != GameState.Playing;
         }
 
         private void SaveExitButton_Clicked(ClickEvent _)
