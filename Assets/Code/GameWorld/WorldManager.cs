@@ -1,4 +1,5 @@
 using System;
+using Furkan.Common;
 using SaintsField;
 using SaintsField.Playa;
 using Tulip.Core;
@@ -19,17 +20,54 @@ namespace Tulip.GameWorld
         [Header("References")]
         [SerializeField] StructureData playgroundStructure;
 
+        [Header("Events")]
+        [SerializeField] EventChannelData newGameEvent;
+        [SerializeField] EventChannelData continueGameEvent;
+        [SerializeField] EventChannelData saveQuitEvent;
+
         public WorldData World => loadedWorld ?? playgroundStructure.WorldData;
 
         private readonly WorldSaveDictionary worldSaves = new();
+
         private WorldData loadedWorld;
 
         private const string onlyWorldName = "World";
 
+#region Unity Lifecycle
         private void Awake() => ReturnToMainMenu();
 
+        private void OnEnable()
+        {
+            newGameEvent.OnRaised      += NewGame_Requested;
+            continueGameEvent.OnRaised += ContinueGame_Requested;
+            saveQuitEvent.OnRaised     += SaveQuit_Requested;
+        }
+
+        private void OnDisable()
+        {
+            newGameEvent.OnRaised      -= NewGame_Requested;
+            continueGameEvent.OnRaised -= ContinueGame_Requested;
+            saveQuitEvent.OnRaised     -= SaveQuit_Requested;
+        }
+#endregion
+
+#region Event Subscriptions
+        private void NewGame_Requested()
+        {
+            DeleteWorld();
+            CreateNewWorld();
+            LoadWorld();
+        }
+
+        private void ContinueGame_Requested() =>
+            LoadWorld();
+
+        private void SaveQuit_Requested() =>
+            ReturnToMainMenu();
+#endregion
+
         [Button]
-        public void ReturnToMainMenu()
+        private void ReturnToMainMenu()
         {
             if (loadedWorld == null)
                 return;
@@ -42,7 +80,7 @@ namespace Tulip.GameWorld
         }
 
         [Button]
-        public void CreateNewWorld(string worldName = onlyWorldName)
+        private void CreateNewWorld(string worldName = onlyWorldName)
         {
             if (!CanSaveWorld(worldName))
                 return;
@@ -52,7 +90,7 @@ namespace Tulip.GameWorld
         }
 
         [Button]
-        public void LoadWorld(string worldName = onlyWorldName)
+        private void LoadWorld(string worldName = onlyWorldName)
         {
             if (!CanLoadWorld(worldName))
                 return;
@@ -64,7 +102,7 @@ namespace Tulip.GameWorld
         }
 
         [Button]
-        public void DeleteWorld(string worldName = onlyWorldName)
+        private void DeleteWorld(string worldName = onlyWorldName)
         {
             if (!CanLoadWorld(worldName))
                 return;
@@ -73,7 +111,7 @@ namespace Tulip.GameWorld
             worldSaves.Remove(worldName);
         }
 
-        public bool CanSaveWorld(string worldName = onlyWorldName) =>
+        private bool CanSaveWorld(string worldName = onlyWorldName) =>
             !string.IsNullOrWhiteSpace(worldName)
             && !worldSaves.ContainsKey(worldName);
 

@@ -1,4 +1,5 @@
 using FMODUnity;
+using Furkan.Common;
 using SaintsField;
 using Tulip.Core;
 using Tulip.GameWorld;
@@ -13,6 +14,10 @@ namespace Tulip.UI
         [SerializeField, Required] UIDocument document;
         [SerializeField, Required] WorldManager worldManager;
         [SerializeField, Required] SettingsPresenter settingsPresenter;
+
+        [Header("Events")]
+        [SerializeField, Required] EventChannelData newGameEvent;
+        [SerializeField, Required] EventChannelData continueGameEvent;
 
         private VisualElement root;
         private Button newButton;
@@ -64,12 +69,9 @@ namespace Tulip.UI
             DisableButtons();
             newButton.text = "Generating World";
 
+            // TODO: handle the audio elsewhere?
             RuntimeManager.CoreSystem.mixerSuspend();
-
-            worldManager.DeleteWorld();
-            worldManager.CreateNewWorld();
-            worldManager.LoadWorld();
-
+            newGameEvent.Raise();
             RuntimeManager.CoreSystem.mixerResume();
         }
 
@@ -79,7 +81,7 @@ namespace Tulip.UI
             continueButton.text = "Loading World";
 
             RuntimeManager.CoreSystem.mixerSuspend();
-            worldManager.LoadWorld();
+            continueGameEvent.Raise();
             RuntimeManager.CoreSystem.mixerResume();
         }
 

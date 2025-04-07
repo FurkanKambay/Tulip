@@ -1,8 +1,8 @@
 using FMOD.Studio;
 using FMODUnity;
+using Furkan.Common;
 using SaintsField;
 using Tulip.Core;
-using Tulip.GameWorld;
 using Tulip.Input;
 using Unity.Properties;
 using UnityEngine;
@@ -20,7 +20,9 @@ namespace Tulip.UI
         [Header("References")]
         [SerializeField, Required] UIDocument document;
         [SerializeField, Required] UserBrain brain;
-        [SerializeField, Required] WorldManager worldManager;
+
+        [Header("Events")]
+        [SerializeField] EventChannelData saveQuitEvent;
 
         [Header("FMOD Events")]
         [SerializeField] EventReference toggleSfx;
@@ -146,7 +148,7 @@ namespace Tulip.UI
             quitFlyoutButton.value = false;
             optionsButton.value = false;
 
-            worldManager.ReturnToMainMenu();
+            saveQuitEvent.Raise();
         }
 
         private void QuitButton_Clicked(ClickEvent _) => GameManager.QuitGame();
