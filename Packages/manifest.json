@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.tayx.graphy": "https://github.com/FurkanKambay/graphy.git",
-    "com.unity.2d.aseprite": "1.1.8",
+    "com.unity.2d.aseprite": "1.1.9",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.2d.tilemap.extras": "4.0.2",
@@ -10,7 +10,7 @@
     "com.unity.render-pipelines.universal": "17.0.3",
     "com.unity.visualeffectgraph": "17.0.3",
     "com.wooshii.hierarchydecorator": "0.10.1",
-    "today.comes.saintsfield": "4.0.2",
+    "today.comes.saintsfield": "4.1.5",
     "com.unity.modules.animation": "1.0.0",
     "com.unity.modules.jsonserialize": "1.0.0",
     "com.unity.modules.particlesystem": "1.0.0",
