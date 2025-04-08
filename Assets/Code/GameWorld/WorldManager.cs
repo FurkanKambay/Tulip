@@ -18,14 +18,14 @@ namespace Tulip.GameWorld
         public event IWorldProvider.ProvideWorldEvent OnProvideWorld;
 
         [Header("References")]
-        [SerializeField] StructureData playgroundStructure;
+        [SerializeField] WorldData world;
 
         [Header("Events")]
         [SerializeField] EventChannelData newGameEvent;
         [SerializeField] EventChannelData continueGameEvent;
         [SerializeField] EventChannelData saveQuitEvent;
 
-        public WorldData World => loadedWorld ?? playgroundStructure.WorldData;
+        public WorldData World => loadedWorld.Or(world);
 
         private WorldData loadedWorld;
 
@@ -74,11 +74,11 @@ namespace Tulip.GameWorld
         [Button]
         private void ReturnToMainMenu()
         {
-            if (loadedWorld == null)
+            if (!loadedWorld)
                 return;
 
             // TODO: reload the scene with the authored world instead
-            loadedWorld = playgroundStructure.WorldData;
+            loadedWorld = world;
             OnProvideWorld?.Invoke(loadedWorld);
 
             GameManager.SwitchTo(GameState.MainMenu);
@@ -87,7 +87,7 @@ namespace Tulip.GameWorld
         [Button]
         private void LoadInitialWorld()
         {
-            loadedWorld = playgroundStructure.WorldData;
+            loadedWorld = world;
             OnProvideWorld?.Invoke(loadedWorld);
 
             GameManager.SwitchTo(GameState.Playing);

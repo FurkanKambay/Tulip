@@ -1816,7 +1816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6076eb0a70d4845a1e9dbd15b4fe694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playgroundStructure: {fileID: 11400000, guid: 86e6a55c1634f6847b40457edea59b53, type: 2}
+  world: {fileID: 11400000, guid: 86e6a55c1634f6847b40457edea59b53, type: 2}
   newGameEvent: {fileID: 11400000, guid: d0558c11f89cfdd4892ca7e60865b401, type: 2}
   continueGameEvent: {fileID: 11400000, guid: fba74fa8cf4b436429a5ce6fbe4f2365, type: 2}
   saveQuitEvent: {fileID: 11400000, guid: bfaf9c981cd952648a4499dcad8ab33c, type: 2}

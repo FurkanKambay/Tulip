@@ -10,8 +10,8 @@ namespace Tulip.Data
     {
     }
 
-    [Serializable]
-    public class WorldData
+    [CreateAssetMenu(menuName = "World Data")]
+    public class WorldData : ScriptableObject
     {
         public string Name => name;
         public Vector2Int Dimensions => dimensions;
@@ -20,21 +20,10 @@ namespace Tulip.Data
         public TileDictionary Blocks => blocks;
         public TileDictionary Curtains => curtains;
 
-        [SerializeField] string name;
         [SerializeField, Min(0)] Vector2Int dimensions;
 
         [SerializeField, HideInInspector] TileDictionary walls;
         [SerializeField, HideInInspector] TileDictionary blocks;
         [SerializeField, HideInInspector] TileDictionary curtains;
-
-        public WorldData(string name, Vector2Int dimensions,
-            TileDictionary walls, TileDictionary blocks, TileDictionary curtains)
-        {
-            this.name = name;
-            this.dimensions = dimensions;
-            this.walls = walls;
-            this.blocks = blocks;
-            this.curtains = curtains;
-        }
     }
 }
