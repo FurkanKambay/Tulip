@@ -27,11 +27,7 @@ namespace Tulip.GameWorld
 
         public WorldData World => loadedWorld ?? playgroundStructure.WorldData;
 
-        private readonly WorldSaveDictionary worldSaves = new();
-
         private WorldData loadedWorld;
-
-        private const string onlyWorldName = "World";
 
 #region Unity Lifecycle
         private void Awake() => ReturnToMainMenu();
@@ -51,19 +47,28 @@ namespace Tulip.GameWorld
         }
 #endregion
 
-#region Event Subscriptions
+#region Event Handlers
         private void NewGame_Requested()
         {
-            DeleteWorld();
-            CreateNewWorld();
-            LoadWorld();
+            UnloadWorld();
+            LoadInitialWorld();
+            // TODO: save the new world
         }
 
-        private void ContinueGame_Requested() =>
-            LoadWorld();
+        private void ContinueGame_Requested()
+        {
+            LoadInitialWorld();
+            // TODO: load latest save instead
+        }
 
-        private void SaveQuit_Requested() =>
+        private void SaveQuit_Requested()
+        {
+            // TODO: save the world to disk
+            // only store the tile delta and other world state
+            // default world should be stored in scene, and its WorldData cached on build?
+
             ReturnToMainMenu();
+        }
 #endregion
 
         [Button]
@@ -80,44 +85,16 @@ namespace Tulip.GameWorld
         }
 
         [Button]
-        private void CreateNewWorld(string worldName = onlyWorldName)
+        private void LoadInitialWorld()
         {
-            if (!CanSaveWorld(worldName))
-                return;
-
-            worldSaves[worldName] = playgroundStructure.WorldData;
-            // TODO: save world data (store only the delta from authored world)
-        }
-
-        [Button]
-        private void LoadWorld(string worldName = onlyWorldName)
-        {
-            if (!CanLoadWorld(worldName))
-                return;
-
-            loadedWorld = worldSaves[worldName];
+            loadedWorld = playgroundStructure.WorldData;
             OnProvideWorld?.Invoke(loadedWorld);
 
             GameManager.SwitchTo(GameState.Playing);
         }
 
         [Button]
-        private void DeleteWorld(string worldName = onlyWorldName)
-        {
-            if (!CanLoadWorld(worldName))
-                return;
-
+        private void UnloadWorld() =>
             loadedWorld = null;
-            worldSaves.Remove(worldName);
-        }
-
-        private bool CanSaveWorld(string worldName = onlyWorldName) =>
-            !string.IsNullOrWhiteSpace(worldName)
-            && !worldSaves.ContainsKey(worldName);
-
-        public bool CanLoadWorld(string worldName = onlyWorldName) =>
-            !string.IsNullOrWhiteSpace(worldName)
-            && worldSaves.ContainsKey(worldName)
-            && loadedWorld?.Name != worldName;
     }
 }

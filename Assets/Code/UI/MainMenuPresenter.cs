@@ -61,8 +61,8 @@ namespace Tulip.UI
             newButton.RegisterCallback<ClickEvent>(NewButton_Clicked);
             continueButton.RegisterCallback<ClickEvent>(ContinueButton_Clicked);
 
-            bool worldExists = worldManager.CanLoadWorld();
-            continueButton.SetEnabled(worldExists);
+            // TODO: enable continue button if there's a latest save
+            continueButton.SetEnabled(false);
         }
 
         private void NewButton_Clicked(ClickEvent _)
