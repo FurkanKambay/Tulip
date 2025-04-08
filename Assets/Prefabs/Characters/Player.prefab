@@ -844,8 +844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992d83c1bd31b8b41aec2663aa6ead9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entity:
-    <V>k__BackingField: {fileID: 963390074723932652}
+  entity: {fileID: 963390074723932652}
   maxHealth: 100
   currentHealth: 100
   invulnerabilityDuration: 0.5
@@ -895,8 +894,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entity: {fileID: 963390074723932652}
   inventory: {fileID: 4728014676095277497}
-  itemWielder:
-    <V>k__BackingField: {fileID: 647329674294491017}
+  itemWielder: {fileID: 647329674294491017}
   centerOffset: 0.5
   coyoteTime: 0.15
   range: 5
@@ -947,8 +945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5879189f2c9140488ca0ab4d017486e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health:
-    <V>k__BackingField: {fileID: 7186377946535505526}
+  health: {fileID: 7186377946535505526}
   hurtEvent:
     Guid:
       Data1: -1768576580
@@ -968,8 +965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c4603604fd42608b358258f353d561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemWielder:
-    <V>k__BackingField: {fileID: 647329674294491017}
+  itemWielder: {fileID: 647329674294491017}
   itemSwingEvent:
     Guid:
       Data1: 793295938

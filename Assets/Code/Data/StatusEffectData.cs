@@ -1,4 +1,5 @@
 using SaintsField;
+using Tulip.Character;
 using UnityEngine;
 
 namespace Tulip.Data
@@ -23,7 +24,7 @@ namespace Tulip.Data
         [BelowRichLabel(nameof(AmountPerSecond), isCallback: true)]
         [SerializeField, Min(0.01f)] float rate;
 
-        public StatusEffect Create(HealthBase source, HealthBase target) => new(this, source, target);
+        public StatusEffect Create(Health source, Health target) => new(this, source, target);
 
         private string AmountPerSecond => $"<color=green>{amount / rate} per second</color>";
     }

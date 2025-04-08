@@ -1,4 +1,5 @@
 using System;
+using Tulip.Character;
 using UnityEngine;
 
 namespace Tulip.Data
@@ -10,14 +11,14 @@ namespace Tulip.Data
         public bool IsDone => !Data.IsPermanent && RemainingDuration <= 0;
 
         [field: SerializeField] public StatusEffectData Data { get; private set; }
-        [field: SerializeField] public HealthBase Source { get; private set; }
-        [field: SerializeField] public HealthBase Target { get; private set; }
+        [field: SerializeField] public Health Source { get; private set; }
+        [field: SerializeField] public Health Target { get; private set; }
 
         public float RemainingDuration { get; private set; }
 
         private float timeSinceLastProc;
 
-        internal StatusEffect(StatusEffectData data, HealthBase source, HealthBase target)
+        internal StatusEffect(StatusEffectData data, Health source, Health target)
         {
             Data = data;
             Source = source;

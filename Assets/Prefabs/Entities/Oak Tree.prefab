@@ -436,8 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5879189f2c9140488ca0ab4d017486e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health:
-    <V>k__BackingField: {fileID: 5823316243804091760}
+  health: {fileID: 5823316243804091760}
   hurtEvent:
     Guid:
       Data1: 804827550
@@ -490,8 +489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992d83c1bd31b8b41aec2663aa6ead9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entity:
-    <V>k__BackingField: {fileID: 7564833111998869751}
+  entity: {fileID: 7564833111998869751}
   maxHealth: 200
   currentHealth: 200
   invulnerabilityDuration: 0

@@ -5,6 +5,7 @@ using Tulip.Character;
 using Tulip.Core;
 using Tulip.Data;
 using Tulip.Data.Items;
+using Tulip.Gameplay;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -15,7 +16,7 @@ namespace Tulip.Player
         [Header("References")]
         [SerializeField, Required] TangibleEntity entity;
         [SerializeField, Required] Inventory inventory;
-        [SerializeField, Required] SaintsInterface<Component, IItemWielder> itemWielder;
+        [SerializeField, Required] ItemWielder itemWielder;
 
         [Header("Config")]
         [SerializeField, Range(0, 1)] float centerOffset = 0.5f;
@@ -47,8 +48,8 @@ namespace Tulip.Player
         private ItemStack latestSwungStack;
         private float coyoteTimeCounter;
 
-        private void OnEnable() => itemWielder.I.OnSwingPerform += ItemWielder_Swing;
-        private void OnDisable() => itemWielder.I.OnSwingPerform -= ItemWielder_Swing;
+        private void OnEnable() => itemWielder.OnSwingPerform += ItemWielder_Swing;
+        private void OnDisable() => itemWielder.OnSwingPerform -= ItemWielder_Swing;
 
         private void Update()
         {
@@ -96,11 +97,11 @@ namespace Tulip.Player
 
         private void AssignCells()
         {
-            if (itemWielder.I.CurrentStack.itemData.IsNot(out BaseWorldToolData _))
+            if (itemWielder.CurrentStack.itemData.IsNot(out BaseWorldToolData _))
                 return;
 
             Vector2 hotspot = transform.position;
-            Vector2 aimPoint = hotspot + itemWielder.I.AimDirection;
+            Vector2 aimPoint = hotspot + itemWielder.AimDirection;
 
             MouseCell = entity.World.WorldToCell(aimPoint);
 
@@ -110,7 +111,7 @@ namespace Tulip.Player
                 return;
             }
 
-            if (!Settings.Gameplay.UseSmartCursor || itemWielder.I.CurrentStack.itemData.IsNot(out WorldToolData _))
+            if (!Settings.Gameplay.UseSmartCursor || itemWielder.CurrentStack.itemData.IsNot(out WorldToolData _))
             {
                 // holding a placeable OR not smart cursor
                 float distance = Vector3.Distance(hotspot, aimPoint);
@@ -119,7 +120,7 @@ namespace Tulip.Player
             }
 
             // holding a tool
-            Vector2 aimDirection = itemWielder.I.AimDirection.normalized;
+            Vector2 aimDirection = itemWielder.AimDirection.normalized;
             Vector2 offset = Vector3.Cross(aimDirection, Vector3.forward) * centerOffset;
             topOrigin = hotspot + offset;
             bottomOrigin = hotspot - offset;
@@ -144,7 +145,7 @@ namespace Tulip.Player
             if (!Settings.Gameplay.UseSmartCursor)
                 return;
 
-            Vector2 aimVector = itemWielder.I.AimDirection.normalized * range;
+            Vector2 aimVector = itemWielder.AimDirection.normalized * range;
 
             Gizmos.color = Color.red;
             Gizmos.DrawRay(topOrigin, aimVector);

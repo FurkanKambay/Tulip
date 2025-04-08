@@ -1,5 +1,6 @@
 using SaintsField;
 using Tulip.Data.Items;
+using Tulip.GameWorld;
 using UnityEngine;
 
 namespace Tulip.Data
@@ -33,7 +34,7 @@ namespace Tulip.Data
         public ItemData Loot => loot;
         public int LootAmount => lootAmount;
 
-        public bool CanSpawnAt(IWorld world, Vector2Int cell) =>
+        public bool CanSpawnAt(World world, Vector2Int cell) =>
             spawnConditionData.CanSpawn(this, world, cell);
     }
 }

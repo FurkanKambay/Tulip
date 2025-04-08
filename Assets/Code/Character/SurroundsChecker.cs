@@ -1,6 +1,7 @@
 using SaintsField;
 using Tulip.Data;
 using Tulip.Data.Items;
+using Tulip.GameWorld;
 using UnityEngine;
 
 namespace Tulip.Character
@@ -26,7 +27,7 @@ namespace Tulip.Character
         public PlaceableMaterial GroundMaterial { get; private set; }
 
         private Transform entityTransform;
-        private IWorld world;
+        private World world;
 
         private Vector2 MinBounds => collider.bounds.min;
         private Vector2 MaxBounds => collider.bounds.max;
@@ -44,7 +45,7 @@ namespace Tulip.Character
         private static readonly Vector2 safetyRight = new(0.001f, 0.5f);
 
         private void Awake() => entityTransform = collider.transform;
-        private void Start() => world = entityTransform.GetComponent<ITangibleEntity>().World;
+        private void Start() => world = entityTransform.GetComponent<TangibleEntity>().World;
 
         private void Update()
         {

@@ -1,16 +1,16 @@
 using SaintsField;
 using Tulip.Character;
 using Tulip.Core;
-using Tulip.Data;
 using Tulip.Data.Gameplay;
+using Tulip.GameWorld;
 using UnityEngine;
 
 namespace Tulip.Gameplay
 {
-    public class Respawner : MonoBehaviour, IRespawner
+    public class Respawner : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField, Required] HealthBase health;
+        [SerializeField, Required] Health health;
 
         [Header("Config")]
         [SerializeField] bool autoRespawn = true;
@@ -22,7 +22,7 @@ namespace Tulip.Gameplay
 
         private TangibleEntity entity;
         private Transform subject;
-        private IWorld world;
+        private World world;
 
         private void Awake()
         {

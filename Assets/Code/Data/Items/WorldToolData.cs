@@ -1,3 +1,4 @@
+using Tulip.GameWorld;
 using UnityEngine;
 
 namespace Tulip.Data.Items
@@ -15,7 +16,7 @@ namespace Tulip.Data.Items
         [SerializeField, Min(0)] protected int power = 50;
         [SerializeField] protected TileType tileType = TileType.Block;
 
-        public override ToolUsability GetUsability(IWorld world, Vector2Int cell)
+        public override ToolUsability GetUsability(World world, Vector2Int cell)
         {
             bool hasTile = world.HasTile(cell, TileType.Block);
             bool cellHasEntity = !world.IsCellEntityFree(cell);
@@ -25,7 +26,7 @@ namespace Tulip.Data.Items
                 : ToolUsability.Available;
         }
 
-        public override InventoryModification UseOn(IWorld world, Vector2Int cell) =>
+        public override InventoryModification UseOn(World world, Vector2Int cell) =>
             world.DamageTile(cell, tileType, power);
     }
 }

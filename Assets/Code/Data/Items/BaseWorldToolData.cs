@@ -1,5 +1,6 @@
 using Furkan.Common;
 using SaintsField;
+using Tulip.GameWorld;
 using UnityEngine;
 
 namespace Tulip.Data.Items
@@ -9,8 +10,8 @@ namespace Tulip.Data.Items
     /// </summary>
     public abstract class BaseWorldToolData : UsableData
     {
-        public abstract ToolUsability GetUsability(IWorld world, Vector2Int cell);
-        public abstract InventoryModification UseOn(IWorld world, Vector2Int cell);
+        public abstract ToolUsability GetUsability(World world, Vector2Int cell);
+        public abstract InventoryModification UseOn(World world, Vector2Int cell);
 
         public Sprite CellHighlightSprite => cellHighlightSprite.Or(icon);
 

@@ -9,11 +9,14 @@ using UnityEngine;
 
 namespace Tulip.Gameplay
 {
-    public class ItemWielder : MonoBehaviour, IItemWielder
+    public class ItemWielder : MonoBehaviour
     {
-        public event IItemWielder.ItemReadyEvent OnReady;
-        public event IItemWielder.ItemSwingEvent OnSwingStart;
-        public event IItemWielder.ItemSwingEvent OnSwingPerform;
+        public delegate void ItemReadyEvent(ItemStack stack);
+        public delegate void ItemSwingEvent(ItemStack stack, Vector3 aimPoint);
+
+        public event ItemReadyEvent OnReady;
+        public event ItemSwingEvent OnSwingStart;
+        public event ItemSwingEvent OnSwingPerform;
 
         public ItemStack CurrentStack => HotbarItem.IsValid ? HotbarItem : fallbackStack;
         private ItemStack HotbarItem => hotbar ? hotbar.SelectedStack : default;
@@ -21,7 +24,7 @@ namespace Tulip.Gameplay
         public Vector2 AimDirection => lastAimDirection;
 
         [Header("References")]
-        [SerializeField, Required] HealthBase health;
+        [SerializeField, Required] Health health;
         [SerializeField, Required] SaintsInterface<Component, IWielderBrain> brain;
         [SerializeField] Hotbar hotbar;
         [SerializeField, Required] SpriteRenderer itemRenderer;
@@ -287,7 +290,7 @@ namespace Tulip.Gameplay
         }
 
         private void HandleDie(HealthChangeEventArgs _) => itemRenderer.enabled = false;
-        private void HandleRevived(IHealth reviver) => itemRenderer.enabled = true;
+        private void HandleRevived(Health reviver) => itemRenderer.enabled = true;
 
         private void HandleHotbarSelectionChanged(int _)
         {

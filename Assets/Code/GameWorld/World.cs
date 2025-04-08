@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Furkan.Common;
-using SaintsField;
+using Tulip.Character;
 using Tulip.Core;
 using Tulip.Data;
 using Tulip.Data.Items;
@@ -10,15 +10,17 @@ using UnityEngine;
 
 namespace Tulip.GameWorld
 {
-    public class World : MonoBehaviour, IWorld
+    public class World : MonoBehaviour
     {
-        public event IWorldProvider.ProvideWorldEvent OnRefresh;
-        public event IWorld.PlaceableEvent            OnPlaceTile;
-        public event IWorld.PlaceableEvent            OnHitTile;
-        public event IWorld.PlaceableEvent            OnDestroyTile;
+        public delegate void PlaceableEvent(TileModification modification);
+
+        public event ProvideWorldEvent OnRefresh;
+        public event PlaceableEvent    OnPlaceTile;
+        public event PlaceableEvent    OnHitTile;
+        public event PlaceableEvent    OnDestroyTile;
 
         [Header("References")]
-        [SerializeField] SaintsInterface<Component, IWorldProvider> worldProvider;
+        [SerializeField] WorldManager worldManager;
         [SerializeField] WorldVisual worldVisual;
 
         [Header("Config")]
@@ -28,25 +30,29 @@ namespace Tulip.GameWorld
         public WorldData WorldData  { get; private set; }
         public bool      IsReadonly => isReadonly;
 
-        private readonly Dictionary<Vector2Int, ITangibleEntity> staticEntities   = new();
-        private readonly Dictionary<Vector2Int, int>             wallDamageMap    = new();
-        private readonly Dictionary<Vector2Int, int>             blockDamageMap   = new();
-        private readonly Dictionary<Vector2Int, int>             curtainDamageMap = new();
+        private readonly Dictionary<Vector2Int, TangibleEntity> staticEntities   = new();
+        private readonly Dictionary<Vector2Int, int>            wallDamageMap    = new();
+        private readonly Dictionary<Vector2Int, int>            blockDamageMap   = new();
+        private readonly Dictionary<Vector2Int, int>            curtainDamageMap = new();
 
-        private void Awake() => SetWorldData(worldProvider.I.World);
+        private void Awake() => SetWorldData(worldManager.World);
 
         private void OnEnable()
         {
-            GameStateChange.Event          += HandleGameStateChange;
-            worldProvider.I.OnProvideWorld += SetWorldData;
+            GameStateChange.Event       += HandleGameStateChange;
+            worldManager.OnProvideWorld += SetWorldData;
         }
 
         private void OnDisable()
         {
-            GameStateChange.Event          -= HandleGameStateChange;
-            worldProvider.I.OnProvideWorld -= SetWorldData;
+            GameStateChange.Event       -= HandleGameStateChange;
+            worldManager.OnProvideWorld -= SetWorldData;
         }
 
+        /// <summary>
+        /// Tries to damage a tile of the given type at the given cell coordinates.
+        /// </summary>
+        /// <returns>The loot from the tile. Empty if the action was not successful.</returns>
         public InventoryModification DamageTile(Vector2Int cell, TileType tileType, int damage)
         {
             if (isReadonly)
@@ -84,6 +90,10 @@ namespace Tulip.GameWorld
             return InventoryModification.ToAdd(loot.Stack(1));
         }
 
+        /// <summary>
+        /// Tries to place a tile at the given cell coordinates.
+        /// </summary>
+        /// <returns>The inventory modification to place the tile. Empty if the action was not successful.</returns>
         public InventoryModification PlaceTile(Vector2Int cell, PlaceableData placeableData)
         {
             if (isReadonly)
@@ -100,7 +110,7 @@ namespace Tulip.GameWorld
             return InventoryModification.ToRemove(placeableData.Stack(1));
         }
 
-        public bool TryAddStaticEntity(Vector2Int baseCell, ITangibleEntity entity) =>
+        public bool TryAddStaticEntity(Vector2Int baseCell, TangibleEntity entity) =>
             !isReadonly && staticEntities.TryAdd(baseCell, entity);
 
         public void ClearEntities() => staticEntities.Clear();
@@ -145,6 +155,8 @@ namespace Tulip.GameWorld
         }
 #endregion
 
+        /// <param name="baseCell">The bottom-left cell, NOT center or pivot</param>
+        /// <param name="entitySize"></param>
         public bool CanAccommodate(Vector2Int baseCell, Vector2Int entitySize)
         {
             if (staticEntities.ContainsKey(baseCell))
@@ -163,7 +175,7 @@ namespace Tulip.GameWorld
 
         private void SetWorldData(WorldData newWorldData)
         {
-            if (WorldData == newWorldData || newWorldData == null)
+            if (!newWorldData || WorldData == newWorldData)
                 return;
 
             WorldData = newWorldData;

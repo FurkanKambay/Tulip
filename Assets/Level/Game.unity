@@ -187,8 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   world: {fileID: 661774619}
   terraformer: {fileID: 1186004516}
-  itemWielder:
-    <V>k__BackingField: {fileID: 565227064}
+  itemWielder: {fileID: 565227064}
   renderer: {fileID: 318885851}
   trackingSpeed: 100
   validColor: {r: 1, g: 1, b: 1, a: 0.7490196}
@@ -627,8 +626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2578b4d5d1c444c3b7c7c3b109fad6dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldProvider:
-    <V>k__BackingField: {fileID: 2122878211}
+  worldManager: {fileID: 2122878211}
   worldVisual: {fileID: 414399566}
   isReadonly: 1
   entityLayers:
@@ -711,8 +709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   document: {fileID: 708079354}
-  hotbar:
-    <V>k__BackingField: {fileID: 1154427127}
+  hotbar: {fileID: 1154427127}
   hotbarSfx: {fileID: 708079358}
   tooltipShowDuration: 2000
   tooltipSlideDuration: 100
@@ -1083,8 +1080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   document: {fileID: 1406129968}
   health: {fileID: 664534664}
-  respawner:
-    <V>k__BackingField: {fileID: 1051015082}
+  respawner: {fileID: 1051015082}
 --- !u!1 &1423174217
 GameObject:
   m_ObjectHideFlags: 0

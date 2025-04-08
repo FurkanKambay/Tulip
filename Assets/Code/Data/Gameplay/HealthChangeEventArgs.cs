@@ -1,3 +1,4 @@
+using Tulip.Character;
 using UnityEngine;
 
 namespace Tulip.Data.Gameplay
@@ -5,11 +6,11 @@ namespace Tulip.Data.Gameplay
     public readonly struct HealthChangeEventArgs
     {
         public readonly float Amount;
-        public readonly IHealth Source;
-        public readonly IHealth Target;
+        public readonly Health Source;
+        public readonly Health Target;
         public readonly Vector2 SourcePosition;
 
-        public HealthChangeEventArgs(float amount, IHealth source, IHealth target, Vector2 sourcePosition)
+        public HealthChangeEventArgs(float amount, Health source, Health target, Vector2 sourcePosition)
         {
             Amount = amount;
             Source = source;

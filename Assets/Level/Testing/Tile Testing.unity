@@ -163,8 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2578b4d5d1c444c3b7c7c3b109fad6dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldProvider:
-    <V>k__BackingField: {fileID: 0}
+  worldManager: {fileID: 0}
   worldVisual: {fileID: 0}
   isReadonly: 0
   entityLayers:

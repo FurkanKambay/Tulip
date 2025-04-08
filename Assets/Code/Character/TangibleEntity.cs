@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Tulip.Character
 {
-    public class TangibleEntity : MonoBehaviour, ITangibleEntity
+    public class TangibleEntity : MonoBehaviour
     {
         [Header("References")]
         [SerializeField, Required] EntityData entityData;
@@ -16,9 +16,9 @@ namespace Tulip.Character
 
         public string Name => entityData.Name;
         public EntityData EntityData => entityData;
-        public HealthBase Health => health;
+        public Health Health => health;
 
-        public IWorld World => world;
+        public World World => world;
         public Vector2Int Cell { get; private set; }
         public RectInt Rect => new (Cell, EntityData.Size);
 
@@ -41,7 +41,7 @@ namespace Tulip.Character
         }
 
         private void HandleDied(HealthChangeEventArgs damage) => body.simulated = false;
-        private void HandleRevived(IHealth reviver) => body.simulated = true;
+        private void HandleRevived(Health reviver) => body.simulated = true;
 
         public void SetResidence(World homeWorld, Vector2Int baseCell)
         {

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Tulip.Character
 {
-    public class Hotbar : MonoBehaviour, IHotbar
+    public class Hotbar : MonoBehaviour
     {
         public event Action OnModify;
         public event Action<int> OnChangeSelection;

@@ -13,9 +13,11 @@ namespace Tulip.GameWorld
     {
     }
 
-    public class WorldManager : MonoBehaviour, IWorldProvider
+    public delegate void ProvideWorldEvent(WorldData worldData);
+
+    public class WorldManager : MonoBehaviour
     {
-        public event IWorldProvider.ProvideWorldEvent OnProvideWorld;
+        public event ProvideWorldEvent OnProvideWorld;
 
         [Header("References")]
         [SerializeField] WorldData world;

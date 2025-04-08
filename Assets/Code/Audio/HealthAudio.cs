@@ -1,7 +1,7 @@
 using FMOD.Studio;
 using FMODUnity;
 using SaintsField;
-using Tulip.Data;
+using Tulip.Character;
 using Tulip.Data.Gameplay;
 using UnityEngine;
 
@@ -10,7 +10,7 @@ namespace Tulip.Audio
     public class HealthAudio : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField, Required] SaintsInterface<Component, IHealth> health;
+        [SerializeField, Required] Health health;
 
         [Header("FMOD Events")]
         [SerializeField] EventReference hurtEvent;
@@ -25,8 +25,8 @@ namespace Tulip.Audio
             description.getParameterDescriptionByName("Aliveness", out paramAliveness);
         }
 
-        private void OnEnable() => health.I.OnHurt += HandleHurt;
-        private void OnDisable() => health.I.OnHurt -= HandleHurt;
+        private void OnEnable() => health.OnHurt += HandleHurt;
+        private void OnDisable() => health.OnHurt -= HandleHurt;
 
         private void HandleHurt(HealthChangeEventArgs damage)
         {

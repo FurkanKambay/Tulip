@@ -13,7 +13,7 @@ namespace Tulip.Gameplay
     public class WeaponWielder : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField, Required] HealthBase health;
+        [SerializeField, Required] Health health;
         [SerializeField, Required] ItemWielder itemWielder;
         [SerializeField] Inventory inventory;
 
@@ -31,7 +31,7 @@ namespace Tulip.Gameplay
 
             Array.Resize(ref hits, weaponData!.IsMultiTarget ? maxMultiTargetAmount : 1);
 
-            foreach (HealthBase target in GetTargets(transform.position, targetPoint))
+            foreach (Health target in GetTargets(transform.position, targetPoint))
             {
                 if (!target.enabled)
                     continue;
@@ -43,7 +43,7 @@ namespace Tulip.Gameplay
             }
         }
 
-        private IEnumerable<HealthBase> GetTargets(Vector2 origin, Vector2 aimPoint)
+        private IEnumerable<Health> GetTargets(Vector2 origin, Vector2 aimPoint)
         {
             Vector2 direction = (aimPoint - origin).normalized;
 
@@ -56,7 +56,7 @@ namespace Tulip.Gameplay
             return hits
                 .Take(hitCount)
                 .TakeWhile(hit => (bool)hit)
-                .Select(hit => hit.GetComponentInChildren<HealthBase>())
+                .Select(hit => hit.GetComponentInChildren<Health>())
                 .TakeWhile(hitHealth => (bool)hitHealth);
         }
 

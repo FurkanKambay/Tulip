@@ -2,6 +2,7 @@ using System.Linq;
 using SaintsField;
 using SaintsField.Playa;
 using Tulip.Data.Items;
+using Tulip.GameWorld;
 using UnityEngine;
 
 namespace Tulip.Data
@@ -32,7 +33,7 @@ namespace Tulip.Data
         /// <param name="entityData"></param>
         /// <param name="world"></param>
         /// <param name="baseCell">The bottom-left cell, NOT center or pivot</param>
-        public bool CanSpawn(EntityData entityData, IWorld world, Vector2Int baseCell)
+        public bool CanSpawn(EntityData entityData, World world, Vector2Int baseCell)
         {
             if (!world.CanAccommodate(baseCell, entityData.Size))
                 return false;

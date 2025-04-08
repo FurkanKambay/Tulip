@@ -1,6 +1,6 @@
 using FMODUnity;
-using SaintsField;
 using Tulip.Data;
+using Tulip.Gameplay;
 using UnityEngine;
 
 namespace Tulip.Audio
@@ -8,21 +8,21 @@ namespace Tulip.Audio
     public class WielderAudio : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField] SaintsInterface<Component, IItemWielder> itemWielder;
+        [SerializeField] ItemWielder itemWielder;
 
         [Header("FMOD Events")]
         [SerializeField] EventReference itemSwingEvent;
 
         private void OnEnable()
         {
-            if (itemWielder.V)
-                itemWielder.I.OnSwingPerform += HandleItemSwing;
+            if (itemWielder)
+                itemWielder.OnSwingPerform += HandleItemSwing;
         }
 
         private void OnDisable()
         {
-            if (itemWielder.V)
-                itemWielder.I.OnSwingPerform -= HandleItemSwing;
+            if (itemWielder)
+                itemWielder.OnSwingPerform -= HandleItemSwing;
         }
 
         private void HandleItemSwing(ItemStack stack, Vector3 _) =>

@@ -1,5 +1,6 @@
 using SaintsField.Playa;
 using Tulip.Data.Tiles;
+using Tulip.GameWorld;
 using UnityEngine;
 
 namespace Tulip.Data.Items
@@ -33,13 +34,13 @@ namespace Tulip.Data.Items
 
         [SerializeField] protected OreData oreData;
 
-        public override InventoryModification UseOn(IWorld world, Vector2Int cell)
+        public override InventoryModification UseOn(World world, Vector2Int cell)
         {
             ToolUsability usability = GetUsability(world, cell);
             return usability == ToolUsability.Available ? world.PlaceTile(cell, this) : default;
         }
 
-        public override ToolUsability GetUsability(IWorld world, Vector2Int cell)
+        public override ToolUsability GetUsability(World world, Vector2Int cell)
         {
             // TODO: check if cell is out of world bounds
             // return ToolUsability.Never;

@@ -2,6 +2,7 @@ using Furkan.Common;
 using SaintsField;
 using Tulip.Data;
 using Tulip.Data.Items;
+using Tulip.Gameplay;
 using Tulip.GameWorld;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -20,7 +21,7 @@ namespace Tulip.Player
         [Header("References")]
         [SerializeField, Required] World world;
         [SerializeField, Required] Terraformer terraformer;
-        [SerializeField, Required] SaintsInterface<Component, IItemWielder> itemWielder;
+        [SerializeField, Required] ItemWielder itemWielder;
         [SerializeField] new SpriteRenderer renderer;
 
         [Header("Config")]
@@ -39,20 +40,20 @@ namespace Tulip.Player
         private void OnEnable()
         {
             terraformer.OnChangeCellFocus += HandleCellFocusChanged;
-            itemWielder.I.OnSwingStart += HandleSwingStarted;
-            itemWielder.I.OnSwingPerform += HandleSwingPerformed;
+            itemWielder.OnSwingStart += HandleSwingStarted;
+            itemWielder.OnSwingPerform += HandleSwingPerformed;
         }
 
         private void OnDisable()
         {
             terraformer.OnChangeCellFocus -= HandleCellFocusChanged;
-            itemWielder.I.OnSwingStart -= HandleSwingStarted;
-            itemWielder.I.OnSwingPerform -= HandleSwingPerformed;
+            itemWielder.OnSwingStart -= HandleSwingStarted;
+            itemWielder.OnSwingPerform -= HandleSwingPerformed;
         }
 
         private void Update()
         {
-            ItemData itemData = itemWielder.I.CurrentStack.itemData;
+            ItemData itemData = itemWielder.CurrentStack.itemData;
 
             if (!focusedCell.HasValue || itemData.IsNot(out BaseWorldToolData worldToolData))
             {

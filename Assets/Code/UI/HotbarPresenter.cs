@@ -1,6 +1,7 @@
 using System.Collections;
 using FMODUnity;
 using SaintsField;
+using Tulip.Character;
 using Tulip.Core;
 using Tulip.Data;
 using Unity.Properties;
@@ -13,7 +14,7 @@ namespace Tulip.UI
     {
         [Header("References")]
         [SerializeField, Required] UIDocument document;
-        [SerializeField, Required] SaintsInterface<Component, IHotbar> hotbar;
+        [SerializeField, Required] Hotbar hotbar;
 
         [Header("FMOD Events")]
         [SerializeField, Required] StudioEventEmitter hotbarSfx;
@@ -49,7 +50,7 @@ namespace Tulip.UI
             document.rootVisualElement.dataSource = this;
 
             UpdateItems();
-            SelectSlot(hotbar.I.SelectedIndex);
+            SelectSlot(hotbar.SelectedIndex);
             UpdateTooltip();
         }
 
@@ -70,13 +71,13 @@ namespace Tulip.UI
             if (tooltipRoot == null)
                 return;
 
-            ItemStack selectedStack = hotbar.I.SelectedStack;
+            ItemStack selectedStack = hotbar.SelectedStack;
             heldItem = selectedStack;
 
             // BUG: tooltip doesn't hide when amount becomes 0
             tooltipRoot.visible = selectedStack.IsValid;
 
-            int slotIndex = hotbar.I.SelectedIndex;
+            int slotIndex = hotbar.SelectedIndex;
             Vector3 slotPosition = hotbarRoot[slotIndex].layout.position;
             float offset = (tooltipRoot.layout.size.x / 2f) - (hotbarRoot[slotIndex].layout.size.x / 2f);
 
@@ -98,7 +99,7 @@ namespace Tulip.UI
             }
         }
 
-        private void UpdateItems() => items = hotbar.I.Items;
+        private void UpdateItems() => items = hotbar.Items;
 
         private void HandleHotbarChangedSelection(int index)
         {
@@ -117,13 +118,13 @@ namespace Tulip.UI
             {
                 RefreshDocument();
 
-                hotbar.I.OnModify += UpdateItems;
-                hotbar.I.OnChangeSelection += HandleHotbarChangedSelection;
+                hotbar.OnModify += UpdateItems;
+                hotbar.OnChangeSelection += HandleHotbarChangedSelection;
             }
             else
             {
-                hotbar.I.OnModify -= UpdateItems;
-                hotbar.I.OnChangeSelection -= HandleHotbarChangedSelection;
+                hotbar.OnModify -= UpdateItems;
+                hotbar.OnChangeSelection -= HandleHotbarChangedSelection;
             }
         }
     }

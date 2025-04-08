@@ -1,5 +1,5 @@
 using SaintsField;
-using Tulip.Data;
+using Tulip.Character;
 using Tulip.Data.Gameplay;
 using UnityEngine;
 
@@ -9,7 +9,7 @@ namespace Tulip.Gameplay
     {
         [Header("References")]
         [SerializeField, Required] Rigidbody2D body;
-        [SerializeField, Required] HealthBase health;
+        [SerializeField, Required] Health health;
 
         [Header("Config")]
         [SerializeField] float hurtForceAmount;
@@ -21,7 +21,7 @@ namespace Tulip.Gameplay
         private void HandleDeath(HealthChangeEventArgs damage) =>
             ApplyKnockback(deathForceAmount, damage.SourcePosition);
 
-        private void HandleRevived(IHealth reviver) =>
+        private void HandleRevived(Health reviver) =>
             body.linearVelocity = Vector2.zero;
 
         private void ApplyKnockback(float forceAmount, Vector3 sourcePosition)

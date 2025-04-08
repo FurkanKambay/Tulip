@@ -1,6 +1,5 @@
 using System.Collections;
 using SaintsField;
-using Tulip.Data;
 using Tulip.Data.Gameplay;
 using UnityEngine;
 
@@ -9,7 +8,7 @@ namespace Tulip.Character
     public class CharacterHealthEffects : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField, Required] HealthBase health;
+        [SerializeField, Required] Health health;
         [SerializeField, Required] SpriteRenderer sprite;
 
         [Header("Config")]
@@ -53,7 +52,7 @@ namespace Tulip.Character
             ApplyShaderProperty(ShaderParams.OutlineThickness, 0);
         }
 
-        private void HandleRevived(IHealth reviver)
+        private void HandleRevived(Health reviver)
         {
             sprite.sortingOrder = 0;
 

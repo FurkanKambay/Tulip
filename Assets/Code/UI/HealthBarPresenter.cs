@@ -1,5 +1,5 @@
 using SaintsField;
-using Tulip.Data;
+using Tulip.Character;
 using UnityEngine;
 
 namespace Tulip.UI
@@ -7,7 +7,7 @@ namespace Tulip.UI
     public class HealthBarPresenter : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField, Required] HealthBase health;
+        [SerializeField, Required] Health health;
         [SerializeField, Required] SpriteRenderer healthBarSprite;
 
         [Header("Config")]

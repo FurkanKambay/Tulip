@@ -918,8 +918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   document: {fileID: 1316435251}
-  hotbar:
-    <V>k__BackingField: {fileID: 1105140269}
+  hotbar: {fileID: 1105140269}
   hotbarSfx: {fileID: 1316435252}
   tooltipShowDuration: 2
   tooltipSlideDuration: 100

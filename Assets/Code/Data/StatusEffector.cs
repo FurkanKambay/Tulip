@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Tulip.Character;
 using UnityEngine;
 
 namespace Tulip.Data
@@ -6,7 +7,7 @@ namespace Tulip.Data
     public class StatusEffector : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField] HealthBase health;
+        [SerializeField] Health health;
 
         [Header("Config")]
         [SerializeField] StatusEffectData[] startingEffects;

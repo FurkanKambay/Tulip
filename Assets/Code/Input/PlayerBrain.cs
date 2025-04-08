@@ -1,5 +1,6 @@
 using System;
 using SaintsField;
+using Tulip.Character;
 using Tulip.Core;
 using Tulip.Data;
 using UnityEngine;
@@ -13,7 +14,7 @@ namespace Tulip.Input
         public event Action OnJumpReleased;
 
         [Header("References")]
-        [SerializeField, Required] HealthBase health;
+        [SerializeField, Required] Health health;
 
         [Header("Input - Basic")]
         [SerializeField, Required] InputActionReference point;

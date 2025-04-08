@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Tulip.Data
 {
-    public abstract class InventoryBase : MonoBehaviour, IInventory
+    public abstract class InventoryBase : MonoBehaviour
     {
         public abstract event Action OnModify;
 

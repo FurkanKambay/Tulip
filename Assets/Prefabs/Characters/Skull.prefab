@@ -426,8 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5879189f2c9140488ca0ab4d017486e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health:
-    <V>k__BackingField: {fileID: 1334333901957425893}
+  health: {fileID: 1334333901957425893}
   hurtEvent:
     Guid:
       Data1: -1768576580
@@ -447,8 +446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c4603604fd42608b358258f353d561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemWielder:
-    <V>k__BackingField: {fileID: 8169639496971023625}
+  itemWielder: {fileID: 8169639496971023625}
   itemSwingEvent:
     Guid:
       Data1: 793295938
@@ -654,8 +652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992d83c1bd31b8b41aec2663aa6ead9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entity:
-    <V>k__BackingField: {fileID: 7261757859140667753}
+  entity: {fileID: 7261757859140667753}
   maxHealth: 20
   currentHealth: 20
   invulnerabilityDuration: 0.1

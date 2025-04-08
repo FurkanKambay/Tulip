@@ -6,12 +6,55 @@ using UnityEngine;
 namespace Tulip.Character
 {
     [SelectionBase]
-    public class Health : HealthBase
+    public class Health : MonoBehaviour
     {
-        private void Update() =>
-            remainingInvulnerability = Mathf.Max(0, remainingInvulnerability - Time.deltaTime);
+        public delegate void DamageEvent(HealthChangeEventArgs damage);
+        public delegate void DeathEvent(HealthChangeEventArgs damage);
+        public delegate void HealEvent(HealthChangeEventArgs healing);
+        public delegate void ReviveEvent(Health reviver);
 
-        public override InventoryModification Damage(float amount, IHealth source, bool checkInvulnerable = true)
+        public event DamageEvent OnHurt;
+        public event DeathEvent  OnDie;
+        public event HealEvent   OnHeal;
+        public event ReviveEvent OnRevive;
+
+        [Header("References")]
+        [SerializeField] TangibleEntity entity;
+
+        [Header("Config")]
+        [SerializeField, Min(0)] float maxHealth = 100f;
+        [SerializeField, Min(0)] float currentHealth = 100f;
+        [SerializeField, Min(0)] float invulnerabilityDuration;
+
+        public float CurrentHealth
+        {
+            get => currentHealth;
+            private set => currentHealth = Mathf.Clamp(value, 0, MaxHealth);
+        }
+
+        public float MaxHealth               => maxHealth;
+        public float InvulnerabilityDuration => invulnerabilityDuration;
+
+        /// <summary>
+        /// Remaining seconds of invulnerability.
+        /// </summary>
+        public float InvulnerabilityRemaining { get; private set; }
+
+        public float Ratio          => CurrentHealth / MaxHealth;
+        public bool  IsAlive        => CurrentHealth > 0;
+        public bool  IsDead         => CurrentHealth <= 0;
+        public bool  IsFull         => CurrentHealth >= MaxHealth;
+        public bool  IsHurt         => CurrentHealth < MaxHealth && !IsDead;
+        public bool  IsInvulnerable => InvulnerabilityRemaining > 0;
+
+        public TangibleEntity Entity             => entity;
+        public Health         LatestDamageSource { get; private set; }
+        public Health         LatestDeathSource  { get; private set; }
+
+        private void Update() =>
+            InvulnerabilityRemaining = Mathf.Max(0, InvulnerabilityRemaining - Time.deltaTime);
+
+        public InventoryModification Damage(float amount, Health source, bool checkInvulnerable = true)
         {
             if (IsDead || amount < 0)
                 return default;
@@ -19,24 +62,24 @@ namespace Tulip.Character
             if (checkInvulnerable && IsInvulnerable)
                 return default;
 
-            CurrentHealth -= amount;
-            LatestDamageSource = source;
+            CurrentHealth      -= amount;
+            LatestDamageSource =  source;
 
             if (checkInvulnerable)
-                remainingInvulnerability = invulnerabilityDuration;
+                InvulnerabilityRemaining = invulnerabilityDuration;
 
             Vector3 sourcePosition = source.Is(out Health sourceHealth)
                 ? sourceHealth!.transform.position
                 : transform.position;
 
             var damageArgs = new HealthChangeEventArgs(amount, source, this, sourcePosition);
-            RaiseOnHurt(damageArgs);
+            OnHurt?.Invoke(damageArgs);
 
             if (IsAlive)
                 return default;
 
             LatestDeathSource = source;
-            RaiseOnDie(damageArgs);
+            OnDie?.Invoke(damageArgs);
             enabled = false;
 
             // TODO: fix whatever this is later
@@ -48,7 +91,7 @@ namespace Tulip.Character
             return InventoryModification.ToAdd(entityData.Loot.Stack(entityData.LootAmount));
         }
 
-        public override void Heal(float amount, IHealth source)
+        public void Heal(float amount, Health source)
         {
             if (IsDead || amount < 0)
                 return;
@@ -60,18 +103,15 @@ namespace Tulip.Character
                 : transform.position;
 
             var healArgs = new HealthChangeEventArgs(amount, source, this, sourcePosition);
-            RaiseOnHeal(healArgs);
+            OnHeal?.Invoke(healArgs);
         }
 
-        public override void Revive(IHealth reviver = null)
+        public void Revive(Health reviver = null)
         {
             CurrentHealth = maxHealth;
-            enabled = true;
-            RaiseOnRevive(reviver ?? this);
+            enabled       = true;
+            OnRevive?.Invoke(reviver.Or(this));
         }
-
-        [ContextMenu("Take 10 Damage")]
-        public void Damage() => Damage(10f, this);
 
         private void OnValidate() => CurrentHealth = currentHealth;
     }

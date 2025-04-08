@@ -1,3 +1,4 @@
+using Tulip.Character;
 using Tulip.Data;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ namespace Tulip.GameWorld
 
     public class EntityLocationDeterminer : MonoBehaviour
     {
-        [SerializeField] HealthBase player;
+        [SerializeField] Health player;
 
         public Vector2 Position => entityTransform.position;
         public EntityLocation Location { get; private set; }
@@ -22,7 +23,7 @@ namespace Tulip.GameWorld
 
         private void Update()
         {
-            IWorld world = player.Entity.World;
+            World world = player.Entity.World;
             Vector2Int playerCell = world.WorldToCell(Position);
             bool hasCurtain = world.HasTile(playerCell, TileType.Curtain);
             Location = hasCurtain ? EntityLocation.Indoors : EntityLocation.Outdoors;
