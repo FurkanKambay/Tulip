@@ -36,8 +36,8 @@ namespace Tulip.Player
             trackingConfig.Target = initialPosition;
         }
 
-        private void OnEnable() => GameManager.OnGameStateChange += GameManager_StateChanged;
-        private void OnDisable() => GameManager.OnGameStateChange -= GameManager_StateChanged;
+        private void OnEnable() => GameStateChange.Event += GameManager_StateChanged;
+        private void OnDisable() => GameStateChange.Event -= GameManager_StateChanged;
 
         private void Update()
         {
@@ -108,7 +108,7 @@ namespace Tulip.Player
             subject.position = targetPosition;
         }
 
-        private void GameManager_StateChanged(GameStateEventArgs args) => cameraMode = args.NewState switch
+        private void GameManager_StateChanged(GameStateChange args) => cameraMode = args.NewState switch
         {
             GameState.MainMenu => CameraMode.MainMenuPlayground,
             _ => CameraMode.FollowPlayer

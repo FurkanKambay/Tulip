@@ -38,8 +38,8 @@ namespace Tulip.Gameplay
         private bool isActive;
         private float timeSinceLastSpawn;
 
-        private void OnEnable() => GameManager.OnGameStateChange += Game_StateChanged;
-        private void OnDisable() => GameManager.OnGameStateChange -= Game_StateChanged;
+        private void OnEnable() => GameStateChange.Event += Game_StateChanged;
+        private void OnDisable() => GameStateChange.Event -= Game_StateChanged;
 
         private void Update()
         {
@@ -58,7 +58,7 @@ namespace Tulip.Gameplay
                 timeSinceLastSpawn = 0;
         }
 
-        private void Game_StateChanged(GameStateEventArgs args)
+        private void Game_StateChanged(GameStateChange args)
         {
             isActive = args.NewState != GameState.MainMenu;
 

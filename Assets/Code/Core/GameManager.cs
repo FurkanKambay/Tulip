@@ -13,16 +13,12 @@ namespace Tulip.Core
 
     public class GameManager : MonoBehaviour
     {
-        public delegate void GameStateChangeEvent(GameStateEventArgs args);
-
-        public static event GameStateChangeEvent OnGameStateChange;
-
         public static GameState CurrentState { get; private set; }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void Init() => CurrentState = GameState.MainMenu;
 
-        private void OnEnable() => Application.wantsToQuit += IsSafeToQuit;
+        private void OnEnable()  => Application.wantsToQuit += IsSafeToQuit;
         private void OnDisable() => Application.wantsToQuit -= IsSafeToQuit;
 
         public static void SwitchTo(GameState newState)
@@ -35,7 +31,7 @@ namespace Tulip.Core
 
             UpdateTimeScale();
             UpdateInputs();
-            OnGameStateChange?.Invoke(new GameStateEventArgs(oldState, newState));
+            GameStateChange.Raise(oldState, newState);
         }
 
         public static void SetPaused(bool shouldPause) => SwitchTo(
@@ -43,7 +39,7 @@ namespace Tulip.Core
             {
                 GameState.Playing when shouldPause => GameState.Paused,
                 GameState.Paused when !shouldPause => GameState.Playing,
-                _ => CurrentState
+                _                                  => CurrentState
             }
         );
 
@@ -62,13 +58,13 @@ namespace Tulip.Core
         private static void UpdateTimeScale() => Time.timeScale = CurrentState switch
         {
             GameState.Paused when Settings.Gameplay.AllowPause => 0,
-            _ => 1
+            _                                                  => 1
         };
 
         private static void UpdateInputs()
         {
             InputActionMap playerControls = InputSystem.actions.actionMaps[0];
-            InputActionMap uiControls = InputSystem.actions.actionMaps[1];
+            InputActionMap uiControls     = InputSystem.actions.actionMaps[1];
 
             if (CurrentState == GameState.Playing)
             {

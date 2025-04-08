@@ -33,17 +33,17 @@ namespace Tulip.Gameplay
 
         private void OnEnable()
         {
-            GameManager.OnGameStateChange += GameState_Change;
+            GameStateChange.Event += GameState_Change;
             health.OnDie += Health_Die;
         }
 
         private void OnDisable()
         {
-            GameManager.OnGameStateChange -= GameState_Change;
+            GameStateChange.Event -= GameState_Change;
             health.OnDie -= Health_Die;
         }
 
-        private void GameState_Change(GameStateEventArgs args)
+        private void GameState_Change(GameStateChange args)
         {
             bool startedPlaying = args.NewState is GameState.Playing && args.OldState is not GameState.Paused;
 

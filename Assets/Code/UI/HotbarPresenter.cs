@@ -34,8 +34,8 @@ namespace Tulip.UI
         private VisualElement tooltipRoot;
         private int selectedIndex;
 
-        private void OnEnable() => GameManager.OnGameStateChange += HandleGameStateChange;
-        private void OnDisable() => GameManager.OnGameStateChange -= HandleGameStateChange;
+        private void OnEnable() => GameStateChange.Event += HandleGameStateChange;
+        private void OnDisable() => GameStateChange.Event -= HandleGameStateChange;
 
         private void Start() => RefreshDocument();
 
@@ -109,7 +109,7 @@ namespace Tulip.UI
             SelectSlot(index);
         }
 
-        private void HandleGameStateChange(GameStateEventArgs args)
+        private void HandleGameStateChange(GameStateChange args)
         {
             document.enabled = args.NewState is GameState.Playing;
 
