@@ -1,5 +1,6 @@
 using System;
 using SaintsField;
+using SaintsField.Playa;
 using Tulip.Data.Items;
 using UnityEngine;
 
@@ -22,8 +23,17 @@ namespace Tulip.Data
 
         [SerializeField, Min(0)] Vector2Int dimensions;
 
-        [SerializeField, HideInInspector] TileDictionary walls;
-        [SerializeField, HideInInspector] TileDictionary blocks;
-        [SerializeField, HideInInspector] TileDictionary curtains;
+        [LayoutGroup("Tiles", ELayout.Tab)]
+        [LayoutGroup("Tiles/Walls")]
+        [SaintsDictionary("Cell", "Placeable", searchable: false, numberOfItemsPerPage: 10)]
+        [SerializeField] TileDictionary walls;
+
+        [LayoutGroup("Tiles/Blocks")]
+        [SaintsDictionary("Cell", "Placeable", searchable: false, numberOfItemsPerPage: 10)]
+        [SerializeField] TileDictionary blocks;
+
+        [LayoutGroup("Tiles/Curtains")]
+        [SaintsDictionary("Cell", "Placeable", searchable: false, numberOfItemsPerPage: 10)]
+        [SerializeField] TileDictionary curtains;
     }
 }
