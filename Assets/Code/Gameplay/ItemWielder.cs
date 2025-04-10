@@ -60,7 +60,9 @@ namespace Tulip.Gameplay
         private void Update()
         {
             timeSinceLastUse += Time.deltaTime;
-            TickSwingState();
+
+            if (Time.deltaTime > 0)
+                TickSwingState();
         }
 
         private void TickSwingState()
