@@ -28,13 +28,13 @@ namespace Tulip.UI
 
         private void OnEnable()
         {
-            GameStateChange.Event += GameManager_StateChanged;
+            GameStateChange.Event += GameState_Changed;
             settingsPresenter.OnToggled += Settings_Shown;
         }
 
         private void OnDisable()
         {
-            GameStateChange.Event -= GameManager_StateChanged;
+            GameStateChange.Event -= GameState_Changed;
             settingsPresenter.OnToggled -= Settings_Shown;
         }
 
@@ -92,7 +92,7 @@ namespace Tulip.UI
             continueButton.SetEnabled(false);
         }
 
-        private void GameManager_StateChanged(GameStateChange args) =>
+        private void GameState_Changed(GameStateChange args) =>
             UpdateCallbacks(args.NewState);
     }
 }

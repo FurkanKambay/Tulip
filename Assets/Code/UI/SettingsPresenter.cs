@@ -85,7 +85,7 @@ namespace Tulip.UI
             root.visible = true;
             container.visible = false;
 
-            GameStateChange.Event += HandleGameStateChange;
+            GameStateChange.Event += GameState_Changed;
         }
 
         private void OnDisable()
@@ -93,7 +93,7 @@ namespace Tulip.UI
             root.visible = false;
             container.visible = false;
 
-            GameStateChange.Event -= HandleGameStateChange;
+            GameStateChange.Event -= GameState_Changed;
         }
 
         private void Update()
@@ -137,7 +137,7 @@ namespace Tulip.UI
             sfx.release();
         }
 
-        private void HandleGameStateChange(GameStateChange args)
+        private void GameState_Changed(GameStateChange args)
         {
             root.visible = args.NewState != GameState.Playing;
         }
