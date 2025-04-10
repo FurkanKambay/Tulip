@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using FMOD.Studio;
 using FMODUnity;
+using Tulip.Core;
 using UnityEngine;
 using Settings = Tulip.Core.Settings;
 
@@ -8,6 +9,8 @@ namespace Tulip.Audio
 {
     public class AudioBusManager : MonoBehaviour
     {
+        [SerializeField] StudioListener fmodStudioListener;
+
         private Bus masterBus;
         private Bus musicBus;
         private Bus sfxBus;
@@ -23,8 +26,17 @@ namespace Tulip.Audio
             uiBus = RuntimeManager.GetBus("bus:/UI");
         }
 
-        private void OnEnable() => Settings.OnUpdate += Settings_Updated;
-        private void OnDisable() => Settings.OnUpdate -= Settings_Updated;
+        private void OnEnable()
+        {
+            Settings.OnUpdate += Settings_Updated;
+            GameStateChange.Event += GameState_Changed;
+        }
+
+        private void OnDisable()
+        {
+            Settings.OnUpdate -= Settings_Updated;
+            GameStateChange.Event -= GameState_Changed;
+        }
 
         private async void Start() => await UpdateVolumes();
 
@@ -45,6 +57,12 @@ namespace Tulip.Audio
         {
             while (!RuntimeManager.HaveAllBanksLoaded)
                 await Awaitable.NextFrameAsync();
+        }
+
+        private void GameState_Changed(GameStateChange args)
+        {
+            fmodStudioListener.AttenuationObject = args.NewState is GameState.MainMenu ? null
+                : GameObject.FindGameObjectWithTag("Player");
         }
 
         private async void Settings_Updated() => await UpdateVolumes();

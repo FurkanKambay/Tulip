@@ -3,7 +3,6 @@ using System.Linq;
 using SaintsField;
 using SaintsField.Playa;
 using Tulip.Character;
-using Tulip.Core;
 using Tulip.Data;
 using Tulip.GameWorld;
 using UnityEditor;
@@ -15,7 +14,6 @@ namespace Tulip.Gameplay
     {
         [LayoutGroup("References", ELayout.Background | ELayout.TitleOut)]
         [SerializeField] World world;
-        [SerializeField] new Camera camera;
         [SerializeField] Transform spawnParent;
 
         [LayoutGroup("Config", ELayout.Background | ELayout.TitleOut)]
@@ -33,22 +31,19 @@ namespace Tulip.Gameplay
 
         [SerializeField] EntitySpawnPoolData entitySpawnPoolData;
 
+        private new Camera camera;
         private IEnumerable<Vector2Int> suitableCells;
 
-        private bool isActive;
         private float timeSinceLastSpawn;
 
-        private void OnEnable() => GameStateChange.Event += Game_StateChanged;
-        private void OnDisable() => GameStateChange.Event -= Game_StateChanged;
+        private void Awake()
+        {
+            camera = Camera.main;
+            timeSinceLastSpawn = -gracePeriod;
+        }
 
         private void Update()
         {
-            if (!isActive)
-            {
-                timeSinceLastSpawn = -gracePeriod;
-                return;
-            }
-
             timeSinceLastSpawn += Time.deltaTime;
 
             if (timeSinceLastSpawn < interval)
@@ -56,14 +51,6 @@ namespace Tulip.Gameplay
 
             if (TrySpawnEnemy())
                 timeSinceLastSpawn = 0;
-        }
-
-        private void Game_StateChanged(GameStateChange args)
-        {
-            isActive = args.NewState != GameState.MainMenu;
-
-            if (!isActive)
-                DestroyAllSpawns();
         }
 
         private bool TrySpawnEnemy()
@@ -103,9 +90,6 @@ namespace Tulip.Gameplay
 
         private IEnumerable<Vector2Int> GetSuitableCells(EntityData entityData)
         {
-            if (!isActive)
-                yield break;
-
             Vector3 cameraExtents = new(camera.orthographicSize * camera.aspect, camera.orthographicSize);
             Vector3 spawnExtents = new(cameraExtents.x + radius, cameraExtents.y + radius);
             Vector3 cameraCenter = camera.transform.position;
@@ -141,7 +125,6 @@ namespace Tulip.Gameplay
         }
 
 #if UNITY_EDITOR
-
         private void OnDrawGizmosSelected()
         {
             if (entitySpawnPoolData.Amount == 0)

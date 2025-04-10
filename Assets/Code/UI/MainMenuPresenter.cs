@@ -2,7 +2,6 @@ using FMODUnity;
 using Furkan.Common;
 using SaintsField;
 using Tulip.Core;
-using Tulip.GameWorld;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -12,19 +11,21 @@ namespace Tulip.UI
     {
         [Header("References")]
         [SerializeField, Required] UIDocument document;
-        [SerializeField, Required] WorldManager worldManager;
-        [SerializeField, Required] SettingsPresenter settingsPresenter;
 
         [Header("Events")]
         [SerializeField, Required] EventChannelData newGameEvent;
         [SerializeField, Required] EventChannelData continueGameEvent;
 
+        private SettingsPresenter settingsPresenter;
         private VisualElement root;
         private Button newButton;
         private Button continueButton;
 
-        private void Awake() =>
+        private void Awake()
+        {
+            settingsPresenter = FindAnyObjectByType<SettingsPresenter>();
             UpdateCallbacks(GameManager.CurrentState);
+        }
 
         private void OnEnable()
         {
@@ -62,6 +63,7 @@ namespace Tulip.UI
             continueButton.RegisterCallback<ClickEvent>(ContinueButton_Clicked);
 
             // TODO: enable continue button if there's a latest save
+            // TODO: support multiple saves
             continueButton.SetEnabled(false);
         }
 

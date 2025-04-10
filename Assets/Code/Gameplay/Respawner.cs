@@ -1,6 +1,5 @@
 using SaintsField;
 using Tulip.Character;
-using Tulip.Core;
 using Tulip.Data.Gameplay;
 using Tulip.GameWorld;
 using UnityEngine;
@@ -29,27 +28,12 @@ namespace Tulip.Gameplay
             entity = health.GetComponentInParent<TangibleEntity>();
             subject = entity.transform;
             world = entity.World;
+
+            SetPosition();
         }
 
-        private void OnEnable()
-        {
-            GameStateChange.Event += GameState_Change;
-            health.OnDie += Health_Die;
-        }
-
-        private void OnDisable()
-        {
-            GameStateChange.Event -= GameState_Change;
-            health.OnDie -= Health_Die;
-        }
-
-        private void GameState_Change(GameStateChange args)
-        {
-            bool startedPlaying = args.NewState is GameState.Playing && args.OldState is not GameState.Paused;
-
-            if (args.NewState == GameState.MainMenu || startedPlaying)
-                TryRespawn();
-        }
+        private void OnEnable() => health.OnDie += Health_Die;
+        private void OnDisable() => health.OnDie -= Health_Die;
 
         private void Update()
         {

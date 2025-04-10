@@ -1,7 +1,6 @@
 using System;
 using Furkan.Common;
 using SaintsField;
-using Tulip.Core;
 using Tulip.Data;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -11,38 +10,32 @@ namespace Tulip.Player
     public class CameraFollow : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField, Required] new Camera camera;
         [SerializeField, Required] Transform subject;
-
-        [Header("Playground Config")]
-        [SerializeField, Range(-0.5f, 0.5f)] float menuPeekAmountX;
-        [SerializeField, Range(-0.5f, 0.5f)] float menuPeekAmountY;
-        [SerializeField] Vector2 menuOffset;
 
         [Header("Gameplay Config")]
         [SerializeField] TrackingOptions trackingConfig;
         [SerializeField] ZoomOptions zoomConfig;
 
+        private new Camera camera;
         private IPlayerBrain brain;
-        private Vector3 initialPosition;
-        private CameraMode cameraMode = CameraMode.MainMenuPlayground;
+
+#region Unity Callbacks
 
         private void Awake()
         {
+            camera = Camera.main;
             brain = subject.GetComponentInChildren<IPlayerBrain>();
+
+            Assert.IsNotNull(camera);
             Assert.IsNotNull(brain);
 
-            initialPosition = transform.position;
-            trackingConfig.Target = initialPosition;
+            camera.transform.position = subject.position;
         }
-
-        private void OnEnable() => GameStateChange.Event += GameManager_StateChanged;
-        private void OnDisable() => GameStateChange.Event -= GameManager_StateChanged;
 
         private void Update()
         {
-            TickPlayerTracking();
-            TickPlayground();
+            trackingConfig.Target = subject.position + (Vector3)trackingConfig.Offset;
+            zoomConfig.Target -= brain.ZoomDelta * zoomConfig.Sensitivity * Time.deltaTime;
         }
 
         private void LateUpdate()
@@ -53,7 +46,7 @@ namespace Tulip.Player
                 Time.deltaTime * zoomConfig.Speed
             );
 
-            Vector3 position = transform.position;
+            Vector3 position = camera.transform.position;
             float lerpX = Mathf.Lerp(position.x, trackingConfig.Target.x, Time.deltaTime * trackingConfig.Speed.x);
             float lerpY = Mathf.Lerp(position.y, trackingConfig.Target.y, Time.deltaTime * trackingConfig.Speed.y);
 
@@ -62,69 +55,9 @@ namespace Tulip.Player
             float targetY = Mathf.Abs(distance.y) < trackingConfig.SnapValue ? trackingConfig.Target.y : lerpY;
             camera.transform.position = new Vector3(targetX, targetY, trackingConfig.Target.z);
         }
+#endregion
 
-        private void TickPlayerTracking()
-        {
-            if (cameraMode == CameraMode.MainMenuPlayground)
-                return;
-
-            Vector3 targetPoint = subject ? subject.position : initialPosition;
-            trackingConfig.Target = targetPoint + (Vector3)trackingConfig.Offset;
-            zoomConfig.Target -= brain.ZoomDelta * zoomConfig.Sensitivity * Time.deltaTime;
-        }
-
-        private void TickPlayground()
-        {
-            if (cameraMode != CameraMode.MainMenuPlayground)
-                return;
-
-            var clampedScreenPoint = new Vector3(
-                x: Mathf.Clamp(brain.AimPointScreen.x, 0, camera.pixelWidth),
-                y: Mathf.Clamp(brain.AimPointScreen.y, 0, camera.pixelHeight)
-            );
-
-            Vector3 mouseWorldPoint = camera.ScreenToWorldPoint(clampedScreenPoint);
-            Vector3 peekAmount = mouseWorldPoint * new Vector2(menuPeekAmountX, menuPeekAmountY);
-
-            trackingConfig.Target = initialPosition + peekAmount;
-
-            TickPlaygroundWarping();
-        }
-
-        private void TickPlaygroundWarping()
-        {
-            Vector3 cameraCenter = camera.transform.position;
-            float cameraExtent = camera.orthographicSize * camera.aspect;
-            float leftX = cameraCenter.x - cameraExtent;
-            float rightX = cameraCenter.x + cameraExtent;
-
-            Vector3 targetPosition = subject.position;
-
-            if (subject.position.x > rightX)
-                targetPosition.x = leftX;
-            else if (subject.position.x < leftX)
-                targetPosition.x = rightX;
-
-            subject.position = targetPosition;
-        }
-
-        private void GameManager_StateChanged(GameStateChange args) => cameraMode = args.NewState switch
-        {
-            GameState.MainMenu => CameraMode.MainMenuPlayground,
-            _ => CameraMode.FollowPlayer
-        };
-
-        private void OnValidate()
-        {
-            initialPosition = menuOffset.WithZ(-10);
-            camera.transform.position = initialPosition;
-        }
-
-        private enum CameraMode
-        {
-            FollowPlayer,
-            MainMenuPlayground
-        }
+#region Subclasses
 
         [Serializable]
         public class TrackingOptions : IValidate
@@ -162,5 +95,7 @@ namespace Tulip.Player
 
             public void OnValidate() => Target = target;
         }
+
+#endregion
     }
 }

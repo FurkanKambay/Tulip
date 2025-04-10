@@ -52,6 +52,9 @@ namespace Tulip.UI
             UpdateItems();
             SelectSlot(hotbar.SelectedIndex);
             UpdateTooltip();
+
+            hotbar.OnModify += UpdateItems;
+            hotbar.OnChangeSelection += Hotbar_SelectionChanged;
         }
 
         private void SelectSlot(int index)
@@ -101,7 +104,7 @@ namespace Tulip.UI
 
         private void UpdateItems() => items = hotbar.Items;
 
-        private void HandleHotbarChangedSelection(int index)
+        private void Hotbar_SelectionChanged(int index)
         {
             if (selectedIndex == index || !document.enabled)
                 return;
@@ -115,16 +118,11 @@ namespace Tulip.UI
             document.enabled = args.NewState is GameState.Playing;
 
             if (document.enabled)
-            {
                 RefreshDocument();
-
-                hotbar.OnModify += UpdateItems;
-                hotbar.OnChangeSelection += HandleHotbarChangedSelection;
-            }
             else
             {
                 hotbar.OnModify -= UpdateItems;
-                hotbar.OnChangeSelection -= HandleHotbarChangedSelection;
+                hotbar.OnChangeSelection -= Hotbar_SelectionChanged;
             }
         }
     }

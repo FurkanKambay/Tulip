@@ -31,8 +31,10 @@ namespace Tulip.Audio
             musicDescription.createInstance(out musicInstance);
 
             SetBiome(startingBiome);
-            musicInstance.start();
         }
+
+        private void OnEnable() => musicInstance.start();
+        private void OnDisable() => musicInstance.stop(STOP_MODE.ALLOWFADEOUT);
 
         private void Update()
         {

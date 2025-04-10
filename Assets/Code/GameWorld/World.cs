@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Furkan.Common;
+using SaintsField;
 using Tulip.Character;
-using Tulip.Core;
 using Tulip.Data;
 using Tulip.Data.Items;
 using UnityEngine;
@@ -14,40 +14,25 @@ namespace Tulip.GameWorld
     {
         public delegate void PlaceableEvent(TileModification modification);
 
-        public event ProvideWorldEvent OnRefresh;
-        public event PlaceableEvent    OnPlaceTile;
-        public event PlaceableEvent    OnHitTile;
-        public event PlaceableEvent    OnDestroyTile;
+        public event PlaceableEvent OnPlaceTile;
+        public event PlaceableEvent OnHitTile;
+        public event PlaceableEvent OnDestroyTile;
 
         [Header("References")]
-        [SerializeField] WorldManager worldManager;
-        [SerializeField] WorldVisual worldVisual;
+        [SerializeField, Required] WorldData worldData;
+        [SerializeField, Required] WorldVisual worldVisual;
 
         [Header("Config")]
         [SerializeField] bool isReadonly;
         [SerializeField] LayerMask entityLayers;
 
-        public WorldData WorldData  { get; private set; }
-        public bool      IsReadonly => isReadonly;
+        public WorldData WorldData => worldData;
+        public bool IsReadonly => isReadonly;
 
-        private readonly Dictionary<Vector2Int, TangibleEntity> staticEntities   = new();
-        private readonly Dictionary<Vector2Int, int>            wallDamageMap    = new();
-        private readonly Dictionary<Vector2Int, int>            blockDamageMap   = new();
-        private readonly Dictionary<Vector2Int, int>            curtainDamageMap = new();
-
-        private void Awake() => SetWorldData(worldManager.World);
-
-        private void OnEnable()
-        {
-            GameStateChange.Event       += HandleGameStateChange;
-            worldManager.OnProvideWorld += SetWorldData;
-        }
-
-        private void OnDisable()
-        {
-            GameStateChange.Event       -= HandleGameStateChange;
-            worldManager.OnProvideWorld -= SetWorldData;
-        }
+        private readonly Dictionary<Vector2Int, TangibleEntity> staticEntities = new();
+        private readonly Dictionary<Vector2Int, int> wallDamageMap = new();
+        private readonly Dictionary<Vector2Int, int> blockDamageMap = new();
+        private readonly Dictionary<Vector2Int, int> curtainDamageMap = new();
 
         /// <summary>
         /// Tries to damage a tile of the given type at the given cell coordinates.
@@ -130,30 +115,29 @@ namespace Tulip.GameWorld
 
         private TileDictionary GetTiles(TileType tileType) => tileType switch
         {
-            TileType.Wall    => WorldData.Walls,
-            TileType.Block   => WorldData.Blocks,
+            TileType.Wall => WorldData.Walls,
+            TileType.Block => WorldData.Blocks,
             TileType.Curtain => WorldData.Curtains,
-            _                => throw new ArgumentOutOfRangeException(nameof(tileType))
+            _ => throw new ArgumentOutOfRangeException(nameof(tileType))
         };
 #endregion
 
 #region Cell Helpers
-        public Vector3    CellCenter(Vector2Int cell)          => worldVisual.GetCellCenterWorld(cell);
-        public Vector2Int WorldToCell(Vector3   worldPosition) => worldVisual.WorldToCell(worldPosition);
+        public Vector3 CellCenter(Vector2Int cell) => worldVisual.GetCellCenterWorld(cell);
+        public Vector2Int WorldToCell(Vector3 worldPosition) => worldVisual.WorldToCell(worldPosition);
 
-        public Bounds CellBoundsWorld(Vector2Int   cell)               => worldVisual.CellBoundsWorld(cell);
-        public bool   DoesCellIntersect(Vector2Int cell, Bounds other) => CellBoundsWorld(cell).Intersects(other);
+        public Bounds CellBoundsWorld(Vector2Int cell) => worldVisual.CellBoundsWorld(cell);
+        public bool DoesCellIntersect(Vector2Int cell, Bounds other) => CellBoundsWorld(cell).Intersects(other);
 
         /// Checks for entities at the cell. Use <see cref="HasTile"/> for other purposes.
         public bool IsCellEntityFree(Vector2Int cell)
         {
-            Bounds  bounds      = CellBoundsWorld(cell);
-            Vector2 topLeft     = bounds.center - bounds.extents + (Vector3.one * 0.02f);
+            Bounds bounds = CellBoundsWorld(cell);
+            Vector2 topLeft = bounds.center - bounds.extents + (Vector3.one * 0.02f);
             Vector2 bottomRight = bounds.center + bounds.extents - (Vector3.one * 0.02f);
 
             return !Physics2D.OverlapArea(topLeft, bottomRight, entityLayers);
         }
-#endregion
 
         /// <param name="baseCell">The bottom-left cell, NOT center or pivot</param>
         /// <param name="entitySize"></param>
@@ -172,25 +156,14 @@ namespace Tulip.GameWorld
 
             return staticEntities.Values.All(entity => !entity.Rect.Overlaps(entityRect));
         }
-
-        private void SetWorldData(WorldData newWorldData)
-        {
-            if (!newWorldData || WorldData == newWorldData)
-                return;
-
-            WorldData = newWorldData;
-            OnRefresh?.Invoke(newWorldData);
-        }
-
-        private void HandleGameStateChange(GameStateChange args) =>
-            isReadonly = args.NewState == GameState.MainMenu;
+#endregion
 
         private Dictionary<Vector2Int, int> GetDamageMap(TileType tileType) => tileType switch
         {
-            TileType.Wall    => wallDamageMap,
-            TileType.Block   => blockDamageMap,
+            TileType.Wall => wallDamageMap,
+            TileType.Block => blockDamageMap,
             TileType.Curtain => curtainDamageMap,
-            _                => throw new ArgumentOutOfRangeException(nameof(tileType))
+            _ => throw new ArgumentOutOfRangeException(nameof(tileType))
         };
     }
 }
