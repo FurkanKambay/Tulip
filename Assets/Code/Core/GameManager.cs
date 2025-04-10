@@ -133,11 +133,8 @@ namespace Tulip.Core
                 gameSceneLoadOperation.allowSceneActivation = true;
         }
 
-        private static void UpdateTimeScale() => Time.timeScale = CurrentState switch
-        {
-            GameState.Paused when Settings.Gameplay.AllowPause => 0,
-            _ => 1
-        };
+        private static void UpdateTimeScale() =>
+            Time.timeScale = CurrentState == GameState.Paused ? 0 : 1;
 
         private static void UpdateInputs()
         {

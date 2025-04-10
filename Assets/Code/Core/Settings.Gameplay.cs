@@ -10,7 +10,6 @@ namespace Tulip.Core
         public sealed record GameplaySettingsBag
         {
             [SerializeField] bool useSmartCursor = true;
-            [SerializeField] bool allowPause = true;
 
             internal GameplaySettingsBag()
             {
@@ -21,13 +20,6 @@ namespace Tulip.Core
             {
                 get => useSmartCursor;
                 set => UpdateSetting(ref useSmartCursor, value);
-            }
-
-            [CreateProperty]
-            public bool AllowPause
-            {
-                get => allowPause;
-                set => UpdateSetting(ref allowPause, value);
             }
         }
     }

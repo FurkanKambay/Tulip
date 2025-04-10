@@ -16,11 +16,6 @@
                         <ui:DataBinding property="value" binding-mode="TwoWay" data-source-path="UseSmartCursor" />
                     </Bindings>
                 </ui:Toggle>
-                <ui:Toggle name="GameAllowPause" text="Allow Pause" focusable="false" class="option">
-                    <Bindings>
-                        <ui:DataBinding property="value" binding-mode="TwoWay" data-source-path="AllowPause" />
-                    </Bindings>
-                </ui:Toggle>
             </ui:Tab>
             <ui:Tab label="Sound" name="TabSound" data-source-path="audio" class="tab">
                 <ui:SliderInt label="Master" value="100" high-value="100" focusable="false" show-input-field="true" name="SoundMaster" fill="true" class="slider-audio option">
