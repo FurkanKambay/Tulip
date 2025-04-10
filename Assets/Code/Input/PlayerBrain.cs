@@ -66,8 +66,12 @@ namespace Tulip.Input
                 return;
             }
 
-            AimPointScreen = point.action.ReadValue<Vector2>();
-            AimPosition = mainCamera.ScreenToWorldPoint(AimPointScreen);
+            if (Time.timeScale > 0)
+            {
+                AimPointScreen = point.action.ReadValue<Vector2>();
+                AimPosition    = mainCamera.ScreenToWorldPoint(AimPointScreen);
+            }
+
             HorizontalMovement = move.action.ReadValue<float>();
 
             if (jump.action.triggered)
