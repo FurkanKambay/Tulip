@@ -1,4 +1,4 @@
-#Main {
+#death-overlay {
     background-color: rgba(0, 0, 0, 0.63);
     align-items: center;
     justify-content: center;
@@ -6,58 +6,41 @@
     flex-grow: 1;
 }
 
-#DeathMessage {
+#death-title {
     font-size: var(--text-large);
 }
 
-#ReasonPanel {
+#reason-panel {
     flex-direction: row;
 }
 
-#ReasonTitle {
-    color: rgb(183, 183, 183);
+#reason-label {
     -unity-text-align: middle-right;
+    color: rgb(183, 183, 183);
 }
 
-#RespawnPanel {
-    margin-top: 32px;
+#reason-content {
+}
+
+#respawn-panel {
+    width: 12%;
+    height: 8%;
+    margin-top: 16px;
     align-items: center;
 }
 
-Button {
-    background-color: rgb(44, 132, 181);
-    border-top-width: 0;
-    border-right-width: 0;
-    border-bottom-width: 0;
-    border-left-width: 0;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-    padding-top: 12px;
-    padding-right: 24px;
-    padding-bottom: 12px;
-    padding-left: 24px;
-}
-
-Button:hover {
-    background-color: rgb(94, 125, 79);
-}
-
-Button:active {
-    background-color: rgb(75, 99, 63);
-}
-
-Button:disabled {
-    background-color: rgb(75, 99, 63);
-}
-
-#RespawnButton {
+#respawn-button {
     position: absolute;
+    align-self: stretch;
+    align-content: stretch;
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
 }
 
-#RespawnCountdown {
+#countdown-text {
+    -unity-text-align: middle-left;
     font-size: var(--text-huge);
     color: greenyellow;
-    position: absolute;
+    flex-grow: 1;
 }

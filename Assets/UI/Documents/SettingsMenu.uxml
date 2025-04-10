@@ -1,70 +1,70 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/Styles/OptionsMenu.Header.uss?fileID=7433441132597879392&amp;guid=b0e91bc71732c494da0fd6a8ba10292c&amp;type=3#OptionsMenu.Header" />
     <Style src="project://database/Assets/UI/Styles/OptionsMenu.Body.uss?fileID=7433441132597879392&amp;guid=6fb4624177c61bf46812563d65e71cde&amp;type=3#OptionsMenu.Body" />
-    <ui:VisualElement name="MainContainer" data-source-type="Tulip.UI.SettingsPresenter, Tulip" class="MainContainer">
-        <ui:VisualElement name="Header" class="header">
-            <ui:Label text="Options" name="HeaderTitle" enable-rich-text="false" class="header-title" />
-            <ui:VisualElement name="KeyPrompts">
-                <ui:VisualElement name="KeyPromptPrev" class="key-prompt key-prompt-prev" />
-                <ui:VisualElement name="KeyPromptNext" class="key-prompt key-prompt-next" />
-            </ui:VisualElement>
-        </ui:VisualElement>
-        <ui:TabView name="SettingsPage" data-source-path="Settings">
-            <ui:Tab label="Gameplay" name="TabGameplay" data-source-path="gameplay" class="tab">
-                <ui:Toggle name="GameSmartCursor" text="Smart Cursor" focusable="false" class="option">
+    <engine:VisualElement name="options-menu" data-source-type="Tulip.UI.SettingsPresenter, Tulip">
+        <engine:VisualElement name="header">
+            <engine:Label text="Options" name="header-title" />
+            <engine:VisualElement name="key-prompt-container">
+                <engine:VisualElement name="key-prompt-prev" class="key-prompt" />
+                <engine:VisualElement name="key-prompt-next" class="key-prompt" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:TabView data-source-path="Settings">
+            <engine:Tab label="Gameplay" data-source-path="gameplay" name="tab-gameplay" class="tab">
+                <engine:Toggle text="Smart Cursor" focusable="false" class="option">
                     <Bindings>
-                        <ui:DataBinding property="value" binding-mode="TwoWay" data-source-path="UseSmartCursor" />
+                        <engine:DataBinding property="value" binding-mode="TwoWay" data-source-path="UseSmartCursor" />
                     </Bindings>
-                </ui:Toggle>
-            </ui:Tab>
-            <ui:Tab label="Sound" name="TabSound" data-source-path="audio" class="tab">
-                <ui:SliderInt label="Master" value="100" high-value="100" focusable="false" show-input-field="true" name="SoundMaster" fill="true" class="slider-audio option">
+                </engine:Toggle>
+            </engine:Tab>
+            <engine:Tab label="Sound" data-source-path="audio" name="tab-sound" class="tab">
+                <engine:SliderInt label="Master" value="100" high-value="100" focusable="false" show-input-field="true" fill="true" class="slider-audio option">
                     <Bindings>
-                        <ui:DataBinding property="value" binding-mode="TwoWay" data-source-path="MasterVolume" />
+                        <engine:DataBinding property="value" binding-mode="TwoWay" data-source-path="MasterVolume" />
                     </Bindings>
-                </ui:SliderInt>
-                <ui:SliderInt label="Music" value="100" high-value="100" focusable="false" show-input-field="true" name="SoundMusic" fill="true" class="slider-audio option">
+                </engine:SliderInt>
+                <engine:SliderInt label="Music" value="100" high-value="100" focusable="false" show-input-field="true" fill="true" class="slider-audio option">
                     <Bindings>
-                        <ui:DataBinding property="value" binding-mode="TwoWay" data-source-path="MusicVolume" />
+                        <engine:DataBinding property="value" binding-mode="TwoWay" data-source-path="MusicVolume" />
                     </Bindings>
-                </ui:SliderInt>
-                <ui:SliderInt label="Effects" value="100" high-value="100" focusable="false" show-input-field="true" name="SoundEffects" fill="true" class="slider-audio option">
+                </engine:SliderInt>
+                <engine:SliderInt label="Effects" value="100" high-value="100" focusable="false" show-input-field="true" fill="true" class="slider-audio option">
                     <Bindings>
-                        <ui:DataBinding property="value" binding-mode="TwoWay" data-source-path="EffectsVolume" />
+                        <engine:DataBinding property="value" binding-mode="TwoWay" data-source-path="EffectsVolume" />
                     </Bindings>
-                </ui:SliderInt>
-                <ui:SliderInt label="UI" value="100" high-value="100" focusable="false" show-input-field="true" name="SoundUI" fill="true" class="slider-audio option">
+                </engine:SliderInt>
+                <engine:SliderInt label="UI" value="100" high-value="100" focusable="false" show-input-field="true" fill="true" class="slider-audio option">
                     <Bindings>
-                        <ui:DataBinding property="value" binding-mode="TwoWay" data-source-path="UIVolume" />
+                        <engine:DataBinding property="value" binding-mode="TwoWay" data-source-path="UIVolume" />
                     </Bindings>
-                </ui:SliderInt>
-            </ui:Tab>
-            <ui:Tab label="Video" name="TabVideo" data-source-path="video" class="tab">
-                <ui:DropdownField name="VideoWindowMode" label="Window Mode" focusable="false" class="dropdown option">
+                </engine:SliderInt>
+            </engine:Tab>
+            <engine:Tab label="Video" data-source-path="video" name="tab-video" class="tab">
+                <engine:DropdownField label="Window Mode" focusable="false" class="dropdown option">
                     <Bindings>
-                        <ui:DataBinding property="choices" data-source-path="supportedWindowModes" binding-mode="ToTarget" />
-                        <ui:DataBinding property="value" binding-mode="TwoWay" data-source-path="WindowMode" />
+                        <engine:DataBinding property="choices" data-source-path="supportedWindowModes" binding-mode="ToTarget" />
+                        <engine:DataBinding property="value" binding-mode="TwoWay" data-source-path="WindowMode" />
                     </Bindings>
-                </ui:DropdownField>
-                <ui:DropdownField name="VideoResolution" label="Resolution" focusable="false" class="dropdown option">
+                </engine:DropdownField>
+                <engine:DropdownField name="video-resolution" label="Resolution" focusable="false" class="dropdown option">
                     <Bindings>
-                        <ui:DataBinding property="choices" data-source-path="SupportedResolutions" binding-mode="ToTarget" />
-                        <ui:DataBinding property="value" binding-mode="TwoWay" data-source-path="Resolution" />
+                        <engine:DataBinding property="choices" data-source-path="SupportedResolutions" binding-mode="ToTarget" />
+                        <engine:DataBinding property="value" binding-mode="TwoWay" data-source-path="Resolution" />
                     </Bindings>
-                </ui:DropdownField>
-            </ui:Tab>
-        </ui:TabView>
-        <ui:Button text="Quit to desktop" name="QuitConfirmButton" focusable="false" class="header-button quit-button">
+                </engine:DropdownField>
+            </engine:Tab>
+        </engine:TabView>
+        <engine:Button text="Quit to desktop" name="quit-confirm-button" focusable="false" class="header-button quit-button button-sharp-wide">
             <Bindings>
-                <ui:DataBinding property="style.visibility" binding-mode="ToTarget" data-source-path="IsQuitConfirmButtonVisible" />
+                <engine:DataBinding property="style.visibility" binding-mode="ToTarget" data-source-path="IsQuitConfirmButtonVisible" />
             </Bindings>
-        </ui:Button>
-        <ui:Button text="Save &amp; Quit" name="SaveExitButton" focusable="false" class="header-button quit-button" style="visibility: hidden;">
+        </engine:Button>
+        <engine:Button text="Save &amp; Quit" name="save-exit-button" focusable="false" class="header-button quit-button" style="visibility: hidden;">
             <Bindings>
-                <ui:DataBinding property="style.visibility" binding-mode="ToTarget" data-source-path="IsSaveExitButtonVisible" />
+                <engine:DataBinding property="style.visibility" binding-mode="ToTarget" data-source-path="IsSaveExitButtonVisible" />
             </Bindings>
-        </ui:Button>
-        <ui:Toggle name="QuitFlyoutButton" enable-rich-text="false" emoji-fallback-support="false" class="header-button" />
-    </ui:VisualElement>
-    <ui:Toggle name="OptionsButton" enable-rich-text="false" emoji-fallback-support="false" class="header-button" />
-</ui:UXML>
+        </engine:Button>
+        <engine:Toggle name="quit-flyout-button" class="header-button button-sharp-wide" />
+    </engine:VisualElement>
+    <engine:Toggle name="options-toggle" class="header-button button-sharp-wide" />
+</engine:UXML>

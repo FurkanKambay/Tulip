@@ -1,0 +1,25 @@
+<engine:UXML xmlns:engine="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Styles/HotbarSlot.uss?fileID=7433441132597879392&amp;guid=b91d2fb014259ce46b0052909a5dfc72&amp;type=3#HotbarSlot" />
+    <engine:Button class="hotbar-slot" data-source-type="Tulip.Data.ItemStack, Tulip">
+        <engine:Image class="hotbar-slot-icon">
+            <Bindings>
+                <engine:DataBinding binding-mode="ToTarget" property="sprite" data-source-path="itemData.icon" />
+                <engine:DataBinding binding-mode="ToTarget" property="style.visibility" data-source-path="ShowIcon" />
+                <engine:DataBinding binding-mode="ToTarget" property="style.height" data-source-path="IconHeight" />
+                <engine:DataBinding binding-mode="ToTarget" property="style.opacity" data-source-path="IconOpacity" />
+                <engine:DataBinding binding-mode="ToTarget" property="tintColor" data-source-path="itemData.color" data-source-type="Tulip.Data.Items.PlaceableData, Tulip" />
+            </Bindings>
+        </engine:Image>
+        <engine:Label class="hotbar-slot-amount">
+            <Bindings>
+                <engine:DataBinding binding-mode="ToTarget" property="text" data-source-path="amount" />
+                <engine:DataBinding binding-mode="ToTarget" property="style.visibility" data-source-path="ShowAmount" />
+            </Bindings>
+        </engine:Label>
+        <engine:VisualElement class="hotbar-slot-lock-icon">
+            <Bindings>
+                <engine:DataBinding binding-mode="ToTarget" property="style.visibility" data-source-path="isLocked" />
+            </Bindings>
+        </engine:VisualElement>
+    </engine:Button>
+</engine:UXML>

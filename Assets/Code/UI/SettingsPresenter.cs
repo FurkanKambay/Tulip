@@ -13,7 +13,7 @@ namespace Tulip.UI
 {
     public delegate void MenuToggleEvent(bool visible);
 
-    public class SettingsPresenter : MonoBehaviour
+    public sealed class SettingsPresenter : MonoBehaviour
     {
         public event MenuToggleEvent OnToggled;
 
@@ -52,22 +52,22 @@ namespace Tulip.UI
             document.enabled = true;
             root = document.rootVisualElement;
 
-            container = root.Q<VisualElement>("MainContainer");
+            container = root.Q<VisualElement>("options-menu");
             container.visible = false;
             container.dataSource = this;
 
             tabView = root.Q<TabView>();
-            optionsButton = root.Q<Toggle>("OptionsButton");
-            quitFlyoutButton = root.Q<Toggle>("QuitFlyoutButton");
-            gameExitButton = root.Q<Button>("SaveExitButton");
-            menuQuitButton = root.Q<Button>("QuitConfirmButton");
+            optionsButton = root.Q<Toggle>("options-toggle");
+            quitFlyoutButton = root.Q<Toggle>("quit-flyout-button");
+            gameExitButton = root.Q<Button>("save-exit-button");
+            menuQuitButton = root.Q<Button>("quit-confirm-button");
 
             optionsButton.RegisterCallback<ChangeEvent<bool>>(OptionsButton_Toggled);
             gameExitButton.RegisterCallback<ClickEvent>(SaveExitButton_Clicked);
             menuQuitButton.RegisterCallback<ClickEvent>(QuitButton_Clicked);
 
 #if UNITY_WEBGL
-            root.Q<DropdownField>("VideoResolution").RemoveFromHierarchy();
+            root.Q<DropdownField>("video-resolution").RemoveFromHierarchy();
 #endif
         }
 

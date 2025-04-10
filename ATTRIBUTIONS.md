@@ -11,6 +11,10 @@ The assets are used for prototyping purposes only for now.
 - ["Nature: Trees"](https://admurin.itch.io/nature-trees) by Admurin
 - ["Enemy: Bones Skull"](https://admurin.itch.io/enemy-bones-skull) by Admurin
 - ["Parallax Backgrounds: Plains"](https://admurin.itch.io/parallax-backgrounds-plains) by Admurin
+
+## UI
+
+- ["Pixel Art GUI Bundle"](https://penzilla.itch.io/pixel-art-gui) by Penzilla
 - ["Cursor Pack (1.0)"](https://www.kenney.nl/assets/cursor-pack) by Kenney
 - ["Xelu's Free Controller Prompts"](https://thoseawesomeguys.com/prompts) by Xelu
 

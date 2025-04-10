@@ -8,23 +8,79 @@
     --text-huge: 72px;
 
     font-size: var(--text-small);
+
+    --icon-lock: url("project://database/Assets/UI/Sprites/lock.png?fileID=2800000&guid=ac20d2d49bf83f74fb1c151d2c8abbf8&type=3#lock");
+    --icon-settings: url("project://database/Assets/UI/Sprites/settings.png?fileID=2800000&guid=ccc58078fa2d7824686143ef2660c1ac&type=3#settings");
+    --icon-close: url("project://database/Assets/UI/Sprites/close.png?fileID=2800000&guid=afbb773416b72b046987e849471537da&type=3#close");
+    --icon-key-q: url("project://database/Assets/UI/Sprites/Xelu%20Prompts/Keyboard%20Dark/KeyDark_Q.png?fileID=2800000&guid=ac9d4abc8b456c449a2546bd00d966a3&type=3#KeyDark_Q");
+    --icon-key-e: url("project://database/Assets/UI/Sprites/Xelu%20Prompts/Keyboard%20Dark/KeyDark_E.png?fileID=2800000&guid=f37f09061207edd4f9657c203a0a13bd&type=3#KeyDark_E");
+    --icon-quit: url("project://database/Assets/UI/Sprites/quit.png?fileID=2800000&guid=60599fe8b12ac3c418ac57d7a66c14f4&type=3#quit");
+
+    --button-rounded-slim: url("project://database/Assets/UI/Sprites/Menus/Buttons.png?fileID=435452186&guid=e33321d8ffbdf214c9cb5ec423bc22e6&type=3#Button_Rounded_Slim");
+    --button-rounded-wide: url("project://database/Assets/UI/Sprites/Menus/Buttons.png?fileID=-1765320639&guid=e33321d8ffbdf214c9cb5ec423bc22e6&type=3#Button_Rounded_Wide");
+    --button-sharp-slim: url("project://database/Assets/UI/Sprites/Menus/Buttons.png?fileID=-1949449735&guid=e33321d8ffbdf214c9cb5ec423bc22e6&type=3#Button_Sharp_Slim");
+    --button-sharp-wide: url("project://database/Assets/UI/Sprites/Menus/Buttons.png?fileID=-1180594883&guid=e33321d8ffbdf214c9cb5ec423bc22e6&type=3#Button_Sharp_Wide");
+    --button-icon-round-large: url("project://database/Assets/UI/Sprites/Menus/Buttons.png?fileID=6781157301454058342&guid=e33321d8ffbdf214c9cb5ec423bc22e6&type=3#Icon_Round_Large");
+    --button-icon-round-mid: url("project://database/Assets/UI/Sprites/Menus/Buttons.png?fileID=4926469908472852519&guid=e33321d8ffbdf214c9cb5ec423bc22e6&type=3#Icon_Round_Mid");
+    --button-icon-round-small: url("project://database/Assets/UI/Sprites/Menus/Buttons.png?fileID=2475211515918373555&guid=e33321d8ffbdf214c9cb5ec423bc22e6&type=3#Icon_Round_Small");
+    --button-icon-rounded-large: url("project://database/Assets/UI/Sprites/Menus/Buttons.png?fileID=-2394147145318414173&guid=e33321d8ffbdf214c9cb5ec423bc22e6&type=3#Icon_Rounded_Large");
+    --button-icon-rounded-mid: url("project://database/Assets/UI/Sprites/Menus/Buttons.png?fileID=480975437300914356&guid=e33321d8ffbdf214c9cb5ec423bc22e6&type=3#Icon_Rounded_Mid");
+    --button-icon-rounded-small: url("project://database/Assets/UI/Sprites/Menus/Buttons.png?fileID=-2100850995336027056&guid=e33321d8ffbdf214c9cb5ec423bc22e6&type=3#Icon_Rounded_Small");
+    --button-icon-sharp-large: url("project://database/Assets/UI/Sprites/Menus/Buttons.png?fileID=-5462493814621080586&guid=e33321d8ffbdf214c9cb5ec423bc22e6&type=3#Icon_Sharp_Large");
+    --button-icon-sharp-mid: url("project://database/Assets/UI/Sprites/Menus/Buttons.png?fileID=-8447808141310081160&guid=e33321d8ffbdf214c9cb5ec423bc22e6&type=3#Icon_Sharp_Mid");
+    --button-icon-sharp-small: url("project://database/Assets/UI/Sprites/Menus/Buttons.png?fileID=-6165298275247876928&guid=e33321d8ffbdf214c9cb5ec423bc22e6&type=3#Icon_Sharp_Small");
+}
+
+.button-sharp-wide {
+    -unity-background-scale-mode: scale-and-crop;
+    background-image: var(--button-sharp-wide);
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+}
+
+.button-sharp-wide:disabled {
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 1;
+}
+
+.button-sharp-wide:enabled:hover {
+    border-width: 0;
+    background-image: var(--button-sharp-wide);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.button-sharp-wide:active {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.bg-tint-blue {
+    -unity-background-image-tint-color: rgb(0, 143, 255);
+}
+
+.bg-tint-blue:hover {
+    -unity-background-image-tint-color: rgb(0, 108, 191);
+}
+
+.bg-tint-blue:active {
+    -unity-background-image-tint-color: rgb(0, 72, 128);
+}
+
+.bg-tint-blue:disabled {
+    -unity-background-image-tint-color: rgb(41, 52, 61);
 }
 
 .unity-base-dropdown__container-outer {
-    margin-top: 0px;
+    margin-top: 0;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
 }
 
 .unity-base-dropdown__container-inner {
     background-color: rgba(39, 87, 110, 0.95);
     color: white;
-    padding: 0px;
-}
-
-.unity-base-dropdown__container-outer {
-    border-top-width: 0px;
-    border-right-width: 0px;
-    border-bottom-width: 0px;
-    border-left-width: 0px;
+    padding: 0;
 }
 
 .unity-base-dropdown__item {
@@ -32,15 +88,10 @@
 }
 
 .unity-base-dropdown__item:checked {
-    background-color: rgba(0, 0, 0, 0.15);
     -unity-background-image-tint-color: rgb(0, 160, 255);
+    background-color: rgba(0, 0, 0, 0.15);
 }
 
 .unity-base-dropdown__item .unity-base-dropdown__checkmark {
     display: none;
-    /*display: none;*/
-}
-
-.unity-base-dropdown__item:checked .unity-base-dropdown__checkmark {
-    /*display: none;*/
 }

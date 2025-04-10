@@ -1,63 +1,34 @@
-.header {
+#header {
     height: 96px;
     background-color: rgb(44, 132, 181);
     position: absolute;
     width: 100%;
 }
 
-.header-title {
-    color: rgb(255, 255, 255);
-    font-size: var(--text-big);
+#header-title {
     -unity-text-align: middle-left;
-    padding-top: 0;
-    padding-right: 0;
-    padding-bottom: 0;
-    padding-left: 0;
+    font-size: var(--text-big);
+    color: rgb(255, 255, 255);
     left: 96px;
     flex-grow: 1;
-    align-self: flex-start;
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-    margin-left: 0;
 }
 
 .header-button {
+    -unity-background-image-tint-color: rgb(34, 38, 42);
+    color: rgb(250, 250, 250);
     position: absolute;
     height: 64px;
     width: 64px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-    border-top-width: 2px;
-    border-right-width: 2px;
-    border-bottom-width: 2px;
-    border-left-width: 2px;
     margin-top: 16px;
     margin-right: 16px;
     margin-bottom: 16px;
     margin-left: 16px;
     padding-top: 0;
-    padding-right: 0;
-    padding-bottom: 0;
-    padding-left: 0;
-    background-color: rgb(34, 38, 42);
-    border-left-color: rgba(0, 0, 0, 0);
-    border-right-color: rgba(0, 0, 0, 0);
-    border-top-color: rgba(0, 0, 0, 0);
-    border-bottom-color: rgba(0, 0, 0, 0);
-}
-
-.header-button:hover {
-    border-left-color: rgb(255, 255, 255);
-    border-right-color: rgb(255, 255, 255);
-    border-top-color: rgb(255, 255, 255);
-    border-bottom-color: rgb(255, 255, 255);
+    padding-bottom: 4px;
 }
 
 .header-button:checked {
-    background-color: rgb(34, 38, 42);
+    -unity-background-image-tint-color: rgb(34, 38, 42);
 }
 
 .header-button > .unity-toggle__input {
@@ -65,78 +36,77 @@
 }
 
 .header-button .unity-toggle__checkmark {
+    -unity-background-image-tint-color: white;
     padding: 0;
     margin: 0;
     border-width: 0;
     background-color: rgba(0, 0, 0, 0);
-    -unity-background-image-tint-color: white;
 }
 
-#OptionsButton:hover {
-    background-color: rgb(0, 88, 176);
+#options-toggle:hover {
+    -unity-background-image-tint-color: rgb(0, 88, 176);
 }
 
-#OptionsButton:active {
-    background-color: rgb(0, 75, 150);
+#options-toggle:active {
+    -unity-background-image-tint-color: rgb(0, 75, 150);
 }
 
-#OptionsButton:checked:hover {
-    background-color: rgb(171, 0, 0);
+#options-toggle:checked:hover {
+    -unity-background-image-tint-color: rgb(171, 0, 0);
 }
 
-#OptionsButton:checked:active {
-    background-color: rgb(145, 0, 0);
+#options-toggle:checked:active {
+    -unity-background-image-tint-color: rgb(145, 0, 0);
 }
 
-#OptionsButton .unity-toggle__checkmark {
+#options-toggle .unity-toggle__checkmark {
+    background-image: var(--icon-settings);
     background-color: rgba(0, 0, 0, 0);
-    background-image: url("project://database/Assets/UI/Sprites/settings.png?fileID=2800000&guid=ccc58078fa2d7824686143ef2660c1ac&type=3#settings");
 }
 
-#OptionsButton:checked .unity-toggle__checkmark {
-    background-image: url("project://database/Assets/UI/Sprites/close.png?fileID=2800000&guid=afbb773416b72b046987e849471537da&type=3#close");
+#options-toggle:checked .unity-toggle__checkmark {
+    background-image: var(--icon-close);
 }
 
-#QuitFlyoutButton {
+#quit-flyout-button {
     right: 0;
 }
 
-#QuitFlyoutButton:hover {
-    background-color: rgb(171, 111, 0);
+#quit-flyout-button:hover {
+    -unity-background-image-tint-color: rgb(171, 111, 0);
 }
 
-#QuitFlyoutButton:active {
-    background-color: rgb(145, 111, 0);
+#quit-flyout-button:active {
+    -unity-background-image-tint-color: rgb(145, 111, 0);
 }
 
-#QuitFlyoutButton:checked:hover {
-    background-color: rgb(23, 25, 28);
+#quit-flyout-button:checked:hover {
+    -unity-background-image-tint-color: rgb(23, 25, 28);
 }
 
-#QuitFlyoutButton:checked:active {
-    background-color: rgb(12, 14, 15);
+#quit-flyout-button:checked:active {
+    -unity-background-image-tint-color: rgb(12, 14, 15);
 }
 
-#QuitFlyoutButton .unity-toggle__checkmark {
-    background-image: url("project://database/Assets/UI/Sprites/quit.png?fileID=2800000&guid=60599fe8b12ac3c418ac57d7a66c14f4&type=3#quit");
+#quit-flyout-button .unity-toggle__checkmark {
+    background-image: var(--icon-quit);
 }
 
 .quit-button {
-    color: rgb(250, 250, 250);
     right: 48px;
     width: auto;
-    padding-top: 16px;
+    padding-top: 0;
     padding-right: 24px;
-    padding-bottom: 16px;
+    padding-bottom: 4px;
     padding-left: 16px;
 }
 
 .quit-button:hover {
-    background-color: rgb(171, 0, 0);
+    -unity-background-image-tint-color: rgb(171, 0, 0);
 }
 
 .quit-button:active {
-    background-color: rgb(145, 0, 0);
+    -unity-background-image-tint-color: rgb(145, 0, 0);
 }
 
 .unity-tab__header-underline {
@@ -188,7 +158,7 @@
     background-color: rgb(0, 82, 163);
 }
 
-#KeyPrompts {
+#header > #key-prompt-container {
     position: absolute;
     width: 720px;
     height: 96px;
@@ -197,16 +167,16 @@
     justify-content: space-between;
 }
 
-.key-prompt {
+#header .key-prompt {
     align-self: center;
     height: 48px;
     width: 48px;
 }
 
-.key-prompt-prev {
-    background-image: url("project://database/Assets/UI/Sprites/Xelu%20Prompts/Keyboard%20Dark/KeyDark_Q.png?fileID=2800000&guid=ac9d4abc8b456c449a2546bd00d966a3&type=3#KeyDark_Q");
+#header #key-prompt-prev {
+    background-image: var(--icon-key-q);
 }
 
-.key-prompt-next {
-    background-image: url("project://database/Assets/UI/Sprites/Xelu%20Prompts/Keyboard%20Dark/KeyDark_E.png?fileID=2800000&guid=f37f09061207edd4f9657c203a0a13bd&type=3#KeyDark_E");
+#header #key-prompt-next {
+    background-image: var(--icon-key-e);
 }

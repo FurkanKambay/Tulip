@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 
 namespace Tulip.UI
 {
-    public class DeathOverlayPresenter : MonoBehaviour
+    public sealed class DeathOverlayPresenter : MonoBehaviour
     {
         [Header("References")]
         [SerializeField, Required] UIDocument document;

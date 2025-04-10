@@ -10,7 +10,7 @@ using UnityEngine.UIElements;
 
 namespace Tulip.UI
 {
-    public class HotbarPresenter : MonoBehaviour
+    public sealed class HotbarPresenter : MonoBehaviour
     {
         [Header("References")]
         [SerializeField, Required] UIDocument document;
