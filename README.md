@@ -12,13 +12,49 @@
 
 ## Features
 
-- **Systems**: Melee combat, tool/weapon swing config, spawn constraints for entities, health status effects, inventory/hotbar, basic enemy AI
-- **Enemies**: Treant mimic, flying skull, generic walker
-- **Items**: Spear, pickaxe, axe, wood, ore
-- **World Tiles**: Grass, sand, snow, stone, copper vein blocks + default stone walls
-- **FMOD** Adaptive Audio (source included)
-- **Rain VFX** (not available on WebGL)
-- Portal to another realm (shader, implemented but not used)
+### Systems & Mechanics
+- [World terraforming](Assets/Code/GameWorld/World.cs) (breakable & placeable tiles)
+- [Grappling hook](Assets/Code/Gameplay/HookLauncher.cs) mechanic
+- [Entity spawn constraints](Assets/Code/Data/SpawnConditionData.cs): "only on safe blocks", "needs headroom", etc.
+- [Item swing motion](Assets/Code/Gameplay/ItemWielder.cs) config w/ editor tooling
+- [Melee combat](Assets/Code/Gameplay/WeaponWielder.cs): spear, axe
+- [Invulnerability frames](Assets/Code/Character/Health.cs)
+- [Status effects](Assets/Code/Data/StatusEffect.cs): health regen, bleed
+- [Enemy AI](Assets/Code/AI): walking, flying, attacking
+- [Hotbar](Assets/Code/UI/HotbarPresenter.cs) w/ slot locking
+- [Loot items](Assets/Code/Data/EntityData.cs) on entities and tiles
+
+### Content
+- [Three-layer world](Assets/Prefabs/Maps/Realm%20Visuals.prefab) tilemap (background walls, blocks, foreground curtains)
+- [Custom Rule Tiles](Assets/Resources/Tiles): Blocks, walls, curtains
+- [Entities](Assets/Prefabs/Characters): Treant mimic, flying skull, trees, generic walking enemy
+- [Items](Assets/Resources/Items): Weapons, tools, materials (ore, wood), tiles
+
+### Shaders & VFX
+- [Portal Shader](Assets/Shaders/Realm.shadergraph): Shader for rendering two worlds through a portal *(not used for now)*
+- [Parallax Shader](Assets/Shaders/Parallax.shadergraph): Parallax background with cloud movement
+- [Sprite outline and dissolve](Assets/Shaders/Color%20Tint.shadergraph) shader
+- [Rain VFX](Assets/VFX/Rain.vfx): Rain in VFX Graph, configurable *(unavailable on WebGL)*
+
+### User Interface (UI Toolkit)
+- [Menus](Assets/UI/Documents) | [Hotbar HUD](Assets/UI/Documents/Hotbar.uxml) | [Death overlay](Assets/UI/Documents/DeathOverlay.uxml)
+- [Data bindings](Assets/UI/Documents/SettingsMenu.uxml) using the MVP pattern
+- [Global converters](Assets/Code/UI/GlobalConverters.cs) for data bindings
+- [Template](Assets/UI/Templates/HotbarSlot.uxml) for hotbar item slots
+- [Custom styling](Assets/UI/Styles) for default Unity UITK controls like `DropdownField`, `TabView` via `.unity-` USS classes
+
+### Audio (FMOD)
+- [FMOD project source](FMODProject) included
+- [Footstep sounds](Assets/Code/Audio/FootstepAudio.cs) for the player and enemies
+- [Muffled music](Assets/Code/Audio/BiomeMusic.cs) when player is indoors
+- [Audio volume options](Assets/Code/Core/Settings.Audio.cs) in game
+- **Positional audio** in 2D space
+
+### Misc.
+- **Async** and `Awaitable` usage
+- [Input System](Assets/Settings/Input%20Actions.inputactions) usage
+- Fixed data persistence bug on web builds using [a custom WebGL template](https://github.com/FurkanKambay/Tulip/commit/c4d97ec0718cf6d3dfbc1e7d04e74d5d5c943c87)
+- [Event channels](Assets/Code/Common/EventChannelData.cs) for some UI events (`ScriptableObject`-based)
 
 <details><summary><h3>Plans</h3></summary>
 
@@ -41,4 +77,4 @@ I have a lot of notes on different design aspects like narrative, system mechani
 
 ## Art & Sound
 
-The art direction/style is not finalized. I'm using placeholder assets that seem to go well enough together for the time being. Same with music and sound effects. I made some placeholder art and paid for some others (see [ATTRIBUTIONS](./ATTRIBUTIONS.md)), but the paid assets aren't available on GitHub because I can't share the source files. The itch.io builds use the paid assets as expected, though! I bought a MIDI keyboard to learn music, which may not have been the smartest investment, but surely I'll make some progress one day.
+The art direction/style is not finalized. I'm using placeholder assets that seem to go well enough together for the time being. Same with music and sound effects. I made some placeholder art and paid for some others (see [ATTRIBUTIONS](ATTRIBUTIONS.md)), but the paid assets aren't available on GitHub because I can't share the source files. The itch.io builds use the paid assets as expected, though! I bought a MIDI keyboard to learn music, which may not have been the smartest investment, but surely I'll make some progress one day.
