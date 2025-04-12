@@ -59,7 +59,7 @@
                 <engine:DataBinding property="style.visibility" binding-mode="ToTarget" data-source-path="IsQuitConfirmButtonVisible" />
             </Bindings>
         </engine:Button>
-        <engine:Button text="Save &amp; Quit" name="save-exit-button" focusable="false" class="header-button quit-button" style="visibility: hidden;">
+        <engine:Button text="Save &amp; Quit" name="save-exit-button" focusable="false" class="header-button quit-button button-sharp-wide" style="visibility: hidden;">
             <Bindings>
                 <engine:DataBinding property="style.visibility" binding-mode="ToTarget" data-source-path="IsSaveExitButtonVisible" />
             </Bindings>
