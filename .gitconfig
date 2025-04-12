@@ -1,0 +1,10 @@
+# Include with this command:
+# git config --local include.path ../.gitconfig
+
+[alias]
+    # To keep paid assets out of the public repo
+    listassumes = !git ls-files -v | grep ^h
+    assume = update-index --assume-unchanged
+	assumeallunstaged = !git ls-files -m | tr '\\012' '\\000' | xargs -0 git update-index --assume-unchanged
+    unassume = update-index --no-assume-unchanged
+	unassumeall = !git ls-files -v | grep ^h | cut -c 3- | tr '\\012' '\\000' | xargs -0 git update-index --no-assume-unchanged
