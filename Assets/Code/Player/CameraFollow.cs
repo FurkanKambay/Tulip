@@ -7,20 +7,18 @@ using UnityEngine.Assertions;
 
 namespace Tulip.Player
 {
-    public class CameraFollow : MonoBehaviour
+    public sealed class CameraFollow : MonoBehaviour
     {
         [Header("References")]
         [SerializeField, Required] Transform subject;
 
         [Header("Gameplay Config")]
         [SerializeField] TrackingOptions trackingConfig;
-        [SerializeField] ZoomOptions zoomConfig;
 
         private new Camera camera;
         private IPlayerBrain brain;
 
 #region Unity Callbacks
-
         private void Awake()
         {
             camera = Camera.main;
@@ -32,20 +30,11 @@ namespace Tulip.Player
             camera.transform.position = subject.position;
         }
 
-        private void Update()
-        {
+        private void Update() =>
             trackingConfig.Target = subject.position + (Vector3)trackingConfig.Offset;
-            zoomConfig.Target -= brain.ZoomDelta * zoomConfig.Sensitivity * Time.deltaTime;
-        }
 
         private void LateUpdate()
         {
-            camera.orthographicSize = Mathf.Lerp(
-                camera.orthographicSize,
-                zoomConfig.Target,
-                Time.deltaTime * zoomConfig.Speed
-            );
-
             Vector3 position = camera.transform.position;
             float lerpX = Mathf.Lerp(position.x, trackingConfig.Target.x, Time.deltaTime * trackingConfig.Speed.x);
             float lerpY = Mathf.Lerp(position.y, trackingConfig.Target.y, Time.deltaTime * trackingConfig.Speed.y);
@@ -57,8 +46,7 @@ namespace Tulip.Player
         }
 #endregion
 
-#region Subclasses
-
+#region Child Class
         [Serializable]
         public class TrackingOptions : IValidate
         {
@@ -76,26 +64,6 @@ namespace Tulip.Player
 
             public void OnValidate() { }
         }
-
-        [Serializable]
-        public class ZoomOptions : IValidate
-        {
-            [SerializeField] float target = 10f;
-
-            public float Target
-            {
-                get => target;
-                set => this.target = Mathf.Clamp(value, Min, Max);
-            }
-
-            [field: SerializeField] public float Min { get; private set; } = 1f;
-            [field: SerializeField] public float Max { get; private set; } = 100f;
-            [field: SerializeField] public float Sensitivity { get; private set; } = .01f;
-            [field: SerializeField] public float Speed { get; private set; } = 10f;
-
-            public void OnValidate() => Target = target;
-        }
-
 #endregion
     }
 }

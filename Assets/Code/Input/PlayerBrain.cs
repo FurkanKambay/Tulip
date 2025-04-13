@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 
 namespace Tulip.Input
 {
-    public class PlayerBrain : MonoBehaviour, IPlayerBrain
+    public sealed class PlayerBrain : MonoBehaviour, IPlayerBrain
     {
         public event Action OnJump;
         public event Action OnJumpReleased;
@@ -25,7 +25,6 @@ namespace Tulip.Input
         [SerializeField, Required] InputActionReference hook;
 
         [Header("Input - Misc")]
-        [SerializeField, Required] InputActionReference zoom;
         [SerializeField, Required] InputActionReference smartCursor;
         [SerializeField, Required] InputActionReference hotbarScroll;
         [SerializeField, Required] InputActionReference hotbar;
@@ -39,7 +38,6 @@ namespace Tulip.Input
         public bool WantsToUse { get; private set; }
         public bool WantsToHook { get; private set; }
 
-        public float ZoomDelta { get; private set; }
         public bool WantsToToggleSmartCursor { get; private set; }
         public int HotbarSelectionDelta { get; private set; }
         public int? HotbarSelectionIndex { get; private set; }
@@ -84,7 +82,6 @@ namespace Tulip.Input
             WantsToUse = use.action.inProgress;
             WantsToHook = hook.action.triggered;
 
-            ZoomDelta = zoom.action.ReadValue<float>();
             WantsToToggleSmartCursor = smartCursor.action.triggered;
             HotbarSelectionDelta = Math.Sign(hotbarScroll.action.ReadValue<float>());
             HotbarSelectionIndex = !hotbar.action.inProgress ? null : (int)hotbar.action.ReadValue<float>();

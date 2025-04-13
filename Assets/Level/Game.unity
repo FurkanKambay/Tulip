@@ -593,12 +593,6 @@ MonoBehaviour:
     <Offset>k__BackingField: {x: 0, y: 1.45}
     <Speed>k__BackingField: {x: 4, y: 4}
     <SnapValue>k__BackingField: 0.01
-  zoomConfig:
-    target: 12
-    <Min>k__BackingField: 2
-    <Max>k__BackingField: 20
-    <Sensitivity>k__BackingField: 6
-    <Speed>k__BackingField: 10
 --- !u!1 &894586481
 GameObject:
   m_ObjectHideFlags: 0

@@ -467,21 +467,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fdfdff2c1ac25943b5f45bf68fb38e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420031}
   subject: {fileID: 1105140268}
-  menuPeekAmountX: 0
-  menuPeekAmountY: 0
-  menuOffset: {x: 0, y: 0}
   trackingConfig:
     <Offset>k__BackingField: {x: 0, y: 0}
     <Speed>k__BackingField: {x: 10, y: 10}
     <SnapValue>k__BackingField: 0.5
-  zoomConfig:
-    target: 10
-    <Min>k__BackingField: 1
-    <Max>k__BackingField: 100
-    <Sensitivity>k__BackingField: 0.01
-    <Speed>k__BackingField: 10
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,6 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
   attenuationObject: {fileID: 1105140270}
 --- !u!1 &619394800
 GameObject:
@@ -962,8 +953,8 @@ MonoBehaviour:
       Data4: 1426349812
     Path: event:/UI/Hotbar Scroll
   Event: 
-  PlayEvent: 0
-  StopEvent: 0
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0

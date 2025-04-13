@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2578b4d5d1c444c3b7c7c3b109fad6dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldManager: {fileID: 0}
+  worldData: {fileID: 0}
   worldVisual: {fileID: 0}
   isReadonly: 0
   entityLayers:
@@ -310,21 +310,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fdfdff2c1ac25943b5f45bf68fb38e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420031}
   subject: {fileID: 749162058}
-  menuPeekAmountX: 0.1
-  menuPeekAmountY: 0.1
-  menuOffset: {x: 0, y: 8}
   trackingConfig:
     <Offset>k__BackingField: {x: 0, y: 1.45}
     <Speed>k__BackingField: {x: 4, y: 4}
     <SnapValue>k__BackingField: 0.01
-  zoomConfig:
-    target: 12
-    <Min>k__BackingField: 2
-    <Max>k__BackingField: 20
-    <Sensitivity>k__BackingField: 6
-    <Speed>k__BackingField: 10
 --- !u!1001 &749162057
 PrefabInstance:
   m_ObjectHideFlags: 0
