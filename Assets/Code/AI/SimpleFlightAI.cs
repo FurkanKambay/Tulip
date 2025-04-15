@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Tulip.AI
 {
-    public class SimpleFlightAI : MonoBehaviour, IFlightBrain
+    public sealed class SimpleFlightAI : MonoBehaviour, IFlightBrain
     {
         [Header("References")]
         [SerializeField, Required] Health health;
@@ -19,13 +19,12 @@ namespace Tulip.AI
         public bool WantsToUse { get; private set; }
         public bool WantsToHook { get; private set; }
 
-        private Transform target;
         private Health targetHealth;
 
         private void Awake()
         {
-            target = GameObject.FindGameObjectWithTag("Player").transform;
-            targetHealth = target.GetComponentInChildren<Health>();
+            // TODO: better targeting AI
+            targetHealth = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Health>();
         }
 
         private void Update()
@@ -39,8 +38,8 @@ namespace Tulip.AI
                 return;
             }
 
-            AimPosition = targetHealth.transform.position;
-            Vector2 targetVector = AimPosition!.Value - (Vector2)transform.position;
+            AimPosition = (Vector2)targetHealth.transform.position;
+            Vector2 targetVector = AimPosition.Value - (Vector2)transform.position;
 
             bool reachedX = Mathf.Abs(targetVector.x) < stopDistance.x;
             bool reachedY = Mathf.Abs(targetVector.y) < stopDistance.y;

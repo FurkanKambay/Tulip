@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Tulip.AI
 {
-    public class SimpleFollowerBrain : MonoBehaviour, ICharacterBrain, IJumperBrain
+    public sealed class SimpleFollowerBrain : MonoBehaviour, ICharacterBrain, IJumperBrain
     {
         public event Action OnJump;
         public event Action OnJumpReleased;
@@ -28,14 +28,13 @@ namespace Tulip.AI
         public bool WantsToUse { get; private set; }
         public bool WantsToHook { get; private set; }
 
-        private Transform target;
         private Health targetHealth;
         private float timeSinceLastJump;
 
         private void Awake()
         {
-            target = GameObject.FindGameObjectWithTag("Player").transform;
-            targetHealth = target.GetComponentInChildren<Health>();
+            // TODO: better targeting AI
+            targetHealth = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Health>();
         }
 
         private void Update()
@@ -52,14 +51,14 @@ namespace Tulip.AI
 
             timeSinceLastJump += Time.deltaTime;
 
-            AimPosition = targetHealth.transform.position;
-            Vector2 distanceToTarget = AimPosition!.Value - (Vector2)transform.position;
+            AimPosition = (Vector2)targetHealth.transform.position;
+            Vector2 distanceToTarget = AimPosition.Value - (Vector2)transform.position;
             bool withinAttackingRange = distanceToTarget.sqrMagnitude < stopDistance * stopDistance;
 
             WantsToUse = withinAttackingRange;
             HorizontalMovement = withinAttackingRange ? default : Mathf.Sign(distanceToTarget.x);
 
-            // TODO: some enemies may be able to jump later
+            // TODO: some enemies should be able to jump
             // TryJump(distanceToTarget.y);
         }
 

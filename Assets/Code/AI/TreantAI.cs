@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Tulip.AI
 {
-    public class TreantAI : MonoBehaviour, IWielderBrain
+    public sealed class TreantAI : MonoBehaviour, IWielderBrain
     {
         [Header("References")]
         [SerializeField, Required] Health health;
@@ -18,7 +18,6 @@ namespace Tulip.AI
         public bool WantsToUse { get; private set; }
         public bool WantsToHook { get; private set; }
 
-        private Transform target;
         private Health targetHealth;
 
         private void OnEnable() => health.OnHurt += HandleHurt;
@@ -26,11 +25,8 @@ namespace Tulip.AI
 
         private void HandleHurt(HealthChangeEventArgs damage)
         {
-            if (target)
-                return;
-
-            target = GameObject.FindGameObjectWithTag("Player").transform;
-            targetHealth = target.GetComponentInChildren<Health>();
+            // always target the latest attacker (if any)
+            targetHealth = damage.Source;
         }
 
         private void Update()
@@ -42,8 +38,8 @@ namespace Tulip.AI
                 return;
             }
 
-            AimPosition = targetHealth.transform.position;
-            Vector2 targetVector = AimPosition!.Value - (Vector2)transform.position;
+            AimPosition = (Vector2)targetHealth.transform.position;
+            Vector2 targetVector = AimPosition.Value - (Vector2)transform.position;
 
             bool reachedX = Mathf.Abs(targetVector.x) < attackDistance.x;
             bool reachedY = Mathf.Abs(targetVector.y) < attackDistance.y;
