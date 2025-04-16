@@ -21,7 +21,10 @@ namespace Tulip.Gameplay
         public ItemStack CurrentStack => HotbarItem.IsValid ? HotbarItem : fallbackStack;
         private ItemStack HotbarItem => hotbar ? hotbar.SelectedStack : default;
 
-        public Vector2 AimDirection => lastAimDirection;
+        /// <summary>
+        /// Vector from the item pivot to the mouse world point (not normalized).
+        /// </summary>
+        public Vector2 AimVector => aimVector;
 
         [Header("References")]
         [SerializeField, Required] Health health;
@@ -40,14 +43,14 @@ namespace Tulip.Gameplay
         private float timeSinceLastUse;
         private ItemSwingState swingState;
         private Vector3 rendererScale;
-        private Vector2 lastAimDirection;
+        private Vector2 aimVector;
 
         // state: phase (motion)
         private bool wantsToSwapItems;
         private int phaseIndex;
         private MotionState motion;
 
-        private Vector3 AimPointWorld => itemPivot.position + (Vector3)lastAimDirection;
+        private Vector3 AimPointWorld => itemPivot.position + (Vector3)aimVector;
 
         private void Awake()
         {
@@ -266,8 +269,8 @@ namespace Tulip.Gameplay
                 return;
             }
 
-            lastAimDirection = brain.I.AimPosition.Value - (Vector2)itemPivot.position;
-            float aimAngle = Mathf.Atan2(lastAimDirection.y, lastAimDirection.x) * Mathf.Rad2Deg;
+            aimVector = brain.I.AimPosition.Value - (Vector2)itemPivot.position;
+            float aimAngle = Mathf.Atan2(aimVector.y, aimVector.x) * Mathf.Rad2Deg;
             bool isLeft = aimAngle is < -90 or > 90;
 
             itemPivot.localScale = Vector3.one.With(y: isLeft ? -1 : 1);

@@ -101,7 +101,7 @@ namespace Tulip.Player
                 return;
 
             Vector2 hotspot = transform.position;
-            Vector2 aimPoint = hotspot + itemWielder.AimDirection;
+            Vector2 aimPoint = hotspot + itemWielder.AimVector;
 
             MouseCell = entity.World.WorldToCell(aimPoint);
 
@@ -120,7 +120,7 @@ namespace Tulip.Player
             }
 
             // holding a tool
-            Vector2 aimDirection = itemWielder.AimDirection.normalized;
+            Vector2 aimDirection = itemWielder.AimVector.normalized;
             Vector2 offset = Vector3.Cross(aimDirection, Vector3.forward) * centerOffset;
             topOrigin = hotspot + offset;
             bottomOrigin = hotspot - offset;
@@ -145,7 +145,7 @@ namespace Tulip.Player
             if (!Settings.Gameplay.UseSmartCursor)
                 return;
 
-            Vector2 aimVector = itemWielder.AimDirection.normalized * range;
+            Vector2 aimVector = itemWielder.AimVector.normalized * range;
 
             Gizmos.color = Color.red;
             Gizmos.DrawRay(topOrigin, aimVector);
