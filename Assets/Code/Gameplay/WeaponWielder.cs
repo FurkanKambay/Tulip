@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace Tulip.Gameplay
 {
-    public class WeaponWielder : MonoBehaviour
+    public sealed class WeaponWielder : MonoBehaviour
     {
         [Header("References")]
         [SerializeField, Required] Health health;
@@ -29,7 +29,7 @@ namespace Tulip.Gameplay
             if (stack.itemData.IsNot(out weaponData))
                 return;
 
-            Array.Resize(ref hits, weaponData!.IsMultiTarget ? maxMultiTargetAmount : 1);
+            Array.Resize(ref hits, weaponData.IsMultiTarget ? maxMultiTargetAmount : 1);
 
             foreach (Health target in GetTargets(transform.position, targetPoint))
             {

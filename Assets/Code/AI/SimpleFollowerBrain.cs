@@ -26,6 +26,7 @@ namespace Tulip.AI
 
         public bool WantsToJump { get; private set; }
         public bool WantsToUse { get; private set; }
+        public bool WantsToAim { get; private set; }
         public bool WantsToHook { get; private set; }
 
         private Health targetHealth;
@@ -44,6 +45,7 @@ namespace Tulip.AI
                 AimPosition = default;
                 HorizontalMovement = default;
                 WantsToUse = false;
+                WantsToAim = false;
 
                 OnJumpReleased?.Invoke();
                 return;

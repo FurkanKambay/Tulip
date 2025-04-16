@@ -17,6 +17,7 @@ namespace Tulip.AI
         public float VerticalMovement { get; private set; }
         public Vector2? AimPosition { get; private set; }
         public bool WantsToUse { get; private set; }
+        public bool WantsToAim { get; private set; }
         public bool WantsToHook { get; private set; }
 
         private Health targetHealth;
@@ -35,6 +36,7 @@ namespace Tulip.AI
                 HorizontalMovement = default;
                 VerticalMovement = default;
                 WantsToUse = false;
+                WantsToAim = false;
                 return;
             }
 

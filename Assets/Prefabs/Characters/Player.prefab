@@ -1544,6 +1544,7 @@ MonoBehaviour:
   jump: {fileID: 850327633142129784, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
   dash: {fileID: -2695561156368533582, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
   use: {fileID: -2453027523714613957, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
+  aim: {fileID: -10744007629955494, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
   hook: {fileID: -2619241712849765656, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
   smartCursor: {fileID: 7948866572207815054, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
   hotbarScroll: {fileID: 8440640951329392643, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}

@@ -63,7 +63,16 @@
                     "name": "Use",
                     "type": "Button",
                     "id": "414a515b-d6b2-4989-91a3-f7b3f2037ce7",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Aim",
+                    "type": "Button",
+                    "id": "0b5e4135-bd87-48a0-b850-5038d06fd42d",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -72,7 +81,7 @@
                     "name": "Hotbar",
                     "type": "Button",
                     "id": "15d474b5-0a1d-4cc8-a772-782223094d03",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -81,7 +90,7 @@
                     "name": "Toggle Smart Cursor",
                     "type": "Button",
                     "id": "aa21ef8f-92e8-44fe-becb-6cfc13f69931",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -191,6 +200,17 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Use",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a250eb44-2d25-4a7e-b685-bce65e7cbe68",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Aim",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
