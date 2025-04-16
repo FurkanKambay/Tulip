@@ -20,6 +20,8 @@ MonoBehaviour:
   craftedBy: []
   usedInCrafting: []
   cooldown: 0.5
+  throwCooldown: 0.5
+  aimChargeSpeed: 2
   swingConfig: {fileID: 11400000, guid: bea895e04214f1e47ab88f5efecdd802, type: 2}
   damage: 15
   range: 2.5

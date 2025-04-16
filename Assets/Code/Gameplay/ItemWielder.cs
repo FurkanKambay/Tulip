@@ -2,6 +2,7 @@ using System;
 using Furkan.Common;
 using SaintsField;
 using Tulip.Character;
+using Tulip.Core;
 using Tulip.Data;
 using Tulip.Data.Gameplay;
 using Tulip.Data.Items;
@@ -9,7 +10,7 @@ using UnityEngine;
 
 namespace Tulip.Gameplay
 {
-    public class ItemWielder : MonoBehaviour
+    public sealed class ItemWielder : MonoBehaviour
     {
         public delegate void ItemReadyEvent(ItemStack stack);
         public delegate void ItemSwingEvent(ItemStack stack, Vector3 aimPoint);
@@ -17,14 +18,22 @@ namespace Tulip.Gameplay
         public event ItemReadyEvent OnReady;
         public event ItemSwingEvent OnSwingStart;
         public event ItemSwingEvent OnSwingPerform;
+        public event ItemSwingEvent OnThrowPerform;
 
         public ItemStack CurrentStack => HotbarItem.IsValid ? HotbarItem : fallbackStack;
         private ItemStack HotbarItem => hotbar ? hotbar.SelectedStack : default;
+
+        public ItemStack HandStack => handStack;
 
         /// <summary>
         /// Vector from the item pivot to the mouse world point (not normalized).
         /// </summary>
         public Vector2 AimVector => aimVector;
+
+        /// <summary>
+        /// Is the Aim input held?
+        /// </summary>
+        public bool IsAiming => isAiming;
 
         [Header("References")]
         [SerializeField, Required] Health health;
@@ -44,6 +53,8 @@ namespace Tulip.Gameplay
         private ItemSwingState swingState;
         private Vector3 rendererScale;
         private Vector2 aimVector;
+        private bool isAiming;
+        private float aimChargeAmount;
 
         // state: phase (motion)
         private bool wantsToSwapItems;
@@ -52,10 +63,31 @@ namespace Tulip.Gameplay
 
         private Vector3 AimPointWorld => itemPivot.position + (Vector3)aimVector;
 
+#region Unity Lifecycle
         private void Awake()
         {
             itemVisual = itemRenderer.transform;
             itemPivot = itemVisual.parent;
+        }
+
+        private void OnEnable()
+        {
+            UpdateItemSprite();
+
+            health.OnDie += HandleDie;
+            health.OnRevive += HandleRevived;
+
+            if (hotbar)
+                hotbar.OnChangeSelection += HandleHotbarSelectionChanged;
+        }
+
+        private void OnDisable()
+        {
+            health.OnDie -= HandleDie;
+            health.OnRevive -= HandleRevived;
+
+            if (hotbar)
+                hotbar.OnChangeSelection -= HandleHotbarSelectionChanged;
         }
 
         private void Start() => RefreshItem();
@@ -64,26 +96,57 @@ namespace Tulip.Gameplay
         {
             timeSinceLastUse += Time.deltaTime;
 
-            if (Time.deltaTime > 0)
-                TickSwingState();
+            if (GameManager.CurrentState == GameState.Paused)
+                return;
+
+            TickSwingState();
         }
+#endregion
 
         private void TickSwingState()
         {
             if (!handStack.IsValid || handStack.itemData.IsNot(out UsableData usableData))
                 return;
 
-            bool wantsToUse = brain.I.WantsToUse && !wantsToSwapItems;
-            ItemSwingConfig swingConfig = usableData!.SwingConfig;
+            ItemSwingConfig swingConfig = usableData.SwingConfig;
             UsePhase phase = swingConfig.Phases.Length > 0 ? swingConfig.Phases[phaseIndex] : default;
 
-            if (!phase.preventAim || swingState == ItemSwingState.Ready)
-                AimItem();
+            if (swingState == ItemSwingState.Ready)
+            {
+                // we can aim since we're not swinging
+                RotateItemTowardsMouse();
+                isAiming = brain.I.WantsToAim;
+
+                float targetChargeAmount = aimChargeAmount + (Time.deltaTime * usableData.AimChargeSpeed);
+                aimChargeAmount = isAiming ? Mathf.Clamp01(targetChargeAmount) : 0;
+            }
+            else if (!phase.preventAim)
+            {
+                // prevent aiming since we're swinging
+                // TODO: phase.preventAim means "prevent item rotation", not "prevent aim mode"
+                RotateItemTowardsMouse();
+                isAiming = false;
+                aimChargeAmount = 0;
+            }
+
+            // Throw the item
+            if (isAiming && brain.I.WantsToUse && timeSinceLastUse > usableData.ThrowCooldown)
+            {
+                OnThrowPerform?.Invoke(HandStack, AimPointWorld);
+                timeSinceLastUse = 0f;
+            }
+
+            // Early exit before the swing logic when aiming
+            if (isAiming)
+                return;
+
+            // We're not aiming, so we can do the swing logic now
+            bool wantsToSwing = brain.I.WantsToUse && !wantsToSwapItems;
 
             switch (swingState)
             {
                 case ItemSwingState.Ready:
-                    if (wantsToUse && timeSinceLastUse > usableData.Cooldown)
+                    if (wantsToSwing && timeSinceLastUse > usableData.Cooldown)
                     {
                         SwitchState(ItemSwingState.Swinging);
                         timeSinceLastUse = 0f;
@@ -92,7 +155,7 @@ namespace Tulip.Gameplay
                     break;
                 case ItemSwingState.Swinging:
                     // cancel the swing if needed
-                    if (phase.isCancelable && !wantsToUse)
+                    if (phase.isCancelable && !wantsToSwing)
                     {
                         SwitchState(ItemSwingState.Resetting);
                         break;
@@ -120,7 +183,7 @@ namespace Tulip.Gameplay
                         OnSwingPerform?.Invoke(handStack, AimPointWorld);
 
                     bool isFinalPhase = phaseIndex == swingConfig.Phases.Length - 1;
-                    bool shouldReset = !wantsToUse || !swingConfig.Loop;
+                    bool shouldReset = !wantsToSwing || !swingConfig.Loop;
 
                     if (isFinalPhase && shouldReset)
                     {
@@ -261,7 +324,7 @@ namespace Tulip.Gameplay
             itemVisual.localEulerAngles = Vector3.forward * targetAngle;
         }
 
-        private void AimItem()
+        private void RotateItemTowardsMouse()
         {
             if (!brain.I.AimPosition.HasValue)
             {
@@ -294,6 +357,7 @@ namespace Tulip.Gameplay
             itemRenderer.color = tint;
         }
 
+#region Event Handlers
         private void HandleDie(HealthChangeEventArgs _) => itemRenderer.enabled = false;
         private void HandleRevived(Health reviver) => itemRenderer.enabled = true;
 
@@ -308,27 +372,9 @@ namespace Tulip.Gameplay
             // Only update sprite when ready to swing again
             RefreshItem();
         }
+#endregion
 
-        private void OnEnable()
-        {
-            UpdateItemSprite();
-
-            health.OnDie += HandleDie;
-            health.OnRevive += HandleRevived;
-
-            if (hotbar)
-                hotbar.OnChangeSelection += HandleHotbarSelectionChanged;
-        }
-
-        private void OnDisable()
-        {
-            health.OnDie -= HandleDie;
-            health.OnRevive -= HandleRevived;
-
-            if (hotbar)
-                hotbar.OnChangeSelection -= HandleHotbarSelectionChanged;
-        }
-
+#region Child Structs
         private struct MotionState
         {
             public Vector2 StartPosition;
@@ -348,5 +394,6 @@ namespace Tulip.Gameplay
             Swinging,
             Resetting
         }
+#endregion
     }
 }

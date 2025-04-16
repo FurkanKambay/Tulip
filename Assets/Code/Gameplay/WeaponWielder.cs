@@ -24,6 +24,26 @@ namespace Tulip.Gameplay
         private WeaponData weaponData;
         private Collider2D[] hits = Array.Empty<Collider2D>();
 
+        private void OnEnable()
+        {
+            itemWielder.OnSwingPerform += Attack;
+            itemWielder.OnThrowPerform += Throw;
+        }
+
+        private void OnDisable()
+        {
+            itemWielder.OnSwingPerform -= Attack;
+            itemWielder.OnThrowPerform -= Throw;
+        }
+
+        private void Throw(ItemStack stack, Vector3 aimPoint)
+        {
+            if (stack.itemData.IsNot(out weaponData))
+                return;
+
+            Debug.DrawLine(transform.position, aimPoint, Color.magenta);
+        }
+
         private void Attack(ItemStack stack, Vector3 targetPoint)
         {
             if (stack.itemData.IsNot(out weaponData))
@@ -59,8 +79,5 @@ namespace Tulip.Gameplay
                 .Select(hit => hit.GetComponentInChildren<Health>())
                 .TakeWhile(hitHealth => (bool)hitHealth);
         }
-
-        private void OnEnable() => itemWielder.OnSwingPerform += Attack;
-        private void OnDisable() => itemWielder.OnSwingPerform -= Attack;
     }
 }
