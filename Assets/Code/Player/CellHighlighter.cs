@@ -80,7 +80,7 @@ namespace Tulip.Player
             targetPosition = world.CellCenter(focusedCell.Value);
 
             // BUG: doesn't support multi-hit swing types
-            impactLerp = Mathf.MoveTowards(impactLerp, 1, Time.deltaTime / worldToolData.GetTimeToFirstHit());
+            impactLerp = Mathf.MoveTowards(impactLerp, 1, Time.deltaTime / worldToolData.SwingConfig.TimeToFirstHit);
 
             // I once got a NaN error that I couldn't reproduce so just in case
             if (!float.IsFinite(impactLerp))

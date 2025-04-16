@@ -18,6 +18,8 @@ namespace Tulip.Data
         public bool Loop => loop;
         public UsePhase[] Phases => phases;
 
+        public float TimeToFirstHit { get; private set; }
+
         [Header("Config")]
         [SerializeField] protected Vector2 readyPosition;
 
@@ -42,8 +44,13 @@ namespace Tulip.Data
         [SerializeField, ReadOnly] protected UsableData[] usedBy;
         // ReSharper restore NotAccessedField.Global
 
+        private void Awake() =>
+            TimeToFirstHit = FindTimeToFirstHit();
+
         private void OnValidate()
         {
+            TimeToFirstHit = FindTimeToFirstHit();
+
             if (phases.Length > 0 && !phases.Any(phase => phase.shouldHit))
                 phases[0].shouldHit = true;
 
@@ -51,5 +58,19 @@ namespace Tulip.Data
                 .Where(usableData => usableData.SwingConfig == this)
                 .ToArray();
         }
+
+        private float FindTimeToFirstHit()
+        {
+            if (Phases.Length == 0)
+                return 0;
+
+            float durationSum = Phases
+                .TakeWhile(p => !p.shouldHit)
+                .Sum(p => Mathf.Max(p.moveDuration, p.turnDuration));
+
+            UsePhase hitPhase = Phases.First(p => p.shouldHit);
+            return durationSum + Mathf.Max(hitPhase.moveDuration, hitPhase.turnDuration);
+        }
+
     }
 }
