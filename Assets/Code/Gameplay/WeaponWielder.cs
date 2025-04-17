@@ -21,8 +21,12 @@ namespace Tulip.Gameplay
         [SerializeField] ContactFilter2D hitContactFilter;
         [SerializeField] int maxMultiTargetAmount = 9;
 
+        private ProjectileManager projectileManager;
         private WeaponData weaponData;
         private Collider2D[] hits = Array.Empty<Collider2D>();
+
+        private void Awake() =>
+            projectileManager = FindFirstObjectByType<ProjectileManager>();
 
         private void OnEnable()
         {
@@ -38,10 +42,8 @@ namespace Tulip.Gameplay
 
         private void Throw(ItemStack stack, Vector3 aimPoint)
         {
-            if (stack.itemData.IsNot(out weaponData))
-                return;
-
-            Debug.DrawLine(transform.position, aimPoint, Color.magenta);
+            if (stack.itemData.Is(out weaponData) && weaponData.ProjectilePrefab)
+                projectileManager.Fire(weaponData, health, aimPoint);
         }
 
         private void Attack(ItemStack stack, Vector3 targetPoint)

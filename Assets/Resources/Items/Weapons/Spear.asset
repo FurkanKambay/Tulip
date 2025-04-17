@@ -17,10 +17,12 @@ MonoBehaviour:
   name: Spear
   description: A spear that can pierce.
   maxAmount: 1
+  projectilePrefab: {fileID: 7736458285276045630, guid: 59befd437b1e2c74d99202328ba7b7e3, type: 3}
   craftedBy: []
   usedInCrafting: []
   cooldown: 0.5
-  throwCooldown: 0.5
+  throwCooldown: 0.3
+  throwStrength: 18
   aimChargeSpeed: 2
   swingConfig: {fileID: 11400000, guid: bea895e04214f1e47ab88f5efecdd802, type: 2}
   damage: 15
