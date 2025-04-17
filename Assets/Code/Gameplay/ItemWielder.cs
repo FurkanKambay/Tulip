@@ -270,7 +270,7 @@ namespace Tulip.Gameplay
             }
 
             aimVector = brain.I.AimPosition.Value - (Vector2)itemPivot.position;
-            float aimAngle = Mathf.Atan2(aimVector.y, aimVector.x) * Mathf.Rad2Deg;
+            float aimAngle = aimVector.ToAngle();
             bool isLeft = aimAngle is < -90 or > 90;
 
             itemPivot.localScale = Vector3.one.With(y: isLeft ? -1 : 1);
