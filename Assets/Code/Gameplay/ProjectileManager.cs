@@ -32,69 +32,30 @@ namespace Tulip.Gameplay
                 if (!projectile.isActiveAndEnabled)
                     continue;
 
-                Rigidbody2D body = projectile.Body;
-                Vector2 velocity = body.linearVelocity;
+                bool shouldDestroy = projectile.HandleCollisions(contactFilter, results);
 
-                body.SetRotation(velocity.ToQuaternion2D());
-
-                Vector2 currentPosition = body.position;
-                Vector2 previousPosition = currentPosition - (velocity * Time.deltaTime);
-
-                Debug.DrawLine(currentPosition, previousPosition, Color.magenta);
-
-                int hitCount = Physics2D.Linecast(currentPosition, previousPosition, contactFilter, results);
-
-                if (hitCount == 0)
-                    continue;
-
-                if (!projectile.SourceWeapon.IsMultiTarget)
-                {
+                if (shouldDestroy)
                     DestroyProjectile(projectileIndex);
-                    hitCount = 1;
-                }
-
-                for (int hitIndex = 0; hitIndex < hitCount; hitIndex++)
-                {
-                    RaycastHit2D hit = results[hitIndex];
-
-                    // Already hit this target (or no hit)
-                    if (!hit || projectile.DamagedTargets.Contains(hit.transform))
-                        continue;
-
-                    TangibleEntity entity = hit.collider.GetComponent<TangibleEntity>();
-
-                    // Hit non-living object: destroy the projectile
-                    if (!entity || !entity.Health)
-                    {
-                        DestroyProjectile(projectileIndex);
-                        continue;
-                    }
-
-                    entity.Health.Damage(projectile.SourceWeapon.Damage, projectile.OwnerHealth);
-                    projectile.DamagedTargets.Add(hit.transform);
-                }
             }
         }
 
-        public void Fire(WeaponSO weaponSO, Health owner, Vector3 aimPoint)
+        internal void Fire(WeaponSO weaponSO, Health owner, Vector3 aimPoint)
         {
             Vector3 origin = owner.transform.position;
             Vector2 aimVector = aimPoint - origin;
 
             // TODO: pool the projectiles
 
-            Projectile instance = Instantiate(
+            Projectile projectile = Instantiate(
                 original: projectilePrefab,
                 position: origin,
                 rotation: aimVector.ToQuaternion2D(),
                 parent: projectileParent
             );
 
-            instance.OwnerHealth = owner;
-            instance.SourceWeapon = weaponSO;
-            projectiles.Add(instance);
+            projectiles.Add(projectile);
+            projectile.Launch(aimVector, owner, weaponSO);
 
-            instance.Body.AddForce(aimVector.normalized * weaponSO.ThrowStrength, ForceMode2D.Impulse);
             Debug.DrawRay(origin, aimVector, Color.magenta);
         }
 
