@@ -9,6 +9,7 @@ namespace Tulip.Gameplay
     public sealed class ProjectileManager : MonoBehaviour
     {
         [Header("References")]
+        [SerializeField] Projectile projectilePrefab;
         [SerializeField] Transform projectileParent;
 
         [Header("Config")]
@@ -83,7 +84,7 @@ namespace Tulip.Gameplay
             // TODO: pool the projectiles
 
             Projectile instance = Instantiate(
-                original: weaponData.ProjectilePrefab,
+                original: projectilePrefab,
                 position: origin,
                 rotation: aimVector.ToQuaternion2D(),
                 parent: projectileParent

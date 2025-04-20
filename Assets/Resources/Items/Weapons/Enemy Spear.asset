@@ -20,8 +20,11 @@ MonoBehaviour:
   craftedBy: []
   usedInCrafting: []
   cooldown: 1
-  throwCooldown: 0
-  aimChargeSpeed: 0
+  isThrowable: 0
+  throwableConfig:
+    cooldown: 0
+    strength: 0
+    chargeSpeed: 0
   swingConfig: {fileID: 11400000, guid: 8149a840107b875489f4460afb04d237, type: 2}
   damage: 8
   range: 1.6

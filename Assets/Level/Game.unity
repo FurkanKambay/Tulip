@@ -1212,6 +1212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3c18e30ef84dc68cc50d8c25c72dc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 7736458285276045630, guid: 59befd437b1e2c74d99202328ba7b7e3, type: 3}
   projectileParent: {fileID: 337397489}
   contactFilter:
     useTriggers: 0

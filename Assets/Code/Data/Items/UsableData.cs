@@ -10,16 +10,20 @@ namespace Tulip.Data.Items
     public class UsableData : ItemData
     {
         public float Cooldown => cooldown;
-        public float ThrowCooldown => throwCooldown;
-        public float ThrowStrength => throwStrength;
-        public float AimChargeSpeed => aimChargeSpeed;
         public ItemSwingConfig SwingConfig => swingConfig;
+
+        public bool IsThrowable => isThrowable;
+        public float ThrowCooldown => throwableConfig.cooldown;
+        public float ThrowStrength => throwableConfig.strength;
+        public float AimChargeSpeed => throwableConfig.chargeSpeed;
 
         [Header("Usable Data")]
         [SerializeField, Min(0)] protected float cooldown = 0.5f;
-        [SerializeField, Min(0)] protected float throwCooldown;
-        [SerializeField, Min(0)] protected float throwStrength;
-        [SerializeField, Min(0)] protected float aimChargeSpeed;
+
+        [SerializeField] protected bool isThrowable;
+
+        [ShowIf(nameof(isThrowable))]
+        [SerializeField] protected ThrowableConfig throwableConfig;
 
         [BelowRichLabel(nameof(SwingTypeLabel), isCallback: true)]
         [SerializeField] protected ItemSwingConfig swingConfig;

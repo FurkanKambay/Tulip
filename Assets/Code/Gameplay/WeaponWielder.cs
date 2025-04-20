@@ -42,7 +42,7 @@ namespace Tulip.Gameplay
 
         private void Throw(ItemStack stack, Vector3 aimPoint)
         {
-            if (stack.itemData.Is(out weaponData) && weaponData.ProjectilePrefab)
+            if (stack.itemData.Is(out weaponData) && weaponData.IsThrowable)
                 projectileManager.Fire(weaponData, health, aimPoint);
         }
 
