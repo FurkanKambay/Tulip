@@ -11,7 +11,7 @@ namespace Tulip.Player
 {
     /// <summary>
     /// * Highlight the focused cell with an unlit sprite (smooth Lerp) <br/>
-    /// * If <see cref="PlaceableData"/>, use its sprite as a preview <br/>
+    /// * If <see cref="PlaceableSO"/>, use its sprite as a preview <br/>
     /// * Change color if the item can't be used <br/>
     /// * Visual impact effect on item swing
     /// </summary>
@@ -53,18 +53,18 @@ namespace Tulip.Player
 
         private void Update()
         {
-            ItemData itemData = itemWielder.CurrentStack.itemData;
+            ItemSO itemSO = itemWielder.CurrentStack.itemSO;
 
-            if (!focusedCell.HasValue || itemData.IsNot(out BaseWorldToolData worldToolData))
+            if (!focusedCell.HasValue || itemSO.IsNot(out BaseWorldToolSO worldToolSO))
             {
                 renderer.enabled = false;
                 impactLerp = 0;
                 return;
             }
 
-            Assert.IsNotNull(worldToolData);
+            Assert.IsNotNull(worldToolSO);
 
-            Color? color = worldToolData.GetUsability(world, focusedCell.Value) switch
+            Color? color = worldToolSO.GetUsability(world, focusedCell.Value) switch
             {
                 ToolUsability.Available => validColor,
                 ToolUsability.Invalid => invalidColor,
@@ -73,14 +73,14 @@ namespace Tulip.Player
             };
 
             renderer.enabled = color.HasValue;
-            renderer.sprite = worldToolData.CellHighlightSprite;
+            renderer.sprite = worldToolSO.CellHighlightSprite;
             renderer.color = color.GetValueOrDefault();
 
             // update marker state
             targetPosition = world.CellCenter(focusedCell.Value);
 
             // BUG: doesn't support multi-hit swing types
-            impactLerp = Mathf.MoveTowards(impactLerp, 1, Time.deltaTime / worldToolData.SwingConfig.TimeToFirstHit);
+            impactLerp = Mathf.MoveTowards(impactLerp, 1, Time.deltaTime / worldToolSO.SwingConfig.TimeToFirstHit);
 
             // I once got a NaN error that I couldn't reproduce so just in case
             if (!float.IsFinite(impactLerp))

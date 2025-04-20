@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Generic Enemy #0
   prefab: {fileID: 2859632988072890709, guid: e80f529ddf142384a9f35b19b774a636, type: 3}
   isStatic: 0
-  spawnConditionData: {fileID: 11400000, guid: 457fa30dada22e746a5b16a1234da0b2, type: 2}
+  spawnConditionSO: {fileID: 11400000, guid: 457fa30dada22e746a5b16a1234da0b2, type: 2}
   size: {x: 1, y: 2}
   loot: {fileID: 11400000, guid: ebbf6f697a125db4899ebfe8f98d2752, type: 2}
   lootAmount: 1

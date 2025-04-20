@@ -7,7 +7,7 @@ namespace Tulip.Data.Items
     /// A basic item that can be used.
     /// </summary>
     [CreateAssetMenu(menuName = "Items/Usable", order = 2)]
-    public class UsableData : ItemData
+    public class UsableSO : ItemSO
     {
         public float Cooldown => cooldown;
         public ItemSwingConfig SwingConfig => swingConfig;
@@ -17,7 +17,7 @@ namespace Tulip.Data.Items
         public float ThrowStrength => throwableConfig.strength;
         public float AimChargeSpeed => throwableConfig.chargeSpeed;
 
-        [Header("Usable Data")]
+        [Header("Usable")]
         [SerializeField, Min(0)] protected float cooldown = 0.5f;
 
         [SerializeField] protected bool isThrowable;

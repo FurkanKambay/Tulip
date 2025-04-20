@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bbd71b14b704e148d9ef61f3841d744, type: 3}
   m_Name: Pickaxe Recipe
   m_EditorClassIdentifier: 
-  resultItemData: {fileID: 11400000, guid: c478888b16953144286cffad52968cc0, type: 2}
+  resultItemSO: {fileID: 11400000, guid: c478888b16953144286cffad52968cc0, type: 2}
   ingredients:
-  - itemData: {fileID: 11400000, guid: ebbf6f697a125db4899ebfe8f98d2752, type: 2}
+  - itemSO: {fileID: 11400000, guid: ebbf6f697a125db4899ebfe8f98d2752, type: 2}
     isLocked: 0
     amount: 10

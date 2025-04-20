@@ -10,7 +10,7 @@ namespace Tulip.Data.Items
     /// A base item that can be stored in an inventory.
     /// </summary>
     [CreateAssetMenu(menuName = "Items/Item", order = 0)]
-    public class ItemData : ScriptableObject
+    public class ItemSO : ScriptableObject
     {
         public virtual Sprite Icon => icon;
         public virtual float IconScale => iconScale;
@@ -18,7 +18,7 @@ namespace Tulip.Data.Items
         public virtual string Description => description;
         public virtual int MaxAmount => maxAmount;
 
-        [Header("Item Data")]
+        [Header("Item")]
         [AssetPreview(width: 64, align: EAlign.FieldStart)]
         [SerializeField] protected Sprite icon;
 
@@ -29,8 +29,8 @@ namespace Tulip.Data.Items
 
         // ReSharper disable NotAccessedField.Global
         [LayoutGroup("Referenced By", ELayout.Background | ELayout.TitleOut | ELayout.Foldout, marginTop: 16)]
-        [SerializeField, ReadOnly] protected ItemRecipeData[] craftedBy;
-        [SerializeField, ReadOnly] protected ItemRecipeData[] usedInCrafting;
+        [SerializeField, ReadOnly] protected ItemRecipeSO[] craftedBy;
+        [SerializeField, ReadOnly] protected ItemRecipeSO[] usedInCrafting;
         // ReSharper restore NotAccessedField.Global
 
         public ItemStack Stack(int amount) => new(this, amount);
@@ -39,12 +39,12 @@ namespace Tulip.Data.Items
 
         protected virtual void OnValidate()
         {
-            craftedBy = Resources.FindObjectsOfTypeAll<ItemRecipeData>()
-                .Where(recipeData => recipeData.ResultItemData == this)
+            craftedBy = Resources.FindObjectsOfTypeAll<ItemRecipeSO>()
+                .Where(recipeSO => recipeSO.ResultItemSO == this)
                 .ToArray();
 
-            usedInCrafting = Resources.FindObjectsOfTypeAll<ItemRecipeData>()
-                .Where(recipeData => recipeData.Ingredients.Any(stack => stack.itemData == this))
+            usedInCrafting = Resources.FindObjectsOfTypeAll<ItemRecipeSO>()
+                .Where(recipeSO => recipeSO.Ingredients.Any(stack => stack.itemSO == this))
                 .ToArray();
         }
     }

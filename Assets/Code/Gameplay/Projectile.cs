@@ -12,7 +12,7 @@ namespace Tulip.Gameplay
 
         [Header("State")]
         [SerializeField] Health ownerHealth;
-        [SerializeField] WeaponData sourceWeapon;
+        [SerializeField] WeaponSO sourceWeapon;
         [SerializeField] List<Transform> damagedTargets;
 
         public Rigidbody2D Body => body;
@@ -23,7 +23,7 @@ namespace Tulip.Gameplay
             set => ownerHealth = value;
         }
 
-        public WeaponData SourceWeapon
+        public WeaponSO SourceWeapon
         {
             get => sourceWeapon;
             set => sourceWeapon = value;

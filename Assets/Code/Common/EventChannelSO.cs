@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Furkan.Common
 {
     [CreateAssetMenu(menuName = "Events/Event Channel")]
-    public class EventChannelData : ScriptableObject
+    public class EventChannelSO : ScriptableObject
     {
         public event Action OnRaised;
 

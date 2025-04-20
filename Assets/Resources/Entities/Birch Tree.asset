@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Birch Tree
   prefab: {fileID: 4352453585227860419, guid: 8a490b9bb59befb4986f23bd14642e4c, type: 3}
   isStatic: 1
-  spawnConditionData: {fileID: 11400000, guid: af6a702da94c5ad4d9823783d4f491f8, type: 2}
+  spawnConditionSO: {fileID: 11400000, guid: af6a702da94c5ad4d9823783d4f491f8, type: 2}
   size: {x: 3, y: 5}
   loot: {fileID: 11400000, guid: f38d0fc5a331ed44ba37a427dd625605, type: 2}
   lootAmount: 3

@@ -6,23 +6,23 @@ using UnityEngine;
 namespace Tulip.Data.Items
 {
     [CreateAssetMenu(menuName = "Items/Placeable", order = 5)]
-    public class PlaceableData : BaseWorldToolData
+    public class PlaceableSO : BaseWorldToolSO
     {
-        public override Sprite Icon => ruleTileData.m_DefaultSprite;
+        public override Sprite Icon => ruleTileSO.m_DefaultSprite;
 
         public Color Color => color;
-        public CustomRuleTileData RuleTileData => ruleTileData;
+        public CustomRuleTileSO RuleTileSO => ruleTileSO;
         public TileType TileType => tileType;
         public PlaceableMaterial Material => material;
 
         public bool IsUnsafe => isUnsafe;
         public bool IsUnbreakable => isUnbreakable;
         public int Hardness => hardness;
-        public OreData OreData => oreData;
+        public OreSO OreSO => oreSO;
 
-        [Header("World Tile Data")]
+        [Header("World Tile")]
         [SerializeField] protected Color color;
-        [SerializeField] protected CustomRuleTileData ruleTileData;
+        [SerializeField] protected CustomRuleTileSO ruleTileSO;
         [SerializeField] protected TileType tileType;
         [SerializeField] protected PlaceableMaterial material;
 
@@ -32,7 +32,7 @@ namespace Tulip.Data.Items
         [Min(1), PlayaDisableIf(nameof(isUnbreakable))]
         [SerializeField] protected int hardness = 50;
 
-        [SerializeField] protected OreData oreData;
+        [SerializeField] protected OreSO oreSO;
 
         public override InventoryModification UseOn(World world, Vector2Int cell)
         {
@@ -45,7 +45,7 @@ namespace Tulip.Data.Items
             // TODO: check if cell is out of world bounds
             // return ToolUsability.Never;
 
-            PlaceableData tile = world.GetTile(cell, tileType);
+            PlaceableSO tile = world.GetTile(cell, tileType);
             bool cellHasEntity = tileType is TileType.Block && !world.IsCellEntityFree(cell);
 
             return (bool)tile switch
@@ -59,14 +59,14 @@ namespace Tulip.Data.Items
 
         private void OnEnable()
         {
-            if (ruleTileData)
-                ruleTileData.PlaceableData = this;
+            if (ruleTileSO)
+                ruleTileSO.PlaceableSO = this;
         }
 
         protected override void OnValidate()
         {
-            if (ruleTileData)
-                ruleTileData.PlaceableData = this;
+            if (ruleTileSO)
+                ruleTileSO.PlaceableSO = this;
         }
 
         private void Reset()

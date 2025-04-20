@@ -19,14 +19,14 @@ namespace Tulip.GameWorld
         public event PlaceableEvent OnDestroyTile;
 
         [Header("References")]
-        [SerializeField, Required] WorldData worldData;
+        [SerializeField, Required] WorldSO worldSO;
         [SerializeField, Required] WorldVisual worldVisual;
 
         [Header("Config")]
         [SerializeField] bool isReadonly;
         [SerializeField] LayerMask entityLayers;
 
-        public WorldData WorldData => worldData;
+        public WorldSO WorldSO => worldSO;
         public bool IsReadonly => isReadonly;
 
         private readonly Dictionary<Vector2Int, TangibleEntity> staticEntities = new();
@@ -45,10 +45,10 @@ namespace Tulip.GameWorld
 
             TileDictionary tiles = GetTiles(tileType);
 
-            if (!tiles.TryGetValue(cell, out PlaceableData placeableData))
+            if (!tiles.TryGetValue(cell, out PlaceableSO placeableSO))
                 return default;
 
-            if (placeableData.IsUnbreakable)
+            if (placeableSO.IsUnbreakable)
             {
                 // TODO: feedback for 'unbreakable'
                 // change return type to account for this
@@ -59,19 +59,19 @@ namespace Tulip.GameWorld
             damageMap.TryAdd(cell, 0);
             damageMap[cell] += damage;
 
-            if (damageMap[cell] < placeableData.Hardness)
+            if (damageMap[cell] < placeableSO.Hardness)
             {
                 // the tile was not destroyed
-                OnHitTile?.Invoke(TileModification.FromDamaged(cell, placeableData));
+                OnHitTile?.Invoke(TileModification.FromDamaged(cell, placeableSO));
                 return default;
             }
 
             tiles.Remove(cell);
             damageMap.Remove(cell);
 
-            OnDestroyTile?.Invoke(TileModification.FromDestroyed(cell, placeableData));
+            OnDestroyTile?.Invoke(TileModification.FromDestroyed(cell, placeableSO));
 
-            ItemData loot = placeableData.OreData.Or<ItemData>(placeableData);
+            ItemSO loot = placeableSO.OreSO.Or<ItemSO>(placeableSO);
             return InventoryModification.ToAdd(loot.Stack(1));
         }
 
@@ -79,20 +79,20 @@ namespace Tulip.GameWorld
         /// Tries to place a tile at the given cell coordinates.
         /// </summary>
         /// <returns>The inventory modification to place the tile. Empty if the action was not successful.</returns>
-        public InventoryModification PlaceTile(Vector2Int cell, PlaceableData placeableData)
+        public InventoryModification PlaceTile(Vector2Int cell, PlaceableSO placeableSO)
         {
             if (isReadonly)
                 return default;
 
-            TileDictionary tiles = GetTiles(placeableData.TileType);
+            TileDictionary tiles = GetTiles(placeableSO.TileType);
 
-            if (!tiles.TryAdd(cell, placeableData))
+            if (!tiles.TryAdd(cell, placeableSO))
                 return default;
 
-            GetDamageMap(placeableData.TileType).Remove(cell);
-            OnPlaceTile?.Invoke(TileModification.FromPlaced(cell, placeableData));
+            GetDamageMap(placeableSO.TileType).Remove(cell);
+            OnPlaceTile?.Invoke(TileModification.FromPlaced(cell, placeableSO));
 
-            return InventoryModification.ToRemove(placeableData.Stack(1));
+            return InventoryModification.ToRemove(placeableSO.Stack(1));
         }
 
         public bool TryAddStaticEntity(Vector2Int baseCell, TangibleEntity entity) =>
@@ -104,10 +104,10 @@ namespace Tulip.GameWorld
         public bool HasTile(Vector2Int cell, TileType tileType) =>
             GetTiles(tileType).ContainsKey(cell);
 
-        public PlaceableData GetTile(Vector2Int cell, TileType tileType) =>
-            GetTiles(tileType).TryGetValue(cell, out PlaceableData placeableData) ? placeableData : null;
+        public PlaceableSO GetTile(Vector2Int cell, TileType tileType) =>
+            GetTiles(tileType).TryGetValue(cell, out PlaceableSO placeableSO) ? placeableSO : null;
 
-        public PlaceableData GetTileAtWorld(Vector3 worldPosition, TileType tileType) =>
+        public PlaceableSO GetTileAtWorld(Vector3 worldPosition, TileType tileType) =>
             GetTile(WorldToCell(worldPosition), tileType);
 
         public int GetTileDamage(Vector2Int cell, TileType tileType) =>
@@ -115,9 +115,9 @@ namespace Tulip.GameWorld
 
         private TileDictionary GetTiles(TileType tileType) => tileType switch
         {
-            TileType.Wall => WorldData.Walls,
-            TileType.Block => WorldData.Blocks,
-            TileType.Curtain => WorldData.Curtains,
+            TileType.Wall => WorldSO.Walls,
+            TileType.Block => WorldSO.Blocks,
+            TileType.Curtain => WorldSO.Curtains,
             _ => throw new ArgumentOutOfRangeException(nameof(tileType))
         };
 #endregion

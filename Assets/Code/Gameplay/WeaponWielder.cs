@@ -22,7 +22,7 @@ namespace Tulip.Gameplay
         [SerializeField] int maxMultiTargetAmount = 9;
 
         private ProjectileManager projectileManager;
-        private WeaponData weaponData;
+        private WeaponSO weaponSO;
         private Collider2D[] hits = Array.Empty<Collider2D>();
 
         private void Awake() =>
@@ -42,23 +42,23 @@ namespace Tulip.Gameplay
 
         private void Throw(ItemStack stack, Vector3 aimPoint)
         {
-            if (stack.itemData.Is(out weaponData) && weaponData.IsThrowable)
-                projectileManager.Fire(weaponData, health, aimPoint);
+            if (stack.itemSO.Is(out weaponSO) && weaponSO.IsThrowable)
+                projectileManager.Fire(weaponSO, health, aimPoint);
         }
 
         private void Attack(ItemStack stack, Vector3 targetPoint)
         {
-            if (stack.itemData.IsNot(out weaponData))
+            if (stack.itemSO.IsNot(out weaponSO))
                 return;
 
-            Array.Resize(ref hits, weaponData.IsMultiTarget ? maxMultiTargetAmount : 1);
+            Array.Resize(ref hits, weaponSO.IsMultiTarget ? maxMultiTargetAmount : 1);
 
             foreach (Health target in GetTargets(transform.position, targetPoint))
             {
                 if (!target.enabled)
                     continue;
 
-                InventoryModification loot = target.Damage(weaponData.Damage, health);
+                InventoryModification loot = target.Damage(weaponSO.Damage, health);
 
                 if (inventory)
                     inventory.ApplyModification(loot);
@@ -70,10 +70,10 @@ namespace Tulip.Gameplay
             Vector2 direction = (aimPoint - origin).normalized;
 
             var results = new RaycastHit2D[hits.Length];
-            int hitCount = Physics2D.Raycast(origin, direction, hitContactFilter, results, weaponData.Range);
+            int hitCount = Physics2D.Raycast(origin, direction, hitContactFilter, results, weaponSO.Range);
             hits = results.Select(hit => hit.collider).ToArray();
 
-            Debug.DrawRay(origin, direction * weaponData.Range, Color.green, 1f);
+            Debug.DrawRay(origin, direction * weaponSO.Range, Color.green, 1f);
 
             return hits
                 .Take(hitCount)

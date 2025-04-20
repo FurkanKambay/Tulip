@@ -29,7 +29,7 @@ namespace Tulip.Gameplay
         [OverlayRichLabel("<color=gray>sec")]
         [SerializeField, Min(0)] float gracePeriod;
 
-        [SerializeField] EntitySpawnPoolData entitySpawnPoolData;
+        [SerializeField] EntitySpawnPoolSO entitySpawnPoolSO;
 
         private new Camera camera;
         private IEnumerable<Vector2Int> suitableCells;
@@ -58,22 +58,22 @@ namespace Tulip.Gameplay
             if (spawnParent.childCount >= maxSpawns)
                 return false;
 
-            if (entitySpawnPoolData.Amount == 0)
+            if (entitySpawnPoolSO.Amount == 0)
                 return false;
 
-            EntityData entityData = GetRandomEnemy();
-            suitableCells = GetSuitableCells(entityData);
+            EntitySO entitySO = GetRandomEnemy();
+            suitableCells = GetSuitableCells(entitySO);
 
             if (!suitableCells.Any())
                 return false;
 
             Vector2Int baseCell = GetRandomSpawnCell();
-            Vector2Int centerCell = new(baseCell.x + (entityData.Size.x / 2), baseCell.y);
+            Vector2Int centerCell = new(baseCell.x + (entitySO.Size.x / 2), baseCell.y);
 
-            TangibleEntity spawnedEnemy = Spawn(entityData.Prefab, world.CellCenter(centerCell));
+            TangibleEntity spawnedEnemy = Spawn(entitySO.Prefab, world.CellCenter(centerCell));
             spawnedEnemy.SetResidence(world, baseCell);
 
-            if (entityData.IsStatic)
+            if (entitySO.IsStatic)
                 world.TryAddStaticEntity(baseCell, spawnedEnemy);
 
             return true;
@@ -82,13 +82,13 @@ namespace Tulip.Gameplay
         private TangibleEntity Spawn(GameObject prefab, Vector3 position) =>
             Instantiate(prefab, position, Quaternion.identity, spawnParent).GetComponent<TangibleEntity>();
 
-        private EntityData GetRandomEnemy() =>
-            entitySpawnPoolData[Random.Range(0, entitySpawnPoolData.Amount)];
+        private EntitySO GetRandomEnemy() =>
+            entitySpawnPoolSO[Random.Range(0, entitySpawnPoolSO.Amount)];
 
         private Vector2Int GetRandomSpawnCell() =>
             suitableCells.ElementAt(Random.Range(0, suitableCells.Count()));
 
-        private IEnumerable<Vector2Int> GetSuitableCells(EntityData entityData)
+        private IEnumerable<Vector2Int> GetSuitableCells(EntitySO entitySO)
         {
             Vector3 cameraExtents = new(camera.orthographicSize * camera.aspect, camera.orthographicSize);
             Vector3 spawnExtents = new(cameraExtents.x + radius, cameraExtents.y + radius);
@@ -108,7 +108,7 @@ namespace Tulip.Gameplay
 
                     var cell = new Vector2Int(x, y);
 
-                    if (entityData.CanSpawnAt(world, cell))
+                    if (entitySO.CanSpawnAt(world, cell))
                         yield return cell;
                 }
             }
@@ -127,12 +127,12 @@ namespace Tulip.Gameplay
 #if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
-            if (entitySpawnPoolData.Amount == 0)
+            if (entitySpawnPoolSO.Amount == 0)
                 return;
 
             Handles.color = Color.yellow;
 
-            foreach (Vector2Int cell in GetSuitableCells(entitySpawnPoolData[0]))
+            foreach (Vector2Int cell in GetSuitableCells(entitySpawnPoolSO[0]))
                 Handles.DrawSolidDisc(world.CellCenter(cell), Vector3.forward, 0.2f);
         }
 #endif

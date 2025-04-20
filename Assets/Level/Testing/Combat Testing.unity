@@ -691,7 +691,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4728014676095277497, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
-      propertyPath: inventoryData
+      propertyPath: inventorySO
       value: 
       objectReference: {fileID: 11400000, guid: d92bff51ac01705478bd12e9f7fb82e1, type: 2}
     - target: {fileID: 5432897673710594817, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}

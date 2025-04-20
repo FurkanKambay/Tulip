@@ -15,14 +15,14 @@
 ### Systems & Mechanics
 - [World terraforming](Assets/Code/GameWorld/World.cs) (breakable & placeable tiles)
 - [Grappling hook](Assets/Code/Gameplay/HookLauncher.cs) mechanic
-- [Entity spawn constraints](Assets/Code/Data/SpawnConditionData.cs): "only on safe blocks", "needs headroom", etc.
+- [Entity spawn constraints](Assets/Code/Data/SpawnConditionSO.cs): "only on safe blocks", "needs headroom", etc.
 - [Item swing motion](Assets/Code/Gameplay/ItemWielder.cs) config w/ editor tooling
 - [Melee combat](Assets/Code/Gameplay/WeaponWielder.cs): spear, axe
 - [Invulnerability frames](Assets/Code/Character/Health.cs)
 - [Status effects](Assets/Code/Data/StatusEffect.cs): health regen, bleed
 - [Enemy AI](Assets/Code/AI): walking, flying, attacking
 - [Hotbar](Assets/Code/UI/HotbarPresenter.cs) w/ slot locking
-- [Loot items](Assets/Code/Data/EntityData.cs) on entities and tiles
+- [Loot items](Assets/Code/Data/EntitySO.cs) on entities and tiles
 
 ### Content
 - [Three-layer world](Assets/Prefabs/Maps/Realm%20Visuals.prefab) tilemap (background walls, blocks, foreground curtains)
@@ -54,7 +54,7 @@
 - **Async** and `Awaitable` usage
 - [Input System](Assets/Settings/Input%20Actions.inputactions) usage
 - Fixed data persistence bug on web builds using [a custom WebGL template](https://github.com/FurkanKambay/Tulip/commit/c4d97ec0718cf6d3dfbc1e7d04e74d5d5c943c87)
-- [Event channels](Assets/Code/Common/EventChannelData.cs) for some UI events (`ScriptableObject`-based)
+- [Event channels](Assets/Code/Common/EventChannelSO.cs) for some UI events (`ScriptableObject`-based)
 
 <details><summary><h3>Plans</h3></summary>
 

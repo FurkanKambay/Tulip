@@ -4,12 +4,12 @@ using UnityEngine;
 namespace Tulip.Data
 {
     [CreateAssetMenu(menuName = "Player/Item Recipe")]
-    public class ItemRecipeData : ScriptableObject
+    public class ItemRecipeSO : ScriptableObject
     {
-        public ItemData ResultItemData => resultItemData;
+        public ItemSO ResultItemSO => resultItemSO;
         public ItemStack[] Ingredients => ingredients;
 
-        [SerializeField] protected ItemData resultItemData;
+        [SerializeField] protected ItemSO resultItemSO;
         [SerializeField] protected ItemStack[] ingredients;
     }
 }

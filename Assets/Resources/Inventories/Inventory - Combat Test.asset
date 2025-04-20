@@ -14,18 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capacity: 9
   inventory:
-  - itemData: {fileID: 11400000, guid: 9b57593f7b5cd0541984229247126e42, type: 2}
+  - itemSO: {fileID: 11400000, guid: 9b57593f7b5cd0541984229247126e42, type: 2}
     isLocked: 1
     amount: 1
-  - itemData: {fileID: 11400000, guid: 22ec4c4f083c86443ad2f80233e2466e, type: 2}
+  - itemSO: {fileID: 11400000, guid: 22ec4c4f083c86443ad2f80233e2466e, type: 2}
     isLocked: 1
     amount: 1
-  - itemData: {fileID: 0}
+  - itemSO: {fileID: 0}
     isLocked: 0
     amount: 0
-  - itemData: {fileID: 11400000, guid: cee049b1282365f41bc068f68b0b9ef2, type: 2}
+  - itemSO: {fileID: 11400000, guid: cee049b1282365f41bc068f68b0b9ef2, type: 2}
     isLocked: 0
     amount: 1
-  - itemData: {fileID: 11400000, guid: 84ef348f463a7a144b0fbff6c95049c7, type: 2}
+  - itemSO: {fileID: 11400000, guid: 84ef348f463a7a144b0fbff6c95049c7, type: 2}
     isLocked: 0
     amount: 1

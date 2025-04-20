@@ -12,7 +12,7 @@ namespace Tulip.Character
         public override event Action OnModify;
 
         [Header("Config")]
-        [SerializeField] InventoryData inventoryData;
+        [SerializeField] InventorySO inventorySO;
         [SerializeField, Min(0)] int capacity = 9;
 
         public override int Capacity => capacity;
@@ -20,7 +20,7 @@ namespace Tulip.Character
 
         private void Awake()
         {
-            ItemStack[] startingInventory = inventoryData.Inventory.ToArray();
+            ItemStack[] startingInventory = inventorySO.Inventory.ToArray();
             Array.Resize(ref startingInventory, capacity);
 
             Items = startingInventory;
@@ -40,7 +40,7 @@ namespace Tulip.Character
                 ? AddItem(modification.Stack)
                 : RemoveItem(modification.Stack);
 
-            ItemStack remainingStack = modification.Stack.itemData.Stack(remainder);
+            ItemStack remainingStack = modification.Stack.itemSO.Stack(remainder);
 
             return modification.WouldAdd
                 ? InventoryModification.ToAdd(remainingStack)
@@ -57,7 +57,7 @@ namespace Tulip.Character
             while (remaining > 0)
             {
                 // TODO: first remove from selected hotbar slot
-                int? foundIndex = GetFirstSlotWith(itemStack.itemData, intentToRemove: true);
+                int? foundIndex = GetFirstSlotWith(itemStack.itemSO, intentToRemove: true);
 
                 if (!foundIndex.HasValue)
                     break;
@@ -84,11 +84,11 @@ namespace Tulip.Character
 
             while (remaining > 0)
             {
-                int? foundIndex = GetFirstSlotWith(itemStack.itemData, intentToRemove: false);
+                int? foundIndex = GetFirstSlotWith(itemStack.itemSO, intentToRemove: false);
 
                 if (!foundIndex.HasValue)
                 {
-                    foundIndex = CreateNewStackWith(itemStack.itemData);
+                    foundIndex = CreateNewStackWith(itemStack.itemSO);
 
                     if (!foundIndex.HasValue)
                     {
@@ -113,36 +113,36 @@ namespace Tulip.Character
 
             Items[stackIndex].Amount += amount;
 
-            bool hasOverflow = wouldTotal > stack.itemData.MaxAmount;
-            int overflowAmount = wouldTotal - stack.itemData.MaxAmount;
+            bool hasOverflow = wouldTotal > stack.itemSO.MaxAmount;
+            int overflowAmount = wouldTotal - stack.itemSO.MaxAmount;
             return hasOverflow ? overflowAmount : 0;
         }
 
-        private int? CreateNewStackWith(ItemData itemData)
+        private int? CreateNewStackWith(ItemSO itemSO)
         {
             int? firstEmptyIndex = GetFirstEmptySlot();
 
             if (!firstEmptyIndex.HasValue)
                 return null;
 
-            Items[firstEmptyIndex.Value] = new ItemStack(itemData, 0);
+            Items[firstEmptyIndex.Value] = new ItemStack(itemSO, 0);
             return firstEmptyIndex;
         }
 
-        private int? GetFirstSlotWith(ItemData itemData, bool intentToRemove)
+        private int? GetFirstSlotWith(ItemSO itemSO, bool intentToRemove)
         {
-            if (!itemData)
+            if (!itemSO)
                 return null;
 
             for (int itemIndex = 0; itemIndex < Items.Length; itemIndex++)
             {
                 ItemStack currentItem = Items[itemIndex];
 
-                if (currentItem.itemData != itemData)
+                if (currentItem.itemSO != itemSO)
                     continue;
 
                 // don't allow full stacks when adding
-                if (!intentToRemove && currentItem.Amount >= itemData.MaxAmount)
+                if (!intentToRemove && currentItem.Amount >= itemSO.MaxAmount)
                     continue;
 
                 // don't allow empty stacks when removing
@@ -159,7 +159,7 @@ namespace Tulip.Character
         {
             for (int i = 0; i < Items.Length; i++)
             {
-                if (!Items[i].itemData)
+                if (!Items[i].itemSO)
                     return i;
             }
 

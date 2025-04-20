@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8751be9d454ae89b969c632e660570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityData: {fileID: 0}
+  entitySO: {fileID: 0}
   body: {fileID: 8296900039020886392}
   health: {fileID: 0}
   world: {fileID: 0}

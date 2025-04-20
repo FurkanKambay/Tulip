@@ -14,27 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capacity: 9
   inventory:
-  - itemData: {fileID: 11400000, guid: 9b57593f7b5cd0541984229247126e42, type: 2}
+  - itemSO: {fileID: 11400000, guid: 9b57593f7b5cd0541984229247126e42, type: 2}
     isLocked: 0
     amount: 1
-  - itemData: {fileID: 11400000, guid: 5efcb26fcf7c35443bfebf105a319f3d, type: 2}
+  - itemSO: {fileID: 11400000, guid: 5efcb26fcf7c35443bfebf105a319f3d, type: 2}
     isLocked: 0
     amount: 1
-  - itemData: {fileID: 11400000, guid: 22ec4c4f083c86443ad2f80233e2466e, type: 2}
+  - itemSO: {fileID: 11400000, guid: 22ec4c4f083c86443ad2f80233e2466e, type: 2}
     isLocked: 0
     amount: 1
-  - itemData: {fileID: 11400000, guid: 6d3857252a8becc409275c487eef4913, type: 2}
+  - itemSO: {fileID: 11400000, guid: 6d3857252a8becc409275c487eef4913, type: 2}
     isLocked: 1
     amount: 100
-  - itemData: {fileID: 11400000, guid: 6b98d82ba77a4344a946251215359108, type: 2}
+  - itemSO: {fileID: 11400000, guid: 6b98d82ba77a4344a946251215359108, type: 2}
     isLocked: 1
     amount: 5
-  - itemData: {fileID: 11400000, guid: f38d0fc5a331ed44ba37a427dd625605, type: 2}
+  - itemSO: {fileID: 11400000, guid: f38d0fc5a331ed44ba37a427dd625605, type: 2}
     isLocked: 0
     amount: 100
-  - itemData: {fileID: 11400000, guid: 073b2dd8fffaae5488494ef31e821aea, type: 2}
+  - itemSO: {fileID: 11400000, guid: 073b2dd8fffaae5488494ef31e821aea, type: 2}
     isLocked: 0
     amount: 100
-  - itemData: {fileID: 11400000, guid: 0491a0de59d86f9408b7f2902c563f0e, type: 2}
+  - itemSO: {fileID: 11400000, guid: 0491a0de59d86f9408b7f2902c563f0e, type: 2}
     isLocked: 0
     amount: 100

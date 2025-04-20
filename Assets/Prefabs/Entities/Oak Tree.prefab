@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8751be9d454ae89b969c632e660570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityData: {fileID: 11400000, guid: 0ad756e0c79d34a4182b602f36fabe08, type: 2}
+  entitySO: {fileID: 11400000, guid: 0ad756e0c79d34a4182b602f36fabe08, type: 2}
   body: {fileID: 0}
   health: {fileID: 5823316243804091760}
   world: {fileID: 0}

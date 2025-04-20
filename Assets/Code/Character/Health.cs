@@ -83,12 +83,12 @@ namespace Tulip.Character
             enabled = false;
 
             // TODO: fix whatever this is later
-            EntityData entityData = Entity.EntityData;
+            EntitySO entitySO = Entity.EntitySO;
 
-            if (!entityData || !entityData.Loot)
+            if (!entitySO || !entitySO.Loot)
                 return default;
 
-            return InventoryModification.ToAdd(entityData.Loot.Stack(entityData.LootAmount));
+            return InventoryModification.ToAdd(entitySO.Loot.Stack(entitySO.LootAmount));
         }
 
         public void Heal(float amount, Health source)

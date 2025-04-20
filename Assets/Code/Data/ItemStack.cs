@@ -9,13 +9,13 @@ namespace Tulip.Data
     [Serializable]
     public struct ItemStack
     {
-        public ItemData itemData;
+        public ItemSO itemSO;
         public bool isLocked;
 
         [Min(0), MaxValue(nameof(MaxAmount))]
         [SerializeField] int amount;
 
-        public int MaxAmount => itemData ? itemData.MaxAmount : 0;
+        public int MaxAmount => itemSO ? itemSO.MaxAmount : 0;
 
         public int Amount
         {
@@ -25,28 +25,28 @@ namespace Tulip.Data
                 amount = Mathf.Clamp(value, 0, MaxAmount);
 
                 if (amount == 0 && !isLocked)
-                    itemData = null;
+                    itemSO = null;
             }
         }
 
         [CreateProperty]
-        public bool IsValid => itemData && amount > 0;
+        public bool IsValid => itemSO && amount > 0;
 
         // ReSharper disable UnusedMember.Local
         [CreateProperty] bool ShowAmount => MaxAmount > 1;
         [CreateProperty] bool ShowIcon => isLocked || IsValid;
-        [CreateProperty] float IconHeight => itemData ? itemData.IconScale * 24f : 0f;
+        [CreateProperty] float IconHeight => itemSO ? itemSO.IconScale * 24f : 0f;
         [CreateProperty] float IconOpacity => isLocked && amount == 0 ? 0.5f : 1f;
         // ReSharper restore UnusedMember.Local
 
-        public ItemStack(ItemData itemData, int amount) : this()
+        public ItemStack(ItemSO itemSO, int amount) : this()
         {
-            this.itemData = itemData;
+            this.itemSO = itemSO;
             this.amount = Mathf.Clamp(amount, 0, MaxAmount);
         }
 
-        public ItemStack(ItemStack other) : this(other.itemData, other.Amount) { }
+        public ItemStack(ItemStack other) : this(other.itemSO, other.Amount) { }
 
-        public override string ToString() => $"{Amount} {itemData}";
+        public override string ToString() => $"{Amount} {itemSO}";
     }
 }

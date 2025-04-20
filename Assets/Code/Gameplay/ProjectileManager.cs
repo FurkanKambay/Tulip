@@ -76,7 +76,7 @@ namespace Tulip.Gameplay
             }
         }
 
-        public void Fire(WeaponData weaponData, Health owner, Vector3 aimPoint)
+        public void Fire(WeaponSO weaponSO, Health owner, Vector3 aimPoint)
         {
             Vector3 origin = owner.transform.position;
             Vector2 aimVector = aimPoint - origin;
@@ -91,10 +91,10 @@ namespace Tulip.Gameplay
             );
 
             instance.OwnerHealth = owner;
-            instance.SourceWeapon = weaponData;
+            instance.SourceWeapon = weaponSO;
             projectiles.Add(instance);
 
-            instance.Body.AddForce(aimVector.normalized * weaponData.ThrowStrength, ForceMode2D.Impulse);
+            instance.Body.AddForce(aimVector.normalized * weaponSO.ThrowStrength, ForceMode2D.Impulse);
             Debug.DrawRay(origin, aimVector, Color.magenta);
         }
 

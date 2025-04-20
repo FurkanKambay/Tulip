@@ -6,22 +6,22 @@ namespace Tulip.Data
     public readonly struct TileModification
     {
         public readonly Vector2Int Cell;
-        public readonly PlaceableData PlaceableData;
+        public readonly PlaceableSO PlaceableSO;
         public readonly TileModificationKind Kind;
 
-        public static TileModification FromPlaced(Vector2Int cell, PlaceableData placeableData) =>
-            new(cell, placeableData, TileModificationKind.Placed);
+        public static TileModification FromPlaced(Vector2Int cell, PlaceableSO placeableSO) =>
+            new(cell, placeableSO, TileModificationKind.Placed);
 
-        public static TileModification FromDamaged(Vector2Int cell, PlaceableData placeableData) =>
-            new(cell, placeableData, TileModificationKind.Damaged);
+        public static TileModification FromDamaged(Vector2Int cell, PlaceableSO placeableSO) =>
+            new(cell, placeableSO, TileModificationKind.Damaged);
 
-        public static TileModification FromDestroyed(Vector2Int cell, PlaceableData placeableData) =>
-            new(cell, placeableData, TileModificationKind.Destroyed);
+        public static TileModification FromDestroyed(Vector2Int cell, PlaceableSO placeableSO) =>
+            new(cell, placeableSO, TileModificationKind.Destroyed);
 
-        private TileModification(Vector2Int cell, PlaceableData placeableData, TileModificationKind kind)
+        private TileModification(Vector2Int cell, PlaceableSO placeableSO, TileModificationKind kind)
         {
             Cell = cell;
-            PlaceableData = placeableData;
+            PlaceableSO = placeableSO;
             Kind = kind;
         }
     }

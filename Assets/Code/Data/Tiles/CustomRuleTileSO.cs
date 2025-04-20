@@ -5,11 +5,11 @@ using UnityEngine.Tilemaps;
 
 namespace Tulip.Data.Tiles
 {
-    [CreateAssetMenu(menuName = "World/Rule Tile")]
-    public sealed class CustomRuleTileData : RuleTile<CustomRuleTileData.Neighbor>
+    [CreateAssetMenu(menuName = "Tiles/Rule Tile")]
+    public sealed class CustomRuleTileSO : RuleTile<CustomRuleTileSO.Neighbor>
     {
         [field: SerializeField, ReadOnly]
-        public PlaceableData PlaceableData { get; internal set; }
+        public PlaceableSO PlaceableSO { get; internal set; }
 
         public override bool RuleMatch(int neighbor, TileBase tile) => neighbor switch
         {
@@ -21,10 +21,10 @@ namespace Tulip.Data.Tiles
         public override void GetTileData(Vector3Int location, ITilemap tilemap, ref TileData tileData)
         {
             base.GetTileData(location, tilemap, ref tileData);
-            tileData.color = PlaceableData.Color;
+            tileData.color = PlaceableSO.Color;
 
-            if (PlaceableData.OreData)
-                tileData.gameObject = PlaceableData.OreData.Prefab;
+            if (PlaceableSO.OreSO)
+                tileData.gameObject = PlaceableSO.OreSO.Prefab;
         }
 
         // ReSharper disable once ClassNeverInstantiated.Global

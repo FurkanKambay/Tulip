@@ -25,7 +25,7 @@ namespace Tulip.Gameplay
         [SerializeField, Required] LineRenderer lineRenderer;
 
         [Header("Config")]
-        [SerializeField] HookData data;
+        [SerializeField] HookSO hookSO;
         [SerializeField] LayerMask hookableLayers;
         [SerializeField, Range(0, 3)] float reachDistance;
         [SerializeField] bool autoPullWhenHooked;
@@ -64,7 +64,7 @@ namespace Tulip.Gameplay
 
         private void Awake()
         {
-            rangeSquared = data.Range * data.Range;
+            rangeSquared = hookSO.Range * hookSO.Range;
             reachDistanceSquared = reachDistance * reachDistance;
         }
 
@@ -118,7 +118,7 @@ namespace Tulip.Gameplay
 
             if (currentPosition != attachPoint.Value)
             {
-                float maxDistanceDelta = data.RopeLaunchSpeed * Time.deltaTime;
+                float maxDistanceDelta = hookSO.RopeLaunchSpeed * Time.deltaTime;
                 RopeEnd = Vector2.MoveTowards(currentPosition, attachPoint.Value, maxDistanceDelta);
                 return;
             }
@@ -135,7 +135,7 @@ namespace Tulip.Gameplay
                 return;
 
             var vector = Vector2.ClampMagnitude(attachPoint.Value - (Vector2)transform.position, 1f);
-            body.linearVelocity = vector * data.PullStrength;
+            body.linearVelocity = vector * hookSO.PullStrength;
 
             if (vector.sqrMagnitude < reachDistanceSquared)
                 HookState = HookState.Reached;
@@ -149,7 +149,7 @@ namespace Tulip.Gameplay
             Vector2 origin = transform.position;
             Vector2 direction = (wielderBrain.I.AimPosition.Value - origin).normalized;
 
-            RaycastHit2D hit = Physics2D.Raycast(origin, direction, data.Range, hookableLayers);
+            RaycastHit2D hit = Physics2D.Raycast(origin, direction, hookSO.Range, hookableLayers);
             return hit ? hit.point : null;
         }
 

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dbac43252630dd499875c6a60daacdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryData: {fileID: 11400000, guid: 1265edbba7f76c84ba1e9ba37adf7f80, type: 2}
+  inventorySO: {fileID: 11400000, guid: 1265edbba7f76c84ba1e9ba37adf7f80, type: 2}
   capacity: 27
 --- !u!1 &1465944716965273975
 GameObject:
@@ -259,7 +259,7 @@ MonoBehaviour:
     <V>k__BackingField: {fileID: 3825264036527423534}
   body: {fileID: 7560684870690709998}
   lineRenderer: {fileID: 3308545910580722526}
-  data: {fileID: 11400000, guid: d6bb4516eeb65464686b792397023a80, type: 2}
+  hookSO: {fileID: 11400000, guid: d6bb4516eeb65464686b792397023a80, type: 2}
   hookableLayers:
     serializedVersion: 2
     m_Bits: 1672
@@ -651,7 +651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8751be9d454ae89b969c632e660570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityData: {fileID: 11400000, guid: 61f78ba64e5ba3c4895af881afac13bc, type: 2}
+  entitySO: {fileID: 11400000, guid: 61f78ba64e5ba3c4895af881afac13bc, type: 2}
   body: {fileID: 7560684870690709998}
   health: {fileID: 7186377946535505526}
   world: {fileID: 0}
@@ -1444,7 +1444,7 @@ MonoBehaviour:
   hotbar: {fileID: 3160445657362363712}
   itemRenderer: {fileID: 3639728673497933778}
   fallbackStack:
-    itemData: {fileID: 0}
+    itemSO: {fileID: 0}
     isLocked: 0
     amount: 0
 --- !u!1 &6609697852333061365

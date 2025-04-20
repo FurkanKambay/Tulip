@@ -15,7 +15,7 @@
     <engine:VisualElement name="hotbar-tooltip" data-source-type="Tulip.UI.HotbarPresenter, Tulip">
         <engine:Label name="hotbar-tooltip-label" text="Item name">
             <Bindings>
-                <engine:DataBinding binding-mode="ToTarget" property="text" data-source-path="heldItem.itemData.name" />
+                <engine:DataBinding binding-mode="ToTarget" property="text" data-source-path="heldItem.itemSO.name" />
             </Bindings>
         </engine:Label>
     </engine:VisualElement>

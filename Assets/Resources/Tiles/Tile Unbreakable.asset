@@ -16,4 +16,4 @@ MonoBehaviour:
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 2
   m_TilingRules: []
-  <PlaceableData>k__BackingField: {fileID: 11400000, guid: 27cd43e6265d13144a5bbd7807d6c37e, type: 2}
+  <PlaceableSO>k__BackingField: {fileID: 11400000, guid: 27cd43e6265d13144a5bbd7807d6c37e, type: 2}

@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capacity: 9
   inventory:
-  - itemData: {fileID: 11400000, guid: 9b57593f7b5cd0541984229247126e42, type: 2}
+  - itemSO: {fileID: 11400000, guid: 9b57593f7b5cd0541984229247126e42, type: 2}
     isLocked: 0
     amount: 1
-  - itemData: {fileID: 11400000, guid: 22ec4c4f083c86443ad2f80233e2466e, type: 2}
+  - itemSO: {fileID: 11400000, guid: 22ec4c4f083c86443ad2f80233e2466e, type: 2}
     isLocked: 0
     amount: 1

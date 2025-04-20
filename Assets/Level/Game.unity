@@ -457,7 +457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2578b4d5d1c444c3b7c7c3b109fad6dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldData: {fileID: 11400000, guid: 86e6a55c1634f6847b40457edea59b53, type: 2}
+  worldSO: {fileID: 11400000, guid: 86e6a55c1634f6847b40457edea59b53, type: 2}
   worldVisual: {fileID: 414399566}
   isReadonly: 1
   entityLayers:
@@ -1083,7 +1083,7 @@ MonoBehaviour:
   radius: 10
   interval: 2
   gracePeriod: 0
-  entitySpawnPoolData: {fileID: 11400000, guid: dfeaab23e3382bc4096de4c19314316c, type: 2}
+  entitySpawnPoolSO: {fileID: 11400000, guid: dfeaab23e3382bc4096de4c19314316c, type: 2}
 --- !u!1 &1872193082
 GameObject:
   m_ObjectHideFlags: 0

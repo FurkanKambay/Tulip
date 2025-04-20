@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8751be9d454ae89b969c632e660570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityData: {fileID: 11400000, guid: 32ab3e30b94083045896d4e30229ea5b, type: 2}
+  entitySO: {fileID: 11400000, guid: 32ab3e30b94083045896d4e30229ea5b, type: 2}
   body: {fileID: 7560684870690709998}
   health: {fileID: 1334333901957425893}
   world: {fileID: 0}
@@ -816,7 +816,7 @@ MonoBehaviour:
   hotbar: {fileID: 0}
   itemRenderer: {fileID: 1675066829283619181}
   fallbackStack:
-    itemData: {fileID: 11400000, guid: cee049b1282365f41bc068f68b0b9ef2, type: 2}
+    itemSO: {fileID: 11400000, guid: cee049b1282365f41bc068f68b0b9ef2, type: 2}
     isLocked: 0
     amount: 1
 --- !u!1 &7000550141864648715

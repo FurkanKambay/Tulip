@@ -77,7 +77,7 @@ namespace Tulip.Player
 
         private bool UseTool(ItemStack stack)
         {
-            if (!FocusedCell.HasValue || stack.itemData.IsNot(out BaseWorldToolData tool))
+            if (!FocusedCell.HasValue || stack.itemSO.IsNot(out BaseWorldToolSO tool))
                 return false;
 
             Assert.IsNotNull(tool);
@@ -97,7 +97,7 @@ namespace Tulip.Player
 
         private void AssignCells()
         {
-            if (itemWielder.CurrentStack.itemData.IsNot(out BaseWorldToolData _))
+            if (itemWielder.CurrentStack.itemSO.IsNot(out BaseWorldToolSO _))
                 return;
 
             Vector2 hotspot = transform.position;
@@ -111,7 +111,7 @@ namespace Tulip.Player
                 return;
             }
 
-            if (!Settings.Gameplay.UseSmartCursor || itemWielder.CurrentStack.itemData.IsNot(out WorldToolData _))
+            if (!Settings.Gameplay.UseSmartCursor || itemWielder.CurrentStack.itemSO.IsNot(out WorldToolSO _))
             {
                 // holding a placeable OR not smart cursor
                 float distance = Vector3.Distance(hotspot, aimPoint);

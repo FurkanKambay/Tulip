@@ -105,10 +105,10 @@ namespace Tulip.Gameplay
 
         private void TickSwingState()
         {
-            if (!handStack.IsValid || handStack.itemData.IsNot(out UsableData usableData))
+            if (!handStack.IsValid || handStack.itemSO.IsNot(out UsableSO usableSO))
                 return;
 
-            ItemSwingConfig swingConfig = usableData.SwingConfig;
+            ItemSwingConfig swingConfig = usableSO.SwingConfig;
             UsePhase phase = swingConfig.Phases.Length > 0 ? swingConfig.Phases[phaseIndex] : default;
 
             if (swingState == ItemSwingState.Ready)
@@ -117,7 +117,7 @@ namespace Tulip.Gameplay
                 RotateItemTowardsMouse();
                 isAiming = brain.I.WantsToAim;
 
-                float targetChargeAmount = aimChargeAmount + (Time.deltaTime * usableData.AimChargeSpeed);
+                float targetChargeAmount = aimChargeAmount + (Time.deltaTime * usableSO.AimChargeSpeed);
                 aimChargeAmount = isAiming ? Mathf.Clamp01(targetChargeAmount) : 0;
             }
             else if (!phase.preventAim)
@@ -130,7 +130,7 @@ namespace Tulip.Gameplay
             }
 
             // Throw the item
-            if (isAiming && brain.I.WantsToUse && timeSinceLastUse > usableData.ThrowCooldown)
+            if (isAiming && brain.I.WantsToUse && timeSinceLastUse > usableSO.ThrowCooldown)
             {
                 OnThrowPerform?.Invoke(HandStack, AimPointWorld);
                 timeSinceLastUse = 0f;
@@ -146,7 +146,7 @@ namespace Tulip.Gameplay
             switch (swingState)
             {
                 case ItemSwingState.Ready:
-                    if (wantsToSwing && timeSinceLastUse > usableData.Cooldown)
+                    if (wantsToSwing && timeSinceLastUse > usableSO.Cooldown)
                     {
                         SwitchState(ItemSwingState.Swinging);
                         timeSinceLastUse = 0f;
@@ -217,7 +217,7 @@ namespace Tulip.Gameplay
             if (state == swingState)
                 return;
 
-            if (!handStack.IsValid || handStack.itemData.IsNot(out UsableData _))
+            if (!handStack.IsValid || handStack.itemSO.IsNot(out UsableSO _))
             {
                 swingState = ItemSwingState.Ready;
                 return;
@@ -254,18 +254,18 @@ namespace Tulip.Gameplay
             phaseIndex = 0;
             ResetMotionStart();
 
-            if (handStack.itemData.Is(out UsableData usableData))
-                SetSpriteTransformInstant(usableData!.SwingConfig.ReadyPosition, usableData.SwingConfig.ReadyAngle);
+            if (handStack.itemSO.Is(out UsableSO usableSO))
+                SetSpriteTransformInstant(usableSO!.SwingConfig.ReadyPosition, usableSO.SwingConfig.ReadyAngle);
         }
 
 #region Motion Helpers
 
         private void SetMotionToPhase()
         {
-            if (handStack.itemData.IsNot(out UsableData usableData))
+            if (handStack.itemSO.IsNot(out UsableSO usableSO))
                 return;
 
-            ItemSwingConfig swingConfig = usableData!.SwingConfig;
+            ItemSwingConfig swingConfig = usableSO!.SwingConfig;
             UsePhase phase = swingConfig.Phases.Length > 0 ? swingConfig.Phases[phaseIndex] : default;
 
             ResetMotionStart();
@@ -277,10 +277,10 @@ namespace Tulip.Gameplay
 
         private void SetMotionToReady()
         {
-            if (!handStack.IsValid || handStack.itemData.IsNot(out UsableData usableData))
+            if (!handStack.IsValid || handStack.itemSO.IsNot(out UsableSO usableSO))
                 return;
 
-            ItemSwingConfig swingConfig = usableData!.SwingConfig;
+            ItemSwingConfig swingConfig = usableSO!.SwingConfig;
 
             ResetMotionStart();
             motion.EndPosition = swingConfig.ReadyPosition;
@@ -342,18 +342,18 @@ namespace Tulip.Gameplay
 
         private void UpdateItemSprite()
         {
-            if (handStack.itemData.IsNot(out UsableData usableData))
+            if (handStack.itemSO.IsNot(out UsableSO usableSO))
             {
                 itemVisual.localScale = Vector3.zero;
                 return;
             }
 
-            (Color tint, float scale) = usableData.Is(out PlaceableData placeableData)
-                ? (placeableData!.Color, usableData!.IconScale * 0.8f)
-                : (Color.white, usableData!.IconScale);
+            (Color tint, float scale) = usableSO.Is(out PlaceableSO placeableSO)
+                ? (placeableSO!.Color, usableSO!.IconScale * 0.8f)
+                : (Color.white, usableSO!.IconScale);
 
             itemVisual.localScale = Vector3.one * scale;
-            itemRenderer.sprite = usableData ? usableData.Icon : null;
+            itemRenderer.sprite = usableSO ? usableSO.Icon : null;
             itemRenderer.color = tint;
         }
 

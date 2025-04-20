@@ -23,10 +23,10 @@ MonoBehaviour:
   swingConfig: {fileID: 11400000, guid: 35ff93fda544a594a94ebfe5599470a9, type: 2}
   cellHighlightSprite: {fileID: 0}
   color: {r: 1, g: 1, b: 1, a: 1}
-  ruleTileData: {fileID: 2549535364982097264, guid: 3907ccd2fde9aba48ac51ecd146d9f4a, type: 2}
+  ruleTileSO: {fileID: 2549535364982097264, guid: 3907ccd2fde9aba48ac51ecd146d9f4a, type: 2}
   tileType: 1
   material: 6
   isUnsafe: 0
   isUnbreakable: 1
   hardness: 110
-  oreData: {fileID: 11400000, guid: ebbf6f697a125db4899ebfe8f98d2752, type: 2}
+  oreSO: {fileID: 11400000, guid: ebbf6f697a125db4899ebfe8f98d2752, type: 2}

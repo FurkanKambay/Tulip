@@ -22,7 +22,7 @@ namespace Tulip.UI
         [SerializeField, Required] UserBrain brain;
 
         [Header("Events")]
-        [SerializeField] EventChannelData saveQuitEvent;
+        [SerializeField] EventChannelSO saveQuitEvent;
 
         [Header("FMOD Events")]
         [SerializeField] EventReference toggleSfx;

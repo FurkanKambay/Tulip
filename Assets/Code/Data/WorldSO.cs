@@ -7,12 +7,12 @@ using UnityEngine;
 namespace Tulip.Data
 {
     [Serializable]
-    public class TileDictionary : SaintsDictionary<Vector2Int, PlaceableData>
+    public class TileDictionary : SaintsDictionary<Vector2Int, PlaceableSO>
     {
     }
 
-    [CreateAssetMenu(menuName = "World Data")]
-    public class WorldData : ScriptableObject
+    [CreateAssetMenu(menuName = "World")]
+    public class WorldSO : ScriptableObject
     {
         public string Name => name;
         public Vector2Int Dimensions => dimensions;

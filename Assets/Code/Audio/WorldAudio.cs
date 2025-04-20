@@ -52,17 +52,17 @@ namespace Tulip.Audio
                 _ => RuntimeManager.CreateInstance(tileDestroyedEvent)
             };
 
-            PlaceableData placeableData = modification.PlaceableData;
+            PlaceableSO placeableSO = modification.PlaceableSO;
 
             if (modification.Kind == TileModificationKind.Damaged)
             {
-                int tileDamage = world.GetTileDamage(modification.Cell, placeableData.TileType);
-                float tileHealth = (float)tileDamage / placeableData.Hardness;
+                int tileDamage = world.GetTileDamage(modification.Cell, placeableSO.TileType);
+                float tileHealth = (float)tileDamage / placeableSO.Hardness;
                 sfx.setParameterByID(paramDamage.id, tileHealth);
             }
 
             sfx.set3DAttributes(world.CellCenter(modification.Cell).To3DAttributes());
-            sfx.setParameterByID(paramMaterial.id, (float)placeableData.Material, ignoreseekspeed: true);
+            sfx.setParameterByID(paramMaterial.id, (float)placeableSO.Material, ignoreseekspeed: true);
 
             sfx.start();
             sfx.release();

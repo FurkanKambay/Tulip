@@ -61,7 +61,7 @@ namespace Tulip.Gameplay
         {
             Vector2Int cell = world.WorldToCell(respawnPosition);
 
-            while (!world.CanAccommodate(cell, entity.EntityData.Size))
+            while (!world.CanAccommodate(cell, entity.EntitySO.Size))
                 cell.y++;
 
             subject.position = world.CellCenter(cell);

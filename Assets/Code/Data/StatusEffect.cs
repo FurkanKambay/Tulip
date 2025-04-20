@@ -8,9 +8,9 @@ namespace Tulip.Data
     [Serializable]
     public class StatusEffect
     {
-        public bool IsDone => !Data.IsPermanent && RemainingDuration <= 0;
+        public bool IsDone => !SO.IsPermanent && RemainingDuration <= 0;
 
-        [field: SerializeField] public StatusEffectData Data { get; private set; }
+        [field: SerializeField] public StatusEffectSO SO { get; private set; }
         [field: SerializeField] public Health Source { get; private set; }
         [field: SerializeField] public Health Target { get; private set; }
 
@@ -18,12 +18,12 @@ namespace Tulip.Data
 
         private float timeSinceLastProc;
 
-        internal StatusEffect(StatusEffectData data, Health source, Health target)
+        internal StatusEffect(StatusEffectSO so, Health source, Health target)
         {
-            Data = data;
+            SO = so;
             Source = source;
             Target = target;
-            RemainingDuration = data.Duration;
+            RemainingDuration = so.Duration;
         }
 
         public void Tick(float deltaTime)
@@ -31,7 +31,7 @@ namespace Tulip.Data
             timeSinceLastProc += deltaTime;
             RemainingDuration -= deltaTime;
 
-            if (timeSinceLastProc < Data.Rate || IsDone)
+            if (timeSinceLastProc < SO.Rate || IsDone)
                 return;
 
             Proc();
@@ -41,10 +41,10 @@ namespace Tulip.Data
         private void Proc()
         {
             // BUG: deaths by statuses don't award loot
-            if (Data.Amount < 0)
-                Target.Damage(-Data.Amount, Source, checkInvulnerable: false);
+            if (SO.Amount < 0)
+                Target.Damage(-SO.Amount, Source, checkInvulnerable: false);
             else
-                Target.Heal(Data.Amount, Source);
+                Target.Heal(SO.Amount, Source);
         }
     }
 }

@@ -8,14 +8,14 @@ namespace Tulip.Data.Items
     /// <summary>
     /// An item that can be used on a tile.
     /// </summary>
-    public abstract class BaseWorldToolData : UsableData
+    public abstract class BaseWorldToolSO : UsableSO
     {
         public abstract ToolUsability GetUsability(World world, Vector2Int cell);
         public abstract InventoryModification UseOn(World world, Vector2Int cell);
 
         public Sprite CellHighlightSprite => cellHighlightSprite.Or(icon);
 
-        [Header("Base World Tool Data")]
+        [Header("Base World Tool")]
         [AssetPreview(width: 64, align: EAlign.FieldStart)]
         [SerializeField] protected Sprite cellHighlightSprite;
     }

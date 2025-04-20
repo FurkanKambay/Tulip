@@ -13,8 +13,8 @@ namespace Tulip.UI
         [SerializeField, Required] UIDocument document;
 
         [Header("Events")]
-        [SerializeField, Required] EventChannelData newGameEvent;
-        [SerializeField, Required] EventChannelData continueGameEvent;
+        [SerializeField, Required] EventChannelSO newGameEvent;
+        [SerializeField, Required] EventChannelSO continueGameEvent;
 
         private SettingsPresenter settingsPresenter;
         private VisualElement root;

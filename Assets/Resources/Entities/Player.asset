@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Player
   prefab: {fileID: 2859632988072890709, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
   isStatic: 0
-  spawnConditionData: {fileID: 11400000, guid: 457fa30dada22e746a5b16a1234da0b2, type: 2}
+  spawnConditionSO: {fileID: 11400000, guid: 457fa30dada22e746a5b16a1234da0b2, type: 2}
   size: {x: 1, y: 2}
   loot: {fileID: 0}
   lootAmount: 0

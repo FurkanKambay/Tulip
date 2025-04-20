@@ -41,7 +41,7 @@ namespace Tulip.Data
 
         // ReSharper disable NotAccessedField.Global
         [LayoutGroup("Referenced By", ELayout.Background | ELayout.TitleOut | ELayout.Foldout, marginTop: 16)]
-        [SerializeField, ReadOnly] protected UsableData[] usedBy;
+        [SerializeField, ReadOnly] protected UsableSO[] usedBy;
         // ReSharper restore NotAccessedField.Global
 
         private void Awake() =>
@@ -54,8 +54,8 @@ namespace Tulip.Data
             if (phases.Length > 0 && !phases.Any(phase => phase.shouldHit))
                 phases[0].shouldHit = true;
 
-            usedBy = Resources.FindObjectsOfTypeAll<UsableData>()
-                .Where(usableData => usableData.SwingConfig == this)
+            usedBy = Resources.FindObjectsOfTypeAll<UsableSO>()
+                .Where(usableSO => usableSO.SwingConfig == this)
                 .ToArray();
         }
 

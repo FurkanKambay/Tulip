@@ -408,4 +408,4 @@ MonoBehaviour:
     - {x: 1, y: 0, z: 0}
     - {x: -1, y: 0, z: 0}
     m_RuleTransform: 0
-  <PlaceableData>k__BackingField: {fileID: 11400000, guid: f81c3c4caa74cde44b228debcb6878b9, type: 2}
+  <PlaceableSO>k__BackingField: {fileID: 11400000, guid: f81c3c4caa74cde44b228debcb6878b9, type: 2}

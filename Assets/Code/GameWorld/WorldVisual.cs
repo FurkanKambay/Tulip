@@ -22,7 +22,7 @@ namespace Tulip.GameWorld
 
 #region Unity Lifecycle
         private void Awake() =>
-            InitializeTilemaps(world.WorldData);
+            InitializeTilemaps(world.WorldSO);
 
         private void OnEnable()
         {
@@ -54,33 +54,33 @@ namespace Tulip.GameWorld
             new(GetCellCenterWorld(cell), blockTilemap.GetBoundsLocal((Vector3Int)cell).size);
 #endregion
 
-        private void InitializeTilemaps(WorldData worldData)
+        private void InitializeTilemaps(WorldSO worldSO)
         {
-            if (!worldData)
+            if (!worldSO)
                 return;
 
-            Vector3Int tilemapSize = worldData.Dimensions.WithZ(1);
+            Vector3Int tilemapSize = worldSO.Dimensions.WithZ(1);
             wallTilemap.size = tilemapSize;
             blockTilemap.size = tilemapSize;
             curtainTilemap.size = tilemapSize;
 
             // TODO: Apply world delta to tilemaps from the save file
 
-            // TileChangeData[] wallChanges = worldData.Walls.Select(selector).ToArray();
-            // TileChangeData[] blockChanges = worldData.Blocks.Select(selector).ToArray();
-            // TileChangeData[] curtainChanges = worldData.Curtains.Select(selector).ToArray();
+            // TileChangeData[] wallChanges = worldSO.Walls.Select(selector).ToArray();
+            // TileChangeData[] blockChanges = worldSO.Blocks.Select(selector).ToArray();
+            // TileChangeData[] curtainChanges = worldSO.Curtains.Select(selector).ToArray();
             // wallTilemap.SetTiles(wallChanges, ignoreLockFlags: true);
             // blockTilemap.SetTiles(blockChanges, ignoreLockFlags: true);
             // curtainTilemap.SetTiles(curtainChanges, ignoreLockFlags: true);
 
-            // TileChangeData selector(KeyValuePair<Vector2Int, PlaceableData> kvp)
+            // TileChangeData selector(KeyValuePair<Vector2Int, PlaceableSO> kvp)
             // {
-            //     (Vector2Int cell, PlaceableData placeableData) = kvp;
+            //     (Vector2Int cell, PlaceableSO placeableSO) = kvp;
             //
             //     return new TileChangeData(
             //         (Vector3Int)cell,
-            //         (bool)placeableData ? placeableData.RuleTileData : null,
-            //         (bool)placeableData ? placeableData.Color : Color.white,
+            //         (bool)placeableSO ? placeableSO.RuleTileSO : null,
+            //         (bool)placeableSO ? placeableSO.Color : Color.white,
             //         Matrix4x4.identity
             //     );
             // }
@@ -89,25 +89,25 @@ namespace Tulip.GameWorld
 #region World Events
         private void World_TilePlaced(TileModification modification)
         {
-            PlaceableData placeableData = modification.PlaceableData;
-            Tilemap tilemap = GetTilemap(placeableData.TileType);
+            PlaceableSO placeableSO = modification.PlaceableSO;
+            Tilemap tilemap = GetTilemap(placeableSO.TileType);
 
             var cell = (Vector3Int)modification.Cell;
-            tilemap.SetTile(cell, placeableData.RuleTileData);
+            tilemap.SetTile(cell, placeableSO.RuleTileSO);
 
-            if (!placeableData)
+            if (!placeableSO)
             {
                 tilemap.SetTile(cell, null);
                 return;
             }
 
-            tilemap.SetTile(cell, placeableData.RuleTileData);
-            tilemap.SetColor(cell, placeableData.Color);
+            tilemap.SetTile(cell, placeableSO.RuleTileSO);
+            tilemap.SetColor(cell, placeableSO.Color);
         }
 
         private void World_TileDestroyed(TileModification modification)
         {
-            Tilemap tilemap = GetTilemap(modification.PlaceableData.TileType);
+            Tilemap tilemap = GetTilemap(modification.PlaceableSO.TileType);
             tilemap.SetTile((Vector3Int)modification.Cell, null);
         }
 
@@ -128,35 +128,35 @@ namespace Tulip.GameWorld
             {
                 var cell = (Vector2Int)position;
 
-                CustomRuleTileData wallTile = wallTilemap.GetTile<CustomRuleTileData>((Vector3Int)cell);
-                CustomRuleTileData blockTile = blockTilemap.GetTile<CustomRuleTileData>((Vector3Int)cell);
-                CustomRuleTileData curtainTile = curtainTilemap.GetTile<CustomRuleTileData>((Vector3Int)cell);
+                CustomRuleTileSO wallTile = wallTilemap.GetTile<CustomRuleTileSO>((Vector3Int)cell);
+                CustomRuleTileSO blockTile = blockTilemap.GetTile<CustomRuleTileSO>((Vector3Int)cell);
+                CustomRuleTileSO curtainTile = curtainTilemap.GetTile<CustomRuleTileSO>((Vector3Int)cell);
 
                 if (wallTile)
-                    world.WorldData.Walls[cell] = wallTile.PlaceableData;
-                else if (world.WorldData.Walls.ContainsKey(cell))
-                    world.WorldData.Walls.Remove(cell);
+                    world.WorldSO.Walls[cell] = wallTile.PlaceableSO;
+                else if (world.WorldSO.Walls.ContainsKey(cell))
+                    world.WorldSO.Walls.Remove(cell);
 
                 if (blockTile)
-                    world.WorldData.Blocks[cell] = blockTile.PlaceableData;
-                else if (world.WorldData.Blocks.ContainsKey(cell))
-                    world.WorldData.Blocks.Remove(cell);
+                    world.WorldSO.Blocks[cell] = blockTile.PlaceableSO;
+                else if (world.WorldSO.Blocks.ContainsKey(cell))
+                    world.WorldSO.Blocks.Remove(cell);
 
                 if (curtainTile)
-                    world.WorldData.Curtains[cell] = curtainTile.PlaceableData;
-                else if (world.WorldData.Curtains.ContainsKey(cell))
-                    world.WorldData.Curtains.Remove(cell);
+                    world.WorldSO.Curtains[cell] = curtainTile.PlaceableSO;
+                else if (world.WorldSO.Curtains.ContainsKey(cell))
+                    world.WorldSO.Curtains.Remove(cell);
             }
 
-            EditorUtility.SetDirty(world.WorldData);
+            EditorUtility.SetDirty(world.WorldSO);
         }
 
         private void OnDrawGizmos()
         {
-            WorldData worldData = world ? world.WorldData : Resources.Load<WorldData>("Worlds/World");
+            WorldSO worldSO = world ? world.WorldSO : Resources.Load<WorldSO>("Worlds/World");
 
             Handles.color = Color.white;
-            Handles.DrawWireCube(Vector3.zero, (Vector3Int)worldData.Dimensions);
+            Handles.DrawWireCube(Vector3.zero, (Vector3Int)worldSO.Dimensions);
         }
 #endif
     }
