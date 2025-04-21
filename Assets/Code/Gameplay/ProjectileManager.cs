@@ -32,7 +32,7 @@ namespace Tulip.Gameplay
                 if (!projectile.isActiveAndEnabled)
                     continue;
 
-                bool shouldDestroy = projectile.HandleCollisions(contactFilter, results);
+                bool shouldDestroy = projectile.MoveAndCollide(in contactFilter, results);
 
                 if (shouldDestroy)
                     DestroyProjectile(projectileIndex);

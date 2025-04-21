@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Furkan.Common;
+using SaintsField.Playa;
 using Tulip.Character;
 using Tulip.Data.Items;
 using UnityEngine;
@@ -8,31 +9,33 @@ namespace Tulip.Gameplay
 {
     public sealed class Projectile : MonoBehaviour
     {
-        [Header("References")]
-        [SerializeField] Rigidbody2D body;
+        [Header("Config")]
+        [SerializeField] float gravityScale = 1;
 
-        [Header("State")]
-        [SerializeField] Health ownerHealth;
-        [SerializeField] WeaponSO sourceWeapon;
-        [SerializeField] List<Transform> damagedTargets;
+        [LayoutGroup("State", ELayout.TitleOut)]
+        [ShowInInspector] Health ownerHealth;
+        [ShowInInspector] WeaponSO sourceWeapon;
+        [ShowInInspector] Vector2 velocity;
+        [ShowInInspector] readonly List<Transform> damagedTargets = new();
 
         internal void Launch(Vector2 direction, Health owner, WeaponSO weapon)
         {
             ownerHealth = owner;
             sourceWeapon = weapon;
-            body.AddForce(direction.normalized * sourceWeapon.ThrowStrength, ForceMode2D.Impulse);
+            velocity = direction.normalized * sourceWeapon.ThrowStrength;
         }
 
         /// <summary>
-        /// Handle collisions between the previous and current position and update rotation.
+        /// Move, rotate, and handle collisions between the previous and current position.
         /// </summary>
         /// <returns>Whether the projectile should be destroyed.</returns>
-        internal bool HandleCollisions(in ContactFilter2D contactFilter, RaycastHit2D[] hitResults)
+        internal bool MoveAndCollide(in ContactFilter2D contactFilter, RaycastHit2D[] hitResults)
         {
-            body.SetRotation(body.linearVelocity.ToQuaternion2D());
+            velocity += Physics2D.gravity * (gravityScale * Time.deltaTime);
 
-            Vector2 currentPosition = body.position;
-            Vector2 previousPosition = currentPosition - (body.linearVelocity * Time.deltaTime);
+            Vector2 previousPosition = transform.position;
+            Vector2 currentPosition = previousPosition + (velocity * Time.deltaTime);
+            transform.SetPositionAndRotation(currentPosition, velocity.ToQuaternion2D());
 
             Debug.DrawLine(currentPosition, previousPosition, Color.magenta);
             int hitCount = Physics2D.Linecast(currentPosition, previousPosition, contactFilter, hitResults);
