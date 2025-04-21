@@ -16,6 +16,7 @@ namespace Tulip.Audio
         [SerializeField] EventReference hurtEvent;
 
         private PARAMETER_DESCRIPTION paramAliveness;
+        private PARAMETER_DESCRIPTION paramDamageType;
 
         private async void Awake()
         {
@@ -23,6 +24,7 @@ namespace Tulip.Audio
 
             EventDescription description = RuntimeManager.GetEventDescription(hurtEvent);
             description.getParameterDescriptionByName("Aliveness", out paramAliveness);
+            description.getParameterDescriptionByName("Damage Type", out paramDamageType);
         }
 
         private void OnEnable() => health.OnHurt += HandleHurt;
@@ -34,6 +36,7 @@ namespace Tulip.Audio
             RuntimeManager.AttachInstanceToGameObject(hurtSfx, transform.gameObject);
 
             hurtSfx.setParameterByID(paramAliveness.id, damage.Target.IsAlive.GetHashCode());
+            hurtSfx.setParameterByID(paramDamageType.id, damage.DamageType.GetHashCode());
 
             hurtSfx.start();
             hurtSfx.release();

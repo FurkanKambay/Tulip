@@ -23,6 +23,7 @@ The assets are used for prototyping purposes only for now.
 - ["Ambiences Music Pack"](https://jdsherbert.itch.io/ambiences-music-pack) by JDSherbert
 - ["Survival Effects I"](https://darkworldaudio.itch.io/sound-effects-survival-i) by Darkworld Audio
 - ["knife slash" sounds](https://freesound.org/people/beerbelly38) by beerbelly38
+- ["Bullet Bys & Impacts"](https://sonniss.com/sound-effects/bullet-bys-impacts/) by PMSFX (from [GDC Audio Bundle 2020](https://sonniss.com/gameaudiogdc/))
 - ["UI Audio"](https://www.kenney.nl/assets/ui-audio) by Kenney
 
 ## Font

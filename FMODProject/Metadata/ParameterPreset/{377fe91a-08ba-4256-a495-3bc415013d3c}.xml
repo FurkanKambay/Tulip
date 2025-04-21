@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{377fe91a-08ba-4256-a495-3bc415013d3c}">
+		<property name="name">
+			<value>Damage Type</value>
+		</property>
+		<relationship name="folder">
+			<destination>{6bb44dba-0777-4785-9f65-abcf4448f4be}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{1a6b37cf-543e-4f1f-828e-749a4dddf599}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{1a6b37cf-543e-4f1f-828e-749a4dddf599}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Melee Weapon</value>
+			<value>Ranged Weapon</value>
+			<value>Status Effect</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
