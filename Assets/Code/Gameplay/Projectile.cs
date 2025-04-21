@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Furkan.Common;
 using SaintsField.Playa;
 using Tulip.Character;
+using Tulip.Data.Gameplay;
 using Tulip.Data.Items;
 using UnityEngine;
 
@@ -70,7 +71,7 @@ namespace Tulip.Gameplay
                     continue;
                 }
 
-                entity.Health.Damage(sourceWeapon.Damage, ownerHealth);
+                entity.Health.Damage(sourceWeapon.Damage, ownerHealth, DamageType.RangedWeapon);
                 damagedTargets.Add(entity.transform);
             }
 

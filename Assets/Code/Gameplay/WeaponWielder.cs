@@ -5,6 +5,7 @@ using Furkan.Common;
 using SaintsField;
 using Tulip.Character;
 using Tulip.Data;
+using Tulip.Data.Gameplay;
 using Tulip.Data.Items;
 using UnityEngine;
 
@@ -58,7 +59,7 @@ namespace Tulip.Gameplay
                 if (!target.enabled)
                     continue;
 
-                InventoryModification loot = target.Damage(weaponSO.Damage, health);
+                InventoryModification loot = target.Damage(weaponSO.Damage, health, DamageType.MeleeWeapon);
 
                 if (inventory)
                     inventory.ApplyModification(loot);

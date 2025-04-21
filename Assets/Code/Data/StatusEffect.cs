@@ -1,5 +1,6 @@
 using System;
 using Tulip.Character;
+using Tulip.Data.Gameplay;
 using UnityEngine;
 
 namespace Tulip.Data
@@ -42,7 +43,7 @@ namespace Tulip.Data
         {
             // BUG: deaths by statuses don't award loot
             if (SO.Amount < 0)
-                Target.Damage(-SO.Amount, Source, checkInvulnerable: false);
+                Target.Damage(-SO.Amount, Source, DamageType.StatusEffect, checkInvulnerable: false);
             else
                 Target.Heal(SO.Amount, Source);
         }

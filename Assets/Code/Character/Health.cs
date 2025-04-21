@@ -54,7 +54,7 @@ namespace Tulip.Character
         private void Update() =>
             InvulnerabilityRemaining = Mathf.Max(0, InvulnerabilityRemaining - Time.deltaTime);
 
-        public InventoryModification Damage(float amount, Health source, bool checkInvulnerable = true)
+        public InventoryModification Damage(float amount, Health source, DamageType damageType, bool checkInvulnerable = true)
         {
             if (IsDead || amount < 0)
                 return default;
@@ -69,10 +69,18 @@ namespace Tulip.Character
                 InvulnerabilityRemaining = invulnerabilityDuration;
 
             Vector3 sourcePosition = source.Is(out Health sourceHealth)
-                ? sourceHealth!.transform.position
+                ? sourceHealth.transform.position
                 : transform.position;
 
-            var damageArgs = new HealthChangeEventArgs(amount, source, this, sourcePosition);
+            var damageArgs = new HealthChangeEventArgs
+            {
+                Amount = amount,
+                Source = source,
+                Target = this,
+                SourcePosition = sourcePosition,
+                DamageType = damageType
+            };
+
             OnHurt?.Invoke(damageArgs);
 
             if (IsAlive)
@@ -99,10 +107,17 @@ namespace Tulip.Character
             CurrentHealth += amount;
 
             Vector3 sourcePosition = source.Is(out Health sourceHealth)
-                ? sourceHealth!.transform.position
+                ? sourceHealth.transform.position
                 : transform.position;
 
-            var healArgs = new HealthChangeEventArgs(amount, source, this, sourcePosition);
+            var healArgs = new HealthChangeEventArgs
+            {
+                Amount = amount,
+                Source = source,
+                Target = this,
+                SourcePosition = sourcePosition,
+                DamageType = DamageType.StatusEffect
+            };
             OnHeal?.Invoke(healArgs);
         }
 

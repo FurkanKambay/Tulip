@@ -3,21 +3,22 @@ using UnityEngine;
 
 namespace Tulip.Data.Gameplay
 {
-    public readonly struct HealthChangeEventArgs
+    public enum DamageType
     {
-        public readonly float Amount;
-        public readonly Health Source;
-        public readonly Health Target;
-        public readonly Vector2 SourcePosition;
+        MeleeWeapon,
+        RangedWeapon,
+        StatusEffect
+    }
 
-        public HealthChangeEventArgs(float amount, Health source, Health target, Vector2 sourcePosition)
-        {
-            Amount = amount;
-            Source = source;
-            Target = target;
-            SourcePosition = sourcePosition;
-        }
+    public struct HealthChangeEventArgs
+    {
+        public float Amount;
+        public Health Source;
+        public Health Target;
+        public Vector2 SourcePosition;
+        public DamageType DamageType;
 
-        public override string ToString() => $"{Source} to {Target} for {Amount}";
+        public override readonly string ToString() =>
+            $"[Health Change] {Source.Entity.name} to {Target.Entity.name} for {Amount} with {DamageType}";
     }
 }
