@@ -18,11 +18,13 @@ namespace Tulip.Gameplay
         [ShowInInspector] Vector2 velocity;
         [ShowInInspector] readonly List<Transform> damagedTargets = new();
 
-        internal void Launch(Vector2 direction, Health owner, WeaponSO weapon)
+        internal void Launch(Vector2 origin, Vector2 direction, Health owner, WeaponSO weapon)
         {
             ownerHealth = owner;
             sourceWeapon = weapon;
             velocity = direction.normalized * sourceWeapon.ThrowStrength;
+
+            transform.SetPositionAndRotation(origin, direction.ToQuaternion2D());
         }
 
         /// <summary>
@@ -75,11 +77,10 @@ namespace Tulip.Gameplay
             return shouldDestroy;
         }
 
-        internal void Destroy()
+        internal void ResetState()
         {
-            // TODO: disable and reset state instead (for pooling)
+            velocity = Vector2.zero;
             damagedTargets.Clear();
-            Destroy(gameObject);
         }
     }
 }

@@ -1228,6 +1228,8 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  initialPoolCapacity: 10
+  maxPoolSize: 100
 --- !u!1 &1985613753
 GameObject:
   m_ObjectHideFlags: 0
