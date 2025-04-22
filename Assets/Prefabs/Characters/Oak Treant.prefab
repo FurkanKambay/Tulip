@@ -807,7 +807,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  maxMultiTargetAmount: 1
+  maxHitsPerRaycast: 1
 --- !u!1 &6743011125626711753
 GameObject:
   m_ObjectHideFlags: 0

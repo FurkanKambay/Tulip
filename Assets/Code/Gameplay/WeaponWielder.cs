@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using Furkan.Common;
 using SaintsField;
 using Tulip.Character;
@@ -20,14 +18,17 @@ namespace Tulip.Gameplay
 
         [Header("Config")]
         [SerializeField] ContactFilter2D hitContactFilter;
-        [SerializeField] int maxMultiTargetAmount = 9;
+        [SerializeField] int maxHitsPerRaycast = 9;
 
         private ProjectileManager projectileManager;
         private WeaponSO weaponSO;
-        private Collider2D[] hits = Array.Empty<Collider2D>();
+        private RaycastHit2D[] hitResults;
 
-        private void Awake() =>
+        private void Awake()
+        {
+            hitResults = new RaycastHit2D[maxHitsPerRaycast];
             projectileManager = FindFirstObjectByType<ProjectileManager>();
+        }
 
         private void OnEnable()
         {
@@ -52,8 +53,6 @@ namespace Tulip.Gameplay
             if (stack.itemSO.IsNot(out weaponSO))
                 return;
 
-            Array.Resize(ref hits, weaponSO.IsMultiTarget ? maxMultiTargetAmount : 1);
-
             foreach (Health target in GetTargets(transform.position, targetPoint))
             {
                 if (!target.enabled)
@@ -69,18 +68,23 @@ namespace Tulip.Gameplay
         private IEnumerable<Health> GetTargets(Vector2 origin, Vector2 aimPoint)
         {
             Vector2 direction = (aimPoint - origin).normalized;
+            int hitCount = Physics2D.Raycast(origin, direction, hitContactFilter, hitResults, weaponSO.Range);
 
-            var results = new RaycastHit2D[hits.Length];
-            int hitCount = Physics2D.Raycast(origin, direction, hitContactFilter, results, weaponSO.Range);
-            hits = results.Select(hit => hit.collider).ToArray();
+            int maxHits = weaponSO.IsMultiTarget ? maxHitsPerRaycast : 1;
+            hitCount = Mathf.Min(hitCount, maxHits);
 
             Debug.DrawRay(origin, direction * weaponSO.Range, Color.green, 1f);
 
-            return hits
-                .Take(hitCount)
-                .TakeWhile(hit => (bool)hit)
-                .Select(hit => hit.GetComponentInChildren<Health>())
-                .TakeWhile(hitHealth => (bool)hitHealth);
+            for (int i = 0; i < hitCount; i++)
+            {
+                RaycastHit2D hit = hitResults[i];
+
+                // We hit an obstacle (hit results are pre-sorted by distance)
+                if (!hit || !hit.collider.TryGetComponent(out TangibleEntity entity) || !entity.Health)
+                    break;
+
+                yield return entity.Health;
+            }
         }
     }
 }

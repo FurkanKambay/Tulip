@@ -1231,7 +1231,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  maxMultiTargetAmount: 9
+  maxHitsPerRaycast: 9
 --- !u!114 &5432897673710594817
 MonoBehaviour:
   m_ObjectHideFlags: 0
