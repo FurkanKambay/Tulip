@@ -130,6 +130,9 @@ namespace Tulip.Gameplay
             if (entitySpawnPoolSO.Amount == 0)
                 return;
 
+            if (!camera)
+                camera = Camera.main;
+
             Handles.color = Color.yellow;
 
             foreach (Vector2Int cell in GetSuitableCells(entitySpawnPoolSO[0]))
