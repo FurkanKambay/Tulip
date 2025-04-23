@@ -13,9 +13,15 @@ namespace Tulip.Data.Items
         public ItemSwingConfig SwingConfig => swingConfig;
 
         public bool IsThrowable => isThrowable;
+
+        /// <seealso cref="IsThrowable"/>
         public float ThrowCooldown => throwableConfig.cooldown;
+
+        /// <seealso cref="IsThrowable"/>
         public float ThrowStrength => throwableConfig.strength;
-        public float AimChargeSpeed => throwableConfig.chargeSpeed;
+
+        /// <seealso cref="IsThrowable"/>
+        public float ThrowChargeSpeed => throwableConfig.chargeSpeed;
 
         [Header("Usable")]
         [SerializeField, Min(0)] protected float cooldown = 0.5f;

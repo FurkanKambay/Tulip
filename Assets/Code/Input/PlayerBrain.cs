@@ -37,7 +37,7 @@ namespace Tulip.Input
         public bool WantsToJump { get; private set; }
         public bool WantsToDash { get; private set; }
         public bool WantsToUse { get; private set; }
-        public bool WantsToAim { get; private set; }
+        public bool WantsToThrow { get; private set; }
         public bool WantsToHook { get; private set; }
 
         public bool WantsToToggleSmartCursor { get; private set; }
@@ -82,7 +82,7 @@ namespace Tulip.Input
             WantsToJump = jump.action.inProgress;
             WantsToDash = dash.action.inProgress;
             WantsToUse = use.action.inProgress;
-            WantsToAim = aim.action.inProgress;
+            WantsToThrow = aim.action.inProgress;
             WantsToHook = hook.action.triggered;
 
             WantsToToggleSmartCursor = smartCursor.action.triggered;

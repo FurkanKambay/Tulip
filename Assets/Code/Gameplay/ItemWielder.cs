@@ -20,7 +20,7 @@ namespace Tulip.Gameplay
         public event ItemSwingEvent OnSwingPerform;
         public event ItemSwingEvent OnThrowPerform;
 
-        public ItemStack CurrentStack => HotbarItem.IsValid ? HotbarItem : fallbackStack;
+        internal ItemStack CurrentStack => HotbarItem.IsValid ? HotbarItem : fallbackStack;
         private ItemStack HotbarItem => hotbar ? hotbar.SelectedStack : default;
 
         public ItemStack HandStack => handStack;
@@ -31,9 +31,9 @@ namespace Tulip.Gameplay
         public Vector2 AimVector => aimVector;
 
         /// <summary>
-        /// Is the Aim input held?
+        /// Aiming the item to throw, as opposed to for a melee swing.
         /// </summary>
-        public bool IsAiming => isAiming;
+        public bool IsThrowMode { get; private set; }
 
         [Header("References")]
         [SerializeField, Required] Health health;
@@ -44,6 +44,7 @@ namespace Tulip.Gameplay
         [Header("Config")]
         [SerializeField] ItemStack fallbackStack;
 
+        // cached references
         private Transform itemPivot;
         private Transform itemVisual;
 
@@ -51,10 +52,8 @@ namespace Tulip.Gameplay
         private ItemStack handStack;
         private float timeSinceLastUse;
         private ItemSwingState swingState;
-        private Vector3 rendererScale;
         private Vector2 aimVector;
-        private bool isAiming;
-        private float aimChargeAmount;
+        private float throwChargeAmount;
 
         // state: phase (motion)
         private bool wantsToSwapItems;
@@ -111,33 +110,34 @@ namespace Tulip.Gameplay
             ItemSwingConfig swingConfig = usableSO.SwingConfig;
             UsePhase phase = swingConfig.Phases.Length > 0 ? swingConfig.Phases[phaseIndex] : default;
 
+            // Free to melee swing OR start Throw Mode
             if (swingState == ItemSwingState.Ready)
             {
-                // we can aim since we're not swinging
                 RotateItemTowardsMouse();
-                isAiming = brain.I.WantsToAim;
 
-                float targetChargeAmount = aimChargeAmount + (Time.deltaTime * usableSO.AimChargeSpeed);
-                aimChargeAmount = isAiming ? Mathf.Clamp01(targetChargeAmount) : 0;
+                // we can use Throw Mode since we're not melee swinging
+                float targetChargeAmount = throwChargeAmount + (Time.deltaTime * usableSO.ThrowChargeSpeed);
+                throwChargeAmount = IsThrowMode ? Mathf.Clamp01(targetChargeAmount) : 0;
+                IsThrowMode = brain.I.WantsToThrow;
             }
             else if (!phase.preventAim)
             {
-                // prevent aiming since we're swinging
-                // TODO: phase.preventAim means "prevent item rotation", not "prevent aim mode"
+                // prevent Throw Mode since we're mid-melee-swing
+                throwChargeAmount = 0;
+                IsThrowMode = false;
+
                 RotateItemTowardsMouse();
-                isAiming = false;
-                aimChargeAmount = 0;
             }
 
             // Throw the item
-            if (isAiming && brain.I.WantsToUse && timeSinceLastUse > usableSO.ThrowCooldown)
+            if (IsThrowMode && brain.I.WantsToUse && timeSinceLastUse > usableSO.ThrowCooldown)
             {
                 OnThrowPerform?.Invoke(HandStack, AimPointWorld);
                 timeSinceLastUse = 0f;
             }
 
-            // Early exit before the swing logic when aiming
-            if (isAiming)
+            // Early exit before the swing logic while on Throw Mode
+            if (IsThrowMode)
                 return;
 
             // We're not aiming, so we can do the swing logic now
@@ -255,7 +255,7 @@ namespace Tulip.Gameplay
             ResetMotionStart();
 
             if (handStack.itemSO.Is(out UsableSO usableSO))
-                SetSpriteTransformInstant(usableSO!.SwingConfig.ReadyPosition, usableSO.SwingConfig.ReadyAngle);
+                SetSpriteTransformInstant(usableSO.SwingConfig.ReadyPosition, usableSO.SwingConfig.ReadyAngle);
         }
 
 #region Motion Helpers
@@ -265,7 +265,7 @@ namespace Tulip.Gameplay
             if (handStack.itemSO.IsNot(out UsableSO usableSO))
                 return;
 
-            ItemSwingConfig swingConfig = usableSO!.SwingConfig;
+            ItemSwingConfig swingConfig = usableSO.SwingConfig;
             UsePhase phase = swingConfig.Phases.Length > 0 ? swingConfig.Phases[phaseIndex] : default;
 
             ResetMotionStart();
@@ -280,7 +280,7 @@ namespace Tulip.Gameplay
             if (!handStack.IsValid || handStack.itemSO.IsNot(out UsableSO usableSO))
                 return;
 
-            ItemSwingConfig swingConfig = usableSO!.SwingConfig;
+            ItemSwingConfig swingConfig = usableSO.SwingConfig;
 
             ResetMotionStart();
             motion.EndPosition = swingConfig.ReadyPosition;
@@ -349,8 +349,8 @@ namespace Tulip.Gameplay
             }
 
             (Color tint, float scale) = usableSO.Is(out PlaceableSO placeableSO)
-                ? (placeableSO!.Color, usableSO!.IconScale * 0.8f)
-                : (Color.white, usableSO!.IconScale);
+                ? (placeableSO.Color, placeableSO.IconScale * 0.8f)
+                : (Color.white, usableSO.IconScale);
 
             itemVisual.localScale = Vector3.one * scale;
             itemRenderer.sprite = usableSO ? usableSO.Icon : null;

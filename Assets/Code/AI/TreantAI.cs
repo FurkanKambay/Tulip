@@ -16,7 +16,7 @@ namespace Tulip.AI
 
         public Vector2? AimPosition { get; private set; }
         public bool WantsToUse { get; private set; }
-        public bool WantsToAim { get; private set; }
+        public bool WantsToThrow { get; private set; }
         public bool WantsToHook { get; private set; }
 
         private Health targetHealth;
@@ -36,7 +36,7 @@ namespace Tulip.AI
             {
                 AimPosition = default;
                 WantsToUse = false;
-                WantsToAim = false;
+                WantsToThrow = false;
                 return;
             }
 
