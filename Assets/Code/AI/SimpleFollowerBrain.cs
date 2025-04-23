@@ -35,7 +35,7 @@ namespace Tulip.AI
         private void Awake()
         {
             // TODO: better targeting AI
-            targetHealth = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Health>();
+            targetHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<TangibleEntity>().Health;
         }
 
         private void Update()
