@@ -67,6 +67,6 @@ namespace Tulip.Gameplay
             subject.position = world.CellCenter(cell);
         }
 
-        private void Health_Die(HealthChangeEventArgs _) => SecondsUntilRespawn = respawnDelay;
+        private void Health_Die(CombatPacket _) => SecondsUntilRespawn = respawnDelay;
     }
 }

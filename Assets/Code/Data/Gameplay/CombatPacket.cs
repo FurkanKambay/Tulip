@@ -10,7 +10,7 @@ namespace Tulip.Data.Gameplay
         StatusEffect
     }
 
-    public struct HealthChangeEventArgs
+    public struct CombatPacket
     {
         public float Amount;
         public Health Source;
@@ -19,6 +19,6 @@ namespace Tulip.Data.Gameplay
         public DamageType DamageType;
 
         public override readonly string ToString() =>
-            $"[Health Change] {Source.Entity.name} to {Target.Entity.name} for {Amount} with {DamageType}";
+            $"[Combat Packet] {Source.Entity.name} to {Target.Entity.name} for {Amount} with {DamageType}";
     }
 }

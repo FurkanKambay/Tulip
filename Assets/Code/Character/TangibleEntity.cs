@@ -40,7 +40,7 @@ namespace Tulip.Character
             health.OnRevive -= HandleRevived;
         }
 
-        private void HandleDied(HealthChangeEventArgs damage) => body.simulated = false;
+        private void HandleDied(CombatPacket combatPacket) => body.simulated = false;
         private void HandleRevived(Health reviver) => body.simulated = true;
 
         public void SetResidence(World homeWorld, Vector2Int baseCell)

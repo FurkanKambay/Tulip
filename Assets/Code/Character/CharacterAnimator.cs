@@ -26,8 +26,8 @@ namespace Tulip.Character
             health.OnRevive -= HandleRevived;
         }
 
-        private void HandleHurt(HealthChangeEventArgs damage) => animator.SetTrigger(animHurt);
-        private void HandleDied(HealthChangeEventArgs damage) => animator.SetBool(animDead, true);
+        private void HandleHurt(CombatPacket combatPacket) => animator.SetTrigger(animHurt);
+        private void HandleDied(CombatPacket combatPacket) => animator.SetBool(animDead, true);
         private void HandleRevived(Health reviver) => animator.SetBool(animDead, false);
     }
 }

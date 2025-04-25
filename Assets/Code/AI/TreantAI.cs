@@ -24,10 +24,10 @@ namespace Tulip.AI
         private void OnEnable() => health.OnHurt += HandleHurt;
         private void OnDisable() => health.OnHurt -= HandleHurt;
 
-        private void HandleHurt(HealthChangeEventArgs damage)
+        private void HandleHurt(CombatPacket combatPacket)
         {
-            // always target the latest attacker (if any)
-            targetHealth = damage.Source;
+            // always target the last attacker (if any)
+            targetHealth = combatPacket.Source;
         }
 
         private void Update()

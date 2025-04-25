@@ -30,13 +30,13 @@ namespace Tulip.Audio
         private void OnEnable() => health.OnHurt += HandleHurt;
         private void OnDisable() => health.OnHurt -= HandleHurt;
 
-        private void HandleHurt(HealthChangeEventArgs damage)
+        private void HandleHurt(CombatPacket combatPacket)
         {
             EventInstance hurtSfx = RuntimeManager.CreateInstance(hurtEvent);
             RuntimeManager.AttachInstanceToGameObject(hurtSfx, transform.gameObject);
 
-            hurtSfx.setParameterByID(paramAliveness.id, damage.Target.IsAlive.GetHashCode());
-            hurtSfx.setParameterByID(paramDamageType.id, damage.DamageType.GetHashCode());
+            hurtSfx.setParameterByID(paramAliveness.id, combatPacket.Target.IsAlive.GetHashCode());
+            hurtSfx.setParameterByID(paramDamageType.id, combatPacket.DamageType.GetHashCode());
 
             hurtSfx.start();
             hurtSfx.release();

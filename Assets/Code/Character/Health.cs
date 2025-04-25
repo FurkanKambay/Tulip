@@ -8,9 +8,9 @@ namespace Tulip.Character
     [SelectionBase]
     public class Health : MonoBehaviour
     {
-        public delegate void DamageEvent(HealthChangeEventArgs damage);
-        public delegate void DeathEvent(HealthChangeEventArgs damage);
-        public delegate void HealEvent(HealthChangeEventArgs healing);
+        public delegate void DamageEvent(CombatPacket combatPacket);
+        public delegate void DeathEvent(CombatPacket combatPacket);
+        public delegate void HealEvent(CombatPacket healPacket);
         public delegate void ReviveEvent(Health reviver);
 
         public event DamageEvent OnHurt;
@@ -72,7 +72,7 @@ namespace Tulip.Character
                 ? sourceHealth.transform.position
                 : transform.position;
 
-            var damageArgs = new HealthChangeEventArgs
+            var packet = new CombatPacket
             {
                 Amount = amount,
                 Source = source,
@@ -81,13 +81,13 @@ namespace Tulip.Character
                 DamageType = damageType
             };
 
-            OnHurt?.Invoke(damageArgs);
+            OnHurt?.Invoke(packet);
 
             if (IsAlive)
                 return default;
 
             LatestDeathSource = source;
-            OnDie?.Invoke(damageArgs);
+            OnDie?.Invoke(packet);
             enabled = false;
 
             // TODO: fix whatever this is later
@@ -110,7 +110,7 @@ namespace Tulip.Character
                 ? sourceHealth.transform.position
                 : transform.position;
 
-            var healArgs = new HealthChangeEventArgs
+            var healPacket = new CombatPacket
             {
                 Amount = amount,
                 Source = source,
@@ -118,7 +118,7 @@ namespace Tulip.Character
                 SourcePosition = sourcePosition,
                 DamageType = DamageType.StatusEffect
             };
-            OnHeal?.Invoke(healArgs);
+            OnHeal?.Invoke(healPacket);
         }
 
         public void Revive(Health reviver = null)

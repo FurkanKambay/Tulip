@@ -358,7 +358,7 @@ namespace Tulip.Gameplay
         }
 
 #region Event Handlers
-        private void HandleDie(HealthChangeEventArgs _) => itemRenderer.enabled = false;
+        private void HandleDie(CombatPacket _) => itemRenderer.enabled = false;
         private void HandleRevived(Health reviver) => itemRenderer.enabled = true;
 
         private void HandleHotbarSelectionChanged(int _)
