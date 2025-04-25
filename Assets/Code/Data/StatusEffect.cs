@@ -43,7 +43,7 @@ namespace Tulip.Data
         {
             // BUG: deaths by statuses don't award loot
             if (SO.Amount < 0)
-                Target.Damage(-SO.Amount, Source, DamageType.StatusEffect, checkInvulnerable: false);
+                Target.Damage(-SO.Amount, Source, DamageType.StatusEffect);
             else
                 Target.Heal(SO.Amount, Source);
         }

@@ -54,18 +54,21 @@ namespace Tulip.Character
         private void Update() =>
             InvulnerabilityRemaining = Mathf.Max(0, InvulnerabilityRemaining - Time.deltaTime);
 
-        public InventoryModification Damage(float amount, Health source, DamageType damageType, bool checkInvulnerable = true)
+        public InventoryModification Damage(float amount, Health source, DamageType damageType)
         {
             if (IsDead || amount < 0)
                 return default;
 
-            if (checkInvulnerable && IsInvulnerable)
+            // Damage from status effects bypass invulnerability checks
+            bool bypassInvulnerability = damageType is DamageType.StatusEffect;
+
+            if (IsInvulnerable && !bypassInvulnerability)
                 return default;
 
             CurrentHealth      -= amount;
             LatestDamageSource =  source;
 
-            if (checkInvulnerable)
+            if (!bypassInvulnerability)
                 InvulnerabilityRemaining = invulnerabilityDuration;
 
             Vector3 sourcePosition = source.Is(out Health sourceHealth)
