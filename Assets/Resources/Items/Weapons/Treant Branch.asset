@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad214e76725c4fa284a9f26c1076f0fb, type: 3}
   m_Name: Treant Branch
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Data.Items.WeaponSO, Tulip
   icon: {fileID: -2077861474, guid: c8834629caf834b43a4462ab2b3b36f7, type: 3}
   iconScale: 2
   name: Treant Branch
@@ -20,6 +20,11 @@ MonoBehaviour:
   craftedBy: []
   usedInCrafting: []
   cooldown: 0.83
+  isThrowable: 0
+  throwableConfig:
+    cooldown: 0
+    strength: 0
+    chargeSpeed: 0
   swingConfig: {fileID: 11400000, guid: 13bdc7f0fbc824d4fa90dc9647097440, type: 2}
   damage: 12
   range: 3

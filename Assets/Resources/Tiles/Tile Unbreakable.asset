@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f0cf03d5bb94472a4080d98f2b505aa, type: 3}
   m_Name: Tile Unbreakable
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Data.Tiles.CustomRuleTileSO, Tulip
   m_DefaultSprite: {fileID: 0}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 2

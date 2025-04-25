@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a2313b891d4493384c143b7bb1501f5, type: 3}
   m_Name: Red Guy
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Data.EntitySO, Tulip
   name: Generic Enemy #0
   prefab: {fileID: 2859632988072890709, guid: e80f529ddf142384a9f35b19b774a636, type: 3}
   isStatic: 0

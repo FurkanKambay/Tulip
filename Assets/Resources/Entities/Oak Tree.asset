@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a2313b891d4493384c143b7bb1501f5, type: 3}
   m_Name: Oak Tree
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Data.EntitySO, Tulip
   name: Oak Tree
   prefab: {fileID: 4352453585227860419, guid: e4c24cafc52fc164eb614915642df4e9, type: 3}
   isStatic: 1

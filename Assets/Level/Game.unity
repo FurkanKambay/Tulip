@@ -181,7 +181,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84342b4baf4b87e46afb980b6fab3d9d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Player.CellHighlighter, Tulip
   world: {fileID: 661774619}
   terraformer: {fileID: 1186004516}
   itemWielder: {fileID: 565227064}
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dc9496ab753459dac872c3b7fab367d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.GameWorld.WorldVisual, Tulip
 --- !u!4 &414399568 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2489349404884572451, guid: f424f79dcd083e14b805387a89e2929f, type: 3}
@@ -5261,7 +5261,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ba04188a7ff4cfeb83fb0a4ee4d6d7e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Audio.WorldAudio, Tulip
   world: {fileID: 661774619}
   tilePlacedEvent:
     Guid:
@@ -5294,7 +5294,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 221a2bf0379152f4b81a63414840b5da, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Gameplay.ItemWielder, Tulip
 --- !u!1 &661774617
 GameObject:
   m_ObjectHideFlags: 0
@@ -5342,7 +5342,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2578b4d5d1c444c3b7c7c3b109fad6dc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.GameWorld.World, Tulip
   worldSO: {fileID: 11400000, guid: 86e6a55c1634f6847b40457edea59b53, type: 2}
   worldVisual: {fileID: 414399566}
   isReadonly: 1
@@ -5359,7 +5359,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 992d83c1bd31b8b41aec2663aa6ead9d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Character.Health, Tulip
 --- !u!1 &708079353
 GameObject:
   m_ObjectHideFlags: 0
@@ -5390,7 +5390,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: UnityEngine.UIElements.UIDocument, UnityEngine.UIElementsModule
   m_PanelSettings: {fileID: 11400000, guid: 545739800b38fd64e85878b980af63bd, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 7811d9828d268fc42ae58a989e52d893, type: 3}
@@ -5424,7 +5424,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72704d37797ebee40afab671ba602024, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.UI.HotbarPresenter, Tulip
   document: {fileID: 708079354}
   hotbar: {fileID: 1154427127}
   hotbarSfx: {fileID: 708079358}
@@ -5441,7 +5441,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: FMODUnity.StudioEventEmitter, FMODUnity
   CollisionTag: 
   EventReference:
     Guid:
@@ -5504,7 +5504,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fdfdff2c1ac25943b5f45bf68fb38e4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Player.CameraFollow, Tulip
   subject: {fileID: 1986012726}
   trackingConfig:
     <Offset>k__BackingField: {x: 0, y: 1.45}
@@ -5555,7 +5555,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5e4905103a599f49b955ac3e4d0e124, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Audio.BiomeMusic, Tulip
   biomeMusicEvent:
     Guid:
       Data1: 344978999
@@ -5576,7 +5576,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 282238c99bbde46429cdcd8be7a89bd3, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Player.ShaderGlobals, Tulip
   player: {fileID: 664534664}
 --- !u!1 &1038124607
 GameObject:
@@ -5622,7 +5622,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba2b896b557446e890bfeb8085addabc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Gameplay.Respawner, Tulip
 --- !u!1001 &1154427126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5666,7 +5666,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7a83657788b4d00b2b3999985303765, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Player.PlayerHotbar, Tulip
 --- !u!114 &1154427129 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8314659605633864835, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
@@ -5677,7 +5677,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c59678970af64762aa2720ad33971327, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.GameWorld.EntityLocationDeterminer, Tulip
 --- !u!114 &1186004516 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8962699432725922889, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
@@ -5688,7 +5688,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3e487889f14636458692cc46f41321d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Player.Terraformer, Tulip
 --- !u!1 &1406129966
 GameObject:
   m_ObjectHideFlags: 0
@@ -5733,7 +5733,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: UnityEngine.UIElements.UIDocument, UnityEngine.UIElementsModule
   m_PanelSettings: {fileID: 11400000, guid: 545739800b38fd64e85878b980af63bd, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: d9636a5f9290e574993ee9fda5700566, type: 3}
@@ -5752,7 +5752,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 800c452c5a3ea0340890ace7c2fc48ec, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.UI.DeathOverlayPresenter, Tulip
   document: {fileID: 1406129968}
   health: {fileID: 664534664}
   respawner: {fileID: 1051015082}
@@ -5963,7 +5963,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b3a9022be2a50f42b0352cbd5f641b9, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Gameplay.EnemySpawner, Tulip
   world: {fileID: 661774619}
   spawnParent: {fileID: 1985613754}
   maxSpawns: 10
@@ -6014,7 +6014,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: UnityEngine.Rendering.Universal.Light2D, Unity.RenderPipelines.Universal.2D.Runtime
   m_ComponentVersion: 2
   m_LightType: 4
   m_BlendStyleIndex: 0
@@ -6098,7 +6098,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad3c18e30ef84dc68cc50d8c25c72dc8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Gameplay.ProjectileManager, Tulip
   projectilePrefab: {fileID: 7736458285276045630, guid: 59befd437b1e2c74d99202328ba7b7e3, type: 3}
   projectileParent: {fileID: 337397489}
   contactFilter:

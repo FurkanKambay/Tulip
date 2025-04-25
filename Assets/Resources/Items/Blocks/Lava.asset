@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec2778eec103403f8cae777705b279c9, type: 3}
   m_Name: Lava
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Data.Items.PlaceableSO, Tulip
   icon: {fileID: -856932700, guid: 3147ef2eaceccff4aa12fbb3664be66e, type: 3}
   iconScale: 1
   name: Lava
@@ -20,6 +20,11 @@ MonoBehaviour:
   craftedBy: []
   usedInCrafting: []
   cooldown: 0.7
+  isThrowable: 0
+  throwableConfig:
+    cooldown: 0
+    strength: 0
+    chargeSpeed: 0
   swingConfig: {fileID: 11400000, guid: 35ff93fda544a594a94ebfe5599470a9, type: 2}
   cellHighlightSprite: {fileID: 0}
   color: {r: 1, g: 1, b: 1, a: 1}

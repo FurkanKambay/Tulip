@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91d50cdd3177424c814056577cacd808, type: 3}
   m_Name: Full Inventory
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Data.InventorySO, Tulip
   capacity: 9
   inventory:
   - itemSO: {fileID: 11400000, guid: 9b57593f7b5cd0541984229247126e42, type: 2}

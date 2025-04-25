@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f047f8c4f7534bd4b561aa759cbeb58d, type: 3}
   m_Name: No Swing
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Data.ItemSwingConfig, Tulip
   readyPosition: {x: 0, y: 0}
   readyAngle: 0
   resetMoveDuration: 0
@@ -19,12 +19,14 @@ MonoBehaviour:
   loop: 0
   phases: []
   usedBy:
+  - {fileID: 11400000, guid: 27cd43e6265d13144a5bbd7807d6c37e, type: 2}
   - {fileID: 11400000, guid: 0491a0de59d86f9408b7f2902c563f0e, type: 2}
   - {fileID: 11400000, guid: 6b98d82ba77a4344a946251215359108, type: 2}
   - {fileID: 11400000, guid: 6d3857252a8becc409275c487eef4913, type: 2}
   - {fileID: 11400000, guid: f38d0fc5a331ed44ba37a427dd625605, type: 2}
   - {fileID: 11400000, guid: 429bc82d732054c4e9a8289b655d161e, type: 2}
-  - {fileID: 11400000, guid: 27cd43e6265d13144a5bbd7807d6c37e, type: 2}
   - {fileID: 11400000, guid: d6bb4516eeb65464686b792397023a80, type: 2}
   - {fileID: 11400000, guid: a7dba90f4f5a214409185b421c14e70a, type: 2}
   - {fileID: 11400000, guid: f81c3c4caa74cde44b228debcb6878b9, type: 2}
+  - {fileID: 11400000, guid: 533ced367af99c14eaf78d0b06849e1a, type: 2}
+  - {fileID: 11400000, guid: 073b2dd8fffaae5488494ef31e821aea, type: 2}

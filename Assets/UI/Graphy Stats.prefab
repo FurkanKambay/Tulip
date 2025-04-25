@@ -24,6 +24,18 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 2100000, guid: 76ed11d84beb10846a746b4259e26d39, type: 3}
+    - target: {fileID: 11406562, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_EditorClassIdentifier
+      value: Tayx.Graphy.Advanced.G_AdvancedData, Tayx.Graphy
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409934, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_EditorClassIdentifier
+      value: Tayx.Graphy.Audio.G_AudioMonitor, Tayx.Graphy
+      objectReference: {fileID: 0}
+    - target: {fileID: 11413852, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_EditorClassIdentifier
+      value: Tayx.Graphy.Ram.G_RamText, Tayx.Graphy
+      objectReference: {fileID: 0}
     - target: {fileID: 11416916, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_Material
       value: 
@@ -36,6 +48,14 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 2100000, guid: 76ed11d84beb10846a746b4259e26d39, type: 3}
+    - target: {fileID: 11424846, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_EditorClassIdentifier
+      value: Tayx.Graphy.Audio.G_AudioGraph, Tayx.Graphy
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439282, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_EditorClassIdentifier
+      value: UnityEngine.UI.CanvasScaler, UnityEngine.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 11439488, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_Material
       value: 
@@ -44,10 +64,22 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 2100000, guid: 76ed11d84beb10846a746b4259e26d39, type: 3}
+    - target: {fileID: 11442190, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_EditorClassIdentifier
+      value: Tayx.Graphy.Ram.G_RamMonitor, Tayx.Graphy
+      objectReference: {fileID: 0}
+    - target: {fileID: 11445308, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_EditorClassIdentifier
+      value: Tayx.Graphy.Audio.G_AudioText, Tayx.Graphy
+      objectReference: {fileID: 0}
     - target: {fileID: 11445506, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 2100000, guid: 76ed11d84beb10846a746b4259e26d39, type: 3}
+    - target: {fileID: 11447854, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_EditorClassIdentifier
+      value: Tayx.Graphy.Fps.G_FpsMonitor, Tayx.Graphy
+      objectReference: {fileID: 0}
     - target: {fileID: 11448182, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_Material
       value: 
@@ -56,6 +88,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 2100000, guid: 76ed11d84beb10846a746b4259e26d39, type: 3}
+    - target: {fileID: 11449168, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_EditorClassIdentifier
+      value: Tayx.Graphy.Ram.G_RamManager, Tayx.Graphy
+      objectReference: {fileID: 0}
     - target: {fileID: 11452030, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_Material
       value: 
@@ -72,6 +108,14 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 2100000, guid: 76ed11d84beb10846a746b4259e26d39, type: 3}
+    - target: {fileID: 11457802, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_EditorClassIdentifier
+      value: Tayx.Graphy.Fps.G_FpsText, Tayx.Graphy
+      objectReference: {fileID: 0}
+    - target: {fileID: 11459900, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_EditorClassIdentifier
+      value: Tayx.Graphy.Audio.G_AudioManager, Tayx.Graphy
+      objectReference: {fileID: 0}
     - target: {fileID: 11460534, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_Material
       value: 
@@ -88,10 +132,26 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 2100000, guid: 76ed11d84beb10846a746b4259e26d39, type: 3}
+    - target: {fileID: 11476724, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_EditorClassIdentifier
+      value: Tayx.Graphy.Ram.G_RamGraph, Tayx.Graphy
+      objectReference: {fileID: 0}
     - target: {fileID: 11479698, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 2100000, guid: 76ed11d84beb10846a746b4259e26d39, type: 3}
+    - target: {fileID: 11480938, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_EditorClassIdentifier
+      value: Tayx.Graphy.GraphyDebugger, Tayx.Graphy
+      objectReference: {fileID: 0}
+    - target: {fileID: 11484208, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_EditorClassIdentifier
+      value: Tayx.Graphy.Fps.G_FpsGraph, Tayx.Graphy
+      objectReference: {fileID: 0}
+    - target: {fileID: 11484276, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_EditorClassIdentifier
+      value: Tayx.Graphy.Fps.G_FpsManager, Tayx.Graphy
+      objectReference: {fileID: 0}
     - target: {fileID: 11484414, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_Material
       value: 
@@ -127,6 +187,10 @@ PrefabInstance:
     - target: {fileID: 11496292, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_toggleActiveKeyCode
       value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496292, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_EditorClassIdentifier
+      value: Tayx.Graphy.GraphyManager, Tayx.Graphy
       objectReference: {fileID: 0}
     - target: {fileID: 11496996, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_Material
@@ -255,6 +319,10 @@ PrefabInstance:
     - target: {fileID: 224000010937413736, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_LocalScale.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6760672456574371718, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_EditorClassIdentifier
+      value: Graphy.Runtime.UI.G_SafeArea, Tayx.Graphy
       objectReference: {fileID: 0}
     - target: {fileID: 6833647399733025576, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_Material

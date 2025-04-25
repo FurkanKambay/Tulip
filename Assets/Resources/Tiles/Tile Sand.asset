@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c779848d9dd029409ca676b49e10a18, type: 3}
   m_Name: Tile Sand
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: UnityEngine.Tilemaps.RuleOverrideTile, Unity.2D.Tilemap.Extras
   m_Tile: {fileID: 11400000, guid: 02e66ba5c65997f4da5eaed00f83fbc7, type: 2}
   m_Sprites:
   - m_OriginalSprite: {fileID: 8399011212269539787, guid: 1631614f4ac086d4dab5aab9a349e144, type: 3}
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f0cf03d5bb94472a4080d98f2b505aa, type: 3}
   m_Name: Tile Stone (Override)
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Data.Tiles.CustomRuleTileSO, Tulip
   m_DefaultSprite: {fileID: 178573413, guid: 45123585a869b24428ad443be4ab89d4, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 2

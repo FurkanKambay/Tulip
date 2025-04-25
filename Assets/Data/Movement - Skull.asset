@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a05779f818bf60e44aceef794cb1bb08, type: 3}
   m_Name: Movement - Skull
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Data.Gameplay.MovementConfig, Tulip
   maxSpeed: 11.5
   friction: 4
   useAcceleration: 1

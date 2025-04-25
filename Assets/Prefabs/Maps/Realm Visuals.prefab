@@ -60,7 +60,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7976632969546bf4497b5793c3b65308, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.GameWorld.RealmShader, Tulip
   wallTilemap: {fileID: 7173102642003252303}
   blockTilemap: {fileID: 7216450001828290536}
   curtainTilemap: {fileID: 6191996856151981255}
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dc9496ab753459dac872c3b7fab367d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.GameWorld.WorldVisual, Tulip
   world: {fileID: 0}
   wallTilemap: {fileID: 7173102642003252303}
   blockTilemap: {fileID: 7216450001828290536}

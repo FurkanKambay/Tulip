@@ -11,4 +11,4 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6fe98f113ce482a829aec113209eaf6, type: 3}
   m_Name: UI - Save and Quit
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Furkan.Common.EventChannelSO, Furkan.Common

@@ -76,7 +76,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79dfb4601184a65a64c065451e86ac9, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Data.StatusEffector, Tulip
   health: {fileID: 1334333901957425893}
   startingEffects: []
 --- !u!1 &1484947244399158366
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c36735ade5ba44c78de1e439a9ac9ddf, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Character.CharacterAnimator, Tulip
   health: {fileID: 1334333901957425893}
   animator: {fileID: 4849724928552818104}
 --- !u!114 &9178062409001580867
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3945025d2a24a429219de59262fec46, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Character.CharacterFacer, Tulip
   sprite: {fileID: 2576562777605374266}
   brain:
     <V>k__BackingField: {fileID: 956665518846445690}
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d8751be9d454ae89b969c632e660570, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Character.TangibleEntity, Tulip
   entitySO: {fileID: 11400000, guid: 32ab3e30b94083045896d4e30229ea5b, type: 2}
   body: {fileID: 7560684870690709998}
   health: {fileID: 1334333901957425893}
@@ -425,7 +425,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5879189f2c9140488ca0ab4d017486e6, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Audio.HealthAudio, Tulip
   health: {fileID: 1334333901957425893}
   hurtEvent:
     Guid:
@@ -445,7 +445,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42c4603604fd42608b358258f353d561, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Audio.WielderAudio, Tulip
   itemWielder: {fileID: 8169639496971023625}
   itemSwingEvent:
     Guid:
@@ -497,7 +497,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b324a67502194656b9a9e6e8f4578cbb, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Character.CharacterHealthEffects, Tulip
   health: {fileID: 1334333901957425893}
   sprite: {fileID: 2576562777605374266}
   destroyAfterDeath: 1
@@ -602,7 +602,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2f6f9192efd45219b90fa99ac6d52e8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.UI.HealthBarPresenter, Tulip
   health: {fileID: 1334333901957425893}
   healthBarSprite: {fileID: 2877314810792179112}
   changeSpeed: 10
@@ -651,7 +651,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 992d83c1bd31b8b41aec2663aa6ead9d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Character.Health, Tulip
   entity: {fileID: 7261757859140667753}
   maxHealth: 20
   currentHealth: 20
@@ -699,7 +699,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be49605a98e97be4f8107b2403c172b5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Gameplay.WeaponWielder, Tulip
   health: {fileID: 1334333901957425893}
   itemWielder: {fileID: 8169639496971023625}
   inventory: {fileID: 0}
@@ -761,7 +761,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8ad0646ee3645beb5ec738af831ade9, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.AI.SimpleFlightAI, Tulip
   health: {fileID: 1334333901957425893}
   stopDistance: {x: 1.5, y: 1}
 --- !u!1 &6452093565119239136
@@ -809,7 +809,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 221a2bf0379152f4b81a63414840b5da, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Gameplay.ItemWielder, Tulip
   health: {fileID: 1334333901957425893}
   brain:
     <V>k__BackingField: {fileID: 956665518846445690}
@@ -974,7 +974,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fcb02de31839e9a4da59ca29b4bafbc0, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Character.SurroundsChecker, Tulip
   collider: {fileID: 1010523397795566493}
   groundLayer:
     serializedVersion: 2
@@ -1029,7 +1029,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e66330c61e852094a9857527ad78481d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Character.CharacterFlight, Tulip
   body: {fileID: 7560684870690709998}
   brain:
     <V>k__BackingField: {fileID: 956665518846445690}

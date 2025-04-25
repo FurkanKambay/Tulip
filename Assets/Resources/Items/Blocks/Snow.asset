@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec2778eec103403f8cae777705b279c9, type: 3}
   m_Name: Snow
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Data.Items.PlaceableSO, Tulip
   icon: {fileID: 178573413, guid: acc140be88bf2b04690f54e70df8d61f, type: 3}
   iconScale: 1
   name: Snow
@@ -20,6 +20,11 @@ MonoBehaviour:
   craftedBy: []
   usedInCrafting: []
   cooldown: 0.3
+  isThrowable: 0
+  throwableConfig:
+    cooldown: 0
+    strength: 0
+    chargeSpeed: 0
   swingConfig: {fileID: 11400000, guid: 35ff93fda544a594a94ebfe5599470a9, type: 2}
   cellHighlightSprite: {fileID: 0}
   color: {r: 1, g: 1, b: 1, a: 1}

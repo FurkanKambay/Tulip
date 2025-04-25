@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0be324b607df484c8d1d56ee223b76b, type: 3}
   m_Name: Jump - Skeleton
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Data.Gameplay.JumpConfig, Tulip
   jumpHeight: 2
   timeToJumpApex: 0.35
   maxFallSpeed: 50

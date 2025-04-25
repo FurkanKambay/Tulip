@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1112e67fd794dcdada82ca241c14b24, type: 3}
   m_Name: Grounded Spawn
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Data.SpawnConditionSO, Tulip
   needsGround: 1
   needsSafeGround: 1
   groundTiles: []
@@ -19,3 +19,4 @@ MonoBehaviour:
   clearanceBelow: 0
   assignedEntities:
   - {fileID: 11400000, guid: ea8750a0c949971459c7425c97b8a620, type: 2}
+  - {fileID: 11400000, guid: 61f78ba64e5ba3c4895af881afac13bc, type: 2}

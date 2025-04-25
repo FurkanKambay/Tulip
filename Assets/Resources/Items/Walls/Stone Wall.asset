@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec2778eec103403f8cae777705b279c9, type: 3}
   m_Name: Stone Wall
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Data.Items.PlaceableSO, Tulip
   icon: {fileID: -30300049, guid: 1631614f4ac086d4dab5aab9a349e144, type: 3}
   iconScale: 1.2
   name: Stone Wall
@@ -20,6 +20,11 @@ MonoBehaviour:
   craftedBy: []
   usedInCrafting: []
   cooldown: 0.1
+  isThrowable: 0
+  throwableConfig:
+    cooldown: 0
+    strength: 0
+    chargeSpeed: 0
   swingConfig: {fileID: 11400000, guid: 35ff93fda544a594a94ebfe5599470a9, type: 2}
   cellHighlightSprite: {fileID: 0}
   color: {r: 0.33962262, g: 0.33962262, b: 0.33962262, a: 1}

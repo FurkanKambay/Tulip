@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00668fd727de9bb4081a8a202ce24c3b, type: 3}
   m_Name: HierarchyDecorator Settings
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: HierarchyDecorator.Settings, Wooshii.HierarchyDecorator.Editor
   globalData:
     showActiveToggles: 0
     activeSwiping: 0
@@ -1208,6 +1208,19 @@ MonoBehaviour:
         isBuiltIn: 1
         script: {fileID: 0}
         hasToggle: 1
+      - displayName: DebugUIHandlerRenderingLayerField
+        name: UnityEngine.Rendering.UI.DebugUIHandlerRenderingLayerField, Unity.RenderPipelines.Core.Runtime,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        content:
+          m_Text: DebugUIHandlerRenderingLayerField
+          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Tooltip: DebugUIHandlerRenderingLayerField
+          m_TextWithWhitespace: "DebugUIHandlerRenderingLayerField\u200B"
+        shown: 0
+        excluded: 0
+        isBuiltIn: 1
+        script: {fileID: 0}
+        hasToggle: 1
       - displayName: DebugUIHandlerRow
         name: UnityEngine.Rendering.UI.DebugUIHandlerRow, Unity.RenderPipelines.Core.Runtime,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -1444,7 +1457,7 @@ MonoBehaviour:
         hasToggle: 1
       - displayName: FrameTimeMeasurement
         name: Unity.PerformanceTesting.Measurements.FrameTimeMeasurement, Unity.PerformanceTesting,
-          Version=3.0.0.0, Culture=neutral, PublicKeyToken=null
+          Version=3.1.0.0, Culture=neutral, PublicKeyToken=null
         content:
           m_Text: FrameTimeMeasurement
           m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
@@ -1463,6 +1476,32 @@ MonoBehaviour:
           m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
           m_Tooltip: FreeCamera
           m_TextWithWhitespace: "FreeCamera\u200B"
+        shown: 0
+        excluded: 0
+        isBuiltIn: 1
+        script: {fileID: 0}
+        hasToggle: 1
+      - displayName: GamepadExample
+        name: DocCodeSamples.Tests.GamepadExample, Unity.InputSystem.DocCodeSamples,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        content:
+          m_Text: GamepadExample
+          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Tooltip: GamepadExample
+          m_TextWithWhitespace: "GamepadExample\u200B"
+        shown: 0
+        excluded: 0
+        isBuiltIn: 1
+        script: {fileID: 0}
+        hasToggle: 1
+      - displayName: GamepadHapticsExample
+        name: DocCodeSamples.Tests.GamepadHapticsExample, Unity.InputSystem.DocCodeSamples,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        content:
+          m_Text: GamepadHapticsExample
+          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Tooltip: GamepadHapticsExample
+          m_TextWithWhitespace: "GamepadHapticsExample\u200B"
         shown: 0
         excluded: 0
         isBuiltIn: 1
@@ -1691,7 +1730,7 @@ MonoBehaviour:
         hasToggle: 0
       - displayName: OnScreenButton
         name: UnityEngine.InputSystem.OnScreen.OnScreenButton, Unity.InputSystem,
-          Version=1.11.2.0, Culture=neutral, PublicKeyToken=null
+          Version=1.14.0.0, Culture=neutral, PublicKeyToken=null
         content:
           m_Text: OnScreenButton
           m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
@@ -1704,7 +1743,7 @@ MonoBehaviour:
         hasToggle: 1
       - displayName: OnScreenStick
         name: UnityEngine.InputSystem.OnScreen.OnScreenStick, Unity.InputSystem,
-          Version=1.11.2.0, Culture=neutral, PublicKeyToken=null
+          Version=1.14.0.0, Culture=neutral, PublicKeyToken=null
         content:
           m_Text: OnScreenStick
           m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
@@ -1743,7 +1782,7 @@ MonoBehaviour:
         hasToggle: 1
       - displayName: PerformanceTestHelper
         name: Unity.PerformanceTesting.PerformanceTestHelper, Unity.PerformanceTesting,
-          Version=3.0.0.0, Culture=neutral, PublicKeyToken=null
+          Version=3.1.0.0, Culture=neutral, PublicKeyToken=null
         content:
           m_Text: PerformanceTestHelper
           m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
@@ -1781,7 +1820,7 @@ MonoBehaviour:
         script: {fileID: 0}
         hasToggle: 1
       - displayName: PlayerInput
-        name: UnityEngine.InputSystem.PlayerInput, Unity.InputSystem, Version=1.11.2.0,
+        name: UnityEngine.InputSystem.PlayerInput, Unity.InputSystem, Version=1.14.0.0,
           Culture=neutral, PublicKeyToken=null
         content:
           m_Text: PlayerInput
@@ -1794,7 +1833,7 @@ MonoBehaviour:
         script: {fileID: 0}
         hasToggle: 1
       - displayName: PlayerInputManager
-        name: UnityEngine.InputSystem.PlayerInputManager, Unity.InputSystem, Version=1.11.2.0,
+        name: UnityEngine.InputSystem.PlayerInputManager, Unity.InputSystem, Version=1.14.0.0,
           Culture=neutral, PublicKeyToken=null
         content:
           m_Text: PlayerInputManager
@@ -1899,7 +1938,7 @@ MonoBehaviour:
         hasToggle: 1
       - displayName: ProfilerMarkerMeasurement
         name: Unity.PerformanceTesting.Measurements.ProfilerMarkerMeasurement, Unity.PerformanceTesting,
-          Version=3.0.0.0, Culture=neutral, PublicKeyToken=null
+          Version=3.1.0.0, Culture=neutral, PublicKeyToken=null
         content:
           m_Text: ProfilerMarkerMeasurement
           m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
@@ -2068,7 +2107,7 @@ MonoBehaviour:
         hasToggle: 1
       - displayName: TouchSimulation
         name: UnityEngine.InputSystem.EnhancedTouch.TouchSimulation, Unity.InputSystem,
-          Version=1.11.2.0, Culture=neutral, PublicKeyToken=null
+          Version=1.14.0.0, Culture=neutral, PublicKeyToken=null
         content:
           m_Text: TouchSimulation
           m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
@@ -2080,7 +2119,7 @@ MonoBehaviour:
         script: {fileID: 0}
         hasToggle: 1
       - displayName: TrackedPoseDriver
-        name: UnityEngine.InputSystem.XR.TrackedPoseDriver, Unity.InputSystem, Version=1.11.2.0,
+        name: UnityEngine.InputSystem.XR.TrackedPoseDriver, Unity.InputSystem, Version=1.14.0.0,
           Culture=neutral, PublicKeyToken=null
         content:
           m_Text: TrackedPoseDriver
@@ -2509,7 +2548,7 @@ MonoBehaviour:
         script: {fileID: 0}
         hasToggle: 1
       - displayName: VirtualMouseInput
-        name: UnityEngine.InputSystem.UI.VirtualMouseInput, Unity.InputSystem, Version=1.11.2.0,
+        name: UnityEngine.InputSystem.UI.VirtualMouseInput, Unity.InputSystem, Version=1.14.0.0,
           Culture=neutral, PublicKeyToken=null
         content:
           m_Text: VirtualMouseInput
@@ -2589,7 +2628,7 @@ MonoBehaviour:
         script: {fileID: 0}
         hasToggle: 1
       - displayName: BaseInputOverride
-        name: UnityEngine.InputSystem.UI.BaseInputOverride, Unity.InputSystem, Version=1.11.2.0,
+        name: UnityEngine.InputSystem.UI.BaseInputOverride, Unity.InputSystem, Version=1.14.0.0,
           Culture=neutral, PublicKeyToken=null
         content:
           m_Text: BaseInputOverride
@@ -2798,7 +2837,7 @@ MonoBehaviour:
         hasToggle: 1
       - displayName: InputSystemUIInputModule
         name: UnityEngine.InputSystem.UI.InputSystemUIInputModule, Unity.InputSystem,
-          Version=1.11.2.0, Culture=neutral, PublicKeyToken=null
+          Version=1.14.0.0, Culture=neutral, PublicKeyToken=null
         content:
           m_Text: InputSystemUIInputModule
           m_Image: {fileID: 2800000, guid: 3028dc075ba8c584d9bc7d1e0255e038, type: 3}
@@ -2850,7 +2889,7 @@ MonoBehaviour:
         hasToggle: 1
       - displayName: MultiplayerEventSystem
         name: UnityEngine.InputSystem.UI.MultiplayerEventSystem, Unity.InputSystem,
-          Version=1.11.2.0, Culture=neutral, PublicKeyToken=null
+          Version=1.14.0.0, Culture=neutral, PublicKeyToken=null
         content:
           m_Text: MultiplayerEventSystem
           m_Image: {fileID: 2800000, guid: 6a237171e2346e3458db37eb0f90d42b, type: 3}
@@ -3123,7 +3162,7 @@ MonoBehaviour:
         hasToggle: 1
       - displayName: TrackedDeviceRaycaster
         name: UnityEngine.InputSystem.UI.TrackedDeviceRaycaster, Unity.InputSystem,
-          Version=1.11.2.0, Culture=neutral, PublicKeyToken=null
+          Version=1.14.0.0, Culture=neutral, PublicKeyToken=null
         content:
           m_Text: TrackedDeviceRaycaster
           m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
@@ -4038,5 +4077,93 @@ MonoBehaviour:
         isBuiltIn: 0
         script: {fileID: 11500000, guid: 2578b4d5d1c444c3b7c7c3b109fad6dc, type: 3}
         hasToggle: 1
-    unityVersion: 6000.0.25f1
-    unityCount: 268
+      - displayName: GameManager
+        name: Tulip.Core.GameManager, Tulip, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        content:
+          m_Text: GameManager
+          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Tooltip: GameManager
+          m_TextWithWhitespace: "GameManager\u200B"
+        shown: 0
+        excluded: 0
+        isBuiltIn: 0
+        script: {fileID: 11500000, guid: 193fad469729416eb7e63c5b90e2f3d8, type: 3}
+        hasToggle: 1
+      - displayName: SettingsManager
+        name: Tulip.Core.SettingsManager, Tulip, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        content:
+          m_Text: SettingsManager
+          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Tooltip: SettingsManager
+          m_TextWithWhitespace: "SettingsManager\u200B"
+        shown: 0
+        excluded: 0
+        isBuiltIn: 0
+        script: {fileID: 11500000, guid: 1561d88951db46078da9b6d7e39f7e8e, type: 3}
+        hasToggle: 1
+      - displayName: AudioBusManager
+        name: Tulip.Audio.AudioBusManager, Tulip, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        content:
+          m_Text: AudioBusManager
+          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Tooltip: AudioBusManager
+          m_TextWithWhitespace: "AudioBusManager\u200B"
+        shown: 0
+        excluded: 0
+        isBuiltIn: 0
+        script: {fileID: 11500000, guid: 8d6d1e2a56c648e48c7e5ba48c5941a1, type: 3}
+        hasToggle: 1
+      - displayName: WorldManager
+        name: Tulip.GameWorld.WorldManager, Tulip, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        content:
+          m_Text: WorldManager
+          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Tooltip: WorldManager
+          m_TextWithWhitespace: "WorldManager\u200B"
+        shown: 0
+        excluded: 0
+        isBuiltIn: 0
+        script: {fileID: 11500000, guid: d6076eb0a70d4845a1e9dbd15b4fe694, type: 3}
+        hasToggle: 1
+      - displayName: UserBrain
+        name: Tulip.Input.UserBrain, Tulip, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        content:
+          m_Text: UserBrain
+          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Tooltip: UserBrain
+          m_TextWithWhitespace: "UserBrain\u200B"
+        shown: 0
+        excluded: 0
+        isBuiltIn: 0
+        script: {fileID: 11500000, guid: a5c6b1788c594778bba752caf5f441ab, type: 3}
+        hasToggle: 1
+      - displayName: BiomeMusic
+        name: Tulip.Audio.BiomeMusic, Tulip, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        content:
+          m_Text: BiomeMusic
+          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Tooltip: BiomeMusic
+          m_TextWithWhitespace: "BiomeMusic\u200B"
+        shown: 0
+        excluded: 0
+        isBuiltIn: 0
+        script: {fileID: 11500000, guid: a5e4905103a599f49b955ac3e4d0e124, type: 3}
+        hasToggle: 1
+      - displayName: ShaderGlobals
+        name: Tulip.Player.ShaderGlobals, Tulip, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        content:
+          m_Text: ShaderGlobals
+          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Tooltip: ShaderGlobals
+          m_TextWithWhitespace: "ShaderGlobals\u200B"
+        shown: 0
+        excluded: 0
+        isBuiltIn: 0
+        script: {fileID: 11500000, guid: 282238c99bbde46429cdcd8be7a89bd3, type: 3}
+        hasToggle: 1
+    unityVersion: 6000.1.0f1
+    unityCount: 271

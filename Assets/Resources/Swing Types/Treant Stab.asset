@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f047f8c4f7534bd4b561aa759cbeb58d, type: 3}
   m_Name: Treant Stab
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Tulip.Data.ItemSwingConfig, Tulip
   readyPosition: {x: 0, y: 0}
   readyAngle: -45
   resetMoveDuration: 0.01
