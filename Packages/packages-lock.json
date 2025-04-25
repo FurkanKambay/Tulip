@@ -1,11 +1,11 @@
 {
   "dependencies": {
     "com.calci.assetlens": {
-      "version": "0.4.9",
+      "version": "https://github.com/FurkanKambay/AssetLens.git",
       "depth": 0,
-      "source": "registry",
+      "source": "git",
       "dependencies": {},
-      "url": "https://package.openupm.com"
+      "hash": "a3ee093f11fc42779a0c9d9ef5be6aa7a26b6594"
     },
     "com.needle.console": {
       "version": "2.4.2",
