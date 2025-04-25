@@ -23,14 +23,14 @@
   },
   "scopedRegistries": [
     {
-      "name": "package.openupm.com",
+      "name": "OpenUPM",
       "url": "https://package.openupm.com",
       "scopes": [
-        "com.domybest.mybox",
-        "com.needle.console",
-        "com.tayx.graphy",
-        "com.wooshii.hierarchydecorator",
-        "today.comes.saintsfield"
+        "com.domybest",
+        "com.needle",
+        "com.tayx",
+        "com.wooshii",
+        "today.comes"
       ]
     }
   ]
