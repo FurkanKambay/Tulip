@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.needle.console": "2.4.2",
     "com.tayx.graphy": "https://github.com/FurkanKambay/graphy.git",
     "com.unity.2d.aseprite": "1.2.4",
     "com.unity.2d.sprite": "1.0.0",
@@ -26,6 +27,7 @@
       "url": "https://package.openupm.com",
       "scopes": [
         "com.domybest.mybox",
+        "com.needle.console",
         "com.tayx.graphy",
         "com.wooshii.hierarchydecorator",
         "today.comes.saintsfield"
