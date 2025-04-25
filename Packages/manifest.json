@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.calci.assetlens": "0.4.9",
     "com.needle.console": "2.4.2",
     "com.needle.missing-component-info": "1.6.0",
     "com.tayx.graphy": "https://github.com/FurkanKambay/graphy.git",
@@ -27,6 +28,7 @@
       "name": "OpenUPM",
       "url": "https://package.openupm.com",
       "scopes": [
+        "com.calci",
         "com.domybest",
         "com.needle",
         "com.tayx",

@@ -31,6 +31,7 @@ MonoBehaviour:
     m_Name: OpenUPM
     m_Url: https://package.openupm.com
     m_Scopes:
+    - com.calci
     - com.domybest
     - com.needle
     - com.tayx
