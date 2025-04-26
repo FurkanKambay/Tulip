@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.calci.assetlens": "https://github.com/FurkanKambay/AssetLens.git",
+    "com.cammin.ldtkunity": "6.9.1",
     "com.needle.console": "2.4.2",
     "com.needle.missing-component-info": "1.6.0",
     "com.tayx.graphy": "https://github.com/FurkanKambay/graphy.git",
@@ -29,6 +30,7 @@
       "url": "https://package.openupm.com",
       "scopes": [
         "com.calci",
+        "com.cammin",
         "com.domybest",
         "com.needle",
         "com.tayx",
