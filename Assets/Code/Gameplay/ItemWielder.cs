@@ -42,6 +42,8 @@ namespace Tulip.Gameplay
         [SerializeField, Required] SpriteRenderer itemRenderer;
 
         [Header("Config")]
+        [SerializeField] Vector2 meleePivotPoint;
+        [SerializeField] Vector2 throwPivotPoint;
         [SerializeField] ItemStack fallbackStack;
 
         // cached references
@@ -114,11 +116,18 @@ namespace Tulip.Gameplay
             if (swingState == ItemSwingState.Ready)
             {
                 RotateItemTowardsMouse();
+                IsThrowMode = brain.I.WantsToThrow;
 
                 // we can use Throw Mode since we're not melee swinging
                 float targetChargeAmount = throwChargeAmount + (Time.deltaTime * usableSO.ThrowChargeSpeed);
                 throwChargeAmount = IsThrowMode ? Mathf.Clamp01(targetChargeAmount) : 0;
-                IsThrowMode = brain.I.WantsToThrow;
+
+                //zzz
+                // TODO: this breaks after you stop aiming, it should go back to Ready Angle
+
+                // Don't apply ReadyAngle, ReadyPosition from ItemSwingConfig
+                if (IsThrowMode)
+                    SetSpriteTransformInstant(Vector2.zero, -45f);
             }
             else if (!phase.preventAim)
             {
@@ -336,8 +345,11 @@ namespace Tulip.Gameplay
             float aimAngle = aimVector.ToAngle();
             bool isLeft = aimAngle is < -90 or > 90;
 
+            Vector2 position = IsThrowMode ? throwPivotPoint : meleePivotPoint;
+            var rotation = Quaternion.AngleAxis(aimAngle, Vector3.forward);
+
+            itemPivot.SetLocalPositionAndRotation(position, rotation);
             itemPivot.localScale = Vector3.one.With(y: isLeft ? -1 : 1);
-            itemPivot.rotation = Quaternion.AngleAxis(aimAngle, Vector3.forward);
         }
 
         private void UpdateItemSprite()

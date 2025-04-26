@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f158677ba23f1ae41860048a829c17bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Gameplay.Projectile, Tulip
-  gravityScale: 1
+  gravityScale: 0
 --- !u!1 &9182926325720511044
 GameObject:
   m_ObjectHideFlags: 0

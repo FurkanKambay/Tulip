@@ -5966,9 +5966,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Tulip.Gameplay.EnemySpawner, Tulip
   world: {fileID: 661774619}
   spawnParent: {fileID: 1985613754}
-  maxSpawns: 10
+  maxSpawns: 15
   radius: 10
-  interval: 2
+  interval: 0.5
   gracePeriod: 0
   entitySpawnPoolSO: {fileID: 11400000, guid: dfeaab23e3382bc4096de4c19314316c, type: 2}
 --- !u!1 &1872193082

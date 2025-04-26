@@ -1443,6 +1443,8 @@ MonoBehaviour:
     <V>k__BackingField: {fileID: 3825264036527423534}
   hotbar: {fileID: 3160445657362363712}
   itemRenderer: {fileID: 3639728673497933778}
+  meleePivotPoint: {x: 0, y: 0}
+  throwPivotPoint: {x: 0, y: 0.8}
   fallbackStack:
     itemSO: {fileID: 0}
     isLocked: 0
