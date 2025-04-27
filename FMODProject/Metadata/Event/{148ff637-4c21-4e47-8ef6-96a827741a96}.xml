@@ -153,6 +153,9 @@
 	<object class="MixerBusPanner" id="{2fb599b9-6fe2-45a3-9e10-1ef21ed5895b}" />
 	<object class="MixerBusFader" id="{a5c67c0e-565a-4892-beb7-893f9cd9995b}" />
 	<object class="MultibandEqEffect" id="{b67c3723-ec2c-4b9b-ac7e-bbb7c54739b4}">
+		<property name="bypass">
+			<value>true</value>
+		</property>
 		<property name="frequencyA">
 			<value>22000</value>
 		</property>
