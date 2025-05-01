@@ -79,3 +79,13 @@
 
 # Log files can be ignored.
 fmod_editor.log
+
+# LDtk
+**/LDtk/*/backups/
+**/LDtk/*/backups.meta
+**/LDtk/*/png/
+**/LDtk/*/png.meta
+*.ldtkt
+*.ldtkt.meta
+*.ldtkc
+*.ldtkc.meta

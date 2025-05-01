@@ -1,0 +1,32 @@
+fileFormatVersion: 2
+guid: 7808d466c87cd12439467b8a073088a9
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: aaa16bfc62c086f4fb45da87b6acf9b1, type: 3}
+  _reimportOnDependencyChange: 1
+  _jsonFile: {fileID: -164016180542632921, guid: 7808d466c87cd12439467b8a073088a9, type: 3}
+  _pixelsPerUnit: 8
+  _customLevelPrefab: {instanceID: 0}
+  _intGridValueColorsVisible: 0
+  _useCompositeCollider: 1
+  _geometryType: 0
+  _createBackgroundColor: 0
+  _createLevelBoundsTrigger: 0
+  _useParallax: 0
+  _scaleEntities: 1
+  _intGridValues:
+  - _key: Collisions_1
+    _asset: {fileID: 11400000, guid: daf3a5e1a9395fa408a8f2fcc03d62af, type: 2}
+  - _key: Collisions_2
+    _asset: {fileID: 11400000, guid: daf3a5e1a9395fa408a8f2fcc03d62af, type: 2}
+  - _key: Collisions_3
+    _asset: {fileID: 11400000, guid: daf3a5e1a9395fa408a8f2fcc03d62af, type: 2}
+  _entities: []
+  _enumGenerate: 0
+  _enumPath: 
+  _enumNamespace: 
