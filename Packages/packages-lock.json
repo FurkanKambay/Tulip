@@ -8,15 +8,15 @@
       "hash": "a3ee093f11fc42779a0c9d9ef5be6aa7a26b6594"
     },
     "com.cammin.ldtkunity": {
-      "version": "6.9.1",
+      "version": "https://github.com/FurkanKambay/LDtkToUnity.git?path=/Assets/LDtkUnity",
       "depth": 0,
-      "source": "registry",
+      "source": "git",
       "dependencies": {
         "com.unity.2d.sprite": "1.0.0",
         "com.unity.modules.physics2d": "1.0.0",
         "com.unity.modules.tilemap": "1.0.0"
       },
-      "url": "https://package.openupm.com"
+      "hash": "bd538ada43a5253acf29117dba91d3bd8f518153"
     },
     "com.needle.console": {
       "version": "2.4.2",
