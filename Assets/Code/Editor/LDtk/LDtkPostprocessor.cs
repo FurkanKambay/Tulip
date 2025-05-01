@@ -92,7 +92,7 @@ namespace Tulip.Editor.LDtk
                 LDtkComponentLayer targetLayer = level.LayerInstances[mergeTargetIndex];
                 Tilemap targetTilemap = targetLayer.transform.GetChild(0).GetComponent<Tilemap>();
 
-                Log($"Merging {sourceLayer.Identifier} into {targetLayer.Identifier}. ({tileCount} tiles)");
+                // Log($"Merging {sourceLayer.Identifier} into {targetLayer.Identifier}. ({tileCount} tiles)");
 
                 TileChangeData[] tileChangeDataArray = tileChanges.ToArray();
                 targetTilemap.SetTiles(tileChangeDataArray, ignoreLockFlags: true);
@@ -111,7 +111,24 @@ namespace Tulip.Editor.LDtk
                 Object.DestroyImmediate(sourceLayer.gameObject);
             }
 
-            Log($"Done. {mergedLayersCount} layers were merged.");
+            Log($"Done. {mergedLayersCount} layers were merged. Removing LDtk-related components.");
+
+            // Remove LDtk-related components.
+            foreach (LDtkComponentLayer layer in level.LayerInstances)
+            {
+                if (!layer)
+                    continue;
+
+                Transform transform = layer.transform;
+                Transform tilemap = transform.GetChild(0);
+
+                tilemap.name = layer.Identifier;
+                tilemap.SetParent(transform.parent);
+                Object.DestroyImmediate(layer.gameObject);
+            }
+
+            Object.DestroyImmediate(level.GetComponent<LDtkIid>());
+            Object.DestroyImmediate(level);
         }
 
         private static void Log(string message) =>

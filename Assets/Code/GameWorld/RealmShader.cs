@@ -13,6 +13,7 @@ namespace Tulip.GameWorld
         [SerializeField, Required] Tilemap wallTilemap;
         [SerializeField, Required] Tilemap blockTilemap;
         [SerializeField, Required] Tilemap curtainTilemap;
+        [SerializeField, Required] Material realmMaterial;
 
         [Header("Shader Properties")]
         [SerializeField, Required] EntityLocationDeterminer playerLocation;
@@ -73,6 +74,10 @@ namespace Tulip.GameWorld
             wallRenderer = wallTilemap.GetComponent<TilemapRenderer>();
             blockRenderer = blockTilemap.GetComponent<TilemapRenderer>();
             curtainRenderer = curtainTilemap.GetComponent<TilemapRenderer>();
+
+            wallRenderer.material = realmMaterial;
+            blockRenderer.material = realmMaterial;
+            curtainRenderer.material = realmMaterial;
         }
 
         private void CacheKeywords()
