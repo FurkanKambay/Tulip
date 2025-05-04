@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Furkan.Common;
 using SaintsField;
 using Tulip.Character;
 using Tulip.Data;
 using Tulip.Data.Items;
 using UnityEngine;
+using UnityEngine.Assertions;
+using IntGrid = LDtkUnity.LDtkComponentLayerIntGridValues;
 
 namespace Tulip.GameWorld
 {
@@ -19,81 +20,15 @@ namespace Tulip.GameWorld
         public event PlaceableEvent OnDestroyTile;
 
         [Header("References")]
-        [SerializeField, Required] WorldSO worldSO;
         [SerializeField, Required] WorldVisual worldVisual;
 
         [Header("Config")]
         [SerializeField] bool isReadonly;
         [SerializeField] LayerMask entityLayers;
 
-        public WorldSO WorldSO => worldSO;
         public bool IsReadonly => isReadonly;
 
         private readonly Dictionary<Vector2Int, TangibleEntity> staticEntities = new();
-        private readonly Dictionary<Vector2Int, int> wallDamageMap = new();
-        private readonly Dictionary<Vector2Int, int> blockDamageMap = new();
-        private readonly Dictionary<Vector2Int, int> curtainDamageMap = new();
-
-        /// <summary>
-        /// Tries to damage a tile of the given type at the given cell coordinates.
-        /// </summary>
-        /// <returns>The loot from the tile. Empty if the action was not successful.</returns>
-        public InventoryModification DamageTile(Vector2Int cell, TileType tileType, int damage)
-        {
-            if (isReadonly)
-                return default;
-
-            TileDictionary tiles = GetTiles(tileType);
-
-            if (!tiles.TryGetValue(cell, out PlaceableSO placeableSO))
-                return default;
-
-            if (placeableSO.IsUnbreakable)
-            {
-                // TODO: feedback for 'unbreakable'
-                // change return type to account for this
-                return default;
-            }
-
-            Dictionary<Vector2Int, int> damageMap = GetDamageMap(tileType);
-            damageMap.TryAdd(cell, 0);
-            damageMap[cell] += damage;
-
-            if (damageMap[cell] < placeableSO.Hardness)
-            {
-                // the tile was not destroyed
-                OnHitTile?.Invoke(TileModification.FromDamaged(cell, placeableSO));
-                return default;
-            }
-
-            tiles.Remove(cell);
-            damageMap.Remove(cell);
-
-            OnDestroyTile?.Invoke(TileModification.FromDestroyed(cell, placeableSO));
-
-            ItemSO loot = placeableSO.OreSO.Or<ItemSO>(placeableSO);
-            return InventoryModification.ToAdd(loot.Stack(1));
-        }
-
-        /// <summary>
-        /// Tries to place a tile at the given cell coordinates.
-        /// </summary>
-        /// <returns>The inventory modification to place the tile. Empty if the action was not successful.</returns>
-        public InventoryModification PlaceTile(Vector2Int cell, PlaceableSO placeableSO)
-        {
-            if (isReadonly)
-                return default;
-
-            TileDictionary tiles = GetTiles(placeableSO.TileType);
-
-            if (!tiles.TryAdd(cell, placeableSO))
-                return default;
-
-            GetDamageMap(placeableSO.TileType).Remove(cell);
-            OnPlaceTile?.Invoke(TileModification.FromPlaced(cell, placeableSO));
-
-            return InventoryModification.ToRemove(placeableSO.Stack(1));
-        }
 
         public bool TryAddStaticEntity(Vector2Int baseCell, TangibleEntity entity) =>
             !isReadonly && staticEntities.TryAdd(baseCell, entity);
@@ -101,23 +36,35 @@ namespace Tulip.GameWorld
         public void ClearEntities() => staticEntities.Clear();
 
 #region Tile Helpers
-        public bool HasTile(Vector2Int cell, TileType tileType) =>
-            GetTiles(tileType).ContainsKey(cell);
+        public bool HasTile(Vector2Int cell, TileType tileType)
+        {
+            IntGrid intGrid = GetIntGrid(tileType);
 
-        public PlaceableSO GetTile(Vector2Int cell, TileType tileType) =>
-            GetTiles(tileType).TryGetValue(cell, out PlaceableSO placeableSO) ? placeableSO : null;
+            if (!intGrid)
+                return false;
+
+            return intGrid.GetValue((Vector3Int)cell) != 0;
+        }
+
+        public PlaceableSO GetTile(Vector2Int cell, TileType tileType)
+        {
+            IntGrid intGrid = GetIntGrid(tileType);
+            Assert.IsNotNull(intGrid);
+
+            int tileIndex = intGrid.GetValue((Vector3Int)cell);
+            return tileIndex == 0 ? null : PlaceableSO.FromIndex(tileIndex);
+        }
 
         public PlaceableSO GetTileAtWorld(Vector3 worldPosition, TileType tileType) =>
             GetTile(WorldToCell(worldPosition), tileType);
 
-        public int GetTileDamage(Vector2Int cell, TileType tileType) =>
-            GetDamageMap(tileType).GetValueOrDefault(cell, 0);
+        public int GetTileDamage(Vector2Int cell, TileType tileType) => 0;
 
-        private TileDictionary GetTiles(TileType tileType) => tileType switch
+        private IntGrid GetIntGrid(TileType tileType) => tileType switch
         {
-            TileType.Wall => WorldSO.Walls,
-            TileType.Block => WorldSO.Blocks,
-            TileType.Curtain => WorldSO.Curtains,
+            TileType.Wall => null,
+            TileType.Block => worldVisual.WorldIntGrid,
+            TileType.Curtain => null,
             _ => throw new ArgumentOutOfRangeException(nameof(tileType))
         };
 #endregion
@@ -157,13 +104,5 @@ namespace Tulip.GameWorld
             return staticEntities.Values.All(entity => !entity.Rect.Overlaps(entityRect));
         }
 #endregion
-
-        private Dictionary<Vector2Int, int> GetDamageMap(TileType tileType) => tileType switch
-        {
-            TileType.Wall => wallDamageMap,
-            TileType.Block => blockDamageMap,
-            TileType.Curtain => curtainDamageMap,
-            _ => throw new ArgumentOutOfRangeException(nameof(tileType))
-        };
     }
 }

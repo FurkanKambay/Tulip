@@ -303,10 +303,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Realm Visuals
       objectReference: {fileID: 0}
-    - target: {fileID: 7871052133264414492, guid: f424f79dcd083e14b805387a89e2929f, type: 3}
-      propertyPath: world
-      value: 
-      objectReference: {fileID: 661774619}
     - target: {fileID: 9033445109699138156, guid: f424f79dcd083e14b805387a89e2929f, type: 3}
       propertyPath: playerLocation
       value: 
@@ -5276,7 +5272,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2578b4d5d1c444c3b7c7c3b109fad6dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.GameWorld.World, Tulip
-  worldSO: {fileID: 11400000, guid: 86e6a55c1634f6847b40457edea59b53, type: 2}
   worldVisual: {fileID: 414399566}
   isReadonly: 1
   entityLayers:

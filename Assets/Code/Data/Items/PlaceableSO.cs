@@ -1,5 +1,4 @@
 using SaintsField.Playa;
-using Tulip.Data.Tiles;
 using Tulip.GameWorld;
 using UnityEngine;
 
@@ -8,10 +7,13 @@ namespace Tulip.Data.Items
     [CreateAssetMenu(menuName = "Items/Placeable", order = 5)]
     public class PlaceableSO : BaseWorldToolSO
     {
-        public override Sprite Icon => ruleTileSO.m_DefaultSprite;
-
         public Color Color => color;
-        public CustomRuleTileSO RuleTileSO => ruleTileSO;
+
+        /// <summary>
+        /// The LDtk IntGrid value index.
+        /// </summary>
+        public int TileIndex => tileIndex;
+
         public TileType TileType => tileType;
         public PlaceableMaterial Material => material;
 
@@ -22,7 +24,11 @@ namespace Tulip.Data.Items
 
         [Header("World Tile")]
         [SerializeField] protected Color color;
-        [SerializeField] protected CustomRuleTileSO ruleTileSO;
+
+        [Tooltip("1-based LDtk IntGrid value index. 0 is an empty cell.")]
+        [Min(1)]
+        [SerializeField] protected int tileIndex;
+
         [SerializeField] protected TileType tileType;
         [SerializeField] protected PlaceableMaterial material;
 
@@ -34,40 +40,31 @@ namespace Tulip.Data.Items
 
         [SerializeField] protected OreSO oreSO;
 
-        public override InventoryModification UseOn(World world, Vector2Int cell)
+#region Static Placeables Cache
+
+        [ShowInInspector]
+        private static PlaceableSO[] placeables;
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void Init()
         {
-            ToolUsability usability = GetUsability(world, cell);
-            return usability == ToolUsability.Available ? world.PlaceTile(cell, this) : default;
-        }
+            PlaceableSO[] allPlaceableSOs = Resources.FindObjectsOfTypeAll<PlaceableSO>();
+            placeables = new PlaceableSO[allPlaceableSOs.Length];
 
-        public override ToolUsability GetUsability(World world, Vector2Int cell)
-        {
-            // TODO: check if cell is out of world bounds
-            // return ToolUsability.Never;
-
-            PlaceableSO tile = world.GetTile(cell, tileType);
-            bool cellHasEntity = tileType is TileType.Block && !world.IsCellEntityFree(cell);
-
-            return (bool)tile switch
+            foreach (PlaceableSO so in allPlaceableSOs)
             {
-                true when tile == this => ToolUsability.NoEffect,
-                true => ToolUsability.Invalid,
-                false when cellHasEntity => ToolUsability.NotNow,
-                _ => ToolUsability.Available
-            };
+                if (so.TileType == TileType.Block)
+                    placeables[so.TileIndex - 1] = so;
+            }
         }
 
-        private void OnEnable()
-        {
-            if (ruleTileSO)
-                ruleTileSO.PlaceableSO = this;
-        }
+        /// <summary>
+        /// Get the tile with the 1-based LDtk IntGrid <see cref="TileIndex"/>.
+        /// </summary>
+        internal static PlaceableSO FromIndex(int index) =>
+            index > 0 && index < placeables.Length ? placeables[index - 1] : null;
 
-        protected override void OnValidate()
-        {
-            if (ruleTileSO)
-                ruleTileSO.PlaceableSO = this;
-        }
+#endregion
 
         private void Reset()
         {

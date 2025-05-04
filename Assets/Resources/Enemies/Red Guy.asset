@@ -17,5 +17,5 @@ MonoBehaviour:
   isStatic: 0
   spawnConditionSO: {fileID: 11400000, guid: 457fa30dada22e746a5b16a1234da0b2, type: 2}
   size: {x: 1, y: 2}
-  loot: {fileID: 11400000, guid: ebbf6f697a125db4899ebfe8f98d2752, type: 2}
+  loot: {fileID: 0}
   lootAmount: 1

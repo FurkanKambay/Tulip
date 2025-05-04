@@ -28,7 +28,7 @@ MonoBehaviour:
   swingConfig: {fileID: 11400000, guid: 35ff93fda544a594a94ebfe5599470a9, type: 2}
   cellHighlightSprite: {fileID: 0}
   color: {r: 1, g: 1, b: 1, a: 1}
-  ruleTileSO: {fileID: 11400000, guid: 02e66ba5c65997f4da5eaed00f83fbc7, type: 2}
+  tileIndex: 1
   tileType: 1
   material: 5
   isUnsafe: 0
