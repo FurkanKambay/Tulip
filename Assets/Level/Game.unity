@@ -5218,72 +5218,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!1 &474014647
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 474014648}
-  - component: {fileID: 474014649}
-  m_Layer: 0
-  m_Name: World Audio
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &474014648
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474014647}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 661774618}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &474014649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474014647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ba04188a7ff4cfeb83fb0a4ee4d6d7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Tulip.Audio.WorldAudio, Tulip
-  world: {fileID: 661774619}
-  tilePlacedEvent:
-    Guid:
-      Data1: 1062227028
-      Data2: 1298996355
-      Data3: 1158510270
-      Data4: 1343674946
-    Path: event:/SFX/World/Place Tile
-  tileDamagedEvent:
-    Guid:
-      Data1: 59659185
-      Data2: 1271536153
-      Data3: -1180331845
-      Data4: -1373963989
-    Path: event:/SFX/World/Damage Tile
-  tileDestroyedEvent:
-    Guid:
-      Data1: -257171801
-      Data2: 1315248959
-      Data3: -134518142
-      Data4: 821625054
-    Path: event:/SFX/World/Destroy Tile
 --- !u!114 &565227064 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 647329674294491017, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
@@ -5326,7 +5260,6 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1766718190}
-  - {fileID: 474014648}
   - {fileID: 318885852}
   - {fileID: 414399568}
   m_Father: {fileID: 0}

@@ -27,6 +27,6 @@ ScriptedImporter:
   - _key: Collisions_3
     _asset: {fileID: 11400000, guid: daf3a5e1a9395fa408a8f2fcc03d62af, type: 2}
   _entities: []
-  _enumGenerate: 0
-  _enumPath: 
-  _enumNamespace: 
+  _enumGenerate: 1
+  _enumPath: ../../Code/Editor/LDtk/LDtk_Enums.g.cs
+  _enumNamespace: Tulip.Editor.LDtk
