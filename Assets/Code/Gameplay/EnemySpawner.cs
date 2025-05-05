@@ -125,7 +125,7 @@ namespace Tulip.Gameplay
         }
 
 #if UNITY_EDITOR
-        private void OnDrawGizmosSelected()
+        private void OnDrawGizmos()
         {
             if (entitySpawnPoolSO.Amount == 0)
                 return;
@@ -136,7 +136,13 @@ namespace Tulip.Gameplay
             Handles.color = Color.yellow;
 
             foreach (Vector2Int cell in GetSuitableCells(entitySpawnPoolSO[0]))
-                Handles.DrawSolidDisc(world.CellCenter(cell), Vector3.forward, 0.2f);
+            {
+                GUIStyle style = GUI.skin.label;
+                style.fontSize = 10;
+
+                Handles.Label(world.CellCenter(cell), $"{cell.x}\n{cell.y}", style);
+                // Handles.DrawSolidDisc(world.CellCenter(cell), Vector3.forward, 0.2f);
+            }
         }
 #endif
     }
