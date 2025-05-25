@@ -15,7 +15,7 @@ namespace Tulip.Data.Items
         public int TileIndex => tileIndex;
 
         public TileType TileType => tileType;
-        public PlaceableMaterial Material => material;
+        public GroundMaterial Material => material;
 
         public bool IsUnsafe => isUnsafe;
         public bool IsUnbreakable => isUnbreakable;
@@ -30,7 +30,7 @@ namespace Tulip.Data.Items
         [SerializeField] protected int tileIndex;
 
         [SerializeField] protected TileType tileType;
-        [SerializeField] protected PlaceableMaterial material;
+        [SerializeField] protected GroundMaterial material;
 
         [SerializeField] protected bool isUnsafe;
         [SerializeField] protected bool isUnbreakable;

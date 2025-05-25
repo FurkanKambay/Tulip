@@ -1,31 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
-	<object class="ParameterPreset" id="{f7906c11-a8ba-4831-b1db-646d242169b5}">
+	<object class="ParameterPreset" id="{dbdc72ab-7eda-4b7d-91a1-8261acc55872}">
 		<property name="name">
-			<value>Ground Material</value>
+			<value>Resource Node Type</value>
 		</property>
 		<relationship name="folder">
 			<destination>{6bb44dba-0777-4785-9f65-abcf4448f4be}</destination>
 		</relationship>
 		<relationship name="parameter">
-			<destination>{e4570685-9eb8-4b64-a3ac-8b1057eb287f}</destination>
+			<destination>{36c9e226-c775-497b-b5db-8f1bbb19f7c7}</destination>
 		</relationship>
 	</object>
-	<object class="GameParameter" id="{e4570685-9eb8-4b64-a3ac-8b1057eb287f}">
+	<object class="GameParameter" id="{36c9e226-c775-497b-b5db-8f1bbb19f7c7}">
 		<property name="parameterType">
 			<value>2</value>
 		</property>
 		<property name="maximum">
-			<value>7</value>
+			<value>4</value>
 		</property>
 		<property name="enumerationLabels">
 			<value>Nothing</value>
-			<value>Grass</value>
-			<value>Sand</value>
-			<value>Snow</value>
 			<value>Wood</value>
 			<value>Stone</value>
-			<value>Metal Ore</value>
+			<value>Copper Ore</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>

@@ -24,7 +24,7 @@ namespace Tulip.Character
         public bool IsGrounded { get; private set; }
         public bool IsLeftBlocked { get; private set; }
         public bool IsRightBlocked { get; private set; }
-        public PlaceableMaterial GroundMaterial { get; private set; }
+        public GroundMaterial GroundMaterial { get; private set; }
 
         private Transform entityTransform;
         private World world;
@@ -51,7 +51,7 @@ namespace Tulip.Character
         {
             Vector3 position = entityTransform.position + (Vector3.down * 0.2f);
             PlaceableSO groundTile = world.GetTileAtWorld(position, TileType.Block);
-            GroundMaterial = groundTile ? groundTile.Material : PlaceableMaterial.Nothing;
+            GroundMaterial = groundTile ? groundTile.Material : GroundMaterial.Nothing;
         }
 
         private void FixedUpdate()

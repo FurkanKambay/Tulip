@@ -30,7 +30,7 @@ namespace Tulip.Audio
         private void Awake()
         {
             footstepDescription = RuntimeManager.GetEventDescription(footstepEvent);
-            footstepDescription.getParameterDescriptionByName("Placeable Material", out paramGroundMaterial);
+            footstepDescription.getParameterDescriptionByName("Ground Material", out paramGroundMaterial);
         }
 
         private void Update()
