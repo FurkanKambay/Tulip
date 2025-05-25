@@ -22,8 +22,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 050e5db9ccf80c5438561897bc0f075f, type: 2}
   - {fileID: 11400000, guid: be1aec6605558014e98a667e68a8d5d2, type: 2}
   prefab: {fileID: 5074559557080848915, guid: 3b8554fcc14000c4896f62dc349c40bd, type: 3}
-  tileLoot:
-  - {fileID: 11400000, guid: f81c3c4caa74cde44b228debcb6878b9, type: 2}
-  entityLoot:
-  - {fileID: 11400000, guid: ea8750a0c949971459c7425c97b8a620, type: 2}
-  - {fileID: 11400000, guid: 32ab3e30b94083045896d4e30229ea5b, type: 2}
+  tileLoot: []
+  entityLoot: []

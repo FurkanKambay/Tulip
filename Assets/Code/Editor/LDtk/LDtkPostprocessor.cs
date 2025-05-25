@@ -121,10 +121,15 @@ namespace Tulip.Editor.LDtk
 
                 Transform transform = layer.transform;
                 Transform tilemap = transform.GetChild(0);
+                tilemap.name = "Tilemap";
 
-                tilemap.name = layer.Identifier;
-                tilemap.SetParent(transform.parent);
-                Object.DestroyImmediate(layer.gameObject);
+                // Rebuild composite collider
+                Object.DestroyImmediate(tilemap.GetComponent<CompositeCollider2D>());
+                tilemap.gameObject.AddComponent<CompositeCollider2D>();
+
+                Object.DestroyImmediate(layer.GetComponent<LDtkIid>());
+                Object.DestroyImmediate(layer.GetComponent<Grid>());
+                Object.DestroyImmediate(layer);
             }
 
             Object.DestroyImmediate(level.GetComponent<LDtkIid>());

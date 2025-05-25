@@ -10,8 +10,8 @@ namespace Tulip.Data.Items
     /// </summary>
     public abstract class BaseWorldToolSO : UsableSO
     {
-        public abstract ToolUsability GetUsability(World world, Vector2Int cell);
-        public abstract InventoryModification UseOn(World world, Vector2Int cell);
+        internal ToolUsability GetUsability(World world, Vector2Int cell) => ToolUsability.Never;
+        internal InventoryModification UseOn(World world, Vector2Int cell) => default;
 
         public Sprite CellHighlightSprite => cellHighlightSprite.Or(icon);
 
