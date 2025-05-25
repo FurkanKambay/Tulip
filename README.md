@@ -13,7 +13,6 @@
 ## Features
 
 ### Systems & Mechanics
-- [World terraforming](Assets/Code/GameWorld/World.cs) (breakable & placeable tiles)
 - [Grappling hook](Assets/Code/Gameplay/HookLauncher.cs) mechanic
 - [Entity spawn constraints](Assets/Code/Data/SpawnConditionSO.cs): "only on safe blocks", "needs headroom", etc.
 - [Item swing motion](Assets/Code/Gameplay/ItemWielder.cs) config w/ editor tooling

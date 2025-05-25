@@ -19,8 +19,7 @@ MonoBehaviour:
   maxAmount: 100
   craftedBy: []
   usedInCrafting:
-  - {fileID: 11400000, guid: 050e5db9ccf80c5438561897bc0f075f, type: 2}
   - {fileID: 11400000, guid: be1aec6605558014e98a667e68a8d5d2, type: 2}
+  - {fileID: 11400000, guid: 050e5db9ccf80c5438561897bc0f075f, type: 2}
   prefab: {fileID: 5074559557080848915, guid: 3b8554fcc14000c4896f62dc349c40bd, type: 3}
-  tileLoot: []
   entityLoot: []

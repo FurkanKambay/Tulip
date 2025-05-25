@@ -50,7 +50,7 @@ namespace Tulip.Character
         private void Update()
         {
             Vector3 position = entityTransform.position + (Vector3.down * 0.2f);
-            PlaceableSO groundTile = world.GetTileAtWorld(position, TileType.Block);
+            WorldTileSO groundTile = world.GetTileAtWorld(position, TileType.Block);
             GroundMaterial = groundTile ? groundTile.Material : GroundMaterial.Nothing;
         }
 

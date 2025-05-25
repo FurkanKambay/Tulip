@@ -1,7 +1,6 @@
 using System;
 using SaintsField;
 using Tulip.Character;
-using Tulip.Core;
 using Tulip.Data;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -26,7 +25,6 @@ namespace Tulip.Input
         [SerializeField, Required] InputActionReference hook;
 
         [Header("Input - Misc")]
-        [SerializeField, Required] InputActionReference smartCursor;
         [SerializeField, Required] InputActionReference hotbarScroll;
         [SerializeField, Required] InputActionReference hotbar;
 
@@ -40,7 +38,6 @@ namespace Tulip.Input
         public bool WantsToThrow { get; private set; }
         public bool WantsToHook { get; private set; }
 
-        public bool WantsToToggleSmartCursor { get; private set; }
         public int HotbarSelectionDelta { get; private set; }
         public int? HotbarSelectionIndex { get; private set; }
 
@@ -58,7 +55,6 @@ namespace Tulip.Input
                 WantsToDash = false;
                 WantsToUse = false;
 
-                WantsToToggleSmartCursor = false;
                 HotbarSelectionDelta = 0;
                 HotbarSelectionIndex = null;
 
@@ -69,7 +65,7 @@ namespace Tulip.Input
             if (Time.timeScale > 0)
             {
                 AimPointScreen = point.action.ReadValue<Vector2>();
-                AimPosition    = mainCamera.ScreenToWorldPoint(AimPointScreen);
+                AimPosition = mainCamera.ScreenToWorldPoint(AimPointScreen);
             }
 
             HorizontalMovement = move.action.ReadValue<float>();
@@ -85,12 +81,8 @@ namespace Tulip.Input
             WantsToThrow = aim.action.inProgress;
             WantsToHook = hook.action.triggered;
 
-            WantsToToggleSmartCursor = smartCursor.action.triggered;
             HotbarSelectionDelta = Math.Sign(hotbarScroll.action.ReadValue<float>());
             HotbarSelectionIndex = !hotbar.action.inProgress ? null : (int)hotbar.action.ReadValue<float>();
-
-            if (WantsToToggleSmartCursor)
-                Settings.Gameplay.UseSmartCursor = !Settings.Gameplay.UseSmartCursor;
         }
     }
 }

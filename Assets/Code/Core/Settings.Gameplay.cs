@@ -9,17 +9,8 @@ namespace Tulip.Core
         [Serializable]
         public sealed record GameplaySettingsBag
         {
-            [SerializeField] bool useSmartCursor = true;
-
             internal GameplaySettingsBag()
             {
-            }
-
-            [CreateProperty]
-            public bool UseSmartCursor
-            {
-                get => useSmartCursor;
-                set => UpdateSetting(ref useSmartCursor, value);
             }
         }
     }

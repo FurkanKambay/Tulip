@@ -165,7 +165,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Tulip.GameWorld.World, Tulip
   worldSO: {fileID: 0}
   worldVisual: {fileID: 0}
-  isReadonly: 0
   entityLayers:
     serializedVersion: 2
     m_Bits: 0

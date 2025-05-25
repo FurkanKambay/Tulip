@@ -17,7 +17,7 @@ namespace Tulip.Data
         [SerializeField] bool needsSafeGround;
 
         [EnableIf(nameof(needsGround))]
-        [SerializeField] PlaceableSO[] groundTiles;
+        [SerializeField] WorldTileSO[] groundTiles;
 
         [Header("Clearance")]
         [SerializeField, Min(0)] int clearanceAbove;
@@ -64,7 +64,7 @@ namespace Tulip.Data
             for (int x = 0; x < entitySO.Size.x; x++)
             {
                 Vector2Int floorCell = baseCell + new Vector2Int(x, -1);
-                PlaceableSO floorTile = world.GetTile(floorCell, TileType.Block);
+                WorldTileSO floorTile = world.GetTile(floorCell, TileType.Block);
 
                 if (!floorTile || (needsSafeGround && floorTile.IsUnsafe))
                     return false;

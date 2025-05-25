@@ -9,24 +9,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ea4930fe2524a86902cded11caf5a4a, type: 3}
-  m_Name: Powerful Pickaxe
-  m_EditorClassIdentifier: Tulip.Data.Items.WorldToolSO, Tulip
+  m_Script: {fileID: 11500000, guid: ad214e76725c4fa284a9f26c1076f0fb, type: 3}
+  m_Name: Pickaxe
+  m_EditorClassIdentifier: Tulip.Data.Items.WeaponSO, Tulip
   icon: {fileID: -1312279058, guid: c8834629caf834b43a4462ab2b3b36f7, type: 3}
   iconScale: 2
-  name: Powerful Pickaxe
-  description: The name is subject to change.
+  name: Weak Pickaxe
+  description: It's pretty bad.
   maxAmount: 1
   craftedBy:
-  - {fileID: 11400000, guid: 050e5db9ccf80c5438561897bc0f075f, type: 2}
+  - {fileID: 11400000, guid: be1aec6605558014e98a667e68a8d5d2, type: 2}
   usedInCrafting: []
-  cooldown: 0.3
+  cooldown: 0.6
   isThrowable: 0
   throwableConfig:
     cooldown: 0
     strength: 0
     chargeSpeed: 0
   swingConfig: {fileID: 11400000, guid: 3c33bb5b7a9810e49a8a308014afa4d2, type: 2}
-  cellHighlightSprite: {fileID: 21300000, guid: e27d4b5d1b3972045b64b02773c3b940, type: 3}
-  power: 50
-  tileType: 1
+  damage: 18
+  range: 1.5
+  isMultiTarget: 1

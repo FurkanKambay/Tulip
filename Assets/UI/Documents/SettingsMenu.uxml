@@ -10,13 +10,6 @@
             </engine:VisualElement>
         </engine:VisualElement>
         <engine:TabView data-source-path="Settings">
-            <engine:Tab label="Gameplay" data-source-path="gameplay" name="tab-gameplay" class="tab">
-                <engine:Toggle text="Smart Cursor" focusable="false" class="option">
-                    <Bindings>
-                        <engine:DataBinding property="value" binding-mode="TwoWay" data-source-path="UseSmartCursor" />
-                    </Bindings>
-                </engine:Toggle>
-            </engine:Tab>
             <engine:Tab label="Sound" data-source-path="audio" name="tab-sound" class="tab">
                 <engine:SliderInt label="Master" value="100" high-value="100" focusable="false" show-input-field="true" fill="true" class="slider-audio option">
                     <Bindings>

@@ -7,7 +7,6 @@
                 <engine:DataBinding binding-mode="ToTarget" property="style.visibility" data-source-path="ShowIcon" />
                 <engine:DataBinding binding-mode="ToTarget" property="style.height" data-source-path="IconHeight" />
                 <engine:DataBinding binding-mode="ToTarget" property="style.opacity" data-source-path="IconOpacity" />
-                <engine:DataBinding binding-mode="ToTarget" property="tintColor" data-source-path="itemSO.color" data-source-type="Tulip.Data.Items.PlaceableSO, Tulip" />
             </Bindings>
         </engine:Image>
         <engine:Label class="hotbar-slot-amount">

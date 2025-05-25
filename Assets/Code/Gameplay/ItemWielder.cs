@@ -348,13 +348,8 @@ namespace Tulip.Gameplay
                 return;
             }
 
-            (Color tint, float scale) = usableSO.Is(out PlaceableSO placeableSO)
-                ? (placeableSO.Color, placeableSO.IconScale * 0.8f)
-                : (Color.white, usableSO.IconScale);
-
-            itemVisual.localScale = Vector3.one * scale;
+            itemVisual.localScale = Vector3.one * usableSO.IconScale;
             itemRenderer.sprite = usableSO ? usableSO.Icon : null;
-            itemRenderer.color = tint;
         }
 
 #region Event Handlers
