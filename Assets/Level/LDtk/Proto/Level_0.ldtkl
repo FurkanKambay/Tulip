@@ -992,7 +992,7 @@
 			"entityInstances": []
 		},
 		{
-			"__identifier": "Blue_Curtains",
+			"__identifier": "Curtains_Basic",
 			"__type": "AutoLayer",
 			"__cWid": 256,
 			"__cHei": 128,
@@ -1163,7 +1163,7 @@
 			"entityInstances": []
 		},
 		{
-			"__identifier": "Collisions",
+			"__identifier": "Blocks",
 			"__type": "IntGrid",
 			"__cWid": 256,
 			"__cHei": 128,
@@ -2126,7 +2126,7 @@
 			"entityInstances": []
 		},
 		{
-			"__identifier": "Grass",
+			"__identifier": "Blocks_Grass",
 			"__type": "AutoLayer",
 			"__cWid": 256,
 			"__cHei": 128,
@@ -4992,7 +4992,7 @@
 			"entityInstances": []
 		},
 		{
-			"__identifier": "Stone",
+			"__identifier": "Blocks_Stone",
 			"__type": "AutoLayer",
 			"__cWid": 256,
 			"__cHei": 128,
@@ -24651,7 +24651,7 @@
 			"entityInstances": []
 		},
 		{
-			"__identifier": "Snow",
+			"__identifier": "Blocks_Snow",
 			"__type": "AutoLayer",
 			"__cWid": 256,
 			"__cHei": 128,
@@ -29667,7 +29667,7 @@
 			"entityInstances": []
 		},
 		{
-			"__identifier": "Stone_Walls",
+			"__identifier": "Walls_Stone",
 			"__type": "AutoLayer",
 			"__cWid": 256,
 			"__cHei": 128,
@@ -29676,7 +29676,7 @@
 			"__pxTotalOffsetX": 0,
 			"__pxTotalOffsetY": 0,
 			"__tilesetDefUid": 942,
-			"__tilesetRelPath": "../../Art/Sprites/Terrain/Background Walls.png",
+			"__tilesetRelPath": "../../Art/Sprites/Terrain/Background_Walls.png",
 			"iid": "63459630-1030-11f0-ae1a-0ffc6a97c338",
 			"levelId": 0,
 			"layerDefUid": 932,

@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 using Furkan.Common;
 using JetBrains.Annotations;
 using LDtkUnity;
@@ -26,34 +25,12 @@ namespace Tulip.Editor.LDtk
             var positions = new Vector3Int[maxTileCount];
             var tiles = new TileBase[maxTileCount];
             var tileChanges = new List<TileChangeData>();
+            var layersById = level.LayerInstances.ToDictionary(static layer => layer.Identifier);
 
-            // Go through auto-layers with the tag "merge_into_{index}"
+            // Merge Auto-layers into their IntGrid
             foreach (LDtkComponentLayer sourceLayer in level.LayerInstances)
             {
-                // possible values: IntGrid, Entities, Tiles or AutoLayer
-                if (sourceLayer.Type != "AutoLayer")
-                    continue;
-
-                string[] tags = sourceLayer.LayerDef.UiFilterTags;
-                int mergeTargetIndex = -1;
-
-                foreach (string tag in tags)
-                {
-                    Match match = Regex.Match(tag, @"^merge_into_(?<index>\d+)$");
-
-                    if (!match.Success)
-                        continue;
-
-                    string indexMatch = match.Groups["index"].Value;
-
-                    if (int.TryParse(indexMatch, out mergeTargetIndex))
-                        break;
-
-                    LogWarning($"Invalid merge_into tag in auto-layer {sourceLayer.Identifier}: {indexMatch}");
-                }
-
-                // No valid tag was found for this auto-layer
-                if (mergeTargetIndex < 0)
+                if (sourceLayer.LayerDef.LayerDefinitionType != TypeEnum.AutoLayer)
                     continue;
 
                 Tilemap sourceTilemap = sourceLayer.AutoLayerTiles.Tilemap;
@@ -81,6 +58,7 @@ namespace Tulip.Editor.LDtk
 
                     // Assign collider type per tile based on enum tags
                     Collider_Type[] tileEnumTagValues = ldtkTile.GetEnumTagValues<Collider_Type>();
+
                     ldtkTile.Type = tileEnumTagValues.Contains(Collider_Type.Grid)
                         ? Tile.ColliderType.Grid
                         : Tile.ColliderType.None;
@@ -92,10 +70,8 @@ namespace Tulip.Editor.LDtk
                     tileChanges.Add(new TileChangeData(position, ldtkTile, color, matrix));
                 }
 
-                LDtkComponentLayer targetLayer = level.LayerInstances[mergeTargetIndex];
+                LDtkComponentLayer targetLayer = layersById[sourceLayer.LayerDef.AutoSourceLayerDef.Identifier];
                 Tilemap targetTilemap = targetLayer.transform.GetChild(0).GetComponent<Tilemap>();
-
-                // Log($"Merging {sourceLayer.Identifier} into {targetLayer.Identifier}. ({tileCount} tiles)");
 
                 TileChangeData[] tileChangeDataArray = tileChanges.ToArray();
                 targetTilemap.SetTiles(tileChangeDataArray, ignoreLockFlags: true);
@@ -129,9 +105,11 @@ namespace Tulip.Editor.LDtk
                 tilemap.name = $"{layer.name} Tilemap";
 
                 // Sort the tilemaps
-                TilemapRenderer tilemapRenderer = tilemap.GetComponent<TilemapRenderer>();
-                tilemapRenderer.sortingOrder = nextOrderInLayer;
-                nextOrderInLayer--;
+                if (tilemap.TryGetComponent(out TilemapRenderer tilemapRenderer))
+                {
+                    tilemapRenderer.sortingOrder = nextOrderInLayer;
+                    nextOrderInLayer--;
+                }
 
                 bool hasCollision = false;
 
