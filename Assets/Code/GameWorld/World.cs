@@ -51,9 +51,9 @@ namespace Tulip.GameWorld
 
         private IntGrid GetIntGrid(TileType tileType) => tileType switch
         {
-            TileType.Wall => null,
-            TileType.Block => worldVisual.WorldIntGrid,
-            TileType.Curtain => null,
+            TileType.Wall => worldVisual.WallIntGrid,
+            TileType.Block => worldVisual.BlocksIntGrid,
+            TileType.Curtain => worldVisual.CurtainIntGrid,
             _ => throw new ArgumentOutOfRangeException(nameof(tileType))
         };
 #endregion

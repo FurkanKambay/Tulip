@@ -7,12 +7,16 @@ namespace Tulip.GameWorld
     public sealed class WorldVisual : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField] IntGrid worldIntGrid;
+        [SerializeField] IntGrid wallIntGrid;
+        [SerializeField] IntGrid blocksIntGrid;
+        [SerializeField] IntGrid curtainIntGrid;
         [SerializeField] Tilemap wallTilemap;
         [SerializeField] Tilemap blockTilemap;
         [SerializeField] Tilemap curtainTilemap;
 
-        internal IntGrid WorldIntGrid => worldIntGrid;
+        internal IntGrid WallIntGrid => wallIntGrid;
+        internal IntGrid BlocksIntGrid => blocksIntGrid;
+        internal IntGrid CurtainIntGrid => curtainIntGrid;
 
 #region Tilemap APIs
         internal Vector2Int WorldToCell(Vector3 worldPosition) =>

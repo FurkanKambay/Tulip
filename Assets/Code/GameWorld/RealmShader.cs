@@ -75,9 +75,22 @@ namespace Tulip.GameWorld
             blockRenderer = blockTilemap.GetComponent<TilemapRenderer>();
             curtainRenderer = curtainTilemap.GetComponent<TilemapRenderer>();
 
+            // Hardcode sorting layers and materials for layers imported from LDtk
+            wallRenderer.sortingLayerID = SortingLayer.NameToID("Wall");
             wallRenderer.material = realmMaterial;
+            wallRenderer.sortingOrder = 0;
+
+            blockRenderer.sortingLayerID = SortingLayer.NameToID("Default");
             blockRenderer.material = realmMaterial;
+            blockRenderer.sortingOrder = 0;
+
+            curtainRenderer.sortingLayerID = SortingLayer.NameToID("Curtain");
             curtainRenderer.material = realmMaterial;
+            curtainRenderer.sortingOrder = 0;
+
+            // Add sprite mask to the wall tilemap for the dust particles
+            SpriteMask dustMask = wallRenderer.gameObject.AddComponent<SpriteMask>();
+            dustMask.maskSource = SpriteMask.MaskSource.SupportedRenderers;
         }
 
         private void CacheKeywords()
