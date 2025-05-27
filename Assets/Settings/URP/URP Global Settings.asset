@@ -388,5 +388,5 @@ MonoBehaviour:
       data:
         m_Version: 0
         m_ExportShaderVariants: 1
-        m_ShaderVariantLogLevel: 0
+        m_ShaderVariantLogLevel: 1
         m_StripRuntimeDebugShaders: 1
