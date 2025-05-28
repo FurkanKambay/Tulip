@@ -1,9 +1,9 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
-// ReSharper disable MemberCanBePrivate.Global
-// ReSharper disable UnusedMember.Global
 namespace Furkan.Common
 {
+    [PublicAPI]
     public static class RemappingExtensions
     {
         public static Remapping Remap(this float value, float min, float max) => new(value, min, max);
@@ -16,6 +16,7 @@ namespace Furkan.Common
         public static Remapping RemapPercent(this int value) => new(value, 0, 100);
     }
 
+    [PublicAPI]
     public readonly struct Remapping
     {
         private readonly float value;

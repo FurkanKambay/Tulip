@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Furkan.Common
 {
-    // ReSharper disable MemberCanBePrivate.Global
+    [PublicAPI]
     public static class ObjectExtensions
     {
         // TODO: Figure out why `NotNullWhen(bool)` doesn't work

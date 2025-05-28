@@ -1,7 +1,9 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Furkan.Common
 {
+    [PublicAPI]
     public static class QuaternionExtensions
     {
         public static float ToAngle(this Vector2 direction) =>

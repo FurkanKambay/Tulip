@@ -1,7 +1,9 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Furkan.Common
 {
+    [PublicAPI]
     public static class VectorMathExtensions
     {
         public static Vector3 WithZ(this Vector2 self, float z) =>

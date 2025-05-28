@@ -1,7 +1,9 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Furkan.Common
 {
+    [PublicAPI]
     public static class ResolutionExtensions
     {
         public static string AsString(this Resolution resolution) =>
