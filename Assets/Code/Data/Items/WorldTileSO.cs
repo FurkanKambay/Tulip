@@ -36,7 +36,7 @@ namespace Tulip.Data.Items
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void Init()
         {
-            WorldTileSO[] allTileAssets = Resources.FindObjectsOfTypeAll<WorldTileSO>();
+            WorldTileSO[] allTileAssets = Resources.LoadAll<WorldTileSO>("World Tiles");
             worldTiles = new WorldTileSO[allTileAssets.Length];
 
             foreach (WorldTileSO so in allTileAssets)
