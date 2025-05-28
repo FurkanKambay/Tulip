@@ -318,11 +318,8 @@ namespace Tulip.Gameplay
 
 #endregion
 
-        private void SetSpriteTransformInstant(Vector2 targetPosition, float targetAngle)
-        {
-            itemVisual.localPosition = targetPosition;
-            itemVisual.localEulerAngles = Vector3.forward * targetAngle;
-        }
+        private void SetSpriteTransformInstant(Vector2 targetPosition, float targetAngle) =>
+            itemVisual.SetLocalPositionAndRotation(targetPosition, Quaternion.Euler(0, 0, targetAngle));
 
         private void RotateItemTowardsMouse()
         {
