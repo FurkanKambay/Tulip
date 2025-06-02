@@ -10,7 +10,7 @@ namespace Tulip.Core.Editor
     {
         static UnityEditorSceneManager()
         {
-            SceneAsset bootScene = AssetDatabase.LoadAssetAtPath<SceneAsset>("Assets/Level/Boot.unity");
+            SceneAsset bootScene = AssetDatabase.LoadAssetAtPath<SceneAsset>("Assets/Level/0 Boot.unity");
             EditorSceneManager.playModeStartScene = bootScene;
         }
     }

@@ -118,13 +118,13 @@ namespace Tulip.UI
                 tabView.selectedTabIndex += brain.TabSwitchDelta.Value;
         }
 
-        private async void OptionsButton_Toggled(ChangeEvent<bool> change)
+        private void OptionsButton_Toggled(ChangeEvent<bool> change)
         {
             container.visible = change.newValue;
             quitFlyoutButton.value = false;
 
             PlayToggleSfx(change.newValue);
-            await GameManager.SetPaused(change.newValue);
+            GameManager.SetPaused(change.newValue);
 
             OnToggled?.Invoke(change.newValue);
         }

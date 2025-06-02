@@ -32,9 +32,9 @@ namespace Tulip.GameWorld
             saveQuitEvent.OnRaised -= SaveQuit_Requested;
         }
 
-        private static async void NewGame_Requested()
+        private static void NewGame_Requested()
         {
-            await GameManager.StartNewGame();
+            GameManager.StartNewGame();
             // TODO: save the new world to disk
         }
 
@@ -44,14 +44,14 @@ namespace Tulip.GameWorld
             // TODO: load latest save instead
         }
 
-        private static async void SaveQuit_Requested()
+        private static void SaveQuit_Requested()
         {
             // TODO: save the world to disk
             // only store the tile delta and other world state
             // default world should be stored in scene, and its WorldSO cached on build?
 
             // TODO: reload the scene with the authored world instead
-            await GameManager.ReturnToMainMenu();
+            GameManager.ReturnToMainMenu();
         }
     }
 }

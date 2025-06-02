@@ -1,3 +1,7 @@
+using System.Collections;
+using Furkan.Common;
+using JetBrains.Annotations;
+using SaintsField;
 using SaintsField.Playa;
 using UnityEditor;
 using UnityEngine;
@@ -14,84 +18,104 @@ namespace Tulip.Core
         Paused
     }
 
-    public class GameManager : MonoBehaviour
+    [PublicAPI]
+    public sealed class GameManager : MonoBehaviour
     {
+        [LayoutGroup("/Main Menu Scene", ELayout.FoldoutBox)]
+        [SaintsRow(true)]
+        [SerializeField] SceneInfo mainMenuSceneInfo;
+
+        [LayoutGroup("/Game Scene", ELayout.FoldoutBox)]
+        [SaintsRow(true)]
+        [SerializeField] SceneInfo gameSceneInfo;
+
+        [LayoutEnd]
+        [SerializeField] bool showSplashScreen;
+        [SerializeField] float splashScreenDuration = 2;
+
         [ShowInInspector]
-        public static GameState CurrentState { get; private set; }
+        internal static GameState CurrentState { get; private set; }
 
-        private const int bootSceneIndex = 0;
-        private const int mainMenuSceneIndex = 1;
-        private const int gameSceneIndex = 2;
+        private static GameManager instance;
 
-        private static Scene BootScene => SceneManager.GetSceneByBuildIndex(bootSceneIndex);
-        private static Scene MainMenuScene => SceneManager.GetSceneByBuildIndex(mainMenuSceneIndex);
-        private static Scene GameScene => SceneManager.GetSceneByBuildIndex(gameSceneIndex);
+#region Unity Callbacks, Initialization
 
-        private static AsyncOperation gameSceneLoadOperation;
-
-        #region Unity Callbacks
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void Init()
         {
             CurrentState = GameState.MainMenu;
-            gameSceneLoadOperation = null;
-
-#if UNITY_EDITOR
-            if (!BootScene.isLoaded)
-                SceneManager.LoadSceneAsync(bootSceneIndex, LoadSceneMode.Additive);
-
-            if (GameScene.isLoaded)
-                SceneManager.UnloadSceneAsync(GameScene);
-#endif
         }
 
         private void Awake()
         {
-            if (!MainMenuScene.isLoaded)
-                SceneManager.LoadScene(mainMenuSceneIndex, LoadSceneMode.Additive);
-        }
+            Assert.IsNull(instance);
+            DontDestroyOnLoad(gameObject);
+            instance = this;
 
-        private async void Start() => await LoadGameAsync();
+            mainMenuSceneInfo = new SceneInfo(1);
+            gameSceneInfo = new SceneInfo(2);
+        }
 
         private void OnEnable() => Application.wantsToQuit += IsSafeToQuit;
         private void OnDisable() => Application.wantsToQuit -= IsSafeToQuit;
 
-        private static async Awaitable LoadGameAsync()
+#endregion
+
+#region Scene Switching
+
+        private IEnumerator Start()
         {
-            gameSceneLoadOperation = SceneManager.LoadSceneAsync(gameSceneIndex, LoadSceneMode.Additive);
-            Assert.IsNotNull(gameSceneLoadOperation);
-            gameSceneLoadOperation.allowSceneActivation = false;
+            yield return mainMenuSceneInfo.PreloadAsync(LoadSceneMode.Single);
 
-            await gameSceneLoadOperation;
+            if (showSplashScreen || !Application.isEditor)
+                yield return new WaitForSecondsRealtime(splashScreenDuration);
 
-            SceneManager.SetActiveScene(GameScene);
+            yield return mainMenuSceneInfo.ActivateScene();
+            yield return gameSceneInfo.PreloadAsync();
+
+            Resources.UnloadUnusedAssets();
         }
-        #endregion
 
-        #region Public Static Methods
+        /// <summary>
+        /// Called when the user wants to start playing.
+        /// </summary>
+        private void ActivateGameScene() =>
+            StartCoroutine(gameSceneInfo.ActivateScene());
+
+        /// <summary>
+        /// Called when returning to the main menu.
+        /// </summary>
+        private void ReloadGameScene() =>
+            StartCoroutine(gameSceneInfo.ReloadAsync());
+
+#endregion
+
+#region High-Level Game Flow API
+
         [LayoutGroup("Buttons", ELayout.Background, marginTop: 8)]
         [Button, Ordered]
-        public static async Awaitable ReturnToMainMenu() =>
-            await SwitchTo(GameState.MainMenu);
+        public static void ReturnToMainMenu() =>
+            SwitchTo(GameState.MainMenu);
 
         [Button, Ordered]
-        public static async Awaitable StartNewGame() =>
-            await SwitchTo(GameState.Playing);
+        public static void StartNewGame() =>
+            SwitchTo(GameState.Playing);
 
         [Button, Ordered]
-        public static async Awaitable SetPaused(bool shouldPause)
+        public static void SetPaused(bool shouldPause)
         {
-            await SwitchTo(
-                CurrentState switch
-                {
-                    GameState.Playing when shouldPause => GameState.Paused,
-                    GameState.Paused when !shouldPause => GameState.Playing,
-                    _ => CurrentState
-                }
-            );
+            GameState newState = CurrentState switch
+            {
+                GameState.Playing when shouldPause => GameState.Paused,
+                GameState.Paused when !shouldPause => GameState.Playing,
+                _                                  => CurrentState
+            };
+
+            SwitchTo(newState);
         }
 
-        public static void QuitGame()
+        [Button, Ordered]
+        internal static void QuitGame()
         {
             if (!IsSafeToQuit())
                 return;
@@ -102,10 +126,12 @@ namespace Tulip.Core
             Application.Quit();
 #endif
         }
-        #endregion
 
-        #region Private Static Methods
-        private static async Awaitable SwitchTo(GameState newState)
+#endregion
+
+#region Private Helper Methods
+
+        private static void SwitchTo(GameState newState)
         {
             if (newState == CurrentState)
                 return;
@@ -118,19 +144,10 @@ namespace Tulip.Core
 
             GameStateChange.Raise(oldState, newState);
 
-            if (CurrentState != GameState.MainMenu)
-                AllowGameSceneActivation();
-            else
-            {
-                await SceneManager.UnloadSceneAsync(GameScene);
-                await LoadGameAsync();
-            }
-        }
-
-        private static void AllowGameSceneActivation()
-        {
-            if (gameSceneLoadOperation != null)
-                gameSceneLoadOperation.allowSceneActivation = true;
+            if (oldState is GameState.MainMenu)
+                instance.ActivateGameScene();
+            else if (newState is GameState.MainMenu)
+                instance.ReloadGameScene();
         }
 
         private static void UpdateTimeScale() =>
@@ -159,10 +176,11 @@ namespace Tulip.Core
                 return true;
 
             // TODO: save game before quitting
-            Debug.LogWarning("Quit requested. Should save game first.");
+            Debug.Log("Quit requested. Should save game first.");
 
             return true;
         }
-        #endregion
+
+#endregion
     }
 }
