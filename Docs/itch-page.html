@@ -1,0 +1,259 @@
+<blockquote class="custom-callout">
+    <h3>⚠ Important</h3>
+    <strong>This is just a portfolio project for now!</strong>
+    <br>
+    It's very early in its development but I'm working on slowly making it an actual game.
+</blockquote>
+
+<div class="custom-indev">
+    <div>🚧 IN DEVELOPMENT</div>
+</div>
+
+<h2 id="controls">Controls</h2>
+<dl class="custom-info">
+    <dt>Move</dt>
+    <dd>
+        <kbd>W</kbd>,
+        <kbd>A</kbd>,
+        <kbd>S</kbd>,
+        <kbd>D</kbd>
+    </dd>
+
+    <dt>Jump</dt>
+    <dd><kbd>Space</kbd></dd>
+
+    <dt>Attack / Swing</dt>
+    <dd><kbd>Left Mouse Button</kbd></dd>
+
+    <dt>Dash</dt>
+    <dd><kbd>Shift</kbd></dd>
+
+    <dt>Grappling Hook</dt>
+    <dd><kbd>V</kbd></dd>
+
+    <dt>Select Hotbar</dt>
+    <dd>
+        <kbd>0</kbd>-<kbd>9</kbd> or
+        <kbd>Mouse Wheel</kbd>
+    </dd>
+</dl>
+
+<h2 id="summary">Summary</h2>
+<p><strong>Project Tulip</strong> is a platformer game, and it's still a work in progress and mainly a portfolio piece
+    for now. I plan for it to have a compelling and immersive hand-crafted world and unique gameplay mechanics, and I'm
+    very excited about all of it.</p>
+
+<h2 id="features">Features</h2>
+<div class="custom-accrd">
+    <details>
+        <summary>Systems & Mechanics</summary>
+        <ul>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/Code/Gameplay/HookLauncher.cs">
+                    Grappling hook</a> mechanic
+            </li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/Code/Data/SpawnConditionSO.cs">
+                    Entity spawn constraints</a>: "only on safe blocks", "needs headroom", etc.
+            </li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/Code/Gameplay/ItemWielder.cs">
+                    Item swing motion</a> config w/ editor tooling
+            </li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/Code/Gameplay/WeaponWielder.cs">
+                    Melee combat</a>: spear, axe
+            </li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/Code/Character/Health.cs">
+                    Invulnerability frames</a>
+            </li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/Code/Data/StatusEffect.cs">
+                    Status effects</a>: health regen, bleed
+            </li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/Code/AI">
+                    Enemy AI</a>: walking, flying, attacking
+            </li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/Code/UI/HotbarPresenter.cs">
+                    Hotbar</a> w/ slot locking
+            </li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/Code/Data/EntitySO.cs">
+                    Loot items</a> on entities and tiles
+            </li>
+        </ul>
+    </details>
+
+    <details>
+        <summary>Content</summary>
+        <ul>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/Level/LDtk">
+                    LDtk project</a>: Blocks, walls, curtains
+            </li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/Code/GameWorld/World.cs">
+                    Three-layer world</a> tilemap (background walls, blocks, foreground curtains)
+            </li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/Prefabs/Characters">
+                    Entities</a>: Treant mimic, flying skull, trees, generic walking enemy
+            </li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/Resources/Items">
+                    Items</a>: Weapons, tools, materials (ore, wood), tiles
+            </li>
+        </ul>
+    </details>
+
+    <details>
+        <summary>Shaders & VFX</summary>
+        <ul>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/Shaders/Realm.shadergraph">
+                    Portal Shader</a>: Shader for rendering two worlds through a portal <em>(not used for now)</em>
+            </li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/Shaders/Parallax.shadergraph">
+                    Parallax Shader</a>: Parallax background with cloud movement
+            </li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/Shaders/Color%20Tint.shadergraph">
+                    Sprite outline and dissolve</a> shader
+            </li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/VFX/Rain.vfx">
+                    Rain VFX</a>: Rain in VFX Graph, configurable <em>(unavailable on WebGL)</em>
+            </li>
+        </ul>
+    </details>
+
+    <details>
+        <summary>User Interface (UI Toolkit)</summary>
+        <ul>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/UI/Documents">
+                    Menus</a> |
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/UI/Documents/Hotbar.uxml">
+                    Hotbar HUD</a> |
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/UI/Documents/DeathOverlay.uxml">
+                    Death overlay</a>
+            </li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/UI/Documents/SettingsMenu.uxml">
+                    Data bindings</a> using the MVP pattern
+            </li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/Code/UI/GlobalConverters.cs">
+                    Global converters</a> for data bindings
+            </li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/UI/Templates/HotbarSlot.uxml">
+                    Template</a> for hotbar item slots
+            </li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/UI/Styles">
+                    Custom styling</a>
+                for default Unity UITK controls like
+                <code>DropdownField</code>, <code>TabView</code> via <code>.unity-</code> USS classes
+            </li>
+        </ul>
+    </details>
+
+    <details>
+        <summary>Audio (FMOD)</summary>
+        <ul>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/FMODProject">
+                    FMOD project source</a> included
+            </li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/Code/Audio/FootstepAudio.cs">
+                    Footstep sounds</a> for the player and enemies
+            </li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/Code/Audio/BiomeMusic.cs">
+                    Muffled music</a> when player is indoors
+            </li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/Code/Core/Settings.Audio.cs">
+                    Audio volume options</a> in game
+            </li>
+            <li><strong>Positional audio</strong> in 2D space</li>
+        </ul>
+    </details>
+
+    <details>
+        <summary>Other</summary>
+        <ul>
+            <li><strong>Async</strong> and <code>Awaitable</code> usage</li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/Settings/Input%20Actions.inputactions">
+                    Input System</a> usage
+            </li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/WebGLTemplates/Custom">
+                    Custom WebGL template</a> to fix data persistence bug on web builds
+            </li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/develop/Assets/Code/Common/EventChannelSO.cs">
+                    Event channels</a> for some UI events (<code>ScriptableObject</code>-based)
+            </li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/v7-itchio/Assets/Code/Player/Terraformer.cs">
+                    World terraforming</a> (breakable & placeable tiles) — <i>abandoned feature</i>
+            </li>
+            <li>
+                <a href="https://github.com/FurkanKambay/Tulip/tree/v7-itchio/Assets/Code/Data/Tiles/CustomRuleTileData.cs">
+                    Custom Rule Tiles</a> for the world — <i>abandoned feature</i>
+            </li>
+        </ul>
+    </details>
+
+    <details>
+        <summary>Plans</summary>
+        <ul>
+            <li>hand-crafted world</li>
+            <li>ranged weapon</li>
+            <li>rain mechanic</li>
+            <li>a couple more enemies</li>
+            <li>better enemy AI</li>
+            <li>NPCs</li>
+        </ul>
+    </details>
+</div>
+
+<h2 id="inspirations">Inspirations</h2>
+<p>
+    Project Tulip was originally inspired by Terraria, but I'm moving away from the procedurally generated sandbox idea
+    in favor of a hand-crafted world after I had some exciting ideas for worldbuilding. Games like Hollow Knight, Ori
+    and the Blind Forest, V Rising, Divinity: Original Sin 2, Core Keeper, Wall World, Laika: Aged Through Blood,
+    SteamWorld Dig, and Fallout <em>(even though I haven't played it&mdash;shout out Tim Cain)</em>, are some of the
+    biggest inspirations for it. I can't say for certain that the final game will be inspired by these games in any way,
+    but I'm sure the inspirations will show themselves once the game reaches a certain point in development. I'm aiming
+    for compelling worldbuilding, satisfying combat, and interesting characters.
+</p>
+
+<h2 id="game-design">Game Design</h2>
+<p>
+    I have a lot of notes on different design aspects like narrative, system mechanics, NPCs, quests, enemies/bosses,
+    and more. I might share the plans in more detail once I've made good progress on something.
+</p>
+
+<h2 id="art-sound">Art & Sound</h2>
+<p>
+    The art direction/style is not finalized. I'm using placeholder assets that seem to go well enough together for the
+    time being. Same with music and sound effects. I made some placeholder art and paid for some others
+    (see <a href="https://github.com/FurkanKambay/Tulip/blob/develop/ATTRIBUTIONS.md">ATTRIBUTIONS</a>), but the paid
+    assets aren't available on GitHub because I can't share the source files. The itch.io builds use the paid assets as
+    expected, though! I bought a MIDI keyboard to learn music, which may not have been the smartest investment, but
+    surely I'll make some progress one day.
+</p>
+
+<blockquote class="custom-callout">
+    <br />
+    This page uses CSS components from <a href="https://nnda.itch.io/pitch" target="_blank">Pitch</a>.
+</blockquote>

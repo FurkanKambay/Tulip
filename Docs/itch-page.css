@@ -1,0 +1,11 @@
+.custom-accrd details {
+    padding: 0;
+}
+
+.custom-accrd details summary {
+    padding: .75em 1.2em;
+}
+
+.custom-accrd details summary:hover {
+    text-decoration: none;
+}
