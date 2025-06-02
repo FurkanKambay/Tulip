@@ -8,12 +8,15 @@ namespace Tulip.GameWorld
     /// Handles game flow events like starting a new game, continuing from a save, and quitting.
     /// </summary>
     /// <seealso cref="GameManager"/>
-    public class WorldManager : MonoBehaviour
+    public sealed class WorldManager : MonoBehaviour
     {
         [Header("Events")]
         [SerializeField] EventChannelSO newGameEvent;
         [SerializeField] EventChannelSO continueGameEvent;
         [SerializeField] EventChannelSO saveQuitEvent;
+
+        private void Awake() =>
+            DontDestroyOnLoad(gameObject);
 
         private void OnEnable()
         {

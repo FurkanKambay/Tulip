@@ -165,10 +165,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 76ed11d84beb10846a746b4259e26d39, type: 3}
     - target: {fileID: 11496292, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
-      propertyPath: m_keepAlive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11496292, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_enableOnStartup
       value: 0
       objectReference: {fileID: 0}

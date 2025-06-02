@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Tulip.Core
 {
-    public class SettingsManager : MonoBehaviour
+    public sealed class SettingsManager : MonoBehaviour
     {
         [SerializeField] string fileName = "settings.json";
 
@@ -15,7 +15,11 @@ namespace Tulip.Core
         [ShowInInspector, TextArea]
         private static string FullJson => JsonUtility.ToJson(Settings.Instance, prettyPrint: true);
 
-        private void Awake() => LoadFromFile();
+        private void Awake()
+        {
+            DontDestroyOnLoad(gameObject);
+            LoadFromFile();
+        }
 
         private void OnEnable() => Settings.OnUpdate += Settings_Updated;
         private void OnDisable() => Settings.OnUpdate -= Settings_Updated;

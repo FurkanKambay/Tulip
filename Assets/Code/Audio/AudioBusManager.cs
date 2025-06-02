@@ -7,7 +7,7 @@ using Settings = Tulip.Core.Settings;
 
 namespace Tulip.Audio
 {
-    public class AudioBusManager : MonoBehaviour
+    public sealed class AudioBusManager : MonoBehaviour
     {
         [SerializeField] StudioListener fmodStudioListener;
 
@@ -18,6 +18,7 @@ namespace Tulip.Audio
 
         private async void Awake()
         {
+            DontDestroyOnLoad(gameObject);
             await WaitForAllBanksToLoad();
 
             masterBus = RuntimeManager.GetBus("bus:/");
