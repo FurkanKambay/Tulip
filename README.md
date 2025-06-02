@@ -13,6 +13,7 @@
 ## Features
 
 ### Systems & Mechanics
+
 - [Grappling hook](Assets/Code/Gameplay/HookLauncher.cs) mechanic
 - [Entity spawn constraints](Assets/Code/Data/SpawnConditionSO.cs): "only on safe blocks", "needs headroom", etc.
 - [Item swing motion](Assets/Code/Gameplay/ItemWielder.cs) config w/ editor tooling
@@ -24,18 +25,21 @@
 - [Loot items](Assets/Code/Data/EntitySO.cs) on entities and tiles
 
 ### Content
-- [Three-layer world](Assets/Prefabs/Maps/Realm%20Visuals.prefab) tilemap (background walls, blocks, foreground curtains)
-- [Custom Rule Tiles](Assets/Resources/Tiles): Blocks, walls, curtains
+
+- [LDtk project](Assets/Level/LDtk): Blocks, walls, curtains
+- [Three-layer world](Assets/Code/GameWorld/World.cs) tilemap (background walls, blocks, foreground curtains)
 - [Entities](Assets/Prefabs/Characters): Treant mimic, flying skull, trees, generic walking enemy
 - [Items](Assets/Resources/Items): Weapons, tools, materials (ore, wood), tiles
 
 ### Shaders & VFX
+
 - [Portal Shader](Assets/Shaders/Realm.shadergraph): Shader for rendering two worlds through a portal *(not used for now)*
 - [Parallax Shader](Assets/Shaders/Parallax.shadergraph): Parallax background with cloud movement
 - [Sprite outline and dissolve](Assets/Shaders/Color%20Tint.shadergraph) shader
 - [Rain VFX](Assets/VFX/Rain.vfx): Rain in VFX Graph, configurable *(unavailable on WebGL)*
 
 ### User Interface (UI Toolkit)
+
 - [Menus](Assets/UI/Documents) | [Hotbar HUD](Assets/UI/Documents/Hotbar.uxml) | [Death overlay](Assets/UI/Documents/DeathOverlay.uxml)
 - [Data bindings](Assets/UI/Documents/SettingsMenu.uxml) using the MVP pattern
 - [Global converters](Assets/Code/UI/GlobalConverters.cs) for data bindings
@@ -43,17 +47,21 @@
 - [Custom styling](Assets/UI/Styles) for default Unity UITK controls like `DropdownField`, `TabView` via `.unity-` USS classes
 
 ### Audio (FMOD)
+
 - [FMOD project source](FMODProject) included
 - [Footstep sounds](Assets/Code/Audio/FootstepAudio.cs) for the player and enemies
 - [Muffled music](Assets/Code/Audio/BiomeMusic.cs) when player is indoors
 - [Audio volume options](Assets/Code/Core/Settings.Audio.cs) in game
 - **Positional audio** in 2D space
 
-### Misc.
+### Other
+
 - **Async** and `Awaitable` usage
 - [Input System](Assets/Settings/Input%20Actions.inputactions) usage
-- Fixed data persistence bug on web builds using [a custom WebGL template](https://github.com/FurkanKambay/Tulip/commit/c4d97ec0718cf6d3dfbc1e7d04e74d5d5c943c87)
+- [Custom WebGL template](Assets/WebGLTemplates/Custom) to fix data persistence bug on web builds
 - [Event channels](Assets/Code/Common/EventChannelSO.cs) for some UI events (`ScriptableObject`-based)
+- [World terraforming](../v7-itchio/Assets/Code/Player/Terraformer.cs) (breakable & placeable tiles) — *abandoned feature*
+- [Custom Rule Tiles](../v7-itchio/Assets/Code/Data/Tiles/CustomRuleTileData.cs) for the world — *abandoned feature*
 
 <details><summary><h3>Plans</h3></summary>
 
