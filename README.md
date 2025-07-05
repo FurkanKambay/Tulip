@@ -1,44 +1,49 @@
-# Project Tulip
+<h1 align="center">
+  <img width="48px" src="Assets\Art\Sprites\Misc\TulipIcon_64px.png" alt="Tulip icon" />
+ Tulip
+</h1>
 
-[<img src="https://static.itch.io/images/badge-color.svg" height="48px"></img>](https://furkankambay.itch.io/tulip)
+[<img align="right" width="400px" src="https://img.itch.zone/aW1hZ2UvMjgyOTg2OS8xNzI4NjkzMS5naWY=/347x500/3zsHza.gif" alt="combat in Tulip">](https://furkankambay.itch.io/tulip)
 
-[<img src="https://img.itch.zone/aW1hZ2UvMjgyOTg2OS8xNzI4NjkzMS5naWY=/347x500/3zsHza.gif" width=400 alt="combat in Project Tulip">](https://furkankambay.itch.io/tulip)
-[<img src="https://img.itch.zone/aW1hZ2UvMjgyOTg2OS8xNzI4Njk3My5naWY=/347x500/UrMrAz.gif" width=400 alt="mining in Project Tulip">](https://furkankambay.itch.io/tulip)
+**Tulip** is an action-adventure platformer made in Unity. It is still a *work in progress* and currently serves primarily as a portfolio project. My goal is to create a compelling game world with satisfying combat and exploration.
 
-> [!TIP]
-> Play it on itch.io! 💚 [furkankambay.itch.io/tulip](https://furkankambay.itch.io/tulip)
+Originally, Tulip was heavily inspired by Terraria and featured a procedurally generated world with mining and building. However, I decided to move away from a sandbox in favor of a hand-crafted world after developing some exciting ideas for worldbuilding. Some of my biggest inspirations include games like Hollow Knight, Ori and the Blind Forest, V Rising, Divinity: Original Sin 2, Core Keeper, Wall World, Laika: Aged Through Blood, SteamWorld Dig, and Fallout *(even though I haven't played it—shout out to Tim Cain)*.
 
-**Project Tulip** is a platformer game, and it's still a work in progress and mainly a portfolio piece for now. I plan for it to have a compelling and immersive hand-crafted world and unique gameplay mechanics, and I'm very excited about all of it.
+<a href="https://furkankambay.itch.io/tulip">
+  <img width="180px" src="https://static.itch.io/images/badge-color.svg" alt="available on itch.io">
+</a>
 
-## Features
+## ⭐ Features
 
-### Systems & Mechanics
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/FurkanKambay/Tulip)
 
-- [Grappling hook](Assets/Code/Gameplay/HookLauncher.cs) mechanic
-- [Entity spawn constraints](Assets/Code/Data/SpawnConditionSO.cs): "only on safe blocks", "needs headroom", etc.
-- [Item swing motion](Assets/Code/Gameplay/ItemWielder.cs) config w/ editor tooling
+### ⚙️ Systems & Mechanics
+
 - [Melee combat](Assets/Code/Gameplay/WeaponWielder.cs): spear, axe
+- [Grappling hook](Assets/Code/Gameplay/HookLauncher.cs) mechanic
+- [Spawn constraints](Assets/Code/Data/SpawnConditionSO.cs): rules like "only on safe blocks", "needs headroom", etc.
+- [Item swing motion](Assets/Code/Gameplay/ItemWielder.cs) config with editor tooling
 - [Invulnerability frames](Assets/Code/Character/Health.cs)
 - [Status effects](Assets/Code/Data/StatusEffect.cs): health regen, bleed
 - [Enemy AI](Assets/Code/AI): walking, flying, attacking
-- [Hotbar](Assets/Code/UI/HotbarPresenter.cs) w/ slot locking
-- [Loot items](Assets/Code/Data/EntitySO.cs) on entities and tiles
+- [Hotbar](Assets/Code/UI/HotbarPresenter.cs) with slot locking
+- [Loot items](Assets/Code/Data/EntitySO.cs) for entities
 
-### Content
+### 👾 Content
 
 - [LDtk project](Assets/Level/LDtk): Blocks, walls, curtains
 - [Three-layer world](Assets/Code/GameWorld/World.cs) tilemap (background walls, blocks, foreground curtains)
 - [Entities](Assets/Prefabs/Characters): Treant mimic, flying skull, trees, generic walking enemy
 - [Items](Assets/Resources/Items): Weapons, tools, materials (ore, wood), tiles
 
-### Shaders & VFX
+### ✨ Shaders & VFX
 
-- [Portal Shader](Assets/Shaders/Realm.shadergraph): Shader for rendering two worlds through a portal *(not used for now)*
-- [Parallax Shader](Assets/Shaders/Parallax.shadergraph): Parallax background with cloud movement
+- [Portal Shader](Assets/Shaders/Realm.shadergraph): Shader for rendering two worlds through a portal *(unused)*
+- [Parallax Shader](Assets/Shaders/Parallax.shadergraph): Parallax background shader with moving cloud
 - [Sprite outline and dissolve](Assets/Shaders/Color%20Tint.shadergraph) shader
-- [Rain VFX](Assets/VFX/Rain.vfx): Rain in VFX Graph, configurable *(unavailable on WebGL)*
+- [Rain VFX](Assets/VFX/Rain.vfx): Rain in VFX Graph, configurable *(not supported on WebGL)*
 
-### User Interface (UI Toolkit)
+### 📱 User Interface (UI Toolkit)
 
 - [Menus](Assets/UI/Documents) | [Hotbar HUD](Assets/UI/Documents/Hotbar.uxml) | [Death overlay](Assets/UI/Documents/DeathOverlay.uxml)
 - [Data bindings](Assets/UI/Documents/SettingsMenu.uxml) using the MVP pattern
@@ -46,7 +51,7 @@
 - [Template](Assets/UI/Templates/HotbarSlot.uxml) for hotbar item slots
 - [Custom styling](Assets/UI/Styles) for default Unity UITK controls like `DropdownField`, `TabView` via `.unity-` USS classes
 
-### Audio (FMOD)
+### 🎵 Audio (FMOD)
 
 - [FMOD project source](FMODProject) included
 - [Footstep sounds](Assets/Code/Audio/FootstepAudio.cs) for the player and enemies
@@ -54,7 +59,7 @@
 - [Audio volume options](Assets/Code/Core/Settings.Audio.cs) in game
 - **Positional audio** in 2D space
 
-### Other
+### 🔧 Miscellaneous
 
 - **Async** and `Awaitable` usage
 - [Input System](Assets/Settings/Input%20Actions.inputactions) usage
@@ -63,20 +68,15 @@
 - [World terraforming](../v7-itchio/Assets/Code/Player/Terraformer.cs) (breakable & placeable tiles) — *abandoned feature*
 - [Custom Rule Tiles](../v7-itchio/Assets/Code/Data/Tiles/CustomRuleTileData.cs) for the world — *abandoned feature*
 
-<details><summary><h3>Plans</h3></summary>
+<details><summary><h3>💡 Planned</h3></summary>
 
-- hand-crafted world
-- ranged weapon
-- rain mechanic
-- a couple more enemies
-- better enemy AI
-- NPCs
+- A hand-crafted world
+- Rain system
+- More equipments, weapon types
+- More enemies, NPCs
+- Better enemy AI
 
 </details>
-
-## Inspirations
-
-Project Tulip was originally inspired by Terraria, but I'm moving away from the procedurally generated sandbox idea in favor of a hand-crafted world after I had some exciting ideas for worldbuilding. Games like Hollow Knight, Ori and the Blind Forest, V Rising, Divinity: Original Sin 2, Core Keeper, Wall World, Laika: Aged Through Blood, SteamWorld Dig, and Fallout *(even though I haven't played it—shout out Tim Cain)*, are some of the biggest inspirations for it. I can't say for certain that the final game will be inspired by these games in any way, but I'm sure the inspirations will show themselves once the game reaches a certain point in development. I'm aiming for compelling worldbuilding, satisfying combat, and interesting characters.
 
 ## Game Design
 
@@ -84,4 +84,4 @@ I have a lot of notes on different design aspects like narrative, system mechani
 
 ## Art & Sound
 
-The art direction/style is not finalized. I'm using placeholder assets that seem to go well enough together for the time being. Same with music and sound effects. I made some placeholder art and paid for some others (see [ATTRIBUTIONS](ATTRIBUTIONS.md)), but the paid assets aren't available on GitHub because I can't share the source files. The itch.io builds use the paid assets as expected, though! I bought a MIDI keyboard to learn music, which may not have been the smartest investment, but surely I'll make some progress one day.
+The art direction/style is not finalized. I'm using placeholder assets that seem to go well enough together for the time being. Same with music and sound effects. I purchased some assets ([ATTRIBUTIONS](ATTRIBUTIONS.md)) and made some placeholder art myself, but the paid assets aren't available on the public repo since I can't share the source files. The itch.io builds use the paid assets as expected, though! I also bought a MIDI keyboard to learn music, which may not have been the smartest investment, but surely I'll make some progress one day.
