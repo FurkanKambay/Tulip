@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _internalIconsTexture: {fileID: 0}
+  _revertOverridesInScene: 1
