@@ -19,7 +19,7 @@
       "hash": "082d07b28d0c113af08e60a10fc8af13b866e7a0"
     },
     "com.needle.console": {
-      "version": "2.4.2",
+      "version": "2.5.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -40,7 +40,7 @@
       "hash": "58c8883d28066467898fbfd4f5c64f136af31175"
     },
     "com.unity.2d.aseprite": {
-      "version": "2.0.1",
+      "version": "2.0.2",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -160,7 +160,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.project-auditor": {
-      "version": "1.0.1",
+      "version": "1.0.2",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -274,7 +274,7 @@
       "url": "https://package.openupm.com"
     },
     "today.comes.saintsfield": {
-      "version": "4.7.0",
+      "version": "4.32.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
