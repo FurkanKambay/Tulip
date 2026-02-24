@@ -30,6 +30,7 @@ Packages/packages-lock.json linguist-generated
 *.tss                       eol=lf linguist-language=css diff=css
 *.uss                       eol=lf linguist-language=css diff=css
 *.uxml                      eol=lf linguist-language=xml linguist-detectable
+*.xsd                       eol=lf linguist-generated
 
 # Unity YAML files
 *.anim                      unity-yaml
