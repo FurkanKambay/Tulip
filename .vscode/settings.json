@@ -62,6 +62,11 @@
     ],
     "conventionalCommits.gitmoji": false,
     "conventionalCommits.promptFooter": false,
+    "conventionalCommitBuilder.template": "<type><scope>: <description>",
+    "conventionalCommitBuilder.autoCommit": true,
+    "conventionalCommitBuilder.showCommit": true,
+    "conventionalCommitBuilder.customTypes": [],
+    "conventionalCommitBuilder.scopes": [],
     "commitlint.config.extend.rules": {
         "subject-case": [2, "never", ["sentence-case", "start-case", "pascal-case", "upper-case"]],
         "type-empty": [2, "never"]
