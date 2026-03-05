@@ -69,6 +69,7 @@ Material:
     - _EnableExternalAlpha: 0
     - _Value: 1
     m_Colors:
+    - White: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color_A: {r: 0.19697, g: 1, b: 0, a: 0}
     - _Color_B: {r: 1, g: 0, b: 0, a: 0}

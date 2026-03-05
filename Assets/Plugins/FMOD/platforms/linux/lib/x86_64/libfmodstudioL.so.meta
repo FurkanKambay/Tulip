@@ -11,6 +11,10 @@ PluginImporter:
   isExplicitlyReferenced: 0
   validateReferences: 1
   platformData:
+    Android:
+      enabled: 0
+      settings:
+        Is16KbAligned: false
     Any:
       enabled: 0
       settings: {}

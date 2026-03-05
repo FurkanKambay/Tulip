@@ -26,6 +26,6 @@ MonoBehaviour:
     turnDelta: -165
     turnDuration: 0.1
   usedBy:
+  - {fileID: 11400000, guid: 22ec4c4f083c86443ad2f80233e2466e, type: 2}
   - {fileID: 11400000, guid: 5efcb26fcf7c35443bfebf105a319f3d, type: 2}
   - {fileID: 11400000, guid: c478888b16953144286cffad52968cc0, type: 2}
-  - {fileID: 11400000, guid: 22ec4c4f083c86443ad2f80233e2466e, type: 2}

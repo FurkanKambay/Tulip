@@ -63,6 +63,7 @@ Material:
     - _Reveal_Radius: 10
     - _Saturation: 1
     m_Colors:
+    - White: {r: 1, g: 1, b: 1, a: 1}
     - _Player_Position: {r: 0, g: 1, b: 0, a: 0}
     - _Portal_Ceiling: {r: 3, g: 4, b: 0, a: 0}
     - _Portal_Floor: {r: 3, g: 0, b: 0, a: 0}

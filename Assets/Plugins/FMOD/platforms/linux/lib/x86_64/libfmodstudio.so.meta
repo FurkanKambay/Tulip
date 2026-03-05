@@ -1,15 +1,21 @@
 fileFormatVersion: 2
 guid: 9063aa11b1fcfcf4cb6030a076d14a30
 PluginImporter:
-  serializedVersion: 1
+  externalObjects: {}
+  serializedVersion: 3
   iconMap: {}
   executionOrder: {}
+  defineConstraints: []
   isPreloaded: 0
+  isOverridable: 0
+  isExplicitlyReferenced: 0
+  validateReferences: 1
   platformData:
     Android:
       enabled: 0
       settings:
         CPU: AnyCPU
+        Is16KbAligned: false
     Any:
       enabled: 0
       settings: {}
@@ -19,34 +25,14 @@ PluginImporter:
         CPU: x86_64
         DefaultValueInitialized: true
         OS: AnyOS
-    Linux:
-      enabled: 0
-      settings:
-        CPU: None
     Linux64:
       enabled: 1
       settings:
         CPU: x86_64
-    LinuxUniversal:
-      enabled: 1
-      settings:
-        CPU: AnyCPU
-    OSXIntel:
-      enabled: 0
-      settings:
-        CPU: None
-    OSXIntel64:
-      enabled: 0
-      settings:
-        CPU: None
     OSXUniversal:
       enabled: 0
       settings:
         CPU: None
-    SamsungTV:
-      enabled: 0
-      settings:
-        STV_MODEL: STANDARD_15
     Win:
       enabled: 0
       settings:

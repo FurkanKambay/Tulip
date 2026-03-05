@@ -20,12 +20,15 @@ MonoBehaviour:
     rid: 6046734815672926208
   m_OverrideGlobalSceneList: 0
   m_Scenes: []
+  m_HasScriptingDefines: 0
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings: []
   references:
     version: 2
     RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
     - rid: 6046734815672926208
       type: {class: WebGLPlatformSettings, ns: UnityEditor.WebGL, asm: UnityEditor.WebGL.Extensions}
       data:
