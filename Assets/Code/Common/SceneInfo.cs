@@ -23,6 +23,12 @@ namespace Furkan.Common
         public SceneInfo(int buildIndex) =>
             BuildIndex = buildIndex;
 
+        public IEnumerator LoadAsync(LoadSceneMode loadSceneMode = LoadSceneMode.Additive)
+        {
+            yield return SceneManager.LoadSceneAsync(BuildIndex, loadSceneMode);
+            yield return null;
+        }
+
         public IEnumerator PreloadAsync(LoadSceneMode loadSceneMode = LoadSceneMode.Additive)
         {
             Assert.IsNull(AsyncOperation);

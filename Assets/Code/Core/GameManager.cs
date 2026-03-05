@@ -65,12 +65,15 @@ namespace Tulip.Core
 
         private IEnumerator Start()
         {
-            yield return mainMenuSceneInfo.PreloadAsync(LoadSceneMode.Single);
-
-            if (showSplashScreen || !Application.isEditor)
+            if (!showSplashScreen || Application.isEditor)
+                yield return mainMenuSceneInfo.LoadAsync(LoadSceneMode.Single);
+            else
+            {
+                yield return mainMenuSceneInfo.PreloadAsync(LoadSceneMode.Single);
                 yield return new WaitForSecondsRealtime(splashScreenDuration);
+                yield return mainMenuSceneInfo.ActivateScene();
+            }
 
-            yield return mainMenuSceneInfo.ActivateScene();
             yield return gameSceneInfo.PreloadAsync();
 
             Resources.UnloadUnusedAssets();
