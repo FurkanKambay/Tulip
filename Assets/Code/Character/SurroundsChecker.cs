@@ -49,6 +49,8 @@ namespace Tulip.Character
 
         private void Update()
         {
+            if (!world) return;
+
             Vector3 position = entityTransform.position + (Vector3.down * 0.2f);
             WorldTileSO groundTile = world.GetTileAtWorld(position, TileType.Block);
             GroundMaterial = groundTile ? groundTile.Material : GroundMaterial.Nothing;

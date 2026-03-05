@@ -24,6 +24,8 @@ namespace Tulip.GameWorld
         private void Update()
         {
             World world = player.Entity.World;
+            if (!world) return;
+
             Vector2Int playerCell = world.WorldToCell(Position);
             bool hasCurtain = world.HasTile(playerCell, TileType.Curtain);
             Location = hasCurtain ? EntityLocation.Indoors : EntityLocation.Outdoors;
