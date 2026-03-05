@@ -59,6 +59,8 @@ namespace Tulip.Gameplay
 
         private void SetPosition()
         {
+            if (!world) return;
+
             Vector2Int cell = world.WorldToCell(respawnPosition);
 
             while (!world.CanAccommodate(cell, entity.EntitySO.Size))
