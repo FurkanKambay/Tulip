@@ -1,9 +1,7 @@
-#if UNITY_EDITOR
-
 using UnityEditor;
 using UnityEditor.SceneManagement;
 
-namespace Tulip.Core.Editor
+namespace Tulip.Editor
 {
     [InitializeOnLoad]
     internal class UnityEditorSceneManager
@@ -15,5 +13,3 @@ namespace Tulip.Core.Editor
         }
     }
 }
-
-#endif
