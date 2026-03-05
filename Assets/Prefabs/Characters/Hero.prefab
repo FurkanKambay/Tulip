@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4550549399932287733}
   - component: {fileID: 4728014676095277497}
+  - component: {fileID: 4060362864870097847}
   m_Layer: 6
   m_Name: Inventory
   m_TagString: Untagged
@@ -29,8 +30,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4170252602180971364}
+  m_Children: []
   m_Father: {fileID: 8291246366843984804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4728014676095277497
@@ -47,55 +47,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Tulip.Character.Inventory, Tulip
   inventorySO: {fileID: 11400000, guid: 1265edbba7f76c84ba1e9ba37adf7f80, type: 2}
   capacity: 27
---- !u!1 &1465944716965273975
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 773255341665486761}
-  - component: {fileID: 2609030180661286187}
-  m_Layer: 6
-  m_Name: Jumping
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &773255341665486761
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1465944716965273975}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2406110100625540716}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2609030180661286187
+--- !u!114 &4060362864870097847
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1465944716965273975}
+  m_GameObject: {fileID: 636144049404075224}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c841a85edce250b4ab7200bbc1d11405, type: 3}
+  m_Script: {fileID: 11500000, guid: e7a83657788b4d00b2b3999985303765, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Character.CharacterJump, Tulip
-  config: {fileID: 11400000, guid: f39354fa9ff53cf40af11ca8a3802dee, type: 2}
-  body: {fileID: 7560684870690709998}
+  m_EditorClassIdentifier: Tulip.Player.PlayerHotbar, Tulip
+  inventory: {fileID: 4728014676095277497}
+  size: 9
   brain:
     <V>k__BackingField: {fileID: 3825264036527423534}
-  surrounds: {fileID: 7131764425725607556}
 --- !u!1 &1673359338847146882
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,6 +74,9 @@ GameObject:
   - component: {fileID: 2526430196951330804}
   - component: {fileID: 4019848646787942259}
   - component: {fileID: 6461720170399778386}
+  - component: {fileID: 6683718755283767640}
+  - component: {fileID: 5177551996143183725}
+  - component: {fileID: 6789117360418484230}
   m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
@@ -126,9 +96,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2045110054226266640}
-  - {fileID: 2273530516925830145}
+  m_Children: []
   m_Father: {fileID: 8291246366843984804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4019848646787942259
@@ -212,6 +180,54 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6683718755283767640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673359338847146882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4f553feb02c43d89fb4aee499dcebec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Tulip.Character.ActorAnimator, Tulip
+  health: {fileID: 7186377946535505526}
+  animator: {fileID: 6461720170399778386}
+  movement: {fileID: 3529033824618618864}
+  jumper: {fileID: 143225856469302180}
+--- !u!114 &5177551996143183725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673359338847146882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3945025d2a24a429219de59262fec46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Tulip.Character.CharacterFacer, Tulip
+  sprite: {fileID: 4019848646787942259}
+  brain:
+    <V>k__BackingField: {fileID: 3825264036527423534}
+--- !u!114 &6789117360418484230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673359338847146882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b324a67502194656b9a9e6e8f4578cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Tulip.Character.CharacterHealthEffects, Tulip
+  health: {fileID: 7186377946535505526}
+  sprite: {fileID: 4019848646787942259}
+  destroyAfterDeath: 0
+  hurtVisualDuration: 0.1
+  dissolveDuration: 2
 --- !u!1 &1756383176556222544
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +298,7 @@ GameObject:
   - component: {fileID: 4935071018656671294}
   m_Layer: 6
   m_Name: = Aesthetics
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -302,54 +318,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8291246366843984804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2684818297632639724
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4170252602180971364}
-  - component: {fileID: 3160445657362363712}
-  m_Layer: 6
-  m_Name: Hotbar
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4170252602180971364
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2684818297632639724}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4550549399932287733}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3160445657362363712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2684818297632639724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7a83657788b4d00b2b3999985303765, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Tulip.Player.PlayerHotbar, Tulip
-  inventory: {fileID: 4728014676095277497}
-  size: 9
-  brain:
-    <V>k__BackingField: {fileID: 3825264036527423534}
 --- !u!1 &2788958634118158446
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,41 +460,6 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
---- !u!1 &2840953283907929685
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2406110100625540716}
-  m_Layer: 6
-  m_Name: '- Actor'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2406110100625540716
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2840953283907929685}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6244475172154510034}
-  - {fileID: 4929294371222702274}
-  - {fileID: 773255341665486761}
-  - {fileID: 4482525857393010066}
-  m_Father: {fileID: 8291246366843984804}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2859632988072890709
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,7 +474,7 @@ GameObject:
   - component: {fileID: 963390074723932652}
   - component: {fileID: 8314659605633864835}
   m_Layer: 6
-  m_Name: Player
+  m_Name: Hero
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -560,17 +493,16 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1162442150028761475}
+  - {fileID: 7418916429816175610}
+  - {fileID: 675216069614134305}
+  - {fileID: 4929294371222702274}
+  - {fileID: 4550549399932287733}
+  - {fileID: 7571352512502860783}
   - {fileID: 4935071018656671294}
   - {fileID: 2526430196951330804}
   - {fileID: 7872146977082120335}
   - {fileID: 782185684793632868}
-  - {fileID: 7418916429816175610}
-  - {fileID: 675216069614134305}
-  - {fileID: 1162442150028761475}
-  - {fileID: 2406110100625540716}
-  - {fileID: 4550549399932287733}
-  - {fileID: 7571352512502860783}
-  - {fileID: 1131664225070829904}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &270610127142405494
@@ -675,88 +607,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Tulip.GameWorld.EntityLocationDeterminer, Tulip
   player: {fileID: 7186377946535505526}
---- !u!1 &3054966189977091430
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2273530516925830145}
-  - component: {fileID: 4490995052189427159}
-  m_Layer: 6
-  m_Name: Health Effects
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2273530516925830145
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3054966189977091430}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2526430196951330804}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4490995052189427159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3054966189977091430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b324a67502194656b9a9e6e8f4578cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Tulip.Character.CharacterHealthEffects, Tulip
-  health: {fileID: 7186377946535505526}
-  sprite: {fileID: 4019848646787942259}
-  destroyAfterDeath: 0
-  hurtVisualDuration: 0.1
-  dissolveDuration: 2
---- !u!1 &3237863389822308978
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4482525857393010066}
-  m_Layer: 6
-  m_Name: '- Movement Extras'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4482525857393010066
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3237863389822308978}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 657837683345907088}
-  - {fileID: 6279989580983040525}
-  m_Father: {fileID: 2406110100625540716}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3484316326350008886
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,9 +616,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4929294371222702274}
+  - component: {fileID: 8163165118725034582}
   - component: {fileID: 3529033824618618864}
+  - component: {fileID: 143225856469302180}
+  - component: {fileID: 6892111300499175154}
+  - component: {fileID: 2621862986274042954}
   m_Layer: 6
-  m_Name: Movement
+  m_Name: Locomotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -782,13 +636,36 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3484316326350008886}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2406110100625540716}
+  m_Father: {fileID: 8291246366843984804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8163165118725034582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3484316326350008886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb02de31839e9a4da59ca29b4bafbc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Tulip.Character.SurroundsChecker, Tulip
+  collider: {fileID: 270610127142405494}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  groundRange: 0.5
+  groundWidth: 0.35
+  sidesLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  sideRange: 0.5
+  sideHeight: 0.5
 --- !u!114 &3529033824618618864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -804,8 +681,65 @@ MonoBehaviour:
   body: {fileID: 7560684870690709998}
   brain:
     <V>k__BackingField: {fileID: 3825264036527423534}
-  surrounds: {fileID: 7131764425725607556}
+  surrounds: {fileID: 8163165118725034582}
   config: {fileID: 11400000, guid: 8d2ea2dc215d77946b11e690ac378276, type: 2}
+--- !u!114 &143225856469302180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3484316326350008886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c841a85edce250b4ab7200bbc1d11405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Tulip.Character.CharacterJump, Tulip
+  config: {fileID: 11400000, guid: f39354fa9ff53cf40af11ca8a3802dee, type: 2}
+  body: {fileID: 7560684870690709998}
+  brain:
+    <V>k__BackingField: {fileID: 3825264036527423534}
+  surrounds: {fileID: 8163165118725034582}
+--- !u!114 &6892111300499175154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3484316326350008886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 785fc94a52e464e498ccf96036b19f0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Tulip.Character.Dasher, Tulip
+  body: {fileID: 7560684870690709998}
+  brain:
+    <V>k__BackingField: {fileID: 3825264036527423534}
+  dashSpeed: 20
+  dashCooldown: 1.5
+  forceMode: 1
+--- !u!114 &2621862986274042954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3484316326350008886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7afe272b9283491fbd9e998a37c1bf5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Tulip.Character.AutoStepper, Tulip
+  entity: {fileID: 963390074723932652}
+  body: {fileID: 7560684870690709998}
+  movement: {fileID: 3529033824618618864}
+  surrounds: {fileID: 8163165118725034582}
+  stepHeight: 2
+  stepWidth: 0.6
+  stepSpeed: {x: 30, y: 30}
+  velocityThreshold: 1
+  range: 0.7
+  offset: {x: 0, y: 0.2, z: 0}
 --- !u!1 &3500122598979994782
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,6 +750,9 @@ GameObject:
   m_Component:
   - component: {fileID: 675216069614134305}
   - component: {fileID: 7186377946535505526}
+  - component: {fileID: 3475156619484117085}
+  - component: {fileID: 8170777504329617373}
+  - component: {fileID: 5150696069172137415}
   m_Layer: 0
   m_Name: Health
   m_TagString: Untagged
@@ -835,8 +772,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4948636615526416478}
+  m_Children: []
   m_Father: {fileID: 8291246366843984804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7186377946535505526
@@ -855,6 +791,53 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 100
   invulnerabilityDuration: 0.5
+--- !u!114 &3475156619484117085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3500122598979994782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7730e59ce554b269d2d3fbc8cee158a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Tulip.Gameplay.Knockbackable, Tulip
+  body: {fileID: 7560684870690709998}
+  health: {fileID: 7186377946535505526}
+  hurtForceAmount: 10
+  deathForceAmount: 20
+--- !u!114 &8170777504329617373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3500122598979994782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79dfb4601184a65a64c065451e86ac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Tulip.Data.StatusEffector, Tulip
+  health: {fileID: 7186377946535505526}
+  startingEffects:
+  - {fileID: 11400000, guid: d3a3cb747daf3b64aaee37205c72fce8, type: 2}
+--- !u!114 &5150696069172137415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3500122598979994782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba2b896b557446e890bfeb8085addabc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Tulip.Gameplay.Respawner, Tulip
+  health: {fileID: 7186377946535505526}
+  autoRespawn: 1
+  respawnDelay: 3
+  respawnPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &3988847855271664023
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,7 +927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Tulip.Audio.FootstepAudio, Tulip
   movement:
     <V>k__BackingField: {fileID: 3529033824618618864}
-  surrounds: {fileID: 7131764425725607556}
+  surrounds: {fileID: 8163165118725034582}
   footstepEvent:
     Guid:
       Data1: 1512845316
@@ -966,7 +949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718e717e21744e409af570a066c14d23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Audio.DasherAudio, Tulip
-  dasher: {fileID: 4134643785638296798}
+  dasher: {fileID: 6892111300499175154}
   dashEvent:
     Guid:
       Data1: 1739327884
@@ -974,54 +957,6 @@ MonoBehaviour:
       Data3: 1034766488
       Data4: -321411513
     Path: event:/SFX/Entities/Dash
---- !u!1 &4068249101980331751
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1131664225070829904}
-  - component: {fileID: 7714693470157540598}
-  m_Layer: 6
-  m_Name: Respawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1131664225070829904
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4068249101980331751}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8291246366843984804}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7714693470157540598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4068249101980331751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba2b896b557446e890bfeb8085addabc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Tulip.Gameplay.Respawner, Tulip
-  health: {fileID: 7186377946535505526}
-  autoRespawn: 1
-  respawnDelay: 3
-  respawnPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &4949441114708843498
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,7 +969,7 @@ GameObject:
   - component: {fileID: 2855850962002405892}
   - component: {fileID: 1339656561824154237}
   m_Layer: 6
-  m_Name: Health Bar
+  m_Name: HP Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1130,85 +1065,6 @@ MonoBehaviour:
   healthBarSprite: {fileID: 2855850962002405892}
   changeSpeed: 10
   showBar: 1
---- !u!1 &5176397070243155315
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7236926973397678827}
-  - component: {fileID: 4648012412397582918}
-  - component: {fileID: 5432897673710594817}
-  m_Layer: 6
-  m_Name: Combat
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7236926973397678827
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5176397070243155315}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7571352512502860783}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4648012412397582918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5176397070243155315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be49605a98e97be4f8107b2403c172b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Tulip.Gameplay.WeaponWielder, Tulip
-  health: {fileID: 7186377946535505526}
-  itemWielder: {fileID: 647329674294491017}
-  inventory: {fileID: 4728014676095277497}
-  hitContactFilter:
-    useTriggers: 0
-    useLayerMask: 1
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 1672
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  maxHitsPerRaycast: 9
---- !u!114 &5432897673710594817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5176397070243155315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7730e59ce554b269d2d3fbc8cee158a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Tulip.Gameplay.Knockbackable, Tulip
-  body: {fileID: 7560684870690709998}
-  health: {fileID: 7186377946535505526}
-  hurtForceAmount: 10
-  deathForceAmount: 20
 --- !u!1 &5469766544413122949
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,61 +1156,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
---- !u!1 &5546766619541751691
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6244475172154510034}
-  - component: {fileID: 7131764425725607556}
-  m_Layer: 6
-  m_Name: Surrounds
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6244475172154510034
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5546766619541751691}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2406110100625540716}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7131764425725607556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5546766619541751691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcb02de31839e9a4da59ca29b4bafbc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Tulip.Character.SurroundsChecker, Tulip
-  collider: {fileID: 270610127142405494}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  groundRange: 0.5
-  groundWidth: 0.35
-  sidesLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  sideRange: 0.5
-  sideHeight: 0.5
 --- !u!1 &5985570404151572858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,6 +1166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7571352512502860783}
   - component: {fileID: 647329674294491017}
+  - component: {fileID: 6477564572302283646}
   m_Layer: 6
   m_Name: Wielder
   m_TagString: Untagged
@@ -1385,7 +1187,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7236926973397678827}
   - {fileID: 8558462109558155814}
   - {fileID: 5170996385232603194}
   m_Father: {fileID: 8291246366843984804}
@@ -1405,59 +1206,42 @@ MonoBehaviour:
   health: {fileID: 7186377946535505526}
   brain:
     <V>k__BackingField: {fileID: 3825264036527423534}
-  hotbar: {fileID: 3160445657362363712}
+  hotbar: {fileID: 4060362864870097847}
   itemRenderer: {fileID: 3639728673497933778}
   fallbackStack:
     itemSO: {fileID: 0}
     isLocked: 0
     amount: 0
---- !u!1 &6609697852333061365
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4948636615526416478}
-  - component: {fileID: 7000443030683698493}
-  m_Layer: 0
-  m_Name: Statuses
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4948636615526416478
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6609697852333061365}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 675216069614134305}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7000443030683698493
+--- !u!114 &6477564572302283646
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6609697852333061365}
+  m_GameObject: {fileID: 5985570404151572858}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79dfb4601184a65a64c065451e86ac9, type: 3}
+  m_Script: {fileID: 11500000, guid: be49605a98e97be4f8107b2403c172b5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Data.StatusEffector, Tulip
+  m_EditorClassIdentifier: Tulip.Gameplay.WeaponWielder, Tulip
   health: {fileID: 7186377946535505526}
-  startingEffects:
-  - {fileID: 11400000, guid: d3a3cb747daf3b64aaee37205c72fce8, type: 2}
+  itemWielder: {fileID: 647329674294491017}
+  inventory: {fileID: 4728014676095277497}
+  hitContactFilter:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 1672
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  maxHitsPerRaycast: 9
 --- !u!1 &6894367109635369327
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,7 +1307,7 @@ GameObject:
   - component: {fileID: 7418916429816175610}
   m_Layer: 6
   m_Name: = Gameplay
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1543,174 +1327,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8291246366843984804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7634134730077779123
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2045110054226266640}
-  - component: {fileID: 6595930055843492387}
-  - component: {fileID: 1273803533565988894}
-  m_Layer: 6
-  m_Name: Animation
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2045110054226266640
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7634134730077779123}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2526430196951330804}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6595930055843492387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7634134730077779123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4f553feb02c43d89fb4aee499dcebec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Tulip.Character.ActorAnimator, Tulip
-  health: {fileID: 7186377946535505526}
-  animator: {fileID: 6461720170399778386}
-  movement: {fileID: 3529033824618618864}
-  jumper: {fileID: 2609030180661286187}
---- !u!114 &1273803533565988894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7634134730077779123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3945025d2a24a429219de59262fec46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Tulip.Character.CharacterFacer, Tulip
-  sprite: {fileID: 4019848646787942259}
-  brain:
-    <V>k__BackingField: {fileID: 3825264036527423534}
---- !u!1 &7919986324676621856
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 657837683345907088}
-  - component: {fileID: 8960991211226391304}
-  m_Layer: 6
-  m_Name: Auto Stepper
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &657837683345907088
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7919986324676621856}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4482525857393010066}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8960991211226391304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7919986324676621856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7afe272b9283491fbd9e998a37c1bf5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Tulip.Character.AutoStepper, Tulip
-  entity: {fileID: 963390074723932652}
-  body: {fileID: 7560684870690709998}
-  movement: {fileID: 3529033824618618864}
-  surrounds: {fileID: 7131764425725607556}
-  stepHeight: 2
-  stepWidth: 0.6
-  stepSpeed: {x: 30, y: 30}
-  velocityThreshold: 1
-  range: 0.7
-  offset: {x: 0, y: 0.2, z: 0}
---- !u!1 &8511365234717640223
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6279989580983040525}
-  - component: {fileID: 4134643785638296798}
-  m_Layer: 6
-  m_Name: Dasher
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6279989580983040525
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8511365234717640223}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4482525857393010066}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4134643785638296798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8511365234717640223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 785fc94a52e464e498ccf96036b19f0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Tulip.Character.Dasher, Tulip
-  body: {fileID: 7560684870690709998}
-  brain:
-    <V>k__BackingField: {fileID: 3825264036527423534}
-  dashSpeed: 20
-  dashCooldown: 1.5
-  forceMode: 1
 --- !u!1 &8809969866287856108
 GameObject:
   m_ObjectHideFlags: 0

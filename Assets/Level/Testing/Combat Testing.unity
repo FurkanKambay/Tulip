@@ -691,18 +691,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3586279575814117517, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4728014676095277497, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
       propertyPath: inventorySO
       value: 
       objectReference: {fileID: 11400000, guid: d92bff51ac01705478bd12e9f7fb82e1, type: 2}
-    - target: {fileID: 5432897673710594817, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7186377946535505526, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -719,7 +711,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1105140269 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3160445657362363712, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4060362864870097847, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
   m_PrefabInstance: {fileID: 1105140267}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

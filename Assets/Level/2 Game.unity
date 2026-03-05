@@ -5170,6 +5170,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992d83c1bd31b8b41aec2663aa6ead9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Character.Health, Tulip
+--- !u!114 &664534665 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5150696069172137415, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
+  m_PrefabInstance: {fileID: 1154427126}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba2b896b557446e890bfeb8085addabc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Tulip.Gameplay.Respawner, Tulip
 --- !u!1 &708079353
 GameObject:
   m_ObjectHideFlags: 0
@@ -5240,7 +5251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Tulip.UI.HotbarPresenter, Tulip
   document: {fileID: 708079354}
-  hotbar: {fileID: 1154427127}
+  hotbar: {fileID: 1428820023}
   hotbarSfx: {fileID: 708079358}
   tooltipShowDuration: 2000
   tooltipSlideDuration: 100
@@ -5581,17 +5592,6 @@ Transform:
   - {fileID: 440009063}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1051015082 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7714693470157540598, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
-  m_PrefabInstance: {fileID: 1154427126}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba2b896b557446e890bfeb8085addabc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Tulip.Gameplay.Respawner, Tulip
 --- !u!1001 &1154427126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5604,10 +5604,6 @@ PrefabInstance:
       propertyPath: world
       value: 
       objectReference: {fileID: 661774619}
-    - target: {fileID: 2859632988072890709, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 8291246366843984804, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
@@ -5625,17 +5621,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
---- !u!114 &1154427127 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3160445657362363712, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
-  m_PrefabInstance: {fileID: 1154427126}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7a83657788b4d00b2b3999985303765, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Tulip.Player.PlayerHotbar, Tulip
 --- !u!114 &1154427129 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8314659605633864835, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
@@ -5717,7 +5702,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Tulip.UI.DeathOverlayPresenter, Tulip
   document: {fileID: 1406129968}
   health: {fileID: 664534664}
-  respawner: {fileID: 1051015082}
+  respawner: {fileID: 664534665}
+--- !u!114 &1428820023 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4060362864870097847, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
+  m_PrefabInstance: {fileID: 1154427126}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7a83657788b4d00b2b3999985303765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Tulip.Player.PlayerHotbar, Tulip
 --- !u!1 &1492625892
 GameObject:
   m_ObjectHideFlags: 0
