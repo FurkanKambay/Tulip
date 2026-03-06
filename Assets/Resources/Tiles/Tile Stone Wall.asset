@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f0cf03d5bb94472a4080d98f2b505aa, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: Tile Stone Wall
-  m_EditorClassIdentifier: Tulip.Data.Tiles.CustomRuleTileSO, Tulip
+  m_EditorClassIdentifier: UnityEngine.RuleTile, Unity.2D.Tilemap.Extras
   m_DefaultSprite: {fileID: 178573413, guid: 1631614f4ac086d4dab5aab9a349e144, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 0
@@ -296,4 +296,3 @@ MonoBehaviour:
     - {x: -1, y: 0, z: 0}
     - {x: 1, y: 0, z: 0}
     m_RuleTransform: 0
-  <PlaceableSO>k__BackingField: {fileID: 11400000, guid: 0491a0de59d86f9408b7f2902c563f0e, type: 2}
