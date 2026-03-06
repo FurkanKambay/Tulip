@@ -382,7 +382,7 @@ GameObject:
   - component: {fileID: 1328625852}
   - component: {fileID: 1328625853}
   m_Layer: 0
-  m_Name: '@ Game Manager'
+  m_Name: "\U0001F579\uFE0F Game Manager"
   m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 1724351829}
   - component: {fileID: 1724351828}
   m_Layer: 0
-  m_Name: $ Settings Manager
+  m_Name: "\u2699\uFE0F Settings Manager"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -475,7 +475,7 @@ GameObject:
   - component: {fileID: 1760523203}
   - component: {fileID: 1760523204}
   m_Layer: 0
-  m_Name: $ Audio Bus Manager
+  m_Name: "\U0001F39A\uFE0F Audio Manager"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
