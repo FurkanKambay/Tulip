@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace Furkan.Common
 {
-    [CreateAssetMenu(menuName = "Events/Event Channel")]
-    public class EventChannelSO : ScriptableObject
+    [CreateAssetMenu(menuName = "Game Events/Basic")]
+    public class GameEvent : ScriptableObject
     {
         public event Action OnRaised;
 

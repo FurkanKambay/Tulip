@@ -11,9 +11,9 @@ namespace Tulip.GameWorld
     public sealed class WorldManager : MonoBehaviour
     {
         [Header("Events")]
-        [SerializeField] EventChannelSO newGameEvent;
-        [SerializeField] EventChannelSO continueGameEvent;
-        [SerializeField] EventChannelSO saveQuitEvent;
+        [SerializeField] GameEvent newGameEvent;
+        [SerializeField] GameEvent continueGameEvent;
+        [SerializeField] GameEvent saveQuitEvent;
 
         private void Awake() =>
             DontDestroyOnLoad(gameObject);

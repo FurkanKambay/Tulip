@@ -64,7 +64,7 @@ Originally, Tulip was heavily inspired by Terraria and featured a procedurally g
 - **Async** and `Awaitable` usage
 - [Input System](Assets/Settings/Input%20Actions.inputactions) usage
 - [Custom WebGL template](Assets/WebGLTemplates/Custom) to fix data persistence bug on web builds
-- [Event channels](Assets/Code/Common/EventChannelSO.cs) for some UI events (`ScriptableObject`-based)
+- [Event channels](Assets/Code/Common/GameEvent.cs) for some UI events (`ScriptableObject`-based)
 - [World terraforming](../v7-itchio/Assets/Code/Player/Terraformer.cs) (breakable & placeable tiles) — *abandoned feature*
 - [Custom Rule Tiles](../v7-itchio/Assets/Code/Data/Tiles/CustomRuleTileData.cs) for the world — *abandoned feature*
 
