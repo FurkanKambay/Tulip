@@ -2,6 +2,7 @@ using FMODUnity;
 using Furkan.Common;
 using SaintsField;
 using Tulip.Core;
+using Tulip.Data.GameEvents;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -9,12 +10,13 @@ namespace Tulip.UI
 {
     public sealed class MainMenuPresenter : MonoBehaviour
     {
-        [Header("References")]
-        [SerializeField, Required] UIDocument document;
-
-        [Header("Events")]
+        [Header("Game Events")]
+        [SerializeField, Required] GameStateChangeEvent gameStateChangeEvent;
         [SerializeField, Required] GameEvent newGameEvent;
         [SerializeField, Required] GameEvent continueGameEvent;
+
+        [Header("References")]
+        [SerializeField, Required] UIDocument document;
 
         private SettingsPresenter settingsPresenter;
         private VisualElement root;
@@ -29,13 +31,13 @@ namespace Tulip.UI
 
         private void OnEnable()
         {
-            GameStateChange.Event += GameState_Changed;
+            gameStateChangeEvent.OnRaised += GameState_Changed;
             settingsPresenter.OnToggled += Settings_Shown;
         }
 
         private void OnDisable()
         {
-            GameStateChange.Event -= GameState_Changed;
+            gameStateChangeEvent.OnRaised -= GameState_Changed;
             settingsPresenter.OnToggled -= Settings_Shown;
         }
 
@@ -74,7 +76,7 @@ namespace Tulip.UI
 
             // TODO: handle the audio elsewhere?
             RuntimeManager.CoreSystem.mixerSuspend();
-            newGameEvent.Raise();
+            newGameEvent.Raise(this);
             RuntimeManager.CoreSystem.mixerResume();
         }
 
@@ -84,7 +86,7 @@ namespace Tulip.UI
             continueButton.text = "Loading World";
 
             RuntimeManager.CoreSystem.mixerSuspend();
-            continueGameEvent.Raise();
+            continueGameEvent.Raise(this);
             RuntimeManager.CoreSystem.mixerResume();
         }
 

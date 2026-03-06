@@ -4,6 +4,7 @@ using SaintsField;
 using Tulip.Character;
 using Tulip.Core;
 using Tulip.Data;
+using Tulip.Data.GameEvents;
 using Unity.Properties;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -12,6 +13,9 @@ namespace Tulip.UI
 {
     public sealed class HotbarPresenter : MonoBehaviour
     {
+        [Header("Game Events")]
+        [SerializeField, Required] GameStateChangeEvent gameStateChangeEvent;
+
         [Header("References")]
         [SerializeField, Required] UIDocument document;
         [SerializeField, Required] Hotbar hotbar;
@@ -35,8 +39,8 @@ namespace Tulip.UI
         private VisualElement tooltipRoot;
         private int selectedIndex;
 
-        private void OnEnable() => GameStateChange.Event += GameState_Changed;
-        private void OnDisable() => GameStateChange.Event -= GameState_Changed;
+        private void OnEnable() => gameStateChangeEvent.OnRaised += GameState_Changed;
+        private void OnDisable() => gameStateChangeEvent.OnRaised -= GameState_Changed;
 
         private void Start() => RefreshDocument();
 

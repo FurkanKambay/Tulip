@@ -909,6 +909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72704d37797ebee40afab671ba602024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.UI.HotbarPresenter, Tulip
+  gameStateChangeEvent: {fileID: 11400000, guid: e546a51b5a993714f94816c29b5538fa, type: 2}
   document: {fileID: 1316435251}
   hotbar: {fileID: 1105140269}
   hotbarSfx: {fileID: 1316435252}

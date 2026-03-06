@@ -325,9 +325,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b14510e3ad34628b0f264c3030b5103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.UI.SettingsPresenter, Tulip
+  gameStateChangeEvent: {fileID: 11400000, guid: e546a51b5a993714f94816c29b5538fa, type: 2}
+  saveQuitEvent: {fileID: 11400000, guid: bfaf9c981cd952648a4499dcad8ab33c, type: 2}
   document: {fileID: 1795025821}
   brain: {fileID: 513751246}
-  saveQuitEvent: {fileID: 11400000, guid: bfaf9c981cd952648a4499dcad8ab33c, type: 2}
   toggleSfx:
     Guid:
       Data1: -161944796
@@ -478,6 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb555c45f48a4646994cc9ee2094a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Core.ReactToGameState, Tulip
+  gameStateChangeEvent: {fileID: 11400000, guid: e546a51b5a993714f94816c29b5538fa, type: 2}
   activeInMainMenu: 1
   activeInGame: 0
   activeInPauseMenu: 0
@@ -549,9 +551,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53aba4a0dc101a940a103699635d128b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.UI.MainMenuPresenter, Tulip
-  document: {fileID: 1808102682}
+  gameStateChangeEvent: {fileID: 11400000, guid: e546a51b5a993714f94816c29b5538fa, type: 2}
   newGameEvent: {fileID: 11400000, guid: d0558c11f89cfdd4892ca7e60865b401, type: 2}
   continueGameEvent: {fileID: 11400000, guid: fba74fa8cf4b436429a5ce6fbe4f2365, type: 2}
+  document: {fileID: 1808102682}
 --- !u!1001 &1852941727
 PrefabInstance:
   m_ObjectHideFlags: 0

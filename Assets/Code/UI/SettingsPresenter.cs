@@ -3,6 +3,7 @@ using FMODUnity;
 using Furkan.Common;
 using SaintsField;
 using Tulip.Core;
+using Tulip.Data.GameEvents;
 using Tulip.Input;
 using Unity.Properties;
 using UnityEngine;
@@ -17,12 +18,13 @@ namespace Tulip.UI
     {
         public event MenuToggleEvent OnToggled;
 
+        [Header("Game Events")]
+        [SerializeField, Required] GameStateChangeEvent gameStateChangeEvent;
+        [SerializeField, Required] GameEvent saveQuitEvent;
+
         [Header("References")]
         [SerializeField, Required] UIDocument document;
         [SerializeField, Required] UserBrain brain;
-
-        [Header("Events")]
-        [SerializeField] GameEvent saveQuitEvent;
 
         [Header("FMOD Events")]
         [SerializeField] EventReference toggleSfx;
@@ -85,7 +87,7 @@ namespace Tulip.UI
             root.visible = true;
             container.visible = false;
 
-            GameStateChange.Event += GameState_Changed;
+            gameStateChangeEvent.OnRaised += GameState_Changed;
         }
 
         private void OnDisable()
@@ -93,7 +95,7 @@ namespace Tulip.UI
             root.visible = false;
             container.visible = false;
 
-            GameStateChange.Event -= GameState_Changed;
+            gameStateChangeEvent.OnRaised -= GameState_Changed;
         }
 
         private void Update()
@@ -148,7 +150,7 @@ namespace Tulip.UI
             quitFlyoutButton.value = false;
             optionsButton.value = false;
 
-            saveQuitEvent.Raise();
+            saveQuitEvent.Raise(this);
         }
 
         private void QuitButton_Clicked(ClickEvent _) => GameManager.QuitGame();

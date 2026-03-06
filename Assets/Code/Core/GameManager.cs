@@ -3,6 +3,7 @@ using Furkan.Common;
 using JetBrains.Annotations;
 using SaintsField;
 using SaintsField.Playa;
+using Tulip.Data.GameEvents;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -21,6 +22,8 @@ namespace Tulip.Core
     [PublicAPI]
     public sealed class GameManager : MonoBehaviour
     {
+        [SerializeField, Required] GameStateChangeEvent gameStateChangeEvent;
+
         [LayoutGroup("/Main Menu Scene", ELayout.FoldoutBox)]
         [SaintsRow(true)]
         [SerializeField] SceneInfo mainMenuSceneInfo;
@@ -145,7 +148,7 @@ namespace Tulip.Core
             UpdateTimeScale();
             UpdateInputs();
 
-            GameStateChange.Raise(oldState, newState);
+            instance.gameStateChangeEvent.Raise(instance, oldState, newState);
 
             if (oldState is GameState.MainMenu)
                 instance.ActivateGameScene();

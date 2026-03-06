@@ -1,7 +1,9 @@
 using System.Threading.Tasks;
 using FMOD.Studio;
 using FMODUnity;
+using SaintsField;
 using Tulip.Core;
+using Tulip.Data.GameEvents;
 using UnityEngine;
 using Settings = Tulip.Core.Settings;
 
@@ -9,7 +11,11 @@ namespace Tulip.Audio
 {
     public sealed class AudioBusManager : MonoBehaviour
     {
-        [SerializeField] StudioListener fmodStudioListener;
+        [Header("Game Events")]
+        [SerializeField, Required] GameStateChangeEvent gameStateChangeEvent;
+
+        [Header("References")]
+        [SerializeField, Required] StudioListener fmodStudioListener;
 
         private Bus masterBus;
         private Bus musicBus;
@@ -30,13 +36,13 @@ namespace Tulip.Audio
         private void OnEnable()
         {
             Settings.OnUpdate += Settings_Updated;
-            GameStateChange.Event += GameState_Changed;
+            gameStateChangeEvent.OnRaised += GameState_Changed;
         }
 
         private void OnDisable()
         {
             Settings.OnUpdate -= Settings_Updated;
-            GameStateChange.Event -= GameState_Changed;
+            gameStateChangeEvent.OnRaised -= GameState_Changed;
         }
 
         private async void Start() => await UpdateVolumes();
