@@ -259,7 +259,6 @@ namespace Tulip.Gameplay
         }
 
 #region Motion Helpers
-
         private void SetMotionToPhase()
         {
             if (handStack.itemSO.IsNot(out UsableSO usableSO))
@@ -315,7 +314,6 @@ namespace Tulip.Gameplay
 
         private bool IsMotionDone() =>
             Mathf.Approximately(motion.LerpMove, 1) && Mathf.Approximately(motion.LerpTurn, 1);
-
 #endregion
 
         private void SetSpriteTransformInstant(Vector2 targetPosition, float targetAngle) =>

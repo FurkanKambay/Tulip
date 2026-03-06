@@ -114,7 +114,6 @@ namespace Tulip.Gameplay
             }
         }
 
-
         [Button, LayoutEnd]
         private void DestroyAllSpawns()
         {

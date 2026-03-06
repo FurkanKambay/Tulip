@@ -1,6 +1,4 @@
 using System;
-using Unity.Properties;
-using UnityEngine;
 
 namespace Tulip.Core
 {

@@ -76,8 +76,8 @@ namespace Tulip.Character
             Vector2Int cell3 = cell2 + (velocity < 0 ? Vector2Int.right : Vector2Int.left);
 
             bool isObstructed = entity.World.HasTile(cell1, TileType.Block)
-                                || entity.World.HasTile(cell2, TileType.Block)
-                                || entity.World.HasTile(cell3, TileType.Block);
+                || entity.World.HasTile(cell2, TileType.Block)
+                || entity.World.HasTile(cell3, TileType.Block);
 
             if (isObstructed)
                 return AutoStepDirection.None;

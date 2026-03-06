@@ -9,7 +9,6 @@ namespace Tulip.Data
     public struct UsePhase
     {
         [LayoutGroup(".", ELayout.Background)]
-
         [LayoutGroup("./Options", ELayout.TitleOut)]
         public bool isCancelable;
         public bool preventAim;

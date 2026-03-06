@@ -17,7 +17,6 @@ namespace Tulip.Data.Items
         public bool IsUnsafe => isUnsafe;
 
         [Header("World Tile")]
-
         [Min(1), Tooltip("LDtk IntGrid value index (1-based). 0 is an empty cell.")]
         [SerializeField] protected int tileIndex;
 
@@ -29,7 +28,6 @@ namespace Tulip.Data.Items
         [SerializeField] protected bool isUnsafe;
 
 #region Static - World Tiles Cache
-
         [ShowInInspector]
         private static WorldTileSO[] worldTiles;
 
@@ -51,7 +49,6 @@ namespace Tulip.Data.Items
         /// </summary>
         internal static WorldTileSO FromIndex(int index) =>
             index > 0 && index < worldTiles.Length ? worldTiles[index - 1] : null;
-
 #endregion
     }
 }

@@ -7,6 +7,6 @@ namespace Tulip.Data
         void OnValidate();
 
         void ISerializationCallbackReceiver.OnBeforeSerialize() => OnValidate();
-        void ISerializationCallbackReceiver.OnAfterDeserialize() {}
+        void ISerializationCallbackReceiver.OnAfterDeserialize() { }
     }
 }

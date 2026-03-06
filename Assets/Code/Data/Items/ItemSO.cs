@@ -1,7 +1,6 @@
 using System.Linq;
 using SaintsField;
 using SaintsField.Playa;
-using Tulip.Gameplay;
 using UnityEngine;
 
 namespace Tulip.Data.Items

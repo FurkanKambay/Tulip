@@ -71,6 +71,5 @@ namespace Tulip.Data
             UsePhase hitPhase = Phases.First(p => p.shouldHit);
             return durationSum + Mathf.Max(hitPhase.moveDuration, hitPhase.turnDuration);
         }
-
     }
 }

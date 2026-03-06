@@ -20,7 +20,7 @@ namespace Tulip.Character
 
         public World World => world;
         public Vector2Int Cell { get; private set; }
-        public RectInt Rect => new (Cell, EntitySO.Size);
+        public RectInt Rect => new(Cell, EntitySO.Size);
 
         private void OnEnable()
         {

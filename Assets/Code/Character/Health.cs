@@ -14,8 +14,8 @@ namespace Tulip.Character
         public delegate void ReviveEvent(Health reviver);
 
         public event DamageEvent OnHurt;
-        public event DeathEvent  OnDie;
-        public event HealEvent   OnHeal;
+        public event DeathEvent OnDie;
+        public event HealEvent OnHeal;
         public event ReviveEvent OnRevive;
 
         [Header("References")]
@@ -32,7 +32,7 @@ namespace Tulip.Character
             private set => currentHealth = Mathf.Clamp(value, 0, MaxHealth);
         }
 
-        public float MaxHealth               => maxHealth;
+        public float MaxHealth => maxHealth;
         public float InvulnerabilityDuration => invulnerabilityDuration;
 
         /// <summary>
@@ -40,16 +40,16 @@ namespace Tulip.Character
         /// </summary>
         public float InvulnerabilityRemaining { get; private set; }
 
-        public float Ratio          => CurrentHealth / MaxHealth;
-        public bool  IsAlive        => CurrentHealth > 0;
-        public bool  IsDead         => CurrentHealth <= 0;
-        public bool  IsFull         => CurrentHealth >= MaxHealth;
-        public bool  IsHurt         => CurrentHealth < MaxHealth && !IsDead;
-        public bool  IsInvulnerable => InvulnerabilityRemaining > 0;
+        public float Ratio => CurrentHealth / MaxHealth;
+        public bool IsAlive => CurrentHealth > 0;
+        public bool IsDead => CurrentHealth <= 0;
+        public bool IsFull => CurrentHealth >= MaxHealth;
+        public bool IsHurt => CurrentHealth < MaxHealth && !IsDead;
+        public bool IsInvulnerable => InvulnerabilityRemaining > 0;
 
-        public TangibleEntity Entity             => entity;
-        public Health         LatestDamageSource { get; private set; }
-        public Health         LatestDeathSource  { get; private set; }
+        public TangibleEntity Entity => entity;
+        public Health LatestDamageSource { get; private set; }
+        public Health LatestDeathSource { get; private set; }
 
         private void Update() =>
             InvulnerabilityRemaining = Mathf.Max(0, InvulnerabilityRemaining - Time.deltaTime);
@@ -65,8 +65,8 @@ namespace Tulip.Character
             if (IsInvulnerable && !bypassInvulnerability)
                 return default;
 
-            CurrentHealth      -= amount;
-            LatestDamageSource =  source;
+            CurrentHealth -= amount;
+            LatestDamageSource = source;
 
             if (!bypassInvulnerability)
                 InvulnerabilityRemaining = invulnerabilityDuration;
@@ -127,7 +127,7 @@ namespace Tulip.Character
         public void Revive(Health reviver = null)
         {
             CurrentHealth = maxHealth;
-            enabled       = true;
+            enabled = true;
             OnRevive?.Invoke(reviver.Or(this));
         }
 

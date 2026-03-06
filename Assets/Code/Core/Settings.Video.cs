@@ -69,7 +69,6 @@ namespace Tulip.Core
             // ReSharper restore UnusedMember.Local
 
 #region Converters
-
             /// TODO: use Localization
             private static string WindowModeToString(FullScreenMode value) =>
                 windowModeLabels[value];
@@ -77,7 +76,6 @@ namespace Tulip.Core
             /// TODO: use Localization
             private static FullScreenMode StringToWindowMode(string value) =>
                 windowModeLabels.First(kvp => kvp.Value == value).Key;
-
 #endregion
 
             void ISerializationCallbackReceiver.OnBeforeSerialize() => resolution = Resolution;
