@@ -5699,7 +5699,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7a83657788b4d00b2b3999985303765, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Player.PlayerHotbar, Tulip
+  m_EditorClassIdentifier: Tulip.Player.Hotbar, Tulip
 --- !u!1 &1492625892
 GameObject:
   m_ObjectHideFlags: 0

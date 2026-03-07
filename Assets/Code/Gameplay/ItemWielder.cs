@@ -6,6 +6,7 @@ using Tulip.Core;
 using Tulip.Data;
 using Tulip.Data.Gameplay;
 using Tulip.Data.Items;
+using Tulip.Player;
 using UnityEngine;
 
 namespace Tulip.Gameplay

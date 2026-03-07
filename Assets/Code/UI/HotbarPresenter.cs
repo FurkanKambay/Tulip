@@ -1,10 +1,10 @@
 using System.Collections;
 using FMODUnity;
 using SaintsField;
-using Tulip.Character;
 using Tulip.Core;
 using Tulip.Data;
 using Tulip.Data.GameEvents;
+using Tulip.Player;
 using Unity.Properties;
 using UnityEngine;
 using UnityEngine.UIElements;
