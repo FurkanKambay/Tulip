@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 
 namespace Tulip.Input
 {
+    [DefaultExecutionOrder(-10)]
     public sealed class PlayerBrain : MonoBehaviour, IPlayerBrain
     {
         public event Action OnJump;
