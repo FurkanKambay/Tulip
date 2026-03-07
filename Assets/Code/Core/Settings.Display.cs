@@ -10,7 +10,7 @@ namespace Tulip.Core
     public partial class Settings
     {
         [Serializable]
-        public sealed record VideoSettingsBag : ISerializationCallbackReceiver
+        public sealed record DisplaySettingsBag : ISerializationCallbackReceiver
         {
             [SerializeField] FullScreenMode windowMode = FullScreenMode.FullScreenWindow;
             [SerializeField] string resolution = DefaultResolution;
@@ -21,7 +21,7 @@ namespace Tulip.Core
             private static List<string> resolutions =
                 Screen.resolutions.Select(ResolutionExtensions.AsString).Reverse().ToList();
 
-            internal VideoSettingsBag()
+            internal DisplaySettingsBag()
             {
             }
 

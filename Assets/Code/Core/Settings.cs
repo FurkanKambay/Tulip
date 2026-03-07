@@ -10,21 +10,21 @@ namespace Tulip.Core
 
         [SerializeField] private GameplaySettingsBag gameplay;
         [SerializeField] private AudioSettingsBag audio;
-        [SerializeField] private VideoSettingsBag video;
+        [SerializeField] private DisplaySettingsBag display;
 
         public static Settings Instance { get; private set; } = new();
 
         // ReSharper disable UnusedMember.Global
         public static GameplaySettingsBag Gameplay => Instance.gameplay;
         public static AudioSettingsBag Audio => Instance.audio;
-        public static VideoSettingsBag Video => Instance.video;
+        public static DisplaySettingsBag Display => Instance.display;
         // ReSharper restore UnusedMember.Global
 
         internal Settings()
         {
             gameplay = new GameplaySettingsBag();
             audio = new AudioSettingsBag();
-            video = new VideoSettingsBag();
+            display = new DisplaySettingsBag();
         }
 
         internal static void SetInstance(Settings value)

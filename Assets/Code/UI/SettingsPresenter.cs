@@ -69,7 +69,7 @@ namespace Tulip.UI
             menuQuitButton.RegisterCallback<ClickEvent>(QuitButton_Clicked);
 
 #if UNITY_WEBGL
-            root.Q<DropdownField>("video-resolution").RemoveFromHierarchy();
+            root.Q<DropdownField>("display-resolution").RemoveFromHierarchy();
 #endif
         }
 

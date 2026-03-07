@@ -32,14 +32,14 @@
                     </Bindings>
                 </engine:SliderInt>
             </engine:Tab>
-            <engine:Tab label="Video" data-source-path="video" name="tab-video" class="tab">
+            <engine:Tab label="Display" data-source-path="display" name="tab-display" class="tab">
                 <engine:DropdownField label="Window Mode" focusable="false" class="dropdown option">
                     <Bindings>
                         <engine:DataBinding property="choices" data-source-path="supportedWindowModes" binding-mode="ToTarget" />
                         <engine:DataBinding property="value" binding-mode="TwoWay" data-source-path="WindowMode" />
                     </Bindings>
                 </engine:DropdownField>
-                <engine:DropdownField name="video-resolution" label="Resolution" focusable="false" class="dropdown option">
+                <engine:DropdownField name="display-resolution" label="Resolution" focusable="false" class="dropdown option">
                     <Bindings>
                         <engine:DataBinding property="choices" data-source-path="SupportedResolutions" binding-mode="ToTarget" />
                         <engine:DataBinding property="value" binding-mode="TwoWay" data-source-path="Resolution" />
