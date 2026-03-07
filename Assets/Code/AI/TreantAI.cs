@@ -15,8 +15,8 @@ namespace Tulip.AI
         [SerializeField] Vector2 attackDistance;
 
         public Vector2? AimPosition { get; private set; }
-        public bool WantsToUse { get; private set; }
-        public bool WantsToThrow { get; private set; }
+        public bool WantsToAttack { get; private set; }
+        public bool WantsToTakeAim { get; private set; }
         public bool WantsToHook { get; private set; }
 
         private Health targetHealth;
@@ -35,8 +35,8 @@ namespace Tulip.AI
             if (!health || health.IsDead || !targetHealth || targetHealth.IsDead)
             {
                 AimPosition = default;
-                WantsToUse = false;
-                WantsToThrow = false;
+                WantsToAttack = false;
+                WantsToTakeAim = false;
                 return;
             }
 
@@ -45,7 +45,7 @@ namespace Tulip.AI
 
             bool reachedX = Mathf.Abs(targetVector.x) < attackDistance.x;
             bool reachedY = Mathf.Abs(targetVector.y) < attackDistance.y;
-            WantsToUse = reachedX && reachedY;
+            WantsToAttack = reachedX && reachedY;
         }
     }
 }

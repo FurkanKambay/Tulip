@@ -25,8 +25,8 @@ namespace Tulip.AI
         public float HorizontalMovement { get; private set; }
 
         public bool WantsToJump { get; private set; }
-        public bool WantsToUse { get; private set; }
-        public bool WantsToThrow { get; private set; }
+        public bool WantsToAttack { get; private set; }
+        public bool WantsToTakeAim { get; private set; }
         public bool WantsToHook { get; private set; }
 
         private Health targetHealth;
@@ -44,8 +44,8 @@ namespace Tulip.AI
             {
                 AimPosition = default;
                 HorizontalMovement = default;
-                WantsToUse = false;
-                WantsToThrow = false;
+                WantsToAttack = false;
+                WantsToTakeAim = false;
 
                 OnJumpReleased?.Invoke();
                 return;
@@ -57,7 +57,7 @@ namespace Tulip.AI
             Vector2 distanceToTarget = AimPosition.Value - (Vector2)transform.position;
             bool withinAttackingRange = distanceToTarget.sqrMagnitude < stopDistance * stopDistance;
 
-            WantsToUse = withinAttackingRange;
+            WantsToAttack = withinAttackingRange;
             HorizontalMovement = withinAttackingRange ? default : Mathf.Sign(distanceToTarget.x);
 
             // TODO: some enemies should be able to jump

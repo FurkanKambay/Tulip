@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5c6b1788c594778bba752caf5f441ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Input.UserBrain, Tulip
-  menu: {fileID: -5214709563405804261, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
+  pause: {fileID: -5214709563405804261, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
   cancel: {fileID: 174961218743309079, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
   switchTab: {fileID: -8827449429561561328, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
 --- !u!1 &879671902

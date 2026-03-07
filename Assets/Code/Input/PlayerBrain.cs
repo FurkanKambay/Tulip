@@ -34,8 +34,8 @@ namespace Tulip.Input
 
         public bool WantsToJump { get; private set; }
         public bool WantsToDash { get; private set; }
-        public bool WantsToUse { get; private set; }
-        public bool WantsToThrow { get; private set; }
+        public bool WantsToAttack { get; private set; }
+        public bool WantsToTakeAim { get; private set; }
         public bool WantsToHook { get; private set; }
 
         public int HotbarSelectionDelta { get; private set; }
@@ -53,7 +53,7 @@ namespace Tulip.Input
 
                 HorizontalMovement = default;
                 WantsToDash = false;
-                WantsToUse = false;
+                WantsToAttack = false;
 
                 HotbarSelectionDelta = 0;
                 HotbarSelectionIndex = null;
@@ -77,8 +77,8 @@ namespace Tulip.Input
 
             WantsToJump = jump.action.inProgress;
             WantsToDash = dash.action.inProgress;
-            WantsToUse = use.action.inProgress;
-            WantsToThrow = aim.action.inProgress;
+            WantsToAttack = use.action.inProgress;
+            WantsToTakeAim = aim.action.inProgress;
             WantsToHook = hook.action.triggered;
 
             HotbarSelectionDelta = Math.Sign(hotbarScroll.action.ReadValue<float>());

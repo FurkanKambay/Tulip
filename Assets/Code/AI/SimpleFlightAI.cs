@@ -16,8 +16,8 @@ namespace Tulip.AI
         public float HorizontalMovement { get; private set; }
         public float VerticalMovement { get; private set; }
         public Vector2? AimPosition { get; private set; }
-        public bool WantsToUse { get; private set; }
-        public bool WantsToThrow { get; private set; }
+        public bool WantsToAttack { get; private set; }
+        public bool WantsToTakeAim { get; private set; }
         public bool WantsToHook { get; private set; }
 
         private Health targetHealth;
@@ -35,8 +35,8 @@ namespace Tulip.AI
                 AimPosition = default;
                 HorizontalMovement = default;
                 VerticalMovement = default;
-                WantsToUse = false;
-                WantsToThrow = false;
+                WantsToAttack = false;
+                WantsToTakeAim = false;
                 return;
             }
 
@@ -48,7 +48,7 @@ namespace Tulip.AI
 
             HorizontalMovement = reachedX ? default : targetVector.normalized.x;
             VerticalMovement = reachedY ? default : targetVector.normalized.y;
-            WantsToUse = reachedX && reachedY;
+            WantsToAttack = reachedX && reachedY;
         }
     }
 }

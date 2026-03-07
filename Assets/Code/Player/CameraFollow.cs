@@ -16,16 +16,12 @@ namespace Tulip.Player
         [SerializeField] TrackingOptions trackingConfig;
 
         private new Camera camera;
-        private IPlayerBrain brain;
 
 #region Unity Callbacks
         private void Awake()
         {
             camera = Camera.main;
-            brain = subject.GetComponentInChildren<IPlayerBrain>();
-
             Assert.IsNotNull(camera);
-            Assert.IsNotNull(brain);
 
             camera.transform.position = subject.position;
         }

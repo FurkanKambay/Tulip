@@ -118,7 +118,7 @@ namespace Tulip.Gameplay
                 // we can use Throw Mode since we're not melee swinging
                 float targetChargeAmount = throwChargeAmount + (Time.deltaTime * usableSO.ThrowChargeSpeed);
                 throwChargeAmount = IsThrowMode ? Mathf.Clamp01(targetChargeAmount) : 0;
-                IsThrowMode = brain.I.WantsToThrow;
+                IsThrowMode = brain.I.WantsToTakeAim;
             }
             else if (!phase.preventAim)
             {
@@ -130,7 +130,7 @@ namespace Tulip.Gameplay
             }
 
             // Throw the item
-            if (IsThrowMode && brain.I.WantsToUse && timeSinceLastUse > usableSO.ThrowCooldown)
+            if (IsThrowMode && brain.I.WantsToAttack && timeSinceLastUse > usableSO.ThrowCooldown)
             {
                 OnThrowPerform?.Invoke(HandStack, AimPointWorld);
                 timeSinceLastUse = 0f;
@@ -141,7 +141,7 @@ namespace Tulip.Gameplay
                 return;
 
             // We're not aiming, so we can do the swing logic now
-            bool wantsToSwing = brain.I.WantsToUse && !wantsToSwapItems;
+            bool wantsToSwing = brain.I.WantsToAttack && !wantsToSwapItems;
 
             switch (swingState)
             {

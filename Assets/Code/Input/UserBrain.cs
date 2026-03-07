@@ -5,17 +5,17 @@ namespace Tulip.Input
 {
     public class UserBrain : MonoBehaviour, IUserBrain
     {
-        [SerializeField] InputActionReference menu;
+        [SerializeField] InputActionReference pause;
         [SerializeField] InputActionReference cancel;
         [SerializeField] InputActionReference switchTab;
 
-        public bool WantsToMenu { get; private set; }
+        public bool WantsToPause { get; private set; }
         public bool WantsToCancel { get; private set; }
         public int? TabSwitchDelta { get; private set; }
 
         private void Update()
         {
-            WantsToMenu = menu.action.triggered;
+            WantsToPause = pause.action.triggered;
             WantsToCancel = cancel.action.triggered;
             TabSwitchDelta = switchTab.action.triggered ? (int)switchTab.action.ReadValue<float>() : null;
         }

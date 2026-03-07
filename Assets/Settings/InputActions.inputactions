@@ -70,7 +70,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Aim",
+                    "name": "Take Aim",
                     "type": "Button",
                     "id": "0b5e4135-bd87-48a0-b850-5038d06fd42d",
                     "expectedControlType": "",
@@ -97,7 +97,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Menu",
+                    "name": "Pause",
                     "type": "Button",
                     "id": "eff8b17e-66ce-4996-b40e-b35803eb8853",
                     "expectedControlType": "",
@@ -224,7 +224,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Aim",
+                    "action": "Take Aim",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -235,7 +235,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Aim",
+                    "action": "Take Aim",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -466,18 +466,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Menu",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "53abb7d6-56e5-4ec2-af51-e9d091bb4f98",
-                    "path": "<Gamepad>/select",
+                    "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Menu",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -510,6 +510,15 @@
             "id": "6ef81c7a-f98b-447d-8f03-e2a353178173",
             "actions": [
                 {
+                    "name": "Switch Tab",
+                    "type": "PassThrough",
+                    "id": "72c8f006-fb8c-433d-9faf-94cf0b59e638",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Navigate",
                     "type": "PassThrough",
                     "id": "aa3bd068-8c3d-445d-bc68-25deb1e94494",
@@ -522,7 +531,7 @@
                     "name": "Submit",
                     "type": "Button",
                     "id": "216b1a27-bdf9-4cb6-bfec-a44a0f18c525",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -531,7 +540,7 @@
                     "name": "Cancel",
                     "type": "Button",
                     "id": "68ad0bee-5771-4b03-9148-2cc4ca1d2b3e",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -553,42 +562,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "RightClick",
-                    "type": "PassThrough",
-                    "id": "9d1e21c5-cdb1-414a-abb5-b9d313920565",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "MiddleClick",
-                    "type": "PassThrough",
-                    "id": "f863a981-62b0-4f03-9702-fef4550c4732",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "ScrollWheel",
-                    "type": "PassThrough",
-                    "id": "7482614b-988f-4836-8a90-8f86ad22827d",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Switch Tab",
-                    "type": "PassThrough",
-                    "id": "72c8f006-fb8c-433d-9faf-94cf0b59e638",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -846,40 +819,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "4c191405-5738-4d4b-a523-c6a301dbf754",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "RightClick",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "5062f052-5460-4d10-83bc-825417bc5de6",
-                    "path": "<Mouse>/middleButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "MiddleClick",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b667f554-304d-43c3-9e09-7cf2cab99bb3",
-                    "path": "<Mouse>/scroll",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "ScrollWheel",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "Keyboard",
+                    "name": "Keyboard (QE)",
                     "id": "e1241895-78ca-4d3f-b5ba-283d7c8ab541",
                     "path": "1DAxis",
                     "interactions": "",
@@ -912,7 +852,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Gamepad",
+                    "name": "Gamepad (Shoulder Buttons)",
                     "id": "ae6343ba-3add-4805-9855-29a3856fa0b6",
                     "path": "1DAxis",
                     "interactions": "",

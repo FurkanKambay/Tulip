@@ -104,12 +104,12 @@ namespace Tulip.UI
             if (GameManager.CurrentState == GameState.MainMenu)
             {
                 // same as <cancel.action.triggered> in Main Menu
-                if (brain.WantsToMenu)
+                if (brain.WantsToPause)
                     optionsButton.value = !optionsButton.value;
             }
             else
             {
-                if (brain.WantsToMenu)
+                if (brain.WantsToPause)
                     optionsButton.value = true;
 
                 if (brain.WantsToCancel)
