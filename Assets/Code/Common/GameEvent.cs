@@ -36,7 +36,7 @@ namespace Furkan.Common
             OnRaised?.Invoke();
         }
 
-        [HideInCallstack, Conditional("UNITY_EDITOR")]
+        [HideInCallstack]
         protected internal static void Log(ScriptableObject context, Object sender) =>
             Debug.Log($"<color=#777>Event <color=#aae>{context.name}</color> from <color=white>{sender.name}", sender);
     }
@@ -45,8 +45,8 @@ namespace Furkan.Common
     {
         public event Action<T> OnRaised;
 
-#if UNITY_EDITOR
         [SerializeField] private bool logInvocations;
+#if UNITY_EDITOR
         [SerializeField, Multiline] private string documentation;
 #endif
 
