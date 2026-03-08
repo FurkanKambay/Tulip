@@ -699,7 +699,6 @@ MonoBehaviour:
   health: {fileID: 1334333901957425893}
   brain:
     <V>k__BackingField: {fileID: 5945291673912604298}
-  hotbar: {fileID: 0}
   itemRenderer: {fileID: 3267211648343500747}
   fallbackStack:
     itemSO: {fileID: 11400000, guid: cee049b1282365f41bc068f68b0b9ef2, type: 2}

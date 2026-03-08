@@ -6,7 +6,6 @@ using Tulip.Core;
 using Tulip.Data;
 using Tulip.Data.Gameplay;
 using Tulip.Data.Items;
-using Tulip.Player;
 using UnityEngine;
 
 namespace Tulip.Gameplay
@@ -21,11 +20,6 @@ namespace Tulip.Gameplay
         public event ItemSwingEvent OnSwingPerform;
         public event ItemSwingEvent OnThrowPerform;
 
-        internal ItemStack CurrentStack => HotbarItem.IsValid ? HotbarItem : fallbackStack;
-        private ItemStack HotbarItem => hotbar ? hotbar.SelectedStack : default;
-
-        public ItemStack HandStack => handStack;
-
         /// <summary>
         /// Vector from the item pivot to the mouse world point (not normalized).
         /// </summary>
@@ -39,7 +33,6 @@ namespace Tulip.Gameplay
         [Header("References")]
         [SerializeField, Required] Health health;
         [SerializeField, Required] SaintsInterface<Component, IWielderBrain> brain;
-        [SerializeField] Hotbar hotbar;
         [SerializeField, Required] SpriteRenderer itemRenderer;
 
         [Header("Config")]
@@ -76,18 +69,12 @@ namespace Tulip.Gameplay
 
             health.OnDie += HandleDie;
             health.OnRevive += HandleRevived;
-
-            if (hotbar)
-                hotbar.OnChangeSelection += HandleHotbarSelectionChanged;
         }
 
         private void OnDisable()
         {
             health.OnDie -= HandleDie;
             health.OnRevive -= HandleRevived;
-
-            if (hotbar)
-                hotbar.OnChangeSelection -= HandleHotbarSelectionChanged;
         }
 
         private void Start() => RefreshItem();
@@ -133,7 +120,7 @@ namespace Tulip.Gameplay
             // Throw the item
             if (IsThrowMode && brain.I.WantsToAttack && timeSinceLastUse > usableSO.ThrowCooldown)
             {
-                OnThrowPerform?.Invoke(HandStack, AimPointWorld);
+                OnThrowPerform?.Invoke(handStack, AimPointWorld);
                 timeSinceLastUse = 0f;
             }
 
@@ -249,7 +236,6 @@ namespace Tulip.Gameplay
 
         private void RefreshItem()
         {
-            handStack = CurrentStack;
             UpdateItemSprite();
 
             phaseIndex = 0;
@@ -351,18 +337,6 @@ namespace Tulip.Gameplay
 #region Event Handlers
         private void HandleDie(CombatPacket _) => itemRenderer.enabled = false;
         private void HandleRevived(Health reviver) => itemRenderer.enabled = true;
-
-        private void HandleHotbarSelectionChanged(int _)
-        {
-            if (swingState != ItemSwingState.Ready)
-            {
-                wantsToSwapItems = true;
-                return;
-            }
-
-            // Only update sprite when ready to swing again
-            RefreshItem();
-        }
 #endregion
 
 #region Child Structs

@@ -25,10 +25,6 @@ namespace Tulip.Input
         [SerializeField, Required] InputActionReference aim;
         [SerializeField, Required] InputActionReference hook;
 
-        [Header("Input - Misc")]
-        [SerializeField, Required] InputActionReference hotbarScroll;
-        [SerializeField, Required] InputActionReference hotbar;
-
         public Vector2 AimPointScreen { get; private set; }
         public Vector2? AimPosition { get; private set; }
         public float HorizontalMovement { get; private set; }
@@ -38,9 +34,6 @@ namespace Tulip.Input
         public bool WantsToAttack { get; private set; }
         public bool WantsToTakeAim { get; private set; }
         public bool WantsToHook { get; private set; }
-
-        public int HotbarSelectionDelta { get; private set; }
-        public int? HotbarSelectionIndex { get; private set; }
 
         private Camera mainCamera;
 
@@ -55,9 +48,6 @@ namespace Tulip.Input
                 HorizontalMovement = default;
                 WantsToDash = false;
                 WantsToAttack = false;
-
-                HotbarSelectionDelta = 0;
-                HotbarSelectionIndex = null;
 
                 OnJumpReleased?.Invoke();
                 return;
@@ -81,9 +71,6 @@ namespace Tulip.Input
             WantsToAttack = use.action.inProgress;
             WantsToTakeAim = aim.action.inProgress;
             WantsToHook = hook.action.triggered;
-
-            HotbarSelectionDelta = Math.Sign(hotbarScroll.action.ReadValue<float>());
-            HotbarSelectionIndex = !hotbar.action.inProgress ? null : (int)hotbar.action.ReadValue<float>();
         }
     }
 }

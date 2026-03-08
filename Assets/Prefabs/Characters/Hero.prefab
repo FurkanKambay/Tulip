@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4550549399932287733}
   - component: {fileID: 4728014676095277497}
-  - component: {fileID: 4060362864870097847}
   m_Layer: 6
   m_Name: Inventory
   m_TagString: Untagged
@@ -47,22 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Tulip.Character.Inventory, Tulip
   inventorySO: {fileID: 11400000, guid: 1265edbba7f76c84ba1e9ba37adf7f80, type: 2}
   capacity: 27
---- !u!114 &4060362864870097847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 636144049404075224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7a83657788b4d00b2b3999985303765, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Tulip.Player.Hotbar, Tulip
-  inventory: {fileID: 4728014676095277497}
-  size: 9
-  brain:
-    <V>k__BackingField: {fileID: 3825264036527423534}
 --- !u!1 &1673359338847146882
 GameObject:
   m_ObjectHideFlags: 0
@@ -1206,7 +1189,6 @@ MonoBehaviour:
   health: {fileID: 7186377946535505526}
   brain:
     <V>k__BackingField: {fileID: 3825264036527423534}
-  hotbar: {fileID: 4060362864870097847}
   itemRenderer: {fileID: 3639728673497933778}
   fallbackStack:
     itemSO: {fileID: 0}
@@ -1294,8 +1276,6 @@ MonoBehaviour:
   use: {fileID: -2453027523714613957, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
   aim: {fileID: -10744007629955494, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
   hook: {fileID: -2619241712849765656, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
-  hotbarScroll: {fileID: 8440640951329392643, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
-  hotbar: {fileID: 2316462975043431007, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
 --- !u!1 &7550573769694000182
 GameObject:
   m_ObjectHideFlags: 0

@@ -79,24 +79,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Hotbar",
-                    "type": "Button",
-                    "id": "15d474b5-0a1d-4cc8-a772-782223094d03",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Scroll",
-                    "type": "PassThrough",
-                    "id": "03dc9117-bf14-4211-9f56-6145c3201c7c",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Pause",
                     "type": "Button",
                     "id": "eff8b17e-66ce-4996-b40e-b35803eb8853",
@@ -241,105 +223,6 @@
                 },
                 {
                     "name": "",
-                    "id": "63961103-6f03-48b0-b78a-1777c5f66795",
-                    "path": "<Keyboard>/1",
-                    "interactions": "",
-                    "processors": "Scale(factor=0)",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Hotbar",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ec62b1ee-33da-4b71-b605-4a0d70077d50",
-                    "path": "<Keyboard>/2",
-                    "interactions": "",
-                    "processors": "Scale(factor=1)",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Hotbar",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2b5d1e40-0f1e-41cc-b1fb-7919e97c3138",
-                    "path": "<Keyboard>/3",
-                    "interactions": "",
-                    "processors": "Scale(factor=2)",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Hotbar",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2bec157d-3816-445e-8bee-6e88c1daecbd",
-                    "path": "<Keyboard>/4",
-                    "interactions": "",
-                    "processors": "Scale(factor=3)",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Hotbar",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1bacdd56-d99e-40c8-a3c1-9ea1bc7ad919",
-                    "path": "<Keyboard>/5",
-                    "interactions": "",
-                    "processors": "Scale(factor=4)",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Hotbar",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0ff0e960-611f-46af-a1b7-28ab087cc4c2",
-                    "path": "<Keyboard>/6",
-                    "interactions": "",
-                    "processors": "Scale(factor=5)",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Hotbar",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6e570842-fc6e-4e58-87b7-df646c636ef5",
-                    "path": "<Keyboard>/7",
-                    "interactions": "",
-                    "processors": "Scale(factor=6)",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Hotbar",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4879cfb2-a796-41e3-bddd-d9344374ef64",
-                    "path": "<Keyboard>/8",
-                    "interactions": "",
-                    "processors": "Scale(factor=7)",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Hotbar",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "5d641521-bf13-4d59-abb7-8abde8946532",
-                    "path": "<Keyboard>/9",
-                    "interactions": "",
-                    "processors": "Scale(factor=8)",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Hotbar",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "16225e26-d1e6-48a8-850e-e4522d322dd3",
                     "path": "<Keyboard>/space",
                     "interactions": "",
@@ -359,50 +242,6 @@
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ff7b8aa9-4bc0-48e6-87e5-16e9a95310d6",
-                    "path": "<Mouse>/scroll/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Scroll",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "Gamepad D-Pad",
-                    "id": "b22c95b4-02e3-4e74-ba8c-0f69981dc574",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Scroll",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "dc1dcbf5-556d-41d5-b369-ba6ee5875200",
-                    "path": "<Gamepad>/dpad/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Gamepad",
-                    "action": "Scroll",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "1f861bdd-478b-44ee-beb3-48e8efaae412",
-                    "path": "<Gamepad>/dpad/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Gamepad",
-                    "action": "Scroll",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 },
                 {
                     "name": "",
