@@ -39,8 +39,11 @@ namespace Tulip.Editor
         [MainToolbarElement("Tulip Scenes/Combat Testing", defaultDockPosition = MainToolbarDockPosition.Middle)]
         public static MainToolbarElement OpenCombatTestingSceneButton() => GetToolbarButton("⚔️", "Testing/Combat Testing");
 
-        [MainToolbarElement("Tulip Scenes/Tile Testing", defaultDockPosition = MainToolbarDockPosition.Middle)]
-        public static MainToolbarElement OpenTileTestingSceneButton() => GetToolbarButton("🗺️", "Testing/Tile Testing");
+        [MainToolbarElement("Tulip Scenes/Gym", defaultDockPosition = MainToolbarDockPosition.Middle)]
+        public static MainToolbarElement OpenGymSceneButton() => GetToolbarButton("🪜", "Testing/Gym");
+
+        [MainToolbarElement("Tulip Scenes/Zoo", defaultDockPosition = MainToolbarDockPosition.Middle)]
+        public static MainToolbarElement OpenZooSceneButton() => GetToolbarButton("🧱", "Testing/Zoo");
 
         private static MainToolbarButton GetToolbarButton(string text, string sceneSubPath) =>
             new(new MainToolbarContent(text, $"Open \"{sceneSubPath}.unity\""), () => TryOpenScene(sceneSubPath));
