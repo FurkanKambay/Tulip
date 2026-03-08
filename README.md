@@ -26,7 +26,6 @@ Originally, Tulip was heavily inspired by Terraria and featured a procedurally g
 - [Invulnerability frames](Assets/Code/Character/Health.cs)
 - [Status effects](Assets/Code/Data/StatusEffect.cs): health regen, bleed
 - [Enemy AI](Assets/Code/AI): walking, flying, attacking
-- [Hotbar](Assets/Code/UI/HotbarPresenter.cs) with slot locking
 - [Loot items](Assets/Code/Data/EntitySO.cs) for entities
 
 ### 👾 Content
@@ -45,10 +44,9 @@ Originally, Tulip was heavily inspired by Terraria and featured a procedurally g
 
 ### 📱 User Interface (UI Toolkit)
 
-- [Menus](Assets/UI/Documents) | [Hotbar HUD](Assets/UI/Documents/Hotbar.uxml) | [Death overlay](Assets/UI/Documents/DeathOverlay.uxml)
+- [Menus](Assets/UI/Documents) | [Death overlay](Assets/UI/Documents/DeathOverlay.uxml)
 - [Data bindings](Assets/UI/Documents/SettingsMenu.uxml) using the MVP pattern
 - [Global converters](Assets/Code/UI/GlobalConverters.cs) for data bindings
-- [Template](Assets/UI/Templates/HotbarSlot.uxml) for hotbar item slots
 - [Custom styling](Assets/UI/Styles) for default Unity UITK controls like `DropdownField`, `TabView` via `.unity-` USS classes
 
 ### 🎵 Audio (FMOD)
@@ -65,8 +63,16 @@ Originally, Tulip was heavily inspired by Terraria and featured a procedurally g
 - [Input System](Assets/Settings/Input%20Actions.inputactions) usage
 - [Custom WebGL template](Assets/WebGLTemplates/Custom) to fix data persistence bug on web builds
 - [Event channels](Assets/Code/Common/GameEvent.cs) for some UI events (`ScriptableObject`-based)
-- [World terraforming](../v7-itchio/Assets/Code/Player/Terraformer.cs) (breakable & placeable tiles) — *abandoned feature*
-- [Custom Rule Tiles](../v7-itchio/Assets/Code/Data/Tiles/CustomRuleTileData.cs) for the world — *abandoned feature*
+
+<details><summary><h3>🗑️ Abandoned</h3></summary>
+
+These features have been abandoned either because they are out of scope or don't fit the design anymore:
+
+- [World Terraforming](../v7-itchio/Assets/Code/Player/Terraformer.cs) (breakable & placeable tiles)
+- [Custom Rule Tiles](../v7-itchio/Assets/Code/Data/Tiles/CustomRuleTileData.cs) for the world
+- [Hotbar](../v7-itchio/Assets/Code/UI/HotbarPresenter.cs) with slot locking, [HUD](../v7-itchio/Assets/UI/Documents/Hotbar.uxml), and [UI Template](../v7-itchio/Assets/UI/Templates/HotbarSlot.uxml) for hotbar item slots
+
+</details>
 
 <details><summary><h3>💡 Planned</h3></summary>
 
