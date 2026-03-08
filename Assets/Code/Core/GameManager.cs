@@ -175,7 +175,7 @@ namespace Tulip.Core
                 return true;
 
             // TODO: save game before quitting
-            Debug.Log("Quit requested. Should save game first.");
+            Log.Info("Quit requested. Should save game first.");
 
             return true;
         }

@@ -1,3 +1,4 @@
+using Furkan.Common;
 using SaintsField;
 using UnityEngine;
 
@@ -14,6 +15,6 @@ namespace Tulip.Interaction
         private void OnEnable() => interactable.OnInteract += HandleInteract;
         private void OnDisable() => interactable.OnInteract -= HandleInteract;
 
-        private void HandleInteract() => Debug.Log(greetingText);
+        private void HandleInteract() => Log.Info(greetingText);
     }
 }

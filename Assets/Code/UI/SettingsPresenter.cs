@@ -156,6 +156,6 @@ namespace Tulip.UI
         private void QuitButton_Clicked(ClickEvent _) => GameManager.QuitGame();
 
         // TODO: save game
-        private void SaveGame() => Debug.Log("Saving...");
+        private void SaveGame() => Log.Info("Saving...");
     }
 }

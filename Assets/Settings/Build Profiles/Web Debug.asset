@@ -20,8 +20,9 @@ MonoBehaviour:
     rid: 6046734815672926208
   m_OverrideGlobalSceneList: 0
   m_Scenes: []
-  m_HasScriptingDefines: 0
-  m_ScriptingDefines: []
+  m_HasScriptingDefines: 1
+  m_ScriptingDefines:
+  - ENABLE_LOGS
   m_PlayerSettingsYaml:
     m_Settings: []
   references:

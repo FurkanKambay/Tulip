@@ -40,7 +40,7 @@ namespace Tulip.GameWorld
 
         private void ContinueGame_Requested()
         {
-            Debug.LogWarning("TODO: Continue Game", this);
+            Log.Warning("TODO: Continue Game", this);
             // TODO: load latest save instead
         }
 

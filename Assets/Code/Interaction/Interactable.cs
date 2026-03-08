@@ -1,4 +1,5 @@
 using System;
+using Furkan.Common;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -35,7 +36,7 @@ namespace Tulip.Interaction
         private void OnValidate()
         {
             if (!trigger || !trigger.isTrigger)
-                Debug.LogError("Interaction trigger box is invalid!", trigger);
+                Log.Error("Interaction trigger box is invalid!", trigger);
         }
     }
 }
