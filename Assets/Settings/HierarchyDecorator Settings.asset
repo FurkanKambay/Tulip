@@ -4012,19 +4012,6 @@ MonoBehaviour:
         isBuiltIn: 0
         script: {fileID: 11500000, guid: 2b14510e3ad34628b0f264c3030b5103, type: 3}
         hasToggle: 1
-      - displayName: HotbarPresenter
-        name: Tulip.UI.HotbarPresenter, Tulip, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        content:
-          m_Text: HotbarPresenter
-          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
-          m_Tooltip: HotbarPresenter
-          m_TextWithWhitespace: "HotbarPresenter\u200B"
-        shown: 0
-        excluded: 0
-        isBuiltIn: 0
-        script: {fileID: 11500000, guid: 72704d37797ebee40afab671ba602024, type: 3}
-        hasToggle: 1
       - displayName: StudioEventEmitter
         name: FMODUnity.StudioEventEmitter, FMODUnity, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -4419,19 +4406,6 @@ MonoBehaviour:
         isBuiltIn: 0
         script: {fileID: 11500000, guid: 1dbac43252630dd499875c6a60daacdf, type: 3}
         hasToggle: 1
-      - displayName: PlayerHotbar
-        name: Tulip.Player.PlayerHotbar, Tulip, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        content:
-          m_Text: PlayerHotbar
-          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
-          m_Tooltip: PlayerHotbar
-          m_TextWithWhitespace: "PlayerHotbar\u200B"
-        shown: 0
-        excluded: 0
-        isBuiltIn: 0
-        script: {fileID: 11500000, guid: e7a83657788b4d00b2b3999985303765, type: 3}
-        hasToggle: 1
       - displayName: ItemWielder
         name: Tulip.Gameplay.ItemWielder, Tulip, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -4548,6 +4522,19 @@ MonoBehaviour:
         excluded: 0
         isBuiltIn: 0
         script: {fileID: 11500000, guid: 2ddf02e76141479aa65b1d2227ab4815, type: 3}
+        hasToggle: 1
+      - displayName: SimpleFollowerBrain
+        name: Tulip.AI.SimpleFollowerBrain, Tulip, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        content:
+          m_Text: SimpleFollowerBrain
+          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Tooltip: SimpleFollowerBrain
+          m_TextWithWhitespace: "SimpleFollowerBrain\u200B"
+        shown: 0
+        excluded: 0
+        isBuiltIn: 0
+        script: {fileID: 11500000, guid: d8a96e8e20d94ab2b04f029fd11b79e4, type: 3}
         hasToggle: 1
     unityVersion: 6000.3.6f1
     unityCount: 275
