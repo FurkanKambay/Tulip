@@ -61,18 +61,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Tulip.GameWorld.RealmShader, Tulip
   wallTilemap: {fileID: 6219117837504028310}
   blockTilemap: {fileID: 2615332807071153101}
-  curtainTilemap: {fileID: 4133042044771251281}
-  realmMaterial: {fileID: 2100000, guid: 0604c380372d55147a31959aad2c9126, type: 2}
-  playerLocation: {fileID: 0}
-  portalTop: {fileID: 0}
-  portalBottom: {fileID: 0}
-  curtainRevealSpeed: 10
-  inactiveSaturation: 0.25
-  saturationChangeSpeed: 3
-  activeRealm: 1
-  portalInSight: 0
-  saturation: 1
-  shaderActiveRealm: 0
 --- !u!114 &7871052133264414492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,10 +75,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Tulip.GameWorld.WorldVisual, Tulip
   wallIntGrid: {fileID: 8881284516517272709}
   blocksIntGrid: {fileID: 2747851326201791395}
-  curtainIntGrid: {fileID: 4925840232887779949}
   wallTilemap: {fileID: 6219117837504028310}
   blockTilemap: {fileID: 2615332807071153101}
-  curtainTilemap: {fileID: 4133042044771251281}
 --- !u!1001 &6754653276853597214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -956,22 +942,6 @@ Tilemap:
 --- !u!114 &2747851326201791395 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -315518713227806787, guid: ca7a27b75715dc44a92654ad53a2c626, type: 3}
-  m_PrefabInstance: {fileID: 6754653276853597214}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ddf02e76141479aa65b1d2227ab4815, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: LDtkUnity.LDtkComponentLayerIntGridValues, LDtkUnity.Runtime
---- !u!1839735485 &4133042044771251281 stripped
-Tilemap:
-  m_CorrespondingSourceObject: {fileID: 7270738932857389135, guid: ca7a27b75715dc44a92654ad53a2c626, type: 3}
-  m_PrefabInstance: {fileID: 6754653276853597214}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4925840232887779949 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -7358529080115595661, guid: ca7a27b75715dc44a92654ad53a2c626, type: 3}
   m_PrefabInstance: {fileID: 6754653276853597214}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

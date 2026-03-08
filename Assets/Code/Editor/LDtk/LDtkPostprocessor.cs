@@ -131,7 +131,7 @@ namespace Tulip.Editor.LDtk
                 }
                 else
                 {
-                    // Remove colliders for the wall and curtain layers
+                    // Remove colliders for the wall layer
                     Object.DestroyImmediate(tilemap.GetComponent<TilemapCollider2D>());
                     Object.DestroyImmediate(tilemap.GetComponent<Rigidbody2D>());
                 }

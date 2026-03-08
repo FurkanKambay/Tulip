@@ -455,7 +455,6 @@ GameObject:
   - component: {fileID: 270610127142405494}
   - component: {fileID: 7560684870690709998}
   - component: {fileID: 963390074723932652}
-  - component: {fileID: 8314659605633864835}
   m_Layer: 6
   m_Name: Hero
   m_TagString: Player
@@ -577,19 +576,6 @@ MonoBehaviour:
   body: {fileID: 7560684870690709998}
   health: {fileID: 7186377946535505526}
   world: {fileID: 0}
---- !u!114 &8314659605633864835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2859632988072890709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c59678970af64762aa2720ad33971327, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Tulip.GameWorld.EntityLocationDeterminer, Tulip
-  player: {fileID: 7186377946535505526}
 --- !u!1 &3484316326350008886
 GameObject:
   m_ObjectHideFlags: 0

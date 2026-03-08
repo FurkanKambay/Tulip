@@ -61,14 +61,8 @@ TagManager:
   - name: Item
     uniqueID: 2114400491
     locked: 0
-  - name: Inside Overlay
+  - name: Overlay
     uniqueID: 1615786543
-    locked: 0
-  - name: Curtain
-    uniqueID: 3472923863
-    locked: 0
-  - name: Outside Overlay
-    uniqueID: 4016270629
     locked: 0
   m_RenderingLayers:
   - Default

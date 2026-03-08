@@ -3871,19 +3871,6 @@ MonoBehaviour:
         isBuiltIn: 0
         script: {fileID: 11500000, guid: 5d8751be9d454ae89b969c632e660570, type: 3}
         hasToggle: 1
-      - displayName: EntityLocationDeterminer
-        name: Tulip.GameWorld.EntityLocationDeterminer, Tulip, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        content:
-          m_Text: EntityLocationDeterminer
-          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
-          m_Tooltip: EntityLocationDeterminer
-          m_TextWithWhitespace: "EntityLocationDeterminer\u200B"
-        shown: 0
-        excluded: 0
-        isBuiltIn: 0
-        script: {fileID: 11500000, guid: c59678970af64762aa2720ad33971327, type: 3}
-        hasToggle: 1
       - displayName: World
         name: Tulip.GameWorld.World, Tulip, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         content:
@@ -3921,19 +3908,6 @@ MonoBehaviour:
         excluded: 0
         isBuiltIn: 0
         script: {fileID: 11500000, guid: 5d8751be9d454ae89b969c632e660570, type: 3}
-        hasToggle: 1
-      - displayName: EntityLocationDeterminer
-        name: Tulip.GameWorld.EntityLocationDeterminer, Tulip, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        content:
-          m_Text: EntityLocationDeterminer
-          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
-          m_Tooltip: EntityLocationDeterminer
-          m_TextWithWhitespace: "EntityLocationDeterminer\u200B"
-        shown: 0
-        excluded: 0
-        isBuiltIn: 0
-        script: {fileID: 11500000, guid: c59678970af64762aa2720ad33971327, type: 3}
         hasToggle: 1
       - displayName: World
         name: Tulip.GameWorld.World, Tulip, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -4050,19 +4024,6 @@ MonoBehaviour:
         excluded: 0
         isBuiltIn: 0
         script: {fileID: 11500000, guid: 5d8751be9d454ae89b969c632e660570, type: 3}
-        hasToggle: 1
-      - displayName: EntityLocationDeterminer
-        name: Tulip.GameWorld.EntityLocationDeterminer, Tulip, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        content:
-          m_Text: EntityLocationDeterminer
-          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
-          m_Tooltip: EntityLocationDeterminer
-          m_TextWithWhitespace: "EntityLocationDeterminer\u200B"
-        shown: 0
-        excluded: 0
-        isBuiltIn: 0
-        script: {fileID: 11500000, guid: c59678970af64762aa2720ad33971327, type: 3}
         hasToggle: 1
       - displayName: World
         name: Tulip.GameWorld.World, Tulip, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -4535,6 +4496,71 @@ MonoBehaviour:
         excluded: 0
         isBuiltIn: 0
         script: {fileID: 11500000, guid: d8a96e8e20d94ab2b04f029fd11b79e4, type: 3}
+        hasToggle: 1
+      - displayName: ProjectileManager
+        name: Tulip.Gameplay.ProjectileManager, Tulip, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        content:
+          m_Text: ProjectileManager
+          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Tooltip: ProjectileManager
+          m_TextWithWhitespace: "ProjectileManager\u200B"
+        shown: 0
+        excluded: 0
+        isBuiltIn: 0
+        script: {fileID: 11500000, guid: ad3c18e30ef84dc68cc50d8c25c72dc8, type: 3}
+        hasToggle: 1
+      - displayName: LDtkComponentLevel
+        name: LDtkUnity.LDtkComponentLevel, LDtkUnity.Runtime, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        content:
+          m_Text: LDtkComponentLevel
+          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Tooltip: LDtkComponentLevel
+          m_TextWithWhitespace: "LDtkComponentLevel\u200B"
+        shown: 0
+        excluded: 0
+        isBuiltIn: 0
+        script: {fileID: 11500000, guid: db93954134b7eec42a9af442e6390856, type: 3}
+        hasToggle: 1
+      - displayName: LDtkIid
+        name: LDtkUnity.LDtkIid, LDtkUnity.Runtime, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        content:
+          m_Text: LDtkIid
+          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Tooltip: LDtkIid
+          m_TextWithWhitespace: "LDtkIid\u200B"
+        shown: 0
+        excluded: 0
+        isBuiltIn: 0
+        script: {fileID: 11500000, guid: 92d5c21450a94e94865d0abafcdd2bce, type: 3}
+        hasToggle: 1
+      - displayName: LDtkComponentLayer
+        name: LDtkUnity.LDtkComponentLayer, LDtkUnity.Runtime, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        content:
+          m_Text: LDtkComponentLayer
+          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Tooltip: LDtkComponentLayer
+          m_TextWithWhitespace: "LDtkComponentLayer\u200B"
+        shown: 0
+        excluded: 0
+        isBuiltIn: 0
+        script: {fileID: 11500000, guid: 36aa13ef86b6481bb200127e9b45875c, type: 3}
+        hasToggle: 1
+      - displayName: LDtkComponentLayerTilesetTiles
+        name: LDtkUnity.LDtkComponentLayerTilesetTiles, LDtkUnity.Runtime, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        content:
+          m_Text: LDtkComponentLayerTilesetTiles
+          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Tooltip: LDtkComponentLayerTilesetTiles
+          m_TextWithWhitespace: "LDtkComponentLayerTilesetTiles\u200B"
+        shown: 0
+        excluded: 0
+        isBuiltIn: 0
+        script: {fileID: 11500000, guid: 46b9bb78d5c54466b82752072f63393b, type: 3}
         hasToggle: 1
     unityVersion: 6000.3.6f1
     unityCount: 275

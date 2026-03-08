@@ -53,7 +53,6 @@ namespace Tulip.GameWorld
         {
             TileType.Wall => worldVisual.WallIntGrid,
             TileType.Block => worldVisual.BlocksIntGrid,
-            TileType.Curtain => worldVisual.CurtainIntGrid,
             _ => throw new ArgumentOutOfRangeException(nameof(tileType))
         };
 #endregion

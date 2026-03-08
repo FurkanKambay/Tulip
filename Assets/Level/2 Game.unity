@@ -202,7 +202,6 @@ MonoBehaviour:
       Data3: -1466501490
       Data4: -1776651225
     Path: event:/Music/Biome Music
-  playerLocation: {fileID: 1154427129}
   startingBiome: 0
 --- !u!1 &337397488
 GameObject:
@@ -247,10 +246,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Realm Visuals
       objectReference: {fileID: 0}
-    - target: {fileID: 9033445109699138156, guid: f424f79dcd083e14b805387a89e2929f, type: 3}
-      propertyPath: playerLocation
-      value: 
-      objectReference: {fileID: 1154427129}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5500,17 +5495,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
---- !u!114 &1154427129 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8314659605633864835, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
-  m_PrefabInstance: {fileID: 1154427126}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c59678970af64762aa2720ad33971327, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Tulip.GameWorld.EntityLocationDeterminer, Tulip
 --- !u!1 &1406129966
 GameObject:
   m_ObjectHideFlags: 0

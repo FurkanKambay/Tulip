@@ -86,6 +86,6 @@ fmod_editor.log
 **/LDtk/*/png/
 **/LDtk/*/png.meta
 *.ldtkt
-*.ldtkt.meta
+# *.ldtkt.meta
 *.ldtkc
-*.ldtkc.meta
+# *.ldtkc.meta
