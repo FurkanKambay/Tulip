@@ -14,6 +14,7 @@ namespace Tulip.Character
 
         private void Update()
         {
+            if (brain == null) return;
             if (brain.I.HorizontalMovement != 0)
             {
                 sprite.flipX = brain.I.HorizontalMovement < 0;

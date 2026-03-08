@@ -34,6 +34,7 @@ namespace Tulip.Character
 
         private void Update()
         {
+            if (brain == null) return;
             hasAnyMovement = brain.I.HorizontalMovement != 0;
 
             bool isFacingObstacle = brain.I.HorizontalMovement < 0 ? surrounds.IsLeftBlocked : surrounds.IsRightBlocked;
