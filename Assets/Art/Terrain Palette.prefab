@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 4992110662877930958}
   - component: {fileID: 5259770680301168511}
   m_Layer: 0
-  m_Name: World Palette
+  m_Name: Terrain Palette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -292,7 +292,7 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
---- !u!114 &4601857245130671444
+--- !u!114 &2945987085292815820
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
