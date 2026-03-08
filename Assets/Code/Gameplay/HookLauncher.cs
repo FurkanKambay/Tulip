@@ -16,9 +16,11 @@ namespace Tulip.Gameplay
 
     public class HookLauncher : MonoBehaviour
     {
-        [Header("References")]
+        [Header("Brains")]
         [SerializeField, Required] SaintsInterface<Component, IWielderBrain> wielderBrain;
         [SerializeField, Required] SaintsInterface<Component, IJumperBrain> jumperBrain;
+
+        [Header("References")]
         [SerializeField, Required] Rigidbody2D body;
 
         [Header("Visuals")]

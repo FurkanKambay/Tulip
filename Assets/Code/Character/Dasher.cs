@@ -9,9 +9,11 @@ namespace Tulip.Character
     {
         public event Action OnDash;
 
+        [Header("Brain")]
+        [SerializeField, Required] SaintsInterface<Component, IDasherBrain> brain;
+
         [Header("References")]
         [SerializeField, Required] Rigidbody2D body;
-        [SerializeField, Required] SaintsInterface<Component, IDasherBrain> brain;
 
         [Header("Config")]
         public float dashSpeed = 10f;

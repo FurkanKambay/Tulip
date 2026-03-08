@@ -8,9 +8,11 @@ namespace Tulip.Character
 {
     public class CharacterMovement : MonoBehaviour, ICharacterMovement
     {
+        [Header("Brain")]
+        [SerializeField, Required] SaintsInterface<Component, IWalkerBrain> brain;
+
         [Header("References")]
         [SerializeField, Required] Rigidbody2D body;
-        [SerializeField, Required] SaintsInterface<Component, IWalkerBrain> brain;
         [SerializeField, Required] SurroundsChecker surrounds;
 
         [Header("Config")]

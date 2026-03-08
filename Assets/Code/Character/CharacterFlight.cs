@@ -7,8 +7,11 @@ namespace Tulip.Character
 {
     public class CharacterFlight : MonoBehaviour, ICharacterMovement
     {
-        [SerializeField, Required] Rigidbody2D body;
+        [Header("Brain")]
         [SerializeField, Required] SaintsInterface<Component, IFlightBrain> brain;
+
+        [Header("References")]
+        [SerializeField, Required] Rigidbody2D body;
 
         [Header("Config")]
         public MovementConfig config;

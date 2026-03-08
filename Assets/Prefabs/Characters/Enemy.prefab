@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Tulip.Character.CharacterJump, Tulip
   config: {fileID: 11400000, guid: 6ea3b8f9ae0b08d4681b9e3c879f5d88, type: 2}
-  body: {fileID: 7560684870690709998}
   brain:
     <V>k__BackingField: {fileID: 5945291673912604298}
+  body: {fileID: 7560684870690709998}
   surrounds: {fileID: 3445707755329826195}
 --- !u!1 &495018330362254905
 GameObject:
@@ -408,10 +408,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8751be9d454ae89b969c632e660570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Character.TangibleEntity, Tulip
+  world: {fileID: 0}
   entitySO: {fileID: 11400000, guid: ea8750a0c949971459c7425c97b8a620, type: 2}
   body: {fileID: 7560684870690709998}
   health: {fileID: 1334333901957425893}
-  world: {fileID: 0}
 --- !u!1 &3767203261702702095
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,9 +587,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221a2bf0379152f4b81a63414840b5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Gameplay.ItemWielder, Tulip
-  health: {fileID: 1334333901957425893}
   brain:
     <V>k__BackingField: {fileID: 5945291673912604298}
+  health: {fileID: 1334333901957425893}
   itemRenderer: {fileID: 3267211648343500747}
   fallbackStack:
     itemSO: {fileID: 11400000, guid: cee049b1282365f41bc068f68b0b9ef2, type: 2}
@@ -839,9 +839,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3945025d2a24a429219de59262fec46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Character.CharacterFacer, Tulip
-  sprite: {fileID: 4019848646787942259}
   brain:
     <V>k__BackingField: {fileID: 5945291673912604298}
+  sprite: {fileID: 4019848646787942259}
 --- !u!1 &7311166122315869526
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,9 +941,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba683a666f49426ab800278e48260196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Character.CharacterMovement, Tulip
-  body: {fileID: 7560684870690709998}
   brain:
     <V>k__BackingField: {fileID: 5945291673912604298}
+  body: {fileID: 7560684870690709998}
   surrounds: {fileID: 3445707755329826195}
   config: {fileID: 11400000, guid: d765b47a50639d94898d113aee5f7d17, type: 2}
 --- !u!1 &7724981482679107248

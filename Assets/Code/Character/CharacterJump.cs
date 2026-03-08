@@ -11,9 +11,11 @@ namespace Tulip.Character
 
         public bool IsJumping { get; private set; }
 
+        [Header("Brain")]
+        [SerializeField, Required] SaintsInterface<Component, IJumperBrain> brain;
+
         [Header("References")]
         [SerializeField, Required] Rigidbody2D body;
-        [SerializeField, Required] SaintsInterface<Component, IJumperBrain> brain;
         [SerializeField, Required] SurroundsChecker surrounds;
 
         [Header("Calculations")]

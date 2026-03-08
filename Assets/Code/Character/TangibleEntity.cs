@@ -8,11 +8,13 @@ namespace Tulip.Character
 {
     public class TangibleEntity : MonoBehaviour
     {
+        [Header("Injectable State")]
+        [SerializeField] World world;
+
         [Header("References")]
         [SerializeField, Required] EntitySO entitySO;
         [SerializeField] Rigidbody2D body;
         [SerializeField] Health health;
-        [SerializeField] World world;
 
         public string Name => entitySO.Name;
         public EntitySO EntitySO => entitySO;

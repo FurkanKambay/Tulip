@@ -30,9 +30,11 @@ namespace Tulip.Gameplay
         /// </summary>
         public bool IsThrowMode { get; private set; }
 
+        [Header("Brain")]
+        [SerializeField, Required] SaintsInterface<Component, IWielderBrain> brain;
+
         [Header("References")]
         [SerializeField, Required] Health health;
-        [SerializeField, Required] SaintsInterface<Component, IWielderBrain> brain;
         [SerializeField, Required] SpriteRenderer itemRenderer;
 
         [Header("Config")]

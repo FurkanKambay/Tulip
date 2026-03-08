@@ -9,8 +9,10 @@ namespace Tulip.Audio
 {
     public class FootstepAudio : MonoBehaviour
     {
-        [Header("References")]
+        [Header("Brain")]
         [SerializeField] SaintsInterface<Component, ICharacterMovement> movement;
+
+        [Header("References")]
         [SerializeField] SurroundsChecker surrounds;
 
         [Header("FMOD Events")]
