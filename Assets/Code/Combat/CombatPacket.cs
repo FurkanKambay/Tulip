@@ -1,7 +1,6 @@
-using Tulip.Character;
 using UnityEngine;
 
-namespace Tulip.Data.Gameplay
+namespace Tulip.Combat
 {
     public enum DamageType
     {

@@ -5476,7 +5476,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 992d83c1bd31b8b41aec2663aa6ead9d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Character.Health, Tulip
+  m_EditorClassIdentifier: Tulip.Combat.Health, Tulip
 --- !u!114 &1154427129 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 572498600021759774, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
@@ -5487,7 +5487,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba2b896b557446e890bfeb8085addabc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Gameplay.Respawner, Tulip
+  m_EditorClassIdentifier: Tulip.Combat.Respawner, Tulip
 --- !u!1 &1406129966
 GameObject:
   m_ObjectHideFlags: 0
@@ -5770,7 +5770,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b3a9022be2a50f42b0352cbd5f641b9, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Gameplay.EnemySpawner, Tulip
+  m_EditorClassIdentifier: Tulip.Combat.EnemySpawner, Tulip
   world: {fileID: 661774619}
   spawnParent: {fileID: 1985613754}
   maxSpawns: 10
@@ -5981,7 +5981,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad3c18e30ef84dc68cc50d8c25c72dc8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Gameplay.ProjectileManager, Tulip
+  m_EditorClassIdentifier: Tulip.Combat.ProjectileManager, Tulip
   projectilePrefab: {fileID: 7736458285276045630, guid: 59befd437b1e2c74d99202328ba7b7e3, type: 3}
   projectileParent: {fileID: 337397489}
   contactFilter:

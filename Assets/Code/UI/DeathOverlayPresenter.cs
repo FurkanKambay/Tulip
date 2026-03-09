@@ -1,6 +1,5 @@
 using SaintsField;
-using Tulip.Character;
-using Tulip.Gameplay;
+using Tulip.Combat;
 using Unity.Properties;
 using UnityEngine;
 using UnityEngine.UIElements;

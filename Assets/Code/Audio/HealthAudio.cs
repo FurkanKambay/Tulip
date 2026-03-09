@@ -1,8 +1,7 @@
 using FMOD.Studio;
 using FMODUnity;
 using SaintsField;
-using Tulip.Character;
-using Tulip.Data.Gameplay;
+using Tulip.Combat;
 using UnityEngine;
 
 namespace Tulip.Audio

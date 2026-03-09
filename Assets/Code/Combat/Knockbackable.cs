@@ -1,9 +1,7 @@
 using SaintsField;
-using Tulip.Character;
-using Tulip.Data.Gameplay;
 using UnityEngine;
 
-namespace Tulip.Gameplay
+namespace Tulip.Combat
 {
     public class Knockbackable : MonoBehaviour
     {

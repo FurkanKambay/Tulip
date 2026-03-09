@@ -3,11 +3,11 @@ using Furkan.Common;
 using SaintsField;
 using Tulip.Character;
 using Tulip.Data;
-using Tulip.Data.Gameplay;
 using Tulip.Data.Items;
+using Tulip.Gameplay;
 using UnityEngine;
 
-namespace Tulip.Gameplay
+namespace Tulip.Combat
 {
     public sealed class WeaponWielder : MonoBehaviour
     {

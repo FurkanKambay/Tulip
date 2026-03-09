@@ -1,8 +1,7 @@
 using System.Collections.Generic;
-using Tulip.Character;
 using UnityEngine;
 
-namespace Tulip.Data
+namespace Tulip.Combat
 {
     public class StatusEffector : MonoBehaviour
     {

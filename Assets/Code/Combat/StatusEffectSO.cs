@@ -1,8 +1,7 @@
 using SaintsField;
-using Tulip.Character;
 using UnityEngine;
 
-namespace Tulip.Data
+namespace Tulip.Combat
 {
     [CreateAssetMenu(menuName = "Gameplay/Status Effect")]
     public class StatusEffectSO : ScriptableObject

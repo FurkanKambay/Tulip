@@ -1,9 +1,9 @@
 using Furkan.Common;
+using Tulip.Character;
 using Tulip.Data;
-using Tulip.Data.Gameplay;
 using UnityEngine;
 
-namespace Tulip.Character
+namespace Tulip.Combat
 {
     [SelectionBase]
     public class Health : MonoBehaviour

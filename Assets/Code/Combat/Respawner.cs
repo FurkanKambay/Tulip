@@ -1,10 +1,9 @@
 using SaintsField;
 using Tulip.Character;
-using Tulip.Data.Gameplay;
 using Tulip.GameWorld;
 using UnityEngine;
 
-namespace Tulip.Gameplay
+namespace Tulip.Combat
 {
     public class Respawner : MonoBehaviour
     {

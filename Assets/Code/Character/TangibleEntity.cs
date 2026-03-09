@@ -1,6 +1,6 @@
 using SaintsField;
+using Tulip.Combat;
 using Tulip.Data;
-using Tulip.Data.Gameplay;
 using Tulip.GameWorld;
 using UnityEngine;
 

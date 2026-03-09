@@ -296,7 +296,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be49605a98e97be4f8107b2403c172b5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Gameplay.WeaponWielder, Tulip
+  m_EditorClassIdentifier: Tulip.Combat.WeaponWielder, Tulip
   health: {fileID: 5823316243804091760}
   itemWielder: {fileID: 7936016944497831700}
   inventory: {fileID: 0}
@@ -644,7 +644,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 992d83c1bd31b8b41aec2663aa6ead9d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Character.Health, Tulip
+  m_EditorClassIdentifier: Tulip.Combat.Health, Tulip
   entity: {fileID: 7564833111998869751}
   maxHealth: 200
   currentHealth: 200
@@ -660,7 +660,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79dfb4601184a65a64c065451e86ac9, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Data.StatusEffector, Tulip
+  m_EditorClassIdentifier: Tulip.Combat.StatusEffector, Tulip
   health: {fileID: 5823316243804091760}
   startingEffects: []
 --- !u!1 &8201638215132641927

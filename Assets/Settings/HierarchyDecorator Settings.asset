@@ -4254,7 +4254,7 @@ MonoBehaviour:
         script: {fileID: 11500000, guid: 718e717e21744e409af570a066c14d23, type: 3}
         hasToggle: 1
       - displayName: Health
-        name: Tulip.Character.Health, Tulip, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        name: Tulip.Combat.Health, Tulip, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         content:
           m_Text: Health
           m_Image: {fileID: 2800000, guid: b456a38d2486fef4ba57a96137ace3b3, type: 3}
@@ -4266,7 +4266,7 @@ MonoBehaviour:
         script: {fileID: 11500000, guid: 992d83c1bd31b8b41aec2663aa6ead9d, type: 3}
         hasToggle: 1
       - displayName: StatusEffector
-        name: Tulip.Data.StatusEffector, Tulip, Version=0.0.0.0, Culture=neutral,
+        name: Tulip.Combat.StatusEffector, Tulip, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         content:
           m_Text: StatusEffector
@@ -4381,7 +4381,7 @@ MonoBehaviour:
         script: {fileID: 11500000, guid: 221a2bf0379152f4b81a63414840b5da, type: 3}
         hasToggle: 1
       - displayName: WeaponWielder
-        name: Tulip.Gameplay.WeaponWielder, Tulip, Version=0.0.0.0, Culture=neutral,
+        name: Tulip.Combat.WeaponWielder, Tulip, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         content:
           m_Text: WeaponWielder
@@ -4394,7 +4394,7 @@ MonoBehaviour:
         script: {fileID: 11500000, guid: be49605a98e97be4f8107b2403c172b5, type: 3}
         hasToggle: 1
       - displayName: Knockbackable
-        name: Tulip.Gameplay.Knockbackable, Tulip, Version=0.0.0.0, Culture=neutral,
+        name: Tulip.Combat.Knockbackable, Tulip, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         content:
           m_Text: Knockbackable
@@ -4420,8 +4420,7 @@ MonoBehaviour:
         script: {fileID: 11500000, guid: bb8813c9be3f42188c20f5900cc78793, type: 3}
         hasToggle: 1
       - displayName: Respawner
-        name: Tulip.Gameplay.Respawner, Tulip, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
+        name: Tulip.Combat.Respawner, Tulip, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         content:
           m_Text: Respawner
           m_Image: {fileID: 2800000, guid: 9b8bd041f34e61d4eb776513b46f5d65, type: 3}
@@ -4433,7 +4432,7 @@ MonoBehaviour:
         script: {fileID: 11500000, guid: ba2b896b557446e890bfeb8085addabc, type: 3}
         hasToggle: 1
       - displayName: EnemySpawner
-        name: Tulip.Gameplay.EnemySpawner, Tulip, Version=0.0.0.0, Culture=neutral,
+        name: Tulip.Combat.EnemySpawner, Tulip, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         content:
           m_Text: EnemySpawner
@@ -4498,7 +4497,7 @@ MonoBehaviour:
         script: {fileID: 11500000, guid: d8a96e8e20d94ab2b04f029fd11b79e4, type: 3}
         hasToggle: 1
       - displayName: ProjectileManager
-        name: Tulip.Gameplay.ProjectileManager, Tulip, Version=0.0.0.0, Culture=neutral,
+        name: Tulip.Combat.ProjectileManager, Tulip, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         content:
           m_Text: ProjectileManager
@@ -4637,6 +4636,18 @@ MonoBehaviour:
         excluded: 0
         isBuiltIn: 0
         script: {fileID: 11500000, guid: 5c689342b75d2f343bfc0e8be572928a, type: 3}
+        hasToggle: 1
+      - displayName: Projectile
+        name: Tulip.Combat.Projectile, Tulip, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        content:
+          m_Text: Projectile
+          m_Image: {fileID: 2800000, guid: dd2f8cfa78a291248be92d127f29c3b3, type: 3}
+          m_Tooltip: Projectile
+          m_TextWithWhitespace: "Projectile\u200B"
+        shown: 0
+        excluded: 0
+        isBuiltIn: 0
+        script: {fileID: 11500000, guid: f158677ba23f1ae41860048a829c17bd, type: 3}
         hasToggle: 1
     unityVersion: 6000.3.6f1
     unityCount: 275

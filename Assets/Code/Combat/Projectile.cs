@@ -2,11 +2,10 @@ using System.Collections.Generic;
 using Furkan.Common;
 using SaintsField.Playa;
 using Tulip.Character;
-using Tulip.Data.Gameplay;
 using Tulip.Data.Items;
 using UnityEngine;
 
-namespace Tulip.Gameplay
+namespace Tulip.Combat
 {
     public sealed class Projectile : MonoBehaviour
     {

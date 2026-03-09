@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf6cf0d83b5247f8ae535cf989cb9798, type: 3}
   m_Name: Fast Regen
-  m_EditorClassIdentifier: Tulip.Data.StatusEffectSO, Tulip
+  m_EditorClassIdentifier: Tulip.Combat.StatusEffectSO, Tulip
   isPermanent: 0
   duration: 10
   amount: 5

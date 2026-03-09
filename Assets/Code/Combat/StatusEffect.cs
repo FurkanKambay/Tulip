@@ -1,9 +1,7 @@
 using System;
-using Tulip.Character;
-using Tulip.Data.Gameplay;
 using UnityEngine;
 
-namespace Tulip.Data
+namespace Tulip.Combat
 {
     /// TODO: support non-Health effects
     [Serializable]

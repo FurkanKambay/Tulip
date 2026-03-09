@@ -1,7 +1,6 @@
 using SaintsField;
-using Tulip.Character;
+using Tulip.Combat;
 using Tulip.Data;
-using Tulip.Data.Gameplay;
 using UnityEngine;
 
 namespace Tulip.AI

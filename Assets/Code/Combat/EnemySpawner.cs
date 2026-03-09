@@ -8,7 +8,7 @@ using Tulip.GameWorld;
 using UnityEditor;
 using UnityEngine;
 
-namespace Tulip.Gameplay
+namespace Tulip.Combat
 {
     public class EnemySpawner : MonoBehaviour
     {

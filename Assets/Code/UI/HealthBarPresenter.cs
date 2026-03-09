@@ -1,5 +1,5 @@
 using SaintsField;
-using Tulip.Character;
+using Tulip.Combat;
 using UnityEngine;
 
 namespace Tulip.UI

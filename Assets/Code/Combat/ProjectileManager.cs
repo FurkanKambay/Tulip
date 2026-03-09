@@ -1,10 +1,9 @@
 using System.Collections.Generic;
-using Tulip.Character;
 using Tulip.Data.Items;
 using UnityEngine;
 using UnityEngine.Pool;
 
-namespace Tulip.Gameplay
+namespace Tulip.Combat
 {
     public sealed class ProjectileManager : MonoBehaviour
     {

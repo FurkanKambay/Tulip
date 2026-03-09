@@ -1,6 +1,6 @@
 using System.Collections;
 using SaintsField;
-using Tulip.Data.Gameplay;
+using Tulip.Combat;
 using UnityEngine;
 
 namespace Tulip.Character

@@ -1,4 +1,4 @@
-using Tulip.Data.Gameplay;
+using Tulip.Combat;
 using UnityEngine;
 
 namespace Tulip.Character
