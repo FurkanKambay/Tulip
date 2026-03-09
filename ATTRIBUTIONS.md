@@ -26,6 +26,7 @@ The assets are used for prototyping purposes only for now.
 - ["Bullet Bys & Impacts"](https://sonniss.com/sound-effects/bullet-bys-impacts/) by PMSFX (from [GDC Audio Bundle 2020](https://sonniss.com/gameaudiogdc/))
 - ["UI Audio"](https://www.kenney.nl/assets/ui-audio) by Kenney
 
-## Font
+## Font & Icons
 
 - ["Monogram" font](https://datagoblin.itch.io/monogram) by Vinícius Menézio
+- [1-bit Pixel Icons](https://nikoichu.itch.io/pixel-icons) by Nikoichu

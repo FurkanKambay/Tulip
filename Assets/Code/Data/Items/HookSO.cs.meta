@@ -7,7 +7,7 @@ MonoImporter:
   - icon: {instanceID: 0}
   - swingConfig: {fileID: 11400000, guid: 35ff93fda544a594a94ebfe5599470a9, type: 2}
   executionOrder: 0
-  icon: {instanceID: 0}
+  icon: {fileID: 2800000, guid: fc126e8d0f0e1404f8a3f71b35173af7, type: 3}
   userData: 
   assetBundleName: 
   assetBundleVariant: 

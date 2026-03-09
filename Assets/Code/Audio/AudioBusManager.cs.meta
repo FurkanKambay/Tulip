@@ -7,7 +7,7 @@ MonoImporter:
   - fmodStudioListener: {instanceID: 0}
   - gameStateChangeEvent: {fileID: 11400000, guid: e546a51b5a993714f94816c29b5538fa, type: 2}
   executionOrder: 0
-  icon: {instanceID: 0}
+  icon: {fileID: 2800000, guid: 1a42efc1306ef634c8e53e4cb2413304, type: 3}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
