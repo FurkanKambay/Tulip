@@ -45,7 +45,6 @@ namespace Tulip.Gameplay
         private Transform itemVisual;
 
         // state
-        private ItemStack handStack;
         private float timeSinceLastUse;
         private ItemSwingState swingState;
         private Vector2 aimVector;
@@ -94,7 +93,7 @@ namespace Tulip.Gameplay
 
         private void TickSwingState()
         {
-            if (!handStack.IsValid || handStack.itemSO.IsNot(out UsableSO usableSO))
+            if (!fallbackStack.IsValid || fallbackStack.itemSO.IsNot(out UsableSO usableSO))
                 return;
 
             ItemSwingConfig swingConfig = usableSO.SwingConfig;
@@ -122,7 +121,7 @@ namespace Tulip.Gameplay
             // Throw the item
             if (IsThrowMode && brain.I.WantsToAttack && timeSinceLastUse > usableSO.ThrowCooldown)
             {
-                OnThrowPerform?.Invoke(handStack, AimPointWorld);
+                OnThrowPerform?.Invoke(fallbackStack, AimPointWorld);
                 timeSinceLastUse = 0f;
             }
 
@@ -163,14 +162,14 @@ namespace Tulip.Gameplay
                     // if no phases, hit and reset swing
                     if (swingConfig.Phases.Length == 0)
                     {
-                        OnSwingPerform?.Invoke(handStack, AimPointWorld);
+                        OnSwingPerform?.Invoke(fallbackStack, AimPointWorld);
                         SwitchState(ItemSwingState.Resetting);
                         break;
                     }
 
                     // hit if we need to before checking for final exit
                     if (phase.shouldHit)
-                        OnSwingPerform?.Invoke(handStack, AimPointWorld);
+                        OnSwingPerform?.Invoke(fallbackStack, AimPointWorld);
 
                     bool isFinalPhase = phaseIndex == swingConfig.Phases.Length - 1;
                     bool shouldReset = !wantsToSwing || !swingConfig.Loop;
@@ -207,7 +206,7 @@ namespace Tulip.Gameplay
             if (state == swingState)
                 return;
 
-            if (!handStack.IsValid || handStack.itemSO.IsNot(out UsableSO _))
+            if (!fallbackStack.IsValid || fallbackStack.itemSO.IsNot(out UsableSO _))
             {
                 swingState = ItemSwingState.Ready;
                 return;
@@ -222,10 +221,10 @@ namespace Tulip.Gameplay
                     wantsToSwapItems = false;
                     RefreshItem();
 
-                    OnReady?.Invoke(handStack);
+                    OnReady?.Invoke(fallbackStack);
                     break;
                 case ItemSwingState.Swinging:
-                    OnSwingStart?.Invoke(handStack, AimPointWorld);
+                    OnSwingStart?.Invoke(fallbackStack, AimPointWorld);
                     phaseIndex = 0;
                     SetMotionToPhase();
                     break;
@@ -243,14 +242,14 @@ namespace Tulip.Gameplay
             phaseIndex = 0;
             ResetMotionStart();
 
-            if (handStack.itemSO.Is(out UsableSO usableSO))
+            if (fallbackStack.itemSO.Is(out UsableSO usableSO))
                 SetSpriteTransformInstant(usableSO.SwingConfig.ReadyPosition, usableSO.SwingConfig.ReadyAngle);
         }
 
 #region Motion Helpers
         private void SetMotionToPhase()
         {
-            if (handStack.itemSO.IsNot(out UsableSO usableSO))
+            if (fallbackStack.itemSO.IsNot(out UsableSO usableSO))
                 return;
 
             ItemSwingConfig swingConfig = usableSO.SwingConfig;
@@ -265,7 +264,7 @@ namespace Tulip.Gameplay
 
         private void SetMotionToReady()
         {
-            if (!handStack.IsValid || handStack.itemSO.IsNot(out UsableSO usableSO))
+            if (!fallbackStack.IsValid || fallbackStack.itemSO.IsNot(out UsableSO usableSO))
                 return;
 
             ItemSwingConfig swingConfig = usableSO.SwingConfig;
@@ -326,7 +325,7 @@ namespace Tulip.Gameplay
 
         private void UpdateItemSprite()
         {
-            if (handStack.itemSO.IsNot(out UsableSO usableSO))
+            if (fallbackStack.itemSO.IsNot(out UsableSO usableSO))
             {
                 itemVisual.localScale = Vector3.zero;
                 return;
