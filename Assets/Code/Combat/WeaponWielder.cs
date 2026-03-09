@@ -58,7 +58,7 @@ namespace Tulip.Combat
                 if (!target.enabled)
                     continue;
 
-                InventoryModification loot = target.Damage(weaponSO.Damage, health, DamageType.MeleeWeapon);
+                InventoryModification loot = target.Damage(weaponSO.Damage, health, weaponSO.DamageType);
 
                 if (inventory)
                     inventory.ApplyModification(loot);

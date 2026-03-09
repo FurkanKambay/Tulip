@@ -26,6 +26,7 @@ MonoBehaviour:
     strength: 0
     chargeSpeed: 0
   swingConfig: {fileID: 11400000, guid: 13bdc7f0fbc824d4fa90dc9647097440, type: 2}
+  damageType: 0
   damage: 12
   range: 3
   isMultiTarget: 0

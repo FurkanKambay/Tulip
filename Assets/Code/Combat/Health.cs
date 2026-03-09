@@ -54,9 +54,13 @@ namespace Tulip.Combat
         private void Update() =>
             InvulnerabilityRemaining = Mathf.Max(0, InvulnerabilityRemaining - Time.deltaTime);
 
-        public InventoryModification Damage(float amount, Health source, DamageType damageType)
+        public InventoryModification Damage(float amount, Health source, DamageType damageType, float damageMultiplier = 1f)
         {
-            if (IsDead || amount < 0)
+            if (!source)
+                return default;
+
+            float damageAmount = amount * damageMultiplier;
+            if (IsDead || damageAmount < 0)
                 return default;
 
             // Damage from status effects bypass invulnerability checks
@@ -65,7 +69,7 @@ namespace Tulip.Combat
             if (IsInvulnerable && !bypassInvulnerability)
                 return default;
 
-            CurrentHealth -= amount;
+            CurrentHealth -= damageAmount;
             LatestDamageSource = source;
 
             if (!bypassInvulnerability)
@@ -77,7 +81,7 @@ namespace Tulip.Combat
 
             var packet = new CombatPacket
             {
-                Amount = amount,
+                Amount = damageAmount,
                 Source = source,
                 Target = this,
                 SourcePosition = sourcePosition,
