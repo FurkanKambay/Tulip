@@ -32,6 +32,12 @@ namespace Tulip.Combat
                     allProjectiles.Add(instance);
                     return instance;
                 },
+                actionOnGet: projectile => projectile.gameObject.SetActive(true),
+                actionOnRelease: projectile =>
+                {
+                    projectile.gameObject.SetActive(false);
+                    projectile.ResetState();
+                },
                 actionOnDestroy: projectile =>
                 {
                     allProjectiles.Remove(projectile);
@@ -53,9 +59,8 @@ namespace Tulip.Combat
                     continue;
 
                 bool shouldDestroy = projectile.MoveAndCollide(in contactFilter, results);
-
                 if (shouldDestroy)
-                    ReleaseProjectile(projectileIndex);
+                    pool.Release(projectile);
             }
         }
 
@@ -66,17 +71,8 @@ namespace Tulip.Combat
 
             Projectile projectile = pool.Get();
             projectile.Launch(origin, aimVector, owner, weaponSO);
-            projectile.gameObject.SetActive(true);
 
             Debug.DrawRay(origin, aimVector.normalized, Color.yellow);
-        }
-
-        private void ReleaseProjectile(int index)
-        {
-            Projectile projectile = allProjectiles[index];
-            pool.Release(projectile);
-            projectile.gameObject.SetActive(false);
-            projectile.ResetState();
         }
     }
 }
