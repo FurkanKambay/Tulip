@@ -23,6 +23,7 @@ namespace Tulip.Combat
         private ProjectileManager projectileManager;
         private WeaponSO weaponSO;
         private RaycastHit2D[] hitResults;
+        private readonly List<Health> damagedTargets = new();
 
         private void Awake()
         {
@@ -53,19 +54,14 @@ namespace Tulip.Combat
             if (stack.itemSO.IsNot(out weaponSO))
                 return;
 
-            foreach (Health target in GetTargets(transform.position, targetPoint))
+            foreach (Hurtbox target in GetTargets(transform.position, targetPoint))
             {
-                if (!target.enabled)
-                    continue;
-
-                InventoryModification loot = target.Damage(weaponSO.Damage, health, weaponSO.DamageType);
-
-                if (inventory)
-                    inventory.ApplyModification(loot);
+                if (target.GetHit(weaponSO, attacker: health))
+                    damagedTargets.Add(target.Owner);
             }
         }
 
-        private IEnumerable<Health> GetTargets(Vector2 origin, Vector2 aimPoint)
+        private IEnumerable<Hurtbox> GetTargets(Vector2 origin, Vector2 aimPoint)
         {
             Vector2 direction = (aimPoint - origin).normalized;
             int hitCount = Physics2D.Raycast(origin, direction, hitContactFilter, hitResults, weaponSO.Range);
@@ -74,16 +70,22 @@ namespace Tulip.Combat
             hitCount = Mathf.Min(hitCount, maxHits);
 
             Debug.DrawRay(origin, direction * weaponSO.Range, Color.green, 1f);
+            damagedTargets.Clear();
 
             for (int i = 0; i < hitCount; i++)
             {
                 RaycastHit2D hit = hitResults[i];
 
                 // We hit an obstacle (hit results are pre-sorted by distance)
-                if (!hit || !hit.collider.TryGetComponent(out TangibleEntity entity) || !entity.Health)
-                    break;
+                if (!hit || !hit.collider.TryGetComponent(out Hurtbox hurtbox))
+                    break; // stop piercing further
 
-                yield return entity.Health;
+                // Already hit this target
+                if (damagedTargets.Contains(hurtbox.Owner))
+                    continue;
+
+                if (hurtbox.enabled)
+                    yield return hurtbox;
             }
         }
     }

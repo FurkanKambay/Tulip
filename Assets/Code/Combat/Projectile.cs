@@ -16,7 +16,7 @@ namespace Tulip.Combat
         [ShowInInspector] Health ownerHealth;
         [ShowInInspector] WeaponSO sourceWeapon;
         [ShowInInspector] Vector2 velocity;
-        [ShowInInspector] readonly List<Transform> damagedTargets = new();
+        [ShowInInspector] readonly List<Health> damagedTargets = new();
 
         internal void Launch(Vector2 origin, Vector2 direction, Health owner, WeaponSO weapon)
         {
@@ -57,21 +57,19 @@ namespace Tulip.Combat
             {
                 RaycastHit2D hit = hitResults[hitIndex];
 
-                // Already hit this target (or no hit)
-                if (!hit || damagedTargets.Contains(hit.transform))
-                    continue;
-
-                TangibleEntity entity = hit.collider.GetComponent<TangibleEntity>();
-
                 // Hit an obstacle: destroy projectile
-                if (!entity || !entity.Health)
+                if (!hit || !hit.collider.TryGetComponent(out Hurtbox hurtbox))
                 {
                     shouldDestroy = true;
-                    continue;
+                    break;
                 }
 
-                entity.Health.Damage(sourceWeapon.Damage, ownerHealth, DamageType.RangedWeapon);
-                damagedTargets.Add(entity.transform);
+                // Already hit this target
+                if (damagedTargets.Contains(hurtbox.Owner))
+                    continue;
+
+                hurtbox.GetHit(sourceWeapon, ownerHealth, DamageType.RangedWeapon);
+                damagedTargets.Add(hurtbox.Owner);
             }
 
             return shouldDestroy;

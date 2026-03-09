@@ -56,6 +56,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 15018845622420706, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 143225856469302180, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
       propertyPath: config
       value: 
@@ -192,6 +196,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8432881549753123103, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
+      propertyPath: strategySO
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a34eb03480108c43bdeff31ec837a7f, type: 2}
     - target: {fileID: 8809969866287856108, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
       propertyPath: m_Layer
       value: 7
