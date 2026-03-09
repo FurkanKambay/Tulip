@@ -5205,28 +5205,6 @@ MonoBehaviour:
   entityLayers:
     serializedVersion: 2
     m_Bits: 1984
---- !u!114 &664534664 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7186377946535505526, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
-  m_PrefabInstance: {fileID: 1154427126}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 992d83c1bd31b8b41aec2663aa6ead9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Tulip.Character.Health, Tulip
---- !u!114 &664534665 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5150696069172137415, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
-  m_PrefabInstance: {fileID: 1154427126}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba2b896b557446e890bfeb8085addabc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Tulip.Gameplay.Respawner, Tulip
 --- !u!1 &741303843
 GameObject:
   m_ObjectHideFlags: 0
@@ -5394,7 +5372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fdfdff2c1ac25943b5f45bf68fb38e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Player.CameraFollow, Tulip
-  subject: {fileID: 1986012726}
+  subject: {fileID: 1154427127}
   trackingConfig:
     <Offset>k__BackingField: {x: 0, y: 1.45}
     <Speed>k__BackingField: {x: 4, y: 4}
@@ -5474,27 +5452,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 963390074723932652, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
+    - target: {fileID: 5608591855508489013, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
       propertyPath: world
       value: 
       objectReference: {fileID: 661774619}
-    - target: {fileID: 8291246366843984804, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8291246366843984804, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8291246366843984804, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
+--- !u!4 &1154427127 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3718691385353617789, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
+  m_PrefabInstance: {fileID: 1154427126}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1154427128 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2535590440556967087, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
+  m_PrefabInstance: {fileID: 1154427126}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 992d83c1bd31b8b41aec2663aa6ead9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Tulip.Character.Health, Tulip
+--- !u!114 &1154427129 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 572498600021759774, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
+  m_PrefabInstance: {fileID: 1154427126}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba2b896b557446e890bfeb8085addabc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Tulip.Gameplay.Respawner, Tulip
 --- !u!1 &1406129966
 GameObject:
   m_ObjectHideFlags: 0
@@ -5564,8 +5557,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Tulip.UI.DeathOverlayPresenter, Tulip
   document: {fileID: 1406129968}
-  health: {fileID: 664534664}
-  respawner: {fileID: 664534665}
+  health: {fileID: 1154427128}
+  respawner: {fileID: 1154427129}
 --- !u!1 &1492625892
 GameObject:
   m_ObjectHideFlags: 0
@@ -5944,7 +5937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 282238c99bbde46429cdcd8be7a89bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Player.ShaderGlobals, Tulip
-  player: {fileID: 664534664}
+  player: {fileID: 1154427128}
 --- !u!1 &1957016066
 GameObject:
   m_ObjectHideFlags: 0
@@ -6038,11 +6031,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1986012726 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8291246366843984804, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
-  m_PrefabInstance: {fileID: 1154427126}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
