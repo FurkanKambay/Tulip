@@ -207,23 +207,23 @@ MonoBehaviour:
     - prefix: +
       noSpaceAfterPrefix: 0
       isRegex: 0
-      name: Mini Header (Centered)
+      name: Mini Header
       font: {fileID: 0}
-      fontSize: 10
-      fontAlignment: 4
-      fontStyle: 1
-      textFormatting: 0
+      fontSize: 9
+      fontAlignment: 3
+      fontStyle: 0
+      textFormatting: 1
       modes:
       - fontColour: {r: 1, g: 1, b: 1, a: 1}
-        backgroundColour: {r: 0.38568, g: 0.6335747, b: 0.764151, a: 1}
-      - fontColour: {r: 1, g: 1, b: 1, a: 1}
-        backgroundColour: {r: 0.2671325, g: 0.4473481, b: 0.6509434, a: 1}
+        backgroundColour: {r: 0.39607844, g: 0.68235296, b: 0.83137256, a: 1}
+      - fontColour: {r: 0.93333334, g: 0.93333334, b: 0.93333334, a: 1}
+        backgroundColour: {r: 0.23529412, g: 0.23529412, b: 0.23529412, a: 1}
       style:
-        m_Name: Mini Header (Centered)
+        m_Name: Mini Header
         m_Normal:
           m_Background: {fileID: 0}
           m_ScaledBackgrounds: []
-          m_TextColor: {r: 1, g: 1, b: 1, a: 1}
+          m_TextColor: {r: 0.93333334, g: 0.93333334, b: 0.93333334, a: 1}
         m_Hover:
           m_Background: {fileID: 0}
           m_ScaledBackgrounds: []
@@ -273,9 +273,9 @@ MonoBehaviour:
           m_Top: 0
           m_Bottom: 0
         m_Font: {fileID: 0}
-        m_FontSize: 10
-        m_FontStyle: 1
-        m_Alignment: 4
+        m_FontSize: 9
+        m_FontStyle: 0
+        m_Alignment: 3
         m_WordWrap: 0
         m_RichText: 1
         m_TextClipping: 0
@@ -301,8 +301,8 @@ MonoBehaviour:
     enableIcons: 1
     clickToToggleComponent: 1
     showMissingScriptWarning: 1
-    showAll: 1
-    stackDuplicateIcons: 0
+    showAll: 3
+    stackDuplicateIcons: 1
     unityGroups:
     - name: Animation
       components:
@@ -2152,7 +2152,7 @@ MonoBehaviour:
           m_Tooltip: Transform
           m_TextWithWhitespace: "Transform\u200B"
         shown: 0
-        excluded: 0
+        excluded: 1
         isBuiltIn: 1
         script: {fileID: 0}
         hasToggle: 0
@@ -4067,7 +4067,7 @@ MonoBehaviour:
           PublicKeyToken=null
         content:
           m_Text: AudioBusManager
-          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Image: {fileID: 2800000, guid: 1a42efc1306ef634c8e53e4cb2413304, type: 3}
           m_Tooltip: AudioBusManager
           m_TextWithWhitespace: "AudioBusManager\u200B"
         shown: 0
@@ -4104,7 +4104,7 @@ MonoBehaviour:
         name: Tulip.Audio.BiomeMusic, Tulip, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         content:
           m_Text: BiomeMusic
-          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Image: {fileID: 2800000, guid: 7c6203577b3febe46ba0458951a32a08, type: 3}
           m_Tooltip: BiomeMusic
           m_TextWithWhitespace: "BiomeMusic\u200B"
         shown: 0
@@ -4130,7 +4130,7 @@ MonoBehaviour:
           PublicKeyToken=null
         content:
           m_Text: CameraFollow
-          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Image: {fileID: 2800000, guid: 2a367ff84549f4c41ae9c60a5231d1db, type: 3}
           m_Tooltip: CameraFollow
           m_TextWithWhitespace: "CameraFollow\u200B"
         shown: 0
@@ -4233,7 +4233,7 @@ MonoBehaviour:
           PublicKeyToken=null
         content:
           m_Text: FootstepAudio
-          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Image: {fileID: 2800000, guid: 1f2cc4afc4cb105498676b43510a5607, type: 3}
           m_Tooltip: FootstepAudio
           m_TextWithWhitespace: "FootstepAudio\u200B"
         shown: 0
@@ -4257,7 +4257,7 @@ MonoBehaviour:
         name: Tulip.Character.Health, Tulip, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         content:
           m_Text: Health
-          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Image: {fileID: 2800000, guid: b456a38d2486fef4ba57a96137ace3b3, type: 3}
           m_Tooltip: Health
           m_TextWithWhitespace: "Health\u200B"
         shown: 0
@@ -4346,7 +4346,7 @@ MonoBehaviour:
         name: Tulip.Character.Dasher, Tulip, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         content:
           m_Text: Dasher
-          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Image: {fileID: 2800000, guid: 0f0a743a671a93740a83c9ee682fed6b, type: 3}
           m_Tooltip: Dasher
           m_TextWithWhitespace: "Dasher\u200B"
         shown: 0
@@ -4385,7 +4385,7 @@ MonoBehaviour:
           PublicKeyToken=null
         content:
           m_Text: WeaponWielder
-          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Image: {fileID: 2800000, guid: 9926dbb5da08fb14a8f2054616a96c56, type: 3}
           m_Tooltip: WeaponWielder
           m_TextWithWhitespace: "WeaponWielder\u200B"
         shown: 0
@@ -4411,7 +4411,7 @@ MonoBehaviour:
           PublicKeyToken=null
         content:
           m_Text: HookLauncher
-          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Image: {fileID: 2800000, guid: fc126e8d0f0e1404f8a3f71b35173af7, type: 3}
           m_Tooltip: HookLauncher
           m_TextWithWhitespace: "HookLauncher\u200B"
         shown: 0
@@ -4424,7 +4424,7 @@ MonoBehaviour:
           PublicKeyToken=null
         content:
           m_Text: Respawner
-          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Image: {fileID: 2800000, guid: 9b8bd041f34e61d4eb776513b46f5d65, type: 3}
           m_Tooltip: Respawner
           m_TextWithWhitespace: "Respawner\u200B"
         shown: 0
@@ -4502,7 +4502,7 @@ MonoBehaviour:
           PublicKeyToken=null
         content:
           m_Text: ProjectileManager
-          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Image: {fileID: 2800000, guid: dd2f8cfa78a291248be92d127f29c3b3, type: 3}
           m_Tooltip: ProjectileManager
           m_TextWithWhitespace: "ProjectileManager\u200B"
         shown: 0
@@ -4561,6 +4561,82 @@ MonoBehaviour:
         excluded: 0
         isBuiltIn: 0
         script: {fileID: 11500000, guid: 46b9bb78d5c54466b82752072f63393b, type: 3}
+        hasToggle: 1
+      - displayName: TreantAI
+        name: Tulip.AI.TreantAI, Tulip, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        content:
+          m_Text: TreantAI
+          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Tooltip: TreantAI
+          m_TextWithWhitespace: "TreantAI\u200B"
+        shown: 0
+        excluded: 0
+        isBuiltIn: 0
+        script: {fileID: 11500000, guid: bd9a8abc893f4c91aa0197dc8e0a84fd, type: 3}
+        hasToggle: 1
+      - displayName: SimpleFlightAI
+        name: Tulip.AI.SimpleFlightAI, Tulip, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        content:
+          m_Text: SimpleFlightAI
+          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Tooltip: SimpleFlightAI
+          m_TextWithWhitespace: "SimpleFlightAI\u200B"
+        shown: 0
+        excluded: 0
+        isBuiltIn: 0
+        script: {fileID: 11500000, guid: a8ad0646ee3645beb5ec738af831ade9, type: 3}
+        hasToggle: 1
+      - displayName: CharacterFlight
+        name: Tulip.Character.CharacterFlight, Tulip, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        content:
+          m_Text: CharacterFlight
+          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Tooltip: CharacterFlight
+          m_TextWithWhitespace: "CharacterFlight\u200B"
+        shown: 0
+        excluded: 0
+        isBuiltIn: 0
+        script: {fileID: 11500000, guid: e66330c61e852094a9857527ad78481d, type: 3}
+        hasToggle: 1
+      - displayName: CharacterAnimator
+        name: Tulip.Character.CharacterAnimator, Tulip, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        content:
+          m_Text: CharacterAnimator
+          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Tooltip: CharacterAnimator
+          m_TextWithWhitespace: "CharacterAnimator\u200B"
+        shown: 0
+        excluded: 0
+        isBuiltIn: 0
+        script: {fileID: 11500000, guid: c36735ade5ba44c78de1e439a9ac9ddf, type: 3}
+        hasToggle: 1
+      - displayName: Interactable
+        name: Tulip.Interaction.Interactable, Tulip, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        content:
+          m_Text: Interactable
+          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Tooltip: Interactable
+          m_TextWithWhitespace: "Interactable\u200B"
+        shown: 0
+        excluded: 0
+        isBuiltIn: 0
+        script: {fileID: 11500000, guid: faa247c75add54a428feb9cb3aabf26e, type: 3}
+        hasToggle: 1
+      - displayName: Dialogue
+        name: Tulip.Interaction.Dialogue, Tulip, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        content:
+          m_Text: Dialogue
+          m_Image: {fileID: 2800000, guid: 2059860c36b6cf7419f1c79c4163c739, type: 3}
+          m_Tooltip: Dialogue
+          m_TextWithWhitespace: "Dialogue\u200B"
+        shown: 0
+        excluded: 0
+        isBuiltIn: 0
+        script: {fileID: 11500000, guid: 5c689342b75d2f343bfc0e8be572928a, type: 3}
         hasToggle: 1
     unityVersion: 6000.3.6f1
     unityCount: 275
