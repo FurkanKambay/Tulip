@@ -4649,5 +4649,17 @@ MonoBehaviour:
         isBuiltIn: 0
         script: {fileID: 11500000, guid: f158677ba23f1ae41860048a829c17bd, type: 3}
         hasToggle: 1
+      - displayName: Hurtbox
+        name: Tulip.Combat.Hurtbox, Tulip, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        content:
+          m_Text: Hurtbox
+          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Tooltip: Hurtbox
+          m_TextWithWhitespace: "Hurtbox\u200B"
+        shown: 0
+        excluded: 0
+        isBuiltIn: 0
+        script: {fileID: 11500000, guid: 97ae4b113e06417a8c773916e3ceea25, type: 3}
+        hasToggle: 1
     unityVersion: 6000.3.6f1
     unityCount: 275
