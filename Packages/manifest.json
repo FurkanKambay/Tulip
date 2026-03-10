@@ -14,6 +14,7 @@
     "com.unity.project-auditor": "1.0.2",
     "com.unity.render-pipelines.universal": "17.3.0",
     "com.unity.visualeffectgraph": "17.3.0",
+    "com.vertx.debugging": "3.0.2",
     "com.wooshii.hierarchydecorator": "0.12.0",
     "today.comes.saintsfield": "4.32.5",
     "com.unity.modules.adaptiveperformance": "1.0.0",
@@ -37,7 +38,8 @@
         "com.needle",
         "com.tayx",
         "com.wooshii",
-        "today.comes"
+        "today.comes",
+        "com.vertx"
       ]
     }
   ]
