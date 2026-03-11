@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 964464d3c408dea4e880c66c63c4155e
+guid: 2b39c86c0ae6ae44cb53dc5bc36058f4
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -12,7 +12,7 @@ ScriptedImporter:
   _pixelsPerUnit: 8
   _overrideTexture: {instanceID: 0}
   _sprites:
-  - name: Tileset_Stone_0
+  - name: Snow_0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -24,10 +24,10 @@ ScriptedImporter:
       y: 72
       width: 8
       height: 8
-    spriteID: 44313f2eca66d2d469a138a8827cfc2b
+    spriteID: 5a19741c1c62e6442b32de869ce0df66
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_1
+  - name: Snow_1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -39,10 +39,10 @@ ScriptedImporter:
       y: 72
       width: 8
       height: 8
-    spriteID: cc265a6c257e25444964cd5dd7babc3b
+    spriteID: 059499e0bbfaf4c498a64d11026ee4e1
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_2
+  - name: Snow_2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -54,10 +54,10 @@ ScriptedImporter:
       y: 72
       width: 8
       height: 8
-    spriteID: 531d135035a03c747a4a7617332d65e2
+    spriteID: 30ec08071ac79064bb7259fa058f044d
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_3
+  - name: Snow_3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -69,10 +69,10 @@ ScriptedImporter:
       y: 72
       width: 8
       height: 8
-    spriteID: f80671c12cc3e1d498441dbfcf99c57e
+    spriteID: d8cd61dbd08da9a41808260a9cb38204
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_4
+  - name: Snow_4
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -84,10 +84,10 @@ ScriptedImporter:
       y: 72
       width: 8
       height: 8
-    spriteID: 1afdf0b314639d343b406ac555abf0c6
+    spriteID: 963ee3a520c098948857003a50a9f869
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_5
+  - name: Snow_5
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -99,10 +99,10 @@ ScriptedImporter:
       y: 72
       width: 8
       height: 8
-    spriteID: 76964e7a23c173d4181cf9e95c2032cf
+    spriteID: f4be6da56235cfa4a9153d2f060f0952
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_6
+  - name: Snow_6
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -114,10 +114,10 @@ ScriptedImporter:
       y: 72
       width: 8
       height: 8
-    spriteID: 344552a04e1abdd4494e22ce1b17b28a
+    spriteID: 211cd2e27a3edcd4f8db62e200d587ad
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_7
+  - name: Snow_7
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -129,10 +129,10 @@ ScriptedImporter:
       y: 72
       width: 8
       height: 8
-    spriteID: 6f3e1cf1e4fa20a40ad1f063f5819639
+    spriteID: 48471c91e4a5cef4887cfabba801724d
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_8
+  - name: Snow_8
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -144,10 +144,10 @@ ScriptedImporter:
       y: 72
       width: 8
       height: 8
-    spriteID: 905150554e67e58418ef7fe98506940f
+    spriteID: c3d19df8a97600a459be68aeb5fcfcf7
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_9
+  - name: Snow_9
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -159,10 +159,10 @@ ScriptedImporter:
       y: 72
       width: 8
       height: 8
-    spriteID: 7602ccfefbdee8c418c50086c1395288
+    spriteID: e02d32ce21b160e4ab5ef8dc6fe5d169
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_10
+  - name: Snow_10
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -174,10 +174,10 @@ ScriptedImporter:
       y: 64
       width: 8
       height: 8
-    spriteID: 2458b6ca78691f04a9303b4f53d57ad7
+    spriteID: 10ba415c9119a6b44ae4a0b178b52232
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_11
+  - name: Snow_11
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -189,10 +189,10 @@ ScriptedImporter:
       y: 64
       width: 8
       height: 8
-    spriteID: aacdc196de600a847b77afb7776e5b1c
+    spriteID: e2ebd4943ec09df40845e90e801922e2
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_12
+  - name: Snow_12
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -204,10 +204,10 @@ ScriptedImporter:
       y: 64
       width: 8
       height: 8
-    spriteID: 0c1f0a674af3009438e07395243c9870
+    spriteID: 29786afe89b271f45817bee25caa5dec
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_13
+  - name: Snow_13
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -219,10 +219,10 @@ ScriptedImporter:
       y: 64
       width: 8
       height: 8
-    spriteID: 45d3aa82148d68943badc154de8d2479
+    spriteID: 73bec41141dc92544b2e3ca256f0b903
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_14
+  - name: Snow_14
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -234,10 +234,10 @@ ScriptedImporter:
       y: 64
       width: 8
       height: 8
-    spriteID: eea4cbc5ae31cc34695fd6ec12163b1b
+    spriteID: 136a60e9207037e43b720c5fed38c101
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_15
+  - name: Snow_15
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -249,10 +249,10 @@ ScriptedImporter:
       y: 64
       width: 8
       height: 8
-    spriteID: 9bd2b82e3e1c08c4d9c808c0eda175ea
+    spriteID: 845db266ecddb75429c8330a86954b1b
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_16
+  - name: Snow_16
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -264,10 +264,10 @@ ScriptedImporter:
       y: 64
       width: 8
       height: 8
-    spriteID: 6a4bab4c9bb53fd4da4dda15bae4b52a
+    spriteID: 385d3131490d4e249a400b0b111c1f76
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_17
+  - name: Snow_17
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -279,10 +279,10 @@ ScriptedImporter:
       y: 64
       width: 8
       height: 8
-    spriteID: f08ae98efe914124abac0c070b1e1961
+    spriteID: ff19a0826290041489e3d2f328747cf8
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_18
+  - name: Snow_18
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -294,10 +294,10 @@ ScriptedImporter:
       y: 64
       width: 8
       height: 8
-    spriteID: bf47082de6df9ea419640ad25d1d7c3b
+    spriteID: e5b07139de0561b468cc08ffcf30ea1d
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_19
+  - name: Snow_19
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -309,10 +309,10 @@ ScriptedImporter:
       y: 64
       width: 8
       height: 8
-    spriteID: f161d0ee240a6dd47934d9ee5207d256
+    spriteID: 4aaa3d4392f42fa42ad31371072318c3
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_20
+  - name: Snow_20
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -324,10 +324,10 @@ ScriptedImporter:
       y: 56
       width: 8
       height: 8
-    spriteID: 3502f0398de1c8b438acc8da02b361e9
+    spriteID: 4dfe7c3f6271eac4c8ab9012898b248e
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_21
+  - name: Snow_21
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -339,10 +339,10 @@ ScriptedImporter:
       y: 56
       width: 8
       height: 8
-    spriteID: 93cfc67d3f6fae140862ee0865041c63
+    spriteID: 1807daa9b55df7142a79ef9464a23ecc
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_22
+  - name: Snow_22
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -354,10 +354,10 @@ ScriptedImporter:
       y: 56
       width: 8
       height: 8
-    spriteID: fe7546fba061ad745b1a262dc05a6b58
+    spriteID: 91a87d0022cc8124e939bffd5e08d445
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_23
+  - name: Snow_23
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -369,10 +369,10 @@ ScriptedImporter:
       y: 56
       width: 8
       height: 8
-    spriteID: cbd72a42e30ff1b49bcfcdb5f1d6ede7
+    spriteID: 70ba7bb35f24af44c899831fdff9e1f4
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_24
+  - name: Snow_24
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -384,10 +384,10 @@ ScriptedImporter:
       y: 56
       width: 8
       height: 8
-    spriteID: 44a5f0f25ddce6d4ebec0cbb4f8b74b7
+    spriteID: b52400c46aae3e94b80de06397665a8c
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_25
+  - name: Snow_25
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -399,10 +399,10 @@ ScriptedImporter:
       y: 56
       width: 8
       height: 8
-    spriteID: 73e4569f90dbbcf478767ff45d65f1dc
+    spriteID: 85c9b865083a315498c45c226a80b50d
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_26
+  - name: Snow_26
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -414,10 +414,10 @@ ScriptedImporter:
       y: 56
       width: 8
       height: 8
-    spriteID: f9113bbb7c366604c991643e6ae38ca2
+    spriteID: 56b5b9d53b4bf834ab72dfa3a2f40b04
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_27
+  - name: Snow_27
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -429,10 +429,10 @@ ScriptedImporter:
       y: 56
       width: 8
       height: 8
-    spriteID: 11fe03fb7423ede46827c7f9719b5581
+    spriteID: 19afd3c529fe90e41bff211c1c843ec3
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_28
+  - name: Snow_28
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -444,10 +444,10 @@ ScriptedImporter:
       y: 56
       width: 8
       height: 8
-    spriteID: a1bcdcf0b1fa8b9448b48db63f18c01b
+    spriteID: 967c18f1b1230d647b9566fc09b275e0
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_29
+  - name: Snow_29
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -459,10 +459,10 @@ ScriptedImporter:
       y: 56
       width: 8
       height: 8
-    spriteID: ca1c8969dbfc991469654e653f5348d5
+    spriteID: d87f5bdf165db4b418d7ea250d57b515
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_30
+  - name: Snow_30
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -474,10 +474,10 @@ ScriptedImporter:
       y: 48
       width: 8
       height: 8
-    spriteID: f213b70e6b9f72e4f8a29f1a5d027abc
+    spriteID: e0cde48892edf4b4eb157a5afd8bc88a
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_31
+  - name: Snow_31
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -489,10 +489,10 @@ ScriptedImporter:
       y: 48
       width: 8
       height: 8
-    spriteID: 77e27907104a990429b20844733596c6
+    spriteID: c148afab2c3e34043afca38065e33711
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_32
+  - name: Snow_32
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -504,10 +504,10 @@ ScriptedImporter:
       y: 48
       width: 8
       height: 8
-    spriteID: 0a08ad89d2d35c84c95d4d3cf1385f2f
+    spriteID: a4b0b97b8aeb06e4d9a576b5ebce0979
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_33
+  - name: Snow_33
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -519,10 +519,10 @@ ScriptedImporter:
       y: 48
       width: 8
       height: 8
-    spriteID: ccb16644bd90f6f4c91512c370670462
+    spriteID: e3b4834290f15f148a3b810ac4afc2d6
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_34
+  - name: Snow_34
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -534,10 +534,10 @@ ScriptedImporter:
       y: 48
       width: 8
       height: 8
-    spriteID: 1350c7a817a6c944cb39cf5f403552a6
+    spriteID: 29bc6bdb11f9518478eb048171ef01bd
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_35
+  - name: Snow_35
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -549,10 +549,10 @@ ScriptedImporter:
       y: 48
       width: 8
       height: 8
-    spriteID: 4e2e7cd4f9852a54b876f3e086323507
+    spriteID: 785192daa5e791141a1d4c7e493c4ee2
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_36
+  - name: Snow_36
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -564,10 +564,10 @@ ScriptedImporter:
       y: 48
       width: 8
       height: 8
-    spriteID: 4d1ad614e60e5c648806342a8901efee
+    spriteID: 634b9afa6e5710f4e870d5bf640f2e91
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_37
+  - name: Snow_37
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -579,10 +579,10 @@ ScriptedImporter:
       y: 48
       width: 8
       height: 8
-    spriteID: 19194c9f59df96148a7f744616d3acdc
+    spriteID: 07793138e1e2eef47819ce814796a8c0
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_38
+  - name: Snow_38
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -594,10 +594,10 @@ ScriptedImporter:
       y: 48
       width: 8
       height: 8
-    spriteID: 49d2b3935f8b411408b3a1129d3e0deb
+    spriteID: fa18b8b366040bc42b59ac5bc4e64d9a
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_39
+  - name: Snow_39
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -609,10 +609,10 @@ ScriptedImporter:
       y: 48
       width: 8
       height: 8
-    spriteID: c69aca86faa18974aa60f6c4b89db588
+    spriteID: 6cbe18fa675066d48b3d0d837f955a13
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_40
+  - name: Snow_40
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -624,10 +624,10 @@ ScriptedImporter:
       y: 40
       width: 8
       height: 8
-    spriteID: 1a36743aac56ccc4781578bf8c35562f
+    spriteID: 24b2ad02ecda953448e9ccb5cbb46787
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_41
+  - name: Snow_41
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -639,10 +639,10 @@ ScriptedImporter:
       y: 40
       width: 8
       height: 8
-    spriteID: 5c284f87232b0e6478e8f3e9059c79ce
+    spriteID: 26e1fcc94b5d8fc429f524a22f31698e
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_42
+  - name: Snow_42
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -654,10 +654,10 @@ ScriptedImporter:
       y: 40
       width: 8
       height: 8
-    spriteID: baefd34bcf662db4cb386d98e099bc1e
+    spriteID: 877a2d4866f8f244c9c5e6c9a78e3db5
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_43
+  - name: Snow_43
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -669,10 +669,10 @@ ScriptedImporter:
       y: 40
       width: 8
       height: 8
-    spriteID: 63ab45f8d0083f64b8a8098780afe03a
+    spriteID: ae3d5b69e944a1946b7060e1f878b2a6
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_44
+  - name: Snow_44
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -684,10 +684,10 @@ ScriptedImporter:
       y: 40
       width: 8
       height: 8
-    spriteID: 48ae7cf805c94c744b03b78ad208af0a
+    spriteID: 5f9770e3615cab849ab9bfb93075db26
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_45
+  - name: Snow_45
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -699,10 +699,10 @@ ScriptedImporter:
       y: 40
       width: 8
       height: 8
-    spriteID: b66ea6bc5c4827943838e7b30e7eaa7c
+    spriteID: feb5da68f95a74e489b52bed8ef9a61d
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_46
+  - name: Snow_46
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -714,10 +714,10 @@ ScriptedImporter:
       y: 40
       width: 8
       height: 8
-    spriteID: 5a7f68c70b5dcb7408540bc564ea0582
+    spriteID: ec09e6423bcf498499ad5e74238eac45
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_47
+  - name: Snow_47
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -729,10 +729,10 @@ ScriptedImporter:
       y: 40
       width: 8
       height: 8
-    spriteID: e961c33a3da7d354d8460ccd955191bf
+    spriteID: ba18d92628f06964eb69f8a782cb4bef
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_48
+  - name: Snow_48
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -744,10 +744,10 @@ ScriptedImporter:
       y: 40
       width: 8
       height: 8
-    spriteID: aedc8cd05bb6b0f408ddea0eb37e0ba2
+    spriteID: e5a3c83a1a616094aa5c018950de0977
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_49
+  - name: Snow_49
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -759,10 +759,10 @@ ScriptedImporter:
       y: 40
       width: 8
       height: 8
-    spriteID: d6e7efad54bbabe4390bbc9c0538bb0f
+    spriteID: d31d3aab0b36009448e0e34ec7b215c7
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_50
+  - name: Snow_50
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -774,10 +774,10 @@ ScriptedImporter:
       y: 32
       width: 8
       height: 8
-    spriteID: bad7931def2a59740ac4bd59da41a527
+    spriteID: 103fa80e503ca1846bdcaea197d02800
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_51
+  - name: Snow_51
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -789,10 +789,10 @@ ScriptedImporter:
       y: 32
       width: 8
       height: 8
-    spriteID: 9e5af49c2007b7a418493b675a218d78
+    spriteID: 422208b193e80694b9c3887a355cc4c4
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_52
+  - name: Snow_52
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -804,10 +804,10 @@ ScriptedImporter:
       y: 32
       width: 8
       height: 8
-    spriteID: a5fabfd41661b93438a6b659e3c38c07
+    spriteID: a447ee09c0f9b214c82ea52a383895b4
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_53
+  - name: Snow_53
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -819,10 +819,10 @@ ScriptedImporter:
       y: 32
       width: 8
       height: 8
-    spriteID: 60d6aa18f3b4bcb4fa741a2e36e667db
+    spriteID: 4ec12d60eb533eb4e835a42eec242274
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_54
+  - name: Snow_54
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -834,10 +834,10 @@ ScriptedImporter:
       y: 32
       width: 8
       height: 8
-    spriteID: 76dd216496d3fc049ac11767e7086171
+    spriteID: e393b54064261e946bc9d0ddf6a6a65d
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_55
+  - name: Snow_55
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -849,10 +849,10 @@ ScriptedImporter:
       y: 32
       width: 8
       height: 8
-    spriteID: bc473f8a0a84df34fa129698e55b7d80
+    spriteID: d3b47fc9bccddc04c845bed2acc20373
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_56
+  - name: Snow_56
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -864,10 +864,10 @@ ScriptedImporter:
       y: 32
       width: 8
       height: 8
-    spriteID: f7009cf15c57ca84aa6f510ff88f9a9b
+    spriteID: d8e0a76595bd34b4fa28a2f2a8ade4b8
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_57
+  - name: Snow_57
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -879,10 +879,10 @@ ScriptedImporter:
       y: 32
       width: 8
       height: 8
-    spriteID: 556cf7c6d442bf240b2167dacc29b6fc
+    spriteID: ffac696bfedc01646b6b192e256f77d1
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_58
+  - name: Snow_58
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -894,10 +894,10 @@ ScriptedImporter:
       y: 32
       width: 8
       height: 8
-    spriteID: 54384b41487b2c54fb1701b8ca2d90c4
+    spriteID: 5e84bae781ca02443949ddfd0896c544
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_59
+  - name: Snow_59
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -909,10 +909,10 @@ ScriptedImporter:
       y: 32
       width: 8
       height: 8
-    spriteID: 44d39dc5fb8f20a44bd3abbb15f5b3ff
+    spriteID: 9e5eb1a0ff52a8a45942fa46687568ae
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_60
+  - name: Snow_60
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -924,10 +924,10 @@ ScriptedImporter:
       y: 24
       width: 8
       height: 8
-    spriteID: b6fa29cad6a076544b0de51c6319f221
+    spriteID: 4a20fc060fd71424eaf890b534f57257
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_61
+  - name: Snow_61
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -939,10 +939,10 @@ ScriptedImporter:
       y: 24
       width: 8
       height: 8
-    spriteID: a7cbd19bdb300d0498d0d801705f760a
+    spriteID: 174c917da7b879341bc6ad76e2100667
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_62
+  - name: Snow_62
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -954,10 +954,10 @@ ScriptedImporter:
       y: 24
       width: 8
       height: 8
-    spriteID: c968bb448232ce84480a0fa522e78d99
+    spriteID: 63806d1ac154a094f952a2054a7bae98
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_63
+  - name: Snow_63
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -969,10 +969,10 @@ ScriptedImporter:
       y: 24
       width: 8
       height: 8
-    spriteID: 7cea6c1a3424a7c4ab196804b5eb4898
+    spriteID: 82c65cbd111019447addaa1158235e2d
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_64
+  - name: Snow_64
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -984,10 +984,10 @@ ScriptedImporter:
       y: 24
       width: 8
       height: 8
-    spriteID: 848d8b74657452d43832a18fa72a2dbc
+    spriteID: a5da31ff3c0f78f4694d409f670d63ab
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_65
+  - name: Snow_65
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -999,10 +999,10 @@ ScriptedImporter:
       y: 24
       width: 8
       height: 8
-    spriteID: 9d377e1936224bf409e8753a41f11b40
+    spriteID: 5021ac1dd363d0144bbf6f3bc6e4c17e
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_66
+  - name: Snow_66
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1014,10 +1014,10 @@ ScriptedImporter:
       y: 24
       width: 8
       height: 8
-    spriteID: d4d7f13598c920d46a8920b262fa29d5
+    spriteID: 8e6499ca4dfd66c4a8f769ab3a4c6d9b
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_67
+  - name: Snow_67
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1029,10 +1029,10 @@ ScriptedImporter:
       y: 24
       width: 8
       height: 8
-    spriteID: 9cb103ad44eb26247aff9b45e14b432e
+    spriteID: befd11f140a495c47a61a0d5c2f3a549
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_68
+  - name: Snow_68
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1044,10 +1044,10 @@ ScriptedImporter:
       y: 24
       width: 8
       height: 8
-    spriteID: 5334d0ce5d3147548a2c0fa9def77e4b
+    spriteID: a8339fc044c66f94f9ce24dee7310d4a
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_69
+  - name: Snow_69
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1059,10 +1059,10 @@ ScriptedImporter:
       y: 24
       width: 8
       height: 8
-    spriteID: 228ce50ab43a08f49bfb7915d932510a
+    spriteID: 37fa3f4848e09da4aa45ff00a4b01b1a
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_70
+  - name: Snow_70
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1074,10 +1074,10 @@ ScriptedImporter:
       y: 16
       width: 8
       height: 8
-    spriteID: e205ccb102c218e4e81a2e52a0e133d9
+    spriteID: f5bed261cc2a1914ab3b8d700acb84c9
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_71
+  - name: Snow_71
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1089,10 +1089,10 @@ ScriptedImporter:
       y: 16
       width: 8
       height: 8
-    spriteID: 3b20237aaec3274408713cb1d12a0ccd
+    spriteID: 5dc4cc4c46abceb4ea3b9e8e94d08c09
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_72
+  - name: Snow_72
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1104,10 +1104,10 @@ ScriptedImporter:
       y: 16
       width: 8
       height: 8
-    spriteID: 61f359a9e9be06f40a18246f4b51ce9e
+    spriteID: 65c69797a275c294bb59b71771c7adb2
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_73
+  - name: Snow_73
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1119,10 +1119,10 @@ ScriptedImporter:
       y: 16
       width: 8
       height: 8
-    spriteID: d2169ae71320fcd4aa78d218526e27a1
+    spriteID: 8624375a1b46351408b7bcdb493140e5
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_74
+  - name: Snow_74
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1134,10 +1134,10 @@ ScriptedImporter:
       y: 16
       width: 8
       height: 8
-    spriteID: 00fdbee150e03e74e826149d7aca53d2
+    spriteID: fbc4200d0d8e1114a9f8635917b4d91a
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_75
+  - name: Snow_75
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1149,10 +1149,10 @@ ScriptedImporter:
       y: 16
       width: 8
       height: 8
-    spriteID: 9d8f25037329bac40a8db241240d6523
+    spriteID: 59e5cca48f36fd44b96cb477c776693c
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_76
+  - name: Snow_76
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1164,10 +1164,10 @@ ScriptedImporter:
       y: 16
       width: 8
       height: 8
-    spriteID: fc8d671599409ea41bc2d9ae65190bf0
+    spriteID: 2c3eecc274896314a9770d3b06ec4974
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_77
+  - name: Snow_77
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1179,10 +1179,10 @@ ScriptedImporter:
       y: 16
       width: 8
       height: 8
-    spriteID: e3d95ce8f4ce43b4d9e044b1da968951
+    spriteID: 192f79eab535b3d489ddb6a3b7aaef79
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_78
+  - name: Snow_78
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1194,10 +1194,10 @@ ScriptedImporter:
       y: 16
       width: 8
       height: 8
-    spriteID: 991d151ae27b6ee45a8361ddbc8083b3
+    spriteID: 00c8e1e354829824a92ab7b3bf369e03
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_79
+  - name: Snow_79
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1209,10 +1209,10 @@ ScriptedImporter:
       y: 16
       width: 8
       height: 8
-    spriteID: c7595f449228065459c551c6e70e5b6b
+    spriteID: 6cd485235fc82ea4cafd0f1def63e113
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_80
+  - name: Snow_80
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1224,10 +1224,10 @@ ScriptedImporter:
       y: 8
       width: 8
       height: 8
-    spriteID: aedb6d210feefa04e947fc427ebe4f51
+    spriteID: 12c2b87af4d47cd48ac262bd65bcabd1
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_81
+  - name: Snow_81
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1239,10 +1239,10 @@ ScriptedImporter:
       y: 8
       width: 8
       height: 8
-    spriteID: 6e1d49fc732d07e4d85099c686203727
+    spriteID: 6f7715d5ea18582419d57293e18d1fd8
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_82
+  - name: Snow_82
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1254,10 +1254,10 @@ ScriptedImporter:
       y: 8
       width: 8
       height: 8
-    spriteID: c30c10beef470da4bbe879812777936d
+    spriteID: e3f09a4fbc2f1da489e57f393d570c45
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_83
+  - name: Snow_83
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1269,10 +1269,10 @@ ScriptedImporter:
       y: 8
       width: 8
       height: 8
-    spriteID: 9b79bc90c30b31a48ae47ce1868060c4
+    spriteID: 0e978c32daf8557429231a0aca71c4b5
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_84
+  - name: Snow_84
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1284,10 +1284,10 @@ ScriptedImporter:
       y: 8
       width: 8
       height: 8
-    spriteID: 94c4767d307d32e4098a3bff41a7e697
+    spriteID: 6a58c42097ca01747974aaac028b7061
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_85
+  - name: Snow_85
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1299,10 +1299,10 @@ ScriptedImporter:
       y: 8
       width: 8
       height: 8
-    spriteID: d5ae8f6aec358a245afa8f3af05fbd8e
+    spriteID: 8457974db19417f4eaa5b62440761058
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_86
+  - name: Snow_86
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1314,10 +1314,10 @@ ScriptedImporter:
       y: 8
       width: 8
       height: 8
-    spriteID: b4faf3dfbf899a6498dbed62c2024a52
+    spriteID: 0e041120e11d1c54bb6e7c6da0b75a31
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_87
+  - name: Snow_87
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1329,10 +1329,10 @@ ScriptedImporter:
       y: 8
       width: 8
       height: 8
-    spriteID: 008a9a134342f9b46bb06fb76a07e5f0
+    spriteID: 32344e7414ea81642bedf6e9848783a6
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_88
+  - name: Snow_88
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1344,10 +1344,10 @@ ScriptedImporter:
       y: 8
       width: 8
       height: 8
-    spriteID: 9e2b6810c06f46f428de9bb91c51acf6
+    spriteID: 1c4920ffeec50ad4c859a71eece1b886
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_89
+  - name: Snow_89
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1359,10 +1359,10 @@ ScriptedImporter:
       y: 8
       width: 8
       height: 8
-    spriteID: 4eb19719ff7a76947a4016d1f407e2cb
+    spriteID: 3becaa93431e7b849bbbea39a48c1271
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_90
+  - name: Snow_90
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1374,10 +1374,10 @@ ScriptedImporter:
       y: 0
       width: 8
       height: 8
-    spriteID: fd470009ff23c1a4ba20b65caf637a93
+    spriteID: 1becad4cd65918e4b94bc8ab8a764ad5
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_91
+  - name: Snow_91
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1389,10 +1389,10 @@ ScriptedImporter:
       y: 0
       width: 8
       height: 8
-    spriteID: a3aeaecedfe7e3947b1c98eb15599d63
+    spriteID: 10c9662bc8d01824892406a3ad47e28a
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_92
+  - name: Snow_92
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1404,10 +1404,10 @@ ScriptedImporter:
       y: 0
       width: 8
       height: 8
-    spriteID: 8d8a43f9dfeb49a448e48eebdc5842a2
+    spriteID: b89fbf5d5341af142bdeb9bbe4c94f3b
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_93
+  - name: Snow_93
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1419,10 +1419,10 @@ ScriptedImporter:
       y: 0
       width: 8
       height: 8
-    spriteID: c45f84ee55dddd14eac223646a2f8e33
+    spriteID: 7e7056fd5423ce145ae75f9b3b2787c6
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_94
+  - name: Snow_94
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1434,10 +1434,10 @@ ScriptedImporter:
       y: 0
       width: 8
       height: 8
-    spriteID: 61713e5685f435a49b5dea79e739c4cc
+    spriteID: f644bc5ed07d986449fd655fc153d110
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_95
+  - name: Snow_95
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1449,10 +1449,10 @@ ScriptedImporter:
       y: 0
       width: 8
       height: 8
-    spriteID: d21722247132a314a8c098f4cb21dd50
+    spriteID: 2eef5f21c87096a4b967bf480810736b
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_96
+  - name: Snow_96
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1464,10 +1464,10 @@ ScriptedImporter:
       y: 0
       width: 8
       height: 8
-    spriteID: d49a6b0c46947954ba86799fe355a115
+    spriteID: ac15f41aa315a264d9ce6c7e19a4fae2
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_97
+  - name: Snow_97
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1479,10 +1479,10 @@ ScriptedImporter:
       y: 0
       width: 8
       height: 8
-    spriteID: 39500fdf0c2da954f8c83e1de5cf1184
+    spriteID: c8755b84b9d1b3b4cb70a529a514901b
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_98
+  - name: Snow_98
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1494,10 +1494,10 @@ ScriptedImporter:
       y: 0
       width: 8
       height: 8
-    spriteID: 535d89acb40966a4eae2ee5876e5934c
+    spriteID: ebc4607a934b4714e94816826d02350b
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileset_Stone_99
+  - name: Snow_99
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1509,8 +1509,8 @@ ScriptedImporter:
       y: 0
       width: 8
       height: 8
-    spriteID: e9f24542e9e69b34fa6d907da5474e01
+    spriteID: 1db7dfb8e793f2344a9dae56db09416f
     spriteOutline: []
     tessellationDetail: 0
   _secondaryTextures: []
-  _artifacts: {fileID: -2988177865379244337, guid: 964464d3c408dea4e880c66c63c4155e, type: 3}
+  _artifacts: {fileID: -2988177865379244337, guid: 2b39c86c0ae6ae44cb53dc5bc36058f4, type: 3}
