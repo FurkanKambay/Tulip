@@ -661,7 +661,7 @@ MonoBehaviour:
   itemWielder: {fileID: 8169639496971023625}
   inventory: {fileID: 0}
   hitContactFilter:
-    useTriggers: 0
+    useTriggers: 1
     useLayerMask: 1
     useDepth: 0
     useOutsideDepth: 0
