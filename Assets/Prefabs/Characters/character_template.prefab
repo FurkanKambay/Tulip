@@ -603,7 +603,7 @@ MonoBehaviour:
   entity: {fileID: 963390074723932652}
   maxHealth: 100
   currentHealth: 100
-  invulnerabilityDuration: 0.5
+  invulnerabilityDuration: 0
 --- !u!114 &8170777504329617373
 MonoBehaviour:
   m_ObjectHideFlags: 0

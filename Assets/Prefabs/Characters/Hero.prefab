@@ -397,6 +397,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7186377946535505526, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
+      propertyPath: invulnerabilityDuration
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7550573769694000182, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
       propertyPath: m_Layer
       value: 6
