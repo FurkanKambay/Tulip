@@ -41,7 +41,7 @@ namespace Tulip.Combat
                 actionOnDestroy: projectile =>
                 {
                     allProjectiles.Remove(projectile);
-                    Destroy(projectile.gameObject);
+                    if (projectile) Destroy(projectile.gameObject);
                 },
                 collectionCheck: true,
                 defaultCapacity: initialPoolCapacity,
