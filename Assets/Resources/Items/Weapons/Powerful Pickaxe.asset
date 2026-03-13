@@ -17,9 +17,6 @@ MonoBehaviour:
   name: Powerful Pickaxe
   description: The name is subject to change.
   maxAmount: 1
-  craftedBy:
-  - {fileID: 11400000, guid: 050e5db9ccf80c5438561897bc0f075f, type: 2}
-  usedInCrafting: []
   cooldown: 0.3
   isThrowable: 0
   throwableConfig:

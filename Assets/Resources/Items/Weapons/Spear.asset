@@ -17,8 +17,6 @@ MonoBehaviour:
   name: Spear
   description: A spear that can pierce.
   maxAmount: 1
-  craftedBy: []
-  usedInCrafting: []
   cooldown: 0.5
   isThrowable: 1
   throwableConfig:

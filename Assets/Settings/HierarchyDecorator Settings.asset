@@ -4354,19 +4354,6 @@ MonoBehaviour:
         isBuiltIn: 0
         script: {fileID: 11500000, guid: 785fc94a52e464e498ccf96036b19f0d, type: 3}
         hasToggle: 1
-      - displayName: Inventory
-        name: Tulip.Character.Inventory, Tulip, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        content:
-          m_Text: Inventory
-          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
-          m_Tooltip: Inventory
-          m_TextWithWhitespace: "Inventory\u200B"
-        shown: 0
-        excluded: 0
-        isBuiltIn: 0
-        script: {fileID: 11500000, guid: 1dbac43252630dd499875c6a60daacdf, type: 3}
-        hasToggle: 1
       - displayName: ItemWielder
         name: Tulip.Gameplay.ItemWielder, Tulip, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null

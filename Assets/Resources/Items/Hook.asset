@@ -17,8 +17,6 @@ MonoBehaviour:
   name: Basic Hook
   description: 
   maxAmount: 1
-  craftedBy: []
-  usedInCrafting: []
   cooldown: 0.5
   isThrowable: 0
   throwableConfig:

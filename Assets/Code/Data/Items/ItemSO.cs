@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Tulip.Data.Items
 {
     /// <summary>
-    /// A base item that can be stored in an inventory.
+    /// A base item.
     /// </summary>
     [CreateAssetMenu(menuName = "Items/Item", order = 0)]
     public class ItemSO : ScriptableObject
@@ -26,25 +26,10 @@ namespace Tulip.Data.Items
         [SerializeField, Multiline] protected string description;
         [SerializeField, Min(1)] protected int maxAmount = 1;
 
-        // ReSharper disable NotAccessedField.Global
-        [LayoutGroup("Referenced By", ELayout.Background | ELayout.TitleOut | ELayout.Foldout, marginTop: 16)]
-        [SerializeField, ReadOnly] protected ItemRecipeSO[] craftedBy;
-        [SerializeField, ReadOnly] protected ItemRecipeSO[] usedInCrafting;
-        // ReSharper restore NotAccessedField.Global
-
-        public ItemStack Stack(int amount) => new(this, amount);
-
         public override string ToString() => Name;
 
         protected virtual void OnValidate()
         {
-            craftedBy = Resources.FindObjectsOfTypeAll<ItemRecipeSO>()
-                .Where(recipeSO => recipeSO.ResultItemSO == this)
-                .ToArray();
-
-            usedInCrafting = Resources.FindObjectsOfTypeAll<ItemRecipeSO>()
-                .Where(recipeSO => recipeSO.Ingredients.Any(stack => stack.itemSO == this))
-                .ToArray();
         }
     }
 }

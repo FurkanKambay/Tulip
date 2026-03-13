@@ -17,8 +17,6 @@ MonoBehaviour:
   name: Treant Branch
   description: 
   maxAmount: 1
-  craftedBy: []
-  usedInCrafting: []
   cooldown: 0.83
   isThrowable: 0
   throwableConfig:
