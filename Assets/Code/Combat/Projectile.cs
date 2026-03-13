@@ -62,6 +62,7 @@ namespace Tulip.Combat
 
                 if (hitCollider.TryGetComponent(out Hurtbox hurtbox))
                 {
+                    if (hurtbox.Owner == ownerHealth) continue;
                     bool undamagedTarget = !damagedTargets.Contains(hurtbox.Owner);
                     if (undamagedTarget && hurtbox.GetHit(sourceWeapon, ownerHealth, DamageType.RangedWeapon))
                         damagedTargets.Add(hurtbox.Owner);
