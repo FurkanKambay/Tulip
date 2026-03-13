@@ -380,6 +380,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1328625852}
+  - component: {fileID: 1328625854}
   - component: {fileID: 1328625853}
   m_Layer: 0
   m_Name: "\U0001F579\uFE0F Game Manager"
@@ -416,8 +417,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Tulip.Core.GameManager, Tulip
   gameStateChangeEvent: {fileID: 11400000, guid: e546a51b5a993714f94816c29b5538fa, type: 2}
+  inputManager: {fileID: 1328625854}
   showSplashScreen: 0
   splashScreenDuration: 2
+--- !u!114 &1328625854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328625851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51ea84157844a6399727bdd0447085d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Tulip.Core.InputManager, Tulip
+  inputActionAsset: {fileID: -944628639613478452, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
 --- !u!1 &1724351827
 GameObject:
   m_ObjectHideFlags: 0

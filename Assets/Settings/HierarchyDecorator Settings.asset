@@ -4661,5 +4661,17 @@ MonoBehaviour:
         isBuiltIn: 0
         script: {fileID: 11500000, guid: 97ae4b113e06417a8c773916e3ceea25, type: 3}
         hasToggle: 1
+      - displayName: InputManager
+        name: Tulip.Core.InputManager, Tulip, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        content:
+          m_Text: InputManager
+          m_Image: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
+          m_Tooltip: InputManager
+          m_TextWithWhitespace: "InputManager\u200B"
+        shown: 0
+        excluded: 0
+        isBuiltIn: 0
+        script: {fileID: 11500000, guid: c51ea84157844a6399727bdd0447085d, type: 3}
+        hasToggle: 1
     unityVersion: 6000.3.6f1
     unityCount: 275

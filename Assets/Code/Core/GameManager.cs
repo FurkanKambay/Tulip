@@ -23,6 +23,7 @@ namespace Tulip.Core
     public sealed class GameManager : MonoBehaviour
     {
         [SerializeField, Required] GameStateChangeEvent gameStateChangeEvent;
+        [SerializeField, Required] InputManager inputManager;
 
         [LayoutGroup("/Main Menu Scene", ELayout.FoldoutBox)]
         [SaintsRow(true)]
@@ -139,7 +140,7 @@ namespace Tulip.Core
             CurrentState = newState;
 
             UpdateTimeScale();
-            UpdateInputs();
+            instance.UpdateInputs();
 
             instance.gameStateChangeEvent.Raise(instance, oldState, newState);
 
@@ -152,21 +153,12 @@ namespace Tulip.Core
         private static void UpdateTimeScale() =>
             Time.timeScale = CurrentState == GameState.Paused ? 0 : 1;
 
-        private static void UpdateInputs()
+        private void UpdateInputs()
         {
-            InputActionMap playerControls = InputSystem.actions.actionMaps[0];
-            InputActionMap uiControls = InputSystem.actions.actionMaps[1];
-
-            if (CurrentState == GameState.Playing)
-            {
-                playerControls.Enable();
-                uiControls.Disable();
-            }
+            if (CurrentState is GameState.Playing)
+                inputManager.ActivateHeroControls();
             else
-            {
-                playerControls.Disable();
-                uiControls.Enable();
-            }
+                inputManager.ActivateUIControls();
         }
 
         private static bool IsSafeToQuit()
