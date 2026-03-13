@@ -36,8 +36,8 @@ namespace Tulip.Editor
         [MainToolbarElement("Tulip Scenes/Game", defaultDockPosition = MainToolbarDockPosition.Middle)]
         public static MainToolbarElement OpenGameSceneButton() => GetToolbarButton("🕹️", "2 Game");
 
-        [MainToolbarElement("Tulip Scenes/Combat Testing", defaultDockPosition = MainToolbarDockPosition.Middle)]
-        public static MainToolbarElement OpenCombatTestingSceneButton() => GetToolbarButton("⚔️", "Testing/Combat Testing");
+        [MainToolbarElement("Tulip Scenes/Arena", defaultDockPosition = MainToolbarDockPosition.Middle)]
+        public static MainToolbarElement OpenArenaSceneButton() => GetToolbarButton("⚔️", "Testing/Arena");
 
         [MainToolbarElement("Tulip Scenes/Gym", defaultDockPosition = MainToolbarDockPosition.Middle)]
         public static MainToolbarElement OpenGymSceneButton() => GetToolbarButton("🪜", "Testing/Gym");
