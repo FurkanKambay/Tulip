@@ -5,6 +5,14 @@ using UnityEngine;
 
 namespace Tulip.Combat
 {
+    public enum DamageResult
+    {
+        Invalid,
+        Ineffective,
+        Damaged,
+        Killed
+    }
+
     [SelectionBase]
     public class Health : MonoBehaviour
     {
@@ -54,20 +62,20 @@ namespace Tulip.Combat
         private void Update() =>
             InvulnerabilityRemaining = Mathf.Max(0, InvulnerabilityRemaining - Time.deltaTime);
 
-        public InventoryModification Damage(float amount, Health source, DamageType damageType, float damageMultiplier = 1f)
+        public DamageResult Damage(float amount, Health source, DamageType damageType, float damageMultiplier = 1f)
         {
             if (!source)
-                return default;
+                return DamageResult.Invalid;
 
             float damageAmount = amount * damageMultiplier;
             if (IsDead || damageAmount < 0)
-                return default;
+                return DamageResult.Invalid;
 
             // Damage from status effects bypass invulnerability checks
             bool bypassInvulnerability = damageType is DamageType.StatusEffect;
 
             if (IsInvulnerable && !bypassInvulnerability)
-                return default;
+                return DamageResult.Ineffective;
 
             CurrentHealth -= damageAmount;
             LatestDamageSource = source;
@@ -91,19 +99,13 @@ namespace Tulip.Combat
             OnHurt?.Invoke(packet);
 
             if (IsAlive)
-                return default;
+                return DamageResult.Damaged;
 
             LatestDeathSource = source;
             OnDie?.Invoke(packet);
             enabled = false;
 
-            // TODO: fix whatever this is later
-            EntitySO entitySO = Entity.EntitySO;
-
-            if (!entitySO || !entitySO.Loot)
-                return default;
-
-            return InventoryModification.ToAdd(entitySO.Loot.Stack(entitySO.LootAmount));
+            return DamageResult.Killed;
         }
 
         public void Heal(float amount, Health source)
