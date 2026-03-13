@@ -1,9 +1,7 @@
 using System.Collections.Generic;
 using Furkan.Common;
 using SaintsField;
-using Tulip.Character;
 using Tulip.Combat.Data;
-using Tulip.Data;
 using Tulip.Data.Items;
 using Tulip.Gameplay;
 using UnityEngine;
@@ -17,7 +15,6 @@ namespace Tulip.Combat
         [Header("References")]
         [SerializeField, Required] Health health;
         [SerializeField, Required] ItemWielder itemWielder;
-        [SerializeField] Inventory inventory;
 
         private ProjectileManager projectileManager;
         private WeaponSO weaponSO;
@@ -42,15 +39,15 @@ namespace Tulip.Combat
             itemWielder.OnThrowPerform -= Throw;
         }
 
-        private void Throw(ItemStack stack, Vector3 aimPoint)
+        private void Throw(ItemSO item, Vector3 aimPoint)
         {
-            if (stack.itemSO.Is(out weaponSO) && weaponSO.IsThrowable)
+            if (item.Is(out weaponSO) && weaponSO.IsThrowable)
                 projectileManager.Fire(weaponSO, health, aimPoint);
         }
 
-        private void Attack(ItemStack stack, Vector3 targetPoint)
+        private void Attack(ItemSO item, Vector3 targetPoint)
         {
-            if (stack.itemSO.IsNot(out weaponSO))
+            if (item.IsNot(out weaponSO))
                 return;
 
             foreach (Hurtbox target in GetTargets(transform.position, targetPoint))

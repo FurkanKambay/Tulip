@@ -641,10 +641,7 @@ MonoBehaviour:
     <V>k__BackingField: {fileID: 956665518846445690}
   health: {fileID: 1334333901957425893}
   itemRenderer: {fileID: 1675066829283619181}
-  fallbackStack:
-    itemSO: {fileID: 11400000, guid: cee049b1282365f41bc068f68b0b9ef2, type: 2}
-    isLocked: 0
-    amount: 1
+  equippedItem: {fileID: 11400000, guid: 22ec4c4f083c86443ad2f80233e2466e, type: 2}
 --- !u!114 &1686919815774059301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,7 +657,6 @@ MonoBehaviour:
   config: {fileID: 11400000, guid: 9c9745509d6f8c04d98ae9337fb716d9, type: 2}
   health: {fileID: 1334333901957425893}
   itemWielder: {fileID: 8169639496971023625}
-  inventory: {fileID: 0}
 --- !u!1 &7000550141864648715
 GameObject:
   m_ObjectHideFlags: 0

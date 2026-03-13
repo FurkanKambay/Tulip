@@ -274,11 +274,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3859557317723880189}
     - target: {fileID: 647329674294491017, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
-      propertyPath: fallbackStack.amount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 647329674294491017, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
-      propertyPath: fallbackStack.itemSO
+      propertyPath: equippedItem
       value: 
       objectReference: {fileID: 11400000, guid: 9b57593f7b5cd0541984229247126e42, type: 2}
     - target: {fileID: 647329674294491017, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}

@@ -1,5 +1,5 @@
 using FMODUnity;
-using Tulip.Data;
+using Tulip.Data.Items;
 using Tulip.Gameplay;
 using UnityEngine;
 
@@ -25,7 +25,7 @@ namespace Tulip.Audio
                 itemWielder.OnSwingPerform -= HandleItemSwing;
         }
 
-        private void HandleItemSwing(ItemStack stack, Vector3 _) =>
+        private void HandleItemSwing(ItemSO item, Vector3 _) =>
             RuntimeManager.PlayOneShotAttached(itemSwingEvent, transform.gameObject);
     }
 }

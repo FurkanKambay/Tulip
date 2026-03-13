@@ -11,8 +11,8 @@ namespace Tulip.Gameplay
 {
     public sealed class ItemWielder : MonoBehaviour
     {
-        public delegate void ItemReadyEvent(ItemStack stack);
-        public delegate void ItemSwingEvent(ItemStack stack, Vector3 aimPoint);
+        public delegate void ItemReadyEvent(ItemSO item);
+        public delegate void ItemSwingEvent(ItemSO item, Vector3 aimPoint);
 
         public event ItemReadyEvent OnReady;
         public event ItemSwingEvent OnSwingStart;
@@ -37,7 +37,7 @@ namespace Tulip.Gameplay
         [SerializeField, Required] SpriteRenderer itemRenderer;
 
         [Header("Config")]
-        [SerializeField] ItemStack fallbackStack;
+        [SerializeField] ItemSO equippedItem;
 
         // cached references
         private Transform itemPivot;
@@ -92,7 +92,7 @@ namespace Tulip.Gameplay
 
         private void TickSwingState()
         {
-            if (!fallbackStack.IsValid || fallbackStack.itemSO.IsNot(out UsableSO usableSO))
+            if (equippedItem.IsNot(out UsableSO usableSO))
                 return;
 
             ItemSwingConfig swingConfig = usableSO.SwingConfig;
@@ -120,7 +120,7 @@ namespace Tulip.Gameplay
             // Throw the item
             if (IsThrowMode && brain.I.WantsToAttack && timeSinceLastUse > usableSO.ThrowCooldown)
             {
-                OnThrowPerform?.Invoke(fallbackStack, AimPointWorld);
+                OnThrowPerform?.Invoke(equippedItem, AimPointWorld);
                 timeSinceLastUse = 0f;
             }
 
@@ -161,14 +161,14 @@ namespace Tulip.Gameplay
                     // if no phases, hit and reset swing
                     if (swingConfig.Phases.Length == 0)
                     {
-                        OnSwingPerform?.Invoke(fallbackStack, AimPointWorld);
+                        OnSwingPerform?.Invoke(equippedItem, AimPointWorld);
                         SwitchState(ItemSwingState.Resetting);
                         break;
                     }
 
                     // hit if we need to before checking for final exit
                     if (phase.shouldHit)
-                        OnSwingPerform?.Invoke(fallbackStack, AimPointWorld);
+                        OnSwingPerform?.Invoke(equippedItem, AimPointWorld);
 
                     bool isFinalPhase = phaseIndex == swingConfig.Phases.Length - 1;
                     bool shouldReset = !wantsToSwing || !swingConfig.Loop;
@@ -205,7 +205,7 @@ namespace Tulip.Gameplay
             if (state == swingState)
                 return;
 
-            if (!fallbackStack.IsValid || fallbackStack.itemSO.IsNot(out UsableSO _))
+            if (equippedItem.IsNot(out UsableSO _))
             {
                 swingState = ItemSwingState.Ready;
                 return;
@@ -220,10 +220,10 @@ namespace Tulip.Gameplay
                     wantsToSwapItems = false;
                     RefreshItem();
 
-                    OnReady?.Invoke(fallbackStack);
+                    OnReady?.Invoke(equippedItem);
                     break;
                 case ItemSwingState.Swinging:
-                    OnSwingStart?.Invoke(fallbackStack, AimPointWorld);
+                    OnSwingStart?.Invoke(equippedItem, AimPointWorld);
                     phaseIndex = 0;
                     SetMotionToPhase();
                     break;
@@ -241,14 +241,14 @@ namespace Tulip.Gameplay
             phaseIndex = 0;
             ResetMotionStart();
 
-            if (fallbackStack.itemSO.Is(out UsableSO usableSO))
+            if (equippedItem.Is(out UsableSO usableSO))
                 SetSpriteTransformInstant(usableSO.SwingConfig.ReadyPosition, usableSO.SwingConfig.ReadyAngle);
         }
 
 #region Motion Helpers
         private void SetMotionToPhase()
         {
-            if (fallbackStack.itemSO.IsNot(out UsableSO usableSO))
+            if (equippedItem.IsNot(out UsableSO usableSO))
                 return;
 
             ItemSwingConfig swingConfig = usableSO.SwingConfig;
@@ -263,7 +263,7 @@ namespace Tulip.Gameplay
 
         private void SetMotionToReady()
         {
-            if (!fallbackStack.IsValid || fallbackStack.itemSO.IsNot(out UsableSO usableSO))
+            if (equippedItem.IsNot(out UsableSO usableSO))
                 return;
 
             ItemSwingConfig swingConfig = usableSO.SwingConfig;
@@ -324,7 +324,7 @@ namespace Tulip.Gameplay
 
         private void UpdateItemSprite()
         {
-            if (fallbackStack.itemSO.IsNot(out UsableSO usableSO))
+            if (equippedItem.IsNot(out UsableSO usableSO))
             {
                 itemVisual.localScale = Vector3.zero;
                 return;
