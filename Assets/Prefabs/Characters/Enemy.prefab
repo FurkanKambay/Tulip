@@ -149,12 +149,12 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6477564572302283646, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
+      propertyPath: config
+      value: 
+      objectReference: {fileID: 11400000, guid: 9c9745509d6f8c04d98ae9337fb716d9, type: 2}
+    - target: {fileID: 6477564572302283646, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6477564572302283646, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
-      propertyPath: hitContactFilter.layerMask.m_Bits
-      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 6812221389184077815, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
       propertyPath: footStepInterval

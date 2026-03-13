@@ -926,24 +926,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be49605a98e97be4f8107b2403c172b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Combat.WeaponWielder, Tulip
+  config: {fileID: 11400000, guid: 9f5c7f3d1fc6a7c46808b5dd7e2b29d3, type: 2}
   health: {fileID: 7186377946535505526}
   itemWielder: {fileID: 647329674294491017}
   inventory: {fileID: 0}
-  hitContactFilter:
-    useTriggers: 1
-    useLayerMask: 1
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 8
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  maxHitsPerRaycast: 1
 --- !u!1 &7550573769694000182
 GameObject:
   m_ObjectHideFlags: 0
