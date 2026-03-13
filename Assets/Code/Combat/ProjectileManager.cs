@@ -58,7 +58,7 @@ namespace Tulip.Combat
                 if (!projectile.isActiveAndEnabled)
                     continue;
 
-                bool shouldDestroy = projectile.MoveAndCollide(in contactFilter, results);
+                bool shouldDestroy = projectile.MoveAndCollide(results);
                 if (shouldDestroy)
                     pool.Release(projectile);
             }
@@ -70,7 +70,7 @@ namespace Tulip.Combat
             Vector2 aimVector = aimPoint - origin;
 
             Projectile projectile = pool.Get();
-            projectile.Launch(origin, aimVector, owner, weaponSO);
+            projectile.Launch(origin, aimVector, owner, weaponSO, contactFilter);
 
             Debug.DrawRay(origin, aimVector.normalized, Color.yellow);
         }

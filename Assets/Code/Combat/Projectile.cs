@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using Furkan.Common;
 using SaintsField.Playa;
-using Tulip.Character;
 using Tulip.Data.Items;
 using UnityEngine;
 
@@ -11,17 +10,20 @@ namespace Tulip.Combat
     {
         [Header("Config")]
         [SerializeField] float gravityScale = 1;
+        [SerializeField] LayerMask obstacleLayers;
 
         [LayoutGroup("State", ELayout.TitleOut)]
         [ShowInInspector] Health ownerHealth;
         [ShowInInspector] WeaponSO sourceWeapon;
         [ShowInInspector] Vector2 velocity;
+        [ShowInInspector] ContactFilter2D contactFilter;
         [ShowInInspector] readonly List<Health> damagedTargets = new();
 
-        internal void Launch(Vector2 origin, Vector2 direction, Health owner, WeaponSO weapon)
+        internal void Launch(Vector2 origin, Vector2 direction, Health owner, WeaponSO weapon, ContactFilter2D filter)
         {
             ownerHealth = owner;
             sourceWeapon = weapon;
+            contactFilter = filter;
             velocity = direction.normalized * sourceWeapon.ThrowStrength;
 
             transform.SetPositionAndRotation(origin, direction.ToQuaternion2D());
@@ -31,7 +33,7 @@ namespace Tulip.Combat
         /// Move, rotate, and handle collisions between the previous and current position.
         /// </summary>
         /// <returns>Whether the projectile should be destroyed.</returns>
-        internal bool MoveAndCollide(in ContactFilter2D contactFilter, RaycastHit2D[] hitResults)
+        internal bool MoveAndCollide(RaycastHit2D[] hitResults)
         {
             velocity += Physics2D.gravity * (gravityScale * Time.deltaTime);
 
@@ -56,20 +58,19 @@ namespace Tulip.Combat
             for (int hitIndex = 0; hitIndex < hitCount; hitIndex++)
             {
                 RaycastHit2D hit = hitResults[hitIndex];
+                Collider2D hitCollider = hit.collider;
 
-                // Hit an obstacle: destroy projectile
-                if (!hit || !hit.collider.TryGetComponent(out Hurtbox hurtbox))
+                if (hitCollider.TryGetComponent(out Hurtbox hurtbox))
+                {
+                    bool undamagedTarget = !damagedTargets.Contains(hurtbox.Owner);
+                    if (undamagedTarget && hurtbox.GetHit(sourceWeapon, ownerHealth, DamageType.RangedWeapon))
+                        damagedTargets.Add(hurtbox.Owner);
+                }
+                else if (obstacleLayers.Includes(hitCollider.gameObject))
                 {
                     shouldDestroy = true;
-                    break;
+                    break; // hit an obstacle: stop here
                 }
-
-                // Already hit this target
-                if (damagedTargets.Contains(hurtbox.Owner))
-                    continue;
-
-                hurtbox.GetHit(sourceWeapon, ownerHealth, DamageType.RangedWeapon);
-                damagedTargets.Add(hurtbox.Owner);
             }
 
             return shouldDestroy;
@@ -79,6 +80,7 @@ namespace Tulip.Combat
         {
             velocity = Vector2.zero;
             damagedTargets.Clear();
+            contactFilter = default;
         }
     }
 }
