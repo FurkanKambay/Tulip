@@ -99,8 +99,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Tulip.Gameplay.HookLauncher, Tulip
   wielderBrain:
     <V>k__BackingField: {fileID: 3859557317723880189}
+    <VRef>k__BackingField:
+      rid: -2
+    <IsVRef>k__BackingField: 0
   jumperBrain:
     <V>k__BackingField: {fileID: 3859557317723880189}
+    <VRef>k__BackingField:
+      rid: -2
+    <IsVRef>k__BackingField: 0
   body: {fileID: 2911555634556418871}
   lineRenderer: {fileID: 7136959322606572221}
   hookSO: {fileID: 11400000, guid: d6bb4516eeb65464686b792397023a80, type: 2}
@@ -111,6 +117,11 @@ MonoBehaviour:
   autoPullWhenHooked: 1
   autoUnhookWhenReached: 0
   hookState: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!1 &6138119243796649144
 GameObject:
   m_ObjectHideFlags: 0

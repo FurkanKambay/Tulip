@@ -18,12 +18,15 @@ MonoBehaviour:
   m_PlatformId: 84a3bb9e7420477f885e98145999eb20
   m_PlatformBuildProfile:
     rid: 6046734815672926208
+  m_ActivePlatformGuid: 
+  m_AdditionalPlatformBuildSettings: []
   m_OverrideGlobalSceneList: 0
   m_Scenes: []
   m_HasScriptingDefines: 0
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings: []
+  requiredComponents: []
   references:
     version: 2
     RefIds:

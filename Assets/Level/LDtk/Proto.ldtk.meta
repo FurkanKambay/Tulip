@@ -32,3 +32,5 @@ ScriptedImporter:
   _enumGenerate: 1
   _enumPath: ../../Code/Editor/LDtk/LDtk_Enums.g.cs
   _enumNamespace: Tulip.Editor.LDtk
+  _useLayerCustomSortingOrders: 0
+  _layerCustomSortingOrders: []

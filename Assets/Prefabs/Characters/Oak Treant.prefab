@@ -34,7 +34,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8611038024772751417
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -91,6 +91,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!1 &456855182452109908
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +158,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3170867836500467685
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -214,6 +215,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!114 &4369937900176479053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,9 +281,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Tulip.Gameplay.ItemWielder, Tulip
   brain:
     <V>k__BackingField: {fileID: 9132726976015814750}
+    <VRef>k__BackingField:
+      rid: -2
+    <IsVRef>k__BackingField: 0
   health: {fileID: 5823316243804091760}
   itemRenderer: {fileID: 8611038024772751417}
   equippedItem: {fileID: 11400000, guid: 84ef348f463a7a144b0fbff6c95049c7, type: 2}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &6669273262304182389
 MonoBehaviour:
   m_ObjectHideFlags: 0

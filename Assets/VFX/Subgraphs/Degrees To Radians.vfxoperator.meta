@@ -9,6 +9,7 @@ VisualEffectImporter:
     description: 
     icon: {instanceID: 0}
     thumbnail: {instanceID: 0}
+    order: 0
   useAsTemplate: 0
   userData: 
   assetBundleName: 

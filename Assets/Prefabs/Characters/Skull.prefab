@@ -70,8 +70,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Tulip.Character.CharacterFlight, Tulip
   brain:
     <V>k__BackingField: {fileID: 956665518846445690}
+    <VRef>k__BackingField:
+      rid: -2
+    <IsVRef>k__BackingField: 0
   body: {fileID: 7560684870690709998}
   config: {fileID: 11400000, guid: 2a1e566b0a9ac08409fd1cfecdf95995, type: 2}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!1 &2859632988072890709
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,7 +236,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1675066829283619181
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -285,6 +293,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!1 &3767203261702702095
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,9 +648,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Tulip.Gameplay.ItemWielder, Tulip
   brain:
     <V>k__BackingField: {fileID: 956665518846445690}
+    <VRef>k__BackingField:
+      rid: -2
+    <IsVRef>k__BackingField: 0
   health: {fileID: 1334333901957425893}
   itemRenderer: {fileID: 1675066829283619181}
   equippedItem: {fileID: 11400000, guid: 22ec4c4f083c86443ad2f80233e2466e, type: 2}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &1686919815774059301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -695,7 +712,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2576562777605374266
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -752,6 +769,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!95 &4849724928552818104
 Animator:
   serializedVersion: 7
@@ -802,7 +820,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Tulip.Character.CharacterFacer, Tulip
   brain:
     <V>k__BackingField: {fileID: 956665518846445690}
+    <VRef>k__BackingField:
+      rid: -2
+    <IsVRef>k__BackingField: 0
   sprite: {fileID: 2576562777605374266}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &9181260741591546907
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -131,7 +131,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4019848646787942259
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -188,6 +188,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!95 &6461720170399778386
 Animator:
   serializedVersion: 7
@@ -240,7 +241,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Tulip.Character.CharacterFacer, Tulip
   brain:
     <V>k__BackingField: {fileID: 0}
+    <VRef>k__BackingField:
+      rid: -2
+    <IsVRef>k__BackingField: 0
   sprite: {fileID: 4019848646787942259}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &6789117360418484230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,9 +502,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Tulip.Character.CharacterMovement, Tulip
   brain:
     <V>k__BackingField: {fileID: 0}
+    <VRef>k__BackingField:
+      rid: -2
+    <IsVRef>k__BackingField: 0
   body: {fileID: 7560684870690709998}
   surrounds: {fileID: 8163165118725034582}
   config: {fileID: 11400000, guid: 8d2ea2dc215d77946b11e690ac378276, type: 2}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &143225856469302180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,8 +528,16 @@ MonoBehaviour:
   config: {fileID: 11400000, guid: f39354fa9ff53cf40af11ca8a3802dee, type: 2}
   brain:
     <V>k__BackingField: {fileID: 0}
+    <VRef>k__BackingField:
+      rid: -2
+    <IsVRef>k__BackingField: 0
   body: {fileID: 7560684870690709998}
   surrounds: {fileID: 8163165118725034582}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &6892111300499175154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,10 +552,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Tulip.Character.Dasher, Tulip
   brain:
     <V>k__BackingField: {fileID: 0}
+    <VRef>k__BackingField:
+      rid: -2
+    <IsVRef>k__BackingField: 0
   body: {fileID: 7560684870690709998}
   dashSpeed: 20
   dashCooldown: 1.5
   forceMode: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &2621862986274042954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -739,6 +772,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Tulip.Audio.FootstepAudio, Tulip
   movement:
     <V>k__BackingField: {fileID: 3529033824618618864}
+    <VRef>k__BackingField:
+      rid: -2
+    <IsVRef>k__BackingField: 0
   surrounds: {fileID: 8163165118725034582}
   footstepEvent:
     Guid:
@@ -749,6 +785,11 @@ MonoBehaviour:
     Path: event:/SFX/Entities/Footstep
   footStepInterval: 0.28
   velocityThreshold: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &1769229534505819852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,7 +844,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3639728673497933778
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -860,6 +901,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!1 &5985570404151572858
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,9 +950,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Tulip.Gameplay.ItemWielder, Tulip
   brain:
     <V>k__BackingField: {fileID: 0}
+    <VRef>k__BackingField:
+      rid: -2
+    <IsVRef>k__BackingField: 0
   health: {fileID: 7186377946535505526}
   itemRenderer: {fileID: 3639728673497933778}
   equippedItem: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &6477564572302283646
 MonoBehaviour:
   m_ObjectHideFlags: 0
