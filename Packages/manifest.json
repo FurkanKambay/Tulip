@@ -1,9 +1,6 @@
 {
   "dependencies": {
-    "com.calci.assetlens": "https://github.com/FurkanKambay/AssetLens.git",
     "com.cammin.ldtkunity": "https://github.com/FurkanKambay/LDtkToUnity.git?path=/Assets/LDtkUnity",
-    "com.needle.console": "2.6.2",
-    "com.needle.missing-component-info": "1.6.0",
     "com.tayx.graphy": "https://github.com/FurkanKambay/graphy.git",
     "com.unity.2d.aseprite": "5.0.3",
     "com.unity.2d.sprite": "1.0.0",
@@ -15,9 +12,8 @@
     "com.unity.render-pipelines.universal": "17.5.0",
     "com.unity.ugui": "2.5.0",
     "com.unity.visualeffectgraph": "17.5.0",
-    "com.vertx.debugging": "3.0.2",
-    "com.wooshii.hierarchydecorator": "0.12.0",
-    "today.comes.saintsfield": "4.32.5",
+    "com.vertx.debugging": "3.0.3",
+    "today.comes.saintsfield": "5.18.9",
     "com.unity.modules.adaptiveperformance": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
     "com.unity.modules.jsonserialize": "1.0.0",
