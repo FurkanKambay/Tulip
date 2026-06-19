@@ -9,6 +9,12 @@ using System;
 using System.Linq;
 using System.Text.RegularExpressions;
 
+#if UNITY_6000_2_OR_NEWER
+using TreeView = UnityEditor.IMGUI.Controls.TreeView<int>;
+using TreeViewItem = UnityEditor.IMGUI.Controls.TreeViewItem<int>;
+using TreeViewState = UnityEditor.IMGUI.Controls.TreeViewState<int>;
+#endif
+
 namespace FMODUnity
 {
     [CustomEditor(typeof(Settings))]
@@ -89,6 +95,7 @@ namespace FMODUnity
         private SerializedProperty bankRefreshCooldown;
         private SerializedProperty showBankRefreshWindow;
         private SerializedProperty eventLinkage;
+        private SerializedProperty serializeGUIDsOnly;
 
         [NonSerialized]
         private bool resourcesLoaded = false;
@@ -220,6 +227,7 @@ namespace FMODUnity
             bankRefreshCooldown = serializedObject.FindProperty("BankRefreshCooldown");
             showBankRefreshWindow = serializedObject.FindProperty("ShowBankRefreshWindow");
             eventLinkage = serializedObject.FindProperty("EventLinkage");
+            serializeGUIDsOnly = serializedObject.FindProperty("SerializeGUIDsOnly");
 
             platformsView = new PlatformsView(target as Settings, platformTreeViewState);
 
@@ -235,6 +243,13 @@ namespace FMODUnity
 
             staticPluginsView = new PlatformPropertyStringListView(Platform.PropertyAccessors.StaticPlugins);
             dynamicPluginsView = new PlatformPropertyStringListView(Platform.PropertyAccessors.Plugins);
+            dynamicPluginsView.onListChanged += () =>
+            {
+                if (dynamicPluginsView.platform is PlatformPlayInEditor)
+                {
+                    EditorUtils.RecreateSystem();
+                }
+            };
 
             Undo.undoRedoPerformed += OnUndoRedo;
         }
@@ -1731,7 +1746,7 @@ namespace FMODUnity
 
             DisplayBankRefreshSettings(bankRefreshCooldown, showBankRefreshWindow, true);
 
-            EditorGUILayout.PropertyField(eventLinkage, new GUIContent(L10n.Tr("Event Linkage")));
+            DrawLinkageSettings();
         }
 
         private void DrawBehaviorSection()
@@ -2481,6 +2496,8 @@ namespace FMODUnity
 
             private List<string> displayList;
 
+            public Action onListChanged;
+
             public PlatformPropertyStringListView(Platform.PropertyAccessor<List<string>> property)
                 : base(null, typeof(string), true, false, true, true)
             {
@@ -2545,12 +2562,13 @@ namespace FMODUnity
 
                     EditorGUI.BeginChangeCheck();
 
-                    string newValue = EditorGUI.TextField(rect, list[index] as string);
+                    string newValue = EditorGUI.DelayedTextField(rect, list[index] as string);
 
                     if (EditorGUI.EndChangeCheck())
                     {
                         displayList[index] = newValue;
                         AffirmOverriddenList()[index] = newValue;
+                        onListChanged?.Invoke();
                     }
                 }
             }
@@ -2563,6 +2581,7 @@ namespace FMODUnity
             private void RemoveElement(UnityEditorInternal.ReorderableList list)
             {
                 AffirmOverriddenList().RemoveAt(list.index);
+                onListChanged?.Invoke();
             }
 
             private void OnReorder(UnityEditorInternal.ReorderableList list)
@@ -2807,6 +2826,63 @@ namespace FMODUnity
             }
 
             return fullPath.Replace(Path.DirectorySeparatorChar, '/');
+        }
+
+        void DrawLinkageSettings()
+        {
+            // If GUID-only serialization mode is enabled, we don't need to display the linkage setting
+#if !FMOD_SERIALIZE_GUID_ONLY
+            EditorGUILayout.PropertyField(eventLinkage);
+#endif
+            EditorGUI.BeginChangeCheck();
+            // Custom GUIContent object to stop the Unity Editor from spacing "GUIDs" out
+            EditorGUILayout.PropertyField(serializeGUIDsOnly, new GUIContent("Serialize GUIDs Only"));
+            if (EditorGUI.EndChangeCheck())
+            {
+                HandleGUIDOnlySerializationToggle(serializeGUIDsOnly.boolValue);
+            }
+        }
+        void HandleGUIDOnlySerializationToggle(bool oldValue)
+        {
+            string action = oldValue ? "Enable" : "Disable";
+            string content =
+                "You are about to " + action.ToLower() + " GUID-Only Serialization. "
+                + "\n\nThe GUID-Only Serialization setting causes FMOD for Unity to not serialize event paths for EventReferences in editor. "
+                + "Toggling this setting will cause Unity to refresh the Asset Database and perform a script recompilation, and may break existing event path usage in your project. "
+                + "With this setting enabled, the Event Reference Updater will not be able to detect renamed events."
+                + "\n\nAre you sure you want to " + action.ToLower() + " this setting?";
+            if (EditorUtility.DisplayDialog(action + " GUID-Only Serialization", content, action, "Don't " + action))
+            {
+                NamedBuildTarget target = NamedBuildTarget.FromBuildTargetGroup(EditorUserBuildSettings.selectedBuildTargetGroup);
+                PlayerSettings.GetScriptingDefineSymbols(target, out string[] defines);
+                if (oldValue)
+                {
+                    if (!defines.Contains("FMOD_SERIALIZE_GUID_ONLY"))
+                    {
+                        Array.Resize(ref defines, defines.Length + 1);
+                        defines[defines.Length - 1] = "FMOD_SERIALIZE_GUID_ONLY";
+                        PlayerSettings.SetScriptingDefineSymbols(target, defines);
+                        eventLinkage.intValue = (int)EventLinkage.GUID;
+                        serializedObject.ApplyModifiedProperties();
+                        AssetDatabase.Refresh();
+                    }
+                }
+                else
+                {
+                    if (defines.Contains("FMOD_SERIALIZE_GUID_ONLY"))
+                    {
+                        defines = defines.Where(d => d != "FMOD_SERIALIZE_GUID_ONLY").ToArray();
+                        PlayerSettings.SetScriptingDefineSymbols(target, defines);
+                        serializedObject.ApplyModifiedProperties();
+                        AssetDatabase.Refresh();
+                    }
+                }
+            }
+            else
+            {
+                serializeGUIDsOnly.boolValue = !oldValue;
+                serializedObject.ApplyModifiedProperties();
+            }
         }
     }
 }

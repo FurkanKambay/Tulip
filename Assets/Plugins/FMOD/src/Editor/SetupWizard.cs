@@ -8,6 +8,12 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+#if UNITY_6000_2_OR_NEWER
+using TreeView = UnityEditor.IMGUI.Controls.TreeView<int>;
+using TreeViewItem = UnityEditor.IMGUI.Controls.TreeViewItem<int>;
+using TreeViewState = UnityEditor.IMGUI.Controls.TreeViewState<int>;
+#endif
+
 namespace FMODUnity
 {
     public class SetupWizardWindow : EditorWindow
@@ -39,7 +45,7 @@ namespace FMODUnity
             UpdateTask.Create(
                 type: UpdateTaskType.UpdateEventReferences,
                 name: L10n.Tr("Update Event References"),
-                description: L10n.Tr("Find event references that use the obsolete [EventRef] attribute and update them to use the EventReference type."),
+                description: L10n.Tr("Find event references that use the obsolete [FMODUnity.EventRef] attribute and update them to use the FMODUnity.EventReference type."),
                 execute: EventReferenceUpdater.ShowWindow,
                 checkComplete: EventReferenceUpdater.IsUpToDate
             ),
@@ -82,10 +88,14 @@ namespace FMODUnity
         private TreeViewState m_TreeViewState;
 
         private bool bStudioLinked;
+        private bool isValidSource = true;
+        private string invalidMessage;
 
         private static StagingSystem.UpdateStep nextStagingStep;
 
         private static bool IsStagingUpdateInProgress => nextStagingStep != null;
+
+        private Vector2 ignoreFileScrollPosition = Vector2.zero;
 
         private const string IgnoreFileText =
 @"# Never ignore DLLs in the FMOD subfolder.
@@ -105,6 +115,10 @@ namespace FMODUnity
 # If the source bank files are kept outside of the StreamingAssets folder then these can be ignored.
 # Log files can be ignored.
 fmod_editor.log";
+
+        private const string GitAttributesText =
+@"Assets/Plugins/FMOD/**/*.bundle text eol=lf
+Assets/Plugins/FMOD/**/Info.plist text eol=lf";
 
         private enum PAGES : int
         {
@@ -241,6 +255,8 @@ fmod_editor.log";
             iconStyle = new GUIStyle();
             iconStyle.alignment = TextAnchor.MiddleCenter;
 
+            EditorUtils.ValidateSource(out isValidSource, out invalidMessage);
+
             CheckUpdatesComplete();
             CheckStudioLinked();
             CheckListeners();
@@ -373,7 +389,7 @@ fmod_editor.log";
 
         private void CheckStudioLinked()
         {
-            pageComplete[(int)PAGES.Linking] = IsStudioLinked();
+            pageComplete[(int)PAGES.Linking] = isValidSource;
         }
 
         private bool IsStudioLinked()
@@ -529,7 +545,7 @@ fmod_editor.log";
                     GUILayout.Space(indent);
                     if (GUILayout.Button(L10n.Tr("FMOD Studio Project"), sourceButtonStyle))
                     {
-                        SettingsEditor.BrowseForSourceProjectPath(serializedObject);
+                        isValidSource = SettingsEditor.BrowseForSourceProjectPath(serializedObject);
                     }
                     GUILayout.Label(L10n.Tr("If you have the complete FMOD Studio Project."), descriptionStyle, GUILayout.Height(sourceButtonStyle.fixedHeight));
 
@@ -541,7 +557,8 @@ fmod_editor.log";
                     GUILayout.Space(indent);
                     if (GUILayout.Button("Single Platform Build", sourceButtonStyle))
                     {
-                        SettingsEditor.BrowseForSourceBankPath(serializedObject);
+                        SettingsEditor.BrowseForSourceBankPath(serializedObject, false);
+                        EditorUtils.ValidateSource(out isValidSource, out invalidMessage);
                     }
                     EditorGUILayout.LabelField(L10n.Tr("If you have the contents of the Build folder for a single platform."),
                         descriptionStyle, GUILayout.Height(sourceButtonStyle.fixedHeight));
@@ -555,6 +572,7 @@ fmod_editor.log";
                     if (GUILayout.Button(L10n.Tr("Multiple Platform Build"), sourceButtonStyle))
                     {
                         SettingsEditor.BrowseForSourceBankPath(serializedObject, true);
+                        EditorUtils.ValidateSource(out isValidSource, out invalidMessage);
                     }
                     EditorGUILayout.LabelField(L10n.Tr("If you have the contents of the Build folder for multiple platforms, with each platform in its own subdirectory."), descriptionStyle, GUILayout.Height(sourceButtonStyle.fixedHeight));
                     GUILayout.FlexibleSpace();
@@ -562,18 +580,18 @@ fmod_editor.log";
                 EditorGUILayout.Space();
             }
 
-            if (IsStudioLinked())
+            if (IsStudioLinked() || invalidMessage.Length != 0)
             {
                 EditorGUILayout.Space();
 
                 Color oldColor = GUI.backgroundColor;
-                GUI.backgroundColor = Color.green;
+                GUI.backgroundColor = isValidSource ? Color.green : Color.red;
 
                 using (new GUILayout.HorizontalScope("box"))
                 {
                     GUILayout.FlexibleSpace();
 
-                    GUILayout.Label(tickTexture, iconStyle, GUILayout.Height(EditorGUIUtility.singleLineHeight * 2));
+                    GUILayout.Label(isValidSource ? tickTexture : crossTexture, iconStyle, GUILayout.Height(EditorGUIUtility.singleLineHeight * 2));
 
                     EditorGUILayout.Space();
 
@@ -583,18 +601,15 @@ fmod_editor.log";
 
                         if (settings.HasSourceProject)
                         {
-                            EditorGUILayout.LabelField(L10n.Tr("Using the FMOD Studio project at:"), descriptionStyle);
-                            EditorGUILayout.LabelField(settings.SourceProjectPath, descriptionStyle);
+                            EditorGUILayout.LabelField(L10n.Tr(String.Format("Using the FMOD Studio project at: {0}", settings.SourceBankPath)), descriptionStyle);
                         }
                         else if (settings.HasPlatforms)
                         {
-                            EditorGUILayout.LabelField(L10n.Tr("Using the multiple platform build at:"), descriptionStyle);
-                            EditorGUILayout.LabelField(settings.SourceBankPath, descriptionStyle);
+                            EditorGUILayout.LabelField(L10n.Tr(isValidSource ? String.Format("Using the multiple platform build at: {0}", settings.SourceBankPath) : invalidMessage), descriptionStyle);
                         }
                         else
                         {
-                            EditorGUILayout.LabelField(L10n.Tr("Using the single platform build at:"), descriptionStyle);
-                            EditorGUILayout.LabelField(settings.SourceBankPath, descriptionStyle);
+                            EditorGUILayout.LabelField(L10n.Tr(isValidSource ? String.Format("Using the single platform build at: {0}", settings.SourceBankPath) : invalidMessage), descriptionStyle);
                         }
                     }
 
@@ -762,11 +777,22 @@ fmod_editor.log";
         private void SourceControl()
         {
             EditorGUILayout.LabelField(L10n.Tr("There are a number of files produced by FMOD for Unity that should be ignored by source control. Here is an example of what you should add to your source control ignore file:"), titleLeftStyle);
-            GUILayout.FlexibleSpace();
 
             using (new EditorGUILayout.VerticalScope("box"))
             {
-                EditorGUILayout.TextArea(IgnoreFileText, GUILayout.Width(568));
+                ignoreFileScrollPosition = EditorGUILayout.BeginScrollView(ignoreFileScrollPosition, GUILayout.Height(200));
+                EditorGUILayout.TextArea(IgnoreFileText);
+                EditorGUILayout.EndScrollView();
+            }
+
+            EditorGUILayout.LabelField(
+                "Add line ending requirements to a .gitattributes file to avoid issues:",
+                titleLeftStyle
+            );
+
+            using (new EditorGUILayout.VerticalScope("box"))
+            {
+                EditorGUILayout.TextArea(GitAttributesText, GUILayout.Width(568));
             }
 
             pageComplete[(int)PAGES.SourceControl] = true;

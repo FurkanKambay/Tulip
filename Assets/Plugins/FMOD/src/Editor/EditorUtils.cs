@@ -96,10 +96,17 @@ namespace FMODUnity
 
                 if (settings.HasPlatforms)
                 {
+                    string defaultBankFolder = RuntimeUtils.GetCommonPlatformPath(Path.Combine(settings.SourceBankPath, EditorSettings.Instance.CurrentEditorPlatform.BuildDirectory));
                     if (Directory.GetDirectories(settings.SourceBankPath).Length == 0)
                     {
                         valid = false;
                         reason = string.Format(L10n.Tr("Build path '{0}' does not contain any platform sub-directories. Please check that the build path is correct."), settings.SourceBankPath);
+                        return;
+                    }
+                    else if (!Directory.Exists(defaultBankFolder))
+                    {
+                        valid = false;
+                        reason = string.Format(L10n.Tr("Platform sub-directory '{0}' does not exist. Please check that the build path is correct."), defaultBankFolder);
                         return;
                     }
                 }
@@ -126,7 +133,7 @@ namespace FMODUnity
                     string[] buildNames = new string[buildDirectories.Length];
                     for (int i = 0; i < buildDirectories.Length; i++)
                     {
-                        buildNames[i] = Path.GetFileNameWithoutExtension(buildDirectories[i]);
+                        buildNames[i] = Path.GetFileName(buildDirectories[i]);
                     }
                     return buildNames;
                 }
@@ -506,11 +513,19 @@ namespace FMODUnity
             SetupWizardWindow.Startup();
         }
 
-        private static void RecreateSystem()
+        public static void RecreateSystem()
         {
+            // If preview banks loaded, reload them after the system is recreated
+            bool reloadBanks = PreviewBanksLoaded;
+
             StopAllPreviews();
             DestroySystem();
             CreateSystem();
+
+            if (reloadBanks)
+            {
+                LoadPreviewBanks();
+            }
         }
 
         private static void DestroySystem()
@@ -535,6 +550,16 @@ namespace FMODUnity
                 RuntimeUtils.DebugLogWarning("FMOD Studio: Cannot open fmod_editor.log. Logging will be disabled for importing and previewing");
             }
 
+            result = AttemptInitialize(out system);
+            if (result != FMOD.RESULT.OK)
+            {
+                RuntimeUtils.DebugLogErrorFormat("[FMOD] Studio::System::initialize returned {0}, defaulting to no-sound mode.", result.ToString());
+                CheckResult(AttemptInitialize(out system, FMOD.OUTPUTTYPE.NOSOUND));
+            }
+        }
+
+        private static FMOD.RESULT AttemptInitialize(out FMOD.Studio.System system, FMOD.OUTPUTTYPE outputType = FMOD.OUTPUTTYPE.AUTODETECT)
+        {
             CheckResult(FMOD.Studio.System.create(out system));
 
             FMOD.System lowlevel;
@@ -544,6 +569,8 @@ namespace FMODUnity
             speakerMode = Settings.Instance.PlayInEditorPlatform.SpeakerMode;
             CheckResult(lowlevel.setSoftwareFormat(0, speakerMode, 0));
 
+            CheckResult(lowlevel.setOutput(outputType));
+
             encryptionKey = Settings.Instance.EncryptionKey;
             if (!string.IsNullOrEmpty(encryptionKey))
             {
@@ -551,13 +578,27 @@ namespace FMODUnity
                 CheckResult(system.setAdvancedSettings(studioAdvancedSettings, encryptionKey));
             }
 
-            CheckResult(system.initialize(256, FMOD.Studio.INITFLAGS.ALLOW_MISSING_PLUGINS | FMOD.Studio.INITFLAGS.SYNCHRONOUS_UPDATE, FMOD.INITFLAGS.NORMAL, IntPtr.Zero));
+            Settings.Instance.PlayInEditorPlatform.LoadDynamicPlugins(lowlevel, (dynamicLoadResult, cause) => {
+                if (dynamicLoadResult != FMOD.RESULT.OK)
+                {
+                    RuntimeUtils.DebugLogError($"[FMOD] Error loading dynamic plugins: {dynamicLoadResult.ToString()} ({FMOD.Error.String(dynamicLoadResult)}): {cause}");
+                }
+            });
 
-            FMOD.ChannelGroup master;
-            CheckResult(lowlevel.getMasterChannelGroup(out master));
-            FMOD.DSP masterHead;
-            CheckResult(master.getDSP(FMOD.CHANNELCONTROL_DSP_INDEX.HEAD, out masterHead));
-            CheckResult(masterHead.setMeteringEnabled(false, true));
+            FMOD.RESULT result = system.initialize(256, FMOD.Studio.INITFLAGS.ALLOW_MISSING_PLUGINS | FMOD.Studio.INITFLAGS.SYNCHRONOUS_UPDATE, FMOD.INITFLAGS.NORMAL, IntPtr.Zero);
+            if (result == FMOD.RESULT.OK)
+            {
+                FMOD.ChannelGroup master;
+                CheckResult(lowlevel.getMasterChannelGroup(out master));
+                FMOD.DSP masterHead;
+                CheckResult(master.getDSP(FMOD.CHANNELCONTROL_DSP_INDEX.HEAD, out masterHead));
+                CheckResult(masterHead.setMeteringEnabled(false, true));
+                return FMOD.RESULT.OK;
+            }
+            else
+            {
+                return result;
+            }
         }
 
         public static void UpdateParamsOnEmitter(SerializedObject serializedObject, string path)
@@ -686,7 +727,7 @@ namespace FMODUnity
             CheckResult(lowlevel.getVersion(out version, out buildNumber));
 
             string text = string.Format(
-                L10n.Tr("Version: {0}\nBuild Number: {1}\n\nCopyright \u00A9 Firelight Technologies Pty, Ltd. 2014-2025 \n\nSee LICENSE.TXT for additional license information."),
+                L10n.Tr("Version: {0}\nBuild Number: {1}\n\nCopyright \u00A9 Firelight Technologies Pty, Ltd. 2014-2026 \n\nSee LICENSE.TXT for additional license information."),
                 VersionString(version),
                 buildNumber);
 
@@ -798,9 +839,9 @@ namespace FMODUnity
 
         public static void StopAllPreviews()
         {
-            foreach (FMOD.Studio.EventInstance eventInstance in previewEventInstances)
+            for (int i = previewEventInstances.Count - 1; i >= 0; i--)
             {
-                PreviewStop(eventInstance);
+                PreviewStop(previewEventInstances[i]);
             }
         }
 
@@ -825,7 +866,7 @@ namespace FMODUnity
             float[] data = new float[channels];
             if (outputMetering.numchannels > 0)
             {
-                Array.Copy(outputMetering.rmslevel, data, channels);
+                outputMetering.rmslevel.CopyTo(data);
             }
             return data;
         }
@@ -1306,6 +1347,25 @@ namespace FMODUnity
                 return $"Assets/Plugins/FMOD/Cache/Editor/{cacheAssetName}.asset";
             }
         }
+
+#if FMOD_SERIALIZE_GUID_ONLY
+        public static string PathFromGUID(FMOD.GUID guid)
+        {
+            string path = "";
+
+            if (!guid.IsNull)
+            {
+                // If referenced event was deleted, editorEventRef will be null, need to check to avoid null ref
+                EditorEventRef editorEventRef = EventManager.EventFromGUID(guid);
+                if (editorEventRef != null)
+                {
+                    path = editorEventRef.Path;
+                }
+            }
+
+            return path;
+        }
+#endif
     }
 
     public class StagingSystem
@@ -1315,10 +1375,13 @@ namespace FMODUnity
         private const string AnyCPU = "AnyCPU";
 
         private static readonly LibInfo[] LibrariesToUpdate = {
-            new LibInfo() {cpu = "x86", os = "Windows",  lib = "fmodstudioL.dll", platform = "win", buildTarget = BuildTarget.StandaloneWindows},
-            new LibInfo() {cpu = "x86_64", os = "Windows", lib = "fmodstudioL.dll", platform = "win", buildTarget = BuildTarget.StandaloneWindows64},
-            new LibInfo() {cpu = "x86_64", os = "Linux", lib = "libfmodstudioL.so", platform = "linux", buildTarget = BuildTarget.StandaloneLinux64},
-            new LibInfo() {cpu = AnyCPU, os = "OSX", lib = "fmodstudioL.bundle", platform = "mac", buildTarget = BuildTarget.StandaloneOSX},
+            new LibInfo() {cpu = "x86", os = "Windows",  lib = "fmodstudioL.dll", platform = "win", setPlatformCPU = false, buildTarget = BuildTarget.StandaloneWindows},
+            new LibInfo() {cpu = "x86_64", os = "Windows", lib = "fmodstudioL.dll", platform = "win", setPlatformCPU = false, buildTarget = BuildTarget.StandaloneWindows64},
+            new LibInfo() {cpu = "x86_64", os = "Linux", lib = "libfmodstudioL.so", platform = "linux", setPlatformCPU = false, buildTarget = BuildTarget.StandaloneLinux64},
+            new LibInfo() {cpu = AnyCPU, os = "OSX", lib = "fmodstudioL.bundle", platform = "mac", setPlatformCPU = true, buildTarget = BuildTarget.StandaloneOSX},
+#if UNITY_2023_1_OR_NEWER
+            new LibInfo() {cpu = "ARM64", os = "Windows", lib = "fmodstudioL.dll", platform = "win", setPlatformCPU = true, buildTarget = BuildTarget.StandaloneWindows64},
+#endif
         };
 
         public static bool SourceLibsExist
@@ -1347,6 +1410,7 @@ namespace FMODUnity
             public string os;
             public string lib;
             public string platform;
+            public bool setPlatformCPU;
             public BuildTarget buildTarget;
         };
 
@@ -1544,6 +1608,10 @@ namespace FMODUnity
                             pluginImporter.SetCompatibleWithPlatform(libInfo.buildTarget, true);
                             pluginImporter.SetEditorData("CPU", libInfo.cpu);
                             pluginImporter.SetEditorData("OS", libInfo.os);
+                            if (libInfo.setPlatformCPU)
+                            {
+                                pluginImporter.SetPlatformData(libInfo.buildTarget, "CPU", libInfo.cpu);
+                            }
                             EditorUtility.SetDirty(pluginImporter);
                             pluginImporter.SaveAndReimport();
                         }
@@ -1856,7 +1924,7 @@ namespace FMODUnity
             }
         }
 
-        private static FMOD.GUID GetGuid(this SerializedProperty property)
+        public static FMOD.GUID GetGuid(this SerializedProperty property)
         {
             return new FMOD.GUID() {
                 Data1 = property.FindPropertyRelative("Data1").intValue,
@@ -1879,19 +1947,29 @@ namespace FMODUnity
             SerializedProperty guidProperty = property.FindPropertyRelative("Guid");
             guidProperty.SetGuid(guid);
 
+#if !FMOD_SERIALIZE_GUID_ONLY
             SerializedProperty pathProperty = property.FindPropertyRelative("Path");
             pathProperty.stringValue = path;
+#endif
         }
 
         public static EventReference GetEventReference(this SerializedProperty property)
         {
-            SerializedProperty pathProperty = property.FindPropertyRelative("Path");
             SerializedProperty guidProperty = property.FindPropertyRelative("Guid");
-
-            return new EventReference() {
-                Path = pathProperty.stringValue,
+            return new EventReference()
+            {
+                Path = property.GetEventReferencePath(),
                 Guid = guidProperty.GetGuid(),
             };
+        }
+
+        public static string GetEventReferencePath(this SerializedProperty property)
+        {
+#if FMOD_SERIALIZE_GUID_ONLY
+            return EditorUtils.PathFromGUID(property.FindPropertyRelative("Guid").GetGuid());
+#else
+            return property.FindPropertyRelative("Path").stringValue;
+#endif
         }
     }
 
