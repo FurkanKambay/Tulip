@@ -7,7 +7,6 @@ using Tulip.Data.GameEvents;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Assertions;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 namespace Tulip.Core

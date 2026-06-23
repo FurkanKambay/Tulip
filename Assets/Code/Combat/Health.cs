@@ -1,6 +1,5 @@
 using Furkan.Common;
 using Tulip.Character;
-using Tulip.Data;
 using UnityEngine;
 
 namespace Tulip.Combat
