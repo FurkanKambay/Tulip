@@ -1,5 +1,4 @@
-using SaintsField;
-using SaintsField.Playa;
+using Furkan.Common;
 using UnityEngine;
 
 namespace Tulip.Data.Items
@@ -32,9 +31,9 @@ namespace Tulip.Data.Items
         [ShowIf(nameof(isThrowable))]
         [SerializeField] protected ThrowableConfig throwableConfig;
 
-        [BelowRichLabel(nameof(SwingTypeLabel), isCallback: true)]
         [SerializeField] protected ItemSwingConfig swingConfig;
 
+        // TODO: show this value in inspector
         private string SwingTypeLabel() => $"<color=gray>Time to first hit:</color> {SwingConfig.TimeToFirstHit} sec";
     }
 }

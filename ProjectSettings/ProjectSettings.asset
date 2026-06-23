@@ -701,24 +701,24 @@ PlayerSettings:
   webWasm2023: 1
   webEnableSubmoduleStrippingCompatibility: 0
   scriptingDefineSymbols:
-    Android: SAINTSFIELD_SAINTS_EDITOR_APPLY
+    Android: 
     Bratwurst: 
-    EmbeddedLinux: SAINTSFIELD_SAINTS_EDITOR_APPLY
-    GameCoreScarlett: SAINTSFIELD_SAINTS_EDITOR_APPLY
-    GameCoreXboxOne: SAINTSFIELD_SAINTS_EDITOR_APPLY
-    LinuxHeadlessSimulation: SAINTSFIELD_SAINTS_EDITOR_APPLY
-    Nintendo Switch: SAINTSFIELD_SAINTS_EDITOR_APPLY
-    PS4: SAINTSFIELD_SAINTS_EDITOR_APPLY
-    PS5: SAINTSFIELD_SAINTS_EDITOR_APPLY
-    QNX: SAINTSFIELD_SAINTS_EDITOR_APPLY
-    ReservedCFE: SAINTSFIELD_SAINTS_EDITOR_APPLY
-    Standalone: SAINTSFIELD_SAINTS_EDITOR_APPLY
-    VisionOS: SAINTSFIELD_SAINTS_EDITOR_APPLY
-    WebGL: SAINTSFIELD_SAINTS_EDITOR_APPLY
-    Windows Store Apps: SAINTSFIELD_SAINTS_EDITOR_APPLY
-    XboxOne: SAINTSFIELD_SAINTS_EDITOR_APPLY
-    iPhone: SAINTSFIELD_SAINTS_EDITOR_APPLY
-    tvOS: SAINTSFIELD_SAINTS_EDITOR_APPLY
+    EmbeddedLinux: 
+    GameCoreScarlett: 
+    GameCoreXboxOne: 
+    LinuxHeadlessSimulation: 
+    Nintendo Switch: 
+    PS4: 
+    PS5: 
+    QNX: 
+    ReservedCFE: 
+    Standalone: 
+    VisionOS: 
+    WebGL: 
+    Windows Store Apps: 
+    XboxOne: 
+    iPhone: 
+    tvOS: 
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:

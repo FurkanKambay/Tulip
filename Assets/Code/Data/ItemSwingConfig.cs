@@ -1,8 +1,8 @@
 using System.Linq;
-using SaintsField;
-using SaintsField.Playa;
+using Furkan.Common;
 using Tulip.Data.Items;
 using UnityEngine;
+using Vertx.Attributes;
 
 namespace Tulip.Data
 {
@@ -33,15 +33,14 @@ namespace Tulip.Data
         [SerializeField, Min(0)] protected float resetTurnDuration;
 
         [Header("Phases")]
-        [InfoBox("Avoid resetting and loop to phase 0 after last phase.", show: nameof(loop))]
+        [HelpBox("Avoid resetting and loop to phase 0 after last phase.")]
         [SerializeField] protected bool loop;
 
-        [SaintsRow(inline: true)]
-        [SerializeField] protected UsePhase[] phases;
+        [SerializeField, Inline] protected UsePhase[] phases;
 
         // ReSharper disable NotAccessedField.Global
-        [LayoutGroup("Referenced By", ELayout.Background | ELayout.TitleOut | ELayout.Foldout, marginTop: 16)]
-        [SerializeField, ReadOnly] protected UsableSO[] usedBy;
+        [LayoutGroup("Referenced By", ELayout.Background | ELayout.TitleOut | ELayout.Foldout)]
+        [SerializeField, ReadOnlyField] protected UsableSO[] usedBy;
         // ReSharper restore NotAccessedField.Global
 
         private void Awake() =>

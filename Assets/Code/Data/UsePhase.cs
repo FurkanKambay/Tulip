@@ -1,7 +1,6 @@
 using System;
+using Furkan.Common;
 using UnityEngine;
-using SaintsField;
-using SaintsField.Playa;
 
 namespace Tulip.Data
 {

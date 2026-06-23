@@ -1,4 +1,3 @@
-using SaintsField;
 using UnityEngine;
 
 namespace Tulip.Data.Items
@@ -16,9 +15,7 @@ namespace Tulip.Data.Items
         public virtual int MaxAmount => maxAmount;
 
         [Header("Item")]
-        [AssetPreview(width: 64, align: EAlign.FieldStart)]
         [SerializeField] protected Sprite icon;
-
         [SerializeField] protected float iconScale = 1f;
         [SerializeField] protected new string name;
         [SerializeField, Multiline] protected string description;

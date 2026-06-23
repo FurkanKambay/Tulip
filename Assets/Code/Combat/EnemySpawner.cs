@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-using SaintsField;
-using SaintsField.Playa;
+using Furkan.Common;
 using Tulip.Character;
 using Tulip.Data;
 using Tulip.GameWorld;
@@ -114,7 +113,7 @@ namespace Tulip.Combat
             }
         }
 
-        [Button, LayoutEnd]
+        [ContextMenu("Destroy All Spawns")]
         private void DestroyAllSpawns()
         {
             for (int i = 0; i < spawnParent.childCount; i++)

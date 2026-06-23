@@ -1,9 +1,9 @@
 using System.Linq;
-using SaintsField;
-using SaintsField.Playa;
+using Furkan.Common;
 using Tulip.Data.Items;
 using Tulip.GameWorld;
 using UnityEngine;
+using Vertx.Attributes;
 
 namespace Tulip.Data
 {
@@ -26,8 +26,8 @@ namespace Tulip.Data
         [SerializeField, Min(0)] int clearanceBelow;
 
         // ReSharper disable NotAccessedField.Global
-        [LayoutGroup("Referenced By", ELayout.Background | ELayout.TitleOut | ELayout.Foldout, marginTop: 16)]
-        [SerializeField, ReadOnly] protected EntitySO[] assignedEntities;
+        [LayoutGroup("Referenced By", ELayout.Background | ELayout.TitleOut | ELayout.Foldout)]
+        [SerializeField, ReadOnlyField] protected EntitySO[] assignedEntities;
         // ReSharper restore NotAccessedField.Global
 
         /// <param name="entitySO"></param>

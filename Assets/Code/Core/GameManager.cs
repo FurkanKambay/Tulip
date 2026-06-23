@@ -1,13 +1,12 @@
 using System.Collections;
 using Furkan.Common;
 using JetBrains.Annotations;
-using SaintsField;
-using SaintsField.Playa;
 using Tulip.Data.GameEvents;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
+using Vertx.Attributes;
 
 namespace Tulip.Core
 {
@@ -25,14 +24,11 @@ namespace Tulip.Core
         [SerializeField, Required] InputManager inputManager;
 
         [LayoutGroup("/Main Menu Scene", ELayout.FoldoutBox)]
-        [SaintsRow(true)]
-        [SerializeField] SceneInfo mainMenuSceneInfo;
+        [SerializeField, Inline] SceneInfo mainMenuSceneInfo;
 
         [LayoutGroup("/Game Scene", ELayout.FoldoutBox)]
-        [SaintsRow(true)]
-        [SerializeField] SceneInfo gameSceneInfo;
+        [SerializeField, Inline] SceneInfo gameSceneInfo;
 
-        [LayoutEnd]
         [SerializeField] bool showSplashScreen;
         [SerializeField] float splashScreenDuration = 2;
 
@@ -93,16 +89,12 @@ namespace Tulip.Core
 #endregion
 
 #region High-Level Game Flow API
-        [LayoutGroup("Buttons", ELayout.Background, marginTop: 8)]
-        [Button, Ordered]
         public static void ReturnToMainMenu() =>
             SwitchTo(GameState.MainMenu);
 
-        [Button, Ordered]
         public static void StartNewGame() =>
             SwitchTo(GameState.Playing);
 
-        [Button, Ordered]
         public static void SetPaused(bool shouldPause)
         {
             GameState newState = CurrentState switch
@@ -115,7 +107,6 @@ namespace Tulip.Core
             SwitchTo(newState);
         }
 
-        [Button, Ordered]
         internal static void QuitGame()
         {
             if (!IsSafeToQuit())

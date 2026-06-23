@@ -1,7 +1,7 @@
 using System.Linq;
-using SaintsField;
-using SaintsField.Playa;
+using Furkan.Common;
 using UnityEngine;
+using Vertx.Attributes;
 
 namespace Tulip.Data.Items
 {
@@ -14,8 +14,8 @@ namespace Tulip.Data.Items
         [SerializeField] GameObject prefab;
 
         // ReSharper disable NotAccessedField.Global
-        [LayoutGroup("Referenced By", ELayout.Background | ELayout.TitleOut | ELayout.Foldout, marginTop: 16)]
-        [SerializeField, ReadOnly] protected EntitySO[] entityLoot;
+        [LayoutGroup("Referenced By", ELayout.Background | ELayout.TitleOut | ELayout.Foldout)]
+        [SerializeField, ReadOnlyField] protected EntitySO[] entityLoot;
         // ReSharper restore NotAccessedField.Global
 
         protected override void OnValidate()

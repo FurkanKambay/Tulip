@@ -1,4 +1,4 @@
-using SaintsField;
+using Furkan.Common;
 using UnityEngine;
 
 namespace Tulip.Combat
@@ -19,12 +19,11 @@ namespace Tulip.Combat
 
         [Header("Rate")]
         [SerializeField] float amount;
-
-        [BelowRichLabel(nameof(AmountPerSecond), isCallback: true)]
         [SerializeField, Min(0.01f)] float rate;
 
         public StatusEffect Create(Health source, Health target) => new(this, source, target);
 
+        // TODO: show this value in inspector
         private string AmountPerSecond => $"<color=green>{amount / rate} per second</color>";
     }
 }
