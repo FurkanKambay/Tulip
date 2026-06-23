@@ -63,9 +63,4 @@ namespace Furkan.Common
 
     [Flags]
     public enum ELayout { FoldoutBox, TitleOut, Background, Foldout, Horizontal }
-
-    public interface SaintsInterface<T1, T2>
-    {
-        public T2 I { get; set; }
-    }
 }

@@ -239,17 +239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3945025d2a24a429219de59262fec46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Character.CharacterFacer, Tulip
-  brain:
-    <V>k__BackingField: {fileID: 0}
-    <VRef>k__BackingField:
-      rid: -2
-    <IsVRef>k__BackingField: 0
+  brain: {fileID: 0}
   sprite: {fileID: 4019848646787942259}
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
 --- !u!114 &6789117360418484230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,19 +491,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba683a666f49426ab800278e48260196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Character.CharacterMovement, Tulip
-  brain:
-    <V>k__BackingField: {fileID: 0}
-    <VRef>k__BackingField:
-      rid: -2
-    <IsVRef>k__BackingField: 0
+  brain: {fileID: 0}
   body: {fileID: 7560684870690709998}
   surrounds: {fileID: 8163165118725034582}
   config: {fileID: 11400000, guid: 8d2ea2dc215d77946b11e690ac378276, type: 2}
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
 --- !u!114 &143225856469302180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,18 +508,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Tulip.Character.CharacterJump, Tulip
   config: {fileID: 11400000, guid: f39354fa9ff53cf40af11ca8a3802dee, type: 2}
-  brain:
-    <V>k__BackingField: {fileID: 0}
-    <VRef>k__BackingField:
-      rid: -2
-    <IsVRef>k__BackingField: 0
+  brain: {fileID: 0}
   body: {fileID: 7560684870690709998}
   surrounds: {fileID: 8163165118725034582}
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
 --- !u!114 &6892111300499175154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -550,20 +523,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 785fc94a52e464e498ccf96036b19f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Character.Dasher, Tulip
-  brain:
-    <V>k__BackingField: {fileID: 0}
-    <VRef>k__BackingField:
-      rid: -2
-    <IsVRef>k__BackingField: 0
+  brain: {fileID: 0}
   body: {fileID: 7560684870690709998}
   dashSpeed: 20
   dashCooldown: 1.5
   forceMode: 1
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
 --- !u!114 &2621862986274042954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -770,11 +734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc8208e6f4c44e128d28153138e767ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Audio.FootstepAudio, Tulip
-  movement:
-    <V>k__BackingField: {fileID: 3529033824618618864}
-    <VRef>k__BackingField:
-      rid: -2
-    <IsVRef>k__BackingField: 0
+  movement: {fileID: 3529033824618618864}
   surrounds: {fileID: 8163165118725034582}
   footstepEvent:
     Guid:
@@ -785,11 +745,6 @@ MonoBehaviour:
     Path: event:/SFX/Entities/Footstep
   footStepInterval: 0.28
   velocityThreshold: 1
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
 --- !u!114 &1769229534505819852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -948,19 +903,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221a2bf0379152f4b81a63414840b5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Gameplay.ItemWielder, Tulip
-  brain:
-    <V>k__BackingField: {fileID: 0}
-    <VRef>k__BackingField:
-      rid: -2
-    <IsVRef>k__BackingField: 0
+  brain: {fileID: 0}
   health: {fileID: 7186377946535505526}
   itemRenderer: {fileID: 3639728673497933778}
   equippedItem: {fileID: 0}
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
 --- !u!114 &6477564572302283646
 MonoBehaviour:
   m_ObjectHideFlags: 0

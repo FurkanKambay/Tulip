@@ -97,16 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb8813c9be3f42188c20f5900cc78793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Gameplay.HookLauncher, Tulip
-  wielderBrain:
-    <V>k__BackingField: {fileID: 3859557317723880189}
-    <VRef>k__BackingField:
-      rid: -2
-    <IsVRef>k__BackingField: 0
-  jumperBrain:
-    <V>k__BackingField: {fileID: 3859557317723880189}
-    <VRef>k__BackingField:
-      rid: -2
-    <IsVRef>k__BackingField: 0
+  wielderBrain: {fileID: 3859557317723880189}
+  jumperBrain: {fileID: 3859557317723880189}
   body: {fileID: 2911555634556418871}
   lineRenderer: {fileID: 7136959322606572221}
   hookSO: {fileID: 11400000, guid: d6bb4516eeb65464686b792397023a80, type: 2}
@@ -117,11 +109,6 @@ MonoBehaviour:
   autoPullWhenHooked: 1
   autoUnhookWhenReached: 0
   hookState: 0
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
 --- !u!1 &6138119243796649144
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,21 +264,21 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 143225856469302180, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 3859557317723880189}
+    - target: {fileID: 143225856469302180, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 143225856469302180, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
-      propertyPath: brain.<V>k__BackingField
+    - target: {fileID: 647329674294491017, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
+      propertyPath: brain
       value: 
       objectReference: {fileID: 3859557317723880189}
     - target: {fileID: 647329674294491017, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
       propertyPath: equippedItem
       value: 
       objectReference: {fileID: 11400000, guid: 9b57593f7b5cd0541984229247126e42, type: 2}
-    - target: {fileID: 647329674294491017, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
-      propertyPath: brain.<V>k__BackingField
-      value: 
-      objectReference: {fileID: 3859557317723880189}
     - target: {fileID: 1673359338847146882, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -329,7 +316,7 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3529033824618618864, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
-      propertyPath: brain.<V>k__BackingField
+      propertyPath: brain
       value: 
       objectReference: {fileID: 3859557317723880189}
     - target: {fileID: 3639728673497933778, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
@@ -357,7 +344,7 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5177551996143183725, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
-      propertyPath: brain.<V>k__BackingField
+      propertyPath: brain
       value: 
       objectReference: {fileID: 3859557317723880189}
     - target: {fileID: 5469766544413122949, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
@@ -388,14 +375,18 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6812221389184077815, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
+      propertyPath: movement
+      value: 
+      objectReference: {fileID: 8102744461560120617}
+    - target: {fileID: 6892111300499175154, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 3859557317723880189}
     - target: {fileID: 6892111300499175154, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6892111300499175154, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
-      propertyPath: brain.<V>k__BackingField
-      value: 
-      objectReference: {fileID: 3859557317723880189}
     - target: {fileID: 7186377946535505526, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -477,3 +468,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8291246366843984804, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
   m_PrefabInstance: {fileID: 4650844818056223449}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8102744461560120617 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3529033824618618864, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
+  m_PrefabInstance: {fileID: 4650844818056223449}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba683a666f49426ab800278e48260196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Tulip.Character.CharacterMovement, Tulip

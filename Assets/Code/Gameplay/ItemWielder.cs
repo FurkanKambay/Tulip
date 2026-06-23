@@ -4,6 +4,7 @@ using Tulip.Combat;
 using Tulip.Core;
 using Tulip.Data;
 using Tulip.Data.Items;
+using Tulip.Input;
 using UnityEngine;
 
 namespace Tulip.Gameplay
@@ -29,7 +30,7 @@ namespace Tulip.Gameplay
         public bool IsThrowMode { get; private set; }
 
         [Header("Brain")]
-        [SerializeField, Required] SaintsInterface<Component, IWielderBrain> brain;
+        [SerializeField, Required] CharacterBrain brain;
 
         [Header("References")]
         [SerializeField, Required] Health health;
@@ -105,7 +106,7 @@ namespace Tulip.Gameplay
                 // we can use Throw Mode since we're not melee swinging
                 float targetChargeAmount = throwChargeAmount + (Time.deltaTime * usableSO.ThrowChargeSpeed);
                 throwChargeAmount = IsThrowMode ? Mathf.Clamp01(targetChargeAmount) : 0;
-                IsThrowMode = brain.I.WantsToTakeAim;
+                IsThrowMode = brain.WantsToTakeAim;
             }
             else if (!phase.preventAim)
             {
@@ -117,7 +118,7 @@ namespace Tulip.Gameplay
             }
 
             // Throw the item
-            if (IsThrowMode && brain.I.WantsToAttack && timeSinceLastUse > usableSO.ThrowCooldown)
+            if (IsThrowMode && brain.WantsToAttack && timeSinceLastUse > usableSO.ThrowCooldown)
             {
                 OnThrowPerform?.Invoke(equippedItem, AimPointWorld);
                 timeSinceLastUse = 0f;
@@ -128,7 +129,7 @@ namespace Tulip.Gameplay
                 return;
 
             // We're not aiming, so we can do the swing logic now
-            bool wantsToSwing = brain.I.WantsToAttack && !wantsToSwapItems;
+            bool wantsToSwing = brain.WantsToAttack && !wantsToSwapItems;
 
             switch (swingState)
             {
@@ -307,13 +308,13 @@ namespace Tulip.Gameplay
 
         private void RotateItemTowardsMouse()
         {
-            if (!brain.I.AimPosition.HasValue)
+            if (!brain.AimPosition.HasValue)
             {
                 itemPivot.localScale = Vector3.zero;
                 return;
             }
 
-            aimVector = brain.I.AimPosition.Value - (Vector2)itemPivot.position;
+            aimVector = brain.AimPosition.Value - (Vector2)itemPivot.position;
             float aimAngle = aimVector.ToAngle();
             bool isLeft = aimAngle is < -90 or > 90;
 

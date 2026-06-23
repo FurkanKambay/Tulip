@@ -1,6 +1,6 @@
 using Furkan.Common;
-using Tulip.Data;
 using Tulip.Data.Items;
+using Tulip.Input;
 using UnityEngine;
 
 namespace Tulip.Gameplay
@@ -17,8 +17,8 @@ namespace Tulip.Gameplay
     public class HookLauncher : MonoBehaviour
     {
         [Header("Brains")]
-        [SerializeField, Required] SaintsInterface<Component, IWielderBrain> wielderBrain;
-        [SerializeField, Required] SaintsInterface<Component, IJumperBrain> jumperBrain;
+        [SerializeField, Required] CharacterBrain wielderBrain;
+        [SerializeField, Required] CharacterBrain jumperBrain;
 
         [Header("References")]
         [SerializeField, Required] Rigidbody2D body;
@@ -76,7 +76,7 @@ namespace Tulip.Gameplay
 
             switch (hookState)
             {
-                case HookState.None when wielderBrain.I.WantsToHook:
+                case HookState.None when wielderBrain.WantsToHook:
                     LaunchRope();
                     break;
                 case HookState.RopeTraveling or HookState.Attached when IsRopeTooLong:
@@ -85,11 +85,11 @@ namespace Tulip.Gameplay
                 case HookState.RopeTraveling:
                     TickRopeTravel();
                     break;
-                case HookState.Attached when autoPullWhenHooked || wielderBrain.I.WantsToHook:
+                case HookState.Attached when autoPullWhenHooked || wielderBrain.WantsToHook:
                     StartPulling();
                     break;
-                case HookState.Pulling when jumperBrain.I.WantsToJump:
-                case HookState.Reached when autoUnhookWhenReached || jumperBrain.I.WantsToJump:
+                case HookState.Pulling when jumperBrain.WantsToJump:
+                case HookState.Reached when autoUnhookWhenReached || jumperBrain.WantsToJump:
                     CancelPull();
                     break;
                 default: break;
@@ -145,11 +145,11 @@ namespace Tulip.Gameplay
 
         private Vector2? GetHookPoint()
         {
-            if (!wielderBrain.I.AimPosition.HasValue)
+            if (!wielderBrain.AimPosition.HasValue)
                 return null;
 
             Vector2 origin = transform.position;
-            Vector2 direction = (wielderBrain.I.AimPosition.Value - origin).normalized;
+            Vector2 direction = (wielderBrain.AimPosition.Value - origin).normalized;
 
             RaycastHit2D hit = Physics2D.Raycast(origin, direction, hookSO.Range, hookableLayers);
             return hit ? hit.point : null;

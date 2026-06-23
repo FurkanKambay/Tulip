@@ -1,6 +1,6 @@
 using System;
 using Furkan.Common;
-using Tulip.Data;
+using Tulip.Input;
 using UnityEngine;
 
 namespace Tulip.Character
@@ -10,7 +10,7 @@ namespace Tulip.Character
         public event Action OnDash;
 
         [Header("Brain")]
-        [SerializeField, Required] SaintsInterface<Component, IDasherBrain> brain;
+        [SerializeField, Required] CharacterBrain brain;
 
         [Header("References")]
         [SerializeField, Required] Rigidbody2D body;
@@ -26,13 +26,13 @@ namespace Tulip.Character
         {
             timeSinceLastDash += Time.deltaTime;
 
-            if (brain.I.WantsToDash && timeSinceLastDash >= dashCooldown)
+            if (brain.WantsToDash && timeSinceLastDash >= dashCooldown)
                 Dash();
         }
 
         private void Dash()
         {
-            float direction = brain.I.HorizontalMovement;
+            float direction = brain.HorizontalMovement;
 
             if (Mathf.Abs(direction) < 0.1f)
                 return;

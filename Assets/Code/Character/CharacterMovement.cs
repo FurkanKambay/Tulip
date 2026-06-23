@@ -1,15 +1,15 @@
 using System;
 using Furkan.Common;
 using Tulip.Data.Gameplay;
-using Tulip.Data;
+using Tulip.Input;
 using UnityEngine;
 
 namespace Tulip.Character
 {
-    public class CharacterMovement : MonoBehaviour, ICharacterMovement
+    public class CharacterMovement : MonoBehaviour
     {
         [Header("Brain")]
-        [SerializeField, Required] SaintsInterface<Component, IWalkerBrain> brain;
+        [SerializeField, Required] CharacterBrain brain;
 
         [Header("References")]
         [SerializeField, Required] Rigidbody2D body;
@@ -35,10 +35,10 @@ namespace Tulip.Character
         private void Update()
         {
             if (brain == null) return;
-            hasAnyMovement = brain.I.HorizontalMovement != 0;
+            hasAnyMovement = brain.HorizontalMovement != 0;
 
-            bool isFacingObstacle = brain.I.HorizontalMovement < 0 ? surrounds.IsLeftBlocked : surrounds.IsRightBlocked;
-            float velocityX = brain.I.HorizontalMovement * Mathf.Max(config.maxSpeed - config.friction, 0f);
+            bool isFacingObstacle = brain.HorizontalMovement < 0 ? surrounds.IsLeftBlocked : surrounds.IsRightBlocked;
+            float velocityX = brain.HorizontalMovement * Mathf.Max(config.maxSpeed - config.friction, 0f);
 
             DesiredVelocity = isFacingObstacle ? Vector2.zero : new Vector2(velocityX, 0);
         }
@@ -64,7 +64,7 @@ namespace Tulip.Character
 
             maxSpeedChange = hasAnyMovement switch
             {
-                true when Math.Sign(brain.I.HorizontalMovement) != Math.Sign(Velocity.x) => turnSpeed * Time.deltaTime,
+                true when Math.Sign(brain.HorizontalMovement) != Math.Sign(Velocity.x) => turnSpeed * Time.deltaTime,
                 true => acceleration * Time.deltaTime,
                 _ => deceleration * Time.deltaTime
             };

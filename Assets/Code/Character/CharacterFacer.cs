@@ -1,5 +1,5 @@
 using Furkan.Common;
-using Tulip.Data;
+using Tulip.Input;
 using UnityEngine;
 
 namespace Tulip.Character
@@ -7,7 +7,7 @@ namespace Tulip.Character
     public class CharacterFacer : MonoBehaviour
     {
         [Header("Brain")]
-        [SerializeField, Required] SaintsInterface<Component, ICharacterBrain> brain;
+        [SerializeField, Required] CharacterBrain brain;
 
         [Header("References")]
         [SerializeField, Required] SpriteRenderer sprite;
@@ -15,16 +15,16 @@ namespace Tulip.Character
         private void Update()
         {
             if (brain == null) return;
-            if (brain.I.HorizontalMovement != 0)
+            if (brain.HorizontalMovement != 0)
             {
-                sprite.flipX = brain.I.HorizontalMovement < 0;
+                sprite.flipX = brain.HorizontalMovement < 0;
                 return;
             }
 
-            if (!brain.I.AimPosition.HasValue)
+            if (!brain.AimPosition.HasValue)
                 return;
 
-            Vector2 targetVector = brain.I.AimPosition.Value - (Vector2)transform.position;
+            Vector2 targetVector = brain.AimPosition.Value - (Vector2)transform.position;
             sprite.flipX = targetVector.x < 0;
         }
     }

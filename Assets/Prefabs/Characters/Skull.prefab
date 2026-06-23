@@ -68,18 +68,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66330c61e852094a9857527ad78481d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Character.CharacterFlight, Tulip
-  brain:
-    <V>k__BackingField: {fileID: 956665518846445690}
-    <VRef>k__BackingField:
-      rid: -2
-    <IsVRef>k__BackingField: 0
+  brain: {fileID: 956665518846445690}
   body: {fileID: 7560684870690709998}
   config: {fileID: 11400000, guid: 2a1e566b0a9ac08409fd1cfecdf95995, type: 2}
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
 --- !u!1 &2859632988072890709
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,19 +637,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221a2bf0379152f4b81a63414840b5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Gameplay.ItemWielder, Tulip
-  brain:
-    <V>k__BackingField: {fileID: 956665518846445690}
-    <VRef>k__BackingField:
-      rid: -2
-    <IsVRef>k__BackingField: 0
+  brain: {fileID: 956665518846445690}
   health: {fileID: 1334333901957425893}
   itemRenderer: {fileID: 1675066829283619181}
   equippedItem: {fileID: 11400000, guid: 22ec4c4f083c86443ad2f80233e2466e, type: 2}
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
 --- !u!114 &1686919815774059301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -818,17 +800,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3945025d2a24a429219de59262fec46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Character.CharacterFacer, Tulip
-  brain:
-    <V>k__BackingField: {fileID: 956665518846445690}
-    <VRef>k__BackingField:
-      rid: -2
-    <IsVRef>k__BackingField: 0
+  brain: {fileID: 956665518846445690}
   sprite: {fileID: 2576562777605374266}
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
 --- !u!114 &9181260741591546907
 MonoBehaviour:
   m_ObjectHideFlags: 0

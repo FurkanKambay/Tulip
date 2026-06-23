@@ -1,11 +1,11 @@
 using Furkan.Common;
 using Tulip.Combat;
-using Tulip.Data;
+using Tulip.Input;
 using UnityEngine;
 
 namespace Tulip.AI
 {
-    public sealed class TreantAI : MonoBehaviour, IWielderBrain
+    public sealed class TreantAI : CharacterBrain
     {
         [Header("References")]
         [SerializeField, Required] Health health;
@@ -13,10 +13,10 @@ namespace Tulip.AI
         [Header("Movement")]
         [SerializeField] Vector2 attackDistance;
 
-        public Vector2? AimPosition { get; private set; }
-        public bool WantsToAttack { get; private set; }
-        public bool WantsToTakeAim { get; private set; }
-        public bool WantsToHook { get; private set; }
+        public override Vector2? AimPosition { get; protected set; }
+        public override bool WantsToAttack { get; protected set; }
+        public override bool WantsToTakeAim { get; protected set; }
+        public override bool WantsToHook { get; protected set; }
 
         private Health targetHealth;
 

@@ -1,8 +1,6 @@
 using FMOD.Studio;
 using FMODUnity;
-using Furkan.Common;
 using Tulip.Character;
-using Tulip.Data;
 using UnityEngine;
 
 namespace Tulip.Audio
@@ -10,7 +8,7 @@ namespace Tulip.Audio
     public class FootstepAudio : MonoBehaviour
     {
         [Header("Brain")]
-        [SerializeField] SaintsInterface<Component, ICharacterMovement> movement;
+        [SerializeField] CharacterMovement movement;
 
         [Header("References")]
         [SerializeField] SurroundsChecker surrounds;
@@ -39,7 +37,7 @@ namespace Tulip.Audio
         {
             timeUntilFootstep -= Time.deltaTime;
 
-            float velocity = Mathf.Abs(movement.I.Velocity.x);
+            float velocity = Mathf.Abs(movement.Velocity.x);
             // TODO: match footstep interval with feet movement (animation too)
 
             // TODO: different sfx when move direction changes

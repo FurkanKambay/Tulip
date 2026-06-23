@@ -1,17 +1,16 @@
 using System;
 using Furkan.Common;
 using Tulip.Combat;
-using Tulip.Data;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Tulip.Input
 {
     [DefaultExecutionOrder(-10)]
-    public sealed class PlayerBrain : MonoBehaviour, IPlayerBrain
+    public sealed class PlayerBrain : CharacterBrain
     {
-        public event Action OnJump;
-        public event Action OnJumpReleased;
+        public override event Action OnJump;
+        public override event Action OnJumpReleased;
 
         [Header("References")]
         [SerializeField, Required] Health health;
@@ -25,15 +24,15 @@ namespace Tulip.Input
         [SerializeField, Required] InputActionReference aim;
         [SerializeField, Required] InputActionReference hook;
 
-        public Vector2 AimPointScreen { get; private set; }
-        public Vector2? AimPosition { get; private set; }
-        public float HorizontalMovement { get; private set; }
+        public override Vector2 AimPointScreen { get; protected set; }
+        public override Vector2? AimPosition { get; protected set; }
+        public override float HorizontalMovement { get; protected set; }
 
-        public bool WantsToJump { get; private set; }
-        public bool WantsToDash { get; private set; }
-        public bool WantsToAttack { get; private set; }
-        public bool WantsToTakeAim { get; private set; }
-        public bool WantsToHook { get; private set; }
+        public override bool WantsToJump { get; protected set; }
+        public override bool WantsToDash { get; protected set; }
+        public override bool WantsToAttack { get; protected set; }
+        public override bool WantsToTakeAim { get; protected set; }
+        public override bool WantsToHook { get; protected set; }
 
         private Camera mainCamera;
 

@@ -279,19 +279,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221a2bf0379152f4b81a63414840b5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Gameplay.ItemWielder, Tulip
-  brain:
-    <V>k__BackingField: {fileID: 9132726976015814750}
-    <VRef>k__BackingField:
-      rid: -2
-    <IsVRef>k__BackingField: 0
+  brain: {fileID: 9132726976015814750}
   health: {fileID: 5823316243804091760}
   itemRenderer: {fileID: 8611038024772751417}
   equippedItem: {fileID: 11400000, guid: 84ef348f463a7a144b0fbff6c95049c7, type: 2}
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
 --- !u!114 &6669273262304182389
 MonoBehaviour:
   m_ObjectHideFlags: 0

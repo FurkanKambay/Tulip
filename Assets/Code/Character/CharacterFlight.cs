@@ -1,14 +1,14 @@
 using Furkan.Common;
-using Tulip.Data;
 using Tulip.Data.Gameplay;
+using Tulip.Input;
 using UnityEngine;
 
 namespace Tulip.Character
 {
-    public class CharacterFlight : MonoBehaviour, ICharacterMovement
+    public class CharacterFlight : MonoBehaviour
     {
         [Header("Brain")]
-        [SerializeField, Required] SaintsInterface<Component, IFlightBrain> brain;
+        [SerializeField, Required] CharacterBrain brain;
 
         [Header("References")]
         [SerializeField, Required] Rigidbody2D body;
@@ -24,7 +24,7 @@ namespace Tulip.Character
         private void Update()
         {
             // TODO: float up & down
-            var movement = new Vector2(brain.I.HorizontalMovement, brain.I.VerticalMovement);
+            var movement = new Vector2(brain.HorizontalMovement, brain.VerticalMovement);
             DesiredVelocity = movement * Mathf.Max(config.maxSpeed - config.friction, 0f);
         }
 

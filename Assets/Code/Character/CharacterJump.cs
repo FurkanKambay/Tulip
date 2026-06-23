@@ -1,18 +1,18 @@
 using Furkan.Common;
-using Tulip.Data;
 using Tulip.Data.Gameplay;
+using Tulip.Input;
 using UnityEngine;
 
 namespace Tulip.Character
 {
-    public class CharacterJump : MonoBehaviour, ICharacterJump
+    public class CharacterJump : MonoBehaviour
     {
         public JumpConfig config;
 
         public bool IsJumping { get; private set; }
 
         [Header("Brain")]
-        [SerializeField, Required] SaintsInterface<Component, IJumperBrain> brain;
+        [SerializeField, Required] CharacterBrain brain;
 
         [Header("References")]
         [SerializeField, Required] Rigidbody2D body;
@@ -33,14 +33,14 @@ namespace Tulip.Character
 
         private void OnEnable()
         {
-            brain.I.OnJump += HandleJump;
-            brain.I.OnJumpReleased += HandleJumpReleased;
+            brain.OnJump += HandleJump;
+            brain.OnJumpReleased += HandleJumpReleased;
         }
 
         private void OnDisable()
         {
-            brain.I.OnJump -= HandleJump;
-            brain.I.OnJumpReleased -= HandleJumpReleased;
+            brain.OnJump -= HandleJump;
+            brain.OnJumpReleased -= HandleJumpReleased;
         }
 
         private void Update()

@@ -61,21 +61,21 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 143225856469302180, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 9134617666453111887}
+    - target: {fileID: 143225856469302180, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
       propertyPath: config
       value: 
       objectReference: {fileID: 11400000, guid: 6ea3b8f9ae0b08d4681b9e3c879f5d88, type: 2}
-    - target: {fileID: 143225856469302180, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
-      propertyPath: brain.<V>k__BackingField
+    - target: {fileID: 647329674294491017, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
+      propertyPath: brain
       value: 
       objectReference: {fileID: 9134617666453111887}
     - target: {fileID: 647329674294491017, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
       propertyPath: equippedItem
       value: 
       objectReference: {fileID: 11400000, guid: cee049b1282365f41bc068f68b0b9ef2, type: 2}
-    - target: {fileID: 647329674294491017, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
-      propertyPath: brain.<V>k__BackingField
-      value: 
-      objectReference: {fileID: 9134617666453111887}
     - target: {fileID: 1673359338847146882, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -109,13 +109,13 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3529033824618618864, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 9134617666453111887}
+    - target: {fileID: 3529033824618618864, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
       propertyPath: config
       value: 
       objectReference: {fileID: 11400000, guid: d765b47a50639d94898d113aee5f7d17, type: 2}
-    - target: {fileID: 3529033824618618864, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
-      propertyPath: brain.<V>k__BackingField
-      value: 
-      objectReference: {fileID: 9134617666453111887}
     - target: {fileID: 3988847855271664023, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -133,7 +133,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 1aedbefae8dd10947b4f8f345ab9df64, type: 2}
     - target: {fileID: 5177551996143183725, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
-      propertyPath: brain.<V>k__BackingField
+      propertyPath: brain
       value: 
       objectReference: {fileID: 9134617666453111887}
     - target: {fileID: 5469766544413122949, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
@@ -152,6 +152,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6812221389184077815, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
+      propertyPath: movement
+      value: 
+      objectReference: {fileID: 317184332758705094}
     - target: {fileID: 6812221389184077815, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
       propertyPath: footStepInterval
       value: 0.3
@@ -211,6 +215,17 @@ PrefabInstance:
       addedObject: {fileID: 5356541282785272045}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
+--- !u!114 &317184332758705094 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3529033824618618864, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
+  m_PrefabInstance: {fileID: 3791882351359687734}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba683a666f49426ab800278e48260196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Tulip.Character.CharacterMovement, Tulip
 --- !u!4 &5156362418471184274 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8291246366843984804, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
