@@ -1,10 +1,10 @@
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Furkan.Common
+namespace Furkan.Common.Extensions
 {
     [PublicAPI]
-    public static class RemappingExtensions
+    public static class RemapExtensions
     {
         public static Remapping Remap(this float value, float min, float max) => new(value, min, max);
         public static Remapping Remap(this int value, float min, float max) => new(value, min, max);

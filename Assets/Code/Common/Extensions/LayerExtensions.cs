@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Furkan.Common
+namespace Furkan.Common.Extensions
 {
     [PublicAPI]
     public static class LayerExtensions

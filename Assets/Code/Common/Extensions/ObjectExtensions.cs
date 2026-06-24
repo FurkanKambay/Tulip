@@ -2,7 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Furkan.Common
+namespace Furkan.Common.Extensions
 {
     [PublicAPI]
     public static class ObjectExtensions
@@ -65,6 +65,17 @@ namespace Furkan.Common
             where TSelf : Object
         {
             return self ? self : alternative;
+        }
+
+        /// <summary>
+        /// Safe <c>?? throw</c> with Unity lifetime check.
+        /// </summary>
+        [ContractAnnotation("self:null => halt")]
+        public static TSelf OrThrow<TSelf, TException>(this TSelf self, TException exception)
+            where TSelf : Object
+            where TException : System.Exception
+        {
+            return self ? self : throw exception;
         }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using Furkan.Common;
+using Furkan.Common.Extensions;
 using Tulip.Combat;
 using Tulip.Core;
 using Tulip.Data;

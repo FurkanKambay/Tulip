@@ -1,4 +1,4 @@
-using Furkan.Common;
+using Furkan.Common.Extensions;
 using Tulip.Character;
 using UnityEngine;
 

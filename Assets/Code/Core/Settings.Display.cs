@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Furkan.Common;
+using Furkan.Common.Extensions;
 using Unity.Properties;
 using UnityEngine;
 

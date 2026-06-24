@@ -1,10 +1,10 @@
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Furkan.Common
+namespace Furkan.Common.Extensions
 {
     [PublicAPI]
-    public static class LoggerColorHelper
+    public static class LogColorExtensions
     {
         public static string Color<T>(this T value)
         {
