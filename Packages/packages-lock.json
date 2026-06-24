@@ -1,16 +1,5 @@
 {
   "dependencies": {
-    "com.cammin.ldtkunity": {
-      "version": "https://github.com/FurkanKambay/LDtkToUnity.git?path=/Assets/LDtkUnity",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.unity.2d.sprite": "1.0.0",
-        "com.unity.modules.physics2d": "1.0.0",
-        "com.unity.modules.tilemap": "1.0.0"
-      },
-      "hash": "aa2b6c0ad0b8a966a3c39e95c35c1f26152efd02"
-    },
     "com.tayx.graphy": {
       "version": "https://github.com/FurkanKambay/graphy.git",
       "depth": 0,

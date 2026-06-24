@@ -1,19 +1,28 @@
+using System;
+using Tulip.Data;
+using Tulip.Data.Tiles;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using IntGrid = LDtkUnity.LDtkComponentLayerIntGridValues;
 
 namespace Tulip.GameWorld
 {
     public sealed class WorldVisual : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField] IntGrid wallIntGrid;
-        [SerializeField] IntGrid blocksIntGrid;
         [SerializeField] Tilemap wallTilemap;
         [SerializeField] Tilemap blockTilemap;
 
-        internal IntGrid WallIntGrid => wallIntGrid;
-        internal IntGrid BlocksIntGrid => blocksIntGrid;
+        public CustomRuleTileSO GetTile(Vector2Int cell, TileType tileType)
+        {
+            Tilemap tilemap = tileType switch
+            {
+                TileType.Wall => wallTilemap,
+                TileType.Block => blockTilemap,
+                _ => throw new ArgumentOutOfRangeException(nameof(tileType))
+            };
+
+            return !tilemap ? null : tilemap.GetTile<CustomRuleTileSO>((Vector3Int)cell);
+        }
 
 #region Tilemap APIs
         internal Vector2Int WorldToCell(Vector3 worldPosition) =>

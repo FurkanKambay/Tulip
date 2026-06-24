@@ -312,6 +312,7 @@ MonoBehaviour:
     - {x: 1, y: 0, z: 0}
     - {x: -1, y: 0, z: 0}
     m_RuleTransform: 0
+  worldTileSO: {fileID: 11400000, guid: f38d0fc5a331ed44ba37a427dd625605, type: 2}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

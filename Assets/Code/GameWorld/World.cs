@@ -1,13 +1,11 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Furkan.Common;
 using Tulip.Character;
 using Tulip.Data;
 using Tulip.Data.Items;
+using Tulip.Data.Tiles;
 using UnityEngine;
-using UnityEngine.Assertions;
-using IntGrid = LDtkUnity.LDtkComponentLayerIntGridValues;
 
 namespace Tulip.GameWorld
 {
@@ -29,32 +27,18 @@ namespace Tulip.GameWorld
 #region Tile Helpers
         public bool HasTile(Vector2Int cell, TileType tileType)
         {
-            IntGrid intGrid = GetIntGrid(tileType);
-
-            if (!intGrid)
-                return false;
-
-            return intGrid.GetValue((Vector3Int)cell) != 0;
+            CustomRuleTileSO tile = worldVisual.GetTile(cell, tileType);
+            return tile && tile.WorldTileSO;
         }
 
         public WorldTileSO GetTile(Vector2Int cell, TileType tileType)
         {
-            IntGrid intGrid = GetIntGrid(tileType);
-            Assert.IsNotNull(intGrid);
-
-            int tileIndex = intGrid.GetValue((Vector3Int)cell);
-            return tileIndex == 0 ? null : WorldTileSO.FromIndex(tileIndex);
+            CustomRuleTileSO tile = worldVisual.GetTile(cell, tileType);
+            return !tile ? null : tile.WorldTileSO;
         }
 
         public WorldTileSO GetTileAtWorld(Vector3 worldPosition, TileType tileType) =>
             GetTile(WorldToCell(worldPosition), tileType);
-
-        private IntGrid GetIntGrid(TileType tileType) => tileType switch
-        {
-            TileType.Wall => worldVisual.WallIntGrid,
-            TileType.Block => worldVisual.BlocksIntGrid,
-            _ => throw new ArgumentOutOfRangeException(nameof(tileType))
-        };
 #endregion
 
 #region Cell Helpers

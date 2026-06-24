@@ -240,11 +240,23 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 661774618}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2489349404884572451, guid: f424f79dcd083e14b805387a89e2929f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2489349404884572451, guid: f424f79dcd083e14b805387a89e2929f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2489349404884572451, guid: f424f79dcd083e14b805387a89e2929f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2489349404884572453, guid: f424f79dcd083e14b805387a89e2929f, type: 3}
       propertyPath: m_Name
-      value: Realm Visuals
+      value: World
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -253,20 +265,15 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: f424f79dcd083e14b805387a89e2929f, type: 3}
 --- !u!114 &414399566 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7871052133264414492, guid: f424f79dcd083e14b805387a89e2929f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4301819177424741614, guid: f424f79dcd083e14b805387a89e2929f, type: 3}
   m_PrefabInstance: {fileID: 414399565}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dc9496ab753459dac872c3b7fab367d, type: 3}
+  m_Script: {fileID: 11500000, guid: 2578b4d5d1c444c3b7c7c3b109fad6dc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.GameWorld.WorldVisual, Tulip
---- !u!4 &414399568 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2489349404884572451, guid: f424f79dcd083e14b805387a89e2929f, type: 3}
-  m_PrefabInstance: {fileID: 414399565}
-  m_PrefabAsset: {fileID: 0}
+  m_EditorClassIdentifier: Tulip.GameWorld.World, Tulip
 --- !u!1 &440009062
 GameObject:
   m_ObjectHideFlags: 0
@@ -5156,55 +5163,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!1 &661774617
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 661774618}
-  - component: {fileID: 661774619}
-  m_Layer: 0
-  m_Name: Realm
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &661774618
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661774617}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 414399568}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &661774619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661774617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2578b4d5d1c444c3b7c7c3b109fad6dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Tulip.GameWorld.World, Tulip
-  worldVisual: {fileID: 414399566}
-  entityLayers:
-    serializedVersion: 2
-    m_Bits: 1984
 --- !u!1 &741303843
 GameObject:
   m_ObjectHideFlags: 0
@@ -5455,7 +5413,7 @@ PrefabInstance:
     - target: {fileID: 5608591855508489013, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
       propertyPath: world
       value: 
-      objectReference: {fileID: 661774619}
+      objectReference: {fileID: 414399566}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5772,7 +5730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b3a9022be2a50f42b0352cbd5f641b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Combat.EnemySpawner, Tulip
-  world: {fileID: 661774619}
+  world: {fileID: 414399566}
   spawnParent: {fileID: 1985613754}
   maxSpawns: 10
   radius: 10
@@ -6060,7 +6018,7 @@ SceneRoots:
   - {fileID: 1766718190}
   - {fileID: 1957016067}
   - {fileID: 1154427126}
-  - {fileID: 661774618}
+  - {fileID: 414399565}
   - {fileID: 1064103220}
   - {fileID: 1985613754}
   - {fileID: 337397489}

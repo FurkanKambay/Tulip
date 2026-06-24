@@ -7,7 +7,7 @@ namespace Tulip.Data.Items
     public class WorldTileSO : ScriptableObject
     {
         /// <summary>
-        /// The LDtk IntGrid value index.
+        /// The tile ID.
         /// </summary>
         public int TileIndex => tileIndex;
 
@@ -17,7 +17,7 @@ namespace Tulip.Data.Items
         public bool IsUnsafe => isUnsafe;
 
         [Header("World Tile")]
-        [Min(1), Tooltip("LDtk IntGrid value index (1-based). 0 is an empty cell.")]
+        [Min(1), Tooltip("Tile ID (1-based). 0 is an empty cell.")]
         [SerializeField] protected int tileIndex;
 
         [Tooltip("What layer of the world does this tile belong to?")]
