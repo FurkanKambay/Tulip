@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 namespace Tulip.Input
 {
-    public class UserBrain : MonoBehaviour, IUserBrain
+    public class UserBrain : MonoBehaviour
     {
         [SerializeField] InputActionReference pause;
         [SerializeField] InputActionReference cancel;

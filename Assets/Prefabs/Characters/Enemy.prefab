@@ -43,7 +43,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8a96e8e20d94ab2b04f029fd11b79e4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.AI.SimpleFollowerBrain, Tulip
+  m_EditorClassIdentifier: Tulip.AI.SimpleFollowerAI, Tulip
   health: {fileID: 6279245220377711168}
   stopDistance: 1.8
   heightThresholdToJump: 1.8

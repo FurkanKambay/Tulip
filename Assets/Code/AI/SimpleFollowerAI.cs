@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Tulip.AI
 {
-    public sealed class SimpleFollowerBrain : CharacterBrain
+    public sealed class SimpleFollowerAI : CharacterBrain
     {
         public override event Action OnJump;
         public override event Action OnJumpReleased;
