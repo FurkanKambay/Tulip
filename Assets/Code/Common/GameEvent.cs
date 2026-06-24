@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using Debug = UnityEngine.Debug;
 using Object = UnityEngine.Object;
 
 namespace Furkan.Common
@@ -30,14 +29,14 @@ namespace Furkan.Common
         public void Raise(Object sender)
         {
             if (logInvocations)
-                Log(this, sender);
+                LogInfo(this, sender);
 
             OnRaised?.Invoke();
         }
 
         [HideInCallstack]
-        protected internal static void Log(ScriptableObject context, Object sender) =>
-            Debug.Log($"<color=#777>Event <color=#aae>{context.name}</color> from <color=white>{sender.name}", sender);
+        protected internal static void LogInfo(ScriptableObject context, Object sender) =>
+            Log.Info($"<color=#777>Event <color=#aae>{context.name}</color> from <color=white>{sender.name}", sender);
     }
 
     public abstract class GameEvent<T> : ScriptableObject, IGameEvent<T>
@@ -52,7 +51,7 @@ namespace Furkan.Common
         public void Raise(Object sender, T args)
         {
             if (logInvocations)
-                GameEvent.Log(this, sender);
+                GameEvent.LogInfo(this, sender);
 
             OnRaised?.Invoke(args);
         }

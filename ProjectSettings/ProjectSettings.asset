@@ -712,7 +712,7 @@ PlayerSettings:
     PS5: 
     QNX: 
     ReservedCFE: 
-    Standalone: 
+    Standalone: ENABLE_LOGS
     VisionOS: 
     WebGL: 
     Windows Store Apps: 
