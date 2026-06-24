@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05779f818bf60e44aceef794cb1bb08, type: 3}
   m_Name: Movement
   m_EditorClassIdentifier: Tulip.Data.Gameplay.MovementConfig, Tulip
-  maxSpeed: 10
-  friction: 4
+  maxSpeed: 12
+  friction: 2
   useAcceleration: 1
-  maxAcceleration: 30
+  maxAcceleration: 45
   maxDeceleration: 80
-  maxTurnSpeed: 80
+  maxTurnSpeed: 100
   maxAirAcceleration: 50
   maxAirDeceleration: 20
   maxAirTurnSpeed: 80

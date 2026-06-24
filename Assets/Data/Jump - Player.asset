@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0be324b607df484c8d1d56ee223b76b, type: 3}
   m_Name: Jump - Player
   m_EditorClassIdentifier: Tulip.Data.Gameplay.JumpConfig, Tulip
-  jumpHeight: 3
+  jumpHeight: 4
   timeToJumpApex: 0.35
   maxFallSpeed: 50
   hasVariableJumpHeight: 1
   jumpCutOff: 3
   coyoteTime: 0.15
-  jumpBuffer: 0.1
+  jumpBuffer: 0.15
   upwardGravityMultiplier: 1.5
   downwardGravityMultiplier: 1.5
