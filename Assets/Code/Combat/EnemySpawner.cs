@@ -67,19 +67,13 @@ namespace Tulip.Combat
                 return false;
 
             Vector2Int baseCell = GetRandomSpawnCell();
-            Vector2Int centerCell = new(baseCell.x + (entitySO.Size.x / 2), baseCell.y);
-
-            TangibleEntity spawnedEnemy = Spawn(entitySO.Prefab, world.CellCenter(centerCell));
-            spawnedEnemy.SetResidence(world, baseCell);
+            var spawnedEnemy = TangibleEntity.Spawn(entitySO, world, baseCell, spawnParent);
 
             if (entitySO.IsStatic)
                 world.TryAddStaticEntity(baseCell, spawnedEnemy);
 
             return true;
         }
-
-        private TangibleEntity Spawn(GameObject prefab, Vector3 position) =>
-            Instantiate(prefab, position, Quaternion.identity, spawnParent).GetComponent<TangibleEntity>();
 
         private EntitySO GetRandomEnemy() =>
             entitySpawnPoolSO[Random.Range(0, entitySpawnPoolSO.Amount)];

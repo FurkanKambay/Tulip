@@ -1,3 +1,4 @@
+using System;
 using Furkan.Common;
 using Tulip.Combat;
 using Tulip.Data;
@@ -45,12 +46,26 @@ namespace Tulip.Character
         private void HandleDied(CombatPacket combatPacket) => body.simulated = false;
         private void HandleRevived(Health reviver) => body.simulated = true;
 
-        public void SetResidence(World homeWorld, Vector2Int baseCell)
-        {
-            world = homeWorld;
-            Cell = baseCell;
-        }
-
         public override string ToString() => Name;
+
+        public static TangibleEntity Spawn(EntitySO entitySO, World world, Vector2Int baseCell, Transform parent)
+        {
+            if (!entitySO) throw new ArgumentNullException(nameof(entitySO));
+            if (!world) throw new ArgumentNullException(nameof(world));
+            if (!entitySO.Prefab) throw new ArgumentException("Entity lacks an assigned Prefab.", nameof(entitySO));
+
+            Vector2Int cellCenter = new(baseCell.x + (entitySO.Size.x / 2), baseCell.y);
+            Vector3 position = world.CellCenter(cellCenter);
+
+            GameObject instance = Instantiate(entitySO.Prefab, position, Quaternion.identity, parent);
+
+            if (!instance.TryGetComponent(out TangibleEntity tangible))
+                throw new ArgumentException($"Entity lacks a {nameof(TangibleEntity)} component.", nameof(entitySO));
+
+            tangible.world = world;
+            tangible.Cell = baseCell;
+
+            return tangible;
+        }
     }
 }
