@@ -3,6 +3,7 @@ using System.Linq;
 using Furkan.Common;
 using Tulip.Character;
 using Tulip.Data;
+using Tulip.Data.Sets;
 using Tulip.GameWorld;
 using UnityEditor;
 using UnityEngine;
@@ -28,7 +29,7 @@ namespace Tulip.Combat
         [OverlayRichLabel("<color=gray>sec")]
         [SerializeField, Min(0)] float gracePeriod;
 
-        [SerializeField] EntitySpawnPoolSO entitySpawnPoolSO;
+        [SerializeField] EntitySet entitySpawnPoolSO;
 
         private new Camera camera;
         private IEnumerable<Vector2Int> suitableCells;
@@ -57,7 +58,7 @@ namespace Tulip.Combat
             if (spawnParent.childCount >= maxSpawns)
                 return false;
 
-            if (entitySpawnPoolSO.Amount == 0)
+            if (entitySpawnPoolSO.Count == 0)
                 return false;
 
             EntitySO entitySO = GetRandomEnemy();
@@ -76,7 +77,7 @@ namespace Tulip.Combat
         }
 
         private EntitySO GetRandomEnemy() =>
-            entitySpawnPoolSO[Random.Range(0, entitySpawnPoolSO.Amount)];
+            entitySpawnPoolSO[Random.Range(0, entitySpawnPoolSO.Count)];
 
         private Vector2Int GetRandomSpawnCell() =>
             suitableCells.ElementAt(Random.Range(0, suitableCells.Count()));
@@ -119,7 +120,7 @@ namespace Tulip.Combat
 #if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
-            if (entitySpawnPoolSO.Amount == 0)
+            if (entitySpawnPoolSO.Count == 0)
                 return;
 
             if (!camera)
