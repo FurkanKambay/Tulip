@@ -164,6 +164,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Tulip.Core.InputManager, Tulip
   inputActionAsset: {fileID: -944628639613478452, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
+--- !u!1 &145760825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 145760826}
+  - component: {fileID: 145760827}
+  m_Layer: 0
+  m_Name: Arena Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &145760826
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145760825}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &145760827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145760825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f50f6bd3b6248a2a8e0f0a4e42166d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Tulip::Tulip.Dev.ArenaManager
+  spawnParent: {fileID: 2030129042}
+  spawnSet: {fileID: 11400000, guid: dfeaab23e3382bc4096de4c19314316c, type: 2}
+  spawnedEntity: {fileID: 11400000, guid: ea8750a0c949971459c7425c97b8a620, type: 2}
 --- !u!1 &175664305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,6 +1354,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 619394802}
+  - {fileID: 145760826}
   - {fileID: 121882224}
   - {fileID: 1236241351}
   - {fileID: 1105140267}
