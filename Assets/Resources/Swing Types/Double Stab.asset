@@ -16,42 +16,56 @@ MonoBehaviour:
   readyAngle: -30
   resetMoveDuration: 0.1
   resetTurnDuration: 0.1
-  loop: 0
+  loop: 1
   phases:
   - isCancelable: 0
     preventAim: 0
     shouldHit: 0
-    moveDelta: {x: -1, y: 0}
-    moveDuration: 0.1
+    moveDelta: {x: -1.5, y: 0}
+    moveDuration: 0.05
     turnDelta: -15
     turnDuration: 0.1
   - isCancelable: 0
     preventAim: 1
     shouldHit: 1
+    moveDelta: {x: 1.2, y: 0}
+    moveDuration: 0.1
+    turnDelta: -15
+    turnDuration: 0
+  - isCancelable: 1
+    preventAim: 1
+    shouldHit: 0
     moveDelta: {x: 0.5, y: 0}
+    moveDuration: 0.18
+    turnDelta: -20
+    turnDuration: 0.18
+  - isCancelable: 1
+    preventAim: 1
+    shouldHit: 0
+    moveDelta: {x: -1.5, y: 0}
+    moveDuration: 0.05
+    turnDelta: -20
+    turnDuration: 0
+  - isCancelable: 1
+    preventAim: 1
+    shouldHit: 0
+    moveDelta: {x: -1.5, y: 0.4}
+    moveDuration: 0.08
+    turnDelta: -5
+    turnDuration: 0.15
+  - isCancelable: 0
+    preventAim: 1
+    shouldHit: 1
+    moveDelta: {x: 1.2, y: 0.4}
+    moveDuration: 0.1
+    turnDelta: -15
+    turnDuration: 0
+  - isCancelable: 1
+    preventAim: 1
+    shouldHit: 0
+    moveDelta: {x: 0.5, y: 0.4}
     moveDuration: 0.18
     turnDelta: -15
     turnDuration: 0.18
-  - isCancelable: 1
-    preventAim: 0
-    shouldHit: 0
-    moveDelta: {x: -1, y: 0}
-    moveDuration: 0.18
-    turnDelta: -15
-    turnDuration: 0
-  - isCancelable: 1
-    preventAim: 1
-    shouldHit: 0
-    moveDelta: {x: -1, y: 0.2}
-    moveDuration: 0.08
-    turnDelta: -15
-    turnDuration: 0
-  - isCancelable: 1
-    preventAim: 1
-    shouldHit: 1
-    moveDelta: {x: 0.5, y: 0.2}
-    moveDuration: 0.18
-    turnDelta: -15
-    turnDuration: 0
   usedBy:
   - {fileID: 11400000, guid: 9b57593f7b5cd0541984229247126e42, type: 2}
