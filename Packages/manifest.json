@@ -5,7 +5,7 @@
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.2d.tilemap.extras": "8.0.3",
-    "com.unity.ide.rider": "3.0.39",
+    "com.unity.ide.rider": "3.0.40",
     "com.unity.inputsystem": "1.19.0",
     "com.unity.project-auditor": "1.0.2",
     "com.unity.render-pipelines.universal": "17.5.0",
@@ -34,9 +34,9 @@
         "com.domybest",
         "com.needle",
         "com.tayx",
+        "com.vertx",
         "com.wooshii",
-        "today.comes",
-        "com.vertx"
+        "today.comes"
       ]
     }
   ]
