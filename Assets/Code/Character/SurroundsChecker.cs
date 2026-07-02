@@ -9,7 +9,7 @@ namespace Tulip.Character
     public class SurroundsChecker : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField, Required] new Collider2D collider;
+        [SerializeField, Required] Collider2D collider;
 
         [Header("Ground")]
         [SerializeField] LayerMask groundLayer;

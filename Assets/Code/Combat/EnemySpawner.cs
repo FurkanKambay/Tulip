@@ -31,7 +31,7 @@ namespace Tulip.Combat
 
         [SerializeField] EntitySet entitySpawnPoolSO;
 
-        private new Camera camera;
+        private Camera camera;
         private IEnumerable<Vector2Int> suitableCells;
 
         private float timeSinceLastSpawn;

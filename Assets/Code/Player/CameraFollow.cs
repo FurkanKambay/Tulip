@@ -15,7 +15,7 @@ namespace Tulip.Player
         [Header("Gameplay Config")]
         [SerializeField] TrackingOptions trackingConfig;
 
-        private new Camera camera;
+        private Camera camera;
 
 #region Unity Callbacks
         private void Awake()

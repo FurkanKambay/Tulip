@@ -24,7 +24,7 @@ namespace Tulip.Combat
         private void Awake()
         {
             hitResults = new RaycastHit2D[config.MaxHitsPerRaycast];
-            projectileManager = FindFirstObjectByType<ProjectileManager>();
+            projectileManager = FindAnyObjectByType<ProjectileManager>();
         }
 
         private void OnEnable()
