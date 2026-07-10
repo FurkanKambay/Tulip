@@ -51,6 +51,18 @@ MonoBehaviour:
     m_Compliance:
       m_Status: 0
       m_Violations: []
+  - m_Id: scoped:project:Unity NuGet
+    m_Name: Unity NuGet
+    m_Url: https://unitynuget-registry.openupm.com
+    m_Scopes:
+    - org.nuget
+    m_IsDefault: 0
+    m_IsUnityRegistry: 0
+    m_Capabilities: 0
+    m_ConfigSource: 4
+    m_Compliance:
+      m_Status: 0
+      m_Violations: []
   m_UserSelectedRegistryName: OpenUPM
   m_UserAddingNewScopedRegistry: 0
   m_RegistryInfoDraft:
