@@ -15,8 +15,6 @@ Originally, Tulip was heavily inspired by Terraria and featured a procedurally g
 
 ## ⭐ Features
 
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/FurkanKambay/Tulip)
-
 ### ⚙️ Systems & Mechanics
 
 - [Melee combat](Assets/Code/Gameplay/WeaponWielder.cs): spear, axe
