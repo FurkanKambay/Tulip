@@ -101,7 +101,7 @@ MonoBehaviour:
   jumperBrain: {fileID: 3859557317723880189}
   body: {fileID: 2911555634556418871}
   lineRenderer: {fileID: 7136959322606572221}
-  hookSO: {fileID: 11400000, guid: d6bb4516eeb65464686b792397023a80, type: 2}
+  hookAsset: {fileID: 11400000, guid: d6bb4516eeb65464686b792397023a80, type: 2}
   hookableLayers:
     serializedVersion: 2
     m_Bits: 1672
@@ -424,7 +424,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8432881549753123103, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
-      propertyPath: strategySO
+      propertyPath: strategyAsset
       value: 
       objectReference: {fileID: 11400000, guid: 7a34eb03480108c43bdeff31ec837a7f, type: 2}
     - target: {fileID: 8809969866287856108, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}

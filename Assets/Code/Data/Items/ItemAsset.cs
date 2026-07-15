@@ -6,7 +6,7 @@ namespace Tulip.Data.Items
     /// A base item.
     /// </summary>
     [CreateAssetMenu(menuName = "Items/Item", order = 0)]
-    public class ItemSO : ScriptableObject
+    public class ItemAsset : ScriptableObject
     {
         public virtual Sprite Icon => icon;
         public virtual float IconScale => iconScale;

@@ -62,7 +62,7 @@ namespace Tulip.Combat
 
             Vector2Int cell = world.WorldToCell(respawnPosition);
 
-            while (!world.CanAccommodate(cell, entity.EntitySO.Size))
+            while (!world.CanAccommodate(cell, entity.EntityAsset.Size))
                 cell.y++;
 
             subject.position = world.CellCenter(cell);

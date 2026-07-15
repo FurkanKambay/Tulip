@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Oak Tree
   prefab: {fileID: 4352453585227860419, guid: e4c24cafc52fc164eb614915642df4e9, type: 3}
   isStatic: 1
-  spawnConditionSO: {fileID: 11400000, guid: 907adfbb65efa7f41bbe9faa7bb0c99f, type: 2}
+  spawnConditionAsset: {fileID: 11400000, guid: 907adfbb65efa7f41bbe9faa7bb0c99f, type: 2}
   size: {x: 3, y: 5}
   loot: {fileID: 0}
   lootAmount: 3

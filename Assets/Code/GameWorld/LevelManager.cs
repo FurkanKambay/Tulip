@@ -10,7 +10,7 @@ namespace Tulip.GameWorld
     public class LevelManager : MonoBehaviour
     {
         [Header("Config - Hero Spawn")]
-        [SerializeField, Required] private EntitySO heroAsset;
+        [SerializeField, Required] private EntityAsset heroAsset;
         [SerializeField, Required] private Transform spawnParent;
         [SerializeField, Required] private Transform spawnLocation;
 

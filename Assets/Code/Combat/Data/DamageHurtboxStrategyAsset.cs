@@ -4,11 +4,11 @@ using UnityEngine;
 namespace Tulip.Combat.Data
 {
     [CreateAssetMenu(fileName = "Damage Hurtbox Strategy", menuName = "Strategy/Hurtbox/Damage", order = 0)]
-    public class DamageHurtboxStrategySO : BaseHurtboxStrategySO
+    public class DamageHurtboxStrategyAsset : BaseHurtboxStrategyAsset
     {
         [SerializeField, Min(0)] protected float damageMultiplier = 1;
 
-        public override bool Apply(Health victim, WeaponSO weapon, Health attacker, DamageType? damageTypeOverride = null)
+        public override bool Apply(Health victim, WeaponAsset weapon, Health attacker, DamageType? damageTypeOverride = null)
         {
             if (!victim || !weapon || !attacker)
                 return false;

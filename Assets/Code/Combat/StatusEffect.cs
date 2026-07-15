@@ -7,9 +7,9 @@ namespace Tulip.Combat
     [Serializable]
     public class StatusEffect
     {
-        public bool IsDone => !SO.IsPermanent && RemainingDuration <= 0;
+        public bool IsDone => !Asset.IsPermanent && RemainingDuration <= 0;
 
-        [field: SerializeField] public StatusEffectSO SO { get; private set; }
+        [field: SerializeField] public StatusEffectAsset Asset { get; private set; }
         [field: SerializeField] public Health Source { get; private set; }
         [field: SerializeField] public Health Target { get; private set; }
 
@@ -17,12 +17,12 @@ namespace Tulip.Combat
 
         private float timeSinceLastProc;
 
-        internal StatusEffect(StatusEffectSO so, Health source, Health target)
+        internal StatusEffect(StatusEffectAsset asset, Health source, Health target)
         {
-            SO = so;
+            Asset = asset;
             Source = source;
             Target = target;
-            RemainingDuration = so.Duration;
+            RemainingDuration = asset.Duration;
         }
 
         public void Tick(float deltaTime)
@@ -30,7 +30,7 @@ namespace Tulip.Combat
             timeSinceLastProc += deltaTime;
             RemainingDuration -= deltaTime;
 
-            if (timeSinceLastProc < SO.Rate || IsDone)
+            if (timeSinceLastProc < Asset.Rate || IsDone)
                 return;
 
             Proc();
@@ -40,10 +40,10 @@ namespace Tulip.Combat
         private void Proc()
         {
             // BUG: deaths by statuses don't award loot
-            if (SO.Amount < 0)
-                Target.Damage(-SO.Amount, Source, DamageType.StatusEffect);
+            if (Asset.Amount < 0)
+                Target.Damage(-Asset.Amount, Source, DamageType.StatusEffect);
             else
-                Target.Heal(SO.Amount, Source);
+                Target.Heal(Asset.Amount, Source);
         }
     }
 }

@@ -8,7 +8,7 @@ using Vertx.Attributes;
 namespace Tulip.Data
 {
     [CreateAssetMenu(menuName = "Gameplay/Spawn Condition")]
-    public class SpawnConditionSO : ScriptableObject
+    public class SpawnConditionAsset : ScriptableObject
     {
         [Header("Ground")]
         [SerializeField] bool needsGround;
@@ -17,7 +17,7 @@ namespace Tulip.Data
         [SerializeField] bool needsSafeGround;
 
         [EnableIf(nameof(needsGround))]
-        [SerializeField] WorldTileSO[] groundTiles;
+        [SerializeField] WorldTileAsset[] groundTiles;
 
         [Header("Clearance")]
         [SerializeField, Min(0)] int clearanceAbove;
@@ -27,22 +27,22 @@ namespace Tulip.Data
 
         // ReSharper disable NotAccessedField.Global
         [LayoutGroup("Referenced By", ELayout.Background | ELayout.TitleOut | ELayout.Foldout)]
-        [SerializeField, ReadOnlyField] protected EntitySO[] assignedEntities;
+        [SerializeField, ReadOnlyField] protected EntityAsset[] assignedEntities;
         // ReSharper restore NotAccessedField.Global
 
-        /// <param name="entitySO"></param>
+        /// <param name="entityAsset"></param>
         /// <param name="world"></param>
         /// <param name="baseCell">The bottom-left cell, NOT center or pivot</param>
-        public bool CanSpawn(EntitySO entitySO, World world, Vector2Int baseCell)
+        public bool CanSpawn(EntityAsset entityAsset, World world, Vector2Int baseCell)
         {
-            if (!world.CanAccommodate(baseCell, entitySO.Size))
+            if (!world.CanAccommodate(baseCell, entityAsset.Size))
                 return false;
 
             // Check tiles above
             for (int y = 0; y < clearanceAbove; y++)
-            for (int x = 0; x < entitySO.Size.x; x++)
+            for (int x = 0; x < entityAsset.Size.x; x++)
             {
-                if (world.HasTile(baseCell + new Vector2Int(x, entitySO.Size.y + y), TileType.Block))
+                if (world.HasTile(baseCell + new Vector2Int(x, entityAsset.Size.y + y), TileType.Block))
                     return false;
             }
 
@@ -50,7 +50,7 @@ namespace Tulip.Data
             if (!needsGround)
             {
                 for (int y = 1; y <= clearanceBelow; y++)
-                for (int x = 0; x < entitySO.Size.x; x++)
+                for (int x = 0; x < entityAsset.Size.x; x++)
                 {
                     if (world.HasTile(baseCell + new Vector2Int(x, -y), TileType.Block))
                         return false;
@@ -61,10 +61,10 @@ namespace Tulip.Data
                 return true;
 
             // Check ground only
-            for (int x = 0; x < entitySO.Size.x; x++)
+            for (int x = 0; x < entityAsset.Size.x; x++)
             {
                 Vector2Int floorCell = baseCell + new Vector2Int(x, -1);
-                WorldTileSO floorTile = world.GetTile(floorCell, TileType.Block);
+                WorldTileAsset floorTile = world.GetTile(floorCell, TileType.Block);
 
                 if (!floorTile || (needsSafeGround && floorTile.IsUnsafe))
                     return false;
@@ -77,8 +77,8 @@ namespace Tulip.Data
         }
 
         private void OnValidate() =>
-            assignedEntities = Resources.FindObjectsOfTypeAll<EntitySO>()
-                .Where(entitySO => entitySO.SpawnConditionSO == this)
+            assignedEntities = Resources.FindObjectsOfTypeAll<EntityAsset>()
+                .Where(entityAsset => entityAsset.SpawnConditionAsset == this)
                 .ToArray();
     }
 }

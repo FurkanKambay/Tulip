@@ -673,4 +673,4 @@ MonoBehaviour:
     - {x: -1, y: 0, z: 0}
     - {x: 1, y: 0, z: 0}
     m_RuleTransform: 0
-  worldTileSO: {fileID: 0}
+  worldTileAsset: {fileID: 0}

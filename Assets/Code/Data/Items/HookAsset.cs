@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Tulip.Data.Items
 {
     [CreateAssetMenu(menuName = "Items/Hook", order = 3)]
-    public class HookSO : UsableSO
+    public class HookAsset : UsableAsset
     {
         public float Range => range;
         public float RopeLaunchSpeed => ropeLaunchSpeed;

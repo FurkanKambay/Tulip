@@ -52,7 +52,7 @@ namespace Tulip.Character
             if (!world) return;
 
             Vector3 position = entityTransform.position + (Vector3.down * 0.2f);
-            WorldTileSO groundTile = world.GetTileAtWorld(position, TileType.Block);
+            WorldTileAsset groundTile = world.GetTileAtWorld(position, TileType.Block);
             GroundMaterial = groundTile ? groundTile.Material : GroundMaterial.Nothing;
         }
 

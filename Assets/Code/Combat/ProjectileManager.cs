@@ -64,13 +64,13 @@ namespace Tulip.Combat
             }
         }
 
-        internal void Fire(WeaponSO weaponSO, Health owner, Vector3 aimPoint)
+        internal void Fire(WeaponAsset weaponAsset, Health owner, Vector3 aimPoint)
         {
             Vector3 origin = owner.transform.position;
             Vector2 aimVector = aimPoint - origin;
 
             Projectile projectile = pool.Get();
-            projectile.Launch(origin, aimVector, owner, weaponSO, contactFilter);
+            projectile.Launch(origin, aimVector, owner, weaponAsset, contactFilter);
 
             Debug.DrawRay(origin, aimVector.normalized, Color.yellow);
         }

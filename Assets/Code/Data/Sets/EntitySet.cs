@@ -3,9 +3,9 @@ using UnityEngine;
 namespace Tulip.Data.Sets
 {
     [CreateAssetMenu(menuName = "Sets/Entity Set")]
-    public class EntitySet : DataSet<EntitySO>
+    public class EntitySet : DataSet<EntityAsset>
     {
-        [ContextMenu("Populate with all assets of type " + nameof(EntitySO))]
+        [ContextMenu("Populate with all assets of type " + nameof(EntityAsset))]
         protected override void PopulateAllAssets() => base.PopulateAllAssets();
     }
 }

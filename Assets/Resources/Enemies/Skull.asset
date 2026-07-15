@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Skull
   prefab: {fileID: 2859632988072890709, guid: 48ac7c0e368ed9e4989d771b5f022f0d, type: 3}
   isStatic: 0
-  spawnConditionSO: {fileID: 11400000, guid: ed5a7da64365ea34888bebe53806372e, type: 2}
+  spawnConditionAsset: {fileID: 11400000, guid: ed5a7da64365ea34888bebe53806372e, type: 2}
   size: {x: 1, y: 1}
   loot: {fileID: 0}
   lootAmount: 1

@@ -312,4 +312,4 @@ MonoBehaviour:
     - {x: -1, y: 0, z: 0}
     - {x: 1, y: 0, z: 0}
     m_RuleTransform: 0
-  worldTileSO: {fileID: 11400000, guid: 0491a0de59d86f9408b7f2902c563f0e, type: 2}
+  worldTileAsset: {fileID: 11400000, guid: 0491a0de59d86f9408b7f2902c563f0e, type: 2}

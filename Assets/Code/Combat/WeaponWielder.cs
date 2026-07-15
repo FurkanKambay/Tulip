@@ -10,14 +10,14 @@ namespace Tulip.Combat
 {
     public sealed class WeaponWielder : MonoBehaviour
     {
-        [SerializeField, Required] private WeaponWielderConfigSO config;
+        [SerializeField, Required] private WeaponWielderConfigAsset config;
 
         [Header("References")]
         [SerializeField, Required] Health health;
         [SerializeField, Required] ItemWielder itemWielder;
 
         private ProjectileManager projectileManager;
-        private WeaponSO weaponSO;
+        private WeaponAsset weaponAsset;
         private RaycastHit2D[] hitResults;
         private readonly List<Health> damagedTargets = new();
 
@@ -39,20 +39,20 @@ namespace Tulip.Combat
             itemWielder.OnThrowPerform -= Throw;
         }
 
-        private void Throw(ItemSO item, Vector3 aimPoint)
+        private void Throw(ItemAsset item, Vector3 aimPoint)
         {
-            if (item.Is(out weaponSO) && weaponSO.IsThrowable)
-                projectileManager.Fire(weaponSO, health, aimPoint);
+            if (item.Is(out weaponAsset) && weaponAsset.IsThrowable)
+                projectileManager.Fire(weaponAsset, health, aimPoint);
         }
 
-        private void Attack(ItemSO item, Vector3 targetPoint)
+        private void Attack(ItemAsset item, Vector3 targetPoint)
         {
-            if (item.IsNot(out weaponSO))
+            if (item.IsNot(out weaponAsset))
                 return;
 
             foreach (Hurtbox target in GetTargets(transform.position, targetPoint))
             {
-                if (target.GetHit(weaponSO, attacker: health))
+                if (target.GetHit(weaponAsset, attacker: health))
                     damagedTargets.Add(target.Owner);
             }
         }
@@ -60,12 +60,12 @@ namespace Tulip.Combat
         private IEnumerable<Hurtbox> GetTargets(Vector2 origin, Vector2 aimPoint)
         {
             Vector2 direction = (aimPoint - origin).normalized;
-            int hitCount = Physics2D.Raycast(origin, direction, config.HitContactFilter, hitResults, weaponSO.Range);
+            int hitCount = Physics2D.Raycast(origin, direction, config.HitContactFilter, hitResults, weaponAsset.Range);
 
-            int maxHits = weaponSO.IsMultiTarget ? config.MaxHitsPerRaycast : 1;
+            int maxHits = weaponAsset.IsMultiTarget ? config.MaxHitsPerRaycast : 1;
             hitCount = Mathf.Min(hitCount, maxHits);
 
-            Debug.DrawRay(origin, direction * weaponSO.Range, Color.green, 1f);
+            Debug.DrawRay(origin, direction * weaponAsset.Range, Color.green, 1f);
             damagedTargets.Clear();
 
             for (int i = 0; i < hitCount; i++)

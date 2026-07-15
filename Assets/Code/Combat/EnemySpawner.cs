@@ -29,7 +29,7 @@ namespace Tulip.Combat
         [OverlayRichLabel("<color=gray>sec")]
         [SerializeField, Min(0)] float gracePeriod;
 
-        [SerializeField] EntitySet entitySpawnPoolSO;
+        [SerializeField] EntitySet entitySpawnSet;
 
         private Camera camera;
         private IEnumerable<Vector2Int> suitableCells;
@@ -58,31 +58,31 @@ namespace Tulip.Combat
             if (spawnParent.childCount >= maxSpawns)
                 return false;
 
-            if (entitySpawnPoolSO.Count == 0)
+            if (entitySpawnSet.Count == 0)
                 return false;
 
-            EntitySO entitySO = GetRandomEnemy();
-            suitableCells = GetSuitableCells(entitySO);
+            EntityAsset entityAsset = GetRandomEnemy();
+            suitableCells = GetSuitableCells(entityAsset);
 
             if (!suitableCells.Any())
                 return false;
 
             Vector2Int baseCell = GetRandomSpawnCell();
-            var spawnedEnemy = TangibleEntity.SpawnAtCell(entitySO, world, baseCell, spawnParent);
+            var spawnedEnemy = TangibleEntity.SpawnAtCell(entityAsset, world, baseCell, spawnParent);
 
-            if (entitySO.IsStatic)
+            if (entityAsset.IsStatic)
                 world.TryAddStaticEntity(baseCell, spawnedEnemy);
 
             return true;
         }
 
-        private EntitySO GetRandomEnemy() =>
-            entitySpawnPoolSO[Random.Range(0, entitySpawnPoolSO.Count)];
+        private EntityAsset GetRandomEnemy() =>
+            entitySpawnSet[Random.Range(0, entitySpawnSet.Count)];
 
         private Vector2Int GetRandomSpawnCell() =>
             suitableCells.ElementAt(Random.Range(0, suitableCells.Count()));
 
-        private IEnumerable<Vector2Int> GetSuitableCells(EntitySO entitySO)
+        private IEnumerable<Vector2Int> GetSuitableCells(EntityAsset entityAsset)
         {
             Vector3 cameraExtents = new(camera.orthographicSize * camera.aspect, camera.orthographicSize);
             Vector3 spawnExtents = new(cameraExtents.x + radius, cameraExtents.y + radius);
@@ -102,7 +102,7 @@ namespace Tulip.Combat
 
                     var cell = new Vector2Int(x, y);
 
-                    if (entitySO.CanSpawnAt(world, cell))
+                    if (entityAsset.CanSpawnAt(world, cell))
                         yield return cell;
                 }
             }
@@ -120,7 +120,7 @@ namespace Tulip.Combat
 #if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
-            if (entitySpawnPoolSO.Count == 0)
+            if (entitySpawnSet.Count == 0)
                 return;
 
             if (!camera)
@@ -128,7 +128,7 @@ namespace Tulip.Combat
 
             Handles.color = Color.yellow;
 
-            foreach (Vector2Int cell in GetSuitableCells(entitySpawnPoolSO[0]))
+            foreach (Vector2Int cell in GetSuitableCells(entitySpawnSet[0]))
                 Handles.DrawSolidDisc(world.CellCenter(cell), Vector3.forward, 0.2f);
         }
 #endif

@@ -14,12 +14,12 @@ namespace Tulip.Combat
 
         [LayoutGroup("State", ELayout.TitleOut)]
         [ShowInInspector] Health ownerHealth;
-        [ShowInInspector] WeaponSO sourceWeapon;
+        [ShowInInspector] WeaponAsset sourceWeapon;
         [ShowInInspector] Vector2 velocity;
         [ShowInInspector] ContactFilter2D contactFilter;
         [ShowInInspector] readonly List<Health> damagedTargets = new();
 
-        internal void Launch(Vector2 origin, Vector2 direction, Health owner, WeaponSO weapon, ContactFilter2D filter)
+        internal void Launch(Vector2 origin, Vector2 direction, Health owner, WeaponAsset weapon, ContactFilter2D filter)
         {
             ownerHealth = owner;
             sourceWeapon = weapon;

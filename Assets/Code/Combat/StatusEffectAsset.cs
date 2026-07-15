@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Tulip.Combat
 {
     [CreateAssetMenu(menuName = "Gameplay/Status Effect")]
-    public class StatusEffectSO : ScriptableObject
+    public class StatusEffectAsset : ScriptableObject
     {
         public bool IsPermanent => isPermanent;
         public float Duration => duration;

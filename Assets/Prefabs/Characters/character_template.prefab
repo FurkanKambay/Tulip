@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Tulip.Combat.Hurtbox, Tulip
   owner: {fileID: 7186377946535505526}
-  strategySO: {fileID: 11400000, guid: ef98efd8b72450f4e82854bdad31f8f5, type: 2}
+  strategyAsset: {fileID: 11400000, guid: ef98efd8b72450f4e82854bdad31f8f5, type: 2}
 --- !u!61 &6654930023403424645
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -417,7 +417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Tulip.Character.TangibleEntity, Tulip
   world: {fileID: 0}
-  entitySO: {fileID: 11400000, guid: 61f78ba64e5ba3c4895af881afac13bc, type: 2}
+  entityAsset: {fileID: 11400000, guid: 61f78ba64e5ba3c4895af881afac13bc, type: 2}
   body: {fileID: 7560684870690709998}
   health: {fileID: 7186377946535505526}
 --- !u!1 &3484316326350008886

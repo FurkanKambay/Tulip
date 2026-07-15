@@ -9,14 +9,14 @@ namespace Tulip.Combat
         [SerializeField] Health health;
 
         [Header("Config")]
-        [SerializeField] StatusEffectSO[] startingEffects;
+        [SerializeField] StatusEffectAsset[] startingEffects;
 
         // ReSharper disable once FieldCanBeMadeReadOnly.Local
         private List<StatusEffect> effects = new();
 
         private void Awake()
         {
-            foreach (StatusEffectSO effect in startingEffects)
+            foreach (StatusEffectAsset effect in startingEffects)
                 effects.Add(effect.Create(health, health));
         }
 

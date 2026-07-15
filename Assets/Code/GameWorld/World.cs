@@ -27,17 +27,17 @@ namespace Tulip.GameWorld
 #region Tile Helpers
         public bool HasTile(Vector2Int cell, TileType tileType)
         {
-            CustomRuleTileSO tile = worldVisual.GetTile(cell, tileType);
-            return tile && tile.WorldTileSO;
+            CustomRuleTileAsset tile = worldVisual.GetTile(cell, tileType);
+            return tile && tile.WorldTileAsset;
         }
 
-        public WorldTileSO GetTile(Vector2Int cell, TileType tileType)
+        public WorldTileAsset GetTile(Vector2Int cell, TileType tileType)
         {
-            CustomRuleTileSO tile = worldVisual.GetTile(cell, tileType);
-            return !tile ? null : tile.WorldTileSO;
+            CustomRuleTileAsset tile = worldVisual.GetTile(cell, tileType);
+            return !tile ? null : tile.WorldTileAsset;
         }
 
-        public WorldTileSO GetTileAtWorld(Vector3 worldPosition, TileType tileType) =>
+        public WorldTileAsset GetTileAtWorld(Vector3 worldPosition, TileType tileType) =>
             GetTile(WorldToCell(worldPosition), tileType);
 #endregion
 

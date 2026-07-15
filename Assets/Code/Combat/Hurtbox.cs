@@ -10,11 +10,11 @@ namespace Tulip.Combat
         [SerializeField] private Health owner;
 
         [Header("Config")]
-        [SerializeField] private BaseHurtboxStrategySO strategySO;
+        [SerializeField] private BaseHurtboxStrategyAsset strategyAsset;
 
         public Health Owner => owner;
 
-        public bool GetHit(WeaponSO weapon, Health attacker, DamageType? damageType = null) =>
-            strategySO && strategySO.Apply(owner, weapon, attacker, damageType);
+        public bool GetHit(WeaponAsset weapon, Health attacker, DamageType? damageType = null) =>
+            strategyAsset && strategyAsset.Apply(owner, weapon, attacker, damageType);
     }
 }

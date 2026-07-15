@@ -13,17 +13,17 @@ namespace Tulip.Character
         [SerializeField] World world;
 
         [Header("References")]
-        [SerializeField, Required] EntitySO entitySO;
+        [SerializeField, Required] EntityAsset entityAsset;
         [SerializeField] Rigidbody2D body;
         [SerializeField] Health health;
 
-        public string Name => entitySO.Name;
-        public EntitySO EntitySO => entitySO;
+        public string Name => entityAsset.Name;
+        public EntityAsset EntityAsset => entityAsset;
         public Health Health => health;
 
         public World World => world;
         public Vector2Int Cell { get; private set; }
-        public RectInt Rect => new(Cell, EntitySO.Size);
+        public RectInt Rect => new(Cell, EntityAsset.Size);
 
         private void OnEnable()
         {
@@ -48,27 +48,27 @@ namespace Tulip.Character
 
         public override string ToString() => Name;
 
-        public static TangibleEntity SpawnAtCell(EntitySO entitySO, World world, Vector2Int baseCell, Transform parent)
+        public static TangibleEntity SpawnAtCell(EntityAsset entityAsset, World world, Vector2Int baseCell, Transform parent)
         {
-            Vector2Int cellCenter = new(baseCell.x + (entitySO.Size.x / 2), baseCell.y);
+            Vector2Int cellCenter = new(baseCell.x + (entityAsset.Size.x / 2), baseCell.y);
             Vector3 position = world.CellCenter(cellCenter);
 
-            TangibleEntity entity = Spawn(entitySO, world, position, parent);
+            TangibleEntity entity = Spawn(entityAsset, world, position, parent);
             entity.Cell = baseCell;
 
             return entity;
         }
 
-        public static TangibleEntity Spawn(EntitySO entitySO, World world, Vector3 position, Transform parent)
+        public static TangibleEntity Spawn(EntityAsset entityAsset, World world, Vector3 position, Transform parent)
         {
-            if (!entitySO) throw new ArgumentNullException(nameof(entitySO));
+            if (!entityAsset) throw new ArgumentNullException(nameof(entityAsset));
             if (!world) throw new ArgumentNullException(nameof(world));
-            if (!entitySO.Prefab) throw new ArgumentException("Entity lacks an assigned Prefab.", nameof(entitySO));
+            if (!entityAsset.Prefab) throw new ArgumentException("Entity lacks an assigned Prefab.", nameof(entityAsset));
 
-            GameObject instance = Instantiate(entitySO.Prefab, position, Quaternion.identity, parent);
+            GameObject instance = Instantiate(entityAsset.Prefab, position, Quaternion.identity, parent);
 
             if (!instance.TryGetComponent(out TangibleEntity tangible))
-                throw new ArgumentException($"Entity lacks a {nameof(TangibleEntity)} component.", nameof(entitySO));
+                throw new ArgumentException($"Entity lacks a {nameof(TangibleEntity)} component.", nameof(entityAsset));
 
             tangible.world = world;
             return tangible;

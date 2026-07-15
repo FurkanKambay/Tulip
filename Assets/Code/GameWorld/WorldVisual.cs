@@ -12,7 +12,7 @@ namespace Tulip.GameWorld
         [SerializeField] Tilemap wallTilemap;
         [SerializeField] Tilemap blockTilemap;
 
-        public CustomRuleTileSO GetTile(Vector2Int cell, TileType tileType)
+        public CustomRuleTileAsset GetTile(Vector2Int cell, TileType tileType)
         {
             Tilemap tilemap = tileType switch
             {
@@ -21,7 +21,7 @@ namespace Tulip.GameWorld
                 _ => throw new ArgumentOutOfRangeException(nameof(tileType))
             };
 
-            return !tilemap ? null : tilemap.GetTile<CustomRuleTileSO>((Vector3Int)cell);
+            return !tilemap ? null : tilemap.GetTile<CustomRuleTileAsset>((Vector3Int)cell);
         }
 
 #region Tilemap APIs

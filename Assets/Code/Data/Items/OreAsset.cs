@@ -6,7 +6,7 @@ using Vertx.Attributes;
 namespace Tulip.Data.Items
 {
     [CreateAssetMenu(menuName = "Items/Ore", order = 1)]
-    public class OreSO : ItemSO
+    public class OreAsset : ItemAsset
     {
         public GameObject Prefab => prefab;
 
@@ -15,15 +15,15 @@ namespace Tulip.Data.Items
 
         // ReSharper disable NotAccessedField.Global
         [LayoutGroup("Referenced By", ELayout.Background | ELayout.TitleOut | ELayout.Foldout)]
-        [SerializeField, ReadOnlyField] protected EntitySO[] entityLoot;
+        [SerializeField, ReadOnlyField] protected EntityAsset[] entityLoot;
         // ReSharper restore NotAccessedField.Global
 
         protected override void OnValidate()
         {
             base.OnValidate();
 
-            entityLoot = Resources.FindObjectsOfTypeAll<EntitySO>()
-                .Where(entitySO => entitySO.Loot == this)
+            entityLoot = Resources.FindObjectsOfTypeAll<EntityAsset>()
+                .Where(entityAsset => entityAsset.Loot == this)
                 .ToArray();
         }
     }

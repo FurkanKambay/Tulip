@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Tulip.Data.Items
 {
     [CreateAssetMenu(menuName = "Items/Weapon", order = 3)]
-    public class WeaponSO : UsableSO
+    public class WeaponAsset : UsableAsset
     {
         public DamageType DamageType => damageType;
         public float Damage => damage;

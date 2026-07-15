@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Tulip.Character.TangibleEntity, Tulip
   world: {fileID: 0}
-  entitySO: {fileID: 11400000, guid: c9d7b086348a62e40b23d087b7ce48bc, type: 2}
+  entityAsset: {fileID: 11400000, guid: c9d7b086348a62e40b23d087b7ce48bc, type: 2}
   body: {fileID: 0}
   health: {fileID: 5823316243804091760}
 --- !u!61 &5318881425230006216

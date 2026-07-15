@@ -25,7 +25,7 @@ namespace Tulip.Audio
                 itemWielder.OnSwingPerform -= HandleItemSwing;
         }
 
-        private void HandleItemSwing(ItemSO item, Vector3 _) =>
+        private void HandleItemSwing(ItemAsset item, Vector3 _) =>
             RuntimeManager.PlayOneShotAttached(itemSwingEvent, transform.gameObject);
     }
 }

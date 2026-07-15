@@ -18,7 +18,7 @@ namespace Tulip.Dev
 
         [Header("Config")]
         [SerializeField] private EntitySet spawnSet;
-        [SerializeField] private EntitySO spawnedEntity;
+        [SerializeField] private EntityAsset spawnedEntity;
 
         private Camera camera;
         private int spawnIndex;
@@ -58,7 +58,7 @@ namespace Tulip.Dev
 
                 for (int i = 0; i < spawnSet.Count; i++)
                 {
-                    EntitySO entity = spawnSet[i];
+                    EntityAsset entity = spawnSet[i];
 
                     bool selected = i == spawnIndex;
                     string color = selected ? "yellow" : "white";

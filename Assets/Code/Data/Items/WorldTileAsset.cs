@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Tulip.Data.Items
 {
     [CreateAssetMenu(menuName = "World Tile", order = 1)]
-    public class WorldTileSO : ScriptableObject
+    public class WorldTileAsset : ScriptableObject
     {
         /// <summary>
         /// The tile ID.
@@ -29,25 +29,25 @@ namespace Tulip.Data.Items
 
 #region Static - World Tiles Cache
         [ShowInInspector]
-        private static WorldTileSO[] worldTiles;
+        private static WorldTileAsset[] worldTiles;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void Init()
         {
-            WorldTileSO[] allTileAssets = Resources.LoadAll<WorldTileSO>("World Tiles");
-            worldTiles = new WorldTileSO[allTileAssets.Length];
+            WorldTileAsset[] allTileAssets = Resources.LoadAll<WorldTileAsset>("World Tiles");
+            worldTiles = new WorldTileAsset[allTileAssets.Length];
 
-            foreach (WorldTileSO so in allTileAssets)
+            foreach (WorldTileAsset tileAsset in allTileAssets)
             {
-                if (so.TileType == TileType.Block)
-                    worldTiles[so.TileIndex - 1] = so;
+                if (tileAsset.TileType == TileType.Block)
+                    worldTiles[tileAsset.TileIndex - 1] = tileAsset;
             }
         }
 
         /// <summary>
         /// Get the tile with the 1-based LDtk IntGrid <see cref="TileIndex"/>.
         /// </summary>
-        internal static WorldTileSO FromIndex(int index) =>
+        internal static WorldTileAsset FromIndex(int index) =>
             index > 0 && index < worldTiles.Length ? worldTiles[index - 1] : null;
 #endregion
     }

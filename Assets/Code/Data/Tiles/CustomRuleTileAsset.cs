@@ -6,12 +6,12 @@ using UnityEngine.Tilemaps;
 namespace Tulip.Data.Tiles
 {
     [CreateAssetMenu(menuName = "Tiles/Rule Tile")]
-    public sealed class CustomRuleTileSO : RuleTile<CustomRuleTileSO.Neighbor>
+    public sealed class CustomRuleTileAsset : RuleTile<CustomRuleTileAsset.Neighbor>
     {
         [Header("Custom Rule Tile")]
-        [SerializeField] private WorldTileSO worldTileSO;
+        [SerializeField] private WorldTileAsset worldTileAsset;
 
-        public WorldTileSO WorldTileSO => worldTileSO;
+        public WorldTileAsset WorldTileAsset => worldTileAsset;
 
         public override bool RuleMatch(int neighbor, TileBase tile) => neighbor switch
         {
