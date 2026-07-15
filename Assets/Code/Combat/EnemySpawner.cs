@@ -68,7 +68,7 @@ namespace Tulip.Combat
                 return false;
 
             Vector2Int baseCell = GetRandomSpawnCell();
-            var spawnedEnemy = TangibleEntity.Spawn(entitySO, world, baseCell, spawnParent);
+            var spawnedEnemy = TangibleEntity.SpawnAtCell(entitySO, world, baseCell, spawnParent);
 
             if (entitySO.IsStatic)
                 world.TryAddStaticEntity(baseCell, spawnedEnemy);

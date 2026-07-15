@@ -48,14 +48,22 @@ namespace Tulip.Character
 
         public override string ToString() => Name;
 
-        public static TangibleEntity Spawn(EntitySO entitySO, World world, Vector2Int baseCell, Transform parent)
+        public static TangibleEntity SpawnAtCell(EntitySO entitySO, World world, Vector2Int baseCell, Transform parent)
+        {
+            Vector2Int cellCenter = new(baseCell.x + (entitySO.Size.x / 2), baseCell.y);
+            Vector3 position = world.CellCenter(cellCenter);
+
+            TangibleEntity entity = Spawn(entitySO, world, position, parent);
+            entity.Cell = baseCell;
+
+            return entity;
+        }
+
+        public static TangibleEntity Spawn(EntitySO entitySO, World world, Vector3 position, Transform parent)
         {
             if (!entitySO) throw new ArgumentNullException(nameof(entitySO));
             if (!world) throw new ArgumentNullException(nameof(world));
             if (!entitySO.Prefab) throw new ArgumentException("Entity lacks an assigned Prefab.", nameof(entitySO));
-
-            Vector2Int cellCenter = new(baseCell.x + (entitySO.Size.x / 2), baseCell.y);
-            Vector3 position = world.CellCenter(cellCenter);
 
             GameObject instance = Instantiate(entitySO.Prefab, position, Quaternion.identity, parent);
 
@@ -63,8 +71,6 @@ namespace Tulip.Character
                 throw new ArgumentException($"Entity lacks a {nameof(TangibleEntity)} component.", nameof(entitySO));
 
             tangible.world = world;
-            tangible.Cell = baseCell;
-
             return tangible;
         }
     }
