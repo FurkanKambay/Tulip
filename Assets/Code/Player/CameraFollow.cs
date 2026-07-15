@@ -9,11 +9,11 @@ namespace Tulip.Player
 {
     public sealed class CameraFollow : MonoBehaviour
     {
-        [Header("References")]
-        [SerializeField, Required] Transform subject;
-
         [Header("Gameplay Config")]
         [SerializeField] TrackingOptions trackingConfig;
+
+        [Header("Injectable State")]
+        [SerializeField, Required] Transform subject;
 
         private Camera camera;
 
@@ -22,6 +22,15 @@ namespace Tulip.Player
         {
             camera = Camera.main;
             Assert.IsNotNull(camera);
+        }
+
+        private void Start()
+        {
+            if (!subject)
+            {
+                enabled = false;
+                return;
+            }
 
             camera.transform.position = subject.position;
         }
@@ -41,6 +50,9 @@ namespace Tulip.Player
             camera.transform.position = new Vector3(targetX, targetY, trackingConfig.Target.z);
         }
 #endregion
+
+        public void SetTarget(Transform subject) =>
+            this.subject = subject;
 
 #region Child Class
         [Serializable]

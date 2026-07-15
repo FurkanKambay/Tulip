@@ -1,4 +1,5 @@
 using Furkan.Common;
+using Tulip.Character;
 using Tulip.Combat;
 using Unity.Properties;
 using UnityEngine;
@@ -10,21 +11,29 @@ namespace Tulip.UI
     {
         [Header("References")]
         [SerializeField, Required] UIDocument document;
+
+        [Header("Injected State")]
         [SerializeField, Required] Health health;
         [SerializeField, Required] Respawner respawner;
 
         // ReSharper disable UnusedMember.Local
-        [CreateProperty] bool IsOverlayDisplayed => health.IsDead;
-        [CreateProperty] bool IsRespawnButtonDisplayed => respawner.CanRespawn;
-        [CreateProperty] bool IsCountdownDisplayed => !respawner.CanRespawn;
-        [CreateProperty] int SecondsUntilRespawn => Mathf.CeilToInt(respawner.SecondsUntilRespawn);
+        [CreateProperty] bool IsOverlayDisplayed => health && health.IsDead;
+        [CreateProperty] bool IsRespawnButtonDisplayed => respawner && respawner.CanRespawn;
+        [CreateProperty] bool IsCountdownDisplayed => respawner && !respawner.CanRespawn;
+        [CreateProperty] int SecondsUntilRespawn => !respawner ? 0 : Mathf.CeilToInt(respawner.SecondsUntilRespawn);
 
-        [CreateProperty] string DeathReason =>
+        [CreateProperty] string DeathReason => !health ? "" :
             health.LatestDeathSource ? health.LatestDeathSource.Entity.Name : "No Death Source";
         // ReSharper restore UnusedMember.Local
 
         private VisualElement root;
         private Button respawnButton;
+
+        public void SetPlayer(TangibleEntity playerEntity)
+        {
+            health = playerEntity.Health;
+            respawner = playerEntity.GetComponentInChildren<Respawner>();
+        }
 
         private void OnEnable()
         {

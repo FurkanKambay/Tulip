@@ -5330,11 +5330,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fdfdff2c1ac25943b5f45bf68fb38e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Player.CameraFollow, Tulip
-  subject: {fileID: 1154427127}
   trackingConfig:
     <Offset>k__BackingField: {x: 0, y: 1.45}
     <Speed>k__BackingField: {x: 4, y: 4}
     <SnapValue>k__BackingField: 0.01
+  subject: {fileID: 0}
 --- !u!1 &1038124607
 GameObject:
   m_ObjectHideFlags: 0
@@ -5402,50 +5402,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1154427126
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5608591855508489013, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
-      propertyPath: world
-      value: 
-      objectReference: {fileID: 414399566}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
---- !u!4 &1154427127 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3718691385353617789, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
-  m_PrefabInstance: {fileID: 1154427126}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1154427128 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2535590440556967087, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
-  m_PrefabInstance: {fileID: 1154427126}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 992d83c1bd31b8b41aec2663aa6ead9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Tulip.Combat.Health, Tulip
---- !u!114 &1154427129 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 572498600021759774, guid: 7a303a962b2ef6d4a9d938f3d23a64b4, type: 3}
-  m_PrefabInstance: {fileID: 1154427126}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba2b896b557446e890bfeb8085addabc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Tulip.Combat.Respawner, Tulip
 --- !u!1 &1406129966
 GameObject:
   m_ObjectHideFlags: 0
@@ -5515,8 +5471,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Tulip.UI.DeathOverlayPresenter, Tulip
   document: {fileID: 1406129968}
-  health: {fileID: 1154427128}
-  respawner: {fileID: 1154427129}
+  health: {fileID: 0}
+  respawner: {fileID: 0}
 --- !u!1 &1492625892
 GameObject:
   m_ObjectHideFlags: 0
@@ -5686,6 +5642,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1038124608}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1765503960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1765503961}
+  m_Layer: 0
+  m_Name: '[hero spawn]'
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1765503961
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765503960}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1901863207}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1766718189
 GameObject:
   m_ObjectHideFlags: 0
@@ -5735,7 +5722,7 @@ MonoBehaviour:
   maxSpawns: 10
   radius: 10
   interval: 2
-  gracePeriod: 0
+  gracePeriod: 5
   entitySpawnPoolSO: {fileID: 11400000, guid: dfeaab23e3382bc4096de4c19314316c, type: 2}
 --- !u!1 &1872193082
 GameObject:
@@ -5913,7 +5900,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 282238c99bbde46429cdcd8be7a89bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Player.ShaderGlobals, Tulip
-  player: {fileID: 1154427128}
+  player: {fileID: 0}
+--- !u!1 &1901863206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1901863207}
+  - component: {fileID: 1901863208}
+  m_Layer: 0
+  m_Name: Level Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1901863207
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901863206}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1765503961}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1901863208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901863206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31fc48186b95459c87072ca016a288ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Tulip::Tulip.GameWorld.LevelManager
+  heroAsset: {fileID: 11400000, guid: 61f78ba64e5ba3c4895af881afac13bc, type: 2}
+  spawnParent: {fileID: 0}
+  spawnLocation: {fileID: 1765503961}
+  cameraFollow: {fileID: 741303850}
+  deathUI: {fileID: 1406129969}
+  world: {fileID: 414399566}
+  hero: {fileID: 0}
 --- !u!1 &1957016066
 GameObject:
   m_ObjectHideFlags: 0
@@ -6015,9 +6054,9 @@ SceneRoots:
   - {fileID: 1038124608}
   - {fileID: 122205217}
   - {fileID: 1886235716}
+  - {fileID: 1901863207}
   - {fileID: 1766718190}
   - {fileID: 1957016067}
-  - {fileID: 1154427126}
   - {fileID: 414399565}
   - {fileID: 1064103220}
   - {fileID: 1985613754}

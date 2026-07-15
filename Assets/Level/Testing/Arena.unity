@@ -565,11 +565,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fdfdff2c1ac25943b5f45bf68fb38e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Tulip.Player.CameraFollow, Tulip
-  subject: {fileID: 2105180325}
   trackingConfig:
     <Offset>k__BackingField: {x: 0, y: 0}
     <Speed>k__BackingField: {x: 10, y: 10}
     <SnapValue>k__BackingField: 0.5
+  subject: {fileID: 2105180325}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
