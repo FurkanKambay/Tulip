@@ -1,106 +1,171 @@
-[attr]lfs                   -text filter=lfs diff=lfs merge=lfs
-[attr]unity-json            eol=lf linguist-language=json
-[attr]unity-yaml            eol=lf linguist-language=yaml merge=unityyamlmerge
+# Define macros (only works in top-level gitattributes files)
+[attr]lfs                           -text filter=lfs diff=lfs merge=lfs
+[attr]unity-json                    eol=lf linguist-language=json
+[attr]unity-yaml                    eol=lf linguist-language=yaml merge=unityyamlmerge
 
-*                           text=auto eol=lf
-*.cs                        eol=lf diff=csharp
-*.md                        eol=lf diff=markdown
+*                                   text=auto eol=lf
+*.cs                                eol=lf diff=csharp
+*.md                                eol=lf diff=markdown
 
-# Exclude third-party plugins and the packages lockfile from GitHub stats and diffs
-Assets/Plugins/**           linguist-generated
-Packages/packages-lock.json linguist-generated
-*.g.cs                      linguist-generated
+# Exclude some files from GitHub stats and diffs
+Assets/Plugins/**                   linguist-generated
+Assets/TextMesh[[:space:]]Pro/**    linguist-generated
+Packages/packages-lock.json         linguist-generated
+*.g.cs                              linguist-generated
 
 # Unity shader files
-*.cginc                     eol=lf
-*.compute                   eol=lf linguist-language=hlsl
-*.hlsl                      eol=lf linguist-language=hlsl
-*.raytrace                  eol=lf linguist-language=hlsl
-*.shader                    eol=lf
+*.cginc                             eol=lf
+*.compute                           eol=lf linguist-language=hlsl
+*.hlsl                              eol=lf
+*.raytrace                          eol=lf linguist-language=hlsl
+*.shader                            eol=lf
 
 # Unity JSON files
-*.asmdef                    unity-json
-*.asmref                    unity-json
-*.index                     unity-json
-*.inputactions              unity-json
-*.shadergraph               unity-json
-*.shadersubgraph            unity-json
+*.asmdef                            unity-json
+*.asmref                            unity-json
+*.index                             unity-json
+*.inputactions                      unity-json
+*.shadergraph                       unity-json
+*.shadersubgraph                    unity-json
 
 # Unity UI Toolkit files
-*.tss                       eol=lf linguist-language=css diff=css
-*.uss                       eol=lf linguist-language=css diff=css
-*.uxml                      eol=lf linguist-language=xml linguist-detectable
-*.xsd                       eol=lf linguist-generated
+*.tss                               eol=lf linguist-language=css diff=css
+*.uss                               eol=lf linguist-language=css diff=css
+*.uxml                              eol=lf linguist-language=xml linguist-detectable
+*.xsd                               eol=lf linguist-generated
 
 # Unity YAML files
-*.anim                      unity-yaml
-*.asset                     unity-yaml
-*.brush                     unity-yaml
-*.controller                unity-yaml
-*.cubemap                   unity-yaml
-*.flare                     unity-yaml
-*.fontsettings              unity-yaml
-*.giparams                  unity-yaml
-*.guiskin                   unity-yaml
-*.lighting                  unity-yaml
-*.mask                      unity-yaml
-*.mat                       unity-yaml
-*.meta                      unity-yaml
-*.mixer                     unity-yaml
-*.overrideController        unity-yaml
-*.physicMaterial            unity-yaml
-*.physicsMaterial2D         unity-yaml
-*.playable                  unity-yaml
-*.prefab                    unity-yaml
-*.preset                    unity-yaml
-*.renderTexture             unity-yaml
-*.scenetemplate             unity-yaml
-*.shadervariants            unity-yaml
-*.signal                    unity-yaml
-*.spriteatlas               unity-yaml
-*.spriteatlasv2             unity-yaml
-*.spriteLib                 unity-yaml
-*.terrainlayer              unity-yaml
-*.unity                     unity-yaml
-*.vfx                       unity-yaml
-*.vfxblock                  unity-yaml
-*.vfxoperator               unity-yaml
+*.anim                              unity-yaml
+*.asset                             unity-yaml
+*.brush                             unity-yaml
+*.controller                        unity-yaml
+*.cubemap                           unity-yaml
+*.flare                             unity-yaml
+*.fontsettings                      unity-yaml
+*.giparams                          unity-yaml
+*.guiskin                           unity-yaml
+*.lighting                          unity-yaml
+*.mask                              unity-yaml
+*.mat                               unity-yaml
+*.meta                              unity-yaml
+*.mixer                             unity-yaml
+*.overrideController                unity-yaml
+*.physicMaterial                    unity-yaml
+*.physicsMaterial2D                 unity-yaml
+*.playable                          unity-yaml
+*.prefab                            unity-yaml
+*.preset                            unity-yaml
+*.renderTexture                     unity-yaml
+*.scenetemplate                     unity-yaml
+*.shadervariants                    unity-yaml
+*.signal                            unity-yaml
+*.spriteatlas                       unity-yaml
+*.spriteatlasv2                     unity-yaml
+*.spriteLib                         unity-yaml
+*.terrainlayer                      unity-yaml
+*.unity                             unity-yaml
+*.vfx                               unity-yaml
+*.vfxblock                          unity-yaml
+*.vfxoperator                       unity-yaml
+
+# Exceptions for some non-YAML .asset files
+LightingData.asset                  lfs
+NavMesh-*.asset                     lfs
 
 # FMOD Banks
-*.bank                      lfs
+*.bank                              lfs
 
-# Image formats
-*.exr                       lfs
-*.hdr                       lfs
-*.jpg                       lfs
-*.png                       lfs
-*.psd                       lfs
-*.tga                       lfs
-*.xcf                       lfs
+# FMOD for Unity
+Assets/Plugins/FMOD/**/*.bundle     eol=lf
+Assets/Plugins/FMOD/**/Info.plist   eol=lf
 
-# Audio formats
-*.flac                      lfs
-*.ogg                       lfs
-*.wav                       lfs
+# 3D models
+*.3dm                               lfs
+*.3ds                               lfs
+*.blend                             lfs
+*.blend1                            lfs
+*.c4d                               lfs
+*.collada                           lfs
+*.dae                               lfs
+*.dxf                               lfs
+*.FBX                               lfs
+*.fbx                               lfs
+*.jas                               lfs
+*.lws                               lfs
+*.lxo                               lfs
+*.ma                                lfs
+*.max                               lfs
+*.mb                                lfs
+*.obj                               lfs
+*.ply                               lfs
+*.skp                               lfs
+*.stl                               lfs
+*.ztl                               lfs
 
-# Video formats
-*.mp4                       lfs
-*.ogv                       lfs
-*.vp8                       lfs
-*.webm                      lfs
+# Audio
+*.aif                               lfs
+*.aiff                              lfs
+*.it                                lfs
+*.mod                               lfs
+*.mp3                               lfs
+*.ogg                               lfs
+*.s3m                               lfs
+*.wav                               lfs
+*.xm                                lfs
 
-# 3D formats
-*.dae                       lfs
-*.dxf                       lfs
-*.fbx                       lfs
-*.obj                       lfs
+# Video
+*.asf                               lfs
+*.avi                               lfs
+*.flv                               lfs
+*.mov                               lfs
+*.mp4                               lfs
+*.mpeg                              lfs
+*.mpg                               lfs
+*.ogv                               lfs
+*.wmv                               lfs
 
-# Build
-*.dll                       lfs
-*.pdb                       lfs
+# Images
+*.bmp                               lfs
+*.exr                               lfs
+*.gif                               lfs
+*.hdr                               lfs
+*.iff                               lfs
+*.jpeg                              lfs
+*.jpg                               lfs
+*.pict                              lfs
+*.png                               lfs
+*.psd                               lfs
+*.tga                               lfs
+*.tif                               lfs
+*.tiff                              lfs
+*.webp                              lfs
 
-# Packaging
-*.7z                        lfs
-*.gz                        lfs
-*.tar                       lfs
-*.zip                       lfs
+# Compressed Archive
+*.7z                                lfs
+*.bz2                               lfs
+*.gz                                lfs
+*.rar                               lfs
+*.tar                               lfs
+*.zip                               lfs
+
+# Compiled Dynamic Library
+*.dll                               lfs
+*.pdb                               lfs
+*.so                                lfs
+*.wasm                              lfs
+
+# Fonts
+*.otf                               lfs
+*.ttf                               lfs
+
+# Executable/Installer
+*.apk                               lfs
+*.exe                               lfs
+
+# Documents
+*.pdf                               lfs
+
+# ETC
+*.a                                 lfs
+*.reason                            lfs
+*.rns                               lfs

@@ -9,39 +9,17 @@
         "UIElementsSchema/": true
     },
     "files.readonlyInclude": {
-        "**/*.meta": true,
         "Packages/packages-lock.json": true,
-        "Assets/Plugins/": true,
         "UIElementsSchema/**": true,
-        "FMODProject/**": true
+        "Assets/Plugins/": true,
+        "FMODProject/**": true,
+        // "**/*.meta": true,
     },
-    "cSpell.words": [
-        "borderless",
-        "DontDestroyOnLoad",
-        "FMOD",
-        "hotbar",
-        "hotspot",
-        "interactable",
-        "knockback",
-        "knockbackable",
-        "lerp",
-        "lerping",
-        "Mathf",
-        "perlin",
-        "prefs",
-        "raycast",
-        "respawn",
-        "respawner",
-        "rigidbody",
-        "Scriptable",
-        "superquit",
-        "terraformer",
-        "tilemap",
-        "tilemaps",
-        "Treant",
-        "WEBGL"
-    ],
-    "conventionalCommits.scopes": [
+    "conventionalCommitBuilder.template": "<type><scope>: <description>",
+    "conventionalCommitBuilder.autoCommit": true,
+    "conventionalCommitBuilder.showCommit": true,
+    "conventionalCommitBuilder.customTypes": [],
+    "conventionalCommitBuilder.scopes": [
         "ai",
         "art",
         "audio",
@@ -60,15 +38,45 @@
         "ui",
         "vfx"
     ],
-    "conventionalCommits.gitmoji": false,
-    "conventionalCommits.promptFooter": false,
-    "conventionalCommitBuilder.template": "<type><scope>: <description>",
-    "conventionalCommitBuilder.autoCommit": true,
-    "conventionalCommitBuilder.showCommit": true,
-    "conventionalCommitBuilder.customTypes": [],
-    "conventionalCommitBuilder.scopes": [],
     "commitlint.config.extend.rules": {
-        "subject-case": [2, "never", ["sentence-case", "start-case", "pascal-case", "upper-case"]],
-        "type-empty": [2, "never"]
-    }
+        "subject-case": [
+            2,
+            "never",
+            [
+                "sentence-case",
+                "start-case",
+                "pascal-case",
+                "upper-case"
+            ]
+        ],
+        "type-empty": [
+            2,
+            "never"
+        ]
+    },
+    "cSpell.files": [
+        "Assets/**/*.cs"
+    ],
+    "cSpell.dictionaries": [
+        "game-development",
+        "gaming-terms",
+        "unity"
+    ],
+    "cSpell.customDictionaries": {
+        "tulip-words": {
+            "name": "Tulip",
+            "path": "${workspaceRoot}/.vscode/dictionaries/tulip.dic",
+            "addWords": true
+        },
+        "unity-words": {
+            "name": "Unity Engine",
+            "path": "${workspaceRoot}/.vscode/dictionaries/unity.dic",
+            "addWords": true
+        },
+        "gaming-words": {
+            "name": "Gaming",
+            "path": "${workspaceRoot}/.vscode/dictionaries/gaming.dic",
+            "addWords": true
+        }
+    },
 }

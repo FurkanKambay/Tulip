@@ -7,6 +7,10 @@
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 
+# Build noise
+/[Aa]ssets/[Rr]esources/[Pp]erformanceTestRun*.json
+/[Aa]ssets/[Rr]esources/[Pp]erformanceTestRun*.json.meta
+
 # These get excessive in size
 # MemoryCaptures could contain sensitive data
 /[Mm]emory[Cc]aptures/
@@ -21,6 +25,10 @@
 
 # Gradle cache
 .gradle/
+
+# GameCI temporaries
+/[Aa]rtifacts/
+/[Cc]odeCoverage/
 
 # JetBrains Rider
 
@@ -51,11 +59,13 @@
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
+!.vscode/dictionaries/
 
 # FMOD Studio
 /FMODProject/.cache/
 /FMODProject/.user/
 /FMODProject/.unsaved/
+/FMODProject/Metadata/ProfilerSession/
 
 # Optionally ignore bank files
 # *.bank
@@ -86,6 +96,9 @@ fmod_editor.log
 **/LDtk/*/png/
 **/LDtk/*/png.meta
 *.ldtkt
-# *.ldtkt.meta
+*.ldtkt.meta
 *.ldtkc
-# *.ldtkc.meta
+*.ldtkc.meta
+
+# Unity Version Control (PlasticSCM)
+.plastic/
