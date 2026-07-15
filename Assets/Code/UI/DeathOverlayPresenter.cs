@@ -10,7 +10,7 @@ namespace Tulip.UI
     public sealed class DeathOverlayPresenter : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField, Required] UIDocument document;
+        [SerializeField, Required] PanelRenderer panelRenderer;
 
         [Header("Injected State")]
         [SerializeField, Required] Health health;
@@ -37,17 +37,26 @@ namespace Tulip.UI
 
         private void OnEnable()
         {
-            document.enabled = true;
+            panelRenderer.enabled = true;
+            panelRenderer.RegisterUIReloadCallback(UI_Reloaded);
+        }
 
-            root = document.rootVisualElement;
+        private void OnDisable()
+        {
+            panelRenderer.UnregisterUIReloadCallback(UI_Reloaded);
+            respawnButton?.UnregisterCallback<ClickEvent>(HandleRespawnClicked);
+        }
+
+        private void UI_Reloaded(PanelRenderer renderer, VisualElement rootElement)
+        {
+            root = rootElement;
             root.dataSource = this;
 
             respawnButton = root.Q<Button>();
             respawnButton.RegisterCallback<ClickEvent>(HandleRespawnClicked);
         }
 
-        private void OnDisable() => respawnButton.UnregisterCallback<ClickEvent>(HandleRespawnClicked);
-
-        private void HandleRespawnClicked(ClickEvent _) => respawner.TryRespawn();
+        private void HandleRespawnClicked(ClickEvent _) =>
+            respawner.TryRespawn();
     }
 }
