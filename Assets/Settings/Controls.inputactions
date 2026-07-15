@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "name": "InputActions",
+    "name": "Controls",
     "maps": [
         {
             "name": "Hero",

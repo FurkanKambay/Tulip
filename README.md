@@ -59,7 +59,7 @@ An old build of the game from when it was still a sandbox prototype is available
 ### 🔧 Miscellaneous
 
 - **Async** and `Awaitable` usage
-- [Input System](Assets/Settings/InputActions.inputactions) usage
+- [Input System](Assets/Settings/Controls.inputactions) usage
 - [Custom WebGL template](Assets/WebGLTemplates/Custom) to fix data persistence bug on web builds
 - [Event channels](Assets/Code/Common/GameEvent.cs) for some UI events (`ScriptableObject`-based)
 
