@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fad8711ee3114cb42987f8a5d2d6ead8, type: 3}
   m_Name: Tile Stone
-  m_EditorClassIdentifier: Tulip.Data.Tiles.CustomRuleTileSO, Tulip
+  m_EditorClassIdentifier: Tulip.Data.Tiles.CustomRuleTileAsset, Tulip
   m_DefaultSprite: {fileID: 178573413, guid: 1631614f4ac086d4dab5aab9a349e144, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 2

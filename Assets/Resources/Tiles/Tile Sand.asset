@@ -75,7 +75,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f0cf03d5bb94472a4080d98f2b505aa, type: 3}
   m_Name: Tile Stone (Override)
-  m_EditorClassIdentifier: Tulip.Data.Tiles.CustomRuleTileSO, Tulip
+  m_EditorClassIdentifier: Tulip.Data.Tiles.CustomRuleTileAsset, Tulip
   m_DefaultSprite: {fileID: 178573413, guid: 45123585a869b24428ad443be4ab89d4, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 2
@@ -372,7 +372,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fad8711ee3114cb42987f8a5d2d6ead8, type: 3}
   m_Name: Tile Stone (Override)
-  m_EditorClassIdentifier: Tulip::Tulip.Data.Tiles.CustomRuleTileSO
+  m_EditorClassIdentifier: Tulip::Tulip.Data.Tiles.CustomRuleTileAsset
   m_DefaultSprite: {fileID: 178573413, guid: 45123585a869b24428ad443be4ab89d4, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 2

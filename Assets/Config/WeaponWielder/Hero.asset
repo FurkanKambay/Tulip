@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63fa0263808b47cab48a6a0ef59ca62b, type: 3}
   m_Name: Hero
-  m_EditorClassIdentifier: Tulip.Combat.Data.WeaponWielderConfigSO, Tulip
+  m_EditorClassIdentifier: Tulip.Combat.Data.WeaponWielderConfigAsset, Tulip
   maxHitsPerRaycast: 9
   hitContactFilter:
     useTriggers: 1

@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f196b3386674225acc1572fe4bdd713, type: 3}
   m_Name: Copper
-  m_EditorClassIdentifier: Tulip.Data.Items.OreSO, Tulip
+  m_EditorClassIdentifier: Tulip.Data.Items.OreAsset, Tulip
   icon: {fileID: -5732747483443466111, guid: 6f8a5b4f050793e4191c3b423a48b57c, type: 3}
   iconScale: 1.5
   name: Copper
