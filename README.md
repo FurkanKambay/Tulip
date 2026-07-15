@@ -7,35 +7,36 @@
 
 **Tulip** is an action-adventure platformer made in Unity. It is still a *work in progress* and currently serves primarily as a portfolio project. My goal is to create a compelling game world with satisfying combat and exploration.
 
-Originally, Tulip was heavily inspired by Terraria and featured a procedurally generated world with mining and building. However, I decided to move away from a sandbox in favor of a hand-crafted world after developing some exciting ideas for worldbuilding. Some of my biggest inspirations include games like Hollow Knight, Ori and the Blind Forest, V Rising, Divinity: Original Sin 2, Core Keeper, Wall World, Laika: Aged Through Blood, SteamWorld Dig, and Fallout *(even though I haven't played it—shout out to Tim Cain)*.
+Originally, Tulip was heavily inspired by Terraria and featured a procedurally generated world with mining and building. However, I decided to move away from a sandbox in favor of a hand-crafted world after developing some exciting ideas for worldbuilding. Some of my biggest inspirations include games like Hollow Knight, Ori and the Blind Forest, V Rising, Divinity: Original Sin 2, Core Keeper, Wall World, Laika: Aged Through Blood, SteamWorld Dig, and Fallout.
+
+An old build of the game from when it was still a sandbox prototype is available:
 
 <a href="https://furkankambay.itch.io/tulip">
-  <img width="180px" src="https://static.itch.io/images/badge-color.svg" alt="available on itch.io">
+  <img width="180px" src="https://static.itch.io/images/badge-color.svg" alt="old build on itch.io">
 </a>
 
 ## ⭐ Features
 
 ### ⚙️ Systems & Mechanics
 
-- [Melee combat](Assets/Code/Gameplay/WeaponWielder.cs): spear, axe
+- [Melee combat](Assets/Code/Combat/WeaponWielder.cs): spear, axe
 - [Grappling hook](Assets/Code/Gameplay/HookLauncher.cs) mechanic
-- [Spawn constraints](Assets/Code/Data/SpawnConditionSO.cs): rules like "only on safe blocks", "needs headroom", etc.
+- [Spawn constraints](Assets/Code/Data/SpawnConditionAsset.cs): rules like "only on safe blocks", "needs headroom", etc.
 - [Item swing motion](Assets/Code/Gameplay/ItemWielder.cs) config with editor tooling
-- [Invulnerability frames](Assets/Code/Character/Health.cs)
-- [Status effects](Assets/Code/Data/StatusEffect.cs): health regen, bleed
+- [Invulnerability frames](Assets/Code/Combat/Health.cs)
+- [Status effects](Assets/Code/Combat/StatusEffect.cs): health regen, bleed
 - [Enemy AI](Assets/Code/AI): walking, flying, attacking
-- [Loot items](Assets/Code/Data/EntitySO.cs) for entities
+- [Loot items](Assets/Code/Data/EntityAsset.cs) for entities
 
 ### 👾 Content
 
-- [LDtk project](Assets/Level/LDtk): Blocks, walls, curtains
-- [Three-layer world](Assets/Code/GameWorld/World.cs) tilemap (background walls, blocks, foreground curtains)
+- [Tilemap World](Assets/Code/GameWorld/World.cs) (background walls, blocks, *shelved: curtain tiles*)
 - [Entities](Assets/Prefabs/Characters): Treant mimic, flying skull, trees, generic walking enemy
 - [Items](Assets/Resources/Items): Weapons, tools, materials (ore, wood), tiles
 
 ### ✨ Shaders & VFX
 
-- [Portal Shader](Assets/Shaders/Realm.shadergraph): Shader for rendering two worlds through a portal *(unused)*
+- [Portal Shader](Assets/Shaders/_unused/Realm.shadergraph): Shader for rendering two worlds through a portal *(unused)*
 - [Parallax Shader](Assets/Shaders/Parallax.shadergraph): Parallax background shader with moving cloud
 - [Sprite outline and dissolve](Assets/Shaders/Color%20Tint.shadergraph) shader
 - [Rain VFX](Assets/VFX/Rain.vfx): Rain in VFX Graph, configurable *(not supported on WebGL)*
@@ -58,7 +59,7 @@ Originally, Tulip was heavily inspired by Terraria and featured a procedurally g
 ### 🔧 Miscellaneous
 
 - **Async** and `Awaitable` usage
-- [Input System](Assets/Settings/Input%20Actions.inputactions) usage
+- [Input System](Assets/Settings/InputActions.inputactions) usage
 - [Custom WebGL template](Assets/WebGLTemplates/Custom) to fix data persistence bug on web builds
 - [Event channels](Assets/Code/Common/GameEvent.cs) for some UI events (`ScriptableObject`-based)
 
@@ -69,6 +70,7 @@ These features have been abandoned either because they are out of scope or don't
 - [World Terraforming](../v7-itchio/Assets/Code/Player/Terraformer.cs) (breakable & placeable tiles)
 - [Custom Rule Tiles](../v7-itchio/Assets/Code/Data/Tiles/CustomRuleTileData.cs) for the world
 - [Hotbar](../v7-itchio/Assets/Code/UI/HotbarPresenter.cs) with slot locking, [HUD](../v7-itchio/Assets/UI/Documents/Hotbar.uxml), and [UI Template](../v7-itchio/Assets/UI/Templates/HotbarSlot.uxml) for hotbar item slots
+- [LDtk project](../v7-itchio/Assets/Level/LDtk): Blocks, walls, curtains
 
 </details>
 
