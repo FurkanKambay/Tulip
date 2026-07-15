@@ -1,6 +1,5 @@
 using System;
 using Furkan.Common;
-using Tulip.Character;
 using Tulip.Combat;
 using Tulip.Input;
 using UnityEngine;
@@ -33,10 +32,13 @@ namespace Tulip.AI
         private Health targetHealth;
         private float timeSinceLastJump;
 
-        private void Awake()
+        private void OnEnable() => health.OnHurt += HandleHurt;
+        private void OnDisable() => health.OnHurt -= HandleHurt;
+
+        private void HandleHurt(CombatPacket combatPacket)
         {
-            // TODO: better targeting AI
-            targetHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<TangibleEntity>().Health;
+            // always target the last attacker (if any)
+            targetHealth = combatPacket.Source;
         }
 
         private void Update()
