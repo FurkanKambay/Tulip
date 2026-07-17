@@ -47,7 +47,7 @@ MonoBehaviour:
     turnDelta: -20
     turnDuration: 0
   - isCancelable: 1
-    preventAim: 1
+    preventAim: 0
     shouldHit: 0
     moveDelta: {x: -1.5, y: 0.4}
     moveDuration: 0.08
