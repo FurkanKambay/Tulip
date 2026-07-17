@@ -1,4 +1,4 @@
-namespace Tulip.Core
+namespace FK.Tulip.Core
 {
     public readonly struct GameStateChange
     {

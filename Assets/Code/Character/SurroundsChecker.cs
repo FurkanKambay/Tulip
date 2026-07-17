@@ -1,10 +1,10 @@
-using Furkan.Common;
-using Tulip.Data;
-using Tulip.Data.Items;
-using Tulip.GameWorld;
+using FK.Common;
+using FK.Tulip.Data;
+using FK.Tulip.Data.Items;
+using FK.Tulip.GameWorld;
 using UnityEngine;
 
-namespace Tulip.Character
+namespace FK.Tulip.Character
 {
     public class SurroundsChecker : MonoBehaviour
     {

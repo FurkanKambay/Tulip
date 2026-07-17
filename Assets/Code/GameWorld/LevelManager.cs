@@ -1,11 +1,11 @@
-using Furkan.Common;
-using Tulip.Character;
-using Tulip.Data;
-using Tulip.Player;
-using Tulip.UI;
+using FK.Common;
+using FK.Tulip.Character;
+using FK.Tulip.Data;
+using FK.Tulip.Player;
+using FK.Tulip.UI;
 using UnityEngine;
 
-namespace Tulip.GameWorld
+namespace FK.Tulip.GameWorld
 {
     public class LevelManager : MonoBehaviour
     {

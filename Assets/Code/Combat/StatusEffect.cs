@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Tulip.Combat
+namespace FK.Tulip.Combat
 {
     /// TODO: support non-Health effects
     [Serializable]

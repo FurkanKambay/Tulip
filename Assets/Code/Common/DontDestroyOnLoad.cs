@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Furkan.Common
+namespace FK.Common
 {
     // ReSharper disable once IdentifierTypo
     public sealed class DontDestroyOnLoad : MonoBehaviour

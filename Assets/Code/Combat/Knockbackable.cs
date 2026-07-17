@@ -1,7 +1,7 @@
-using Furkan.Common;
+using FK.Common;
 using UnityEngine;
 
-namespace Tulip.Combat
+namespace FK.Tulip.Combat
 {
     public class Knockbackable : MonoBehaviour
     {

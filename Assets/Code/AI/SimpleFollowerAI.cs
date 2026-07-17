@@ -1,10 +1,10 @@
 using System;
-using Furkan.Common;
-using Tulip.Combat;
-using Tulip.Input;
+using FK.Common;
+using FK.Tulip.Combat;
+using FK.Tulip.Input;
 using UnityEngine;
 
-namespace Tulip.AI
+namespace FK.Tulip.AI
 {
     public sealed class SimpleFollowerAI : CharacterBrain
     {

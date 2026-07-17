@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Tulip.Core
+namespace FK.Tulip.Core
 {
     [Serializable]
     public partial class Settings

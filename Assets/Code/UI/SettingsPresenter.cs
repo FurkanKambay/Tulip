@@ -1,15 +1,15 @@
+using FK.Common;
+using FK.Tulip.Core;
+using FK.Tulip.Data.GameEvents;
+using FK.Tulip.Input;
 using FMOD.Studio;
 using FMODUnity;
-using Furkan.Common;
-using Tulip.Core;
-using Tulip.Data.GameEvents;
-using Tulip.Input;
 using Unity.Properties;
 using UnityEngine;
 using UnityEngine.UIElements;
-using Settings = Tulip.Core.Settings;
+using Settings = FK.Tulip.Core.Settings;
 
-namespace Tulip.UI
+namespace FK.Tulip.UI
 {
     public delegate void MenuToggleEvent(bool visible);
 

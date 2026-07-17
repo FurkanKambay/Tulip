@@ -1,10 +1,10 @@
+using FK.Common;
+using FK.Tulip.Combat;
 using FMOD.Studio;
 using FMODUnity;
-using Furkan.Common;
-using Tulip.Combat;
 using UnityEngine;
 
-namespace Tulip.Audio
+namespace FK.Tulip.Audio
 {
     public class HealthAudio : MonoBehaviour
     {

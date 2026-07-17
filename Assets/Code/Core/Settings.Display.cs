@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Furkan.Common.Extensions;
+using FK.Common.Extensions;
 using Unity.Properties;
 using UnityEngine;
 
-namespace Tulip.Core
+namespace FK.Tulip.Core
 {
     public partial class Settings
     {

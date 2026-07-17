@@ -1,9 +1,9 @@
 using System;
-using Furkan.Common;
-using Tulip.Data.GameEvents;
+using FK.Common;
+using FK.Tulip.Data.GameEvents;
 using UnityEngine;
 
-namespace Tulip.Core
+namespace FK.Tulip.Core
 {
     public class ReactToGameState : MonoBehaviour
     {

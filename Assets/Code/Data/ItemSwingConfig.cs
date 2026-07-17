@@ -1,10 +1,10 @@
 using System.Linq;
-using Furkan.Common;
-using Tulip.Data.Items;
+using FK.Common;
+using FK.Tulip.Data.Items;
 using UnityEngine;
 using Vertx.Attributes;
 
-namespace Tulip.Data
+namespace FK.Tulip.Data
 {
     [CreateAssetMenu(menuName = "Gameplay/Item Swing Config")]
     public class ItemSwingConfig : ScriptableObject

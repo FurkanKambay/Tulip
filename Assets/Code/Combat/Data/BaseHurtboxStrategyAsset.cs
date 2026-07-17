@@ -1,7 +1,7 @@
-using Tulip.Data.Items;
+using FK.Tulip.Data.Items;
 using UnityEngine;
 
-namespace Tulip.Combat.Data
+namespace FK.Tulip.Combat.Data
 {
     public interface IHurtboxStrategy
     {

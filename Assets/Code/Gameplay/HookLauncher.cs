@@ -1,9 +1,9 @@
-using Furkan.Common;
-using Tulip.Data.Items;
-using Tulip.Input;
+using FK.Common;
+using FK.Tulip.Data.Items;
+using FK.Tulip.Input;
 using UnityEngine;
 
-namespace Tulip.Gameplay
+namespace FK.Tulip.Gameplay
 {
     public enum HookState
     {

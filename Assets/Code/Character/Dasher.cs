@@ -1,9 +1,9 @@
 using System;
-using Furkan.Common;
-using Tulip.Input;
+using FK.Common;
+using FK.Tulip.Input;
 using UnityEngine;
 
-namespace Tulip.Character
+namespace FK.Tulip.Character
 {
     public class Dasher : MonoBehaviour
     {

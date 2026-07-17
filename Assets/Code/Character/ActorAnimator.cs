@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Tulip.Character
+namespace FK.Tulip.Character
 {
     public class ActorAnimator : CharacterAnimator
     {

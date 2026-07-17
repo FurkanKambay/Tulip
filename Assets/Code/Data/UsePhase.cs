@@ -1,8 +1,8 @@
 using System;
-using Furkan.Common;
+using FK.Common;
 using UnityEngine;
 
-namespace Tulip.Data
+namespace FK.Tulip.Data
 {
     [Serializable]
     public struct UsePhase

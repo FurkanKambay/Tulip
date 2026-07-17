@@ -1,11 +1,11 @@
 using System.Linq;
-using Furkan.Common;
-using Tulip.Data.Items;
-using Tulip.GameWorld;
+using FK.Common;
+using FK.Tulip.Data.Items;
+using FK.Tulip.GameWorld;
 using UnityEngine;
 using Vertx.Attributes;
 
-namespace Tulip.Data
+namespace FK.Tulip.Data
 {
     [CreateAssetMenu(menuName = "Gameplay/Spawn Condition")]
     public class SpawnConditionAsset : ScriptableObject

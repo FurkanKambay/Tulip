@@ -1,8 +1,8 @@
-using Furkan.Common;
-using Tulip.Combat;
+using FK.Common;
+using FK.Tulip.Combat;
 using UnityEngine;
 
-namespace Tulip.UI
+namespace FK.Tulip.UI
 {
     public sealed class HealthBarPresenter : MonoBehaviour
     {

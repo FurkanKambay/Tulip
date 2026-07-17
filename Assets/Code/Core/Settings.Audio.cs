@@ -2,7 +2,7 @@ using System;
 using Unity.Properties;
 using UnityEngine;
 
-namespace Tulip.Core
+namespace FK.Tulip.Core
 {
     public partial class Settings
     {

@@ -1,9 +1,9 @@
-using Furkan.Common;
-using Tulip.Data.Items;
-using Tulip.GameWorld;
+using FK.Common;
+using FK.Tulip.Data.Items;
+using FK.Tulip.GameWorld;
 using UnityEngine;
 
-namespace Tulip.Data
+namespace FK.Tulip.Data
 {
     [CreateAssetMenu(menuName = "Gameplay/Entity")]
     public class EntityAsset : ScriptableObject

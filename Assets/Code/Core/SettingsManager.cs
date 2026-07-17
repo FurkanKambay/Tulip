@@ -1,9 +1,9 @@
 using System;
 using System.IO;
-using Furkan.Common;
+using FK.Common;
 using UnityEngine;
 
-namespace Tulip.Core
+namespace FK.Tulip.Core
 {
     public sealed class SettingsManager : MonoBehaviour
     {

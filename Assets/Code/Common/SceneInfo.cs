@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
 
-namespace Furkan.Common
+namespace FK.Common
 {
     [Serializable, PublicAPI]
     public class SceneInfo

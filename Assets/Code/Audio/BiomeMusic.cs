@@ -2,7 +2,7 @@ using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
 
-namespace Tulip.Audio
+namespace FK.Tulip.Audio
 {
     public class BiomeMusic : MonoBehaviour
     {

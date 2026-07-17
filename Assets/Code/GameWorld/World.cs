@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 using System.Linq;
-using Furkan.Common;
-using Tulip.Character;
-using Tulip.Data;
-using Tulip.Data.Items;
-using Tulip.Data.Tiles;
+using FK.Common;
+using FK.Tulip.Character;
+using FK.Tulip.Data;
+using FK.Tulip.Data.Items;
+using FK.Tulip.Data.Tiles;
 using UnityEngine;
 
-namespace Tulip.GameWorld
+namespace FK.Tulip.GameWorld
 {
     public class World : MonoBehaviour
     {

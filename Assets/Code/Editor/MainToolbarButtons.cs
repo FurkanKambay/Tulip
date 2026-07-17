@@ -6,7 +6,7 @@ using UnityEditor.Toolbars;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Tulip.Editor
+namespace FK.Tulip.Editor
 {
     [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
     public static class MainToolbarButtons

@@ -1,7 +1,7 @@
-using Tulip.Combat;
+using FK.Tulip.Combat;
 using UnityEngine;
 
-namespace Tulip.Data.Items
+namespace FK.Tulip.Data.Items
 {
     [CreateAssetMenu(menuName = "Items/Weapon", order = 3)]
     public class WeaponAsset : UsableAsset

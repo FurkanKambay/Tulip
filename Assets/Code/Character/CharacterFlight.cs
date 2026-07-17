@@ -1,9 +1,9 @@
-using Furkan.Common;
-using Tulip.Data.Gameplay;
-using Tulip.Input;
+using FK.Common;
+using FK.Tulip.Data.Gameplay;
+using FK.Tulip.Input;
 using UnityEngine;
 
-namespace Tulip.Character
+namespace FK.Tulip.Character
 {
     public class CharacterFlight : MonoBehaviour
     {

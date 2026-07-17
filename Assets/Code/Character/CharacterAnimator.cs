@@ -1,7 +1,7 @@
-using Tulip.Combat;
+using FK.Tulip.Combat;
 using UnityEngine;
 
-namespace Tulip.Character
+namespace FK.Tulip.Character
 {
     public class CharacterAnimator : MonoBehaviour
     {

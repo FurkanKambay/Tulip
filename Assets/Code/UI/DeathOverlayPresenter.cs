@@ -1,11 +1,11 @@
-using Furkan.Common;
-using Tulip.Character;
-using Tulip.Combat;
+using FK.Common;
+using FK.Tulip.Character;
+using FK.Tulip.Combat;
 using Unity.Properties;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Tulip.UI
+namespace FK.Tulip.UI
 {
     public sealed class DeathOverlayPresenter : MonoBehaviour
     {

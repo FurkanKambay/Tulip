@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Tulip.Combat
+namespace FK.Tulip.Combat
 {
     public enum DamageType
     {

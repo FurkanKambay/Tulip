@@ -1,10 +1,10 @@
 using System;
-using Tulip.Data;
-using Tulip.Data.Tiles;
+using FK.Tulip.Data;
+using FK.Tulip.Data.Tiles;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace Tulip.GameWorld
+namespace FK.Tulip.GameWorld
 {
     public sealed class WorldVisual : MonoBehaviour
     {

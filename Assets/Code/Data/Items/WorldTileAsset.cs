@@ -1,7 +1,7 @@
-using Furkan.Common;
+using FK.Common;
 using UnityEngine;
 
-namespace Tulip.Data.Items
+namespace FK.Tulip.Data.Items
 {
     [CreateAssetMenu(menuName = "World Tile", order = 1)]
     public class WorldTileAsset : ScriptableObject

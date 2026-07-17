@@ -1,9 +1,9 @@
 using System.Collections;
-using Furkan.Common;
-using Tulip.Combat;
+using FK.Common;
+using FK.Tulip.Combat;
 using UnityEngine;
 
-namespace Tulip.Character
+namespace FK.Tulip.Character
 {
     public class CharacterHealthEffects : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Tulip.Data.Items
+namespace FK.Tulip.Data.Items
 {
     [CreateAssetMenu(menuName = "Items/Hook", order = 3)]
     public class HookAsset : UsableAsset

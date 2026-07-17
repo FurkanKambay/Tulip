@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Tulip.Combat.Data
+namespace FK.Tulip.Combat.Data
 {
     [CreateAssetMenu(fileName = "Weapon Wielder Config", menuName = "Config/WeaponWielder", order = 0)]
     public class WeaponWielderConfigAsset : ScriptableObject

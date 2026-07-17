@@ -1,7 +1,7 @@
-using Furkan.Common;
+using FK.Common;
 using UnityEngine;
 
-namespace Tulip.Data.Items
+namespace FK.Tulip.Data.Items
 {
     /// <summary>
     /// A basic item that can be used.

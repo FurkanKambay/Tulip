@@ -1,7 +1,7 @@
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace Tulip.Data.Sets
+namespace FK.Tulip.Data.Sets
 {
     public abstract class DataSet<T> : ScriptableObject where T : Object
     {

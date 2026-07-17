@@ -1,8 +1,8 @@
-using Tulip.Combat.Data;
-using Tulip.Data.Items;
+using FK.Tulip.Combat.Data;
+using FK.Tulip.Data.Items;
 using UnityEngine;
 
-namespace Tulip.Combat
+namespace FK.Tulip.Combat
 {
     public class Hurtbox : MonoBehaviour
     {

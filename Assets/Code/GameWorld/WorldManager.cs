@@ -1,8 +1,8 @@
-using Furkan.Common;
-using Tulip.Core;
+using FK.Common;
+using FK.Tulip.Core;
 using UnityEngine;
 
-namespace Tulip.GameWorld
+namespace FK.Tulip.GameWorld
 {
     /// <summary>
     /// Handles game flow events like starting a new game, continuing from a save, and quitting.

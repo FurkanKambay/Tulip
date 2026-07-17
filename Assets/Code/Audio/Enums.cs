@@ -1,4 +1,4 @@
-namespace Tulip.Audio
+namespace FK.Tulip.Audio
 {
     /// FMOD parameter
     internal enum LifeState

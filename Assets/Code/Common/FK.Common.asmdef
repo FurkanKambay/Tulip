@@ -1,6 +1,6 @@
 {
-    "name": "Furkan.Common",
-    "rootNamespace": "Furkan",
+    "name": "FK.Common",
+    "rootNamespace": "FK",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

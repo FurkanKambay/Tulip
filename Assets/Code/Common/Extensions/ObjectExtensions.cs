@@ -2,7 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Furkan.Common.Extensions
+namespace FK.Common.Extensions
 {
     [PublicAPI]
     public static class ObjectExtensions

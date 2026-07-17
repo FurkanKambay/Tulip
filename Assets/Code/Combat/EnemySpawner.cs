@@ -1,14 +1,14 @@
 using System.Collections.Generic;
 using System.Linq;
-using Furkan.Common;
-using Tulip.Character;
-using Tulip.Data;
-using Tulip.Data.Sets;
-using Tulip.GameWorld;
+using FK.Common;
+using FK.Tulip.Character;
+using FK.Tulip.Data;
+using FK.Tulip.Data.Sets;
+using FK.Tulip.GameWorld;
 using UnityEditor;
 using UnityEngine;
 
-namespace Tulip.Combat
+namespace FK.Tulip.Combat
 {
     public class EnemySpawner : MonoBehaviour
     {

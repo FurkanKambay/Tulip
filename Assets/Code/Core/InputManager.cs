@@ -1,8 +1,8 @@
-using Furkan.Common;
+using FK.Common;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Tulip.Core
+namespace FK.Tulip.Core
 {
     public sealed class InputManager : MonoBehaviour
     {

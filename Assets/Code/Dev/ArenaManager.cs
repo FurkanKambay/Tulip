@@ -1,10 +1,10 @@
-using Furkan.Common.Extensions;
-using Tulip.Data;
-using Tulip.Data.Sets;
+using FK.Common.Extensions;
+using FK.Tulip.Data;
+using FK.Tulip.Data.Sets;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Tulip.Dev
+namespace FK.Tulip.Dev
 {
     /// <summary>
     /// Shift + Q-E: switch entity

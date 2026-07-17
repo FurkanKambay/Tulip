@@ -1,9 +1,9 @@
+using FK.Tulip.Data.Items;
 using JetBrains.Annotations;
-using Tulip.Data.Items;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace Tulip.Data.Tiles
+namespace FK.Tulip.Data.Tiles
 {
     [CreateAssetMenu(menuName = "Tiles/Rule Tile")]
     public sealed class CustomRuleTileAsset : RuleTile<CustomRuleTileAsset.Neighbor>

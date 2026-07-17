@@ -1,11 +1,11 @@
 using System;
-using Furkan.Common;
-using Tulip.Combat;
-using Tulip.Data;
-using Tulip.GameWorld;
+using FK.Common;
+using FK.Tulip.Combat;
+using FK.Tulip.Data;
+using FK.Tulip.GameWorld;
 using UnityEngine;
 
-namespace Tulip.Character
+namespace FK.Tulip.Character
 {
     public class TangibleEntity : MonoBehaviour
     {

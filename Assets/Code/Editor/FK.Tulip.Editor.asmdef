@@ -1,6 +1,6 @@
 {
-    "name": "Tulip.Editor",
-    "rootNamespace": "Tulip",
+    "name": "FK.Tulip.Editor",
+    "rootNamespace": "FK.Tulip",
     "references": [
         "GUID:ade22e0cbd0966a43aa01ef49b183800",
         "GUID:22d33592c0f45ed478791196a06db1d4"

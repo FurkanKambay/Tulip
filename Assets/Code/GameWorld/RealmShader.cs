@@ -1,8 +1,8 @@
-using Furkan.Common;
+using FK.Common;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace Tulip.GameWorld
+namespace FK.Tulip.GameWorld
 {
     public class RealmShader : MonoBehaviour
     {

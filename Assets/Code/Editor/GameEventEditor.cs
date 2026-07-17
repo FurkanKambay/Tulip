@@ -1,8 +1,8 @@
-using Furkan.Common;
+using FK.Common;
 using UnityEditor;
 using UnityEngine;
 
-namespace Tulip.Editor
+namespace FK.Tulip.Editor
 {
     [CanEditMultipleObjects]
     [CustomEditor(typeof(GameEvent), editorForChildClasses: true)]

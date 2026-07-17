@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Tulip.Editor
+namespace FK.Tulip.Editor
 {
     public sealed class AssetReserializeHelper : MonoBehaviour
     {

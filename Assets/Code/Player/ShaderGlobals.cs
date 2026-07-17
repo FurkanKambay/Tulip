@@ -1,7 +1,7 @@
-using Tulip.Combat;
+using FK.Tulip.Combat;
 using UnityEngine;
 
-namespace Tulip.Player
+namespace FK.Tulip.Player
 {
     [ExecuteAlways]
     public class ShaderGlobals : MonoBehaviour

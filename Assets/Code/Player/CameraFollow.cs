@@ -1,11 +1,11 @@
 using System;
-using Furkan.Common;
-using Furkan.Common.Extensions;
-using Tulip.Data;
+using FK.Common;
+using FK.Common.Extensions;
+using FK.Tulip.Data;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Tulip.Player
+namespace FK.Tulip.Player
 {
     public sealed class CameraFollow : MonoBehaviour
     {

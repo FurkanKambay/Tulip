@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Tulip.Input
+namespace FK.Tulip.Input
 {
     public class UserBrain : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 {
-    "name": "Tulip",
-    "rootNamespace": "Tulip",
+    "name": "FK.Tulip",
+    "rootNamespace": "FK.Tulip",
     "references": [
         "GUID:ade22e0cbd0966a43aa01ef49b183800",
         "GUID:613783dc1674e844b87788ea74ede0f6",

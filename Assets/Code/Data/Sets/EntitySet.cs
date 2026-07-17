@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Tulip.Data.Sets
+namespace FK.Tulip.Data.Sets
 {
     [CreateAssetMenu(menuName = "Sets/Entity Set")]
     public class EntitySet : DataSet<EntityAsset>

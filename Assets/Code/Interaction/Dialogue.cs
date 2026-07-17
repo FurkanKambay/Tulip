@@ -1,7 +1,7 @@
-using Furkan.Common;
+using FK.Common;
 using UnityEngine;
 
-namespace Tulip.Interaction
+namespace FK.Tulip.Interaction
 {
     public class Dialogue : MonoBehaviour
     {

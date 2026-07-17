@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using Furkan.Common;
-using Furkan.Common.Extensions;
-using Tulip.Data.Items;
+using FK.Common;
+using FK.Common.Extensions;
+using FK.Tulip.Data.Items;
 using UnityEngine;
 
-namespace Tulip.Combat
+namespace FK.Tulip.Combat
 {
     public sealed class Projectile : MonoBehaviour
     {

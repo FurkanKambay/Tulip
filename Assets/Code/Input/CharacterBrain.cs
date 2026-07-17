@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Tulip.Input
+namespace FK.Tulip.Input
 {
     [DefaultExecutionOrder(-10)]
     public abstract class CharacterBrain : MonoBehaviour

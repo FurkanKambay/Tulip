@@ -1,8 +1,8 @@
-using Furkan.Common.Extensions;
-using Tulip.Character;
+using FK.Common.Extensions;
+using FK.Tulip.Character;
 using UnityEngine;
 
-namespace Tulip.Combat
+namespace FK.Tulip.Combat
 {
     public enum DamageResult
     {

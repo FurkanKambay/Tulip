@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace Furkan.Common
+namespace FK.Common
 {
     public interface IGameEvent
     {

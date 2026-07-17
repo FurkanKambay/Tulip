@@ -1,4 +1,4 @@
-namespace Tulip.Data
+namespace FK.Tulip.Data
 {
     /// FMOD parameter for footsteps
     public enum GroundMaterial

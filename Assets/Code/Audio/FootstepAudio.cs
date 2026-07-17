@@ -1,9 +1,9 @@
+using FK.Tulip.Character;
 using FMOD.Studio;
 using FMODUnity;
-using Tulip.Character;
 using UnityEngine;
 
-namespace Tulip.Audio
+namespace FK.Tulip.Audio
 {
     public class FootstepAudio : MonoBehaviour
     {

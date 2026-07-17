@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Tulip.Data.Items
+namespace FK.Tulip.Data.Items
 {
     /// <summary>
     /// A base item.

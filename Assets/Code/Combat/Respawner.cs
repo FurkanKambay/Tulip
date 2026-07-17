@@ -1,9 +1,9 @@
-using Furkan.Common;
-using Tulip.Character;
-using Tulip.GameWorld;
+using FK.Common;
+using FK.Tulip.Character;
+using FK.Tulip.GameWorld;
 using UnityEngine;
 
-namespace Tulip.Combat
+namespace FK.Tulip.Combat
 {
     public class Respawner : MonoBehaviour
     {

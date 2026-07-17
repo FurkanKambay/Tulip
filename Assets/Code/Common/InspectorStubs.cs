@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics;
 using UnityEngine;
 
-namespace Furkan.Common
+namespace FK.Common
 {
     [Conditional("UNITY_EDITOR")]
     public class RequiredAttribute : PropertyAttribute

@@ -1,9 +1,9 @@
+using FK.Tulip.Data.Items;
+using FK.Tulip.Gameplay;
 using FMODUnity;
-using Tulip.Data.Items;
-using Tulip.Gameplay;
 using UnityEngine;
 
-namespace Tulip.Audio
+namespace FK.Tulip.Audio
 {
     public class WielderAudio : MonoBehaviour
     {

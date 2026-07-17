@@ -1,12 +1,12 @@
 using System.Collections.Generic;
-using Furkan.Common;
-using Furkan.Common.Extensions;
-using Tulip.Combat.Data;
-using Tulip.Data.Items;
-using Tulip.Gameplay;
+using FK.Common;
+using FK.Common.Extensions;
+using FK.Tulip.Combat.Data;
+using FK.Tulip.Data.Items;
+using FK.Tulip.Gameplay;
 using UnityEngine;
 
-namespace Tulip.Combat
+namespace FK.Tulip.Combat
 {
     public sealed class WeaponWielder : MonoBehaviour
     {

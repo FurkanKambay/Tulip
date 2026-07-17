@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEditor.SceneManagement;
 
-namespace Tulip.Editor
+namespace FK.Tulip.Editor
 {
     [InitializeOnLoad]
     internal class UnityEditorSceneManager

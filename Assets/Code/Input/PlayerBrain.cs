@@ -1,10 +1,10 @@
 using System;
-using Furkan.Common;
-using Tulip.Combat;
+using FK.Common;
+using FK.Tulip.Combat;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Tulip.Input
+namespace FK.Tulip.Input
 {
     [DefaultExecutionOrder(-10)]
     public sealed class PlayerBrain : CharacterBrain

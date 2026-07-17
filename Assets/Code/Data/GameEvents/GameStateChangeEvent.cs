@@ -1,8 +1,8 @@
-using Furkan.Common;
-using Tulip.Core;
+using FK.Common;
+using FK.Tulip.Core;
 using UnityEngine;
 
-namespace Tulip.Data.GameEvents
+namespace FK.Tulip.Data.GameEvents
 {
     [CreateAssetMenu(menuName = "Game Events/Game State Change")]
     public sealed class GameStateChangeEvent : GameEvent<GameStateChange>

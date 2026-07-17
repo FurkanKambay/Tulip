@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Tulip.Data.Items
+namespace FK.Tulip.Data.Items
 {
     [Serializable]
     public struct ThrowableConfig

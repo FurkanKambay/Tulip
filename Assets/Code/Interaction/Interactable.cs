@@ -1,9 +1,9 @@
 using System;
-using Furkan.Common;
+using FK.Common;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Tulip.Interaction
+namespace FK.Tulip.Interaction
 {
     [RequireComponent(typeof(BoxCollider2D))]
     public class Interactable : MonoBehaviour

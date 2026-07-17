@@ -1,7 +1,7 @@
-using Tulip.Data.Items;
+using FK.Tulip.Data.Items;
 using UnityEngine;
 
-namespace Tulip.Combat.Data
+namespace FK.Tulip.Combat.Data
 {
     [CreateAssetMenu(fileName = "Ignore Hurtbox Strategy", menuName = "Strategy/Hurtbox/Ignore", order = 0)]
     public class IgnoreHurtboxStrategyAsset : BaseHurtboxStrategyAsset

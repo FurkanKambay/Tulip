@@ -1,9 +1,9 @@
 using System.Linq;
-using Furkan.Common;
+using FK.Common;
 using UnityEngine;
 using Vertx.Attributes;
 
-namespace Tulip.Data.Items
+namespace FK.Tulip.Data.Items
 {
     [CreateAssetMenu(menuName = "Items/Ore", order = 1)]
     public class OreAsset : ItemAsset

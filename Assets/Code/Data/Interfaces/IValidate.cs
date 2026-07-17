@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Tulip.Data
+namespace FK.Tulip.Data
 {
     public interface IValidate : ISerializationCallbackReceiver
     {

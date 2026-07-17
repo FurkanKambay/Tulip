@@ -1,14 +1,14 @@
 using System;
-using Furkan.Common;
-using Furkan.Common.Extensions;
-using Tulip.Combat;
-using Tulip.Core;
-using Tulip.Data;
-using Tulip.Data.Items;
-using Tulip.Input;
+using FK.Common;
+using FK.Common.Extensions;
+using FK.Tulip.Combat;
+using FK.Tulip.Core;
+using FK.Tulip.Data;
+using FK.Tulip.Data.Items;
+using FK.Tulip.Input;
 using UnityEngine;
 
-namespace Tulip.Gameplay
+namespace FK.Tulip.Gameplay
 {
     public sealed class ItemWielder : MonoBehaviour
     {

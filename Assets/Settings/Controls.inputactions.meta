@@ -11,4 +11,4 @@ ScriptedImporter:
   generateWrapperCode: 1
   wrapperCodePath: Assets/Code/Input/Controls.g.cs
   wrapperClassName: 
-  wrapperCodeNamespace: Tulip.Input
+  wrapperCodeNamespace: FK.Tulip.Input

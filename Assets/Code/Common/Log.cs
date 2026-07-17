@@ -3,7 +3,7 @@ using JetBrains.Annotations;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
-namespace Furkan.Common
+namespace FK.Common
 {
     [PublicAPI]
     public static class Log
