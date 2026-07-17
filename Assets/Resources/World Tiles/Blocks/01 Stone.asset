@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec2778eec103403f8cae777705b279c9, type: 3}
   m_Name: 01 Stone
-  m_EditorClassIdentifier: Tulip.Data.Items.WorldTileAsset, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Data.Items.WorldTileAsset
   tileIndex: 1
   tileType: 1
   material: 5

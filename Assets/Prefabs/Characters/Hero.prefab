@@ -43,7 +43,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34fe02ae195a4934ab403049c6892884, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Input.PlayerBrain, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Input.PlayerBrain
   health: {fileID: 2535590440556967087}
   point: {fileID: 2247111929073154336, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
   move: {fileID: -3389890875533128060, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb8813c9be3f42188c20f5900cc78793, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Gameplay.HookLauncher, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Gameplay.HookLauncher
   wielderBrain: {fileID: 3859557317723880189}
   jumperBrain: {fileID: 3859557317723880189}
   body: {fileID: 2911555634556418871}
@@ -452,7 +452,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 992d83c1bd31b8b41aec2663aa6ead9d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Combat.Health, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Combat.Health
 --- !u!50 &2911555634556418871 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 7560684870690709998, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
@@ -478,4 +478,4 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba683a666f49426ab800278e48260196, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Character.CharacterMovement, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Character.CharacterMovement

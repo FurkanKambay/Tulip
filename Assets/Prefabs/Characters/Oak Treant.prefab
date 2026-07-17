@@ -227,7 +227,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b324a67502194656b9a9e6e8f4578cbb, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Character.CharacterHealthEffects, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Character.CharacterHealthEffects
   health: {fileID: 5823316243804091760}
   sprite: {fileID: 3170867836500467685}
   destroyAfterDeath: 1
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 221a2bf0379152f4b81a63414840b5da, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Gameplay.ItemWielder, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Gameplay.ItemWielder
   brain: {fileID: 9132726976015814750}
   health: {fileID: 5823316243804091760}
   itemRenderer: {fileID: 8611038024772751417}
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be49605a98e97be4f8107b2403c172b5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Combat.WeaponWielder, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Combat.WeaponWielder
   config: {fileID: 11400000, guid: 9c9745509d6f8c04d98ae9337fb716d9, type: 2}
   health: {fileID: 5823316243804091760}
   itemWielder: {fileID: 7936016944497831700}
@@ -451,7 +451,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 97ae4b113e06417a8c773916e3ceea25, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Combat.Hurtbox, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Combat.Hurtbox
   owner: {fileID: 5823316243804091760}
   strategyAsset: {fileID: 11400000, guid: 7a34eb03480108c43bdeff31ec837a7f, type: 2}
 --- !u!1 &4352453585227860419
@@ -552,7 +552,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d8751be9d454ae89b969c632e660570, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Character.TangibleEntity, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Character.TangibleEntity
   world: {fileID: 0}
   entityAsset: {fileID: 11400000, guid: 1e5bd5effab3b2740b7c6c803f6cf4d9, type: 2}
   body: {fileID: 0}
@@ -601,7 +601,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5879189f2c9140488ca0ab4d017486e6, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Audio.HealthAudio, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Audio.HealthAudio
   health: {fileID: 5823316243804091760}
   hurtEvent:
     Guid:
@@ -621,7 +621,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42c4603604fd42608b358258f353d561, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Audio.WielderAudio, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Audio.WielderAudio
   itemWielder: {fileID: 7936016944497831700}
   itemSwingEvent:
     Guid:
@@ -674,7 +674,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 992d83c1bd31b8b41aec2663aa6ead9d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Combat.Health, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Combat.Health
   entity: {fileID: 7564833111998869751}
   maxHealth: 200
   currentHealth: 200
@@ -690,7 +690,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79dfb4601184a65a64c065451e86ac9, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Combat.StatusEffector, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Combat.StatusEffector
   health: {fileID: 5823316243804091760}
   startingEffects: []
 --- !u!1 &8201638215132641927
@@ -736,6 +736,6 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd9a8abc893f4c91aa0197dc8e0a84fd, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.AI.TreantAI, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.AI.TreantAI
   health: {fileID: 5823316243804091760}
   attackDistance: {x: 3, y: 3}

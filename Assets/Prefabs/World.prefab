@@ -265014,7 +265014,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2578b4d5d1c444c3b7c7c3b109fad6dc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.GameWorld.World, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.GameWorld.World
   worldVisual: {fileID: 7871052133264414492}
   entityLayers:
     serializedVersion: 2
@@ -265042,7 +265042,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7976632969546bf4497b5793c3b65308, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.GameWorld.RealmShader, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.GameWorld.RealmShader
   wallTilemap: {fileID: 5845438308458272173}
   blockTilemap: {fileID: 1688290430298057024}
 --- !u!114 &7871052133264414492
@@ -265056,7 +265056,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dc9496ab753459dac872c3b7fab367d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.GameWorld.WorldVisual, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.GameWorld.WorldVisual
   wallTilemap: {fileID: 5845438308458272173}
   blockTilemap: {fileID: 1688290430298057024}
 --- !u!1 &3385576240236153630

@@ -194,7 +194,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5e4905103a599f49b955ac3e4d0e124, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Audio.BiomeMusic, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Audio.BiomeMusic
   biomeMusicEvent:
     Guid:
       Data1: 344978999
@@ -273,7 +273,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2578b4d5d1c444c3b7c7c3b109fad6dc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.GameWorld.World, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.GameWorld.World
 --- !u!1 &440009062
 GameObject:
   m_ObjectHideFlags: 0
@@ -5329,7 +5329,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fdfdff2c1ac25943b5f45bf68fb38e4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Player.CameraFollow, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Player.CameraFollow
   trackingConfig:
     <Offset>k__BackingField: {x: 0, y: 1.45}
     <Speed>k__BackingField: {x: 4, y: 4}
@@ -5446,7 +5446,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 800c452c5a3ea0340890ace7c2fc48ec, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.UI.DeathOverlayPresenter, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.UI.DeathOverlayPresenter
   panelRenderer: {fileID: 1406129970}
   health: {fileID: 0}
   respawner: {fileID: 0}
@@ -5751,7 +5751,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b3a9022be2a50f42b0352cbd5f641b9, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Combat.EnemySpawner, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Combat.EnemySpawner
   world: {fileID: 414399566}
   spawnParent: {fileID: 1985613754}
   maxSpawns: 10
@@ -5934,7 +5934,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 282238c99bbde46429cdcd8be7a89bd3, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Player.ShaderGlobals, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Player.ShaderGlobals
   player: {fileID: 0}
 --- !u!1 &1901863206
 GameObject:
@@ -5980,7 +5980,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31fc48186b95459c87072ca016a288ea, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip::Tulip.GameWorld.LevelManager
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.GameWorld.LevelManager
   heroAsset: {fileID: 11400000, guid: 61f78ba64e5ba3c4895af881afac13bc, type: 2}
   spawnParent: {fileID: 1985613754}
   spawnLocation: {fileID: 1765503961}
@@ -6031,7 +6031,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad3c18e30ef84dc68cc50d8c25c72dc8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Combat.ProjectileManager, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Combat.ProjectileManager
   projectilePrefab: {fileID: 7736458285276045630, guid: 59befd437b1e2c74d99202328ba7b7e3, type: 3}
   projectileParent: {fileID: 337397489}
   contactFilter:

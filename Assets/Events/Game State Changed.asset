@@ -11,6 +11,6 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 229a587dcceb49e2975289e321f97616, type: 3}
   m_Name: Game State Changed
-  m_EditorClassIdentifier: Tulip.Data.GameEvents.GameStateChangeEvent, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Data.GameEvents.GameStateChangeEvent
   logInvocations: 1
   documentation: 

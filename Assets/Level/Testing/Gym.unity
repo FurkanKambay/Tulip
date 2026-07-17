@@ -147,7 +147,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c51ea84157844a6399727bdd0447085d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Core.InputManager, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Core.InputManager
   inputActionAsset: {fileID: -944628639613478452, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
 --- !u!4 &245516617
 Transform:
@@ -305,7 +305,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fdfdff2c1ac25943b5f45bf68fb38e4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Player.CameraFollow, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Player.CameraFollow
   trackingConfig:
     <Offset>k__BackingField: {x: 0, y: 1.45}
     <Speed>k__BackingField: {x: 4, y: 4}

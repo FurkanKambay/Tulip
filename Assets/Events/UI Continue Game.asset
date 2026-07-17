@@ -11,6 +11,6 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6fe98f113ce482a829aec113209eaf6, type: 3}
   m_Name: UI Continue Game
-  m_EditorClassIdentifier: Furkan.Common.GameEvent, Furkan.Common
+  m_EditorClassIdentifier: FK.Common::FK.Common.GameEvent
   logInvocations: 1
   documentation: 

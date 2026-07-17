@@ -416,7 +416,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 193fad469729416eb7e63c5b90e2f3d8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Core.GameManager, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Core.GameManager
   gameStateChangeEvent: {fileID: 11400000, guid: e546a51b5a993714f94816c29b5538fa, type: 2}
   inputManager: {fileID: 1328625854}
   showSplashScreen: 0
@@ -432,7 +432,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c51ea84157844a6399727bdd0447085d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Core.InputManager, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Core.InputManager
   inputActionAsset: {fileID: -944628639613478452, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
 --- !u!1 &1724351827
 GameObject:
@@ -462,7 +462,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1561d88951db46078da9b6d7e39f7e8e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Core.SettingsManager, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Core.SettingsManager
   fileName: settings.json
 --- !u!4 &1724351829
 Transform:
@@ -523,7 +523,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d6d1e2a56c648e48c7e5ba48c5941a1, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Audio.AudioBusManager, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Audio.AudioBusManager
   gameStateChangeEvent: {fileID: 11400000, guid: e546a51b5a993714f94816c29b5538fa, type: 2}
   fmodStudioListener: {fileID: 1760523204}
 --- !u!114 &1760523204
@@ -583,7 +583,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6076eb0a70d4845a1e9dbd15b4fe694, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.GameWorld.WorldManager, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.GameWorld.WorldManager
   newGameEvent: {fileID: 11400000, guid: d0558c11f89cfdd4892ca7e60865b401, type: 2}
   continueGameEvent: {fileID: 11400000, guid: fba74fa8cf4b436429a5ce6fbe4f2365, type: 2}
   saveQuitEvent: {fileID: 11400000, guid: bfaf9c981cd952648a4499dcad8ab33c, type: 2}

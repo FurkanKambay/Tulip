@@ -43,7 +43,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c689342b75d2f343bfc0e8be572928a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Interaction.Dialogue, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Interaction.Dialogue
   interactable: {fileID: 6521979170810871481}
   greetingText: How's it hanging, adventurer? Have you found any treasures of immense
     measure?
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: faa247c75add54a428feb9cb3aabf26e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Interaction.Interactable, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Interaction.Interactable
   point: {fileID: 2247111929073154336, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
   interact: {fileID: 6504368502365493155, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
   trigger: {fileID: 7807869430247145521}

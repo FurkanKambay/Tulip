@@ -44,7 +44,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f158677ba23f1ae41860048a829c17bd, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Combat.Projectile, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Combat.Projectile
   gravityScale: 1
   obstacleLayers:
     serializedVersion: 2

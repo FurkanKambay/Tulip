@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bf3c3788f994c69b9d2a2f4431cb5dd, type: 3}
   m_Name: Spawn Pool - No Trees
-  m_EditorClassIdentifier: Tulip::Tulip.Data.Sets.EntitySet
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Data.Sets.EntitySet
   list:
   - {fileID: 11400000, guid: ea8750a0c949971459c7425c97b8a620, type: 2}
   - {fileID: 11400000, guid: 32ab3e30b94083045896d4e30229ea5b, type: 2}

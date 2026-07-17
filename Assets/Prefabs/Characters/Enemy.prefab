@@ -43,7 +43,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8a96e8e20d94ab2b04f029fd11b79e4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.AI.SimpleFollowerAI, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.AI.SimpleFollowerAI
   health: {fileID: 6279245220377711168}
   stopDistance: 1.8
   heightThresholdToJump: 1.8
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba683a666f49426ab800278e48260196, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Character.CharacterMovement, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Character.CharacterMovement
 --- !u!4 &5156362418471184274 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8291246366843984804, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
@@ -241,4 +241,4 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 992d83c1bd31b8b41aec2663aa6ead9d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Combat.Health, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Combat.Health

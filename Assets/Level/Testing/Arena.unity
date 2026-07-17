@@ -162,7 +162,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c51ea84157844a6399727bdd0447085d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Core.InputManager, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Core.InputManager
   inputActionAsset: {fileID: -944628639613478452, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
 --- !u!1 &145760825
 GameObject:
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f50f6bd3b6248a2a8e0f0a4e42166d5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip::Tulip.Dev.ArenaManager
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Dev.ArenaManager
   spawnParent: {fileID: 2030129042}
   spawnSet: {fileID: 11400000, guid: dfeaab23e3382bc4096de4c19314316c, type: 2}
   spawnedEntity: {fileID: 11400000, guid: ea8750a0c949971459c7425c97b8a620, type: 2}
@@ -564,7 +564,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fdfdff2c1ac25943b5f45bf68fb38e4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Player.CameraFollow, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Player.CameraFollow
   trackingConfig:
     <Offset>k__BackingField: {x: 0, y: 0}
     <Speed>k__BackingField: {x: 10, y: 10}
@@ -817,7 +817,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad3c18e30ef84dc68cc50d8c25c72dc8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Tulip.Combat.ProjectileManager, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Combat.ProjectileManager
   projectilePrefab: {fileID: 7736458285276045630, guid: 59befd437b1e2c74d99202328ba7b7e3, type: 3}
   projectileParent: {fileID: 1236241351}
   contactFilter:

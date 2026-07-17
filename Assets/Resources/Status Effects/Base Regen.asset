@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf6cf0d83b5247f8ae535cf989cb9798, type: 3}
   m_Name: Base Regen
-  m_EditorClassIdentifier: Tulip.Combat.StatusEffectAsset, Tulip
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Combat.StatusEffectAsset
   isPermanent: 1
   duration: 0
   amount: 2
