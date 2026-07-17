@@ -12,14 +12,14 @@ namespace FK.Tulip.Combat
         public float Rate => rate;
 
         [Header("Duration")]
-        [SerializeField] bool isPermanent;
+        [SerializeField] private bool isPermanent;
 
         [DisableIf(nameof(isPermanent))]
-        [SerializeField, Min(0)] float duration;
+        [SerializeField, Min(0)] private float duration;
 
         [Header("Rate")]
-        [SerializeField] float amount;
-        [SerializeField, Min(0.01f)] float rate;
+        [SerializeField] private float amount;
+        [SerializeField, Min(0.01f)] private float rate;
 
         public StatusEffect Create(Health source, Health target) => new(this, source, target);
 

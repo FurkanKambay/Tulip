@@ -13,16 +13,16 @@ namespace FK.Tulip.Input
         public override event Action OnJumpReleased;
 
         [Header("References")]
-        [SerializeField, Required] Health health;
+        [SerializeField, Required] private Health health;
 
         [Header("Input - Basic")]
-        [SerializeField, Required] InputActionReference point;
-        [SerializeField, Required] InputActionReference move;
-        [SerializeField, Required] InputActionReference jump;
-        [SerializeField, Required] InputActionReference dash;
-        [SerializeField, Required] InputActionReference use;
-        [SerializeField, Required] InputActionReference aim;
-        [SerializeField, Required] InputActionReference hook;
+        [SerializeField, Required] private InputActionReference point;
+        [SerializeField, Required] private InputActionReference move;
+        [SerializeField, Required] private InputActionReference jump;
+        [SerializeField, Required] private InputActionReference dash;
+        [SerializeField, Required] private InputActionReference use;
+        [SerializeField, Required] private InputActionReference aim;
+        [SerializeField, Required] private InputActionReference hook;
 
         public override Vector2 AimPointScreen { get; protected set; }
         public override Vector2? AimPosition { get; protected set; }

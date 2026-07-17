@@ -11,11 +11,11 @@ namespace FK.Tulip.Interaction
         public event Action OnInteract;
 
         [Header("Input")]
-        [SerializeField] InputActionReference point;
-        [SerializeField] InputActionReference interact;
+        [SerializeField] private InputActionReference point;
+        [SerializeField] private InputActionReference interact;
 
         [Header("References")]
-        [SerializeField] BoxCollider2D trigger;
+        [SerializeField] private BoxCollider2D trigger;
 
         private Camera mainCamera;
 

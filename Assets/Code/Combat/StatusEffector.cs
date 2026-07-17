@@ -6,10 +6,10 @@ namespace FK.Tulip.Combat
     public class StatusEffector : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField] Health health;
+        [SerializeField] private Health health;
 
         [Header("Config")]
-        [SerializeField] StatusEffectAsset[] startingEffects;
+        [SerializeField] private StatusEffectAsset[] startingEffects;
 
         // ReSharper disable once FieldCanBeMadeReadOnly.Local
         private List<StatusEffect> effects = new();

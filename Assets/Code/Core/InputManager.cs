@@ -6,7 +6,7 @@ namespace FK.Tulip.Core
 {
     public sealed class InputManager : MonoBehaviour
     {
-        [SerializeField, Required] InputActionAsset inputActionAsset;
+        [SerializeField, Required] private InputActionAsset inputActionAsset;
 
         private InputActionMap heroControls;
         private InputActionMap uiControls;

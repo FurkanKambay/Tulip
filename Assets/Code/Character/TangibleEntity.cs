@@ -10,12 +10,12 @@ namespace FK.Tulip.Character
     public class TangibleEntity : MonoBehaviour
     {
         [Header("Injectable State")]
-        [SerializeField] World world;
+        [SerializeField] private World world;
 
         [Header("References")]
-        [SerializeField, Required] EntityAsset entityAsset;
-        [SerializeField] Rigidbody2D body;
-        [SerializeField] Health health;
+        [SerializeField, Required] private EntityAsset entityAsset;
+        [SerializeField] private Rigidbody2D body;
+        [SerializeField] private Health health;
 
         public string Name => entityAsset.Name;
         public EntityAsset EntityAsset => entityAsset;

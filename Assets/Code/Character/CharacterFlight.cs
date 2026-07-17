@@ -8,10 +8,10 @@ namespace FK.Tulip.Character
     public class CharacterFlight : MonoBehaviour
     {
         [Header("Brain")]
-        [SerializeField, Required] CharacterBrain brain;
+        [SerializeField, Required] private CharacterBrain brain;
 
         [Header("References")]
-        [SerializeField, Required] Rigidbody2D body;
+        [SerializeField, Required] private Rigidbody2D body;
 
         [Header("Config")]
         public MovementConfig config;

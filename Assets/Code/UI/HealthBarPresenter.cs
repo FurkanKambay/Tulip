@@ -7,12 +7,12 @@ namespace FK.Tulip.UI
     public sealed class HealthBarPresenter : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField, Required] Health health;
-        [SerializeField, Required] SpriteRenderer healthBarSprite;
+        [SerializeField, Required] private Health health;
+        [SerializeField, Required] private SpriteRenderer healthBarSprite;
 
         [Header("Config")]
-        [SerializeField] float changeSpeed = 10f;
-        [SerializeField] bool showBar = true;
+        [SerializeField] private float changeSpeed = 10f;
+        [SerializeField] private bool showBar = true;
 
         private float targetValue;
 

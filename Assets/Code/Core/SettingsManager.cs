@@ -7,7 +7,7 @@ namespace FK.Tulip.Core
 {
     public sealed class SettingsManager : MonoBehaviour
     {
-        [SerializeField] string fileName = "settings.json";
+        [SerializeField] private string fileName = "settings.json";
 
         [ShowInInspector]
         private string FilePath => Path.Join(Application.persistentDataPath, fileName);

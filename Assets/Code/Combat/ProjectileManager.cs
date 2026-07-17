@@ -8,13 +8,13 @@ namespace FK.Tulip.Combat
     public sealed class ProjectileManager : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField] Projectile projectilePrefab;
-        [SerializeField] Transform projectileParent;
+        [SerializeField] private Projectile projectilePrefab;
+        [SerializeField] private Transform projectileParent;
 
         [Header("Config")]
-        [SerializeField] ContactFilter2D contactFilter;
-        [SerializeField] int initialPoolCapacity = 10;
-        [SerializeField] int maxPoolSize = 100;
+        [SerializeField] private ContactFilter2D contactFilter;
+        [SerializeField] private int initialPoolCapacity = 10;
+        [SerializeField] private int maxPoolSize = 100;
 
         private ObjectPool<Projectile> pool;
         private List<Projectile> allProjectiles;

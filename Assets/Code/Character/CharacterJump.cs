@@ -12,11 +12,11 @@ namespace FK.Tulip.Character
         public bool IsJumping { get; private set; }
 
         [Header("Brain")]
-        [SerializeField, Required] CharacterBrain brain;
+        [SerializeField, Required] private CharacterBrain brain;
 
         [Header("References")]
-        [SerializeField, Required] Rigidbody2D body;
-        [SerializeField, Required] SurroundsChecker surrounds;
+        [SerializeField, Required] private Rigidbody2D body;
+        [SerializeField, Required] private SurroundsChecker surrounds;
 
         [Header("Calculations")]
         private float jumpSpeed;

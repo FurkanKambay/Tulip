@@ -6,12 +6,12 @@ namespace FK.Tulip.Combat
     public class Knockbackable : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField, Required] Rigidbody2D body;
-        [SerializeField, Required] Health health;
+        [SerializeField, Required] private Rigidbody2D body;
+        [SerializeField, Required] private Health health;
 
         [Header("Config")]
-        [SerializeField] float hurtForceAmount;
-        [SerializeField] float deathForceAmount;
+        [SerializeField] private float hurtForceAmount;
+        [SerializeField] private float deathForceAmount;
 
         private void HandleHurt(CombatPacket combatPacket) =>
             ApplyKnockback(hurtForceAmount, combatPacket.SourcePosition);

@@ -9,17 +9,17 @@ namespace FK.Tulip.Character
     public class SurroundsChecker : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField, Required] Collider2D collider;
+        [SerializeField, Required] private Collider2D collider;
 
         [Header("Ground")]
-        [SerializeField] LayerMask groundLayer;
-        [SerializeField] float groundRange = .5f;
-        [SerializeField] float groundWidth = .5f;
+        [SerializeField] private LayerMask groundLayer;
+        [SerializeField] private float groundRange = .5f;
+        [SerializeField] private float groundWidth = .5f;
 
         [Header("Sides")]
-        [SerializeField] LayerMask sidesLayer;
-        [SerializeField] float sideRange = .5f;
-        [SerializeField] float sideHeight = .5f;
+        [SerializeField] private LayerMask sidesLayer;
+        [SerializeField] private float sideRange = .5f;
+        [SerializeField] private float sideHeight = .5f;
 
         public bool IsGrounded { get; private set; }
         public bool IsLeftBlocked { get; private set; }

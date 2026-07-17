@@ -26,12 +26,12 @@ namespace FK.Tulip.Combat
         public event ReviveEvent OnRevive;
 
         [Header("References")]
-        [SerializeField] TangibleEntity entity;
+        [SerializeField] private TangibleEntity entity;
 
         [Header("Config")]
-        [SerializeField, Min(0)] float maxHealth = 100f;
-        [SerializeField, Min(0)] float currentHealth = 100f;
-        [SerializeField, Min(0)] float invulnerabilityDuration;
+        [SerializeField, Min(0)] private float maxHealth = 100f;
+        [SerializeField, Min(0)] private float currentHealth = 100f;
+        [SerializeField, Min(0)] private float invulnerabilityDuration;
 
         public float CurrentHealth
         {

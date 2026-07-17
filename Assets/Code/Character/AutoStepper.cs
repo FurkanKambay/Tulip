@@ -9,20 +9,20 @@ namespace FK.Tulip.Character
     public class AutoStepper : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField, Required] TangibleEntity entity;
-        [SerializeField, Required] Rigidbody2D body;
-        [SerializeField, Required] CharacterMovement movement;
-        [SerializeField, Required] SurroundsChecker surrounds;
+        [SerializeField, Required] private TangibleEntity entity;
+        [SerializeField, Required] private Rigidbody2D body;
+        [SerializeField, Required] private CharacterMovement movement;
+        [SerializeField, Required] private SurroundsChecker surrounds;
 
         [Header("Step")]
-        [SerializeField] float stepHeight = 1f;
-        [SerializeField] float stepWidth;
-        [SerializeField] Vector2 stepSpeed = Vector2.one;
+        [SerializeField] private float stepHeight = 1f;
+        [SerializeField] private float stepWidth;
+        [SerializeField] private Vector2 stepSpeed = Vector2.one;
 
         [Header("Thresholds")]
-        [SerializeField] float velocityThreshold = .1f;
-        [SerializeField] float range = .5f;
-        [SerializeField] Vector3 offset = Vector3.up * .5f;
+        [SerializeField] private float velocityThreshold = .1f;
+        [SerializeField] private float range = .5f;
+        [SerializeField] private Vector3 offset = Vector3.up * .5f;
 
         private Vector2? targetPosition;
 

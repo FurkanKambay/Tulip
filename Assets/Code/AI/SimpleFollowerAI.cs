@@ -12,14 +12,14 @@ namespace FK.Tulip.AI
         public override event Action OnJumpReleased;
 
         [Header("References")]
-        [SerializeField, Required] Health health;
+        [SerializeField, Required] private Health health;
 
         [Header("Movement")]
-        [SerializeField] float stopDistance;
+        [SerializeField] private float stopDistance;
 
         [Header("Jump")]
-        [SerializeField] float heightThresholdToJump;
-        [SerializeField] float jumpCooldown;
+        [SerializeField] private float heightThresholdToJump;
+        [SerializeField] private float jumpCooldown;
 
         public override Vector2? AimPosition { get; protected set; }
         public override float HorizontalMovement { get; protected set; }

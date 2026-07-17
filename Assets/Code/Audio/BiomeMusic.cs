@@ -7,10 +7,10 @@ namespace FK.Tulip.Audio
     public class BiomeMusic : MonoBehaviour
     {
         [Header("FMOD Events")]
-        [SerializeField] EventReference biomeMusicEvent;
+        [SerializeField] private EventReference biomeMusicEvent;
 
         [Header("Config")]
-        [SerializeField] Biome startingBiome;
+        [SerializeField] private Biome startingBiome;
 
         private EventInstance musicInstance;
         private PARAMETER_DESCRIPTION paramBiome;

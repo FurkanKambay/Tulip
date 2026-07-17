@@ -10,10 +10,10 @@ namespace FK.Tulip.Player
     public sealed class CameraFollow : MonoBehaviour
     {
         [Header("Gameplay Config")]
-        [SerializeField] TrackingOptions trackingConfig;
+        [SerializeField] private TrackingOptions trackingConfig;
 
         [Header("Injectable State")]
-        [SerializeField, Required] Transform subject;
+        [SerializeField, Required] private Transform subject;
 
         private Camera camera;
 

@@ -5,9 +5,9 @@ namespace FK.Tulip.Input
 {
     public class UserBrain : MonoBehaviour
     {
-        [SerializeField] InputActionReference pause;
-        [SerializeField] InputActionReference cancel;
-        [SerializeField] InputActionReference switchTab;
+        [SerializeField] private InputActionReference pause;
+        [SerializeField] private InputActionReference cancel;
+        [SerializeField] private InputActionReference switchTab;
 
         public bool WantsToPause { get; private set; }
         public bool WantsToCancel { get; private set; }

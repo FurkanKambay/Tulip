@@ -18,20 +18,20 @@ namespace FK.Tulip.UI
         public event MenuToggleEvent OnToggled;
 
         [Header("Game Events")]
-        [SerializeField, Required] GameStateChangeEvent gameStateChangeEvent;
-        [SerializeField, Required] GameEvent saveQuitEvent;
+        [SerializeField, Required] private GameStateChangeEvent gameStateChangeEvent;
+        [SerializeField, Required] private GameEvent saveQuitEvent;
 
         [Header("References")]
-        [SerializeField, Required] UIDocument document;
-        [SerializeField, Required] UserBrain brain;
+        [SerializeField, Required] private UIDocument document;
+        [SerializeField, Required] private UserBrain brain;
 
         [Header("FMOD Events")]
-        [SerializeField] EventReference toggleSfx;
+        [SerializeField] private EventReference toggleSfx;
 
         // ReSharper disable UnusedMember.Local
-        [CreateProperty] Settings Settings => Settings.Instance;
-        [CreateProperty] bool IsQuitConfirmButtonVisible => IsInMainMenu && ShouldShowQuitButton;
-        [CreateProperty] bool IsSaveExitButtonVisible => !IsInMainMenu && ShouldShowQuitButton;
+        [CreateProperty] private Settings Settings => Settings.Instance;
+        [CreateProperty] private bool IsQuitConfirmButtonVisible => IsInMainMenu && ShouldShowQuitButton;
+        [CreateProperty] private bool IsSaveExitButtonVisible => !IsInMainMenu && ShouldShowQuitButton;
         // ReSharper restore UnusedMember.Local
 
         private static bool IsInMainMenu => GameManager.CurrentState == GameState.MainMenu;

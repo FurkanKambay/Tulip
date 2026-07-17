@@ -11,7 +11,7 @@ namespace FK.Tulip.Data.Items
         public GameObject Prefab => prefab;
 
         [Header("Ore")]
-        [SerializeField] GameObject prefab;
+        [SerializeField] private GameObject prefab;
 
         // ReSharper disable NotAccessedField.Global
         [LayoutGroup("Referenced By", ELayout.Background | ELayout.TitleOut | ELayout.Foldout)]

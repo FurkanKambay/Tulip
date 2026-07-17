@@ -9,8 +9,8 @@ namespace FK.Tulip.GameWorld
     public sealed class WorldVisual : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField] Tilemap wallTilemap;
-        [SerializeField] Tilemap blockTilemap;
+        [SerializeField] private Tilemap wallTilemap;
+        [SerializeField] private Tilemap blockTilemap;
 
         public CustomRuleTileAsset GetTile(Vector2Int cell, TileType tileType)
         {

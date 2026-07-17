@@ -17,24 +17,24 @@ namespace FK.Tulip.Gameplay
     public class HookLauncher : MonoBehaviour
     {
         [Header("Brains")]
-        [SerializeField, Required] CharacterBrain wielderBrain;
-        [SerializeField, Required] CharacterBrain jumperBrain;
+        [SerializeField, Required] private CharacterBrain wielderBrain;
+        [SerializeField, Required] private CharacterBrain jumperBrain;
 
         [Header("References")]
-        [SerializeField, Required] Rigidbody2D body;
+        [SerializeField, Required] private Rigidbody2D body;
 
         [Header("Visuals")]
-        [SerializeField, Required] LineRenderer lineRenderer;
+        [SerializeField, Required] private LineRenderer lineRenderer;
 
         [Header("Config")]
-        [SerializeField] HookAsset hookAsset;
-        [SerializeField] LayerMask hookableLayers;
-        [SerializeField, Range(0, 3)] float reachDistance;
-        [SerializeField] bool autoPullWhenHooked;
-        [SerializeField] bool autoUnhookWhenReached;
+        [SerializeField] private HookAsset hookAsset;
+        [SerializeField] private LayerMask hookableLayers;
+        [SerializeField, Range(0, 3)] private float reachDistance;
+        [SerializeField] private bool autoPullWhenHooked;
+        [SerializeField] private bool autoUnhookWhenReached;
 
         [Header("Debug")]
-        [SerializeField] HookState hookState;
+        [SerializeField] private HookState hookState;
 
         public HookState HookState
         {

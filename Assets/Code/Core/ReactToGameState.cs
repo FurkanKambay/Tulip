@@ -7,12 +7,12 @@ namespace FK.Tulip.Core
 {
     public class ReactToGameState : MonoBehaviour
     {
-        [SerializeField, Required] GameStateChangeEvent gameStateChangeEvent;
+        [SerializeField, Required] private GameStateChangeEvent gameStateChangeEvent;
 
         [Header("Config")]
-        [SerializeField] bool activeInMainMenu;
-        [SerializeField] bool activeInGame;
-        [SerializeField] bool activeInPauseMenu;
+        [SerializeField] private bool activeInMainMenu;
+        [SerializeField] private bool activeInGame;
+        [SerializeField] private bool activeInPauseMenu;
 
         private void Awake()
         {

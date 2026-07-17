@@ -5,7 +5,7 @@ namespace FK.Tulip.Combat.Data
 {
     public interface IHurtboxStrategy
     {
-        public bool Apply(Health victim, WeaponAsset weapon, Health attacker, DamageType? damageTypeOverride = null);
+        bool Apply(Health victim, WeaponAsset weapon, Health attacker, DamageType? damageTypeOverride = null);
     }
 
     public abstract class BaseHurtboxStrategyAsset : ScriptableObject, IHurtboxStrategy

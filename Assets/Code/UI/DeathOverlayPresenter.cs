@@ -10,19 +10,19 @@ namespace FK.Tulip.UI
     public sealed class DeathOverlayPresenter : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField, Required] PanelRenderer panelRenderer;
+        [SerializeField, Required] private PanelRenderer panelRenderer;
 
         [Header("Injected State")]
-        [SerializeField, Required] Health health;
-        [SerializeField, Required] Respawner respawner;
+        [SerializeField, Required] private Health health;
+        [SerializeField, Required] private Respawner respawner;
 
         // ReSharper disable UnusedMember.Local
-        [CreateProperty] bool IsOverlayDisplayed => health && health.IsDead;
-        [CreateProperty] bool IsRespawnButtonDisplayed => respawner && respawner.CanRespawn;
-        [CreateProperty] bool IsCountdownDisplayed => respawner && !respawner.CanRespawn;
-        [CreateProperty] int SecondsUntilRespawn => !respawner ? 0 : Mathf.CeilToInt(respawner.SecondsUntilRespawn);
+        [CreateProperty] private bool IsOverlayDisplayed => health && health.IsDead;
+        [CreateProperty] private bool IsRespawnButtonDisplayed => respawner && respawner.CanRespawn;
+        [CreateProperty] private bool IsCountdownDisplayed => respawner && !respawner.CanRespawn;
+        [CreateProperty] private int SecondsUntilRespawn => !respawner ? 0 : Mathf.CeilToInt(respawner.SecondsUntilRespawn);
 
-        [CreateProperty] string DeathReason => !health ? "" :
+        [CreateProperty] private string DeathReason => !health ? "" :
             health.LatestDeathSource ? health.LatestDeathSource.Entity.Name : "No Death Source";
         // ReSharper restore UnusedMember.Local
 

@@ -8,21 +8,21 @@ namespace FK.Tulip.Data
     [CreateAssetMenu(menuName = "Gameplay/Entity")]
     public class EntityAsset : ScriptableObject
     {
-        [SerializeField, Required] new string name;
-        [SerializeField, Required] GameObject prefab;
+        [SerializeField, Required] private new string name;
+        [SerializeField, Required] private GameObject prefab;
 
         [Header("Spawning")]
-        [SerializeField] bool isStatic;
-        [SerializeField, Required] SpawnConditionAsset spawnConditionAsset;
+        [SerializeField] private bool isStatic;
+        [SerializeField, Required] private SpawnConditionAsset spawnConditionAsset;
 
         [PostFieldRichLabel("<color=gray>tiles")]
-        [SerializeField] Vector2Int size;
+        [SerializeField] private Vector2Int size;
 
         // BUG: only works with Static Entities in the world
         // TODO: make a separate LootTable class
         [Header("Loot")]
-        [SerializeField] ItemAsset loot;
-        [SerializeField] int lootAmount;
+        [SerializeField] private ItemAsset loot;
+        [SerializeField] private int lootAmount;
 
         public string Name => name;
         public GameObject Prefab => prefab;

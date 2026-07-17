@@ -4,8 +4,8 @@ namespace FK.Tulip.Character
 {
     public class ActorAnimator : CharacterAnimator
     {
-        [SerializeField] CharacterMovement movement;
-        [SerializeField] CharacterJump jumper;
+        [SerializeField] private CharacterMovement movement;
+        [SerializeField] private CharacterJump jumper;
 
         private static readonly int animSpeed = Animator.StringToHash("speed");
         private static readonly int animJumping = Animator.StringToHash("jumping");

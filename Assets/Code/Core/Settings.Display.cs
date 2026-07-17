@@ -12,8 +12,8 @@ namespace FK.Tulip.Core
         [Serializable]
         public sealed record DisplaySettingsBag : ISerializationCallbackReceiver
         {
-            [SerializeField] FullScreenMode windowMode = FullScreenMode.FullScreenWindow;
-            [SerializeField] string resolution = DefaultResolution;
+            [SerializeField] private FullScreenMode windowMode = FullScreenMode.FullScreenWindow;
+            [SerializeField] private string resolution = DefaultResolution;
 
             private static string DefaultResolution =>
                 resolutions.Any() ? resolutions.First() : string.Empty;

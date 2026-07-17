@@ -6,7 +6,7 @@ namespace FK.Tulip.Player
     [ExecuteAlways]
     public class ShaderGlobals : MonoBehaviour
     {
-        [SerializeField] Health player;
+        [SerializeField] private Health player;
 
         private static readonly int shaderPlayerPosition = Shader.PropertyToID("_Player_Position");
 

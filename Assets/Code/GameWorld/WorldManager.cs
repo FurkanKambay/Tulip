@@ -11,9 +11,9 @@ namespace FK.Tulip.GameWorld
     public sealed class WorldManager : MonoBehaviour
     {
         [Header("Events")]
-        [SerializeField] GameEvent newGameEvent;
-        [SerializeField] GameEvent continueGameEvent;
-        [SerializeField] GameEvent saveQuitEvent;
+        [SerializeField] private GameEvent newGameEvent;
+        [SerializeField] private GameEvent continueGameEvent;
+        [SerializeField] private GameEvent saveQuitEvent;
 
         private void Awake() =>
             DontDestroyOnLoad(gameObject);

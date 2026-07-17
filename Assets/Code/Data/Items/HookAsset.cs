@@ -10,8 +10,8 @@ namespace FK.Tulip.Data.Items
         public float PullStrength => pullStrength;
 
         [Header("Hook")]
-        [SerializeField, Min(0)] float range;
-        [SerializeField, Min(0)] float ropeLaunchSpeed;
-        [SerializeField, Min(0)] float pullStrength;
+        [SerializeField, Min(0)] private float range;
+        [SerializeField, Min(0)] private float ropeLaunchSpeed;
+        [SerializeField, Min(0)] private float pullStrength;
     }
 }

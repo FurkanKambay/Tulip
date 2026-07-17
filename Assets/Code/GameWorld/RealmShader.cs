@@ -7,8 +7,8 @@ namespace FK.Tulip.GameWorld
     public class RealmShader : MonoBehaviour
     {
         [Header("Tilemaps")]
-        [SerializeField, Required] Tilemap wallTilemap;
-        [SerializeField, Required] Tilemap blockTilemap;
+        [SerializeField, Required] private Tilemap wallTilemap;
+        [SerializeField, Required] private Tilemap blockTilemap;
 
         private void Awake()
         {

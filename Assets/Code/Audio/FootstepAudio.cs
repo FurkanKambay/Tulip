@@ -8,17 +8,17 @@ namespace FK.Tulip.Audio
     public class FootstepAudio : MonoBehaviour
     {
         [Header("Brain")]
-        [SerializeField] CharacterMovement movement;
+        [SerializeField] private CharacterMovement movement;
 
         [Header("References")]
-        [SerializeField] SurroundsChecker surrounds;
+        [SerializeField] private SurroundsChecker surrounds;
 
         [Header("FMOD Events")]
-        [SerializeField] EventReference footstepEvent;
+        [SerializeField] private EventReference footstepEvent;
 
         [Header("Config")]
-        [SerializeField, Min(0.01f)] float footStepInterval;
-        [SerializeField, Min(0)] float velocityThreshold;
+        [SerializeField, Min(0.01f)] private float footStepInterval;
+        [SerializeField, Min(0)] private float velocityThreshold;
 
         private EventDescription footstepDescription;
         private PARAMETER_DESCRIPTION paramGroundMaterial;

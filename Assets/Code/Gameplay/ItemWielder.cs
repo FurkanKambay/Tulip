@@ -31,14 +31,14 @@ namespace FK.Tulip.Gameplay
         public bool IsThrowMode { get; private set; }
 
         [Header("Brain")]
-        [SerializeField, Required] CharacterBrain brain;
+        [SerializeField, Required] private CharacterBrain brain;
 
         [Header("References")]
-        [SerializeField, Required] Health health;
-        [SerializeField, Required] SpriteRenderer itemRenderer;
+        [SerializeField, Required] private Health health;
+        [SerializeField, Required] private SpriteRenderer itemRenderer;
 
         [Header("Config")]
-        [SerializeField] ItemAsset equippedItem;
+        [SerializeField] private ItemAsset equippedItem;
 
         // cached references
         private Transform itemPivot;

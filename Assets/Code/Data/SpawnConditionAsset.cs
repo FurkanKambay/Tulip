@@ -11,19 +11,19 @@ namespace FK.Tulip.Data
     public class SpawnConditionAsset : ScriptableObject
     {
         [Header("Ground")]
-        [SerializeField] bool needsGround;
+        [SerializeField] private bool needsGround;
 
         [EnableIf(nameof(needsGround))]
-        [SerializeField] bool needsSafeGround;
+        [SerializeField] private bool needsSafeGround;
 
         [EnableIf(nameof(needsGround))]
-        [SerializeField] WorldTileAsset[] groundTiles;
+        [SerializeField] private WorldTileAsset[] groundTiles;
 
         [Header("Clearance")]
-        [SerializeField, Min(0)] int clearanceAbove;
+        [SerializeField, Min(0)] private int clearanceAbove;
 
         [DisableIf(nameof(needsGround))]
-        [SerializeField, Min(0)] int clearanceBelow;
+        [SerializeField, Min(0)] private int clearanceBelow;
 
         // ReSharper disable NotAccessedField.Global
         [LayoutGroup("Referenced By", ELayout.Background | ELayout.TitleOut | ELayout.Foldout)]

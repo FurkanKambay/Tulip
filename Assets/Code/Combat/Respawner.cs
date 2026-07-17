@@ -8,12 +8,12 @@ namespace FK.Tulip.Combat
     public class Respawner : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField, Required] Health health;
+        [SerializeField, Required] private Health health;
 
         [Header("Config")]
-        [SerializeField] bool autoRespawn = true;
-        [SerializeField] float respawnDelay;
-        [SerializeField] Vector3 respawnPosition;
+        [SerializeField] private bool autoRespawn = true;
+        [SerializeField] private float respawnDelay;
+        [SerializeField] private Vector3 respawnPosition;
 
         public float SecondsUntilRespawn { get; private set; }
         public bool CanRespawn => SecondsUntilRespawn <= 0;

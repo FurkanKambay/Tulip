@@ -6,10 +6,10 @@ namespace FK.Tulip.Interaction
     public class Dialogue : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField, Required] Interactable interactable;
+        [SerializeField, Required] private Interactable interactable;
 
         [Header("Config")]
-        [SerializeField, TextArea] string greetingText;
+        [SerializeField, TextArea] private string greetingText;
 
         private void OnEnable() => interactable.OnInteract += HandleInteract;
         private void OnDisable() => interactable.OnInteract -= HandleInteract;

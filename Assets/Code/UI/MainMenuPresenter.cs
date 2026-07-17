@@ -10,12 +10,12 @@ namespace FK.Tulip.UI
     public sealed class MainMenuPresenter : MonoBehaviour
     {
         [Header("Game Events")]
-        [SerializeField, Required] GameStateChangeEvent gameStateChangeEvent;
-        [SerializeField, Required] GameEvent newGameEvent;
-        [SerializeField, Required] GameEvent continueGameEvent;
+        [SerializeField, Required] private GameStateChangeEvent gameStateChangeEvent;
+        [SerializeField, Required] private GameEvent newGameEvent;
+        [SerializeField, Required] private GameEvent continueGameEvent;
 
         [Header("References")]
-        [SerializeField, Required] UIDocument document;
+        [SerializeField, Required] private UIDocument document;
 
         private SettingsPresenter settingsPresenter;
         private VisualElement root;

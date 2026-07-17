@@ -13,8 +13,8 @@ namespace FK.Tulip.Combat
         [SerializeField, Required] private WeaponWielderConfigAsset config;
 
         [Header("References")]
-        [SerializeField, Required] Health health;
-        [SerializeField, Required] ItemWielder itemWielder;
+        [SerializeField, Required] private Health health;
+        [SerializeField, Required] private ItemWielder itemWielder;
 
         private ProjectileManager projectileManager;
         private WeaponAsset weaponAsset;

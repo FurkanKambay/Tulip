@@ -8,10 +8,10 @@ namespace FK.Tulip.Audio
     public class WielderAudio : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField] ItemWielder itemWielder;
+        [SerializeField] private ItemWielder itemWielder;
 
         [Header("FMOD Events")]
-        [SerializeField] EventReference itemSwingEvent;
+        [SerializeField] private EventReference itemSwingEvent;
 
         private void OnEnable()
         {

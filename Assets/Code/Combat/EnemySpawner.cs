@@ -13,23 +13,23 @@ namespace FK.Tulip.Combat
     public class EnemySpawner : MonoBehaviour
     {
         [LayoutGroup("References", ELayout.Background | ELayout.TitleOut)]
-        [SerializeField] World world;
-        [SerializeField] Transform spawnParent;
+        [SerializeField] private World world;
+        [SerializeField] private Transform spawnParent;
 
         [LayoutGroup("Config", ELayout.Background | ELayout.TitleOut)]
         [LayoutGroup("Config/Spawning", ELayout.TitleOut)]
-        [SerializeField, Min(0)] int maxSpawns = 100;
+        [SerializeField, Min(0)] private int maxSpawns = 100;
 
         [OverlayRichLabel("<color=gray>tiles")]
-        [SerializeField, Min(0)] int radius = 5;
+        [SerializeField, Min(0)] private int radius = 5;
 
         [OverlayRichLabel("<color=gray>sec")]
-        [SerializeField, Min(0)] float interval = 10f;
+        [SerializeField, Min(0)] private float interval = 10f;
 
         [OverlayRichLabel("<color=gray>sec")]
-        [SerializeField, Min(0)] float gracePeriod;
+        [SerializeField, Min(0)] private float gracePeriod;
 
-        [SerializeField] EntitySet entitySpawnSet;
+        [SerializeField] private EntitySet entitySpawnSet;
 
         private Camera camera;
         private IEnumerable<Vector2Int> suitableCells;

@@ -8,10 +8,10 @@ namespace FK.Tulip.Audio
     public class DasherAudio : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField] Dasher dasher;
+        [SerializeField] private Dasher dasher;
 
         [Header("FMOD Events")]
-        [SerializeField] EventReference dashEvent;
+        [SerializeField] private EventReference dashEvent;
 
         private EventDescription dashDescription;
         private EventInstance dashInstance;

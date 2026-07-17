@@ -8,10 +8,10 @@ namespace FK.Tulip.AI
     public sealed class TreantAI : CharacterBrain
     {
         [Header("References")]
-        [SerializeField, Required] Health health;
+        [SerializeField, Required] private Health health;
 
         [Header("Movement")]
-        [SerializeField] Vector2 attackDistance;
+        [SerializeField] private Vector2 attackDistance;
 
         public override Vector2? AimPosition { get; protected set; }
         public override bool WantsToAttack { get; protected set; }

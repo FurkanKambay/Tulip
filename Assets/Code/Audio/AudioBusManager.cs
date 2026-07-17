@@ -12,10 +12,10 @@ namespace FK.Tulip.Audio
     public sealed class AudioBusManager : MonoBehaviour
     {
         [Header("Game Events")]
-        [SerializeField, Required] GameStateChangeEvent gameStateChangeEvent;
+        [SerializeField, Required] private GameStateChangeEvent gameStateChangeEvent;
 
         [Header("References")]
-        [SerializeField, Required] StudioListener fmodStudioListener;
+        [SerializeField, Required] private StudioListener fmodStudioListener;
 
         private Bus masterBus;
         private Bus musicBus;

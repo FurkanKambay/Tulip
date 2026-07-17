@@ -9,15 +9,15 @@ namespace FK.Tulip.Combat
     public sealed class Projectile : MonoBehaviour
     {
         [Header("Config")]
-        [SerializeField] float gravityScale = 1;
-        [SerializeField] LayerMask obstacleLayers;
+        [SerializeField] private float gravityScale = 1;
+        [SerializeField] private LayerMask obstacleLayers;
 
         [LayoutGroup("State", ELayout.TitleOut)]
-        [ShowInInspector] Health ownerHealth;
-        [ShowInInspector] WeaponAsset sourceWeapon;
-        [ShowInInspector] Vector2 velocity;
-        [ShowInInspector] ContactFilter2D contactFilter;
-        [ShowInInspector] readonly List<Health> damagedTargets = new();
+        [ShowInInspector] private Health ownerHealth;
+        [ShowInInspector] private WeaponAsset sourceWeapon;
+        [ShowInInspector] private Vector2 velocity;
+        [ShowInInspector] private ContactFilter2D contactFilter;
+        [ShowInInspector] private readonly List<Health> damagedTargets = new();
 
         internal void Launch(Vector2 origin, Vector2 direction, Health owner, WeaponAsset weapon, ContactFilter2D filter)
         {

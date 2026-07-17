@@ -9,10 +9,10 @@ namespace FK.Tulip.Audio
     public class HealthAudio : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField, Required] Health health;
+        [SerializeField, Required] private Health health;
 
         [Header("FMOD Events")]
-        [SerializeField] EventReference hurtEvent;
+        [SerializeField] private EventReference hurtEvent;
 
         private PARAMETER_DESCRIPTION paramAliveness;
         private PARAMETER_DESCRIPTION paramDamageType;

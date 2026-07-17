@@ -7,10 +7,10 @@ namespace FK.Tulip.Character
     public class CharacterFacer : MonoBehaviour
     {
         [Header("Brain")]
-        [SerializeField, Required] CharacterBrain brain;
+        [SerializeField, Required] private CharacterBrain brain;
 
         [Header("References")]
-        [SerializeField, Required] SpriteRenderer sprite;
+        [SerializeField, Required] private SpriteRenderer sprite;
 
         private void Update()
         {

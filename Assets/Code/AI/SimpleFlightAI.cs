@@ -8,10 +8,10 @@ namespace FK.Tulip.AI
     public sealed class SimpleFlightAI : CharacterBrain
     {
         [Header("References")]
-        [SerializeField, Required] Health health;
+        [SerializeField, Required] private Health health;
 
         [Header("Movement")]
-        [SerializeField] Vector2 stopDistance;
+        [SerializeField] private Vector2 stopDistance;
 
         public override float HorizontalMovement { get; protected set; }
         public override float VerticalMovement { get; protected set; }

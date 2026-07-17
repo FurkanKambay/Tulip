@@ -12,10 +12,10 @@ namespace FK.Tulip.GameWorld
     public class World : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField, Required] WorldVisual worldVisual;
+        [SerializeField, Required] private WorldVisual worldVisual;
 
         [Header("Config")]
-        [SerializeField] LayerMask entityLayers;
+        [SerializeField] private LayerMask entityLayers;
 
         private readonly Dictionary<Vector2Int, TangibleEntity> staticEntities = new();
 

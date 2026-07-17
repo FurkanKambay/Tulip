@@ -20,17 +20,17 @@ namespace FK.Tulip.Core
     [PublicAPI]
     public sealed class GameManager : MonoBehaviour
     {
-        [SerializeField, Required] GameStateChangeEvent gameStateChangeEvent;
-        [SerializeField, Required] InputManager inputManager;
+        [SerializeField, Required] private GameStateChangeEvent gameStateChangeEvent;
+        [SerializeField, Required] private InputManager inputManager;
 
         [LayoutGroup("/Main Menu Scene", ELayout.FoldoutBox)]
-        [SerializeField, Inline] SceneInfo mainMenuSceneInfo;
+        [SerializeField, Inline] private SceneInfo mainMenuSceneInfo;
 
         [LayoutGroup("/Game Scene", ELayout.FoldoutBox)]
-        [SerializeField, Inline] SceneInfo gameSceneInfo;
+        [SerializeField, Inline] private SceneInfo gameSceneInfo;
 
-        [SerializeField] bool showSplashScreen;
-        [SerializeField] float splashScreenDuration = 2;
+        [SerializeField] private bool showSplashScreen;
+        [SerializeField] private float splashScreenDuration = 2;
 
         [ShowInInspector]
         internal static GameState CurrentState { get; private set; }

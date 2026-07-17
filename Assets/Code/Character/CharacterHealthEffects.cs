@@ -8,17 +8,17 @@ namespace FK.Tulip.Character
     public class CharacterHealthEffects : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField, Required] Health health;
-        [SerializeField, Required] SpriteRenderer sprite;
+        [SerializeField, Required] private Health health;
+        [SerializeField, Required] private SpriteRenderer sprite;
 
         [Header("Config")]
-        [SerializeField] bool destroyAfterDeath;
+        [SerializeField] private bool destroyAfterDeath;
 
         [OverlayRichLabel("<color=gray>sec")]
-        [SerializeField, Min(0)] float hurtVisualDuration = 0.1f;
+        [SerializeField, Min(0)] private float hurtVisualDuration = 0.1f;
 
         [OverlayRichLabel("<color=gray>sec")]
-        [SerializeField, Min(0)] float dissolveDuration = 1f;
+        [SerializeField, Min(0)] private float dissolveDuration = 1f;
 
         private MaterialPropertyBlock materialBlock;
 

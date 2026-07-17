@@ -10,15 +10,15 @@ namespace FK.Tulip.Character
         public event Action OnDash;
 
         [Header("Brain")]
-        [SerializeField, Required] CharacterBrain brain;
+        [SerializeField, Required] private CharacterBrain brain;
 
         [Header("References")]
-        [SerializeField, Required] Rigidbody2D body;
+        [SerializeField, Required] private Rigidbody2D body;
 
         [Header("Config")]
         public float dashSpeed = 10f;
         public float dashCooldown = 0.5f;
-        [SerializeField] ForceMode2D forceMode;
+        [SerializeField] private ForceMode2D forceMode;
 
         private float timeSinceLastDash;
 
