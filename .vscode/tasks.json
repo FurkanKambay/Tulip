@@ -2,15 +2,83 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Butler Push",
-            "command": "butler push --if-changed Builds/Tulip_Web furkankambay/tulip:web; butler push --if-changed Builds/Tulip_Win furkankambay/tulip:win",
+            "label": "Build on GitHub and deploy to itch.io!",
             "type": "shell",
-            "args": [],
-            "problemMatcher": [],
-            "presentation": {
-                "reveal": "always"
+            "command": "gh workflow run main.yml -f channel=${input:itch-channel} ${input:ref-name}",
+            "detail": "Run the GitHub workflow to build the Unity project and deploy it to itch.io via butler.",
+            "icon": {
+                "id": "github",
+                "color": "terminal.ansiRed"
             },
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "label": "Push build to itch.io!",
+            "type": "shell",
+            "command": "butler",
+            "args": [
+                "push",
+                "${input:dry-run}",
+                "--if-changed",
+                "Builds/${input:itch-channel}",
+                "furkankambay/tulip:${input:itch-channel}"
+            ],
+            "detail": "Deploy a local build to itch.io via butler.",
+            "icon": {
+                "id": "cloud-upload",
+                "color": "terminal.ansiRed"
+            },
+            "problemMatcher": [],
             "group": "none"
+        },
+    ],
+    "inputs": [
+        {
+            "id": "itch-channel",
+            "type": "pickString",
+            "description": "Which itch.io channel and platform for Unity build?",
+            "default": "win-dev",
+            "options": [
+                {
+                    "label": "🪟🛠️ Windows Dev build",
+                    "value": "win-dev",
+                },
+                {
+                    "label": "🌐🛠️ Web Dev build",
+                    "value": "web-dev",
+                },
+                {
+                    "label": "🪟🚀 Windows Release build",
+                    "value": "win-release",
+                },
+                {
+                    "label": "🌐🚀 Web Release build",
+                    "value": "web-release",
+                },
+            ],
+        },
+        {
+            "id": "dry-run",
+            "type": "pickString",
+            "description": "Dry-run for butler?",
+            "default": "--dry-run",
+            "options": [
+                {
+                    "label": "ℹ️ Dry-run",
+                    "value": "--dry-run",
+                },
+                {
+                    "label": "‼️ Real upload",
+                    "value": "",
+                },
+            ]
+        },
+        {
+            "id": "ref-name",
+            "type": "promptString",
+            "description": "Run it on which branch (or ref name)?",
+            "default": "main",
         }
     ]
 }

@@ -1,0 +1,170 @@
+name: Unity build & itch.io deployment
+
+on:
+  # pull_request:
+  # push:
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: Platform channel name
+        required: true
+        default: win-dev
+        type: choice
+        options:
+          - win-dev
+          - win-release
+          - web-dev
+          - web-release
+
+jobs:
+  build_and_deploy:
+    name: Build & Deploy ${{ inputs.channel }}
+    runs-on: ubuntu-latest
+
+    steps:
+      # - uses: mathio/gha-cleanup@v1
+      #   with:
+      #     remove-browsers: false
+      #     verbose: true
+
+      - name: Free Disk Space (Ubuntu)
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: false # might remove tools that are actually needed
+          docker-images: false
+          large-packages: false
+          swap-storage: false
+          dotnet: false
+          android: true
+          haskell: true
+
+      - name: Determine platform values
+        id: config
+        run: |
+          # Build Profile assets
+          declare -A buildProfiles=(
+            [win-dev]="Windows Debug.asset"
+            [win-release]="Windows Release.asset"
+            [web-dev]="Web Debug.asset"
+            [web-release]="Web Release.asset"
+          )
+
+          platform="${{ inputs.channel }}"
+
+          if [[ "$platform" == web-* ]]; then
+            targetPlatform="WebGL"
+          else
+            targetPlatform="StandaloneWindows64"
+          fi
+
+          ##### Outputs #####
+
+          # ${{ steps.config.outputs.buildProfilePath }}
+          echo "buildProfilePath=${{ vars.BUILD_PROFILES_DIR }}/${buildProfiles[$platform]}" >> $GITHUB_OUTPUT
+
+          # ${{ steps.config.outputs.targetPlatform }}
+          echo "targetPlatform=$targetPlatform" >> $GITHUB_OUTPUT
+
+      - name: Print platform values
+        run: |
+          echo "Platform ID: ${{ inputs.channel }}"
+          echo "Build Profile: ${{ steps.config.outputs.buildProfilePath }}"
+          echo "Build Platform: ${{ steps.config.outputs.targetPlatform }}"
+
+      - name: Git - Checkout repository (without LFS)
+        uses: actions/checkout@v7
+
+      - name: Git LFS - Create file list
+        run: |
+          git lfs ls-files --long | cut -d' ' -f1 | sort > .git/lfs-hashes.txt
+
+          # for debug
+          git lfs ls-files --long | cut -d'-' -f2 | sort > .git/lfs-names.txt
+          cat .git/lfs-names.txt
+
+      - name: Git LFS - Cache Restore
+        uses: actions/cache/restore@v6
+        id: lfs-cache-restore
+        with:
+          path: .git/lfs
+          key: lfs-v1-${{ hashFiles('.git/lfs-hashes.txt') }}
+          restore-keys: |
+            lfs-v1-
+
+      # https://github.com/actions/checkout/issues/165#issuecomment-2776048200
+      - name: Git LFS - Fetch any needed LFS objects + prune extraneous ones
+        run: git lfs fetch --prune
+
+      - name: Git LFS - Checkout
+        run: git lfs checkout
+
+      - name: Git LFS - Clean working tree
+        run: |
+          git add .
+          git reset --hard
+
+      - name: Git LFS - Cache Save
+        uses: actions/cache/save@v6
+        id: lfs-cache-save
+        if: steps.lfs-cache-restore.outputs.cache-hit != 'true'
+        with:
+          path: .git/lfs
+          key: lfs-v1-${{ hashFiles('.git/lfs-hashes.txt') }}
+
+      - name: Unity Library Cache - Restore
+        uses: actions/cache/restore@v6
+        id: unity-cache-restore
+        with:
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-
+
+      - name: Print disk usage before Unity build
+        run: df -h /
+
+      - name: Unity - Build game
+        uses: game-ci/unity-builder@v5
+        env:
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+          UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+        with:
+          buildProfile: ${{ steps.config.outputs.buildProfilePath }}
+          targetPlatform: ${{ steps.config.outputs.targetPlatform }}
+          buildsPath: builds
+          buildName: ${{ vars.BUILD_NAME }} # exe name
+
+      - name: Print disk usage after Unity build
+        run: df -h /
+
+      - name: Unity Library Cache - Save
+        id: unity-cache-save
+        if: steps.unity-cache-restore.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v6
+        with:
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+
+      - name: Upload artifact for Windows build
+        uses: actions/upload-artifact@v7
+        if: steps.config.outputs.targetPlatform == 'StandaloneWindows64'
+        with:
+          name: Build-${{ inputs.channel }}
+          path: builds/${{ steps.config.outputs.targetPlatform }}
+          # retention-days: 5
+
+      - name: Print build contents
+        # rm -r builds/${{ steps.config.outputs.targetPlatform }}/*_DoNotShip/
+        run: |
+          ls -la builds/${{ steps.config.outputs.targetPlatform }}/
+
+      - name: Push to itch.io via Butler
+        uses: yeslayla/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+          ITCH_USER: ${{ vars.ITCH_USER_NAME }}
+          ITCH_GAME: ${{ vars.ITCH_GAME_NAME }}
+          CHANNEL: ${{ inputs.channel }}
+          PACKAGE: builds/${{ steps.config.outputs.targetPlatform }}
+          VERSION_FILE: version.txt
