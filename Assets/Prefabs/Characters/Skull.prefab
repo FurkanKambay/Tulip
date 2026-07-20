@@ -362,13 +362,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Audio.HealthAudio
   health: {fileID: 1334333901957425893}
-  hurtEvent:
-    Guid:
-      Data1: -1768576580
-      Data2: 1151959725
-      Data3: -866273913
-      Data4: 810694509
-    Path: event:/SFX/Entities/Generic Hurt
+  getHurt:
+    reference:
+      Guid:
+        Data1: -1768576580
+        Data2: 1151959725
+        Data3: -866273913
+        Data4: 810694509
+      Path: event:/SFX/Entities/Generic Hurt
 --- !u!114 &7947214954686311404
 MonoBehaviour:
   m_ObjectHideFlags: 0

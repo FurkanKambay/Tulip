@@ -331,12 +331,13 @@ MonoBehaviour:
   document: {fileID: 1795025821}
   brain: {fileID: 513751246}
   toggleSfx:
-    Guid:
-      Data1: -161944796
-      Data2: 1078510854
-      Data3: -925119596
-      Data4: 303886086
-    Path: event:/UI/Settings Toggle
+    reference:
+      Guid:
+        Data1: -161944796
+        Data2: 1078510854
+        Data3: -925119596
+        Data4: 303886086
+      Path: event:/UI/Settings Toggle
 --- !u!1 &1803462556
 GameObject:
   m_ObjectHideFlags: 0

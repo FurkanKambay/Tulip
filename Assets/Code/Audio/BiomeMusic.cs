@@ -1,5 +1,5 @@
+using System.Collections;
 using FMOD.Studio;
-using FMODUnity;
 using UnityEngine;
 
 namespace FK.Tulip.Audio
@@ -7,29 +7,31 @@ namespace FK.Tulip.Audio
     public class BiomeMusic : MonoBehaviour
     {
         [Header("FMOD Events")]
-        [SerializeField] private EventReference biomeMusicEvent;
+        [SerializeField] private FMODEvent biomeMusic;
 
         [Header("Config")]
-        [SerializeField] private Biome startingBiome;
+        [SerializeField, EnumButtons] private Biome startingBiome;
 
         private EventInstance musicInstance;
         private PARAMETER_DESCRIPTION paramBiome;
 
-        private async void Awake()
+        private IEnumerator Start()
         {
-            await AudioBusManager.WaitForAllBanksToLoad();
+            // Log.Info($"{logPrefix} waiting for banks to load...", this);
+            // yield return Awaitable.WaitForSecondsAsync(2f); // for testing
+            yield return AudioBusManager.WaitForAllBanksToLoad();
 
-            EventDescription musicDescription = RuntimeManager.GetEventDescription(biomeMusicEvent);
-            musicDescription.getParameterDescriptionByName("Biome", out paramBiome);
-            musicDescription.createInstance(out musicInstance);
+            // Log.Info($"{logPrefix} starting BGM...", this);
+            biomeMusic.Describe();
+            biomeMusic.DescribeParameter("Biome", out paramBiome);
+            biomeMusic.StartNewInstance();
 
             SetBiome(startingBiome);
         }
 
-        private void OnEnable() => musicInstance.start();
-        private void OnDisable() => musicInstance.stop(STOP_MODE.ALLOWFADEOUT);
-
         private void SetBiome(Biome biome) =>
-            musicInstance.setParameterByID(paramBiome.id, biome.GetHashCode());
+            biomeMusic.Instance.SetParameter(paramBiome, biome);
+
+        private static readonly string logPrefix = $"[{nameof(BiomeMusic)}]";
     }
 }

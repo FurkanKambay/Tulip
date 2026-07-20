@@ -12,7 +12,7 @@ namespace FK.Tulip.Audio
         [SerializeField, Required] private Health health;
 
         [Header("FMOD Events")]
-        [SerializeField] private EventReference hurtEvent;
+        [SerializeField] private FMODEvent getHurt;
 
         private PARAMETER_DESCRIPTION paramAliveness;
         private PARAMETER_DESCRIPTION paramDamageType;
@@ -21,9 +21,9 @@ namespace FK.Tulip.Audio
         {
             await AudioBusManager.WaitForAllBanksToLoad();
 
-            EventDescription description = RuntimeManager.GetEventDescription(hurtEvent);
-            description.getParameterDescriptionByName("Aliveness", out paramAliveness);
-            description.getParameterDescriptionByName("Damage Type", out paramDamageType);
+            getHurt.Describe();
+            getHurt.DescribeParameter("Aliveness", out paramAliveness);
+            getHurt.DescribeParameter("Damage Type", out paramDamageType);
         }
 
         private void OnEnable() => health.OnHurt += HandleHurt;
@@ -31,14 +31,14 @@ namespace FK.Tulip.Audio
 
         private void HandleHurt(CombatPacket combatPacket)
         {
-            EventInstance hurtSfx = RuntimeManager.CreateInstance(hurtEvent);
-            RuntimeManager.AttachInstanceToGameObject(hurtSfx, transform.gameObject);
+            bool success = getHurt.CreateNew(out EventInstance sfx);
+            if (!success) return;
 
-            hurtSfx.setParameterByID(paramAliveness.id, combatPacket.Target.IsAlive.GetHashCode());
-            hurtSfx.setParameterByID(paramDamageType.id, combatPacket.DamageType.GetHashCode());
+            RuntimeManager.AttachInstanceToGameObject(sfx, transform.gameObject);
 
-            hurtSfx.start();
-            hurtSfx.release();
+            sfx.SetParameter(paramAliveness, combatPacket.Target.IsAlive);
+            sfx.SetParameter(paramDamageType, combatPacket.DamageType);
+            sfx.PlayOneShot();
         }
     }
 }

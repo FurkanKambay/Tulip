@@ -11,25 +11,25 @@ namespace FK.Tulip.Audio
         [SerializeField] private Dasher dasher;
 
         [Header("FMOD Events")]
-        [SerializeField] private EventReference dashEvent;
+        [SerializeField] private FMODEvent dash;
 
-        private EventDescription dashDescription;
-        private EventInstance dashInstance;
-
-        private float timeUntilFootstep;
-
-        private void Awake() => dashDescription = RuntimeManager.GetEventDescription(dashEvent);
+        private void Awake()
+        {
+            dash.Describe();
+        }
 
         private void OnEnable() => dasher.OnDash += Dasher_Dashed;
         private void OnDisable() => dasher.OnDash -= Dasher_Dashed;
+
         private void Dasher_Dashed() => PlayFootstep();
 
         private void PlayFootstep()
         {
-            dashDescription.createInstance(out dashInstance);
-            dashInstance.set3DAttributes(transform.To3DAttributes());
-            dashInstance.start();
-            dashInstance.release();
+            bool created = dash.CreateNew(out EventInstance sfx);
+            if (!created) return;
+
+            sfx.set3DAttributes(transform.To3DAttributes());
+            sfx.PlayOneShot();
         }
     }
 }

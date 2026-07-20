@@ -695,13 +695,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Audio.HealthAudio
   health: {fileID: 7186377946535505526}
-  hurtEvent:
-    Guid:
-      Data1: -1768576580
-      Data2: 1151959725
-      Data3: -866273913
-      Data4: 810694509
-    Path: event:/SFX/Entities/Generic Hurt
+  getHurt:
+    reference:
+      Guid:
+        Data1: -1768576580
+        Data2: 1151959725
+        Data3: -866273913
+        Data4: 810694509
+      Path: event:/SFX/Entities/Generic Hurt
 --- !u!114 &2259726738235934394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -736,13 +737,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Audio.FootstepAudio
   movement: {fileID: 3529033824618618864}
   surrounds: {fileID: 8163165118725034582}
-  footstepEvent:
-    Guid:
-      Data1: 1512845316
-      Data2: 1122581445
-      Data3: 1009537468
-      Data4: 1497410000
-    Path: event:/SFX/Entities/Footstep
+  footsteps:
+    reference:
+      Guid:
+        Data1: 1512845316
+        Data2: 1122581445
+        Data3: 1009537468
+        Data4: 1497410000
+      Path: event:/SFX/Entities/Footstep
   footStepInterval: 0.28
   velocityThreshold: 1
 --- !u!114 &1769229534505819852
@@ -758,13 +760,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Audio.DasherAudio
   dasher: {fileID: 6892111300499175154}
-  dashEvent:
-    Guid:
-      Data1: 1739327884
-      Data2: 1149241975
-      Data3: 1034766488
-      Data4: -321411513
-    Path: event:/SFX/Entities/Dash
+  dash:
+    reference:
+      Guid:
+        Data1: 1739327884
+        Data2: 1149241975
+        Data3: 1034766488
+        Data4: -321411513
+      Path: event:/SFX/Entities/Dash
 --- !u!1 &5469766544413122949
 GameObject:
   m_ObjectHideFlags: 0

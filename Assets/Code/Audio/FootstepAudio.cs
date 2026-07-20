@@ -14,23 +14,20 @@ namespace FK.Tulip.Audio
         [SerializeField] private SurroundsChecker surrounds;
 
         [Header("FMOD Events")]
-        [SerializeField] private EventReference footstepEvent;
+        [SerializeField] private FMODEvent footsteps;
 
         [Header("Config")]
         [SerializeField, Min(0.01f)] private float footStepInterval;
         [SerializeField, Min(0)] private float velocityThreshold;
 
-        private EventDescription footstepDescription;
         private PARAMETER_DESCRIPTION paramGroundMaterial;
-
-        private EventInstance footstepInstance;
 
         private float timeUntilFootstep;
 
         private void Awake()
         {
-            footstepDescription = RuntimeManager.GetEventDescription(footstepEvent);
-            footstepDescription.getParameterDescriptionByName("Ground Material", out paramGroundMaterial);
+            footsteps.Describe();
+            footsteps.DescribeParameter("Ground Material", out paramGroundMaterial);
         }
 
         private void Update()
@@ -50,13 +47,13 @@ namespace FK.Tulip.Audio
 
         private void PlayFootstep()
         {
-            footstepDescription.createInstance(out footstepInstance);
+            bool created = footsteps.CreateNew(out EventInstance sfx);
+            if (!created) return;
 
-            footstepInstance.set3DAttributes(transform.To3DAttributes());
-            footstepInstance.setParameterByID(paramGroundMaterial.id, surrounds.GroundMaterial.GetHashCode());
+            sfx.set3DAttributes(transform.To3DAttributes());
 
-            footstepInstance.start();
-            footstepInstance.release();
+            sfx.SetParameter(paramGroundMaterial, surrounds.GroundMaterial);
+            sfx.PlayOneShot();
         }
     }
 }

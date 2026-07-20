@@ -1,9 +1,10 @@
+using System.Collections;
 using FK.Common;
+using FK.Tulip.Audio;
 using FK.Tulip.Core;
 using FK.Tulip.Data.GameEvents;
 using FK.Tulip.Input;
 using FMOD.Studio;
-using FMODUnity;
 using Unity.Properties;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -26,7 +27,7 @@ namespace FK.Tulip.UI
         [SerializeField, Required] private UserBrain brain;
 
         [Header("FMOD Events")]
-        [SerializeField] private EventReference toggleSfx;
+        [SerializeField] private FMODEvent toggleSfx;
 
         // ReSharper disable UnusedMember.Local
         [CreateProperty] private Settings Settings => Settings.Instance;
@@ -72,13 +73,12 @@ namespace FK.Tulip.UI
 #endif
         }
 
-        private async void Start()
+        private IEnumerator Start()
         {
-            while (!RuntimeManager.HaveAllBanksLoaded)
-                await Awaitable.NextFrameAsync();
+            yield return AudioBusManager.WaitForAllBanksToLoad();
 
-            EventDescription sfxDescription = RuntimeManager.GetEventDescription(toggleSfx);
-            sfxDescription.getParameterDescriptionByName("Menu State", out paramMenuState);
+            toggleSfx.Describe();
+            toggleSfx.DescribeParameter("Menu State", out paramMenuState);
         }
 
         private void OnEnable()
@@ -132,10 +132,11 @@ namespace FK.Tulip.UI
 
         private void PlayToggleSfx(bool toggleState)
         {
-            EventInstance sfx = RuntimeManager.CreateInstance(toggleSfx);
-            sfx.setParameterByID(paramMenuState.id, toggleState.GetHashCode());
-            sfx.start();
-            sfx.release();
+            bool created = toggleSfx.CreateNew(out EventInstance sfx);
+            if (!created) return;
+
+            sfx.SetParameter(paramMenuState, toggleState);
+            sfx.PlayOneShot();
         }
 
         private void GameState_Changed(GameStateChange args)

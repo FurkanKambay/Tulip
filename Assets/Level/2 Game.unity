@@ -195,13 +195,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e4905103a599f49b955ac3e4d0e124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Audio.BiomeMusic
-  biomeMusicEvent:
-    Guid:
-      Data1: 344978999
-      Data2: 1313295393
-      Data3: -1466501490
-      Data4: -1776651225
-    Path: event:/Music/Biome Music
+  biomeMusic:
+    reference:
+      Guid:
+        Data1: 344978999
+        Data2: 1313295393
+        Data3: -1466501490
+        Data4: -1776651225
+      Path: event:/Music/Biome Music
   startingBiome: 0
 --- !u!1 &337397488
 GameObject:
