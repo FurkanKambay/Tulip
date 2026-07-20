@@ -21,8 +21,8 @@ namespace FK.Common
     {
         public event Action OnRaised;
 
-#if UNITY_EDITOR
         [SerializeField] private bool logInvocations;
+#if UNITY_EDITOR
         [SerializeField, Multiline] private string documentation;
 #endif
 
