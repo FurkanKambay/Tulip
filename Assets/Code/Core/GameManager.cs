@@ -37,7 +37,6 @@ namespace FK.Tulip.Core
 
         private static GameManager instance;
 
-#region Unity Callbacks, Initialization
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void Init()
         {
@@ -56,9 +55,7 @@ namespace FK.Tulip.Core
 
         private void OnEnable() => Application.wantsToQuit += IsSafeToQuit;
         private void OnDisable() => Application.wantsToQuit -= IsSafeToQuit;
-#endregion
 
-#region Scene Switching
         private IEnumerator Start()
         {
             if (!showSplashScreen || Application.isEditor)
@@ -86,9 +83,8 @@ namespace FK.Tulip.Core
         /// </summary>
         private void ReloadGameScene() =>
             StartCoroutine(gameSceneInfo.ReloadAsync());
-#endregion
 
-#region High-Level Game Flow API
+#region Game State Machine
         public static void ReturnToMainMenu() =>
             SwitchTo(GameState.MainMenu);
 
@@ -118,9 +114,7 @@ namespace FK.Tulip.Core
             Application.Quit();
 #endif
         }
-#endregion
 
-#region Private Helper Methods
         private static void SwitchTo(GameState newState)
         {
             if (newState == CurrentState)
@@ -139,7 +133,9 @@ namespace FK.Tulip.Core
             else if (newState is GameState.MainMenu)
                 instance.ReloadGameScene();
         }
+#endregion
 
+#region Helper Methods
         private static void UpdateTimeScale() =>
             Time.timeScale = CurrentState == GameState.Paused ? 0 : 1;
 
