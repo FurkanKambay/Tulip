@@ -18,7 +18,18 @@
     "conventionalCommitBuilder.template": "<type><scope>: <description>",
     "conventionalCommitBuilder.autoCommit": true,
     "conventionalCommitBuilder.showCommit": true,
-    "conventionalCommitBuilder.customTypes": [],
+    "conventionalCommitBuilder.customTypes": [
+        {
+            "label": "perf",
+            "description": "Performance improvement",
+            "detail": "A code change that improves performance"
+        },
+        {
+            "label": "ci",
+            "description": "CI",
+            "detail": "Changes to CI configuration files and scripts (e.g. GitHub Actions)"
+        }
+    ],
     "conventionalCommitBuilder.scopes": [
         "ai",
         "art",
