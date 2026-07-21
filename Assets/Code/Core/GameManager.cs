@@ -58,7 +58,10 @@ namespace FK.Tulip.Core
 
         private IEnumerator Start()
         {
-            if (!showSplashScreen || Application.isEditor)
+            // Debug.isDebugBuild always returns true in the editor
+            bool allowHidingSplashScreen = Debug.isDebugBuild;
+
+            if (!showSplashScreen && allowHidingSplashScreen)
                 yield return mainMenuSceneInfo.LoadAsync(LoadSceneMode.Single);
             else
             {
