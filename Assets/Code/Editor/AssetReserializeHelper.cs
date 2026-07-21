@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace FK.Tulip.Editor
 {
-    public sealed class AssetReserializeHelper : MonoBehaviour
+    internal sealed class AssetReserializeHelper : MonoBehaviour
     {
         [MenuItem("Tools/Force Reserialize Assets", priority = 10)]
         private static void ForceReserializeAssets()

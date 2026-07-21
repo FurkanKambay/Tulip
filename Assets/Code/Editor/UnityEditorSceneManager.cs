@@ -4,7 +4,7 @@ using UnityEditor.SceneManagement;
 namespace FK.Tulip.Editor
 {
     [InitializeOnLoad]
-    internal class UnityEditorSceneManager
+    internal static class UnityEditorSceneManager
     {
         private const string menuName = "Tools/Set Play Mode Start Scene";
         private const string sceneName = "0 Boot";

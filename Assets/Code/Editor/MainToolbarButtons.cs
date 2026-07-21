@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 namespace FK.Tulip.Editor
 {
     [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-    public static class MainToolbarButtons
+    internal static class MainToolbarButtons
     {
         private const string bootScenePath = "0 Boot";
         private const string menusScenePath = "1 Menus";

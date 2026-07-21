@@ -6,7 +6,7 @@ namespace FK.Tulip.Editor
 {
     [CanEditMultipleObjects]
     [CustomEditor(typeof(GameEvent), editorForChildClasses: true)]
-    public class GameEventEditor : UnityEditor.Editor
+    internal class GameEventEditor : UnityEditor.Editor
     {
         public override void OnInspectorGUI()
         {

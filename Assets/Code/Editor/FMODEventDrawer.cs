@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 namespace FK.Tulip.Editor
 {
     [CustomPropertyDrawer(typeof(FMODEvent))]
-    public class FMODEventDrawer : PropertyDrawer
+    internal sealed class FMODEventDrawer : PropertyDrawer
     {
         public override VisualElement CreatePropertyGUI(SerializedProperty property) =>
             new PropertyField(property.FindPropertyRelative("reference"));
