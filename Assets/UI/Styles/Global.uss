@@ -5,7 +5,7 @@
     --text-medium: 36px;
     --text-big: 48px;
     --text-large: 64px;
-    --text-huge: 72px;
+    --text-huge: 128px;
 
     font-size: var(--text-small);
 
