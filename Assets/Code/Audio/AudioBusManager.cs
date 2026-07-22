@@ -1,7 +1,5 @@
 using System.Threading.Tasks;
 using FK.Common;
-using FK.Tulip.Core;
-using FK.Tulip.Data.GameEvents;
 using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
@@ -11,12 +9,6 @@ namespace FK.Tulip.Audio
 {
     public sealed class AudioBusManager : MonoBehaviour
     {
-        [Header("Game Events")]
-        [SerializeField, Required] private GameStateChangeEvent gameStateChangeEvent;
-
-        [Header("References")]
-        [SerializeField, Required] private StudioListener fmodStudioListener;
-
         private Bus masterBus;
         private Bus musicBus;
         private Bus sfxBus;
@@ -36,13 +28,11 @@ namespace FK.Tulip.Audio
         private void OnEnable()
         {
             Settings.OnUpdate += Settings_Updated;
-            gameStateChangeEvent.OnRaised += GameState_Changed;
         }
 
         private void OnDisable()
         {
             Settings.OnUpdate -= Settings_Updated;
-            gameStateChangeEvent.OnRaised -= GameState_Changed;
         }
 
         private async void Start() => await UpdateVolumes();
@@ -71,12 +61,6 @@ namespace FK.Tulip.Audio
 
             if (frames > 0)
                 Log.Info($"{logPrefix} All banks have been loaded after {frames} frames.");
-        }
-
-        private void GameState_Changed(GameStateChange args)
-        {
-            fmodStudioListener.AttenuationObject = args.NewState is GameState.MainMenu ? null
-                : GameObject.FindGameObjectWithTag("Player");
         }
 
         private async void Settings_Updated() => await UpdateVolumes();

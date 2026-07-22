@@ -349,6 +349,7 @@ GameObject:
   - component: {fileID: 1803462558}
   - component: {fileID: 1803462557}
   - component: {fileID: 1803462560}
+  - component: {fileID: 1803462561}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -484,6 +485,20 @@ MonoBehaviour:
   activeInMainMenu: 1
   activeInGame: 0
   activeInPauseMenu: 0
+--- !u!114 &1803462561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803462556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &1808102680
 GameObject:
   m_ObjectHideFlags: 0

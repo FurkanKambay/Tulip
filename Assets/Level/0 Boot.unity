@@ -489,7 +489,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1760523199}
   - component: {fileID: 1760523203}
-  - component: {fileID: 1760523204}
   m_Layer: 0
   m_Name: "\U0001F39A\uFE0F Audio Manager"
   m_TagString: Untagged
@@ -524,22 +523,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d6d1e2a56c648e48c7e5ba48c5941a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Audio.AudioBusManager
-  gameStateChangeEvent: {fileID: 11400000, guid: e546a51b5a993714f94816c29b5538fa, type: 2}
-  fmodStudioListener: {fileID: 1760523204}
---- !u!114 &1760523204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760523198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FMODUnity.StudioListener, FMODUnity
-  nonRigidbodyVelocity: 0
-  attenuationObject: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
