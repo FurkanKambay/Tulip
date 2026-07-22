@@ -1,5 +1,4 @@
 using FK.Common;
-using FK.Common.Events;
 using FK.Tulip.Core;
 using FK.Tulip.Data.GameEvents;
 using FMODUnity;
@@ -12,8 +11,6 @@ namespace FK.Tulip.UI
     {
         [Header("Game Events")]
         [SerializeField, Required] private GameStateChangeEvent gameStateChangeEvent;
-        [SerializeField, Required] private GameEvent newGameEvent;
-        [SerializeField, Required] private GameEvent continueGameEvent;
 
         [Header("References")]
         [SerializeField, Required] private UIDocument document;
@@ -76,7 +73,9 @@ namespace FK.Tulip.UI
 
             // TODO: handle the audio elsewhere?
             RuntimeManager.CoreSystem.mixerSuspend();
-            newGameEvent.Raise(this);
+
+            GameManager.StartNewGame();
+
             RuntimeManager.CoreSystem.mixerResume();
         }
 
@@ -86,7 +85,9 @@ namespace FK.Tulip.UI
             continueButton.text = "Loading World";
 
             RuntimeManager.CoreSystem.mixerSuspend();
-            continueGameEvent.Raise(this);
+
+            Log.Warning("TODO: Continue Game", this);
+
             RuntimeManager.CoreSystem.mixerResume();
         }
 

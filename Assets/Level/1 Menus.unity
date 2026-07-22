@@ -327,7 +327,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FK.Tulip::FK.Tulip.UI.SettingsPresenter
   gameStateChangeEvent: {fileID: 11400000, guid: e546a51b5a993714f94816c29b5538fa, type: 2}
-  saveQuitEvent: {fileID: 11400000, guid: bfaf9c981cd952648a4499dcad8ab33c, type: 2}
   document: {fileID: 1795025821}
   brain: {fileID: 513751246}
   toggleSfx:
@@ -554,8 +553,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FK.Tulip::FK.Tulip.UI.MainMenuPresenter
   gameStateChangeEvent: {fileID: 11400000, guid: e546a51b5a993714f94816c29b5538fa, type: 2}
-  newGameEvent: {fileID: 11400000, guid: d0558c11f89cfdd4892ca7e60865b401, type: 2}
-  continueGameEvent: {fileID: 11400000, guid: fba74fa8cf4b436429a5ce6fbe4f2365, type: 2}
   document: {fileID: 1808102682}
 --- !u!1001 &1852941727
 PrefabInstance:

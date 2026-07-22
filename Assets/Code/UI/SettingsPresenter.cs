@@ -1,6 +1,5 @@
 using System.Collections;
 using FK.Common;
-using FK.Common.Events;
 using FK.Tulip.Audio;
 using FK.Tulip.Core;
 using FK.Tulip.Data.GameEvents;
@@ -21,7 +20,6 @@ namespace FK.Tulip.UI
 
         [Header("Game Events")]
         [SerializeField, Required] private GameStateChangeEvent gameStateChangeEvent;
-        [SerializeField, Required] private GameEvent saveQuitEvent;
 
         [Header("References")]
         [SerializeField, Required] private UIDocument document;
@@ -151,7 +149,7 @@ namespace FK.Tulip.UI
             quitFlyoutButton.value = false;
             optionsButton.value = false;
 
-            saveQuitEvent.Raise(this);
+            GameManager.ReturnToMainMenu();
         }
 
         private void QuitButton_Clicked(ClickEvent _) => GameManager.QuitGame();

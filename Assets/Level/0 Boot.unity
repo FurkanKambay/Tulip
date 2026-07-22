@@ -540,53 +540,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: FMODUnity.StudioListener, FMODUnity
   nonRigidbodyVelocity: 0
   attenuationObject: {fileID: 0}
---- !u!1 &2122878209
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2122878210}
-  - component: {fileID: 2122878211}
-  m_Layer: 0
-  m_Name: $ World Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2122878210
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2122878209}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2122878211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2122878209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6076eb0a70d4845a1e9dbd15b4fe694, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.GameWorld.WorldManager
-  newGameEvent: {fileID: 11400000, guid: d0558c11f89cfdd4892ca7e60865b401, type: 2}
-  continueGameEvent: {fileID: 11400000, guid: fba74fa8cf4b436429a5ce6fbe4f2365, type: 2}
-  saveQuitEvent: {fileID: 11400000, guid: bfaf9c981cd952648a4499dcad8ab33c, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -594,6 +547,5 @@ SceneRoots:
   - {fileID: 1328625852}
   - {fileID: 1724351829}
   - {fileID: 1760523199}
-  - {fileID: 2122878210}
   - {fileID: 1249539822}
   - {fileID: 1155374332}
