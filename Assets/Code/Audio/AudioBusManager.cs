@@ -62,8 +62,15 @@ namespace FK.Tulip.Audio
 
         internal static async Awaitable WaitForAllBanksToLoad()
         {
+            int frames = 0;
             while (!RuntimeManager.HaveAllBanksLoaded)
+            {
                 await Awaitable.NextFrameAsync();
+                frames++;
+            }
+
+            if (frames > 0)
+                Log.Info($"{logPrefix} All banks have been loaded after {frames} frames.");
         }
 
         private void GameState_Changed(GameStateChange args)
@@ -86,5 +93,7 @@ namespace FK.Tulip.Audio
 
         private static void SetVolume(Bus bus, int value) =>
             bus.setVolume(Mathf.InverseLerp(0, 100, value));
+
+        private static readonly string logPrefix = $"[{nameof(AudioBusManager)}]";
     }
 }
