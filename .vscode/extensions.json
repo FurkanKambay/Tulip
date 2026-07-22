@@ -2,6 +2,6 @@
     "recommendations": [
         "visualstudiotoolsforunity.vstuc",
         "editorconfig.editorconfig",
-        "vivaxy.vscode-conventional-commits"
+        "fletch-r.conventional-commit-builder"
     ]
 }
