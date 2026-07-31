@@ -5,6 +5,7 @@ using FK.Tulip.Core;
 using FK.Tulip.Data.GameEvents;
 using FK.Tulip.Input;
 using FMOD.Studio;
+using JetBrains.Annotations;
 using Unity.Properties;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -28,11 +29,9 @@ namespace FK.Tulip.UI
         [Header("FMOD Events")]
         [SerializeField] private FMODEvent toggleSfx;
 
-        // ReSharper disable UnusedMember.Local
-        [CreateProperty] private Settings Settings => Settings.Instance;
-        [CreateProperty] private bool IsQuitConfirmButtonVisible => IsInMainMenu && ShouldShowQuitButton;
-        [CreateProperty] private bool IsSaveExitButtonVisible => !IsInMainMenu && ShouldShowQuitButton;
-        // ReSharper restore UnusedMember.Local
+        [CreateProperty, UsedImplicitly] private Settings Settings => Settings.Instance;
+        [CreateProperty, UsedImplicitly] private bool IsQuitButtonVisible => !IsInMainMenu && container.visible;
+        [CreateProperty, UsedImplicitly] private bool IsSaveExitButtonVisible => !IsInMainMenu && ShouldShowQuitButton;
 
         private static bool IsInMainMenu => GameManager.CurrentState == GameState.MainMenu;
         private bool ShouldShowQuitButton => container.visible && quitFlyoutButton.value;
@@ -43,7 +42,6 @@ namespace FK.Tulip.UI
 
         private Toggle optionsButton;
         private Toggle quitFlyoutButton;
-        private Button menuQuitButton;
         private Button gameExitButton;
 
         private PARAMETER_DESCRIPTION paramMenuState;
@@ -61,11 +59,9 @@ namespace FK.Tulip.UI
             optionsButton = root.Q<Toggle>("options-toggle");
             quitFlyoutButton = root.Q<Toggle>("quit-flyout-button");
             gameExitButton = root.Q<Button>("save-exit-button");
-            menuQuitButton = root.Q<Button>("quit-confirm-button");
 
             optionsButton.RegisterCallback<ChangeEvent<bool>>(OptionsButton_Toggled);
             gameExitButton.RegisterCallback<ClickEvent>(SaveExitButton_Clicked);
-            menuQuitButton.RegisterCallback<ClickEvent>(QuitButton_Clicked);
 
 #if UNITY_WEBGL
             root.Q<DropdownField>("display-resolution").RemoveFromHierarchy();
@@ -151,8 +147,6 @@ namespace FK.Tulip.UI
 
             GameManager.ReturnToMainMenu();
         }
-
-        private void QuitButton_Clicked(ClickEvent _) => GameManager.QuitGame();
 
         // TODO: save game
         private void SaveGame() => Log.Info("Saving...");
