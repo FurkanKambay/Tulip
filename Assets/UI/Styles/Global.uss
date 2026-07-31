@@ -69,6 +69,22 @@
     -unity-background-image-tint-color: rgb(41, 52, 61);
 }
 
+.bg-tint-red {
+    -unity-background-image-tint-color: rgb(195, 0, 0);
+}
+
+.bg-tint-red:hover {
+    -unity-background-image-tint-color: rgb(158, 0, 0);
+}
+
+.bg-tint-red:active {
+    -unity-background-image-tint-color: rgb(117, 0, 0);
+}
+
+.bg-tint-red:disabled {
+    -unity-background-image-tint-color: rgb(77, 0, 0);
+}
+
 .unity-base-dropdown__container-outer {
     margin-top: 0;
     border-top-width: 0;

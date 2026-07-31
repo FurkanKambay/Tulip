@@ -27,7 +27,7 @@
 }
 
 #body > .unity-button {
-    height: 16%;
+    height: 12%;
     width: 50%;
     padding-top: 0;
     padding-right: 0;

@@ -19,6 +19,7 @@ namespace FK.Tulip.UI
         private VisualElement root;
         private Button newButton;
         private Button continueButton;
+        private Button quitButton;
 
         private void Awake()
         {
@@ -51,15 +52,18 @@ namespace FK.Tulip.UI
             {
                 newButton.UnregisterCallback<ClickEvent>(NewButton_Clicked);
                 continueButton.UnregisterCallback<ClickEvent>(ContinueButton_Clicked);
+                quitButton.UnregisterCallback<ClickEvent>(QuitButton_Clicked);
                 return;
             }
 
             root = document.rootVisualElement.ElementAt(0);
             newButton = root.Q<Button>("new-game-button");
             continueButton = root.Q<Button>("continue-button");
+            quitButton = root.Q<Button>("quit-button");
 
             newButton.RegisterCallback<ClickEvent>(NewButton_Clicked);
             continueButton.RegisterCallback<ClickEvent>(ContinueButton_Clicked);
+            quitButton.RegisterCallback<ClickEvent>(QuitButton_Clicked);
 
             // TODO: enable continue button if there's a latest save
             // TODO: support multiple saves
@@ -90,6 +94,9 @@ namespace FK.Tulip.UI
 
             RuntimeManager.CoreSystem.mixerResume();
         }
+
+        private void QuitButton_Clicked(ClickEvent _) =>
+            GameManager.QuitGame();
 
         private void DisableButtons()
         {
