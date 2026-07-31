@@ -1,30 +1,30 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI/Styles/DeathOverlay.uss?fileID=7433441132597879392&amp;guid=2be3f91103d793a47a042165b3fcd7fe&amp;type=3#DeathOverlay" />
+    <Style src="project://database/Assets/UI/Styles/DeathOverlay.uss?fileID=7433441132597879392&amp;guid=2be3f91103d793a47a042165b3fcd7fe&amp;type=3#DeathOverlay"/>
     <engine:VisualElement name="death-overlay" data-source-type="FK.Tulip.UI.DeathOverlayPresenter, FK.Tulip">
-        <engine:Label text="You are dead" name="death-title" />
+        <engine:Label text="You are dead" name="death-title"/>
         <engine:VisualElement name="reason-panel">
-            <engine:Label text="Reason:" name="reason-label" />
+            <engine:Label text="Reason:" name="reason-label"/>
             <engine:Label text="enemy" name="reason-content">
                 <Bindings>
-                    <engine:DataBinding property="text" binding-mode="ToTarget" data-source-path="DeathReason" />
+                    <engine:DataBinding property="text" binding-mode="ToTarget" data-source-path="DeathReason"/>
                 </Bindings>
             </engine:Label>
         </engine:VisualElement>
         <engine:VisualElement name="respawn-panel">
             <engine:Button text="Respawn" name="respawn-button" class="button-sharp-wide bg-tint-blue">
                 <Bindings>
-                    <engine:DataBinding property="style.display" binding-mode="ToTarget" data-source-path="IsRespawnButtonDisplayed" />
+                    <engine:DataBinding property="style.display" binding-mode="ToTarget" data-source-path="IsRespawnButtonDisplayed"/>
                 </Bindings>
             </engine:Button>
             <engine:Label name="countdown-text" text="10">
                 <Bindings>
-                    <engine:DataBinding property="text" binding-mode="ToTarget" data-source-path="SecondsUntilRespawn" />
-                    <engine:DataBinding property="style.display" binding-mode="ToTarget" data-source-path="IsCountdownDisplayed" />
+                    <engine:DataBinding property="text" binding-mode="ToTarget" data-source-path="SecondsUntilRespawn"/>
+                    <engine:DataBinding property="style.display" binding-mode="ToTarget" data-source-path="IsCountdownDisplayed"/>
                 </Bindings>
             </engine:Label>
         </engine:VisualElement>
         <Bindings>
-            <engine:DataBinding property="style.display" binding-mode="ToTarget" data-source-path="IsOverlayDisplayed" />
+            <engine:DataBinding property="style.display" binding-mode="ToTarget" data-source-path="IsOverlayDisplayed"/>
         </Bindings>
     </engine:VisualElement>
 </engine:UXML>
