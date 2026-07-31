@@ -42,7 +42,8 @@ namespace FK.Tulip.Audio
             if (!RuntimeManager.StudioSystem.isValid())
                 return;
 
-            RuntimeManager.PauseAllEvents(!hasFocus);
+            if (Settings.Audio.MuteInBackground)
+                RuntimeManager.PauseAllEvents(!hasFocus);
 
             if (!hasFocus)
                 RuntimeManager.CoreSystem.mixerSuspend();

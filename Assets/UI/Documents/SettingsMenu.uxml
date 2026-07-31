@@ -31,6 +31,11 @@
                         <engine:DataBinding property="value" binding-mode="TwoWay" data-source-path="UIVolume" />
                     </Bindings>
                 </engine:SliderInt>
+                <engine:Toggle label="Mute In Background" focusable="false" class="option">
+                    <Bindings>
+                        <engine:DataBinding property="value" binding-mode="TwoWay" data-source-path="MuteInBackground" />
+                    </Bindings>
+                </engine:Toggle>
             </engine:Tab>
             <engine:Tab label="Display" data-source-path="display" name="tab-display" class="tab">
                 <engine:DropdownField label="Window Mode" focusable="false" class="dropdown option">
