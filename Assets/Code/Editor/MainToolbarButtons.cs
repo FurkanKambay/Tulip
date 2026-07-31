@@ -100,7 +100,7 @@ namespace FK.Tulip.Editor
             if (Application.isPlaying || !EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
                 return default;
 
-            return EditorSceneManager.OpenScene($"Assets/Level/{sceneSubPath}.unity", openSceneMode);
+            return EditorSceneManager.OpenScene($"Assets/Scenes/{sceneSubPath}.unity", openSceneMode);
         }
     }
 }

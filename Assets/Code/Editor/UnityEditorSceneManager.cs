@@ -26,7 +26,7 @@ namespace FK.Tulip.Editor
             Menu.SetChecked(menuName, enabled);
             EditorPrefs.SetBool(menuName, enabled);
 
-            SceneAsset bootScene = AssetDatabase.LoadAssetAtPath<SceneAsset>($"Assets/Level/{sceneName}.unity");
+            SceneAsset bootScene = AssetDatabase.LoadAssetAtPath<SceneAsset>($"Assets/Scenes/{sceneName}.unity");
             EditorSceneManager.playModeStartScene = enabled ? bootScene : null;
         }
     }
