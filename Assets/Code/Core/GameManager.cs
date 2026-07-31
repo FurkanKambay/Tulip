@@ -21,7 +21,6 @@ namespace FK.Tulip.Core
     public sealed class GameManager : MonoBehaviour
     {
         [SerializeField, Required] private GameStateChangeEvent gameStateChangeEvent;
-        [SerializeField, Required] private InputManager inputManager;
 
         [LayoutGroup("/Main Menu Scene", ELayout.FoldoutBox)]
         [SerializeField, Inline] private SceneInfo mainMenuSceneInfo;
@@ -126,8 +125,8 @@ namespace FK.Tulip.Core
             GameState oldState = CurrentState;
             CurrentState = newState;
 
+            // TODO: move to TimeService
             UpdateTimeScale();
-            instance.UpdateInputs();
 
             instance.gameStateChangeEvent.Raise(instance, oldState, newState);
 
@@ -141,14 +140,6 @@ namespace FK.Tulip.Core
 #region Helper Methods
         private static void UpdateTimeScale() =>
             Time.timeScale = CurrentState == GameState.Paused ? 0 : 1;
-
-        private void UpdateInputs()
-        {
-            if (CurrentState is GameState.Playing)
-                inputManager.ActivateHeroControls();
-            else
-                inputManager.ActivateUIControls();
-        }
 
         private static bool IsSafeToQuit()
         {
