@@ -25,6 +25,7 @@
     margin-left: 16px;
     padding-top: 0;
     padding-bottom: 4px;
+    background-image: var(--button-small-bg);
 }
 
 .header-button:checked {
@@ -93,7 +94,7 @@
 }
 
 .quit-button {
-    right: 48px;
+    right: 72px;
     width: auto;
     padding-top: 0;
     padding-right: 24px;
@@ -117,37 +118,25 @@
     font-size: var(--text-big);
     height: 64px;
     width: 200px;
-    background-color: rgb(34, 38, 42);
+    background-color: rgba(0, 0, 0, 0);
+    -unity-background-image-tint-color: rgb(34, 38, 42);
+    background-image: var(--button-wide-bg-border);
     color: rgb(245, 245, 245);
-    border-left-width: 2px;
-    border-right-width: 2px;
-    border-top-width: 2px;
-    border-bottom-width: 2px;
     margin-top: 0;
     margin-bottom: 0;
     margin-right: 4px;
     margin-left: 4px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
     flex-direction: row;
     justify-content: center;
 }
 
 .unity-tab__header:hover {
-    border-top-width: 2px;
-    border-right-width: 2px;
-    border-bottom-width: 2px;
-    border-left-width: 2px;
-    border-left-color: rgb(255, 255, 255);
-    border-right-color: rgb(255, 255, 255);
-    border-top-color: rgb(255, 255, 255);
-    border-bottom-color: rgb(255, 255, 255);
+    background-image: var(--button-wide-bg);
 }
 
 .unity-tab__header:checked {
-    background-color: rgb(0, 88, 176);
+    -unity-background-image-tint-color: rgb(0, 88, 176);
+    background-image: var(--button-wide-bg-active);
 }
 
 .unity-tab__header:checked:hover {
@@ -155,7 +144,7 @@
     border-right-color: rgba(0, 0, 0, 0);
     border-top-color: rgba(0, 0, 0, 0);
     border-bottom-color: rgba(0, 0, 0, 0);
-    background-color: rgb(0, 82, 163);
+    -unity-background-image-tint-color: rgb(0, 82, 163);
 }
 
 #header > #key-prompt-container {
