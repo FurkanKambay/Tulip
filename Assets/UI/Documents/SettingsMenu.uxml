@@ -3,7 +3,8 @@
     <Style src="project://database/Assets/UI/Styles/OptionsMenu.Body.uss?fileID=7433441132597879392&amp;guid=6fb4624177c61bf46812563d65e71cde&amp;type=3#OptionsMenu.Body"/>
     <engine:VisualElement name="options-menu" data-source-type="FK.Tulip.UI.SettingsPresenter, FK.Tulip">
         <engine:VisualElement name="header">
-            <engine:Label text="Options" name="header-title"/>
+            <engine:Toggle name="options-toggle" class="header-button button-wide"/>
+            <engine:Label text="Settings" name="header-title"/>
             <engine:VisualElement name="key-prompt-container">
                 <engine:VisualElement name="key-prompt-prev" class="key-prompt"/>
                 <engine:VisualElement name="key-prompt-next" class="key-prompt"/>
@@ -63,5 +64,4 @@
             </Bindings>
         </engine:Toggle>
     </engine:VisualElement>
-    <engine:Toggle name="options-toggle" class="header-button button-wide"/>
 </engine:UXML>
