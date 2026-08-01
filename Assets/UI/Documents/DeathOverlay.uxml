@@ -11,7 +11,7 @@
             </engine:Label>
         </engine:VisualElement>
         <engine:VisualElement name="respawn-panel">
-            <engine:Button text="Respawn" name="respawn-button" class="button-sharp-wide bg-tint-blue">
+            <engine:Button text="Respawn" name="respawn-button" class="button-wide bg-tint-blue">
                 <Bindings>
                     <engine:DataBinding property="style.display" binding-mode="ToTarget" data-source-path="IsRespawnButtonDisplayed"/>
                 </Bindings>

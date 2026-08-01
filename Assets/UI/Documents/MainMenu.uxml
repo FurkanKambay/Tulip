@@ -5,9 +5,9 @@
             <engine:Label text="Tulip" name="game-title"/>
         </engine:VisualElement>
         <engine:VisualElement name="body">
-            <engine:Button text="Continue" name="continue-button" enabled="false" class="button-sharp-wide bg-tint-blue"/>
-            <engine:Button text="New Game" name="new-game-button" class="button-sharp-wide bg-tint-blue"/>
-            <engine:Button text="Quit" name="quit-button" class="button-sharp-wide bg-tint-red"/>
+            <engine:Button text="Continue" name="continue-button" enabled="false" class="button-wide bg-tint-blue"/>
+            <engine:Button text="New Game" name="new-game-button" class="button-wide bg-tint-blue"/>
+            <engine:Button text="Quit" name="quit-button" class="button-wide bg-tint-red"/>
         </engine:VisualElement>
     </engine:VisualElement>
 </engine:UXML>

@@ -52,16 +52,16 @@
                 </engine:DropdownField>
             </engine:Tab>
         </engine:TabView>
-        <engine:Button text="Save &amp; Quit" name="save-exit-button" focusable="false" class="header-button quit-button button-sharp-wide">
+        <engine:Button text="Save &amp; Quit" name="save-exit-button" focusable="false" class="header-button quit-button button-wide">
             <Bindings>
                 <engine:DataBinding property="style.visibility" binding-mode="ToTarget" data-source-path="IsSaveExitButtonVisible"/>
             </Bindings>
         </engine:Button>
-        <engine:Toggle name="quit-flyout-button" class="header-button button-sharp-wide">
+        <engine:Toggle name="quit-flyout-button" class="header-button button-wide">
             <Bindings>
                 <engine:DataBinding property="style.visibility" binding-mode="ToTarget" data-source-path="IsQuitButtonVisible"/>
             </Bindings>
         </engine:Toggle>
     </engine:VisualElement>
-    <engine:Toggle name="options-toggle" class="header-button button-sharp-wide"/>
+    <engine:Toggle name="options-toggle" class="header-button button-wide"/>
 </engine:UXML>
