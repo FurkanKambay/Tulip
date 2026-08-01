@@ -57,7 +57,8 @@ Tab > .unity-tab__content-container {
     color: rgb(0, 160, 255);
 }
 
-.option:hover .unity-toggle__text, .unity-base-field__label {
+.option:hover .unity-toggle__text,
+.unity-base-field__label {
     color: rgb(255, 255, 255);
 }
 
@@ -92,8 +93,8 @@ Tab > .unity-tab__content-container {
     align-self: flex-end;
     min-width: auto;
     -unity-text-align: upper-right;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .slider-audio > VisualElement {
@@ -102,7 +103,7 @@ Tab > .unity-tab__content-container {
 
 .slider-audio #unity-tracker {
     height: 20px;
-    border-width: 0px;
+    border-width: 0;
 }
 
 .slider-audio #unity-tracker #unity-fill {
