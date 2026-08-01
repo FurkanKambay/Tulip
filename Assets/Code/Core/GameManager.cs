@@ -125,9 +125,6 @@ namespace FK.Tulip.Core
             GameState oldState = CurrentState;
             CurrentState = newState;
 
-            // TODO: move to TimeService
-            UpdateTimeScale();
-
             instance.gameStateChangeEvent.Raise(instance, oldState, newState);
 
             if (oldState is GameState.MainMenu)
@@ -138,9 +135,6 @@ namespace FK.Tulip.Core
 #endregion
 
 #region Helper Methods
-        private static void UpdateTimeScale() =>
-            Time.timeScale = CurrentState == GameState.Paused ? 0 : 1;
-
         private static bool IsSafeToQuit()
         {
             if (CurrentState is GameState.MainMenu)
