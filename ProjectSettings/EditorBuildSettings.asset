@@ -14,5 +14,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/2 Game.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Testing/Arena.unity
+    guid: 32ba66f461fe6734284256e155110bb5
+  - enabled: 1
+    path: Assets/Scenes/Testing/Gym.unity
+    guid: 98e1845cb98916846a1fa93ebb1d9a31
+  - enabled: 1
+    path: Assets/Scenes/Testing/Zoo.unity
+    guid: 23a8d48024a9a714a91541b6f917ae28
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
