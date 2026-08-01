@@ -1,0 +1,3352 @@
+fileFormatVersion: 2
+guid: 20b9f77168ce29b48936f877b6046690
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 48
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 1
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ui-panel-01-full
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 968
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3726cf5eeb8aecb46a4511ea6af18e11
+      internalID: 796471921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-02-full
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 968
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3e45da0cbfb6884a9dfc6b49bf255af
+      internalID: -749984452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-03-full
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 968
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f814803e5b5bcf4d8b880bfc62e3446
+      internalID: -1532101351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-04-full
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 968
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 629a796e1f63d0d40a7113a5ee87ce88
+      internalID: -1353599367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-05-full
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 968
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ee59ee8ad0564147b0b34890c240fa6
+      internalID: -1148719068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-06-full
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 968
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a51831288aee5fc4b9cb9d05f1d6fd8d
+      internalID: -992838454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-07-full
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 968
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eff24c8e25dbfb4db4bacec6e067d80
+      internalID: 753073347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-08-full
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 968
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d3e203beaf518141aae6ae828cce11b
+      internalID: 870243987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-09-full
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 904
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc7f4ea0721da4f4db8de95c51a747c6
+      internalID: 1706937615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-10-full
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 904
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caea8e3bfa5c34041acb8be4b88dd2c0
+      internalID: -1436541867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-11-full
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 904
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 894dc4e8848ad75458aa9863150579d4
+      internalID: 236612064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-12-full
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 904
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5798b1cbdc63d954093c36644b3697ba
+      internalID: -1697414184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-13-full
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 904
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 033ee696d63f6a34ebabe4c7ca5341f4
+      internalID: 1799532471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-14-full
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 904
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c69739445e152004b948286bb7707cca
+      internalID: -1603242947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-15-full
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 904
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2487dde81cc9ec408073812a6f7ae59
+      internalID: 793974361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-16-full
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 904
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ab85e1e06783e643a0663aa52efd373
+      internalID: 1232900189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-17-full
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 840
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0157a230177a322429fa498e0a9e6121
+      internalID: -1473296621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-18-full
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 840
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc13e6695dfc1f94e960a7edf39a6781
+      internalID: 360951935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-19-full
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 840
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50f07a79193439c4ca0ba21de57b3ac7
+      internalID: -1298864430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-20-full
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 840
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15021bfd77d313543817bee187064efe
+      internalID: -1265150955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-21-full
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 840
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ea569ae5355340438bda70bde9e905a
+      internalID: -1147874222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-22-full
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 840
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d342bc7dd624c14439d8be71f59de775
+      internalID: 1675338580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-23-full
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 840
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d590a0214eefbb4186698b1e738d1ca
+      internalID: -490657688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-24-full
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 840
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a520230292be7c4181018c94b0d2477
+      internalID: -177363519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-25-full
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 776
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 274ccb6c5201b254fa56b93e17d92694
+      internalID: 672298221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-26-full
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 776
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 807ccda18ae3459459113423c223ff78
+      internalID: 1729971453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-27-full
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 776
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b97fc845fc0e2d428c291372909a558
+      internalID: -2027708579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-28-full
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 776
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdcb60bb444d78d45a9c04ad382c8f17
+      internalID: -1880879179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-29-full
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 776
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f77325fd084863b4783009e76fc274c4
+      internalID: -1803759770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-30-full
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 776
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 604ea1e3d50ccbc448e8ffabf9039df6
+      internalID: 374685768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-31-full
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 776
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e333f94e3d6ddca44b0fe96b534f3f55
+      internalID: -1132022220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-32-full
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 776
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7f702b728256d044b42287bb8f24643
+      internalID: -1703837653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-01-border-only
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 968
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f79e7456acfb0b429e1b456187a396c
+      internalID: 1833218352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-02-border-only
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 968
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da42fc4108051354e83f4be140ae19f6
+      internalID: -2122115973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-03-border-only
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 968
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89ef8628498b39047a4c550f56dcc8b2
+      internalID: 741631034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-04-border-only
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 968
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ee8c461e4461e3409abaed8a1c9304d
+      internalID: 2025853179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-05-border-only
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 968
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80e595a578769d046b793bb4d6a937e9
+      internalID: 1511972604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-06-border-only
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 968
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 508dddbef5d43834895074b70ca966a3
+      internalID: -1523884858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-07-border-only
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 968
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab4916cae94752147bd33761f0ff790e
+      internalID: -1943147968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-08-border-only
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 968
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b00314dd0c24ef343a7915f82002ebbb
+      internalID: 1024297762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-09-border-only
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 904
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2784cd069bc1f5242a8cada0fb21fe80
+      internalID: -1686592946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-10-border-only
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 904
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b98afcec48067c4eadd142fb55f815b
+      internalID: -1595692124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-11-border-only
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 904
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7424d69656bf9d6438b94cf7bb6416f9
+      internalID: -2147183206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-12-border-only
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 904
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d351c1c8697d1949b8fa52d755a8696
+      internalID: -799759233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-13-border-only
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 904
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22a2893e5eafc624084ccaadbddfcf34
+      internalID: 1748249580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-14-border-only
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 904
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 541efa97f50eec04b9114365e0ab2dea
+      internalID: -1535594185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-15-border-only
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 904
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68bec8d8cd780c747b7e33a690fa55c8
+      internalID: -1417772240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-16-border-only
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 904
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa8ad718f786e64ba70270c364ff222
+      internalID: 903957411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-17-border-only
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 840
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0d557dd57b686b4cad15f35af4ac4e4
+      internalID: 422905089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-18-border-only
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 840
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e1cd2da6ba7e5342949b684a69b20cc
+      internalID: 1333220291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-19-border-only
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 840
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25448da09dc513a449723c2688e49673
+      internalID: 820477295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-20-border-only
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 840
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3df338a8242f3f4fb5628b38b7bbde3
+      internalID: -462737833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-21-border-only
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 840
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ae33592030926348afc6dd8f47c5fbb
+      internalID: -173631534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-22-border-only
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 840
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66747b256d411154c88df0b97e03f663
+      internalID: 922963171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-23-border-only
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 840
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e186c6bf069066c4a8421ca7334bdefe
+      internalID: 30096103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-24-border-only
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 840
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a88ccdcc7f9c7254abeb4a991e63da29
+      internalID: -2008622674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-25-border-only
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 776
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61d2365b75bf17d4390dc672ca97fcb1
+      internalID: 375957442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-26-border-only
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 776
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98f85d5253e3ba14e8b1508587250134
+      internalID: -1746423026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-27-border-only
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 776
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b44b552d4cf0253418911ef9f498dcf7
+      internalID: -1518166791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-28-border-only
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 776
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e51db42fab2b2043aedd1acae77044d
+      internalID: -1363404334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-29-border-only
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 776
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0245e5c0d0b79c94b905f18ad3a22093
+      internalID: 904758679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-30-border-only
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 776
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a4d5f233236214f8b5ff204d4bda0d
+      internalID: 1191702200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-31-border-only
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 776
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 505a9b7cb649d454a9db90ed4122ca8e
+      internalID: -1192071732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-32-border-only
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 776
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c398d1f530ac254d96f7d10d5aeed76
+      internalID: 1805674279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-01-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 712
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c29ca79c047492e44bbe43a0abe7b131
+      internalID: -1718454750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-02-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 712
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1abb93c3a91e948429fb3be14466e894
+      internalID: 802772929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-03-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 712
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7135c56c65b8fc4d9b1e7201ef08d98
+      internalID: 1864867838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-04-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 712
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c333f0cc8029baa4baaa5c345356e053
+      internalID: 1589975462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-05-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 712
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f665824bd518b74ea38e158a7f8f8b9
+      internalID: -1481282862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-06-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 712
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1131cb4e8083eb74e9288b8d82aef1bd
+      internalID: -261517269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-07-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 712
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19ac1371328439c419a2c9cc98c16002
+      internalID: -1915406334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-08-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 712
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4ea7ef80e3641645a807eba3cc9d39d
+      internalID: 815510588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-09-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 648
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af28c4bd055a55e4d8b2293024003ae4
+      internalID: 1174796361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-10-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 648
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b68a9d7f33325524eb72ba356d616f29
+      internalID: 333711548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-11-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 648
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c9db4eda937f1f40a04abcd37ce5314
+      internalID: -1651370035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-12-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 648
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 395ac408d61ebc34a829ab436d441e86
+      internalID: -1772804946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-13-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 648
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee7c12b3a49f62e45971ef33f03bd11f
+      internalID: -1293995414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-14-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 648
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 259c655aa79805949b05ad9e58378323
+      internalID: -1110830192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-15-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 648
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1310c64becfc8d4e977b9257359a452
+      internalID: 999815708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-16-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 648
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ff867ce1293fc44aabd04c4660b91a7
+      internalID: -272390163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-17-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 584
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d8f60d80dafd744b9ccf8518d20b829
+      internalID: 954097937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-18-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 584
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f075fe8e0bd5384eae1b215577aa6bb
+      internalID: 1993144563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-19-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 584
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc7df7018ca8a7048931389be759aa3a
+      internalID: 1956548757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-20-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 584
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eee06eb6368933043b4c9c58949dad77
+      internalID: 733131155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-21-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 584
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 836be093a039c8c42962615cee8fdbf6
+      internalID: 375544886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-22-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 584
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8975c3111e57bc949a693e7a3b169def
+      internalID: 2047525903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-23-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 584
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59c857dbf52dc6049825aeec11e274cf
+      internalID: 121729506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-24-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 584
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6708377ee87a99b498b6ccf505f43341
+      internalID: 1706953269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-25-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 520
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce14cb8ff89f4d14abf5fe1ebb895c52
+      internalID: -1719892942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-26-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 520
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27c84ff57251369469dee2005c5c8c12
+      internalID: 1329803478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-27-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 520
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd8ef7b9d9e4174d96474548ea8cf92
+      internalID: 1628004490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-28-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 520
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9ca41f049cb8cf4196e6bc500050e97
+      internalID: 1150730613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-29-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 520
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7be40b067e455b24bbd006d7e4cc14c1
+      internalID: -1400777707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-30-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 520
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a18300568956d2e41af1320fea32ad68
+      internalID: 972341929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-31-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 520
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e4a3354a996902408425e409415507c
+      internalID: 633346176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-32-faded-bg
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 520
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad2e7d412beb4bc478a2c88890d6258d
+      internalID: 328574962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-01-faded-border
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 712
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dd01b8832a9a014b8d7f436a440e803
+      internalID: 1303719427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-02-faded-border
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 712
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 568bbc123233ad142a863a839e2709c2
+      internalID: -1346592975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-03-faded-border
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 712
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 577a0b61b99e3fe45b6b2b4816ea42d9
+      internalID: 865248650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-04-faded-border
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 712
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a82313216b415498e5ca4181a33aa3
+      internalID: 1946176496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-05-faded-border
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 712
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ec03f263166a1a4995fc8c2b79c7a26
+      internalID: 559944358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-06-faded-border
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 712
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a83c39563720e742866cc096b6276bb
+      internalID: 2034686000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-07-faded-border
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 712
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1e37554fd517cc4da3869a3c6e7c227
+      internalID: 526141016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-08-faded-border
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 712
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fdf4d4c6d8210146a80ea7a976c991d
+      internalID: -153421248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-09-faded-border
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 648
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef800b4011adde44b87211e3151a4de2
+      internalID: -1507509807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-10-faded-border
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 648
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b180f9556c53c1c4a8f64b5876e28de8
+      internalID: -1573894940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-11-faded-border
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 648
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fa37840d67c25745833fbd3ab0244d1
+      internalID: 986310238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-12-faded-border
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 648
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cce2669f7cdb76545b6bb283a7d01b43
+      internalID: 1609959064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-13-faded-border
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 648
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66887535c68aa5340a9866cbc002bed3
+      internalID: -829975362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-14-faded-border
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 648
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b634899053913146b284381321fe551
+      internalID: 562574058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-15-faded-border
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 648
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd1687440c9efde47a6ceb9e276f5f52
+      internalID: -1515748074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-16-faded-border
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 648
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e198d7c24f6ef4040961103925bba6c0
+      internalID: -2214110016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-17-faded-border
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 584
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9258bb85c03116448696db63cdb0782
+      internalID: 955679659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-18-faded-border
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 584
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1475c6cfb6853d141a76825304084974
+      internalID: -960720829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-19-faded-border
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 584
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bd04090c64f6ee4382b3c53fdd42b68
+      internalID: 1892604243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-20-faded-border
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 584
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d80233cba6870e4a9861868eb07bf36
+      internalID: -1623205056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-21-faded-border
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 584
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d72961348694cc24a8d115a7977bfe2b
+      internalID: -2218292622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-22-faded-border
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 584
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73c626db4e509664ab926d5631181f0a
+      internalID: -546208874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-23-faded-border
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 584
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7d439009c0698b45a2d5a07a9a22194
+      internalID: 822284616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-24-faded-border
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 584
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 500f7c12af195b9498586149213d359d
+      internalID: -783578516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-25-faded-border
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 520
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd07338d4859dcc4f9287a1ccb033ff0
+      internalID: 2137146610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-26-faded-border
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 520
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e3dd7f1a3d228a419a10891d879ff93
+      internalID: -455160022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-27-faded-border
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 520
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1e69a2a02f4f38499eff54860d55246
+      internalID: 1343119623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-28-faded-border
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 520
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a085d039443a9dc489f35eac9084a888
+      internalID: 299993239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-29-faded-border
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 520
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ee01854a3575c04a8d563bd9b6f9fff
+      internalID: -253985157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-30-faded-border
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 520
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39b48215e3ff99c4b975f42004fabba8
+      internalID: 1059028246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-31-faded-border
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 520
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fd9e5c0059c12848bf9008f8c46a64e
+      internalID: 1596470141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-panel-32-faded-border
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 520
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd22621847712cf448c453c01e5b9b8c
+      internalID: -1371851219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-divider-01-solid
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 468
+        width: 96
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 48, y: 10, z: 32, w: 10}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d67671d6d0e00114e878b8b8c94c84e1
+      internalID: 357763054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-divider-02-solid
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 468
+        width: 96
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 48, y: 10, z: 32, w: 10}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f625935418a720b4d8fd765e3f772779
+      internalID: 1838814264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-divider-03-solid
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 468
+        width: 96
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 48, y: 10, z: 32, w: 10}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6a3f5a079b7cb342a10b2e790795df6
+      internalID: -1554903328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-divider-04-solid
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 468
+        width: 96
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 48, y: 10, z: 32, w: 10}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbc62d38943b83b46adb80795731f947
+      internalID: -907556915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-divider-05-solid
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 468
+        width: 96
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 48, y: 10, z: 32, w: 10}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9ee05e8979d04346a190e64fa95f596
+      internalID: 10343131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-divider-06-solid
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 468
+        width: 96
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 48, y: 10, z: 32, w: 10}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e947fe678def8345bc535fa92d85798
+      internalID: -1500232778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-divider-01-faded
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 404
+        width: 96
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 48, y: 10, z: 32, w: 10}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 577d8aaedb8edae4e83c04205b506c88
+      internalID: 1904493855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-divider-02-faded
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 404
+        width: 96
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 48, y: 10, z: 32, w: 10}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 570b8069b53fbe94c81a13debc1acfc7
+      internalID: -1553616611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-divider-03-faded
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 404
+        width: 96
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 48, y: 10, z: 32, w: 10}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 800c3a292fe9063459de6691d7c4f7e9
+      internalID: 600118118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-divider-04-faded
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 404
+        width: 96
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 48, y: 10, z: 32, w: 10}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 107bbea4ab2961d4b8fb5473ea34f6de
+      internalID: 370228846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-divider-05-faded
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 404
+        width: 96
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 48, y: 10, z: 32, w: 10}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c440759da866cde4cbb60e37571a4b94
+      internalID: -1660820721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-divider-06-faded
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 404
+        width: 96
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 48, y: 10, z: 32, w: 10}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d13535d91675ba4469d9db3e66a1a562
+      internalID: 2006821680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a39a8a9521022ee41964cb8d8a41e25d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":8.0,"y":8.0},"gridSpritePadding":{"x":16.0,"y":16.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":1,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      ui-divider-01-faded: 1904493855
+      ui-divider-01-solid: 357763054
+      ui-divider-02-faded: -1553616611
+      ui-divider-02-solid: 1838814264
+      ui-divider-03-faded: 600118118
+      ui-divider-03-solid: -1554903328
+      ui-divider-04-faded: 370228846
+      ui-divider-04-solid: -907556915
+      ui-divider-05-faded: -1660820721
+      ui-divider-05-solid: 10343131
+      ui-divider-06-faded: 2006821680
+      ui-divider-06-solid: -1500232778
+      ui-panel-01-border-only: 1833218352
+      ui-panel-01-faded-bg: -1718454750
+      ui-panel-01-faded-border: 1303719427
+      ui-panel-01-full: 796471921
+      ui-panel-02-border-only: -2122115973
+      ui-panel-02-faded-bg: 802772929
+      ui-panel-02-faded-border: -1346592975
+      ui-panel-02-full: -749984452
+      ui-panel-03-border-only: 741631034
+      ui-panel-03-faded-bg: 1864867838
+      ui-panel-03-faded-border: 865248650
+      ui-panel-03-full: -1532101351
+      ui-panel-04-border-only: 2025853179
+      ui-panel-04-faded-bg: 1589975462
+      ui-panel-04-faded-border: 1946176496
+      ui-panel-04-full: -1353599367
+      ui-panel-05-border-only: 1511972604
+      ui-panel-05-faded-bg: -1481282862
+      ui-panel-05-faded-border: 559944358
+      ui-panel-05-full: -1148719068
+      ui-panel-06-border-only: -1523884858
+      ui-panel-06-faded-bg: -261517269
+      ui-panel-06-faded-border: 2034686000
+      ui-panel-06-full: -992838454
+      ui-panel-07-border-only: -1943147968
+      ui-panel-07-faded-bg: -1915406334
+      ui-panel-07-faded-border: 526141016
+      ui-panel-07-full: 753073347
+      ui-panel-08-border-only: 1024297762
+      ui-panel-08-faded-bg: 815510588
+      ui-panel-08-faded-border: -153421248
+      ui-panel-08-full: 870243987
+      ui-panel-09-border-only: -1686592946
+      ui-panel-09-faded-bg: 1174796361
+      ui-panel-09-faded-border: -1507509807
+      ui-panel-09-full: 1706937615
+      ui-panel-10-border-only: -1595692124
+      ui-panel-10-faded-bg: 333711548
+      ui-panel-10-faded-border: -1573894940
+      ui-panel-10-full: -1436541867
+      ui-panel-11-border-only: -2147183206
+      ui-panel-11-faded-bg: -1651370035
+      ui-panel-11-faded-border: 986310238
+      ui-panel-11-full: 236612064
+      ui-panel-12-border-only: -799759233
+      ui-panel-12-faded-bg: -1772804946
+      ui-panel-12-faded-border: 1609959064
+      ui-panel-12-full: -1697414184
+      ui-panel-13-border-only: 1748249580
+      ui-panel-13-faded-bg: -1293995414
+      ui-panel-13-faded-border: -829975362
+      ui-panel-13-full: 1799532471
+      ui-panel-14-border-only: -1535594185
+      ui-panel-14-faded-bg: -1110830192
+      ui-panel-14-faded-border: 562574058
+      ui-panel-14-full: -1603242947
+      ui-panel-15-border-only: -1417772240
+      ui-panel-15-faded-bg: 999815708
+      ui-panel-15-faded-border: -1515748074
+      ui-panel-15-full: 793974361
+      ui-panel-16-border-only: 903957411
+      ui-panel-16-faded-bg: -272390163
+      ui-panel-16-faded-border: -2214110016
+      ui-panel-16-full: 1232900189
+      ui-panel-17-border-only: 422905089
+      ui-panel-17-faded-bg: 954097937
+      ui-panel-17-faded-border: 955679659
+      ui-panel-17-full: -1473296621
+      ui-panel-18-border-only: 1333220291
+      ui-panel-18-faded-bg: 1993144563
+      ui-panel-18-faded-border: -960720829
+      ui-panel-18-full: 360951935
+      ui-panel-19-border-only: 820477295
+      ui-panel-19-faded-bg: 1956548757
+      ui-panel-19-faded-border: 1892604243
+      ui-panel-19-full: -1298864430
+      ui-panel-20-border-only: -462737833
+      ui-panel-20-faded-bg: 733131155
+      ui-panel-20-faded-border: -1623205056
+      ui-panel-20-full: -1265150955
+      ui-panel-21-border-only: -173631534
+      ui-panel-21-faded-bg: 375544886
+      ui-panel-21-faded-border: -2218292622
+      ui-panel-21-full: -1147874222
+      ui-panel-22-border-only: 922963171
+      ui-panel-22-faded-bg: 2047525903
+      ui-panel-22-faded-border: -546208874
+      ui-panel-22-full: 1675338580
+      ui-panel-23-border-only: 30096103
+      ui-panel-23-faded-bg: 121729506
+      ui-panel-23-faded-border: 822284616
+      ui-panel-23-full: -490657688
+      ui-panel-24-border-only: -2008622674
+      ui-panel-24-faded-bg: 1706953269
+      ui-panel-24-faded-border: -783578516
+      ui-panel-24-full: -177363519
+      ui-panel-25-border-only: 375957442
+      ui-panel-25-faded-bg: -1719892942
+      ui-panel-25-faded-border: 2137146610
+      ui-panel-25-full: 672298221
+      ui-panel-26-border-only: -1746423026
+      ui-panel-26-faded-bg: 1329803478
+      ui-panel-26-faded-border: -455160022
+      ui-panel-26-full: 1729971453
+      ui-panel-27-border-only: -1518166791
+      ui-panel-27-faded-bg: 1628004490
+      ui-panel-27-faded-border: 1343119623
+      ui-panel-27-full: -2027708579
+      ui-panel-28-border-only: -1363404334
+      ui-panel-28-faded-bg: 1150730613
+      ui-panel-28-faded-border: 299993239
+      ui-panel-28-full: -1880879179
+      ui-panel-29-border-only: 904758679
+      ui-panel-29-faded-bg: -1400777707
+      ui-panel-29-faded-border: -253985157
+      ui-panel-29-full: -1803759770
+      ui-panel-30-border-only: 1191702200
+      ui-panel-30-faded-bg: 972341929
+      ui-panel-30-faded-border: 1059028246
+      ui-panel-30-full: 374685768
+      ui-panel-31-border-only: -1192071732
+      ui-panel-31-faded-bg: 633346176
+      ui-panel-31-faded-border: 1596470141
+      ui-panel-31-full: -1132022220
+      ui-panel-32-border-only: 1805674279
+      ui-panel-32-faded-bg: 328574962
+      ui-panel-32-faded-border: -1371851219
+      ui-panel-32-full: -1703837653
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
