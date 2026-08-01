@@ -1,5 +1,5 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI/Styles/DeathOverlay.uss?fileID=7433441132597879392&amp;guid=2be3f91103d793a47a042165b3fcd7fe&amp;type=3#DeathOverlay"/>
+    <Style src="project://database/Assets/UI/Death Overlay/DeathOverlay.uss?fileID=7433441132597879392&amp;guid=2be3f91103d793a47a042165b3fcd7fe&amp;type=3#DeathOverlay"/>
     <engine:VisualElement name="death-overlay" data-source-type="FK.Tulip.UI.DeathOverlayPresenter, FK.Tulip">
         <engine:Label text="You are dead" name="death-title"/>
         <engine:VisualElement name="reason-panel">

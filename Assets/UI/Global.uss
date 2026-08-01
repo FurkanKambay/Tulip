@@ -11,10 +11,10 @@
     --icon-key-q: url("project://database/Assets/UI/Sprites/Xelu%20Prompts/Keyboard%20Dark/KeyDark_Q.png?fileID=2800000&guid=ac9d4abc8b456c449a2546bd00d966a3&type=3#KeyDark_Q");
     --icon-key-e: url("project://database/Assets/UI/Sprites/Xelu%20Prompts/Keyboard%20Dark/KeyDark_E.png?fileID=2800000&guid=f37f09061207edd4f9657c203a0a13bd&type=3#KeyDark_E");
     --icon-quit: url("project://database/Assets/UI/Sprites/quit.png?fileID=2800000&guid=60599fe8b12ac3c418ac57d7a66c14f4&type=3#quit");
-    --button-wide-bg-border: url("project://database/Assets/UI/Sprites/Menus/Kenney_Fantasy_UI.png?fileID=-2122115973&guid=20b9f77168ce29b48936f877b6046690&type=3#ui-panel-02-border-only");
-    --button-wide-bg: url("project://database/Assets/UI/Sprites/Menus/Kenney_Fantasy_UI.png?fileID=802772929&guid=20b9f77168ce29b48936f877b6046690&type=3#ui-panel-02-faded-bg");
-    --button-wide-bg-active: url("project://database/Assets/UI/Sprites/Menus/Kenney_Fantasy_UI.png?fileID=-1353599367&guid=20b9f77168ce29b48936f877b6046690&type=3#ui-panel-04-full");
-    --button-small-bg: url("project://database/Assets/UI/Sprites/Menus/Kenney_Fantasy_UI.png?fileID=-1473296621&guid=20b9f77168ce29b48936f877b6046690&type=3#ui-panel-17-full");
+    --button-wide-bg-border: url("project://database/Assets/UI/Sprites/Kenney_Fantasy_UI.png?fileID=-2122115973&guid=20b9f77168ce29b48936f877b6046690&type=3#ui-panel-02-border-only");
+    --button-wide-bg: url("project://database/Assets/UI/Sprites/Kenney_Fantasy_UI.png?fileID=802772929&guid=20b9f77168ce29b48936f877b6046690&type=3#ui-panel-02-faded-bg");
+    --button-wide-bg-active: url("project://database/Assets/UI/Sprites/Kenney_Fantasy_UI.png?fileID=-1353599367&guid=20b9f77168ce29b48936f877b6046690&type=3#ui-panel-04-full");
+    --button-small-bg: url("project://database/Assets/UI/Sprites/Kenney_Fantasy_UI.png?fileID=-1473296621&guid=20b9f77168ce29b48936f877b6046690&type=3#ui-panel-17-full");
 }
 
 .button-wide {

@@ -43,10 +43,10 @@ An old build of the game from when it was still a sandbox prototype is available
 
 ### 📱 User Interface (UI Toolkit)
 
-- [Menus](Assets/UI/Documents) | [Death overlay](Assets/UI/Documents/DeathOverlay.uxml)
-- [Data bindings](Assets/UI/Documents/SettingsMenu.uxml) using the MVP pattern
+- [Menus](Assets/UI) | [Death overlay](Assets/UI/Death Overlay/DeathOverlay.uxml)
+- [Data bindings](Assets/UI/Settings Menu/SettingsMenu.uxml) using the MVP pattern
 - [Global converters](Assets/Code/UI/GlobalConverters.cs) for data bindings
-- [Custom styling](Assets/UI/Styles) for default Unity UITK controls like `DropdownField`, `TabView` via `.unity-` USS classes
+- [Custom styling](Assets/UI) for default Unity UITK controls like `DropdownField`, `TabView` via `.unity-` USS classes
 
 ### 🎵 Audio (FMOD)
 
