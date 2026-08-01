@@ -104,15 +104,18 @@ namespace FK.Tulip.UI
             else
             {
                 if (brain.WantsToPause)
-                    optionsButton.value = true;
+                    ToggleUI(true);
 
                 if (brain.WantsToCancel)
-                    optionsButton.value = false;
+                    ToggleUI(false);
             }
 
             if (brain.TabSwitchDelta.HasValue)
                 tabView.selectedTabIndex += brain.TabSwitchDelta.Value;
         }
+
+        public void ToggleUI(bool visible) =>
+            optionsButton.value = visible;
 
         private void OptionsButton_Toggled(ChangeEvent<bool> change)
         {

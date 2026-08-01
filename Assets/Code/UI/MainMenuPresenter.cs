@@ -19,6 +19,7 @@ namespace FK.Tulip.UI
         private VisualElement root;
         private Button newButton;
         private Button continueButton;
+        private Button settingsButton;
         private Button quitButton;
 
         private void Awake()
@@ -52,6 +53,7 @@ namespace FK.Tulip.UI
             {
                 newButton.UnregisterCallback<ClickEvent>(NewButton_Clicked);
                 continueButton.UnregisterCallback<ClickEvent>(ContinueButton_Clicked);
+                settingsButton.UnregisterCallback<ClickEvent>(SettingsButton_Clicked);
                 quitButton.UnregisterCallback<ClickEvent>(QuitButton_Clicked);
                 return;
             }
@@ -59,10 +61,12 @@ namespace FK.Tulip.UI
             root = document.rootVisualElement;
             newButton = root.Q<Button>("new-game-button");
             continueButton = root.Q<Button>("continue-button");
+            settingsButton = root.Q<Button>("settings-button");
             quitButton = root.Q<Button>("quit-button");
 
             newButton.RegisterCallback<ClickEvent>(NewButton_Clicked);
             continueButton.RegisterCallback<ClickEvent>(ContinueButton_Clicked);
+            settingsButton.RegisterCallback<ClickEvent>(SettingsButton_Clicked);
             quitButton.RegisterCallback<ClickEvent>(QuitButton_Clicked);
 
             // TODO: enable continue button if there's a latest save
@@ -94,6 +98,9 @@ namespace FK.Tulip.UI
 
             RuntimeManager.CoreSystem.mixerResume();
         }
+
+        private void SettingsButton_Clicked(ClickEvent _) =>
+            settingsPresenter.ToggleUI(true);
 
         private void QuitButton_Clicked(ClickEvent _) =>
             GameManager.QuitGame();
