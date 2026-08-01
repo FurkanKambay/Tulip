@@ -1,6 +1,6 @@
 #header {
     height: 96px;
-    background-color: rgb(44, 132, 181);
+    background-color: rgb(108, 123, 241);
     position: absolute;
     width: 100%;
 }
