@@ -36,3 +36,14 @@
     margin-top: 8px;
     margin-bottom: 8px;
 }
+
+#bg {
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    top: 0%;
+    filter: blur(10);
+    background-image: url("project://database/Assets/Art/Sprites/Backgrounds/Plains/0.png?fileID=2800000&guid=e1db1b7b91e559f47820945915ffdd89&type=3#0");
+    background-color: rgba(0, 0, 0, 0.525);
+}

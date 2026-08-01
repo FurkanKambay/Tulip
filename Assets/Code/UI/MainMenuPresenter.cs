@@ -56,7 +56,7 @@ namespace FK.Tulip.UI
                 return;
             }
 
-            root = document.rootVisualElement.ElementAt(0);
+            root = document.rootVisualElement;
             newButton = root.Q<Button>("new-game-button");
             continueButton = root.Q<Button>("continue-button");
             quitButton = root.Q<Button>("quit-button");

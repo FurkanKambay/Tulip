@@ -1,5 +1,6 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/Styles/MainMenu.uss?fileID=7433441132597879392&amp;guid=5f24e2399b8035745a7f7fe2e37082b7&amp;type=3#MainMenu"/>
+    <engine:VisualElement name="bg"/>
     <engine:VisualElement name="main-menu">
         <engine:VisualElement name="header">
             <engine:Label text="Tulip" name="game-title"/>
