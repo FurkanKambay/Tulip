@@ -12,7 +12,8 @@ namespace FK.Tulip.Input
         [Header("References")]
         [SerializeField, Required] private GameStateChangeEvent gameStateChangeEvent;
 
-        [Header("Log Config")]
+        [Header("Config")]
+        [SerializeField] private bool activateHeroAtStart;
         [SerializeField] private bool logDeviceEvents = true;
         [SerializeField] private bool logControlSwaps = true;
 
@@ -41,12 +42,17 @@ namespace FK.Tulip.Input
 
         private void Start()
         {
-            ActivateUIControls();
+            ToggleControls(activateHeroAtStart);
         }
 
         private void GameState_Changed(GameStateChange change)
         {
-            if (change.NewState == GameState.Playing)
+            ToggleControls(change.NewState is GameState.Playing);
+        }
+
+        private void ToggleControls(bool isHeroActive)
+        {
+            if (isHeroActive)
                 ActivateHeroControls();
             else
                 ActivateUIControls();

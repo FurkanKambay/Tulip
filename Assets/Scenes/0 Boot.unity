@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Input.InputService
   gameStateChangeEvent: {fileID: 11400000, guid: e546a51b5a993714f94816c29b5538fa, type: 2}
+  activateHeroAtStart: 0
   logDeviceEvents: 1
   logControlSwaps: 1
 --- !u!1 &1155374331

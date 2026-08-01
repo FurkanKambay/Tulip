@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 121882224}
   - component: {fileID: 121882225}
   m_Layer: 0
-  m_Name: Input Manager
+  m_Name: "\u2328\uFE0F Input Service"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,10 +160,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 121882223}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c51ea84157844a6399727bdd0447085d, type: 3}
+  m_Script: {fileID: 11500000, guid: 16740a31ac554d24831ee14a92d17970, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Core.InputManager
-  inputActionAsset: {fileID: -944628639613478452, guid: a92862044b24ac64ba40ebf339dc22ab, type: 3}
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Input.InputService
+  gameStateChangeEvent: {fileID: 11400000, guid: e546a51b5a993714f94816c29b5538fa, type: 2}
+  activateHeroAtStart: 1
+  logDeviceEvents: 1
+  logControlSwaps: 1
 --- !u!1 &145760825
 GameObject:
   m_ObjectHideFlags: 0
