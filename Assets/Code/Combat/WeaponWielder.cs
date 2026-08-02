@@ -8,13 +8,16 @@ using UnityEngine;
 
 namespace FK.Tulip.Combat
 {
-    public sealed class WeaponWielder : MonoBehaviour
+    public sealed class WeaponWielder : MonoBehaviour, IWeapon
     {
         [SerializeField, Required] private WeaponWielderConfigAsset config;
 
         [Header("References")]
         [SerializeField, Required] private Health health;
         [SerializeField, Required] private ItemWielder itemWielder;
+
+        public WeaponAsset Asset => weaponAsset;
+        public Health Owner => health;
 
         private ProjectileManager projectileManager;
         private WeaponAsset weaponAsset;
@@ -52,7 +55,7 @@ namespace FK.Tulip.Combat
 
             foreach (Hurtbox target in GetTargets(transform.position, targetPoint))
             {
-                if (target.GetHit(weaponAsset, attacker: health))
+                if (target.GetHit(this))
                     damagedTargets.Add(target.Owner);
             }
         }

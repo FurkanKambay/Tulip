@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace FK.Tulip.Combat
 {
-    public sealed class Projectile : MonoBehaviour
+    public sealed class Projectile : MonoBehaviour, IWeapon
     {
         [Header("Config")]
         [SerializeField] private float gravityScale = 1;
@@ -18,6 +18,9 @@ namespace FK.Tulip.Combat
         [ShowInInspector] private Vector2 velocity;
         [ShowInInspector] private ContactFilter2D contactFilter;
         [ShowInInspector] private readonly List<Health> damagedTargets = new();
+
+        public WeaponAsset Asset => sourceWeapon;
+        public Health Owner => ownerHealth;
 
         internal void Launch(Vector2 origin, Vector2 direction, Health owner, WeaponAsset weapon, ContactFilter2D filter)
         {
@@ -64,7 +67,8 @@ namespace FK.Tulip.Combat
                 {
                     if (hurtbox.Owner == ownerHealth) continue;
                     bool undamagedTarget = !damagedTargets.Contains(hurtbox.Owner);
-                    if (undamagedTarget && hurtbox.GetHit(sourceWeapon, ownerHealth, DamageType.RangedWeapon))
+
+                    if (undamagedTarget && hurtbox.GetHit(this, DamageType.RangedWeapon))
                         damagedTargets.Add(hurtbox.Owner);
                 }
                 else if (obstacleLayers.Includes(hitCollider.gameObject))

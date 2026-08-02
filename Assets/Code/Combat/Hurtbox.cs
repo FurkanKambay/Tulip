@@ -1,5 +1,4 @@
 using FK.Tulip.Combat.Data;
-using FK.Tulip.Data.Items;
 using UnityEngine;
 
 namespace FK.Tulip.Combat
@@ -14,7 +13,7 @@ namespace FK.Tulip.Combat
 
         public Health Owner => owner;
 
-        public bool GetHit(WeaponAsset weapon, Health attacker, DamageType? damageType = null) =>
-            strategyAsset && strategyAsset.Apply(owner, weapon, attacker, damageType);
+        public bool GetHit(IWeapon weapon, DamageType? damageType = null) =>
+            strategyAsset && strategyAsset.Apply(owner, weapon, damageType);
     }
 }

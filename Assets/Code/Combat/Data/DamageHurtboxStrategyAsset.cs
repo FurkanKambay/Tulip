@@ -1,4 +1,4 @@
-using FK.Tulip.Data.Items;
+using FK.Common.Extensions;
 using UnityEngine;
 
 namespace FK.Tulip.Combat.Data
@@ -8,15 +8,15 @@ namespace FK.Tulip.Combat.Data
     {
         [SerializeField, Min(0)] protected float damageMultiplier = 1;
 
-        public override bool Apply(Health victim, WeaponAsset weapon, Health attacker, DamageType? damageTypeOverride = null)
+        public override bool Apply(Health victim, IWeapon weapon, DamageType? damageTypeOverride = null)
         {
-            if (!victim || !weapon || !attacker)
+            if (!victim || weapon.Missing() || !weapon.Owner || !weapon.Asset)
                 return false;
 
             float healthBefore = victim.CurrentHealth;
             // HACK: Health.Damage() needs to return a DamageResult
 
-            victim.Damage(weapon.Damage, attacker, damageTypeOverride ?? weapon.DamageType);
+            victim.Damage(weapon.Asset.Damage, weapon.Owner, damageTypeOverride ?? weapon.Asset.DamageType);
             return !Mathf.Approximately(healthBefore, victim.CurrentHealth);
         }
     }
