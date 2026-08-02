@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d317b434b3a481e92f7696870a29c94, type: 3}
-  m_Name: Ignore
-  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Combat.Data.IgnoreHurtboxStrategyAsset
+  m_Name: Hurt Ignore
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Combat.IgnoreHurtStrategyAsset
