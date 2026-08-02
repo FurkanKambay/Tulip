@@ -13,8 +13,9 @@ namespace FK.Tulip.Combat.Data
             if (!victim || weapon.Missing() || !weapon.Owner || !weapon.Asset)
                 return false;
 
+            float damageAmount = weapon.Asset.Damage * damageMultiplier;
             DamageType damageType = damageTypeOverride ?? weapon.Asset.DamageType;
-            DamageResult result = victim.Damage(weapon.Asset.Damage, weapon.Owner, damageType);
+            DamageResult result = victim.Damage(damageAmount, weapon.Owner, damageType);
 
             return result is DamageResult.Damaged or DamageResult.Killed;
         }
