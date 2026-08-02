@@ -1,10 +1,10 @@
 using FK.Common.Extensions;
 using UnityEngine;
 
-namespace FK.Tulip.Combat.Data
+namespace FK.Tulip.Combat
 {
-    [CreateAssetMenu(fileName = "Damage Hurtbox Strategy", menuName = "Strategy/Hurtbox/Damage", order = 0)]
-    public class DamageHurtboxStrategyAsset : BaseHurtboxStrategyAsset
+    [CreateAssetMenu(menuName = "Strategies/Get Hurt/Simple Damage", order = 1)]
+    public class SimpleHurtStrategyAsset : BaseHurtStrategyAsset
     {
         [SerializeField, Min(0)] protected float damageMultiplier = 1;
 
