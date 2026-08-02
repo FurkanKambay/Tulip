@@ -13,11 +13,10 @@ namespace FK.Tulip.Combat.Data
             if (!victim || weapon.Missing() || !weapon.Owner || !weapon.Asset)
                 return false;
 
-            float healthBefore = victim.CurrentHealth;
-            // HACK: Health.Damage() needs to return a DamageResult
+            DamageType damageType = damageTypeOverride ?? weapon.Asset.DamageType;
+            DamageResult result = victim.Damage(weapon.Asset.Damage, weapon.Owner, damageType);
 
-            victim.Damage(weapon.Asset.Damage, weapon.Owner, damageTypeOverride ?? weapon.Asset.DamageType);
-            return !Mathf.Approximately(healthBefore, victim.CurrentHealth);
+            return result is DamageResult.Damaged or DamageResult.Killed;
         }
     }
 }
