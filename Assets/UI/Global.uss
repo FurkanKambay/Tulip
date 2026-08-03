@@ -4,7 +4,6 @@
     --text-medium: 36px;
     --text-big: 48px;
     --text-large: 64px;
-    --text-huge: 128px;
     font-size: var(--text-small);
     --icon-settings: url("project://database/Assets/UI/Sprites/settings.png?fileID=2800000&guid=ccc58078fa2d7824686143ef2660c1ac&type=3#settings");
     --icon-close: url("project://database/Assets/UI/Sprites/close.png?fileID=2800000&guid=afbb773416b72b046987e849471537da&type=3#close");
