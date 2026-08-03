@@ -9,6 +9,6 @@ namespace FK.Tulip.Editor
     internal sealed class FMODEventDrawer : PropertyDrawer
     {
         public override VisualElement CreatePropertyGUI(SerializedProperty property) =>
-            new PropertyField(property.FindPropertyRelative("reference"));
+            new PropertyField(property.FindPropertyRelative("reference"), property.displayName);
     }
 }
