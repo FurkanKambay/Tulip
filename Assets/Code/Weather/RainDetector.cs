@@ -1,11 +1,10 @@
-using System;
 using FK.Common.Extensions;
 using UnityEditor;
 using UnityEngine;
 
 namespace FK.Tulip.Weather
 {
-    public class RainDetector : MonoBehaviour
+    public class RainDetector : MonoBehaviour, IRainDetector
     {
         [Header("Config")]
         [SerializeField] private BoxCollider2D rainCollider;
@@ -15,7 +14,8 @@ namespace FK.Tulip.Weather
         [Header("State")]
         [SerializeField, Range(0, 180)] private float angle;
         [SerializeField] private RainExposureLevel rainExposureLevel;
-        [SerializeField, Min(0)] private float rainExposureTimer;
+
+        public RainExposureLevel RainExposureLevel => rainExposureLevel;
 
         private Vector2 rainDirection;
         private int exposedCornerCount;
@@ -37,11 +37,6 @@ namespace FK.Tulip.Weather
                 4 => RainExposureLevel.Maximum,
                 _ => RainExposureLevel.None
             };
-
-            if (rainExposureLevel is RainExposureLevel.None)
-                rainExposureTimer = 0;
-            else
-                rainExposureTimer += Time.deltaTime;
         }
 
         private void CastCornerRays(BoxCollider2D collider)

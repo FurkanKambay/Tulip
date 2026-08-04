@@ -444,6 +444,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2859632988072890709, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 650087648796738132}
+    - targetCorrespondingSourceObject: {fileID: 2859632988072890709, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7462930910639751752}
   m_SourcePrefab: {fileID: 100100000, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
 --- !u!61 &2076178258826498396 stripped
 BoxCollider2D:
@@ -500,7 +503,21 @@ MonoBehaviour:
   maxDistance: 100
   angle: 120
   rainExposureLevel: 0
-  rainExposureTimer: 0
+--- !u!114 &7462930910639751752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7432183713416858508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e1f3b921d3f4452a998e4ac16a934f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Weather.RainExposure
+  rainExposureSpeedAsset: {fileID: 11400000, guid: d8ee50013b187f245af3495f427afeef, type: 2}
+  exposedTime: 0
+  exposure: 0
 --- !u!114 &8102744461560120617 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3529033824618618864, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
