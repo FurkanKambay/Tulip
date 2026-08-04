@@ -13,6 +13,8 @@ namespace FK.Tulip.Combat
 
             foreach (BaseHurtStrategyAsset strategy in strategies)
             {
+                if (strategy == this) continue; // avoid recursions
+
                 if (!strategy.Apply(victim, weapon, damageTypeOverride))
                     allSucceeded = false;
             }
