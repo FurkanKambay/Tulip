@@ -9,6 +9,12 @@ namespace FK.Common.Extensions
         public static float ToAngle(this Vector2 direction) =>
             Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
+        public static Vector2 ToDirection(this float angle)
+        {
+            float radians = angle * Mathf.Deg2Rad;
+            return new Vector2(Mathf.Cos(radians), Mathf.Sin(radians));
+        }
+
         public static Quaternion ToQuaternion2D(this Vector2 direction, Vector3 axis) =>
             Quaternion.AngleAxis(direction.ToAngle(), axis);
 

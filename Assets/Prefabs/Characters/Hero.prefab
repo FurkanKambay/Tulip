@@ -440,8 +440,16 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7571352512502860783, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4337678081555163466}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2859632988072890709, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 650087648796738132}
   m_SourcePrefab: {fileID: 100100000, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
+--- !u!61 &2076178258826498396 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6654930023403424645, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
+  m_PrefabInstance: {fileID: 4650844818056223449}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2535590440556967087 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7186377946535505526, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
@@ -468,6 +476,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8291246366843984804, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
   m_PrefabInstance: {fileID: 4650844818056223449}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7432183713416858508 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2859632988072890709, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
+  m_PrefabInstance: {fileID: 4650844818056223449}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &650087648796738132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7432183713416858508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d96d816458c4483ab6e757e31e2b1f67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Player.RainDetector
+  rainCollider: {fileID: 2076178258826498396}
+  rainBlockingLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  maxDistance: 100
+  angle: 120
+  rainExposureLevel: 0
+  rainExposureTimer: 0
 --- !u!114 &8102744461560120617 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3529033824618618864, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
