@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2074404802573321487}
+  - component: {fileID: 2847088793882504771}
   - component: {fileID: 4794953503673373453}
   - component: {fileID: 6795094088313059305}
   m_Layer: 0
@@ -33,6 +34,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2847088793882504771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271781119468894707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f1feee1a7334845b35357b475cee683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Weather.RainController
+  valleyConfig: {fileID: 11400000, guid: 4f20ccb2d6ee74f42b320c3ef78e351b, type: 2}
+  rainVFX: {fileID: 4794953503673373453}
 --- !u!2083052967 &4794953503673373453
 VisualEffect:
   m_ObjectHideFlags: 0

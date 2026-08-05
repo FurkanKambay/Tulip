@@ -501,7 +501,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   maxDistance: 100
-  angle: 15
+  valleyConfig: {fileID: 11400000, guid: 4f20ccb2d6ee74f42b320c3ef78e351b, type: 2}
   rainExposureLevel: 0
 --- !u!114 &7462930910639751752
 MonoBehaviour:

@@ -1,4 +1,5 @@
 using FK.Common.Extensions;
+using FK.Tulip.Data;
 using UnityEditor;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ namespace FK.Tulip.Weather
         [SerializeField, Min(0)] private float maxDistance;
 
         [Header("State")]
-        [SerializeField, Range(-90, 90)] private float angle;
+        [SerializeField] private ValleyConfigAsset valleyConfig;
         [SerializeField] private RainExposureLevel rainExposureLevel;
 
         public RainExposureLevel RainExposureLevel => rainExposureLevel;
@@ -26,7 +27,7 @@ namespace FK.Tulip.Weather
 
         private void FixedUpdate()
         {
-            rainDirection = (angle + 90).ToDirection();
+            rainDirection = (valleyConfig.RainAngle + 90).ToDirection();
             CastCornerRays(rainCollider);
 
             rainExposureLevel = exposedCornerCount switch
