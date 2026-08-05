@@ -14,6 +14,7 @@ The assets are used for prototyping purposes only for now.
 
 ## UI
 
+- ["Fantasy UI Borders"](https://www.kenney.nl/assets/fantasy-ui-borders) by Kenney
 - ["Pixel Art GUI Bundle"](https://penzilla.itch.io/pixel-art-gui) by Penzilla
 - ["Cursor Pack (1.0)"](https://www.kenney.nl/assets/cursor-pack) by Kenney
 - ["Xelu's Free Controller Prompts"](https://thoseawesomeguys.com/prompts) by Xelu
