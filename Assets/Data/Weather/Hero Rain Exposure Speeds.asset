@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hero Rain Exposure Speeds
   m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Weather.RainExposureSpeedAsset
   exposureSpeeds:
-  - -15
-  - 2
-  - 8
+  - -35
+  - 10
   - 20
+  - 80
