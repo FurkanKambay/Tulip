@@ -47,7 +47,8 @@
         "system",
         "tool",
         "ui",
-        "vfx"
+        "vfx",
+        "weather"
     ],
     "commitlint.config.extend.rules": {
         "subject-case": [
