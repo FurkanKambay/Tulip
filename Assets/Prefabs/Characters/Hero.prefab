@@ -501,7 +501,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   maxDistance: 100
-  angle: 120
+  angle: 15
   rainExposureLevel: 0
 --- !u!114 &7462930910639751752
 MonoBehaviour:

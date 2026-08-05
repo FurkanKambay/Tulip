@@ -12,7 +12,7 @@ namespace FK.Tulip.Weather
         [SerializeField, Min(0)] private float maxDistance;
 
         [Header("State")]
-        [SerializeField, Range(0, 180)] private float angle;
+        [SerializeField, Range(-90, 90)] private float angle;
         [SerializeField] private RainExposureLevel rainExposureLevel;
 
         public RainExposureLevel RainExposureLevel => rainExposureLevel;
@@ -26,7 +26,7 @@ namespace FK.Tulip.Weather
 
         private void FixedUpdate()
         {
-            rainDirection = angle.ToDirection();
+            rainDirection = (angle + 90).ToDirection();
             CastCornerRays(rainCollider);
 
             rainExposureLevel = exposedCornerCount switch
