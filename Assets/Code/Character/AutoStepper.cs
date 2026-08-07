@@ -1,8 +1,8 @@
 using System;
 using FK.Common;
-using FK.Common.Extensions;
-using FK.Tulip.Data;
 using UnityEngine;
+using UnityEngine.Tilemaps;
+using Vertx.Debugging;
 
 namespace FK.Tulip.Character
 {
@@ -59,27 +59,23 @@ namespace FK.Tulip.Character
         {
             float velocity = movement.DesiredVelocity.x;
 
-            if (entity.World.Missing() || Mathf.Abs(velocity) < velocityThreshold)
+            if (Mathf.Abs(velocity) < velocityThreshold)
                 return AutoStepDirection.None;
 
             Vector2 direction = Vector2.right * Math.Sign(velocity);
             Vector2 hotspot = transform.position + offset;
 
-            RaycastHit2D hit = Physics2D.Raycast(hotspot, direction, range, LayerMask.GetMask("World"));
-
-            if (!hit)
+            RaycastHit2D hit = DrawPhysics2D.Raycast(hotspot, direction, range, LayerMask.GetMask("World"));
+            if (!hit || !hit.collider.TryGetComponent(out Tilemap tilemap))
                 return AutoStepDirection.None;
 
-            Vector2 hitPoint = hit.point - (hit.normal * 0.1f);
-            Vector2Int cell1 = entity.World.WorldToCell(hitPoint) + Vector2Int.up;
-            Vector2Int cell2 = cell1 + Vector2Int.up;
-            Vector2Int cell3 = cell2 + (velocity < 0 ? Vector2Int.right : Vector2Int.left);
+            Vector3 hitPoint = hit.point - (hit.normal * 0.1f);
+            Vector3Int cell1 = tilemap.WorldToCell(hitPoint) + Vector3Int.up;
+            Vector3Int cell2 = cell1 + Vector3Int.up;
+            Vector3Int cell3 = cell2 + (velocity < 0 ? Vector3Int.right : Vector3Int.left);
 
-            bool isObstructed = entity.World.HasTile(cell1, TileType.Block)
-                || entity.World.HasTile(cell2, TileType.Block)
-                || entity.World.HasTile(cell3, TileType.Block);
-
-            if (isObstructed)
+            bool hasObstruction = tilemap.HasTile(cell1) || tilemap.HasTile(cell2) || tilemap.HasTile(cell3);
+            if (hasObstruction)
                 return AutoStepDirection.None;
 
             return velocity > 0 ? AutoStepDirection.Right : AutoStepDirection.Left;
