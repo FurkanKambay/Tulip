@@ -925,6 +925,7 @@ MonoBehaviour:
   config: {fileID: 11400000, guid: 9f5c7f3d1fc6a7c46808b5dd7e2b29d3, type: 2}
   health: {fileID: 7186377946535505526}
   itemWielder: {fileID: 647329674294491017}
+  hitColliders: []
 --- !u!1 &7550573769694000182
 GameObject:
   m_ObjectHideFlags: 0

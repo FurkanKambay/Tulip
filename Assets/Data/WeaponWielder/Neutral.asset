@@ -27,3 +27,6 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 8

@@ -1,3 +1,4 @@
+using FK.Common.Extensions;
 using UnityEngine;
 
 namespace FK.Tulip.Combat.Data
@@ -7,8 +8,12 @@ namespace FK.Tulip.Combat.Data
     {
         [SerializeField, Min(0)] private int maxHitsPerRaycast = 9;
         [SerializeField] private ContactFilter2D hitContactFilter;
+        [SerializeField] private LayerMask obstacleLayers;
 
         public int MaxHitsPerRaycast => maxHitsPerRaycast;
         public ContactFilter2D HitContactFilter => hitContactFilter;
+
+        public bool IsObstacle(GameObject gameObject) => obstacleLayers.Includes(gameObject);
+        public bool IsObstacle(Transform transform) => obstacleLayers.Includes(transform);
     }
 }
