@@ -4,7 +4,7 @@
         {
             "label": "Run CI build",
             "type": "shell",
-            "command": "gh workflow run build.yml -f channel=${input:itch-channel} ${input:ref-name}",
+            "command": "gh workflow run build.yml -f channel=${input:itch-channel} --ref ${input:ref-name}",
             "detail": "Run the GitHub Actions workflow to build the Unity project.",
             "icon": {
                 "id": "github",
