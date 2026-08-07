@@ -555,7 +555,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d6d1e2a56c648e48c7e5ba48c5941a1, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Audio.AudioBusManager
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Audio.AudioManager
 --- !u!1 &2092287504
 GameObject:
   m_ObjectHideFlags: 0

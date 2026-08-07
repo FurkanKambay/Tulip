@@ -19,7 +19,7 @@ namespace FK.Tulip.Audio
 
         private async void Awake()
         {
-            await AudioBusManager.WaitForAllBanksToLoad();
+            await AudioManager.WaitForAllBanksToLoad();
 
             getHurt.Describe();
             getHurt.DescribeParameter("Aliveness", out paramAliveness);

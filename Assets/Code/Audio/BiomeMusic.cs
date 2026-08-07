@@ -19,7 +19,7 @@ namespace FK.Tulip.Audio
         {
             // Log.Info($"{logPrefix} waiting for banks to load...", this);
             // yield return Awaitable.WaitForSecondsAsync(2f); // for testing
-            yield return AudioBusManager.WaitForAllBanksToLoad();
+            yield return AudioManager.WaitForAllBanksToLoad();
 
             // Log.Info($"{logPrefix} starting BGM...", this);
             biomeMusic.Describe();

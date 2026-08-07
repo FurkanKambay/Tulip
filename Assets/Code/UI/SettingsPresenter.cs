@@ -70,7 +70,7 @@ namespace FK.Tulip.UI
 
         private IEnumerator Start()
         {
-            yield return AudioBusManager.WaitForAllBanksToLoad();
+            yield return AudioManager.WaitForAllBanksToLoad();
 
             toggleSfx.Describe();
             toggleSfx.DescribeParameter("Menu State", out paramMenuState);

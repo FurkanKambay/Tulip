@@ -7,7 +7,7 @@ using Settings = FK.Tulip.Core.Settings;
 
 namespace FK.Tulip.Audio
 {
-    public sealed class AudioBusManager : MonoBehaviour
+    internal sealed class AudioManager : MonoBehaviour
     {
         private VCA masterVCA;
         private VCA musicVCA;
@@ -82,6 +82,6 @@ namespace FK.Tulip.Audio
         private static void SetVolume(VCA vca, int value) =>
             vca.setVolume(Mathf.InverseLerp(0, 100, value));
 
-        private static readonly string logPrefix = $"[{nameof(AudioBusManager)}]";
+        private static readonly string logPrefix = $"[{nameof(AudioManager)}]";
     }
 }
