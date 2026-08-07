@@ -94,6 +94,7 @@ namespace FK.Tulip.Dev
                 Destroy(spawnParent.GetChild(i).gameObject);
         }
 
+#if UNITY_EDITOR
         private void OnDrawGizmos()
         {
             var labelStyle = new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter };
@@ -104,5 +105,6 @@ namespace FK.Tulip.Dev
                 Handles.Label(instance.position, instance.name, labelStyle);
             }
         }
+#endif
     }
 }
