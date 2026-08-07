@@ -279,6 +279,10 @@ PrefabInstance:
       propertyPath: equippedItem
       value: 
       objectReference: {fileID: 11400000, guid: 9b57593f7b5cd0541984229247126e42, type: 2}
+    - target: {fileID: 963390074723932652, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
+      propertyPath: entityAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 61f78ba64e5ba3c4895af881afac13bc, type: 2}
     - target: {fileID: 1673359338847146882, guid: f1cca16f5d4d7d74bb77100d5368b27f, type: 3}
       propertyPath: m_Layer
       value: 6

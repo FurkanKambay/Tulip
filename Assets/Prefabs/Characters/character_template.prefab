@@ -417,7 +417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Character.TangibleEntity
   world: {fileID: 0}
-  entityAsset: {fileID: 11400000, guid: 61f78ba64e5ba3c4895af881afac13bc, type: 2}
+  entityAsset: {fileID: 11400000, guid: 3d858829db0a6d145a9cfb7b8ea094f0, type: 2}
   body: {fileID: 7560684870690709998}
   health: {fileID: 7186377946535505526}
 --- !u!1 &3484316326350008886
