@@ -397,7 +397,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1382620365969108323, guid: 1074f8d13a7176046adca1fdb6ba10f8, type: 3}
       propertyPath: m_Name
-      value: Enemy (7)
+      value: Enemy 8
       objectReference: {fileID: 0}
     - target: {fileID: 5156362418471184274, guid: 1074f8d13a7176046adca1fdb6ba10f8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -672,7 +672,11 @@ MonoBehaviour:
         m_SelectedSource:
           rid: -2
         m_Provider2DCache:
-          rid: -2
+          rid: 2961597367992188984
+    - rid: 2961597367992188984
+      type: {class: 'Provider2DCache`1[[UnityEngine.Rendering.Universal.Light2DProvider, Unity.RenderPipelines.Universal.2D.Runtime]]', ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_Cache: []
 --- !u!4 &619394802
 Transform:
   m_ObjectHideFlags: 0
@@ -698,7 +702,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1382620365969108323, guid: 1074f8d13a7176046adca1fdb6ba10f8, type: 3}
       propertyPath: m_Name
-      value: Enemy (1)
+      value: Enemy 3
       objectReference: {fileID: 0}
     - target: {fileID: 5156362418471184274, guid: 1074f8d13a7176046adca1fdb6ba10f8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -736,7 +740,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1382620365969108323, guid: 1074f8d13a7176046adca1fdb6ba10f8, type: 3}
       propertyPath: m_Name
-      value: Enemy (4)
+      value: Enemy 5
       objectReference: {fileID: 0}
     - target: {fileID: 5156362418471184274, guid: 1074f8d13a7176046adca1fdb6ba10f8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -988,7 +992,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1382620365969108323, guid: 1074f8d13a7176046adca1fdb6ba10f8, type: 3}
       propertyPath: m_Name
-      value: Enemy (5)
+      value: Enemy 6
       objectReference: {fileID: 0}
     - target: {fileID: 5156362418471184274, guid: 1074f8d13a7176046adca1fdb6ba10f8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1026,7 +1030,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1382620365969108323, guid: 1074f8d13a7176046adca1fdb6ba10f8, type: 3}
       propertyPath: m_Name
-      value: Enemy (6)
+      value: Enemy 7
       objectReference: {fileID: 0}
     - target: {fileID: 5156362418471184274, guid: 1074f8d13a7176046adca1fdb6ba10f8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1064,7 +1068,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1382620365969108323, guid: 1074f8d13a7176046adca1fdb6ba10f8, type: 3}
       propertyPath: m_Name
-      value: Enemy (3)
+      value: Enemy 1
       objectReference: {fileID: 0}
     - target: {fileID: 5156362418471184274, guid: 1074f8d13a7176046adca1fdb6ba10f8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1102,7 +1106,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1382620365969108323, guid: 1074f8d13a7176046adca1fdb6ba10f8, type: 3}
       propertyPath: m_Name
-      value: Enemy (2)
+      value: Enemy 2
       objectReference: {fileID: 0}
     - target: {fileID: 5156362418471184274, guid: 1074f8d13a7176046adca1fdb6ba10f8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1140,7 +1144,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1382620365969108323, guid: 1074f8d13a7176046adca1fdb6ba10f8, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Enemy 4
       objectReference: {fileID: 0}
     - target: {fileID: 5156362418471184274, guid: 1074f8d13a7176046adca1fdb6ba10f8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1236,7 +1240,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.122641504, g: 0.122641504, b: 0.122641504, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1336,10 +1340,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 1672484429}
-  - {fileID: 668525706}
-  - {fileID: 1618049975}
   - {fileID: 1570288544}
+  - {fileID: 1618049975}
+  - {fileID: 668525706}
+  - {fileID: 1672484429}
   - {fileID: 805830367}
   - {fileID: 1351690929}
   - {fileID: 1560273052}

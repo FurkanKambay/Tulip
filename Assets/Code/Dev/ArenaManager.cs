@@ -1,6 +1,7 @@
 using FK.Common.Extensions;
 using FK.Tulip.Data;
 using FK.Tulip.Data.Sets;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -91,6 +92,17 @@ namespace FK.Tulip.Dev
         {
             for (int i = spawnParent.childCount - 1; i >= 0; i--)
                 Destroy(spawnParent.GetChild(i).gameObject);
+        }
+
+        private void OnDrawGizmos()
+        {
+            var labelStyle = new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter };
+
+            foreach (Transform instance in spawnParent)
+            {
+                Handles.color = Color.orange;
+                Handles.Label(instance.position, instance.name, labelStyle);
+            }
         }
     }
 }
