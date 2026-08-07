@@ -11,6 +11,7 @@ namespace FK.Tulip.Core
         {
             [SerializeField, Range(0, 100)] private int masterVolume = 80;
             [SerializeField, Range(0, 100)] private int musicVolume = 80;
+            [SerializeField, Range(0, 100)] private int ambienceVolume = 80;
             [SerializeField, Range(0, 100)] private int effectsVolume = 80;
             [SerializeField, Range(0, 100)] private int uiVolume = 80;
             [SerializeField] private bool muteInBackground;
@@ -31,6 +32,13 @@ namespace FK.Tulip.Core
             {
                 get => musicVolume;
                 set => UpdateSetting(ref musicVolume, value);
+            }
+
+            [CreateProperty]
+            public int AmbienceVolume
+            {
+                get => ambienceVolume;
+                set => UpdateSetting(ref ambienceVolume, value);
             }
 
             [CreateProperty]

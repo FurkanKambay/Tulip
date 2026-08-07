@@ -9,20 +9,22 @@ namespace FK.Tulip.Audio
 {
     public sealed class AudioBusManager : MonoBehaviour
     {
-        private Bus masterBus;
-        private Bus musicBus;
-        private Bus sfxBus;
-        private Bus uiBus;
+        private VCA masterVCA;
+        private VCA musicVCA;
+        private VCA ambienceVCA;
+        private VCA sfxVCA;
+        private VCA uiVCA;
 
         private async void Awake()
         {
             DontDestroyOnLoad(gameObject);
             await WaitForAllBanksToLoad();
 
-            masterBus = RuntimeManager.GetBus("bus:/");
-            musicBus = RuntimeManager.GetBus("bus:/Music");
-            sfxBus = RuntimeManager.GetBus("bus:/SFX");
-            uiBus = RuntimeManager.GetBus("bus:/UI");
+            masterVCA = RuntimeManager.GetVCA("vca:/Master");
+            ambienceVCA = RuntimeManager.GetVCA("vca:/Ambience");
+            musicVCA = RuntimeManager.GetVCA("vca:/Music");
+            sfxVCA = RuntimeManager.GetVCA("vca:/SFX");
+            uiVCA = RuntimeManager.GetVCA("vca:/UI");
         }
 
         private void OnEnable()
@@ -70,14 +72,15 @@ namespace FK.Tulip.Audio
         {
             await WaitForAllBanksToLoad();
 
-            SetVolume(masterBus, Settings.Audio.MasterVolume);
-            SetVolume(musicBus, Settings.Audio.MusicVolume);
-            SetVolume(sfxBus, Settings.Audio.EffectsVolume);
-            SetVolume(uiBus, Settings.Audio.UIVolume);
+            SetVolume(masterVCA, Settings.Audio.MasterVolume);
+            SetVolume(musicVCA, Settings.Audio.MusicVolume);
+            SetVolume(ambienceVCA, Settings.Audio.AmbienceVolume);
+            SetVolume(sfxVCA, Settings.Audio.EffectsVolume);
+            SetVolume(uiVCA, Settings.Audio.UIVolume);
         }
 
-        private static void SetVolume(Bus bus, int value) =>
-            bus.setVolume(Mathf.InverseLerp(0, 100, value));
+        private static void SetVolume(VCA vca, int value) =>
+            vca.setVolume(Mathf.InverseLerp(0, 100, value));
 
         private static readonly string logPrefix = $"[{nameof(AudioBusManager)}]";
     }
