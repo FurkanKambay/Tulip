@@ -1,4 +1,4 @@
-name: Unity build & itch.io deployment
+name: Unity Build
 
 on:
   # pull_request:
@@ -158,13 +158,3 @@ jobs:
         # rm -r builds/${{ steps.config.outputs.targetPlatform }}/*_DoNotShip/
         run: |
           ls -la builds/${{ steps.config.outputs.targetPlatform }}/
-
-      - name: Push to itch.io via Butler
-        uses: yeslayla/butler-publish-itchio-action@master
-        env:
-          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
-          ITCH_USER: ${{ vars.ITCH_USER_NAME }}
-          ITCH_GAME: ${{ vars.ITCH_GAME_NAME }}
-          CHANNEL: ${{ inputs.channel }}
-          PACKAGE: builds/${{ steps.config.outputs.targetPlatform }}
-          VERSION_FILE: version.txt

@@ -2,10 +2,10 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build on GitHub and deploy to itch.io!",
+            "label": "Run CI build",
             "type": "shell",
-            "command": "gh workflow run main.yml -f channel=${input:itch-channel} ${input:ref-name}",
-            "detail": "Run the GitHub workflow to build the Unity project and deploy it to itch.io via butler.",
+            "command": "gh workflow run build.yml -f channel=${input:itch-channel} ${input:ref-name}",
+            "detail": "Run the GitHub Actions workflow to build the Unity project.",
             "icon": {
                 "id": "github",
                 "color": "terminal.ansiRed"
@@ -14,7 +14,7 @@
             "group": "build"
         },
         {
-            "label": "Push build to itch.io!",
+            "label": "Push local build to itch.io!",
             "type": "shell",
             "command": "butler",
             "args": [
