@@ -36,6 +36,7 @@ namespace FK.Tulip.Gameplay
         [Header("References")]
         [SerializeField, Required] private Health health;
         [SerializeField, Required] private SpriteRenderer itemRenderer;
+        [SerializeField, Required] private ItemMotionController itemMotion;
 
         [Header("Config")]
         [SerializeField] private ItemAsset equippedItem;
@@ -52,8 +53,6 @@ namespace FK.Tulip.Gameplay
 
         // state: phase (motion)
         private bool wantsToSwapItems;
-        private int phaseIndex;
-        private MotionState motion;
 
         private Vector3 AimPointWorld => itemPivot.position + (Vector3)aimVector;
 
@@ -66,8 +65,6 @@ namespace FK.Tulip.Gameplay
 
         private void OnEnable()
         {
-            UpdateItemSprite();
-
             health.OnDie += HandleDie;
             health.OnRevive += HandleRevived;
         }
@@ -78,7 +75,10 @@ namespace FK.Tulip.Gameplay
             health.OnRevive -= HandleRevived;
         }
 
-        private void Start() => RefreshItem();
+        private void Start()
+        {
+            itemMotion.SetItem(equippedItem);
+        }
 
         private void Update()
         {
@@ -97,7 +97,7 @@ namespace FK.Tulip.Gameplay
                 return;
 
             ItemSwingConfig swingConfig = usableAsset.SwingConfig;
-            UsePhase phase = swingConfig.Phases.Length > 0 ? swingConfig.Phases[phaseIndex] : default;
+            UsePhase phase = swingConfig.Phases.Length > 0 ? swingConfig.Phases[itemMotion.PhaseIndex] : default;
 
             // Free to melee swing OR start Throw Mode
             if (swingState == ItemSwingState.Ready)
@@ -151,10 +151,10 @@ namespace FK.Tulip.Gameplay
                     }
 
                     // proceed normally (not interrupting the motion)
-                    TickMotionLerp();
+                    itemMotion.TickMotion();
 
                     // we're still Lerping, so we skip to the next tick
-                    if (!IsMotionDone())
+                    if (!itemMotion.IsDone)
                         break;
 
                     // we reached the target angle. move to next phase or reset after final phase
@@ -171,7 +171,7 @@ namespace FK.Tulip.Gameplay
                     if (phase.shouldHit)
                         OnSwingPerform?.Invoke(equippedItem, AimPointWorld);
 
-                    bool isFinalPhase = phaseIndex == swingConfig.Phases.Length - 1;
+                    bool isFinalPhase = itemMotion.PhaseIndex == swingConfig.Phases.Length - 1;
                     bool shouldReset = !wantsToSwing || !swingConfig.Loop;
 
                     if (isFinalPhase && shouldReset)
@@ -183,17 +183,17 @@ namespace FK.Tulip.Gameplay
                     // still not ending so next phase. keeps swinging without resetting
                     // looping: start from phase 0 again
 
-                    // "reset" to phase 0 with `phase.XDuration`, NOT `swingType.ResetXDuration`
-                    phaseIndex = isFinalPhase ? 0 : phaseIndex + 1;
-
-                    // this belongs in a state machine. Motion is a sub-state machine of Swing
-                    SetMotionToPhase();
+                    // return to phase 0 with `phase.XDuration`, NOT `swingType.ResetXDuration`
+                    if (isFinalPhase)
+                        itemMotion.ReturnToFirstPhase();
+                    else
+                        itemMotion.IncrementPhase();
 
                     break;
                 case ItemSwingState.Resetting:
-                    TickMotionLerp();
+                    itemMotion.TickMotion();
 
-                    if (IsMotionDone())
+                    if (itemMotion.IsDone)
                         SwitchState(ItemSwingState.Ready);
 
                     break;
@@ -219,93 +219,19 @@ namespace FK.Tulip.Gameplay
                 case ItemSwingState.Ready:
                     // Only swap items when reset and ready
                     wantsToSwapItems = false;
-                    RefreshItem();
-
+                    itemMotion.SetItem(equippedItem);
                     OnReady?.Invoke(equippedItem);
                     break;
                 case ItemSwingState.Swinging:
+                    itemMotion.ReturnToFirstPhase();
                     OnSwingStart?.Invoke(equippedItem, AimPointWorld);
-                    phaseIndex = 0;
-                    SetMotionToPhase();
                     break;
                 case ItemSwingState.Resetting:
-                    SetMotionToReady();
+                    itemMotion.ResetToReady();
                     break;
                 default: throw new ArgumentOutOfRangeException(nameof(state));
             }
         }
-
-        private void RefreshItem()
-        {
-            UpdateItemSprite();
-
-            phaseIndex = 0;
-            ResetMotionStart();
-
-            if (equippedItem.Is(out UsableAsset usableAsset))
-                SetSpriteTransformInstant(usableAsset.SwingConfig.ReadyPosition, usableAsset.SwingConfig.ReadyAngle);
-        }
-
-#region Motion Helpers
-        private void SetMotionToPhase()
-        {
-            if (equippedItem.IsNot(out UsableAsset usableAsset))
-                return;
-
-            ItemSwingConfig swingConfig = usableAsset.SwingConfig;
-            UsePhase phase = swingConfig.Phases.Length > 0 ? swingConfig.Phases[phaseIndex] : default;
-
-            ResetMotionStart();
-            motion.EndPosition = swingConfig.ReadyPosition + phase.moveDelta;
-            motion.EndAngle = swingConfig.ReadyAngle + phase.turnDelta;
-            motion.MoveDuration = phase.moveDuration;
-            motion.TurnDuration = phase.turnDuration;
-        }
-
-        private void SetMotionToReady()
-        {
-            if (equippedItem.IsNot(out UsableAsset usableAsset))
-                return;
-
-            ItemSwingConfig swingConfig = usableAsset.SwingConfig;
-
-            ResetMotionStart();
-            motion.EndPosition = swingConfig.ReadyPosition;
-            motion.EndAngle = swingConfig.ReadyAngle;
-            motion.MoveDuration = swingConfig.ResetMoveDuration;
-            motion.TurnDuration = swingConfig.ResetTurnDuration;
-        }
-
-        private void ResetMotionStart()
-        {
-            motion = default;
-            motion.StartPosition = itemVisual.localPosition;
-            motion.StartAngle = itemVisual.localEulerAngles.z;
-            // need to reset lerp values too here
-            motion.LerpMove = 0;
-            motion.LerpTurn = 0;
-        }
-
-        private void TickMotionLerp()
-        {
-            motion.LerpMove = motion.MoveDuration <= 0 || motion.LerpMove >= 1 ? 1
-                : Mathf.MoveTowards(motion.LerpMove, 1, Time.deltaTime / motion.MoveDuration);
-
-            motion.LerpTurn = motion.TurnDuration <= 0 || motion.LerpTurn >= 1 ? 1
-                : Mathf.MoveTowards(motion.LerpTurn, 1, Time.deltaTime / motion.TurnDuration);
-
-            SetSpriteTransformInstant(
-                Vector2.Lerp(motion.StartPosition, motion.EndPosition, motion.LerpMove),
-                Mathf.LerpAngle(motion.StartAngle, motion.EndAngle, motion.LerpTurn)
-            );
-        }
-
-        private bool IsMotionDone() =>
-            Mathf.Approximately(motion.LerpMove, 1) && Mathf.Approximately(motion.LerpTurn, 1);
-#endregion
-
-        private void SetSpriteTransformInstant(Vector2 targetPosition, float targetAngle) =>
-            itemVisual.SetLocalPositionAndRotation(targetPosition, Quaternion.Euler(0, 0, targetAngle));
 
         private void RotateItemTowardsMouse()
         {
@@ -323,36 +249,10 @@ namespace FK.Tulip.Gameplay
             itemPivot.rotation = Quaternion.AngleAxis(aimAngle, Vector3.forward);
         }
 
-        private void UpdateItemSprite()
-        {
-            if (equippedItem.IsNot(out UsableAsset usableAsset))
-            {
-                itemVisual.localScale = Vector3.zero;
-                return;
-            }
-
-            itemVisual.localScale = Vector3.one * usableAsset.IconScale;
-            itemRenderer.sprite = usableAsset ? usableAsset.Icon : null;
-        }
-
 #region Event Handlers
         private void HandleDie(CombatPacket _) => itemRenderer.enabled = false;
         private void HandleRevived(Health reviver) => itemRenderer.enabled = true;
 #endregion
-
-#region Child Structs
-        private struct MotionState
-        {
-            public Vector2 StartPosition;
-            public Vector2 EndPosition;
-            public float StartAngle;
-            public float EndAngle;
-
-            public float MoveDuration;
-            public float TurnDuration;
-            public float LerpMove;
-            public float LerpTurn;
-        }
 
         private enum ItemSwingState
         {
@@ -360,6 +260,5 @@ namespace FK.Tulip.Gameplay
             Swinging,
             Resetting
         }
-#endregion
     }
 }

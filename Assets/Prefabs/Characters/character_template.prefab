@@ -909,6 +909,7 @@ MonoBehaviour:
   brain: {fileID: 0}
   health: {fileID: 7186377946535505526}
   itemRenderer: {fileID: 3639728673497933778}
+  itemMotion: {fileID: 5393574286400714571}
   equippedItem: {fileID: 0}
 --- !u!114 &6477564572302283646
 MonoBehaviour:
@@ -966,6 +967,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5170996385232603194}
+  - component: {fileID: 5393574286400714571}
   m_Layer: 8
   m_Name: '[item-pivot]'
   m_TagString: Untagged
@@ -989,3 +991,19 @@ Transform:
   - {fileID: 7965894652785013087}
   m_Father: {fileID: 7571352512502860783}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5393574286400714571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8809969866287856108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4cbd3ea5759441a8185bfeea5203bdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Gameplay.ItemMotionController
+  itemPivot: {fileID: 5170996385232603194}
+  itemRenderer: {fileID: 3639728673497933778}
+  currentUsable: {fileID: 0}
+  phaseIndex: 0
