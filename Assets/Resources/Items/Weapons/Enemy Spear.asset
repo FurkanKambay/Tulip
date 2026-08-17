@@ -26,5 +26,5 @@ MonoBehaviour:
   swingConfig: {fileID: 11400000, guid: 8149a840107b875489f4460afb04d237, type: 2}
   damageType: 0
   damage: 8
-  range: 1.6
+  range: 2.2
   isMultiTarget: 0
