@@ -19,7 +19,7 @@ MonoBehaviour:
   loop: 0
   phases:
   - isCancelable: 0
-    preventAim: 0
+    preventAim: 1
     shouldHit: 0
     moveDelta: {x: -1, y: 0}
     moveDuration: 0.6
@@ -32,7 +32,7 @@ MonoBehaviour:
     moveDuration: 0.1
     turnDelta: -15
     turnDuration: 0
-  - isCancelable: 1
+  - isCancelable: 0
     preventAim: 1
     shouldHit: 0
     moveDelta: {x: 0.5, y: 0}
