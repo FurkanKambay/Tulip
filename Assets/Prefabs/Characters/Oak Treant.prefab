@@ -282,6 +282,7 @@ MonoBehaviour:
   brain: {fileID: 9132726976015814750}
   health: {fileID: 5823316243804091760}
   itemRenderer: {fileID: 8611038024772751417}
+  itemMotion: {fileID: 2481529632888204343}
   equippedItem: {fileID: 11400000, guid: 84ef348f463a7a144b0fbff6c95049c7, type: 2}
 --- !u!114 &6669273262304182389
 MonoBehaviour:
@@ -308,6 +309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1595575383956483137}
+  - component: {fileID: 2481529632888204343}
   m_Layer: 10
   m_Name: '[item-pivot]'
   m_TagString: Untagged
@@ -331,6 +333,22 @@ Transform:
   - {fileID: 5496389505159922575}
   m_Father: {fileID: 4204520463958456471}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2481529632888204343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2666178196058183767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4cbd3ea5759441a8185bfeea5203bdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Gameplay.ItemMotionController
+  itemPivot: {fileID: 1595575383956483137}
+  itemRenderer: {fileID: 8611038024772751417}
+  usableAsset: {fileID: 0}
+  phaseIndex: 0
 --- !u!1 &2989052633236015215
 GameObject:
   m_ObjectHideFlags: 0
