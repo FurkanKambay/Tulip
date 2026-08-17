@@ -821,7 +821,8 @@ MonoBehaviour:
   sprite: {fileID: 2576562777605374266}
   destroyAfterDeath: 1
   hurtVisualDuration: 0.1
-  dissolveDuration: 1
+  dissolveDelay: 0
+  dissolveDuration: 1.5
 --- !u!1 &8325276649507347008
 GameObject:
   m_ObjectHideFlags: 0

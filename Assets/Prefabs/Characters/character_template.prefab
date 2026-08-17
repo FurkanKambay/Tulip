@@ -257,7 +257,8 @@ MonoBehaviour:
   sprite: {fileID: 4019848646787942259}
   destroyAfterDeath: 0
   hurtVisualDuration: 0.1
-  dissolveDuration: 2
+  dissolveDelay: 2
+  dissolveDuration: 1.5
 --- !u!1 &2532740110348980597
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,5 +1006,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Gameplay.ItemMotionController
   itemPivot: {fileID: 5170996385232603194}
   itemRenderer: {fileID: 3639728673497933778}
-  currentUsable: {fileID: 0}
+  usableAsset: {fileID: 0}
   phaseIndex: 0

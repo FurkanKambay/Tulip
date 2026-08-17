@@ -18,6 +18,7 @@ namespace FK.Tulip.Character
         [SerializeField, Min(0)] private float hurtVisualDuration = 0.1f;
 
         [OverlayRichLabel("<color=gray>sec")]
+        [SerializeField, Min(0)] private float dissolveDelay;
         [SerializeField, Min(0)] private float dissolveDuration = 1f;
 
         private MaterialPropertyBlock materialBlock;
@@ -70,6 +71,8 @@ namespace FK.Tulip.Character
 
         private IEnumerator DissolveSprite(float duration, float startAmount = 0, float endAmount = 1)
         {
+            yield return Awaitable.WaitForSecondsAsync(dissolveDelay);
+
             float amount = startAmount;
 
             while (!Mathf.Approximately(amount, endAmount))
