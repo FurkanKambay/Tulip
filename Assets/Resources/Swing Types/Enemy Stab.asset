@@ -10,26 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f047f8c4f7534bd4b561aa759cbeb58d, type: 3}
-  m_Name: Stab
+  m_Name: Enemy Stab
   m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Data.ItemSwingConfig
   readyPosition: {x: 0, y: 0}
   readyAngle: -30
-  resetMoveDuration: 0.1
-  resetTurnDuration: 0.1
+  resetMoveDuration: 0.4
+  resetTurnDuration: 0.4
   loop: 0
   phases:
   - isCancelable: 0
     preventAim: 0
     shouldHit: 0
     moveDelta: {x: -1, y: 0}
-    moveDuration: 0.1
+    moveDuration: 0.6
     turnDelta: -15
-    turnDuration: 0.1
+    turnDuration: 0.6
   - isCancelable: 0
     preventAim: 1
     shouldHit: 1
     moveDelta: {x: 0.5, y: 0}
-    moveDuration: 0.18
+    moveDuration: 0.1
     turnDelta: -15
     turnDuration: 0
   - isCancelable: 1
