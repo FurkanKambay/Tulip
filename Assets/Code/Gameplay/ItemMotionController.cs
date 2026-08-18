@@ -40,7 +40,7 @@ namespace FK.Tulip.Gameplay
         public void SetItem(ItemAsset itemAsset)
         {
             itemRenderer.sprite = itemAsset ? itemAsset.Icon : null;
-            itemVisual.localScale = Vector3.one * itemAsset.IconScale;
+            itemVisual.localScale = itemAsset ? Vector3.one * itemAsset.IconScale : Vector3.zero;
 
             if (itemAsset.IsNot(out usableAsset))
                 itemVisual.SetLocalPositionAndRotation(Vector2.zero, Quaternion.identity);
