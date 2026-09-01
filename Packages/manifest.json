@@ -12,7 +12,7 @@
     "com.unity.render-pipelines.universal": "17.5.0",
     "com.unity.ugui": "2.5.0",
     "com.unity.visualeffectgraph": "17.5.0",
-    "com.vertx.attributes": "1.6.0",
+    "com.vertx.attributes": "2.0.0",
     "com.vertx.debugging": "3.0.3",
     "org.nuget.microsoft.unity.analyzers": "1.26.0",
     "com.unity.modules.adaptiveperformance": "1.0.0",
