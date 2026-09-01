@@ -457,8 +457,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: UnityEngine.Rendering.Universal.UniversalAdditionalCameraData,
-    Unity.RenderPipelines.Universal.Runtime
+  m_EditorClassIdentifier: UnityEngine.Rendering.Universal.UniversalAdditionalCameraData, Unity.RenderPipelines.Universal.Runtime
   m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
@@ -653,7 +652,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 0ba53ecf13ba5518000000001b2fe205fb3c504de5762206eb30077e2ff24e60d79c00cf256d63ef
+  m_ApplyToSortingLayers: 0ba53ecf13ba5518000000001b2fe205fb3c504de5762206eb30077e2ff24e60d79c00cf256d63efi
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -668,6 +667,9 @@ MonoBehaviour:
   m_ShadowSoftnessFalloffIntensity: 0.5
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
@@ -844,8 +846,7 @@ MonoBehaviour:
 
     - invincible player
 
-    - Target
-    Dummy '
+    - Target Dummy '
   textColor: {r: 0.69613796, g: 1, b: 0, a: 1}
   bgColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1001 &1105140267

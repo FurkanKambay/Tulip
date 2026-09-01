@@ -33,7 +33,6 @@ EditorSettings:
   m_AssetNamingUsesSpace: 1
   m_InspectorUseIMGUIDefaultInspector: 0
   m_UseLegacyProbeSampleCount: 0
-  m_SerializeInlineMappingsOnOneLine: 1
   m_DisableCookiesInLightmapper: 1
   m_ShadowmaskStitching: 0
   m_AssetPipelineMode: 1
@@ -51,3 +50,4 @@ EditorSettings:
   m_ReferencedClipsExactNaming: 0
   m_ForceAssetUnloadAndGCOnSceneLoad: 1
   m_HideBuildProfileClassicPlatforms: 0
+  m_UseLegacyHierarchy: 0

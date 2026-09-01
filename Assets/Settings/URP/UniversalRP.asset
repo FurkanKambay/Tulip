@@ -11,8 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf2edee5c58d82540a51f03df9d42094, type: 3}
   m_Name: UniversalRP
-  m_EditorClassIdentifier: UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset,
-    Unity.RenderPipelines.Universal.Runtime
+  m_EditorClassIdentifier: UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset, Unity.RenderPipelines.Universal.Runtime
   k_AssetVersion: 13
   k_AssetPreviousVersion: 13
   m_RendererType: 1
@@ -85,6 +84,7 @@ MonoBehaviour:
   m_SupportScreenSpaceLensFlare: 1
   m_GPUResidentDrawerMode: 0
   m_SmallMeshScreenPercentage: 0
+  m_ShadowSmallMeshScreenPercentages: {x: 0, y: 0, z: 0, w: 0}
   m_GPUResidentDrawerEnableOcclusionCullingInCameras: 0
   m_ShadowType: 1
   m_LocalShadowsSupported: 0
@@ -107,6 +107,8 @@ MonoBehaviour:
   m_PrefilteringModeForwardPlus: 0
   m_PrefilteringModeDeferredRendering: 0
   m_PrefilteringModeScreenSpaceOcclusion: 0
+  m_PrefilteringModeScreenSpaceReflection: 1
+  m_PrefilterWriteSmoothness: 1
   m_PrefilterDebugKeywords: 1
   m_PrefilterWriteRenderingLayers: 1
   m_PrefilterHDROutput: 1
@@ -137,6 +139,8 @@ MonoBehaviour:
   m_PrefilterReflectionProbeBoxProjection: 0
   m_PrefilterReflectionProbeAtlas: 0
   m_PrefilterPointSamplingUpsampling: 0
+  m_Light2DPrefilteringMode: 0
+  m_Light2DKeptVariantCombos: []
   m_ShaderVariantLogLevel: 0
   m_ShadowCascades: 0
   m_Textures:

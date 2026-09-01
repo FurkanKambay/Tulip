@@ -45,8 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Interaction.Dialogue
   interactable: {fileID: 6521979170810871481}
-  greetingText: How's it hanging, adventurer? Have you found any treasures of immense
-    measure?
+  greetingText: How's it hanging, adventurer? Have you found any treasures of immense measure?
 --- !u!1 &2757819972751658031
 GameObject:
   m_ObjectHideFlags: 0
