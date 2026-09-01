@@ -28,7 +28,7 @@ namespace FK.Tulip.Combat
             subject = entity.transform;
             world = entity.World;
 
-            SetPosition();
+            ResetToRespawnPosition();
         }
 
         private void OnEnable() => health.OnDie += Health_Die;
@@ -52,20 +52,13 @@ namespace FK.Tulip.Combat
                 return;
 
             SecondsUntilRespawn = 0;
-            SetPosition();
+            ResetToRespawnPosition();
             health.Revive();
         }
 
-        private void SetPosition()
+        private void ResetToRespawnPosition()
         {
-            if (!world) return;
-
-            Vector2Int cell = world.WorldToCell(respawnPosition);
-
-            while (!world.CanAccommodate(cell, entity.EntityAsset.Size))
-                cell.y++;
-
-            subject.position = world.CellCenter(cell);
+            subject.position = respawnPosition;
         }
 
         private void Health_Die(CombatPacket _) => SecondsUntilRespawn = respawnDelay;
