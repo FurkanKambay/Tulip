@@ -1,4 +1,5 @@
 using FK.Common;
+using Unity.Scripting.LifecycleManagement;
 using UnityEngine;
 
 namespace FK.Tulip.Data.Items
@@ -28,7 +29,7 @@ namespace FK.Tulip.Data.Items
         [SerializeField] protected bool isUnsafe;
 
 #region Static - World Tiles Cache
-        [ShowInInspector]
+        [ShowInInspector, NoAutoStaticsCleanup]
         private static WorldTileAsset[] worldTiles;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]

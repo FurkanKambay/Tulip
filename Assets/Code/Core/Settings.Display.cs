@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FK.Common.Extensions;
 using Unity.Properties;
+using Unity.Scripting.LifecycleManagement;
 using UnityEngine;
 
 namespace FK.Tulip.Core
@@ -10,6 +11,7 @@ namespace FK.Tulip.Core
     public partial class Settings
     {
         [Serializable]
+        [NoAutoStaticsCleanup] // statics in this class are valid across domain reloads
         public sealed record DisplaySettingsBag : ISerializationCallbackReceiver
         {
             [SerializeField] private FullScreenMode windowMode = FullScreenMode.FullScreenWindow;

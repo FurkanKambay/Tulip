@@ -2,6 +2,7 @@ using System.Collections;
 using FK.Common;
 using FK.Tulip.Data.GameEvents;
 using JetBrains.Annotations;
+using Unity.Scripting.LifecycleManagement;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -17,8 +18,8 @@ namespace FK.Tulip.Core
         Paused
     }
 
-    [PublicAPI]
-    public sealed class GameManager : MonoBehaviour
+    [PublicAPI, AutoStaticsCleanup]
+    public sealed partial class GameManager : MonoBehaviour
     {
         [SerializeField, Required] private GameStateChangeEvent gameStateChangeEvent;
 
@@ -32,15 +33,9 @@ namespace FK.Tulip.Core
         [SerializeField] private float splashScreenDuration = 2;
 
         [ShowInInspector]
-        internal static GameState CurrentState { get; private set; }
+        internal static GameState CurrentState { get; private set; } = GameState.MainMenu;
 
         private static GameManager instance;
-
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-        private static void Init()
-        {
-            CurrentState = GameState.MainMenu;
-        }
 
         private void Awake()
         {

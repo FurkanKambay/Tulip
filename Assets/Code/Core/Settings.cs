@@ -1,9 +1,10 @@
 using System;
+using Unity.Scripting.LifecycleManagement;
 using UnityEngine;
 
 namespace FK.Tulip.Core
 {
-    [Serializable]
+    [Serializable, AutoStaticsCleanup]
     public partial class Settings
     {
         public static event Action OnUpdate;
