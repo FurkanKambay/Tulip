@@ -1,10 +1,26 @@
 # Include with this command:
 # git config --local include.path ../.gitconfig
 
+[merge]
+    tool = UnityYAMLMergeTool
+[mergetool "UnityYAMLMergeTool"]
+    cmd = ~/.unity/UnityYAMLMerge.exe merge -p "$BASE" "$REMOTE" "$LOCAL" "$MERGED"
+    trustExitCode = false
+    keepBackup = true
+    keepTemporaries = false
+[merge "unityyamlmerge"]
+    name = UnityYAMLMerge driver
+    driver = ~/.unity/UnityYAMLMerge.exe merge --force --fallback none %O %B %A %P
+
 [alias]
-    # To keep paid assets out of the public repo
+    # git update-index --assume-unchanged
     listassumes = !git ls-files -v | grep ^h
     assume = update-index --assume-unchanged
-	assumeallunstaged = !git ls-files -m | tr '\\012' '\\000' | xargs -0 git update-index --assume-unchanged
+    assumeallunstaged = !git ls-files -m | tr '\\012' '\\000' | xargs -0 git update-index --assume-unchanged
     unassume = update-index --no-assume-unchanged
-	unassumeall = !git ls-files -v | grep ^h | cut -c 3- | tr '\\012' '\\000' | xargs -0 git update-index --no-assume-unchanged
+    unassumeall = !git ls-files -v | grep ^h | cut -c 3- | tr '\\012' '\\000' | xargs -0 git update-index --no-assume-unchanged
+    # git update-index --skip-worktree
+    listskips = !git ls-files -v | grep -i ^S # any case S = skip worktree
+    skip = update-index --skip-worktree
+    unskip = update-index --no-skip-worktree
+    unskipall = !git ls-files -v | grep -i ^S | cut -c 3- | tr '\\012' '\\000' | xargs -0 git update-index --no-skip-worktree

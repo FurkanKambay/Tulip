@@ -1,55 +1,72 @@
 # Define macros (only works in top-level gitattributes files)
 [attr]lfs                           -text filter=lfs diff=lfs merge=lfs
-[attr]unity-json                    eol=lf linguist-language=json
-[attr]unity-yaml                    eol=lf linguist-language=yaml merge=unityyamlmerge
+[attr]unity-json                    text=auto eol=lf linguist-language=json
+[attr]unity-yaml                    text=auto eol=lf linguist-language=yaml merge=unityyamlmerge
 
 *                                   text=auto eol=lf
-*.cs                                eol=lf diff=csharp
-*.md                                eol=lf diff=markdown
-
-# Exclude some files from GitHub stats and diffs
-Assets/Plugins/**                   linguist-generated
-Assets/TextMesh[[:space:]]Pro/**    linguist-generated
-Packages/packages-lock.json         linguist-generated
-*.g.cs                              linguist-generated
+*.cs                                text diff=csharp
+*.md                                text diff=markdown
 
 # Unity shader files
-*.cginc                             eol=lf
-*.compute                           eol=lf linguist-language=hlsl
-*.hlsl                              eol=lf
-*.raytrace                          eol=lf linguist-language=hlsl
-*.shader                            eol=lf
+*.cg                                text linguist-language=hlsl
+*.cginc                             text
+*.compute                           text linguist-language=hlsl
+*.glslinc                           text linguist-language=glsl
+*.hlsl                              text
+*.raytrace                          text linguist-language=hlsl
+*.shader                            text
 
 # Unity JSON files
 *.asmdef                            unity-json
 *.asmref                            unity-json
+*.graphicsstate                     unity-json
 *.index                             unity-json
 *.inputactions                      unity-json
 *.shadergraph                       unity-json
 *.shadersubgraph                    unity-json
 
+# Exclude from GitHub stats and diffs: third-party plugins, packages lock file
+Packages/packages-lock.json         linguist-generated
+Assets/Plugins/**                   linguist-generated
+Assets/TextMesh[[:space:]]Pro/**    linguist-generated
+*.g.cs                              linguist-generated
+
+# Unity web template files
+*.css                               text diff=css
+*.html                              text diff=html
+*.js                                text
+*.webmanifest                       text
+
 # Unity UI Toolkit files
-*.tss                               eol=lf linguist-language=css diff=css
-*.uss                               eol=lf linguist-language=css diff=css
-*.uxml                              eol=lf linguist-language=xml linguist-detectable
-*.xsd                               eol=lf linguist-generated
+*.tss                               text linguist-language=css diff=css
+*.uss                               text linguist-language=css diff=css
+*.uxml                              text linguist-language=xml linguist-detectable
+*.xsd                               text linguist-generated
 
 # Unity YAML files
 *.anim                              unity-yaml
 *.asset                             unity-yaml
 *.brush                             unity-yaml
+*.colors                            unity-yaml
 *.controller                        unity-yaml
-*.cubemap                           unity-yaml
+*.curves                            unity-yaml
+*.curvesNormalized                  unity-yaml
 *.flare                             unity-yaml
 *.fontsettings                      unity-yaml
 *.giparams                          unity-yaml
+*.gradients                         unity-yaml
 *.guiskin                           unity-yaml
+*.ht                                unity-yaml
 *.lighting                          unity-yaml
 *.mask                              unity-yaml
 *.mat                               unity-yaml
 *.meta                              unity-yaml
 *.mixer                             unity-yaml
 *.overrideController                unity-yaml
+*.particleCurves                    unity-yaml
+*.particleCurvesSigned              unity-yaml
+*.particleDoubleCurves              unity-yaml
+*.particleDoubleCurvesSigned        unity-yaml
 *.physicMaterial                    unity-yaml
 *.physicsMaterial2D                 unity-yaml
 *.playable                          unity-yaml
@@ -63,21 +80,31 @@ Packages/packages-lock.json         linguist-generated
 *.spriteatlasv2                     unity-yaml
 *.spriteLib                         unity-yaml
 *.terrainlayer                      unity-yaml
+*.tileset                           unity-yaml
 *.unity                             unity-yaml
 *.vfx                               unity-yaml
 *.vfxblock                          unity-yaml
 *.vfxoperator                       unity-yaml
+*.webCamTexture                     unity-yaml
+*.d3d12devicefilter                 unity-yaml
+*.vulkandevicefilter                unity-yaml
+*.webgpudevicefilter                unity-yaml
 
-# Exceptions for some non-YAML .asset files
-LightingData.asset                  lfs
-NavMesh-*.asset                     lfs
+# Unity binary assets
+*.buildreport                       lfs
+*.cubemap                           lfs
+*.texture2D                         lfs
 
-# FMOD Banks
+# Exceptions
+*.bin.asset                         lfs !unity-yaml
+Assets/**/*NavMesh*.asset           lfs !unity-yaml
+Assets/**/*OcclusionCulling*.asset  lfs !unity-yaml
+Assets/**/*Terrain*.asset           lfs !unity-yaml
+Assets/**/LightingData.asset        lfs !unity-yaml
+Assets/**.buildreport               !lfs unity-yaml
+
+# FMOD
 *.bank                              lfs
-
-# FMOD for Unity
-Assets/Plugins/FMOD/**/*.bundle     eol=lf
-Assets/Plugins/FMOD/**/Info.plist   eol=lf
 
 # 3D models
 *.3dm                               lfs
@@ -88,8 +115,8 @@ Assets/Plugins/FMOD/**/Info.plist   eol=lf
 *.collada                           lfs
 *.dae                               lfs
 *.dxf                               lfs
-*.FBX                               lfs
 *.fbx                               lfs
+*.FBX                               lfs
 *.jas                               lfs
 *.lws                               lfs
 *.lxo                               lfs
@@ -98,13 +125,18 @@ Assets/Plugins/FMOD/**/Info.plist   eol=lf
 *.mb                                lfs
 *.obj                               lfs
 *.ply                               lfs
+*.sbsar                             lfs
 *.skp                               lfs
+*.spm                               lfs
+*.st                                lfs
+*.st9                               lfs
 *.stl                               lfs
 *.ztl                               lfs
 
 # Audio
 *.aif                               lfs
 *.aiff                              lfs
+*.flac                              lfs
 *.it                                lfs
 *.mod                               lfs
 *.mp3                               lfs
@@ -116,56 +148,94 @@ Assets/Plugins/FMOD/**/Info.plist   eol=lf
 # Video
 *.asf                               lfs
 *.avi                               lfs
+*.dv                                lfs
 *.flv                               lfs
+*.m4v                               lfs
 *.mov                               lfs
 *.mp4                               lfs
 *.mpeg                              lfs
 *.mpg                               lfs
 *.ogv                               lfs
+*.vp8                               lfs
+*.webm                              lfs
 *.wmv                               lfs
 
 # Images
+*.astc                              lfs
 *.bmp                               lfs
+*.dds                               lfs
 *.exr                               lfs
 *.gif                               lfs
 *.hdr                               lfs
 *.iff                               lfs
 *.jpeg                              lfs
 *.jpg                               lfs
+*.ktx                               lfs
+*.pct                               lfs
+*.pic                               lfs
 *.pict                              lfs
 *.png                               lfs
 *.psd                               lfs
+*.pvr                               lfs
 *.tga                               lfs
 *.tif                               lfs
 *.tiff                              lfs
 *.webp                              lfs
 
-# Compressed Archive
+# Fonts
+*.dfont                             lfs
+*.otf                               lfs
+*.ttc                               lfs
+*.ttf                               lfs
+
+# Archives
 *.7z                                lfs
 *.bz2                               lfs
 *.gz                                lfs
 *.rar                               lfs
 *.tar                               lfs
+*.tgz                               lfs
 *.zip                               lfs
 
-# Compiled Dynamic Library
-*.dll                               lfs
-*.pdb                               lfs
-*.so                                lfs
-*.wasm                              lfs
-
-# Fonts
-*.otf                               lfs
-*.ttf                               lfs
-
-# Executable/Installer
+# Packaging
 *.apk                               lfs
+*.msi                               lfs
+*.unitypackage                      lfs
+
+# Binary code, debugging symbols
 *.exe                               lfs
+*.pdb                               lfs
+*.wasm                              lfs
 
 # Documents
 *.pdf                               lfs
 
-# ETC
+# Native plug-ins (source files)
+*.c                                 text diff=cpp
+*.cc                                text diff=cpp
+*.cpp                               text diff=cpp
+*.h                                 text diff=cpp
+*.java                              text diff=java
+*.jslib                             text
+*.jspre                             text
+*.kt                                text diff=kotlin
+*.m                                 text diff=objc linguist-language=objectivec
+*.mm                                text diff=objc linguist-language=objectivec
+*.swift                             text diff=swift
+*.xib                               text
+
+# Managed & native plug-ins (binary)
 *.a                                 lfs
-*.reason                            lfs
-*.rns                               lfs
+*.aar                               lfs
+*.bc                                lfs
+*.dll                               lfs
+*.dylib                             lfs
+*.jar                               lfs
+*.prx                               lfs
+*.rpl                               lfs
+*.so                                lfs
+*.sprx                              lfs
+*.suprx                             lfs
+*.winmd                             lfs
+*.xcframework                       lfs
+*.xex                               lfs

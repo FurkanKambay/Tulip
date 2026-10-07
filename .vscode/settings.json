@@ -3,17 +3,29 @@
     "explorer.fileNesting.enabled": true,
     "explorer.fileNesting.expand": false,
     "explorer.fileNesting.patterns": {
-        "*": "${capture}.meta"
+        "README.md": "CHANGELOG.md, LICENSE.md, ATTRIBUTIONS.md",
+        ".editorconfig": "*.DotSettings",
+        "*": "${capture}.meta",
+        "manifest.json": "packages-lock.json",
+        "ProjectSettings.asset": "AudioManager.asset, InputManager.asset, MemorySettings.asset, TagManager.asset, TimeManager.asset, NavMeshAreas.asset, ClusterInputManager.asset, XRSettings.asset",
+        "GraphicsSettings.asset": "QualitySettings.asset, VFXManager.asset, ShaderGraphSettings.asset, URPProjectSettings.asset",
+        "DynamicsManager.asset": "Physics2DSettings.asset, PhysicsCoreProjectSettings2D.asset",
+        "EditorSettings.asset": "EditorBuildSettings.asset, PresetManager.asset, ProjectAuditorSettings.asset, SceneTemplateSettings.json, UIToolkitProjectSettings.asset, VersionControlSettings.asset, UnityConnectSettings.asset",
+        "PackageManagerSettings.asset": "TimelineSettings.asset, BehaviorSettings.asset, EntitiesClientSettings.asset, NetCode*.asset, MultiplayerManager.asset, NetworkManager.asset",
+        "CommonBurstAotSettings.json": "BurstAotSettings_*.json",
     },
     "files.exclude": {
-        "UIElementsSchema/": true
+        "Assets/Plugins/": false,
+        "Assets/TextMesh Pro/": true,
+        "UIElementsSchema/": true,
     },
     "files.readonlyInclude": {
+        "**/*.meta": false,
         "Packages/packages-lock.json": true,
         "UIElementsSchema/**": true,
         "Assets/Plugins/": true,
-        "FMODProject/**": true,
-        // "**/*.meta": true,
+        "Assets/TextMesh Pro/": true,
+        "FMODProject/**": false,
     },
     "conventionalCommitBuilder.template": "<type><scope>: <description>",
     "conventionalCommitBuilder.autoCommit": true,
@@ -28,13 +40,17 @@
             "label": "ci",
             "description": "CI",
             "detail": "Changes to CI configuration files and scripts (e.g. GitHub Actions)"
+        },
+        {
+            "label": "balance",
+            "description": "Balancing changes",
+            "detail": "Changes to the balancing of difficulty, economy, levels, etc."
         }
     ],
     "conventionalCommitBuilder.scopes": [
         "ai",
         "art",
         "audio",
-        "balance",
         "combat",
         "content",
         "core",

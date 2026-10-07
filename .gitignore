@@ -2,54 +2,62 @@
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
-
-# Build noise
-/[Aa]ssets/[Rr]esources/[Pp]erformanceTestRun*.json
-/[Aa]ssets/[Rr]esources/[Pp]erformanceTestRun*.json.meta
-
-# These get excessive in size
-# MemoryCaptures could contain sensitive data
+/[Bb]uilds/
+/[Bb]uild/
 /[Mm]emory[Cc]aptures/
+/[Pp]rofiler[Cc]aptures/
 /[Rr]ecordings/
 
-# Packed Addressables
-/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+# Build noise
+/[Aa]ssets/[Rr]esources/PerformanceTestRun*.json
+/[Aa]ssets/[Rr]esources/PerformanceTestRun*.json.meta
 
-# Temporary auto-generated Android Assets
-/[Aa]ssets/[Ss]treaming[Aa]ssets/aa.meta
-/[Aa]ssets/[Ss]treaming[Aa]ssets/aa/*
+# Addressables
+/[Aa]ssets/AddressableAssetsData/*/addressables_content_state.bin
+/[Aa]ssets/AddressableAssetsData/*/addressables_content_state.bin.meta
+/[Aa]ssets/AddressableAssetsData/link.xml*
+/[Aa]ssets/Addressables_Temp*
+/[Aa]ssets/StreamingAssets/aa*
+/ServerData
 
-# Gradle cache
+# Auto-generated ECS scene cache
+/[Aa]ssets/[Ss]cene[Dd]ependency[Cc]ache*
+
+# Unity Test Framework auto-generated scenes
+/[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+# Android
 .gradle/
+.utmp/
+*.log
 
-# GameCI temporaries
-/[Aa]rtifacts/
-/[Cc]odeCoverage/
-
-# JetBrains Rider
-
-# Non-sensitive but unwanted files
-.idea/**/vcs.xml
-.idea/**/indexLayout.xml
-.idea/**/projectSettingsUpdater.xml
-
-# User-specific or generated stuff
-.idea/**/dictionaries/
-.idea/**/shelf/
-.idea/**/tasks.xml
-.idea/**/usage.statistics.xml
-.idea/**/workspace.xml
-.idea/**/contentModel.xml
-
-# Visual Studio, .NET, C#
-.vs/
+# C#
 *.csproj
 *.sln
+*.slnx
 *.user
+
+# Program databases
+*.pdb
+*.pdb.meta
+*.mdb
+*.mdb.meta
+
+# JetBrains Rider
+.idea/
+!.idea/**/tasks.xml
+!.idea/**/dictionaries/
+
+# Visual Studio
+.vs/
+ExportedObj/
+*.suo
+*.tmp
+*.svd
+*.VC.db
+*.opendb
 
 # VS Code
 .vscode/*
@@ -61,6 +69,10 @@
 !.vscode/*.code-snippets
 !.vscode/dictionaries/
 
+# Blender
+*.blend1
+*.blend1.meta
+
 # FMOD Studio
 /FMODProject/.cache/
 /FMODProject/.user/
@@ -71,24 +83,23 @@
 # *.bank
 
 # FMOD for Unity
-
-# Never ignore DLLs in the FMOD subfolder.
 !/[Aa]ssets/[Pp]lugins/FMOD/**/lib/*
-
-# Ignore the Cache folder since it is updated locally.
-/[Aa]ssets/[Pp]lugins/FMOD/Cache/*
-
-# Don't ignore images and gizmos used by FMOD in the Unity Editor.
 !/[Aa]ssets/Gizmos/FMOD/*
 !/[Aa]ssets/Editor Default Resources/FMOD/*
-
-# Ignore bank files in the StreamingAssets folder.
-# If the source bank files are kept outside of the StreamingAssets folder then these can be ignored.
+/[Aa]ssets/[Pp]lugins/FMOD/Cache/*
 /[Aa]ssets/[Ss]treaming[Aa]ssets/**/*.bank
 /[Aa]ssets/[Ss]treaming[Aa]ssets/**/*.bank.meta
-
-# Log files can be ignored.
 fmod_editor.log
+
+# GameCI
+/[Aa]rtifacts/
+/[Cc]ode[Cc]overage/
+
+# Firebase Crashlytics
+crashlytics-build.properties
+
+# Unity Version Control (PlasticSCM)
+.plastic/
 
 # LDtk
 **/LDtk/*/backups/
@@ -99,6 +110,3 @@ fmod_editor.log
 *.ldtkt.meta
 *.ldtkc
 *.ldtkc.meta
-
-# Unity Version Control (PlasticSCM)
-.plastic/
