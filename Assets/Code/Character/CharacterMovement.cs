@@ -35,10 +35,12 @@ namespace FK.Tulip.Character
         private void Update()
         {
             if (brain == null) return;
-            hasAnyMovement = brain.HorizontalMovement != 0;
 
-            bool isFacingObstacle = brain.HorizontalMovement < 0 ? surrounds.IsLeftBlocked : surrounds.IsRightBlocked;
-            float velocityX = brain.HorizontalMovement * Mathf.Max(config.maxSpeed - config.friction, 0f);
+            float movement = brain.HorizontalMovement;
+            hasAnyMovement = movement != 0;
+
+            bool isFacingObstacle = movement < 0 ? surrounds.IsLeftBlocked : surrounds.IsRightBlocked;
+            float velocityX = movement * Mathf.Max(config.maxSpeed - config.friction, 0f);
 
             DesiredVelocity = isFacingObstacle ? Vector2.zero : new Vector2(velocityX, 0);
         }
@@ -50,10 +52,8 @@ namespace FK.Tulip.Character
 
             if (config.useAcceleration)
                 RunWithAcceleration();
-            else if (isGrounded)
-                RunWithoutAcceleration();
             else
-                RunWithAcceleration();
+                RunWithoutAcceleration();
         }
 
         private void RunWithAcceleration()
