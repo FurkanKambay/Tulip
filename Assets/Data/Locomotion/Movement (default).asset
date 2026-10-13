@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05779f818bf60e44aceef794cb1bb08, type: 3}
   m_Name: Movement (default)
   m_EditorClassIdentifier: FK.Tulip::FK.Tulip.Data.Gameplay.MovementConfig
-  maxSpeed: 12
+  maxSpeed: 14
   friction: 2
   useAcceleration: 1
-  maxAcceleration: 45
+  maxAcceleration: 80
   maxDeceleration: 80
   maxTurnSpeed: 100
-  maxAirAcceleration: 50
-  maxAirDeceleration: 20
-  maxAirTurnSpeed: 80
+  maxAirAcceleration: 80
+  maxAirDeceleration: 80
+  maxAirTurnSpeed: 100
