@@ -11,22 +11,22 @@
         </engine:VisualElement>
         <engine:TabView data-source-path="Settings">
             <engine:Tab label="Sound" data-source-path="audio" name="tab-sound" class="tab">
-                <engine:SliderInt label="Master" value="100" high-value="100" show-input-field="true" fill="true" class="slider-audio option">
+                <engine:SliderInt label="Master" value="10" high-value="10" show-input-field="true" fill="true" class="slider-audio option">
                     <Bindings>
                         <engine:DataBinding property="value" binding-mode="TwoWay" data-source-path="MasterVolume"/>
                     </Bindings>
                 </engine:SliderInt>
-                <engine:SliderInt label="Music" value="100" high-value="100" show-input-field="true" fill="true" class="slider-audio option">
+                <engine:SliderInt label="Music" value="10" high-value="10" show-input-field="true" fill="true" class="slider-audio option">
                     <Bindings>
                         <engine:DataBinding property="value" binding-mode="TwoWay" data-source-path="MusicVolume"/>
                     </Bindings>
                 </engine:SliderInt>
-                <engine:SliderInt label="Effects" value="100" high-value="100" show-input-field="true" fill="true" class="slider-audio option">
+                <engine:SliderInt label="Effects" value="10" high-value="10" show-input-field="true" fill="true" class="slider-audio option">
                     <Bindings>
                         <engine:DataBinding property="value" binding-mode="TwoWay" data-source-path="EffectsVolume"/>
                     </Bindings>
                 </engine:SliderInt>
-                <engine:SliderInt label="UI" value="100" high-value="100" show-input-field="true" fill="true" class="slider-audio option">
+                <engine:SliderInt label="UI" value="10" high-value="10" show-input-field="true" fill="true" class="slider-audio option">
                     <Bindings>
                         <engine:DataBinding property="value" binding-mode="TwoWay" data-source-path="UIVolume"/>
                     </Bindings>

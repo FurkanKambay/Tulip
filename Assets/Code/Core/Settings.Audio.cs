@@ -9,11 +9,11 @@ namespace FK.Tulip.Core
         [Serializable]
         public sealed record AudioSettingsBag
         {
-            [SerializeField, Range(0, 100)] private int masterVolume = 80;
-            [SerializeField, Range(0, 100)] private int musicVolume = 80;
-            [SerializeField, Range(0, 100)] private int ambienceVolume = 80;
-            [SerializeField, Range(0, 100)] private int effectsVolume = 80;
-            [SerializeField, Range(0, 100)] private int uiVolume = 80;
+            [SerializeField, Range(0, 10)] private int masterVolume = 8;
+            [SerializeField, Range(0, 10)] private int musicVolume = 8;
+            [SerializeField, Range(0, 10)] private int ambienceVolume = 8;
+            [SerializeField, Range(0, 10)] private int effectsVolume = 8;
+            [SerializeField, Range(0, 10)] private int uiVolume = 8;
             [SerializeField] private bool muteInBackground;
 
             internal AudioSettingsBag()

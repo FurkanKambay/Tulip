@@ -80,7 +80,7 @@ namespace FK.Tulip.Audio
         }
 
         private static void SetVolume(VCA vca, int value) =>
-            vca.setVolume(Mathf.InverseLerp(0, 100, value));
+            vca.setVolume(Mathf.InverseLerp(0, 10, value));
 
         private static readonly string logPrefix = $"[{nameof(AudioManager)}]";
     }
