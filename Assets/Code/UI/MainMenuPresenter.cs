@@ -1,3 +1,4 @@
+using System.Collections;
 using FK.Common;
 using FK.Tulip.Core;
 using FK.Tulip.Data.GameEvents;
@@ -26,6 +27,7 @@ namespace FK.Tulip.UI
         {
             settingsPresenter = FindAnyObjectByType<SettingsPresenter>();
             UpdateCallbacks(GameManager.CurrentState);
+            SetMainMenuVisible(true);
         }
 
         private void OnEnable()
@@ -41,7 +43,7 @@ namespace FK.Tulip.UI
         }
 
         private void Settings_Shown(bool visible) =>
-            root.visible = !visible;
+            SetMainMenuVisible(!visible);
 
         private void UpdateCallbacks(GameState newState)
         {
@@ -52,9 +54,16 @@ namespace FK.Tulip.UI
             if (!inMainMenu)
             {
                 newButton.UnregisterCallback<ClickEvent>(NewButton_Clicked);
+                newButton.UnregisterCallback<NavigationSubmitEvent>(NewButton_NavigationSubmitted);
+
                 continueButton.UnregisterCallback<ClickEvent>(ContinueButton_Clicked);
+                continueButton.UnregisterCallback<NavigationSubmitEvent>(ContinueButton_NavigationSubmitted);
+
                 settingsButton.UnregisterCallback<ClickEvent>(SettingsButton_Clicked);
+                settingsButton.UnregisterCallback<NavigationSubmitEvent>(SettingsButton_NavigationSubmitted);
+
                 quitButton.UnregisterCallback<ClickEvent>(QuitButton_Clicked);
+                quitButton.UnregisterCallback<NavigationSubmitEvent>(QuitButton_NavigationSubmitted);
                 return;
             }
 
@@ -65,14 +74,40 @@ namespace FK.Tulip.UI
             quitButton = root.Q<Button>("quit-button");
 
             newButton.RegisterCallback<ClickEvent>(NewButton_Clicked);
+            newButton.RegisterCallback<NavigationSubmitEvent>(NewButton_NavigationSubmitted);
+
             continueButton.RegisterCallback<ClickEvent>(ContinueButton_Clicked);
+            continueButton.RegisterCallback<NavigationSubmitEvent>(ContinueButton_NavigationSubmitted);
+
             settingsButton.RegisterCallback<ClickEvent>(SettingsButton_Clicked);
+            settingsButton.RegisterCallback<NavigationSubmitEvent>(SettingsButton_NavigationSubmitted);
+
             quitButton.RegisterCallback<ClickEvent>(QuitButton_Clicked);
+            quitButton.RegisterCallback<NavigationSubmitEvent>(QuitButton_NavigationSubmitted);
 
             // TODO: enable continue button if there's a latest save
             // TODO: support multiple saves
             continueButton.SetEnabled(false);
         }
+
+        private void SetMainMenuVisible(bool visible)
+        {
+            root.visible = visible;
+
+            if (visible)
+                StartCoroutine(FocusFirstButtonNextFrame());
+        }
+
+        private IEnumerator FocusFirstButtonNextFrame()
+        {
+            yield return new WaitForEndOfFrame();
+            newButton.Focus();
+        }
+
+        private void NewButton_NavigationSubmitted(NavigationSubmitEvent evt) => NewButton_Clicked(null);
+        private void ContinueButton_NavigationSubmitted(NavigationSubmitEvent evt) => ContinueButton_Clicked(null);
+        private void SettingsButton_NavigationSubmitted(NavigationSubmitEvent evt) => SettingsButton_Clicked(null);
+        private void QuitButton_NavigationSubmitted(NavigationSubmitEvent _) => QuitButton_Clicked(null);
 
         private void NewButton_Clicked(ClickEvent _)
         {
@@ -100,7 +135,7 @@ namespace FK.Tulip.UI
         }
 
         private void SettingsButton_Clicked(ClickEvent _) =>
-            settingsPresenter.ToggleUI(true);
+            settingsPresenter.SetUIVisible(true);
 
         private void QuitButton_Clicked(ClickEvent _) =>
             GameManager.QuitGame();

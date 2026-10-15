@@ -61,7 +61,12 @@ namespace FK.Tulip.UI
             gameExitButton = root.Q<Button>("save-exit-button");
 
             optionsButton.RegisterCallback<ChangeEvent<bool>>(OptionsButton_Toggled);
+
             gameExitButton.RegisterCallback<ClickEvent>(SaveExitButton_Clicked);
+            gameExitButton.RegisterCallback<NavigationSubmitEvent>(SaveExitButton_NavigationSubmitted);
+
+            tabView.RegisterCallback<NavigationCancelEvent>(TabView_NavigationCanceled);
+            tabView.activeTabChanged += TabView_ActiveTabChanged;
 
 #if UNITY_WEBGL
             root.Q<DropdownField>("display-resolution").RemoveFromHierarchy();
@@ -94,38 +99,53 @@ namespace FK.Tulip.UI
 
         private void Update()
         {
-            // TODO: rewrite this in a better way
-            if (GameManager.CurrentState == GameState.MainMenu)
-            {
-                // same as <cancel.action.triggered> in Main Menu
-                if (brain.WantsToPause)
-                    optionsButton.value = !optionsButton.value;
-            }
-            else
-            {
-                if (brain.WantsToPause)
-                    ToggleUI(true);
-
-                if (brain.WantsToCancel)
-                    ToggleUI(false);
-            }
+            if (brain.WantsToPause)
+                SetUIVisible(true);
 
             if (brain.TabSwitchDelta.HasValue)
-                tabView.selectedTabIndex += brain.TabSwitchDelta.Value;
+            {
+                // prevent tab switch if a field has a flyout open
+                if (tabView.activeTab.focusController.focusedElement is not { delegatesFocus: false })
+                    tabView.selectedTabIndex += brain.TabSwitchDelta.Value;
+            }
         }
 
-        public void ToggleUI(bool visible) =>
+        public void SetUIVisible(bool visible) =>
             optionsButton.value = visible;
+
+        private void TabView_NavigationCanceled(NavigationCancelEvent evt) => SetUIVisible(false);
+
+        private void TabView_ActiveTabChanged(Tab oldTab, Tab newTab)
+        {
+            // if a field has a flyout open, force it to close before switching tabs
+            // preventing the tab from switching in the first place is done when reading the input
+            if (oldTab.focusController.focusedElement is { delegatesFocus: false } focusedElement)
+                focusedElement.SendEvent(new NavigationCancelEvent());
+
+            FocusFirstFieldOfActiveTab();
+        }
 
         private void OptionsButton_Toggled(ChangeEvent<bool> change)
         {
             container.visible = change.newValue;
             quitFlyoutButton.value = false;
 
+            if (container.visible)
+                StartCoroutine(FocusFirstFieldOfActiveTabNextFrame());
+
             PlayToggleSfx(change.newValue);
             GameManager.SetPaused(change.newValue);
 
             OnToggled?.Invoke(change.newValue);
+        }
+
+        private void FocusFirstFieldOfActiveTab() =>
+            tabView.activeTab.Q(className: "option").Focus();
+
+        private IEnumerator FocusFirstFieldOfActiveTabNextFrame()
+        {
+            yield return new WaitForEndOfFrame();
+            FocusFirstFieldOfActiveTab();
         }
 
         private void PlayToggleSfx(bool toggleState)
@@ -141,6 +161,8 @@ namespace FK.Tulip.UI
         {
             root.visible = args.NewState != GameState.Playing;
         }
+
+        private void SaveExitButton_NavigationSubmitted(NavigationSubmitEvent evt) => SaveExitButton_Clicked(null);
 
         private void SaveExitButton_Clicked(ClickEvent _)
         {

@@ -1,9 +1,8 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI/Settings Menu/SettingsMenu.Header.uss?fileID=7433441132597879392&amp;guid=b0e91bc71732c494da0fd6a8ba10292c&amp;type=3#SettingsMenu.Header"/>
-    <Style src="project://database/Assets/UI/Settings Menu/SettingsMenu.Body.uss?fileID=7433441132597879392&amp;guid=6fb4624177c61bf46812563d65e71cde&amp;type=3#SettingsMenu.Body"/>
+    <Style src="project://database/Assets/UI/Settings%20Menu/SettingsMenu.Header.uss?fileID=7433441132597879392&amp;guid=b0e91bc71732c494da0fd6a8ba10292c&amp;type=3#SettingsMenu.Header"/>
+    <Style src="project://database/Assets/UI/Settings%20Menu/SettingsMenu.Body.uss?fileID=7433441132597879392&amp;guid=6fb4624177c61bf46812563d65e71cde&amp;type=3#SettingsMenu.Body"/>
     <engine:VisualElement name="options-menu" data-source-type="FK.Tulip.UI.SettingsPresenter, FK.Tulip">
         <engine:VisualElement name="header">
-            <engine:Toggle name="options-toggle" class="header-button button-wide"/>
             <engine:Label text="Settings" name="header-title"/>
             <engine:VisualElement name="key-prompt-container">
                 <engine:VisualElement name="key-prompt-prev" class="key-prompt"/>
@@ -12,40 +11,40 @@
         </engine:VisualElement>
         <engine:TabView data-source-path="Settings">
             <engine:Tab label="Sound" data-source-path="audio" name="tab-sound" class="tab">
-                <engine:SliderInt label="Master" value="100" high-value="100" focusable="false" show-input-field="true" fill="true" class="slider-audio option">
+                <engine:SliderInt label="Master" value="100" high-value="100" show-input-field="true" fill="true" class="slider-audio option">
                     <Bindings>
                         <engine:DataBinding property="value" binding-mode="TwoWay" data-source-path="MasterVolume"/>
                     </Bindings>
                 </engine:SliderInt>
-                <engine:SliderInt label="Music" value="100" high-value="100" focusable="false" show-input-field="true" fill="true" class="slider-audio option">
+                <engine:SliderInt label="Music" value="100" high-value="100" show-input-field="true" fill="true" class="slider-audio option">
                     <Bindings>
                         <engine:DataBinding property="value" binding-mode="TwoWay" data-source-path="MusicVolume"/>
                     </Bindings>
                 </engine:SliderInt>
-                <engine:SliderInt label="Effects" value="100" high-value="100" focusable="false" show-input-field="true" fill="true" class="slider-audio option">
+                <engine:SliderInt label="Effects" value="100" high-value="100" show-input-field="true" fill="true" class="slider-audio option">
                     <Bindings>
                         <engine:DataBinding property="value" binding-mode="TwoWay" data-source-path="EffectsVolume"/>
                     </Bindings>
                 </engine:SliderInt>
-                <engine:SliderInt label="UI" value="100" high-value="100" focusable="false" show-input-field="true" fill="true" class="slider-audio option">
+                <engine:SliderInt label="UI" value="100" high-value="100" show-input-field="true" fill="true" class="slider-audio option">
                     <Bindings>
                         <engine:DataBinding property="value" binding-mode="TwoWay" data-source-path="UIVolume"/>
                     </Bindings>
                 </engine:SliderInt>
-                <engine:Toggle label="Mute In Background" focusable="false" class="option">
+                <engine:Toggle label="Mute In Background" class="option">
                     <Bindings>
                         <engine:DataBinding property="value" binding-mode="TwoWay" data-source-path="MuteInBackground"/>
                     </Bindings>
                 </engine:Toggle>
             </engine:Tab>
             <engine:Tab label="Display" data-source-path="display" name="tab-display" class="tab">
-                <engine:DropdownField label="Window Mode" focusable="false" class="dropdown option">
+                <engine:DropdownField label="Window Mode" class="dropdown option">
                     <Bindings>
                         <engine:DataBinding property="choices" data-source-path="supportedWindowModes" binding-mode="ToTarget"/>
                         <engine:DataBinding property="value" binding-mode="TwoWay" data-source-path="WindowMode"/>
                     </Bindings>
                 </engine:DropdownField>
-                <engine:DropdownField name="display-resolution" label="Resolution" focusable="false" class="dropdown option">
+                <engine:DropdownField name="display-resolution" label="Resolution" class="dropdown option">
                     <Bindings>
                         <engine:DataBinding property="choices" data-source-path="SupportedResolutions" binding-mode="ToTarget"/>
                         <engine:DataBinding property="value" binding-mode="TwoWay" data-source-path="Resolution"/>
@@ -58,10 +57,11 @@
                 <engine:DataBinding property="style.visibility" binding-mode="ToTarget" data-source-path="IsSaveExitButtonVisible"/>
             </Bindings>
         </engine:Button>
-        <engine:Toggle name="quit-flyout-button" class="header-button button-wide">
+        <engine:Toggle name="quit-flyout-button" focusable="false" class="header-button button-wide">
             <Bindings>
                 <engine:DataBinding property="style.visibility" binding-mode="ToTarget" data-source-path="IsQuitButtonVisible"/>
             </Bindings>
         </engine:Toggle>
     </engine:VisualElement>
+    <engine:Toggle name="options-toggle" focusable="false" class="header-button button-wide"/>
 </engine:UXML>

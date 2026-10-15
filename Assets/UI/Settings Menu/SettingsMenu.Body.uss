@@ -53,6 +53,7 @@ Tab > .unity-tab__content-container {
     margin-left: 4px;
 }
 
+.option:focus,
 .option:hover {
     color: rgb(0, 160, 255);
 }
@@ -62,6 +63,7 @@ Tab > .unity-tab__content-container {
     color: rgb(255, 255, 255);
 }
 
+.option:focus #unity-checkmark,
 .option:hover #unity-checkmark {
     background-color: rgb(0, 160, 255);
 }
@@ -110,10 +112,12 @@ Tab > .unity-tab__content-container {
     background-color: rgb(0, 65, 102);
 }
 
+.slider-audio:focus #unity-tracker,
 .slider-audio:hover #unity-tracker {
     background-color: rgb(255, 255, 255);
 }
 
+.slider-audio:focus #unity-tracker #unity-fill,
 .slider-audio:hover #unity-tracker #unity-fill {
     background-color: rgb(0, 160, 255);
 }

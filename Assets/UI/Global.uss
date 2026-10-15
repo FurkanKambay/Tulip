@@ -28,16 +28,20 @@
     opacity: 1;
 }
 
+.button-wide:enabled:focus,
 .button-wide:enabled:hover {
     border-width: 0;
     background-image: var(--button-wide-bg-border);
     background-color: rgba(0, 0, 0, 0);
 }
 
+.button-wide:enabled:focus,
 .button-wide:enabled:active {
     background-image: var(--button-wide-bg-active);
     background-color: rgba(0, 0, 0, 0);
 }
+
+.bg-tint-blue:focus,
 .bg-tint-blue:hover {
     -unity-background-image-tint-color: rgb(0, 108, 191);
 }
@@ -50,6 +54,7 @@
     -unity-background-image-tint-color: rgb(41, 52, 61);
 }
 
+.bg-tint-red:focus,
 .bg-tint-red:hover {
     -unity-background-image-tint-color: rgb(158, 0, 0);
 }

@@ -73,6 +73,7 @@
     right: 0;
 }
 
+#quit-flyout-button:focus,
 #quit-flyout-button:hover {
     -unity-background-image-tint-color: rgb(171, 111, 0);
 }
@@ -81,6 +82,7 @@
     -unity-background-image-tint-color: rgb(145, 111, 0);
 }
 
+#quit-flyout-button:checked:focus,
 #quit-flyout-button:checked:hover {
     -unity-background-image-tint-color: rgb(23, 25, 28);
 }
@@ -102,6 +104,7 @@
     padding-left: 16px;
 }
 
+.quit-button:focus,
 .quit-button:hover {
     -unity-background-image-tint-color: rgb(171, 0, 0);
 }
