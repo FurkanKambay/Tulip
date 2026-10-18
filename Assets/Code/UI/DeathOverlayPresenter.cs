@@ -44,7 +44,8 @@ namespace FK.Tulip.UI
         private void OnDisable()
         {
             panelRenderer.UnregisterUIReloadCallback(UI_Reloaded);
-            respawnButton?.UnregisterCallback<ClickEvent>(HandleRespawnClicked);
+            if (respawnButton != null)
+                respawnButton.clicked -= HandleRespawnClicked;
         }
 
         private void UI_Reloaded(PanelRenderer renderer, VisualElement rootElement)
@@ -53,10 +54,10 @@ namespace FK.Tulip.UI
             root.dataSource = this;
 
             respawnButton = root.Q<Button>();
-            respawnButton.RegisterCallback<ClickEvent>(HandleRespawnClicked);
+            respawnButton.clicked += HandleRespawnClicked;
         }
 
-        private void HandleRespawnClicked(ClickEvent _) =>
+        private void HandleRespawnClicked() =>
             respawner.TryRespawn();
     }
 }

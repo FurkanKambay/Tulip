@@ -62,8 +62,7 @@ namespace FK.Tulip.UI
 
             optionsButton.RegisterCallback<ChangeEvent<bool>>(OptionsButton_Toggled);
 
-            gameExitButton.RegisterCallback<ClickEvent>(SaveExitButton_Clicked);
-            gameExitButton.RegisterCallback<NavigationSubmitEvent>(SaveExitButton_NavigationSubmitted);
+            gameExitButton.clicked += SaveExitButton_Clicked;
 
             tabView.RegisterCallback<NavigationCancelEvent>(TabView_NavigationCanceled);
             tabView.activeTabChanged += TabView_ActiveTabChanged;
@@ -162,9 +161,7 @@ namespace FK.Tulip.UI
             root.visible = args.NewState != GameState.Playing;
         }
 
-        private void SaveExitButton_NavigationSubmitted(NavigationSubmitEvent evt) => SaveExitButton_Clicked(null);
-
-        private void SaveExitButton_Clicked(ClickEvent _)
+        private void SaveExitButton_Clicked()
         {
             SaveGame();
             quitFlyoutButton.value = false;
