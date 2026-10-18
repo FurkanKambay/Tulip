@@ -1,7 +1,7 @@
 using System.Collections;
 using FK.Common;
+using FK.Common.Extensions;
 using FK.Tulip.Audio;
-using FK.Tulip.Core;
 using FK.Tulip.Data.GameEvents;
 using FMOD.Studio;
 using JetBrains.Annotations;
@@ -23,48 +23,49 @@ namespace FK.Tulip.UI
         [SerializeField, Required] private GameStateChangeEvent gameStateChangeEvent;
 
         [Header("References")]
-        [SerializeField, Required] private UIDocument document;
+        [SerializeField, Required] private PanelRenderer panelRenderer;
         [SerializeField, Required] private InputActionReference switchTabInput;
+        [SerializeField, Required] private InputActionReference cancelInput;
 
         [Header("FMOD Events")]
         [SerializeField] private FMODEvent toggleSfx;
 
         [CreateProperty, UsedImplicitly] private Settings Settings => Settings.Instance;
-        [CreateProperty, UsedImplicitly] private bool IsQuitButtonVisible => !IsInMainMenu && container.visible;
-        [CreateProperty, UsedImplicitly] private bool IsSaveExitButtonVisible => !IsInMainMenu && ShouldShowQuitButton;
 
-        private static bool IsInMainMenu => GameManager.CurrentState == GameState.MainMenu;
-        private bool ShouldShowQuitButton => container.visible && quitFlyoutButton.value;
-
+        private int version;
         private VisualElement root;
-        private VisualElement container;
         private TabView tabView;
-
-        private Toggle optionsButton;
-        private Toggle quitFlyoutButton;
-        private Button gameExitButton;
 
         private PARAMETER_DESCRIPTION paramMenuState;
 
-        private void Awake()
+        private void OnEnable()
         {
-            document.enabled = true;
-            root = document.rootVisualElement;
+            panelRenderer.RegisterUIReloadCallback(UI_Reloaded);
 
-            container = root.Q<VisualElement>("options-menu");
-            container.visible = false;
-            container.dataSource = this;
+            switchTabInput.action.performed += SwitchTabInput_Performed;
+            cancelInput.action.performed += CancelInput_Performed;
+        }
+
+        private void OnDisable()
+        {
+            panelRenderer.UnregisterUIReloadCallback(UI_Reloaded);
+
+            switchTabInput.action.performed -= SwitchTabInput_Performed;
+            cancelInput.action.performed -= CancelInput_Performed;
+        }
+
+        private void UI_Reloaded(PanelRenderer renderer, VisualElement rootElement, int version)
+        {
+            if (version == this.version)
+                return;
+
+            Log.Info($"[UI] Settings Menu reloading (version {version})");
+
+            this.version = version;
+            root = rootElement;
+            root.dataSource = this;
 
             tabView = root.Q<TabView>();
-            optionsButton = root.Q<Toggle>("options-toggle");
-            quitFlyoutButton = root.Q<Toggle>("quit-flyout-button");
-            gameExitButton = root.Q<Button>("save-exit-button");
-
-            optionsButton.RegisterCallback<ChangeEvent<bool>>(OptionsButton_Toggled);
-
-            gameExitButton.clicked += SaveExitButton_Clicked;
-
-            tabView.RegisterCallback<NavigationCancelEvent>(TabView_NavigationCanceled);
             tabView.activeTabChanged += TabView_ActiveTabChanged;
 
 #if UNITY_WEBGL
@@ -80,68 +81,61 @@ namespace FK.Tulip.UI
             toggleSfx.DescribeParameter("Menu State", out paramMenuState);
         }
 
-        private void OnEnable()
+        public void SetDisplayed(bool displayed)
         {
-            document.enabled = true;
-            root.visible = true;
-            container.visible = false;
+            if (panelRenderer.enabled == displayed)
+                return;
 
-            gameStateChangeEvent.OnRaised += GameState_Changed;
-            switchTabInput.action.performed += SwitchTabInput_Performed;
+            panelRenderer.enabled = displayed;
+
+            PlayToggleSfx(displayed);
+            OnToggled?.Invoke(displayed);
+
+            // focus first setting field
+            if (displayed)
+            {
+                // can't use ForceSetFocus() with PanelRenderer. just have to wait
+                StartCoroutine(FocusFirstSettingInActiveTab_Delayed());
+            }
         }
-
-        private void OnDisable()
-        {
-            document.enabled = false;
-
-            gameStateChangeEvent.OnRaised -= GameState_Changed;
-            switchTabInput.action.performed -= SwitchTabInput_Performed;
-        }
-
-        public void SetEnabled(bool enabled) => document.enabled = enabled;
-        public void SetUIVisible(bool visible) => optionsButton.value = visible;
 
         private void SwitchTabInput_Performed(InputAction.CallbackContext context)
         {
+            // bail if page not loaded yet
+            if (tabView == null) return;
+
             // prevent tab switch if a field has a flyout open
-            if (tabView.activeTab.focusController.focusedElement is not { delegatesFocus: false })
+            if (root.GetNavigationStatus(out _) is not UINavigationStatus.Locked)
                 tabView.selectedTabIndex += (int)context.ReadValue<float>();
         }
 
-        private void TabView_NavigationCanceled(NavigationCancelEvent evt) => SetUIVisible(false);
+        private void CancelInput_Performed(InputAction.CallbackContext context)
+        {
+            // close page only when: no element has focus / navigation isn't locked by focused element
+            if (root.GetNavigationStatus(out _) is not UINavigationStatus.Locked)
+                SetDisplayed(false);
+        }
 
         private void TabView_ActiveTabChanged(Tab oldTab, Tab newTab)
         {
             // if a field has a flyout open, force it to close before switching tabs
             // preventing the tab from switching in the first place is done when reading the input
-            if (oldTab.focusController.focusedElement is { delegatesFocus: false } focusedElement)
+            if (root.GetNavigationStatus(out Focusable focusedElement) is UINavigationStatus.Locked)
                 focusedElement.SendEvent(new NavigationCancelEvent());
 
-            FocusFirstFieldOfActiveTab();
+            FocusFirstSettingInActiveTab();
         }
 
-        private void OptionsButton_Toggled(ChangeEvent<bool> change)
+        private IEnumerator FocusFirstSettingInActiveTab_Delayed()
         {
-            container.visible = change.newValue;
-            quitFlyoutButton.value = false;
-
-            if (container.visible)
-                StartCoroutine(FocusFirstFieldOfActiveTabNextFrame());
-
-            PlayToggleSfx(change.newValue);
-            GameManager.SetPaused(change.newValue);
-
-            OnToggled?.Invoke(change.newValue);
-        }
-
-        private void FocusFirstFieldOfActiveTab() =>
-            tabView.activeTab.Q(className: "option").Focus();
-
-        private IEnumerator FocusFirstFieldOfActiveTabNextFrame()
-        {
+            yield return null; // order is important
             yield return new WaitForEndOfFrame();
-            FocusFirstFieldOfActiveTab();
+
+            FocusFirstSettingInActiveTab();
         }
+
+        private void FocusFirstSettingInActiveTab() =>
+            tabView?.activeTab.Q(className: "option")?.Focus();
 
         private void PlayToggleSfx(bool toggleState)
         {
@@ -151,22 +145,5 @@ namespace FK.Tulip.UI
             sfx.SetParameter(paramMenuState, toggleState);
             sfx.PlayOneShot();
         }
-
-        private void GameState_Changed(GameStateChange args)
-        {
-            root.visible = args.NewState != GameState.Playing;
-        }
-
-        private void SaveExitButton_Clicked()
-        {
-            SaveGame();
-            quitFlyoutButton.value = false;
-            optionsButton.value = false;
-
-            GameManager.ReturnToMainMenu();
-        }
-
-        // TODO: save game
-        private void SaveGame() => Log.Info("Saving...");
     }
 }

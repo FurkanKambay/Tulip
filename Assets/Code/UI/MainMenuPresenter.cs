@@ -1,5 +1,5 @@
-using System.Collections;
 using FK.Common;
+using FK.Common.Extensions;
 using FK.Tulip.Core;
 using FK.Tulip.Data.GameEvents;
 using FMODUnity;
@@ -27,7 +27,6 @@ namespace FK.Tulip.UI
         {
             settingsPresenter = FindAnyObjectByType<SettingsPresenter>();
             UpdateCallbacks(GameManager.CurrentState);
-            SetMainMenuVisible(true);
         }
 
         private void OnEnable()
@@ -71,23 +70,18 @@ namespace FK.Tulip.UI
             settingsButton.clicked += SettingsButton_Clicked;
             quitButton.clicked += QuitButton_Clicked;
 
-            // TODO: enable continue button if there's a latest save
-            // TODO: support multiple saves
-            continueButton.SetEnabled(false);
+            SetMainMenuVisible(true);
         }
 
         private void SetMainMenuVisible(bool visible)
         {
             root.visible = visible;
 
-            if (visible)
-                StartCoroutine(FocusFirstButtonNextFrame());
-        }
+            // TODO: disable continue button unless there's an existing save
+            continueButton.SetEnabled(false);
 
-        private IEnumerator FocusFirstButtonNextFrame()
-        {
-            yield return new WaitForEndOfFrame();
-            newButton.Focus();
+            // focus default button
+            newButton.ForceSetFocus(visible);
         }
 
         private void NewButton_Clicked()
@@ -116,7 +110,7 @@ namespace FK.Tulip.UI
         }
 
         private void SettingsButton_Clicked() =>
-            settingsPresenter.SetUIVisible(true);
+            settingsPresenter.SetDisplayed(true);
 
         private void QuitButton_Clicked() =>
             GameManager.QuitGame();
