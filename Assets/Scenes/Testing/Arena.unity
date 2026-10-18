@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 121882224}
   - component: {fileID: 121882225}
   m_Layer: 0
-  m_Name: "\u2328\uFE0F Input Service"
+  m_Name: Input Service
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -622,7 +622,7 @@ GameObject:
   - component: {fileID: 619394802}
   - component: {fileID: 619394801}
   m_Layer: 0
-  m_Name: Global Light
+  m_Name: Sunlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

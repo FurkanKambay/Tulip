@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 245516617}
   - component: {fileID: 245516618}
   m_Layer: 0
-  m_Name: "\u2328\uFE0F Input Service"
+  m_Name: Input Service
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 341931904}
   - component: {fileID: 341931905}
   m_Layer: 0
-  m_Name: "\u2328\uFE0F Input Service"
+  m_Name: '[Input Service]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -301,8 +301,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1249539822}
-  - component: {fileID: 1249539819}
   - component: {fileID: 1249539821}
+  - component: {fileID: 1249539819}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -431,7 +431,7 @@ GameObject:
   - component: {fileID: 1328625852}
   - component: {fileID: 1328625853}
   m_Layer: 0
-  m_Name: "\U0001F579\uFE0F Game Manager"
+  m_Name: '[Game Manager]'
   m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 1724351829}
   - component: {fileID: 1724351828}
   m_Layer: 0
-  m_Name: "\u2699\uFE0F Settings Manager"
+  m_Name: '[Settings Manager]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -523,7 +523,7 @@ GameObject:
   - component: {fileID: 1760523199}
   - component: {fileID: 1760523203}
   m_Layer: 0
-  m_Name: "\U0001F39A\uFE0F Audio Manager"
+  m_Name: '[Audio Manager]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

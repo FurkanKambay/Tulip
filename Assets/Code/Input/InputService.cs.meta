@@ -6,7 +6,7 @@ MonoImporter:
   defaultReferences:
   - gameStateChangeEvent: {fileID: 11400000, guid: e546a51b5a993714f94816c29b5538fa, type: 2}
   executionOrder: 0
-  icon: {instanceID: 0}
+  icon: {fileID: 2800000, guid: f14e3a4027f834f16b235498ac15bb3f, type: 3}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
