@@ -120,6 +120,8 @@ namespace FK.Tulip.Core
             GameState oldState = CurrentState;
             CurrentState = newState;
 
+            Time.timeScale = newState is GameState.Paused ? 0f : 1f;
+
             instance.gameStateChangeEvent.Raise(instance, oldState, newState);
 
             if (oldState is GameState.MainMenu)
