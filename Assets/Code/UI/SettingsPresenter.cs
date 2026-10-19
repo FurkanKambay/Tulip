@@ -3,11 +3,11 @@ using FK.Common;
 using FK.Tulip.Audio;
 using FK.Tulip.Core;
 using FK.Tulip.Data.GameEvents;
-using FK.Tulip.Input;
 using FMOD.Studio;
 using JetBrains.Annotations;
 using Unity.Properties;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 using Settings = FK.Tulip.Core.Settings;
 
@@ -24,7 +24,7 @@ namespace FK.Tulip.UI
 
         [Header("References")]
         [SerializeField, Required] private UIDocument document;
-        [SerializeField, Required] private UserBrain brain;
+        [SerializeField, Required] private InputActionReference switchTabInput;
 
         [Header("FMOD Events")]
         [SerializeField] private FMODEvent toggleSfx;
@@ -82,35 +82,31 @@ namespace FK.Tulip.UI
 
         private void OnEnable()
         {
+            document.enabled = true;
             root.visible = true;
             container.visible = false;
 
             gameStateChangeEvent.OnRaised += GameState_Changed;
+            switchTabInput.action.performed += SwitchTabInput_Performed;
         }
 
         private void OnDisable()
         {
-            root.visible = false;
-            container.visible = false;
+            document.enabled = false;
 
             gameStateChangeEvent.OnRaised -= GameState_Changed;
+            switchTabInput.action.performed -= SwitchTabInput_Performed;
         }
 
-        private void Update()
+        public void SetEnabled(bool enabled) => document.enabled = enabled;
+        public void SetUIVisible(bool visible) => optionsButton.value = visible;
+
+        private void SwitchTabInput_Performed(InputAction.CallbackContext context)
         {
-            if (brain.WantsToPause)
-                SetUIVisible(true);
-
-            if (brain.TabSwitchDelta.HasValue)
-            {
-                // prevent tab switch if a field has a flyout open
-                if (tabView.activeTab.focusController.focusedElement is not { delegatesFocus: false })
-                    tabView.selectedTabIndex += brain.TabSwitchDelta.Value;
-            }
+            // prevent tab switch if a field has a flyout open
+            if (tabView.activeTab.focusController.focusedElement is not { delegatesFocus: false })
+                tabView.selectedTabIndex += (int)context.ReadValue<float>();
         }
-
-        public void SetUIVisible(bool visible) =>
-            optionsButton.value = visible;
 
         private void TabView_NavigationCanceled(NavigationCancelEvent evt) => SetUIVisible(false);
 
