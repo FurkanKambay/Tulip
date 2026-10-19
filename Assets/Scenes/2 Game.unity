@@ -204,6 +204,7 @@ MonoBehaviour:
         Data4: -1776651225
       Path: event:/Music/Biome Music
   startingBiome: 0
+  artificialStartDelay: 0
 --- !u!1 &337397488
 GameObject:
   m_ObjectHideFlags: 0
